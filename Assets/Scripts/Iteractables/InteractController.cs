@@ -1,4 +1,5 @@
 ﻿using DualityGame.Realm;
+using Games.GrumpyBear.Core.Observables;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,8 +11,9 @@ namespace DualityGame.Iteractables
         [SerializeField] private float _radius = 3f;
         [SerializeField] private UnityEvent _onUse;
 
-        private IInteractable _closestInteractable = null;
-        
+        public IReadonlyObservable<IInteractable> ClosestInteractable => _closestInteractable;
+        private readonly Observable<IInteractable> _closestInteractable = new();
+
         private void FixedUpdate()
         {
             IInteractable closest = null;
@@ -26,16 +28,14 @@ namespace DualityGame.Iteractables
                 closestDistance = distance;
             }
 
-            if (_closestInteractable == closest) return;
-            
-            _closestInteractable = closest;
+            _closestInteractable.Set(closest);
         }
 
         private void OnInteract()
         {
-            if (_closestInteractable != null)
+            if (_closestInteractable.Value != null)
             {
-                _closestInteractable.Interact(gameObject);
+                _closestInteractable.Value.Interact(gameObject);
             }
             else
             {

@@ -15,5 +15,7 @@ namespace DualityGame.Inventory
             
             inventory.PickupItem(this);
         }
+
+        public string Prompt => $"Pick up {_itemType.name}";
     }
 }
