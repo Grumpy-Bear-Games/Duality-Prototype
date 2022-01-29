@@ -14,6 +14,7 @@ namespace DualityGame.Inventory
         private void OnInventoryChange(ItemType itemType)
         {
             _image.sprite = itemType != null ? itemType.InventorySprite : null;
+            _image.enabled = itemType != null;
         }
     }
 }
