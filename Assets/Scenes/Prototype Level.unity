@@ -34446,7 +34446,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26482
+  m_Name: pb_Mesh25760
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -34615,6 +34615,7 @@ GameObject:
   - component: {fileID: 489906813}
   - component: {fileID: 489906814}
   - component: {fileID: 489906815}
+  - component: {fileID: 489906816}
   m_Layer: 6
   m_Name: Heaven
   m_TagString: Untagged
@@ -34669,11 +34670,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61d706bb03046e789e553b8520f3014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelLayers:
+  _realm: {fileID: 11400000, guid: 6e2678d65c1d2e046b0cb3fb66e5bb67, type: 2}
+  _realmManager: {fileID: 11400000, guid: 3ef4bd27f7b2cb94b939bb23f70c4e26, type: 2}
+--- !u!114 &489906816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489906812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
     serializedVersion: 2
     m_Bits: 64
-  _playerLayer: 8
-  _material: {fileID: 2100000, guid: 2c0d3bb66a70a564698efd804f08c3ee, type: 2}
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: cfd31eb4495b92a48882120c1258e752, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &871150934
 GameObject:
   m_ObjectHideFlags: 0
@@ -34684,6 +34712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871150935}
   - component: {fileID: 871150936}
+  - component: {fileID: 871150937}
   m_Layer: 7
   m_Name: Hell
   m_TagString: Untagged
@@ -34721,11 +34750,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61d706bb03046e789e553b8520f3014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelLayers:
+  _realm: {fileID: 11400000, guid: b4d6229eae5dd0c41b7a1171b0265464, type: 2}
+  _realmManager: {fileID: 11400000, guid: 3ef4bd27f7b2cb94b939bb23f70c4e26, type: 2}
+--- !u!114 &871150937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871150934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
     serializedVersion: 2
     m_Bits: 128
-  _playerLayer: 9
-  _material: {fileID: 2100000, guid: da2ccd4b59921e743b9895be75733463, type: 2}
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: f3f0fd79c0512a94ca56627075756e42, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &961173327
 GameObject:
   m_ObjectHideFlags: 0
@@ -35029,8 +35085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88031baaca0e8a04287ce4f20b32b668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heaven: {fileID: 489906815}
-  _hell: {fileID: 871150936}
+  _realmManager: {fileID: 11400000, guid: 3ef4bd27f7b2cb94b939bb23f70c4e26, type: 2}
 --- !u!114 &1681845268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35163,7 +35218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7463828397257021375}
   m_Layer: 0
-  m_Name: NestedParentCapsule_Unpack
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
