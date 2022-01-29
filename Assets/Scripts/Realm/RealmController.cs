@@ -30,7 +30,7 @@ namespace DualityGame.Realm
         private void OnRealmChange(Realm newRealm)
         {
             gameObject.layer = newRealm.PlayerLayer;
-            _controller.GroundLayers = newRealm.LevelLayer;
+            _controller.GroundLayers = 1 << newRealm.LevelLayer;
         }
 
         private void OnEnable() => _realmManager.CurrentRealm.Subscribe(OnRealmChange);
