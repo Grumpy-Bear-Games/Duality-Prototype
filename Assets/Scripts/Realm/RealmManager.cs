@@ -11,7 +11,7 @@ namespace DualityGame.Realm
 
         public IReadonlyObservable<Realm> CurrentRealm => _currentRealm;
         private readonly Observable<Realm> _currentRealm = new();
-        
+
         private Realm _otherRealm => _currentRealm.Value == _heaven ? _hell : _heaven;
         
         public bool IsOtherRealmBlocked(Vector3 position)
@@ -20,7 +20,7 @@ namespace DualityGame.Realm
             var point1 = position + Vector3.up * 1.5f;
             var point2 = position + Vector3.up * 0.5f;
 
-            return Physics.OverlapCapsuleNonAlloc(point1, point2, 0.45f, colliders, _otherRealm.LeveLayers) > 0;
+            return Physics.OverlapCapsuleNonAlloc(point1, point2, 0.45f, colliders, _otherRealm.LevelLayer) > 0;
         }
 
         public void Warp() => _currentRealm.Set(_otherRealm);
