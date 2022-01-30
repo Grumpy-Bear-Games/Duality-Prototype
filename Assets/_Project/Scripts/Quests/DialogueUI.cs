@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Febucci.UI;
 using NodeCanvas.DialogueTrees;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using TMPro;
 
-namespace DualityGame.Dialog {
+namespace DualityGame.Quests {
 
-	public class DialogueUGUI : MonoBehaviour {
+	public class DialogueUI : MonoBehaviour {
 
 		[System.Serializable]
 		public class SubtitleDelays
@@ -137,7 +137,7 @@ namespace DualityGame.Dialog {
 
 				while (!dialogShown)
 				{
-					if (Keyboard.current.anyKey.wasPressedThisFrame)
+					if (_skipOnInput && Keyboard.current.anyKey.wasPressedThisFrame)
 					{
 						_actorSpeech.SkipTypewriter();
 						

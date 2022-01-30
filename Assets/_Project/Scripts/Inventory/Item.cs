@@ -17,5 +17,7 @@ namespace DualityGame.Inventory
         }
 
         public string Prompt => $"Pick up {_itemType.name}";
+        
+        public override string ToString() => name;
     }
 }
