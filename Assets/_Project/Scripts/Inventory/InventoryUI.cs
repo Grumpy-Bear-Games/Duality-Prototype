@@ -11,10 +11,10 @@ namespace DualityGame.Inventory
         private void OnEnable() => _inventory.CurrentItem.Subscribe(OnInventoryChange);
         private void OnDisable() => _inventory.CurrentItem.Unsubscribe(OnInventoryChange);
 
-        private void OnInventoryChange(ItemType itemType)
+        private void OnInventoryChange(Item item)
         {
-            _image.sprite = itemType != null ? itemType.InventorySprite : null;
-            _image.enabled = itemType != null;
+            _image.sprite = item != null ? item.Type.InventorySprite : null;
+            _image.enabled = item != null;
         }
     }
 }

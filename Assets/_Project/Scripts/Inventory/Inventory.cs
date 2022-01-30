@@ -8,20 +8,33 @@ namespace DualityGame.Inventory
     {
         [SerializeField] private RealmManager _realmManager;
 
-        public IReadonlyObservable<ItemType> CurrentItem => _currentItem;
-        private readonly Observable<ItemType> _currentItem = new();
+        public IReadonlyObservable<Item> CurrentItem => _currentItem;
+        private readonly Observable<Item> _currentItem = new();
 
         public void PickupItem(Item item)
         {
             DropItem();
-            _currentItem.Set(item.Type);
-            Destroy(item.gameObject);
+            _currentItem.Set(item);
+            item.gameObject.SetActive(false);
+        }
+
+        public Item TakeFromInventory()
+        {
+            if (_currentItem.Value == null) return null;
+            var item = _currentItem.Value;
+            _currentItem.Set(null);
+            return item;
         }
 
         public void DropItem()
         {
             if (_currentItem.Value == null) return;
-            _currentItem.Value.Spawn(_realmManager.CurrentRealm.Value, transform.position);
+
+            var droppedItem = _currentItem.Value; 
+            droppedItem.transform.position = transform.position;
+            droppedItem.gameObject.layer = _realmManager.CurrentRealm.Value.LevelLayer;
+            droppedItem.gameObject.SetActive(true);
+            
             _currentItem.Set(null);
         }
     }
