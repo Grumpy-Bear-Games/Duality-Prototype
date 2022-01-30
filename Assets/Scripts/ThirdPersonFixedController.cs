@@ -66,8 +66,6 @@ namespace DualityGame
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 
-		private const float _threshold = 0.01f;
-
 		private bool _hasAnimator;
 
 		private void Start()
