@@ -35245,40 +35245,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260593801}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1327928890 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5072955504408263544, guid: e5af839aa1627cb43af021709a7c6fd1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7249564571595690162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1327928892 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5561121506490950080, guid: e5af839aa1627cb43af021709a7c6fd1,
     type: 3}
   m_PrefabInstance: {fileID: 7249564571595690162}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1327928890}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18061428be194656af66ddf9f461fe84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1327928899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1327928890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d71fb7c52372e244baf2e69a9d0d116, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: Player
-  _portrait: {fileID: 2800000, guid: ae89393f4bbb62d4a8f19cbe886755d5, type: 3}
-  _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  _dialogueOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1608641492
 GameObject:
   m_ObjectHideFlags: 0
@@ -35502,31 +35480,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: '@DialogueUGUI'
-      objectReference: {fileID: 0}
-    - target: {fileID: 590387382540743179, guid: 8db8d3601ef1d5d4d8b88440995d140c,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 590387382540743179, guid: 8db8d3601ef1d5d4d8b88440995d140c,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 590387382540743181, guid: 8db8d3601ef1d5d4d8b88440995d140c,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 590387382540743181, guid: 8db8d3601ef1d5d4d8b88440995d140c,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 590387382547302381, guid: 8db8d3601ef1d5d4d8b88440995d140c,
-        type: 3}
-      propertyPath: _waitForInput
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 590387382560422052, guid: 8db8d3601ef1d5d4d8b88440995d140c,
         type: 3}
@@ -35895,41 +35848,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3607886537086281204, guid: e5af839aa1627cb43af021709a7c6fd1,
-        type: 3}
-      propertyPath: m_Lens.m_SensorSize.x
-      value: 1.933798
-      objectReference: {fileID: 0}
-    - target: {fileID: 3607886537086281205, guid: e5af839aa1627cb43af021709a7c6fd1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3607886537086281205, guid: e5af839aa1627cb43af021709a7c6fd1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9739359
-      objectReference: {fileID: 0}
-    - target: {fileID: 3607886537086281205, guid: e5af839aa1627cb43af021709a7c6fd1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.22682339
-      objectReference: {fileID: 0}
-    - target: {fileID: 3607886537086281205, guid: e5af839aa1627cb43af021709a7c6fd1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3607886537086281205, guid: e5af839aa1627cb43af021709a7c6fd1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7249564570797099678, guid: e5af839aa1627cb43af021709a7c6fd1,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7422285978626791806, guid: e5af839aa1627cb43af021709a7c6fd1,
         type: 3}
