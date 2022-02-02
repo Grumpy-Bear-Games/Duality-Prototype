@@ -1,4 +1,5 @@
-﻿using StarterAssets;
+﻿using System;
+using StarterAssets;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
@@ -45,9 +46,25 @@ namespace DualityGame
 		[Tooltip("What layers the character uses as ground")]
 		public LayerMask GroundLayers;
 
+		[Header("Animation")]
+		[SerializeField] private Animator _animator;
+		
+		private readonly int[] _animID = new int[12];
+		
+		private enum Direction {
+			Up, Down, Left, Right
+		}
+
+		private enum State {
+			Idle, InAir, Run
+		}
+
+
+		private Direction _direction = Direction.Down;
+		private State _state = State.Idle;
+
 		// player
 		private float _speed;
-		private float _animationBlend;
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
 
@@ -55,22 +72,14 @@ namespace DualityGame
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-		// animation IDs
-		private int _animIDSpeed;
-		private int _animIDGrounded;
-		private int _animIDJump;
-		private int _animIDFreeFall;
-		private int _animIDMotionSpeed;
-
-		private Animator _animator;
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 
-		private bool _hasAnimator;
 
-		private void Start()
+		private void Awake()
 		{
-			_hasAnimator = TryGetComponent(out _animator);
+			_animator = GetComponentInChildren<Animator>();
+
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 
@@ -83,39 +92,74 @@ namespace DualityGame
 
 		private void Update()
 		{
-			_hasAnimator = TryGetComponent(out _animator);
-			
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			
+			UpdateDirectionFromMovement();
+			UpdateStateFromMovement();
+			UpdateAnimation();
 		}
+
 
 		private void AssignAnimationIDs()
 		{
-			_animIDSpeed = Animator.StringToHash("Speed");
-			_animIDGrounded = Animator.StringToHash("Grounded");
-			_animIDJump = Animator.StringToHash("Jump");
-			_animIDFreeFall = Animator.StringToHash("FreeFall");
-			_animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+			foreach (int state in Enum.GetValues(typeof(State))) {
+				var stateName = Enum.GetName(typeof(State), state);
+				foreach (int direction in Enum.GetValues(typeof(Direction)))
+				{
+					var directionName = Enum.GetName(typeof(Direction), direction);
+					{
+						_animID[state * 4 + direction] = Animator.StringToHash($"MC {stateName} {directionName}");
+					}
+				}
+			}
+		}
+		
+		private void UpdateDirectionFromMovement()
+		{
+			if (_input.move == Vector2.zero) return;
+			if (Mathf.Approximately(_input.move.x, 0f))
+			{
+				_direction = (_input.move.y > Mathf.Epsilon) ? Direction.Up : Direction.Down;
+			}
+			else
+			{
+				_direction = (_input.move.x < Mathf.Epsilon) ? Direction.Left : Direction.Right;
+			}
+		}
+		
+		private void UpdateStateFromMovement()
+		{
+			if (!Grounded)
+			{
+				_state = State.InAir;
+			}
+			else
+			{
+				_state = (_input.move == Vector2.zero) ? State.Idle : State.Run;
+			}
+		}
+
+		private void UpdateAnimation()
+		{
+			var currentAnimation = _animator.GetCurrentAnimatorStateInfo(0).shortNameHash;
+			var updatedAnimation = _animID[(int)_state * 4 + (int)_direction];
+			if (currentAnimation != updatedAnimation) _animator.Play(updatedAnimation);
 		}
 
 		private void GroundedCheck()
 		{
 			// set sphere position, with offset
-			Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
+			var position = transform.position;
+			var spherePosition = new Vector3(position.x, position.y - GroundedOffset, position.z);
 			Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
-
-			// update animator if using character
-			if (_hasAnimator)
-			{
-				_animator.SetBool(_animIDGrounded, Grounded);
-			}
 		}
 
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			var targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -124,10 +168,11 @@ namespace DualityGame
 			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
 
 			// a reference to the players current horizontal velocity
-			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
+			var velocity = _controller.velocity;
+			var currentHorizontalSpeed = new Vector3(velocity.x, 0.0f, velocity.z).magnitude;
 
-			float speedOffset = 0.1f;
-			float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
+			const float speedOffset = 0.1f;
+			var inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
 
 			// accelerate or decelerate to target speed
 			if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
@@ -143,20 +188,12 @@ namespace DualityGame
 			{
 				_speed = targetSpeed;
 			}
-			_animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
 
 			// normalise input direction
-			Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
+			var inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
-
-			// update animator if using character
-			if (_hasAnimator)
-			{
-				_animator.SetFloat(_animIDSpeed, _animationBlend);
-				_animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
-			}
 		}
 
 		private void JumpAndGravity()
@@ -165,13 +202,6 @@ namespace DualityGame
 			{
 				// reset the fall timeout timer
 				_fallTimeoutDelta = FallTimeout;
-
-				// update animator if using character
-				if (_hasAnimator)
-				{
-					_animator.SetBool(_animIDJump, false);
-					_animator.SetBool(_animIDFreeFall, false);
-				}
 
 				// stop our velocity dropping infinitely when grounded
 				if (_verticalVelocity < 0.0f)
@@ -184,12 +214,6 @@ namespace DualityGame
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-
-					// update animator if using character
-					if (_hasAnimator)
-					{
-						_animator.SetBool(_animIDJump, true);
-					}
 				}
 
 				// jump timeout
@@ -208,14 +232,6 @@ namespace DualityGame
 				{
 					_fallTimeoutDelta -= Time.deltaTime;
 				}
-				else
-				{
-					// update animator if using character
-					if (_hasAnimator)
-					{
-						_animator.SetBool(_animIDFreeFall, true);
-					}
-				}
 
 				// if we are not grounded, do not jump
 				_input.jump = false;
@@ -228,23 +244,21 @@ namespace DualityGame
 			}
 		}
 
-		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
-		{
-			if (lfAngle < -360f) lfAngle += 360f;
-			if (lfAngle > 360f) lfAngle -= 360f;
-			return Mathf.Clamp(lfAngle, lfMin, lfMax);
-		}
-
 		private void OnDrawGizmosSelected()
 		{
-			Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
-			Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
+			var transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
+			var transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
 
-			if (Grounded) Gizmos.color = transparentGreen;
-			else Gizmos.color = transparentRed;
+			Gizmos.color = Grounded ? transparentGreen : transparentRed;
 			
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
-			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+			var position = transform.position;
+			Gizmos.DrawSphere(new Vector3(position.x, position.y - GroundedOffset, position.z), GroundedRadius);
+		}
+
+		private void Reset()
+		{
+			_animator = GetComponentInChildren<Animator>();
 		}
 	}
 }

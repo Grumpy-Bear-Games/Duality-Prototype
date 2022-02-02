@@ -34478,7 +34478,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31012
+  m_Name: pb_Mesh29522
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -34747,6 +34747,7 @@ GameObject:
   - component: {fileID: 579896783}
   - component: {fileID: 579896787}
   - component: {fileID: 579896788}
+  - component: {fileID: 579896789}
   m_Layer: 6
   m_Name: NPC
   m_TagString: Untagged
@@ -34889,6 +34890,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970ba91ee67eb4e4082d9794f65e3992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &579896789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579896782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097f47eb142d4907ade74fbc7ba16360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realmManager: {fileID: 11400000, guid: 3ef4bd27f7b2cb94b939bb23f70c4e26, type: 2}
 --- !u!1 &871150934
 GameObject:
   m_ObjectHideFlags: 0
