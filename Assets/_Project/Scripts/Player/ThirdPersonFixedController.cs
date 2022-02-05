@@ -1,14 +1,13 @@
-﻿using System;
-using StarterAssets;
+﻿using StarterAssets;
 using UnityEngine;
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 #endif
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
 
-namespace DualityGame
+namespace DualityGame.Player
 {
 	[RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -46,23 +45,6 @@ namespace DualityGame
 		[Tooltip("What layers the character uses as ground")]
 		public LayerMask GroundLayers;
 
-		[Header("Animation")]
-		[SerializeField] private Animator _animator;
-		
-		private readonly int[] _animID = new int[12];
-		
-		private enum Direction {
-			Up, Down, Left, Right
-		}
-
-		private enum State {
-			Idle, InAir, Run
-		}
-
-
-		private Direction _direction = Direction.Down;
-		private State _state = State.Idle;
-
 		// player
 		private float _speed;
 		private float _verticalVelocity;
@@ -78,12 +60,8 @@ namespace DualityGame
 
 		private void Awake()
 		{
-			_animator = GetComponentInChildren<Animator>();
-
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
-
-			AssignAnimationIDs();
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
@@ -95,58 +73,8 @@ namespace DualityGame
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-			
-			UpdateDirectionFromMovement();
-			UpdateStateFromMovement();
-			UpdateAnimation();
 		}
 
-
-		private void AssignAnimationIDs()
-		{
-			foreach (int state in Enum.GetValues(typeof(State))) {
-				var stateName = Enum.GetName(typeof(State), state);
-				foreach (int direction in Enum.GetValues(typeof(Direction)))
-				{
-					var directionName = Enum.GetName(typeof(Direction), direction);
-					{
-						_animID[state * 4 + direction] = Animator.StringToHash($"MC {stateName} {directionName}");
-					}
-				}
-			}
-		}
-		
-		private void UpdateDirectionFromMovement()
-		{
-			if (_input.move == Vector2.zero) return;
-			if (Mathf.Approximately(_input.move.x, 0f))
-			{
-				_direction = (_input.move.y > Mathf.Epsilon) ? Direction.Up : Direction.Down;
-			}
-			else
-			{
-				_direction = (_input.move.x < Mathf.Epsilon) ? Direction.Left : Direction.Right;
-			}
-		}
-		
-		private void UpdateStateFromMovement()
-		{
-			if (!Grounded)
-			{
-				_state = State.InAir;
-			}
-			else
-			{
-				_state = (_input.move == Vector2.zero) ? State.Idle : State.Run;
-			}
-		}
-
-		private void UpdateAnimation()
-		{
-			var currentAnimation = _animator.GetCurrentAnimatorStateInfo(0).shortNameHash;
-			var updatedAnimation = _animID[(int)_state * 4 + (int)_direction];
-			if (currentAnimation != updatedAnimation) _animator.Play(updatedAnimation);
-		}
 
 		private void GroundedCheck()
 		{
@@ -254,11 +182,6 @@ namespace DualityGame
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			var position = transform.position;
 			Gizmos.DrawSphere(new Vector3(position.x, position.y - GroundedOffset, position.z), GroundedRadius);
-		}
-
-		private void Reset()
-		{
-			_animator = GetComponentInChildren<Animator>();
 		}
 	}
 }

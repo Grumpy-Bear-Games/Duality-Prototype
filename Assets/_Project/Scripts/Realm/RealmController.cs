@@ -1,3 +1,4 @@
+using DualityGame.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
