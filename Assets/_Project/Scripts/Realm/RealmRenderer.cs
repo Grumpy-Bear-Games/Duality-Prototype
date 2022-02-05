@@ -5,8 +5,7 @@ namespace DualityGame.Realm
     public class RealmRenderer : MonoBehaviour
     {
         [SerializeField] private Realm _realm;
-        [SerializeField] private RealmManager _realmManager;
-
+        [SerializeField] private RealmObservable _currentRealm;
 
         private void OnRealmChange(Realm newRealm)
         {
@@ -19,7 +18,7 @@ namespace DualityGame.Realm
             }
         }
         
-        private void OnEnable() => _realmManager.CurrentRealm.Subscribe(OnRealmChange);
-        private void OnDisable() => _realmManager.CurrentRealm.Unsubscribe(OnRealmChange);
+        private void OnEnable() => _currentRealm.Subscribe(OnRealmChange);
+        private void OnDisable() => _currentRealm.Unsubscribe(OnRealmChange);
     }
 }

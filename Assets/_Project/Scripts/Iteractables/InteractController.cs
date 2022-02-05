@@ -7,9 +7,9 @@ namespace DualityGame.Iteractables
 {
     public class InteractController : MonoBehaviour
     {
-        [SerializeField] private RealmManager _realmManager;
         [SerializeField] private float _radius = 3f;
         [SerializeField] private UnityEvent _onUse;
+        [SerializeField] private RealmObservable _realm;
 
         public IReadonlyObservable<IInteractable> ClosestInteractable => _closestInteractable;
         private readonly Observable<IInteractable> _closestInteractable = new();
@@ -18,7 +18,7 @@ namespace DualityGame.Iteractables
         {
             IInteractable closest = null;
             var closestDistance = Mathf.Infinity;
-            foreach (var collider in Physics.OverlapSphere(transform.position, _radius, 1 << _realmManager.CurrentRealm.Value.LevelLayer))
+            foreach (var collider in Physics.OverlapSphere(transform.position, _radius, 1 << _realm.Value.LevelLayer))
             {
                 var interactable = collider.GetComponent<IInteractable>();
                 if (interactable == null) continue;
@@ -33,12 +33,9 @@ namespace DualityGame.Iteractables
 
         private void OnInteract()
         {
-            if (_closestInteractable.Value != null)
-            {
+            if (_closestInteractable.Value != null) {
                 _closestInteractable.Value.Interact(gameObject);
-            }
-            else
-            {
+            } else {
                 _onUse.Invoke();
             }
         }

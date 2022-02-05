@@ -6,8 +6,8 @@ namespace DualityGame.Inventory
 {
     public class Inventory : MonoBehaviour
     {
-        [SerializeField] private RealmManager _realmManager;
-
+        [SerializeField] private RealmObservable _realm;
+        
         public IReadonlyObservable<Item> CurrentItem => _currentItem;
         private readonly Observable<Item> _currentItem = new();
 
@@ -32,7 +32,7 @@ namespace DualityGame.Inventory
 
             var droppedItem = _currentItem.Value; 
             droppedItem.transform.position = transform.position;
-            droppedItem.gameObject.layer = _realmManager.CurrentRealm.Value.LevelLayer;
+            droppedItem.gameObject.layer = _realm.Value.LevelLayer;
             droppedItem.gameObject.SetActive(true);
             
             _currentItem.Set(null);

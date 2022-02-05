@@ -639,7 +639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88031baaca0e8a04287ce4f20b32b668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _realmManager: {fileID: 11400000, guid: 3ef4bd27f7b2cb94b939bb23f70c4e26, type: 2}
+  _currentRealm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
+  _heaven: {fileID: 11400000, guid: 6e2678d65c1d2e046b0cb3fb66e5bb67, type: 2}
+  _hell: {fileID: 11400000, guid: b4d6229eae5dd0c41b7a1171b0265464, type: 2}
 --- !u!114 &7249564570049133734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,7 +679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6eb3e35b7347eb931078f275a862aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _realmManager: {fileID: 11400000, guid: 3ef4bd27f7b2cb94b939bb23f70c4e26, type: 2}
   _radius: 2
   _onUse:
     m_PersistentCalls:
@@ -694,6 +695,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _realm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
 --- !u!114 &5561121506490950080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,7 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18061428be194656af66ddf9f461fe84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _realmManager: {fileID: 11400000, guid: 3ef4bd27f7b2cb94b939bb23f70c4e26, type: 2}
+  _realm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
 --- !u!114 &5235687072971731518
 MonoBehaviour:
   m_ObjectHideFlags: 0

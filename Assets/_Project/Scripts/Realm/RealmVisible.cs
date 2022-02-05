@@ -5,7 +5,7 @@ namespace DualityGame.Realm
 {
     public class RealmVisible : MonoBehaviour
     {
-        [SerializeField] private RealmManager _realmManager;
+        [SerializeField] private RealmObservable _currentRealm;
         
         private Renderer[] _renderers;
         private Volume[] _volumes;
@@ -15,9 +15,9 @@ namespace DualityGame.Realm
             _volumes = GetComponentsInChildren<Volume>();
         }
 
-        private void OnEnable() => _realmManager.CurrentRealm.Subscribe(OnChangeRealm);
+        private void OnEnable() => _currentRealm.Subscribe(OnChangeRealm);
 
-        private void OnDisable() => _realmManager.CurrentRealm.Unsubscribe(OnChangeRealm);
+        private void OnDisable() => _currentRealm.Unsubscribe(OnChangeRealm);
 
         private void OnChangeRealm(Realm realm)
         {
