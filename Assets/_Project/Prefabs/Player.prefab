@@ -661,12 +661,6 @@ MonoBehaviour:
   Gravity: -15
   JumpTimeout: 0.1
   FallTimeout: 0.15
-  Grounded: 1
-  GroundedOffset: -0.075
-  GroundedRadius: 0.15
-  GroundLayers:
-    serializedVersion: 2
-    m_Bits: 192
 --- !u!114 &5561121506490950083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,7 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 5780798200338096423}
   _input: {fileID: 9123856395269700002}
-  _controller: {fileID: 7249564570049133734}
+  _controller: {fileID: 5072955504408263538}
 --- !u!1 &7249564570163559668
 GameObject:
   m_ObjectHideFlags: 0

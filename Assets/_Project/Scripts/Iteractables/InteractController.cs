@@ -18,7 +18,7 @@ namespace DualityGame.Iteractables
         {
             IInteractable closest = null;
             var closestDistance = Mathf.Infinity;
-            foreach (var collider in Physics.OverlapSphere(transform.position, _radius, 1 << _realm.Value.LevelLayer))
+            foreach (var collider in Physics.OverlapSphere(transform.position, _radius, _realm.Value.LevelLayerMask))
             {
                 var interactable = collider.GetComponent<IInteractable>();
                 if (interactable == null) continue;

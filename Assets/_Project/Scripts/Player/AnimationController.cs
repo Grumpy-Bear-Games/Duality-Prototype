@@ -8,7 +8,7 @@ namespace DualityGame.Player
     {
         [SerializeField] private Animator _animator;
 		[SerializeField] private StarterAssetsInputs _input;
-        [SerializeField] private ThirdPersonFixedController _controller;
+        [SerializeField] private CharacterController _controller;
 
 	
         private enum Direction {
@@ -58,7 +58,7 @@ namespace DualityGame.Player
 		
 		private void UpdateStateFromMovement()
 		{
-			if (!_controller.Grounded) {
+			if (!_controller.isGrounded) {
 				_state = State.InAir;
 			} else {
 				_state = (_input.move == Vector2.zero) ? State.Idle : State.Run;
@@ -76,7 +76,7 @@ namespace DualityGame.Player
 		{
 			_animator = GetComponentInChildren<Animator>();
 			_input = GetComponentInParent<StarterAssetsInputs>();
-			_controller = GetComponentInParent<ThirdPersonFixedController>();
+			_controller = GetComponentInParent<CharacterController>();
 		}
     }
 }

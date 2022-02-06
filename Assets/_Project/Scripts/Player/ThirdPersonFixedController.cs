@@ -1,18 +1,12 @@
 ﻿using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-#endif
 
-/* Note: animations are called via the controller for both the character and capsule using animator null checks
- */
 
 namespace DualityGame.Player
 {
 	[RequireComponent(typeof(CharacterController))]
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 	[RequireComponent(typeof(PlayerInput))]
-#endif
 	public class ThirdPersonFixedController : MonoBehaviour
 	{
 		[Header("Player")]
@@ -35,15 +29,6 @@ namespace DualityGame.Player
 		[Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
 		public float FallTimeout = 0.15f;
 
-		[Header("Player Grounded")]
-		[Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
-		public bool Grounded = true;
-		[Tooltip("Useful for rough ground")]
-		public float GroundedOffset = -0.14f;
-		[Tooltip("The radius of the grounded check. Should match the radius of the CharacterController")]
-		public float GroundedRadius = 0.28f;
-		[Tooltip("What layers the character uses as ground")]
-		public LayerMask GroundLayers;
 
 		// player
 		private float _speed;
@@ -71,17 +56,7 @@ namespace DualityGame.Player
 		private void Update()
 		{
 			JumpAndGravity();
-			GroundedCheck();
 			Move();
-		}
-
-
-		private void GroundedCheck()
-		{
-			// set sphere position, with offset
-			var position = transform.position;
-			var spherePosition = new Vector3(position.x, position.y - GroundedOffset, position.z);
-			Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
 		}
 
 		private void Move()
@@ -126,7 +101,7 @@ namespace DualityGame.Player
 
 		private void JumpAndGravity()
 		{
-			if (Grounded)
+			if (_controller.isGrounded)
 			{
 				// reset the fall timeout timer
 				_fallTimeoutDelta = FallTimeout;
@@ -170,18 +145,6 @@ namespace DualityGame.Player
 			{
 				_verticalVelocity += Gravity * Time.deltaTime;
 			}
-		}
-
-		private void OnDrawGizmosSelected()
-		{
-			var transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
-			var transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
-
-			Gizmos.color = Grounded ? transparentGreen : transparentRed;
-			
-			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
-			var position = transform.position;
-			Gizmos.DrawSphere(new Vector3(position.x, position.y - GroundedOffset, position.z), GroundedRadius);
 		}
 	}
 }
