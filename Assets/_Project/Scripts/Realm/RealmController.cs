@@ -11,9 +11,20 @@ namespace DualityGame.Realm
         [SerializeField] private Realm _hell;
         [SerializeField] private VolumeEffect _effect;
 
+        [Header("Respawn")]
+        [SerializeField] private Transform _respawnPoint;
+
         private CharacterController _controller;
         
         private Realm _otherRealm => _currentRealm.Value == _heaven ? _hell : _heaven;
+
+        public void Respawn()
+        {
+            _controller.enabled = false;
+            transform.position = _respawnPoint.position;
+            _controller.enabled = true;
+            _currentRealm.Set(_heaven);
+        }
 
         private void Awake() => _controller = GetComponent<CharacterController>();
 

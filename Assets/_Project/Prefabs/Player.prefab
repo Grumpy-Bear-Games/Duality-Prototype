@@ -531,6 +531,7 @@ GameObject:
   - component: {fileID: 5561121506490950083}
   - component: {fileID: 5561121506490950080}
   - component: {fileID: 5235687072971731518}
+  - component: {fileID: 2794672765512819584}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -706,6 +707,7 @@ MonoBehaviour:
   _heaven: {fileID: 11400000, guid: 6e2678d65c1d2e046b0cb3fb66e5bb67, type: 2}
   _hell: {fileID: 11400000, guid: b4d6229eae5dd0c41b7a1171b0265464, type: 2}
   _effect: {fileID: 4227848502805191517}
+  _respawnPoint: {fileID: 0}
 --- !u!114 &7249564570049133734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +785,34 @@ MonoBehaviour:
   _portrait: {fileID: 2800000, guid: ae89393f4bbb62d4a8f19cbe886755d5, type: 3}
   _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   _dialogueOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &2794672765512819584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072955504408263544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa725fda20e487e888e610cf7aed769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 12f5810665fb5674d86c79cb1d51dc6a, type: 2}
+  _onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7249564570049133729}
+        m_TargetAssemblyTypeName: DualityGame.Realm.RealmController, Assembly-CSharp
+        m_MethodName: Respawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5529168563285570269
 GameObject:
   m_ObjectHideFlags: 0
