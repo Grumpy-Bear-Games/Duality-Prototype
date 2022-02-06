@@ -8,6 +8,24 @@ namespace DualityGame.Inventory
 
         public ItemType Type => _itemType;
 
+        private Vector3 _initialPosition;
+        private int _initialLayer;
+
+        private void Awake() => UpdateInitialPosition();
+
+        public void ReturnToInitialPosition()
+        {
+            transform.position = _initialPosition;
+            gameObject.layer = _initialLayer;
+            gameObject.SetActive(true);
+        }
+
+        public void UpdateInitialPosition()
+        {
+            _initialPosition = transform.position;
+            _initialLayer = gameObject.layer;
+        }
+
         public void Interact(GameObject actor)
         {
             var inventory = actor.GetComponent<Inventory>();

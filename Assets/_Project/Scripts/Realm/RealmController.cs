@@ -24,6 +24,8 @@ namespace DualityGame.Realm
             transform.position = _respawnPoint.position;
             _controller.enabled = true;
             _currentRealm.Set(_heaven);
+            var item = GetComponent<Inventory.Inventory>()?.TakeFromInventory();
+            if (item != null) item.ReturnToInitialPosition();
         }
 
         private void Awake() => _controller = GetComponent<CharacterController>();
