@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -9,6 +8,7 @@ namespace DualityGame.Realm
     public class VolumeEffect : MonoBehaviour
     {
         [SerializeField] private float duration = 2f;
+        [SerializeField] private AnimationCurve _animationCurve;
         private Volume _volume;
 
         private void Awake()
@@ -20,9 +20,11 @@ namespace DualityGame.Realm
         public IEnumerator FadeOut()
         {
             _volume.weight = 0f;
-            while (_volume.weight < 1f)
+            var time = 0f;
+            while (time < 1f)
             {
-                _volume.weight += Time.deltaTime / duration;
+                time += Time.deltaTime / duration;
+                _volume.weight = _animationCurve.Evaluate(time);
                 yield return null;
             }
         }
@@ -30,9 +32,11 @@ namespace DualityGame.Realm
         public IEnumerator FadeIn()
         {
             _volume.weight = 1f;
-            while (_volume.weight > 0f)
+            var time = 1f;
+            while (time > 0f)
             {
-                _volume.weight -= Time.deltaTime / duration;
+                time -= Time.deltaTime / duration;
+                _volume.weight = _animationCurve.Evaluate(time);
                 yield return null;
             }
         }
