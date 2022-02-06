@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ namespace DualityGame.Realm
         [SerializeField] private RealmObservable _currentRealm;
         [SerializeField] private Realm _heaven;
         [SerializeField] private Realm _hell;
+        [SerializeField] private VolumeEffect _effect;
 
         private CharacterController _controller;
         
@@ -21,8 +23,15 @@ namespace DualityGame.Realm
                 Debug.Log("Something is blocking on the other side");
                 return;
             }
-            
-            _currentRealm.Set(_otherRealm);
+
+            StartCoroutine(CO_WarpTo(_otherRealm));
+        }
+
+        private IEnumerator CO_WarpTo(Realm realm)
+        {
+            yield return _effect.FadeOut();
+            _currentRealm.Set(realm);
+            yield return _effect.FadeIn();
         }
 
 
