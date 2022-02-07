@@ -1,14 +1,16 @@
 using System.Collections;
+using DualityGame.Core;
+using DualityGame.Realm;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace DualityGame.Realm
+namespace DualityGame.Player
 {
-    public class RealmController : MonoBehaviour
+    public class RealmController : MonoBehaviour, IKillable
     {
         [SerializeField] private RealmObservable _currentRealm;
-        [SerializeField] private Realm _heaven;
-        [SerializeField] private Realm _hell;
+        [SerializeField] private Realm.Realm _heaven;
+        [SerializeField] private Realm.Realm _hell;
         [SerializeField] private VolumeEffect _effect;
 
         [Header("Respawn")]
@@ -16,9 +18,9 @@ namespace DualityGame.Realm
 
         private CharacterController _controller;
         
-        private Realm _otherRealm => _currentRealm.Value == _heaven ? _hell : _heaven;
+        private Realm.Realm _otherRealm => _currentRealm.Value == _heaven ? _hell : _heaven;
 
-        public void Respawn()
+        public void Kill()
         {
             _controller.enabled = false;
             transform.position = _respawnPoint.position;
@@ -40,7 +42,7 @@ namespace DualityGame.Realm
             StartCoroutine(CO_WarpTo(_otherRealm));
         }
 
-        private IEnumerator CO_WarpTo(Realm realm)
+        private IEnumerator CO_WarpTo(Realm.Realm realm)
         {
             yield return _effect.FadeOut();
             _currentRealm.Set(realm);
@@ -59,7 +61,7 @@ namespace DualityGame.Realm
         }
         
        
-        private void OnRealmChange(Realm newRealm) => gameObject.layer = newRealm.PlayerLayer;
+        private void OnRealmChange(Realm.Realm newRealm) => gameObject.layer = newRealm.PlayerLayer;
 
         private void OnEnable()
         {
