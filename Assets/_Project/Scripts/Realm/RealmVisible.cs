@@ -21,6 +21,7 @@ namespace DualityGame.Realm
 
         private void OnChangeRealm(Realm realm)
         {
+            if (realm == null) return;
             var visible = realm.LevelLayer == gameObject.layer;
             foreach (var renderer in _renderers) renderer.enabled = visible;
             foreach (var volume in _volumes) volume.enabled = visible;
