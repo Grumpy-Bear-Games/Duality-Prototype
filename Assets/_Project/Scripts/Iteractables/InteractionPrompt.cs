@@ -1,4 +1,4 @@
-using System;
+using DualityGame.Core;
 using TMPro;
 using UnityEngine;
 
@@ -10,14 +10,31 @@ namespace DualityGame.Iteractables
         [SerializeField] private TMP_Text _promptText;
         [SerializeField] private CanvasGroup _promptUI;
 
-        private void OnEnable() => _controller.ClosestInteractable.Subscribe(OnClosestInteractableChange);
-        private void OnDisable() => _controller.ClosestInteractable.Unsubscribe(OnClosestInteractableChange);
+        private IInteractable _interactable;
+
+        private void OnEnable()
+        {
+            _controller.ClosestInteractable.Subscribe(OnClosestInteractableChange);
+            PlayState.Current.Subscribe(EvaluatePrompt);
+        }
+
+        private void OnDisable()
+        {
+            _controller.ClosestInteractable.Unsubscribe(OnClosestInteractableChange);
+            PlayState.Current.Unsubscribe(EvaluatePrompt);
+        }
 
         private void OnClosestInteractableChange(IInteractable interactable)
         {
-            if (interactable != null)
+            _interactable = interactable;
+            EvaluatePrompt(PlayState.Current.Value);
+        }
+
+        private void EvaluatePrompt(PlayState.State playState)
+        {
+            if (_interactable != null && playState == PlayState.State.Moving)
             {
-                _promptText.text = interactable.Prompt;
+                _promptText.text = _interactable.Prompt;
                 _promptUI.alpha = 1f;
             } else {
                 _promptText.text = "";
