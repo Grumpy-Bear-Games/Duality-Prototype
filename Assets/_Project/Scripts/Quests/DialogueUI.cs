@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace DualityGame.Quests {
 
@@ -22,6 +23,7 @@ namespace DualityGame.Quests {
 		[Header("Input Options")]
 		[SerializeField] public bool _skipOnInput;
 		[SerializeField] public bool _waitForInput;
+		[SerializeField] public InputActionReference _inputAction;
 
 		//Group...
 		[Header("Subtitles")]
@@ -43,25 +45,31 @@ namespace DualityGame.Quests {
 		private bool _isWaitingChoice;
 
 		private AudioSource _localSource;
+		private bool _skip = false;
 		private AudioSource localSource => _localSource != null ? _localSource : _localSource = gameObject.AddComponent<AudioSource>();
 
-		private void OnEnable(){
+		private void OnEnable() {
 			DialogueTree.OnDialogueStarted       += OnDialogueStarted;
 			DialogueTree.OnDialoguePaused        += OnDialoguePaused;
 			DialogueTree.OnDialogueFinished      += OnDialogueFinished;
 			DialogueTree.OnSubtitlesRequest      += OnSubtitlesRequest;
 			DialogueTree.OnMultipleChoiceRequest += OnMultipleChoiceRequest;
 			_actorSpeech.onCharacterVisible.AddListener(PlayTypeSound);
+			_inputAction.action.performed += Skip;
 		}
 
-		private void OnDisable(){
+		private void OnDisable() {
 			DialogueTree.OnDialogueStarted       -= OnDialogueStarted;
 			DialogueTree.OnDialoguePaused        -= OnDialoguePaused;
 			DialogueTree.OnDialogueFinished      -= OnDialogueFinished;
 			DialogueTree.OnSubtitlesRequest      -= OnSubtitlesRequest;
 			DialogueTree.OnMultipleChoiceRequest -= OnMultipleChoiceRequest;
 			_actorSpeech.onCharacterVisible.RemoveListener(PlayTypeSound);
-			
+			_inputAction.action.performed -= Skip;
+		}
+
+		private void Skip(InputAction.CallbackContext ctx) {
+			if (ctx.phase == InputActionPhase.Performed) _skip = true;
 		}
 
 		private void Start(){
@@ -73,7 +81,7 @@ namespace DualityGame.Quests {
 		}
 
 		private void OnDialogueStarted(DialogueTree dlg){
-			//nothing special...
+			_inputAction.action.Enable();
 		}
 
 		private void OnDialoguePaused(DialogueTree dlg){
@@ -91,12 +99,10 @@ namespace DualityGame.Quests {
 				}
 			}
 			_cachedButtons = null;
+			_inputAction.action.Disable();
 		}
 
-		private void OnSubtitlesRequest(SubtitlesRequestInfo info)
-		{
-			StartCoroutine(Internal_OnSubtitlesRequestInfo(info));
-		}
+		private void OnSubtitlesRequest(SubtitlesRequestInfo info) => StartCoroutine(Internal_OnSubtitlesRequestInfo(info));
 
 		private IEnumerator Internal_OnSubtitlesRequestInfo(SubtitlesRequestInfo info){
 
@@ -120,8 +126,10 @@ namespace DualityGame.Quests {
 				_actorSpeech.useTypeWriter = false;
 				_actorSpeech.ShowText(text);
 				var timer = 0f;
-				while (timer < audio.length){
-					if (_skipOnInput && Keyboard.current.anyKey.wasPressedThisFrame){
+				_skip = false;
+				while (timer < audio.length)
+				{
+					if (_skipOnInput && _skip){
 						playSource.Stop();
 						break;
 					}
@@ -135,12 +143,10 @@ namespace DualityGame.Quests {
 				_actorSpeech.onTextShowed.AddListener(OnTextShowed);
 				_actorSpeech.ShowText(text);
 
-				while (!dialogShown)
-				{
-					if (_skipOnInput && Keyboard.current.anyKey.wasPressedThisFrame)
-					{
+				_skip = false;
+				while (!dialogShown) {
+					if (_skipOnInput && _skip) {
 						_actorSpeech.SkipTypewriter();
-						
 					}
 					yield return null;
 				}
@@ -149,9 +155,11 @@ namespace DualityGame.Quests {
 				if (!_waitForInput) yield return new WaitForSeconds(_subtitleDelays.finalDelay);
 			}
 
-			if (_waitForInput){
+			if (_waitForInput)
+			{
+				_skip = false;
 				_waitInputIndicator.gameObject.SetActive(true);
-				while(!Keyboard.current.anyKey.wasPressedThisFrame){
+				while(!_skip) {
 					yield return null;
 				}
 				_waitInputIndicator.gameObject.SetActive(false);

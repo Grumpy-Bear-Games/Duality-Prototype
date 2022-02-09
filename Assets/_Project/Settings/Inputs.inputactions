@@ -1,5 +1,5 @@
 {
-    "name": "StarterAssets",
+    "name": "Inputs",
     "maps": [
         {
             "name": "Player",
@@ -256,6 +256,34 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Dialog",
+            "id": "4d96e946-1971-448b-beb2-83d6d6128cfa",
+            "actions": [
+                {
+                    "name": "Skip",
+                    "type": "Button",
+                    "id": "d012cf4b-e6c6-412e-a099-55ec2fb443cc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2e6784d6-2e10-4ff7-8df3-c9023dbfc6a1",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

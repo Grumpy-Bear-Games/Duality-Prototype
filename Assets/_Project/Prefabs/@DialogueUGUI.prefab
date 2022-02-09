@@ -366,8 +366,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501222690cc34177a1561cab1772d4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skipOnInput: 0
-  _waitForInput: 0
+  _skipOnInput: 1
+  _waitForInput: 1
+  _inputAction: {fileID: 638637785067456906, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+    type: 3}
   _subtitlesGroup: {fileID: 590387382560422060}
   _actorSpeech: {fileID: 590387382540743169}
   _actorName: {fileID: 590387382540743179}

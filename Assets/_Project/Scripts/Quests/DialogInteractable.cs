@@ -1,3 +1,4 @@
+using DualityGame.Core;
 using DualityGame.Iteractables;
 using NodeCanvas.DialogueTrees;
 using UnityEngine;
@@ -6,10 +7,14 @@ namespace DualityGame.Quests
 {
     public class DialogInteractable : MonoBehaviour, IInteractable
     {
+        [SerializeField] private PlayState _playState;
+        
         private DialogueTreeController _controller;
+        
         private void Awake() => _controller = GetComponent<DialogueTreeController>();
         public void Interact(GameObject actor)
         {
+            
             var instigator = actor.GetComponent<DialogueActor>();
             if (instigator != null)
             {
@@ -22,5 +27,21 @@ namespace DualityGame.Quests
         }
 
         public string Prompt => $"Talk with {name}";
+        
+        private void OnEnable()
+        {
+            DialogueTree.OnDialogueStarted += SetTalking;
+            DialogueTree.OnDialogueFinished += SetMoving;
+        }
+
+        private void OnDisable()
+        {
+            DialogueTree.OnDialogueStarted -= SetTalking;
+            DialogueTree.OnDialogueFinished -= SetMoving;
+        }
+
+        private void SetMoving(DialogueTree obj) => _playState.Value = PlayState.State.Moving;
+
+        private void SetTalking(DialogueTree obj) => _playState.Value = PlayState.State.Talking;
     }
 }
