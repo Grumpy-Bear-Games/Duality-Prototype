@@ -1,5 +1,6 @@
 ﻿using StarterAssets;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 
@@ -30,6 +31,10 @@ namespace DualityGame.Player
 		public float FallTimeout = 0.15f;
 
 
+		[Header("Events")]
+		[SerializeField] private UnityEvent _onJump;
+		[SerializeField] private UnityEvent<float> _onLand;
+
 		// player
 		private float _speed;
 		private float _verticalVelocity;
@@ -41,6 +46,7 @@ namespace DualityGame.Player
 
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
+		private bool _groundedLastFrame;
 
 
 		private void Awake()
@@ -51,12 +57,17 @@ namespace DualityGame.Player
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+
+			_groundedLastFrame = _controller.isGrounded;
 		}
 
 		private void Update()
 		{
 			JumpAndGravity();
 			Move();
+
+			if (!_groundedLastFrame && _controller.isGrounded)_onLand.Invoke(_verticalVelocity);
+			_groundedLastFrame = _controller.isGrounded;
 		}
 
 		private void Move()
@@ -117,6 +128,7 @@ namespace DualityGame.Player
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+					_onJump.Invoke();
 				}
 
 				// jump timeout
