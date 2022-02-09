@@ -6,7 +6,6 @@ namespace DualityGame.Core
 {
     public class PlayStateListener : MonoBehaviour
     {
-        [SerializeField] private PlayState _playState;
         [SerializeField] private UnityEvent<PlayState.State> _onChange;
         [SerializeField] private UnityEvent _onMoving;
         [SerializeField] private UnityEvent _onTalking;
@@ -27,7 +26,7 @@ namespace DualityGame.Core
             }
         }
 
-        private void OnEnable() => _playState.Subscribe(OnChange);
-        private void OnDisable() => _playState.Unsubscribe(OnChange);
+        private void OnEnable() => PlayState.Current.Subscribe(OnChange);
+        private void OnDisable() => PlayState.Current.Unsubscribe(OnChange);
     }
 }

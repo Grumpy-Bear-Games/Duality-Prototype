@@ -1,11 +1,11 @@
-﻿using Games.GrumpyBear.Core.Observables.ScriptableObjects;
-using UnityEngine;
+﻿using Games.GrumpyBear.Core.Observables;
 
 namespace DualityGame.Core
 {
-    [CreateAssetMenu(fileName = "Play State", menuName = "Duality/Play State", order = 0)]
-    public class PlayState: Observable<PlayState.State>
+    public static class PlayState
     {
+        public static readonly Observable<State> Current = new();
+
         public enum State {
             Moving,
             Talking,

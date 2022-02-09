@@ -7,8 +7,6 @@ namespace DualityGame.Quests
 {
     public class DialogInteractable : MonoBehaviour, IInteractable
     {
-        [SerializeField] private PlayState _playState;
-        
         private DialogueTreeController _controller;
         
         private void Awake() => _controller = GetComponent<DialogueTreeController>();
@@ -40,8 +38,8 @@ namespace DualityGame.Quests
             DialogueTree.OnDialogueFinished -= SetMoving;
         }
 
-        private void SetMoving(DialogueTree obj) => _playState.Value = PlayState.State.Moving;
+        private void SetMoving(DialogueTree obj) => PlayState.Current.Value = PlayState.State.Moving;
 
-        private void SetTalking(DialogueTree obj) => _playState.Value = PlayState.State.Talking;
+        private void SetTalking(DialogueTree obj) => PlayState.Current.Value = PlayState.State.Talking;
     }
 }
