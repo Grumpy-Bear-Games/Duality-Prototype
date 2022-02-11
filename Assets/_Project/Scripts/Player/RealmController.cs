@@ -12,6 +12,7 @@ namespace DualityGame.Player
         [SerializeField] private Realm.Realm _heaven;
         [SerializeField] private Realm.Realm _hell;
         [SerializeField] private VolumeEffect _effect;
+        [SerializeField] private Inventory.Inventory _inventory;
 
         [Header("Respawn")]
         [SerializeField] private Transform _respawnPoint;
@@ -26,7 +27,7 @@ namespace DualityGame.Player
             transform.position = _respawnPoint.position;
             _controller.enabled = true;
             _currentRealm.Set(_heaven);
-            var item = GetComponent<Inventory.Inventory>()?.TakeFromInventory();
+            var item = _inventory.TakeItem();
             if (item != null) item.ReturnToInitialPosition();
         }
 

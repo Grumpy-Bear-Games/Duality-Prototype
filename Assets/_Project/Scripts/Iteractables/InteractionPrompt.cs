@@ -6,21 +6,21 @@ namespace DualityGame.Iteractables
 {
     public class InteractionPrompt : MonoBehaviour
     {
-        [SerializeField] private InteractController _controller;
         [SerializeField] private TMP_Text _promptText;
         [SerializeField] private CanvasGroup _promptUI;
+        [SerializeField] private InteractableObservable _closestInteractable;
 
         private IInteractable _interactable;
 
         private void OnEnable()
         {
-            _controller.ClosestInteractable.Subscribe(OnClosestInteractableChange);
+            _closestInteractable.Subscribe(OnClosestInteractableChange);
             PlayState.Current.Subscribe(EvaluatePrompt);
         }
 
         private void OnDisable()
         {
-            _controller.ClosestInteractable.Unsubscribe(OnClosestInteractableChange);
+            _closestInteractable.Unsubscribe(OnClosestInteractableChange);
             PlayState.Current.Unsubscribe(EvaluatePrompt);
         }
 
@@ -46,7 +46,6 @@ namespace DualityGame.Iteractables
         {
             _promptText = GetComponentInChildren<TMP_Text>();
             _promptUI = GetComponentInChildren<CanvasGroup>();
-            _controller = FindObjectOfType<InteractController>();
         }
     }
 }

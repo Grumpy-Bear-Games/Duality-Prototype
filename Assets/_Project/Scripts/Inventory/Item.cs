@@ -28,7 +28,7 @@ namespace DualityGame.Inventory
 
         public void Interact(GameObject actor)
         {
-            var inventory = actor.GetComponent<Inventory>();
+            var inventory = actor.GetComponent<InventoryController>();
             if (inventory == null) return;
             
             inventory.PickupItem(this);

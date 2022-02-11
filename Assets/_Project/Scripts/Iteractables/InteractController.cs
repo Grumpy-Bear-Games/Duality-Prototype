@@ -10,9 +10,7 @@ namespace DualityGame.Iteractables
         [SerializeField] private float _radius = 3f;
         [SerializeField] private UnityEvent _onUse;
         [SerializeField] private RealmObservable _realm;
-
-        public IReadonlyObservable<IInteractable> ClosestInteractable => _closestInteractable;
-        private readonly Observable<IInteractable> _closestInteractable = new();
+        [SerializeField] private InteractableObservable _closestInteractable;
 
         private void FixedUpdate()
         {

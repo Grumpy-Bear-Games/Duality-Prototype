@@ -145,9 +145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b23188b670dab40a077d54c1893b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller: {fileID: 5561121506490950083}
   _promptText: {fileID: 7905219931637234949}
   _promptUI: {fileID: 2821055208238049471}
+  _closestInteractable: {fileID: 11400000, guid: 9ad5e19dd98945f48a42c954e9cc8ab8,
+    type: 2}
 --- !u!1 &1329439461792012172
 GameObject:
   m_ObjectHideFlags: 0
@@ -5680,6 +5681,7 @@ MonoBehaviour:
   _heaven: {fileID: 11400000, guid: 6e2678d65c1d2e046b0cb3fb66e5bb67, type: 2}
   _hell: {fileID: 11400000, guid: b4d6229eae5dd0c41b7a1171b0265464, type: 2}
   _effect: {fileID: 4227848502805191517}
+  _inventory: {fileID: 11400000, guid: b3a3004a12463514e823eaba6018cf4c, type: 2}
   _respawnPoint: {fileID: 0}
 --- !u!114 &7249564570049133734
 MonoBehaviour:
@@ -5759,6 +5761,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _realm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
+  _closestInteractable: {fileID: 11400000, guid: 9ad5e19dd98945f48a42c954e9cc8ab8,
+    type: 2}
 --- !u!114 &5561121506490950080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5772,6 +5776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _realm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
+  _inventory: {fileID: 11400000, guid: b3a3004a12463514e823eaba6018cf4c, type: 2}
 --- !u!114 &5235687072971731518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5800,7 +5805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdf2755ddb446ab8a3c55a9dbf8341c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playState: {fileID: 11400000, guid: b21aa4c9cc0cc1b4f8b20e798f063357, type: 2}
   _onChange:
     m_PersistentCalls:
       m_Calls: []
@@ -6045,7 +6049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9783504ab0c5472881f1ec94cf3b5056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventory: {fileID: 5561121506490950080}
+  _inventory: {fileID: 11400000, guid: b3a3004a12463514e823eaba6018cf4c, type: 2}
   _image: {fileID: 7249564571020970097}
 --- !u!1 &7249564570797099674
 GameObject:
