@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Febucci.UI;
@@ -47,6 +48,10 @@ namespace DualityGame.Quests {
 		private AudioSource _localSource;
 		private bool _skip = false;
 		private AudioSource localSource => _localSource != null ? _localSource : _localSource = gameObject.AddComponent<AudioSource>();
+
+		private TMP_FontAsset _defaultFont;
+
+		private void Awake() => _defaultFont = _actorSpeech.textAnimator.tmproText.font;
 
 		private void OnEnable() {
 			DialogueTree.OnDialogueStarted       += OnDialogueStarted;
@@ -117,6 +122,17 @@ namespace DualityGame.Quests {
 			
 			_actorPortrait.gameObject.SetActive( actor.portraitSprite != null );
 			_actorPortrait.sprite = actor.portraitSprite;
+
+			var extendedDialogActor = actor as ExtendedDialogActor;
+			if (extendedDialogActor != null)
+			{
+				var font = extendedDialogActor.Font ? extendedDialogActor.Font : _defaultFont;
+				_actorSpeech.textAnimator.tmproText.font = font;
+			}
+			else
+			{
+				_actorSpeech.textAnimator.tmproText.font = _defaultFont;
+			}
 
 			if (audio != null){
 				var actorSource = actor.transform != null? actor.transform.GetComponent<AudioSource>() : null;
@@ -210,7 +226,7 @@ namespace DualityGame.Quests {
 			}
 		}
 
-		IEnumerator CountDown(MultipleChoiceRequestInfo info){
+		private IEnumerator CountDown(MultipleChoiceRequestInfo info){
 			_isWaitingChoice = true;
 			var timer = 0f;
 			while (timer < info.availableTime){
@@ -227,7 +243,7 @@ namespace DualityGame.Quests {
 			}
 		}
 
-		void Finalize(MultipleChoiceRequestInfo info, int index){
+		private void Finalize(MultipleChoiceRequestInfo info, int index){
 			_isWaitingChoice = false;
 			SetMassAlpha(_optionsGroup, 1f);
 			_optionsGroup.gameObject.SetActive(false);
@@ -241,7 +257,7 @@ namespace DualityGame.Quests {
 			info.SelectOption(index);
 		}
 
-		void SetMassAlpha(RectTransform root, float alpha){
+		private void SetMassAlpha(RectTransform root, float alpha){
 			foreach(var graphic in root.GetComponentsInChildren<CanvasRenderer>()){
 				graphic.SetAlpha(alpha);
 			}
