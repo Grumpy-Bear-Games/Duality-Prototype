@@ -34317,6 +34317,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5097421238033646367, guid: 5b264c37049844a479c100bedb9914f5,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3b7de7405b94571498346c8d9cee220a,
+        type: 2}
+    - target: {fileID: 5097421238033646367, guid: 5b264c37049844a479c100bedb9914f5,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8627454142921384562, guid: 3b7de7405b94571498346c8d9cee220a,
+        type: 2}
     - target: {fileID: 7422285978626791806, guid: 5b264c37049844a479c100bedb9914f5,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -34556,7 +34568,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 1
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 1
   m_Dithering: 0
@@ -34668,7 +34680,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32198
+  m_Name: pb_Mesh31474
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -34934,7 +34946,7 @@ GameObject:
   - component: {fileID: 579896786}
   - component: {fileID: 579896787}
   - component: {fileID: 579896789}
-  - component: {fileID: 579896785}
+  - component: {fileID: 579896790}
   - component: {fileID: 579896784}
   - component: {fileID: 579896783}
   - component: {fileID: 579896788}
@@ -34994,17 +35006,17 @@ MonoBehaviour:
   _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"conditions":[{"valueA":{"_type":"System.Enum","_name":"Quest","_targetVariableID":"60b46b47-379a-4ad7-abbb-f3fa3ffd772d"},"valueB":{"_type":"DualityGame.Quests.QuestState","_value":{"$content":0,"$type":"DualityGame.Quests.QuestState"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_type":"System.Enum","_name":"Quest","_targetVariableID":"60b46b47-379a-4ad7-abbb-f3fa3ffd772d"},"valueB":{"_type":"DualityGame.Quests.QuestState","_value":{"$content":2,"$type":"DualityGame.Quests.QuestState"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"_inventory":{"_name":"Player
     Inventory","_targetVariableID":"cb47b7e9-46f7-419b-b4dd-324fea9b3008"},"_item":{"_name":"Requested
     Item","_targetVariableID":"a2a8a793-9091-4488-a7ea-4b61f49b333f"},"$type":"DualityGame.Quests.InventoryContainsItem"},null],"_position":{"x":532.0,"y":235.0},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"0"},{"statement":{"_text":"Hello,
-    good sir!"},"_position":{"x":221.0,"y":447.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"Oh,
-    it''s you...."},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":221.0,"y":556.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"_action":{"actions":[{"statement":{"_text":"Could
-    you please find my <b>[Requested Item]</b>?"},"$type":"NodeCanvas.Tasks.Actions.Say"},{"valueA":{"_type":"System.Enum","_name":"Quest","_targetVariableID":"60b46b47-379a-4ad7-abbb-f3fa3ffd772d"},"valueB":{"_type":"DualityGame.Quests.QuestState","_value":{"$content":1,"$type":"DualityGame.Quests.QuestState"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":170.0,"y":662.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"3"},{"statement":{"_text":"I
-    think we''re done here. Move along!"},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":424.0,"y":590.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"_action":{"actions":[{"statement":{"_text":"Ah
+    good sir!"},"_position":{"x":221.0,"y":447.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"<font=\"Dante\">Oh,
+    it''s you...."},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":174.0,"y":558.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"_action":{"actions":[{"statement":{"_text":"<font=\"Dante\">Could
+    you please find my <b>[Requested Item]</b>?"},"$type":"NodeCanvas.Tasks.Actions.Say"},{"valueA":{"_type":"System.Enum","_name":"Quest","_targetVariableID":"60b46b47-379a-4ad7-abbb-f3fa3ffd772d"},"valueB":{"_type":"DualityGame.Quests.QuestState","_value":{"$content":1,"$type":"DualityGame.Quests.QuestState"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":170.0,"y":662.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"3"},{"statement":{"_text":"<font=\"Dante\">I
+    think we''re done here. Move along!"},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":424.0,"y":590.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"_action":{"actions":[{"statement":{"_text":"<font=\"Dante\">Ah
     good! You found my <b>[Requested Item]</b>! Thank you!"},"$type":"NodeCanvas.Tasks.Actions.Say"},{"_inventory":{"_name":"Player
-    Inventory","_targetVariableID":"cb47b7e9-46f7-419b-b4dd-324fea9b3008"},"_saveAs":{"_name":""},"$type":"DualityGame.Quests.InventoryTake"},{"valueA":{"_type":"System.Enum","_name":"Quest","_targetVariableID":"60b46b47-379a-4ad7-abbb-f3fa3ffd772d"},"valueB":{"_type":"DualityGame.Quests.QuestState","_value":{"$content":2,"$type":"DualityGame.Quests.QuestState"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":686.0,"y":601.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"5"},{"statement":{"_text":"What
+    Inventory","_targetVariableID":"cb47b7e9-46f7-419b-b4dd-324fea9b3008"},"_saveAs":{"_name":""},"$type":"DualityGame.Quests.InventoryTake"},{"valueA":{"_type":"System.Enum","_name":"Quest","_targetVariableID":"60b46b47-379a-4ad7-abbb-f3fa3ffd772d"},"valueB":{"_type":"DualityGame.Quests.QuestState","_value":{"$content":2,"$type":"DualityGame.Quests.QuestState"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":686.0,"y":601.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"5"},{"statement":{"_text":"<font=\"Dante\">What
     are you waiting for?"},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":1035.0,"y":534.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{"Quest":{"_name":"Quest","_id":"60b46b47-379a-4ad7-abbb-f3fa3ffd772d","$type":"NodeCanvas.Framework.Variable`1[[DualityGame.Quests.QuestState,
     Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"actorParameters":[{"_keyName":"NPC","_id":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
-  - {fileID: 579896785}
+  - {fileID: 579896784}
   _boundGraphSource:
     _version: 3.22
     _category: 
@@ -35019,22 +35031,6 @@ MonoBehaviour:
   _updateMode: 0
   _graph: {fileID: 0}
   _blackboard: {fileID: 579896783}
---- !u!114 &579896785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579896782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d71fb7c52372e244baf2e69a9d0d116, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: NPC
-  _portrait: {fileID: 2800000, guid: 71870f114b12deb4e8621be771a25c41, type: 3}
-  _dialogueColor: {r: 0, g: 0.9003701, b: 1, a: 1}
-  _dialogueOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &579896786
 Transform:
   m_ObjectHideFlags: 0
@@ -35090,6 +35086,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentRealm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
+--- !u!114 &579896790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579896782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d71fb7c52372e244baf2e69a9d0d116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: NPC
+  _portrait: {fileID: 2800000, guid: 71870f114b12deb4e8621be771a25c41, type: 3}
+  _dialogueColor: {r: 0, g: 0.90196085, b: 1, a: 1}
+  _dialogueOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &871150934
 GameObject:
   m_ObjectHideFlags: 0
