@@ -8,26 +8,72 @@ namespace DualityGame.Core
     [RequireComponent(typeof(MeshRenderer))]
     public class VisionCone : MonoBehaviour
     {
+        [SerializeField] private MeshFilter _meshFilter;
+        [SerializeField] private Transform _center;
+        
+        [Header("Vision cone")]
         [SerializeField] private float _range = 1f;
         [SerializeField, Range(0, 180)] private float _fov = 45;
         [SerializeField, Delayed, Range(1, 60)] private int _precision = 2;
         [SerializeField] private LayerMask _layerMask;
+        
 
-        private Transform _transform;
-        private MeshFilter _meshFilter;
-        private float _timer;
+        #region Properties
+        public float Range
+        {
+            get => _range;
+            set
+            {
+                _range = value;
+                _meshFilter.mesh.Clear();
+            }
+        }
+        
+        public float FOV
+        {
+            get => _fov;
+            set
+            {
+                _fov = value;
+                _meshFilter.mesh.Clear();
+            }
+        }
+        
+        public int Precision
+        {
+            get => _precision;
+            set
+            {
+                _precision = value;
+                _meshFilter.mesh.Clear();
+            }
+        }
+
+        public LayerMask LayerMask
+        {
+            get => _layerMask;
+            set
+            {
+                _layerMask = value;
+                UpdateVisionCone(_meshFilter.mesh);
+            }
+        }
+        #endregion
+
+        
         private readonly List<Vector3> _originalVertices = new();
     
         private void Awake()
         {
-            _transform = transform;
-            _meshFilter = GetComponent<MeshFilter>();
             if (_meshFilter.mesh == null) _meshFilter.mesh = new Mesh();
             InitMesh(_meshFilter.mesh);
         }
 
-
-        private void LateUpdate() => UpdateVisionCone(_meshFilter.mesh);
+        private void LateUpdate()
+        {
+            if (_meshFilter.mesh.vertexCount == 0) InitMesh(_meshFilter.mesh);
+            UpdateVisionCone(_meshFilter.mesh);
+        }
 
         private void InitMesh(Mesh mesh)
         {
@@ -68,22 +114,9 @@ namespace DualityGame.Core
             mesh.triangles = triangles.ToArray();
         }
 
-        private void OnValidate()
-        {
-#if UNITY_EDITOR
-            if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) return;
-#endif
-            _transform = transform;
-            _meshFilter = GetComponent<MeshFilter>();
-            if (_meshFilter.sharedMesh == null) _meshFilter.sharedMesh = new Mesh();
-
-            InitMesh(_meshFilter.sharedMesh);
-            UpdateVisionCone(_meshFilter.sharedMesh);
-        }
-
         private void UpdateVisionCone(Mesh mesh)
         {
-            var pos = _transform.position;
+            var pos = _center.position;
             var vertices = new List<Vector3> { Vector3.zero };
             var uv = new List<Vector2> { Vector2.zero };
             for (var i=0; i<_originalVertices.Count; i++) {
@@ -95,7 +128,7 @@ namespace DualityGame.Core
                     continue;
                 }
 
-                var ray = _transform.rotation * vertex;
+                var ray = _center.rotation * vertex;
                 if (Physics.Raycast(pos, ray, out var hit, _range, _layerMask))
                 {
                     vertices.Add(vertex.normalized * hit.distance);
@@ -115,6 +148,23 @@ namespace DualityGame.Core
             mesh.vertices = vertices.ToArray();
             mesh.uv = uv.ToArray();
             mesh.RecalculateBounds();
+        }
+
+        private void OnValidate()
+        {
+#if UNITY_EDITOR
+            if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) return;
+#endif
+            if (_meshFilter.sharedMesh == null) _meshFilter.sharedMesh = new Mesh();
+
+            InitMesh(_meshFilter.sharedMesh);
+            UpdateVisionCone(_meshFilter.sharedMesh);
+        }
+        
+        private void Reset()
+        {
+            _center = transform;
+            _meshFilter = GetComponent<MeshFilter>();
         }
     }
 }
