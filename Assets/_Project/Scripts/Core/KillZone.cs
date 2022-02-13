@@ -1,15 +1,20 @@
-﻿using DualityGame.Player;
-using Games.GrumpyBear.Core.Events;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace DualityGame.Core
 {
     public class KillZone : MonoBehaviour
     {
+        [SerializeField] private UnityEvent _onKill;
+        
         private void OnTriggerEnter(Collider other)
         {
-            var killable = other.GetComponent<IKillable>(); 
-            if (killable != null) killable.Kill();
+            var killable = other.GetComponent<IKillable>();
+            if (killable != null)
+            {
+                _onKill.Invoke();
+                killable.Kill();
+            }
         }
     }
 }

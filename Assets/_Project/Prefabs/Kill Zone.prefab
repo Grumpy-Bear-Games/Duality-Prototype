@@ -58,4 +58,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4794af84605447828e10dd04a4fc37b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _killPlayer: {fileID: 11400000, guid: 12f5810665fb5674d86c79cb1d51dc6a, type: 2}
+  _onKill:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c0c07ce96953f3e47aa11a556b74b2af, type: 2}
+        m_TargetAssemblyTypeName: Games.GrumpyBear.Core.Observables.ScriptableObjects.Observable`1[[System.String,
+          mscorlib
+        m_MethodName: Set
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: You fell into the Abyss!
+          m_BoolArgument: 0
+        m_CallState: 2

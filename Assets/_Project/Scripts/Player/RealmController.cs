@@ -17,6 +17,7 @@ namespace DualityGame.Player
 
         [Header("VFX")]
         [SerializeField] private VFXFadeTrigger _warpVFX;
+        [SerializeField] private VFXFadeTrigger _fadeVFX;
         
         [Header("Respawn")]
         [SerializeField] private Transform _respawnPoint;
@@ -25,14 +26,19 @@ namespace DualityGame.Player
         
         private Realm.Realm _otherRealm => _currentRealm.Value == _heaven ? _hell : _heaven;
 
-        public void Kill()
+        public void Kill() => StartCoroutine(CO_Kill());
+
+        private IEnumerator CO_Kill()
         {
+            yield return _fadeVFX.Execute(IVFXFadeEffect.Direction.FadeOut);
             _controller.enabled = false;
             transform.position = _respawnPoint.position;
             _controller.enabled = true;
             _currentRealm.Set(_heaven);
             var item = _inventory.TakeItem();
             if (item != null) item.ReturnToInitialPosition();
+            yield return new WaitForSeconds(3f);
+            yield return _fadeVFX.Execute(IVFXFadeEffect.Direction.FadeIn);
         }
 
         private void Awake() => _controller = GetComponent<CharacterController>();
