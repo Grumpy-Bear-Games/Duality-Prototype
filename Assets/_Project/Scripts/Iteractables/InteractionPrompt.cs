@@ -32,7 +32,7 @@ namespace DualityGame.Iteractables
 
         private void EvaluatePrompt(PlayState.State playState)
         {
-            if (_interactable != null && playState == PlayState.State.Moving)
+            if (_interactable != null && playState == PlayState.State.Moving && !string.IsNullOrEmpty(_interactable.Prompt))
             {
                 _promptText.text = _interactable.Prompt;
                 _promptUI.alpha = 1f;
