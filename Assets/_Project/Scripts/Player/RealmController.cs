@@ -1,6 +1,8 @@
 using System.Collections;
 using DualityGame.Core;
 using DualityGame.Realm;
+using DualityGame.VFX;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,9 +13,11 @@ namespace DualityGame.Player
         [SerializeField] private RealmObservable _currentRealm;
         [SerializeField] private Realm.Realm _heaven;
         [SerializeField] private Realm.Realm _hell;
-        [SerializeField] private VolumeEffect _effect;
         [SerializeField] private Inventory.Inventory _inventory;
 
+        [Header("VFX")]
+        [SerializeField] private VFXFadeTrigger _warpVFX;
+        
         [Header("Respawn")]
         [SerializeField] private Transform _respawnPoint;
 
@@ -33,6 +37,7 @@ namespace DualityGame.Player
 
         private void Awake() => _controller = GetComponent<CharacterController>();
 
+        [UsedImplicitly]
         private void OnWarp(InputValue value)
         {
             if (IsOtherRealmBlocked(transform.position)) {
@@ -45,11 +50,10 @@ namespace DualityGame.Player
 
         private IEnumerator CO_WarpTo(Realm.Realm realm)
         {
-            yield return _effect.FadeOut();
+            yield return _warpVFX.Execute(IVFXFadeEffect.Direction.FadeOut);
             _currentRealm.Set(realm);
-            yield return _effect.FadeIn();
+            yield return _warpVFX.Execute(IVFXFadeEffect.Direction.FadeIn);
         }
-
 
         private bool IsOtherRealmBlocked(Vector3 position)
         {
