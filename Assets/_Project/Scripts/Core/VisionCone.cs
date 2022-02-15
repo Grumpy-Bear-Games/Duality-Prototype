@@ -16,17 +16,12 @@ namespace DualityGame.Core
         [SerializeField, Range(0, 180)] private float _fov = 45;
         [SerializeField, Delayed, Range(1, 60)] private int _precision = 2;
         [SerializeField] private LayerMask _layerMask;
-        
 
         #region Properties
         public float Range
         {
             get => _range;
-            set
-            {
-                _range = value;
-                _meshFilter.mesh.Clear();
-            }
+            set => _range = value;
         }
         
         public float FOV
@@ -35,7 +30,7 @@ namespace DualityGame.Core
             set
             {
                 _fov = value;
-                _meshFilter.mesh.Clear();
+                RecalculateOriginalVertices();
             }
         }
         
@@ -44,110 +39,95 @@ namespace DualityGame.Core
             get => _precision;
             set
             {
+                if (value < 1) return;
                 _precision = value;
-                _meshFilter.mesh.Clear();
+                InitializeMesh();
             }
         }
 
         public LayerMask LayerMask
         {
             get => _layerMask;
-            set
-            {
-                _layerMask = value;
-                UpdateVisionCone(_meshFilter.mesh);
-            }
+            set => _layerMask = value;
         }
         #endregion
 
-        
-        private readonly List<Vector3> _originalVertices = new();
-    
+        private Mesh _mesh;
+        private Vector3[] _normalizedVertices;
+
         private void Awake()
         {
-            if (_meshFilter.mesh == null) _meshFilter.mesh = new Mesh();
-            InitMesh(_meshFilter.mesh);
+            _mesh = new Mesh();
+            _meshFilter.mesh = _mesh;
+            
+            InitializeMesh();
         }
 
-        private void LateUpdate()
-        {
-            if (_meshFilter.mesh.vertexCount == 0) InitMesh(_meshFilter.mesh);
-            UpdateVisionCone(_meshFilter.mesh);
-        }
+        private void LateUpdate() => UpdateVisionCone();
 
-        private void InitMesh(Mesh mesh)
+        private void RecalculateOriginalVertices()
         {
-            if (_precision < 1) return;
-        
-            _originalVertices.Clear();
-        
-            var triangles = new List<int>();
-            var normals = new List<Vector3>();
-            var uv = new List<Vector2>();
-        
-            _originalVertices.Add(Vector3.zero);
-            normals.Add(Vector3.up);
-            uv.Add(Vector2.zero);
-
-            var dir = Vector3.forward * _range;
-        
+            if (_normalizedVertices == null) return;
+            _normalizedVertices[0] = Vector3.zero;
             for (var i = 0; i < _precision + 1; i++)
             {
                 var start = -_fov / 2;
+                _normalizedVertices[i+1] = Quaternion.AngleAxis(start + i * (_fov / _precision), Vector3.up) * Vector3.forward;
+            }
+        }
 
-                _originalVertices.Add(Quaternion.AngleAxis(start + i * (_fov / _precision), Vector3.up) * dir);
-                normals.Add(Vector3.up);
-                uv.Add(Vector2.right);
+        private void InitializeMesh()
+        {
+            _normalizedVertices = new Vector3[_precision + 2];
+            RecalculateOriginalVertices();
+            
+            var triangles = new int[_precision * 3];
+            var normals = new Vector3[_precision + 2];
+            var uv = new Vector2[_precision + 2];
+            
+            for (var i = 0; i < _precision + 2; i++)
+            {
+                normals[i] = Vector3.up;
             }
 
             for (var i = 0; i < _precision; i++)
             {
-                triangles.Add(0);
-                triangles.Add(i + 1);
-                triangles.Add(i + 2);
+                triangles[i*3] = 0;
+                triangles[i*3 + 1] = i + 1;
+                triangles[i*3 + 2] = i + 2;
             }
 
-            mesh.Clear();
-            mesh.vertices = _originalVertices.ToArray();
-            mesh.normals = normals.ToArray();
-            mesh.uv = uv.ToArray();
-            mesh.triangles = triangles.ToArray();
+            _mesh.Clear();
+            _mesh.vertices = _normalizedVertices;
+            _mesh.uv = uv;
+            _mesh.normals = normals;
+            _mesh.triangles = triangles;
         }
 
-        private void UpdateVisionCone(Mesh mesh)
+        private void UpdateVisionCone()
         {
             var pos = _center.position;
-            var vertices = new List<Vector3> { Vector3.zero };
-            var uv = new List<Vector2> { Vector2.zero };
-            for (var i=0; i<_originalVertices.Count; i++) {
-                var vertex = _originalVertices[i];
-                if (i == 0)
-                {
-                    vertices.Add(vertex);
-                    uv.Add(Vector2.zero);
-                    continue;
-                }
 
-                var ray = _center.rotation * vertex;
+            var vertices = _mesh.vertices;
+            var uv = _mesh.uv;
+            
+            for (var i=1; i<vertices.Length; i++) {
+                var ray = _center.rotation * vertices[i];
                 if (Physics.Raycast(pos, ray, out var hit, _range, _layerMask))
                 {
-                    vertices.Add(vertex.normalized * hit.distance);
-                    uv.Add(Vector2.right * (hit.distance / _range));
-                    if (hit.transform.CompareTag("Player"))
-                    {
-                        Debug.Log("Player spotted!");
-                    }
+                    vertices[i] = _normalizedVertices[i] * hit.distance;
+                    uv[i] = Vector2.right * (hit.distance / _range);
                 }
                 else
                 {
-                    vertices.Add(vertex);
-                    uv.Add(Vector2.right);
+                    vertices[i] = _normalizedVertices[i] * _range;
+                    uv[i] = Vector2.right;
                 }
             }
 
-            mesh.vertices = vertices.ToArray();
-            mesh.uv = uv.ToArray();
-            mesh.RecalculateBounds();
+            _mesh.vertices = vertices;
+            _mesh.uv = uv;
+            _mesh.RecalculateBounds();
         }
 
         private void OnValidate()
@@ -156,9 +136,10 @@ namespace DualityGame.Core
             if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) return;
 #endif
             if (_meshFilter.sharedMesh == null) _meshFilter.sharedMesh = new Mesh();
+            _mesh = _meshFilter.sharedMesh;
 
-            InitMesh(_meshFilter.sharedMesh);
-            UpdateVisionCone(_meshFilter.sharedMesh);
+            InitializeMesh();
+            UpdateVisionCone();
         }
         
         private void Reset()
