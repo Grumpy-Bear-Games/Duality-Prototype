@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace DualityGame.Core
@@ -21,9 +19,15 @@ namespace DualityGame.Core
         public float Range
         {
             get => _range;
-            set => _range = value;
+            set
+            {
+                _range = value;
+#if UNITY_EDITOR
+                if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) UpdateVisionCone();
+#endif
+            }
         }
-        
+
         public float FOV
         {
             get => _fov;
@@ -31,6 +35,9 @@ namespace DualityGame.Core
             {
                 _fov = value;
                 RecalculateOriginalVertices();
+#if UNITY_EDITOR
+                if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) UpdateVisionCone();
+#endif
             }
         }
         
@@ -106,6 +113,7 @@ namespace DualityGame.Core
 
         private void UpdateVisionCone()
         {
+            if (_mesh == null) return;
             var pos = _center.position;
 
             var vertices = _mesh.vertices;
@@ -135,9 +143,8 @@ namespace DualityGame.Core
 #if UNITY_EDITOR
             if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) return;
 #endif
-            if (_meshFilter.sharedMesh == null) _meshFilter.sharedMesh = new Mesh();
-            _mesh = _meshFilter.sharedMesh;
-
+            _mesh ??= new Mesh();
+            _meshFilter.mesh = _mesh;
             InitializeMesh();
             UpdateVisionCone();
         }
