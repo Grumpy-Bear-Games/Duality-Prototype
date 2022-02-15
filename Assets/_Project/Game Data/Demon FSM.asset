@@ -18,13 +18,17 @@ MonoBehaviour:
     View Angle","_targetVariableID":"daf34e35-a041-4334-a2ef-1f526b4c63dc"},"overrideAgent":{"_type":"DualityGame.Core.VisionCone","_name":"Vision
     Cone","_targetVariableID":"fd649c74-2186-4377-87b3-eaa902e563ef"},"$type":"NodeCanvas.Tasks.Actions.SetProperty_Multiplatform"},{"targetList":{"_name":"Waypoints","_targetVariableID":"2dbfcd0b-9289-414d-b15d-0bcdddcf7998"},"patrolMode":{"_value":1},"speed":{"_name":"Patrolling
     Speed","_targetVariableID":"1858e381-825a-458e-ab14-0f81412158dc"},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.Patrol"},{"waitTime":{"_name":"Wait
-    at each waypoint","_targetVariableID":"dee9fbef-8ebb-48e8-9a31-ecd7692d4180"},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_repeatStateActions":true,"_name":"Patroling","_position":{"x":596.0,"y":155.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"method":{"_baseInfo":"DualityGame.Core.VisionCone|set_Range|System.Void","_paramsInfo":"System.Single"},"parameter":{"_type":"System.Single","_name":"Chase
+    at each waypoint","_targetVariableID":"dee9fbef-8ebb-48e8-9a31-ecd7692d4180"},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"renderer":{"_name":"Vision
+    Cone Renderer","_targetVariableID":"5f29c3a8-95f7-4545-911b-a8a73ae41ea3"},"propertyName":{"_value":"_Color"},"color":{"_name":"Patrolling
+    Vision Color","_targetVariableID":"2b064b02-9089-4332-95ad-5ab1546f9c0d"},"$type":"DualityGame.Core.SetMaterialColor"}]},"_repeatStateActions":true,"_name":"Patroling","_position":{"x":596.0,"y":155.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"method":{"_baseInfo":"DualityGame.Core.VisionCone|set_Range|System.Void","_paramsInfo":"System.Single"},"parameter":{"_type":"System.Single","_name":"Chase
     View Distance","_targetVariableID":"1f57e903-8d87-4f5c-a576-7ce63cade292"},"overrideAgent":{"_type":"DualityGame.Core.VisionCone","_name":"Vision
     Cone","_targetVariableID":"fd649c74-2186-4377-87b3-eaa902e563ef"},"$type":"NodeCanvas.Tasks.Actions.SetProperty_Multiplatform"},{"method":{"_baseInfo":"DualityGame.Core.VisionCone|set_FOV|System.Void","_paramsInfo":"System.Single"},"parameter":{"_type":"System.Single","_name":"Chase
     View Angle","_targetVariableID":"20a7938b-82cf-4174-aa4d-0e883612a76e"},"overrideAgent":{"_type":"DualityGame.Core.VisionCone","_name":"Vision
     Cone","_targetVariableID":"fd649c74-2186-4377-87b3-eaa902e563ef"},"$type":"NodeCanvas.Tasks.Actions.SetProperty_Multiplatform"},{"log":{"_value":"Found
     him!"},"verboseMode":2,"$type":"NodeCanvas.Tasks.Actions.DebugLogText"},{"target":{"_name":"Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"speed":{"_name":"Chase
-    Speed","_targetVariableID":"95714651-2b71-44e4-a59f-abe60eca6e13"},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.MoveToGameObject"}]},"_name":"Chasing","_position":{"x":397.0,"y":552.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"log":{"_value":"Where
+    Speed","_targetVariableID":"95714651-2b71-44e4-a59f-abe60eca6e13"},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.MoveToGameObject"},{"renderer":{"_name":"Vision
+    Cone Renderer","_targetVariableID":"5f29c3a8-95f7-4545-911b-a8a73ae41ea3"},"propertyName":{"_value":"_Color"},"color":{"_name":"Chasing
+    Vision Color","_targetVariableID":"ae48407d-a46c-4653-9ee1-8284efdccae2"},"$type":"DualityGame.Core.SetMaterialColor"}]},"_name":"Chasing","_position":{"x":397.0,"y":552.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"log":{"_value":"Where
     did he go?!?!"},"$type":"NodeCanvas.Tasks.Actions.DebugLogText"}]},"_name":"Lost
     Player","_position":{"x":819.0,"y":404.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"target":{"_name":"Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"speed":{"_value":2.0},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.MoveToGameObject"}]},"_name":"Chasing
     (Out-of-sight)","_position":{"x":214.0,"y":711.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"}],"connections":[{"_condition":{"conditions":[{"targetLayers":{"_name":"PlayerLayer","_targetVariableID":"4c532c5f-3404-4e80-a146-b6b2ce51e315"},"overrideAgent":{"_type":"UnityEngine.Transform","_name":"Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"$type":"NodeCanvas.Tasks.Conditions.IsWithinLayerMask"},{"target":{"_name":"Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"maxDistance":{"_name":"Patrolling
@@ -49,7 +53,10 @@ MonoBehaviour:
     View Angle":{"_value":90.0,"_name":"Patrolling View Angle","_id":"daf34e35-a041-4334-a2ef-1f526b4c63dc","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Patrolling
     Awarness Distance":{"_value":2.0,"_name":"Patrolling Awarness Distance","_id":"337baa31-3100-42eb-a9c1-c3451c28f014","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Chasing":{"_value":{},"_name":"Chasing","_id":"f8fc09d8-f3e0-4adc-9bd5-7610b2e6834f","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Patrolling
+    Vision Color":{"_value":{"r":1.0,"g":1.0,"a":0.07058824},"_name":"Patrolling
+    Vision Color","_id":"2b064b02-9089-4332-95ad-5ab1546f9c0d","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Color,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Chasing":{"_value":{},"_name":"Chasing","_id":"f8fc09d8-f3e0-4adc-9bd5-7610b2e6834f","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
     ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Chase
     Speed":{"_value":4.0,"_name":"Chase Speed","_id":"95714651-2b71-44e4-a59f-abe60eca6e13","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Chase
@@ -60,7 +67,10 @@ MonoBehaviour:
     Awarness Distance":{"_value":3.0,"_name":"Chase Awarness Distance","_id":"848c9346-cb4c-4ea7-a825-2d66eb5326ec","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Out-Of-Sign
     Timeout":{"_value":2.0,"_name":"Out-Of-Sign Timeout","_id":"f924310c-d876-4f6d-8275-3dd760e229ef","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}}'
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Chasing
+    Vision Color":{"_value":{"r":1.0,"g":0.1877952,"a":0.07058824},"_name":"Chasing
+    Vision Color","_id":"ae48407d-a46c-4653-9ee1-8284efdccae2","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Color,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}}'
   _objectReferences: []
   _graphSource:
     _version: 3.22
