@@ -55,8 +55,15 @@ namespace DualityGame.Core
         public LayerMask LayerMask
         {
             get => _layerMask;
-            set => _layerMask = value;
+            set
+            {
+                _layerMask = value;
+#if UNITY_EDITOR
+                if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) UpdateVisionCone();
+#endif
+            }
         }
+
         #endregion
 
         private Mesh _mesh;
