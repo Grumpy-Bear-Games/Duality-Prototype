@@ -16,8 +16,8 @@ namespace DualityGame.Player
         [SerializeField] private Inventory.Inventory _inventory;
 
         [Header("VFX")]
-        [SerializeField] private VFXFadeTrigger _warpVFX;
-        [SerializeField] private VFXFadeTrigger _fadeVFX;
+        [SerializeField] private ScreenFader _warpVFX;
+        [SerializeField] private ScreenFader _fadeVFX;
         
         [Header("Respawn")]
         [SerializeField] private Transform _respawnPoint;
@@ -30,7 +30,7 @@ namespace DualityGame.Player
 
         private IEnumerator CO_Kill()
         {
-            yield return _fadeVFX.Execute(IVFXFadeEffect.Direction.FadeOut);
+            yield return _fadeVFX.Execute(ScreenFader.Direction.FadeOut);
             _controller.enabled = false;
             transform.position = _respawnPoint.position;
             _controller.enabled = true;
@@ -38,7 +38,7 @@ namespace DualityGame.Player
             var item = _inventory.TakeItem();
             if (item != null) item.ReturnToInitialPosition();
             yield return new WaitForSeconds(3f);
-            yield return _fadeVFX.Execute(IVFXFadeEffect.Direction.FadeIn);
+            yield return _fadeVFX.Execute(ScreenFader.Direction.FadeIn);
         }
 
         private void Awake() => _controller = GetComponent<CharacterController>();
@@ -56,9 +56,9 @@ namespace DualityGame.Player
 
         private IEnumerator CO_WarpTo(Realm.Realm realm)
         {
-            yield return _warpVFX.Execute(IVFXFadeEffect.Direction.FadeOut);
+            yield return _warpVFX.Execute(ScreenFader.Direction.FadeOut);
             _currentRealm.Set(realm);
-            yield return _warpVFX.Execute(IVFXFadeEffect.Direction.FadeIn);
+            yield return _warpVFX.Execute(ScreenFader.Direction.FadeIn);
         }
 
         private bool IsOtherRealmBlocked(Vector3 position)

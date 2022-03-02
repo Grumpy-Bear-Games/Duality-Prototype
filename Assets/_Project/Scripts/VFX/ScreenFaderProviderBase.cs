@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace DualityGame.VFX
 {
-    public abstract class VFXFadeBase : MonoBehaviour, IVFXFadeEffect
+    public abstract class ScreenFaderProviderBase : MonoBehaviour, IScreenFaderProvider
     {
-        [SerializeField] protected VFXFadeTrigger _trigger;
+        [SerializeField] protected VFX.ScreenFader _trigger;
         [SerializeField] protected float _duration = 2f;
         [SerializeField] protected bool _initiallyFadedIn;
 
@@ -31,12 +31,12 @@ namespace DualityGame.VFX
                 .WaitForCompletion();
         }
 
-        IEnumerator IVFXFadeEffect.Execute(IVFXFadeEffect.Direction direction)
+        IEnumerator IScreenFaderProvider.Execute(VFX.ScreenFader.Direction direction)
         {
             yield return direction switch
             {
-                IVFXFadeEffect.Direction.FadeIn => FadeIn(),
-                IVFXFadeEffect.Direction.FadeOut => FadeOut(),
+                VFX.ScreenFader.Direction.FadeIn => FadeIn(),
+                VFX.ScreenFader.Direction.FadeOut => FadeOut(),
                 _ => throw new ArgumentOutOfRangeException(nameof(direction), direction, null)
             };
         }

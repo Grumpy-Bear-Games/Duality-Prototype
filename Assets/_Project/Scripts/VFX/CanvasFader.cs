@@ -4,7 +4,7 @@ using UnityEngine;
 namespace DualityGame.VFX
 {
     [RequireComponent(typeof(CanvasGroup))]
-    public class CanvasGroupVFX : VFXFadeBase
+    public class CanvasFader : ScreenFaderProviderBase
     {
         [SerializeField] private bool _controlInteractable = true;
         [SerializeField] private bool _controlBlockRaycasts = true;
