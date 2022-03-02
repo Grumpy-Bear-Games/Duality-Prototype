@@ -1,9 +1,8 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace DualityGame.UI
 {
-    public class MainMenu : MonoBehaviour
+    public class MainMenu : MenuBase
     {
         // Temporary, very naive approach
         public void NewGame() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
