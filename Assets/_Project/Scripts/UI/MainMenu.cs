@@ -1,11 +1,15 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace DualityGame.UI
 {
-    public class MainMenu : MenuBase
+    public class MainMenu: MenuBase
     {
-        // Temporary, very naive approach
+        [SerializeField] private MenuBase _quitDialog;
+        
         public void NewGame() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        public override void Close() => _quitDialog.Open();
 
         public void ExitGame()
         {
