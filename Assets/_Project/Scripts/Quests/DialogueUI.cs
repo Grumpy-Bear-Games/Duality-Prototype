@@ -14,7 +14,7 @@ namespace DualityGame.Quests {
 
 	public class DialogueUI : MonoBehaviour {
 
-		[System.Serializable]
+		[Serializable]
 		public class SubtitleDelays
 		{
 			public float finalDelay     = 1.2f;
