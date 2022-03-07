@@ -8,7 +8,7 @@ namespace DualityGame.VFX
     public class ScreenFader : ScriptableObject
     {
         [Tooltip("What happens if no provider is registered")]
-        [SerializeField] private NullAction _nullAction;
+        [SerializeField] private NullAction _defaultNullAction;
         private IScreenFaderProvider _provider;
 
         public void RegisterVFX(IScreenFaderProvider provider) => _provider = provider;
@@ -18,9 +18,9 @@ namespace DualityGame.VFX
             if (_provider == vfx) _provider = null;
         }
 
-        public IEnumerator Execute(Direction direction)
+        public IEnumerator Execute(Direction direction, NullAction nullAction)
         {
-            switch (_nullAction)
+            switch (nullAction)
             {
                 case NullAction.Wait:
                     while (_provider == null)
@@ -40,7 +40,27 @@ namespace DualityGame.VFX
 
             yield return _provider.Execute(direction);
         }
-        
+
+        public IEnumerator Execute(Direction direction) => Execute(direction, _defaultNullAction);
+
+        public IEnumerator Wrap(Action runInBetween, NullAction nullAction)
+        {
+            yield return Execute(Direction.FadeOut, nullAction);
+            runInBetween();
+            yield return Execute(Direction.FadeIn, nullAction);
+        }
+
+        public IEnumerator Wrap(Action runInBetween) => Wrap(runInBetween, _defaultNullAction);
+
+        public IEnumerator Wrap(IEnumerator runInBetween, NullAction nullAction)
+        {
+            yield return Execute(Direction.FadeOut, nullAction);
+            yield return runInBetween;
+            yield return Execute(Direction.FadeIn, nullAction);
+        }
+
+        public IEnumerator Wrap(IEnumerator runInBetween) => Wrap(runInBetween, _defaultNullAction);
+
         public enum Direction
         {
             FadeIn, FadeOut

@@ -26,11 +26,10 @@ namespace DualityGame.Player
         
         private Realm.Realm _otherRealm => _currentRealm.Value == _heaven ? _hell : _heaven;
 
-        public void Kill() => StartCoroutine(CO_Kill());
+        public void Kill() => StartCoroutine(_fadeVFX.Wrap(CO_Kill()));
 
         private IEnumerator CO_Kill()
         {
-            yield return _fadeVFX.Execute(ScreenFader.Direction.FadeOut);
             _controller.enabled = false;
             transform.position = _respawnPoint.position;
             _controller.enabled = true;
@@ -38,7 +37,6 @@ namespace DualityGame.Player
             var item = _inventory.TakeItem();
             if (item != null) item.ReturnToInitialPosition();
             yield return new WaitForSeconds(3f);
-            yield return _fadeVFX.Execute(ScreenFader.Direction.FadeIn);
         }
 
         private void Awake() => _controller = GetComponent<CharacterController>();
@@ -51,15 +49,10 @@ namespace DualityGame.Player
                 return;
             }
 
-            StartCoroutine(CO_WarpTo(_otherRealm));
+            StartCoroutine(_warpVFX.Wrap(SwitchToOtherRealm));
         }
 
-        private IEnumerator CO_WarpTo(Realm.Realm realm)
-        {
-            yield return _warpVFX.Execute(ScreenFader.Direction.FadeOut);
-            _currentRealm.Set(realm);
-            yield return _warpVFX.Execute(ScreenFader.Direction.FadeIn);
-        }
+        private void SwitchToOtherRealm() => _currentRealm.Set(_otherRealm);
 
         private bool IsOtherRealmBlocked(Vector3 position)
         {
