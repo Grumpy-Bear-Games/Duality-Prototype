@@ -45,6 +45,7 @@ namespace DualityGame.Core
             get => _state;
             set
             {
+                if (_state == value) return;
                 _state = value;
                 UpdateTween();
             }
@@ -53,7 +54,8 @@ namespace DualityGame.Core
         private void UpdateTween()
         {
             if (_tween == null) return;
-            if (_tween.isBackwards && _state == EnemyState.Patrolling) return;
+            var isPatrolling = _state == EnemyState.Patrolling;
+            if (_tween.isBackwards == isPatrolling) return;
             _tween.Flip();
             if (!_tween.IsPlaying()) _tween.Play();
         }
