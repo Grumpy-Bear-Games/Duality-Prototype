@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using DualityGame.Core;
 using DualityGame.Realm;
 using DualityGame.VFX;
+using Games.GrumpyBear.LevelManagement;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,10 +21,8 @@ namespace DualityGame.Player
         [SerializeField] private ScreenFader _warpVFX;
         [SerializeField] private ScreenFader _fadeVFX;
         
-        [Header("Respawn")]
-        [SerializeField] private Transform _respawnPoint;
-
         private CharacterController _controller;
+        private GameObject _respawnPoint;
         
         private Realm.Realm _otherRealm => _currentRealm.Value == _heaven ? _hell : _heaven;
 
@@ -30,16 +30,38 @@ namespace DualityGame.Player
 
         private IEnumerator CO_Kill()
         {
-            _controller.enabled = false;
-            transform.position = _respawnPoint.position;
-            _controller.enabled = true;
-            _currentRealm.Set(_heaven);
+            Respawn();
             var item = _inventory.TakeItem();
             if (item != null) item.ReturnToInitialPosition();
             yield return new WaitForSeconds(3f);
         }
 
-        private void Awake() => _controller = GetComponent<CharacterController>();
+        private void Respawn()
+        {
+            _controller.enabled = false;
+            transform.position = _respawnPoint.transform.position;
+            _controller.enabled = true;
+            _currentRealm.Set(_heaven);
+        }
+
+        private void Awake()
+        {
+            _controller = GetComponent<CharacterController>();
+            LocationManager.OnLocationChanged += OnLocationChange;
+        }
+
+        private void OnLocationChange(Location obj)
+        {
+            _respawnPoint = GameObject.FindWithTag("Respawn");
+            if (_respawnPoint == null)
+            {
+                Debug.LogError("No spawn point found in scene");
+                return;
+            }
+            Respawn();
+        }
+
+        private void OnDestroy() => LocationManager.OnLocationChanged -= OnLocationChange;
 
         [UsedImplicitly]
         private void OnWarp(InputValue value)
