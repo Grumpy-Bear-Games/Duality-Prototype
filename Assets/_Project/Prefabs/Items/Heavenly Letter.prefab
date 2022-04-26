@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemType: {fileID: 11400000, guid: c6696b31cd22cd448a4e7e97f1171d0e, type: 2}
+  _promptOffset: {x: 0, y: 1.5, z: 0}
 --- !u!114 &855071986495757546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,4 +158,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097f47eb142d4907ade74fbc7ba16360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _realmManager: {fileID: 11400000, guid: 3ef4bd27f7b2cb94b939bb23f70c4e26, type: 2}
+  _currentRealm: {fileID: 0}

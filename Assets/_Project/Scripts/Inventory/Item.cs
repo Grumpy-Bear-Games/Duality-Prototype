@@ -5,6 +5,7 @@ namespace DualityGame.Inventory
     public class Item : MonoBehaviour, Iteractables.IInteractable
     {
         [SerializeField] private ItemType _itemType;
+        [SerializeField] private Vector3 _promptOffset;
 
         public ItemType Type => _itemType;
 
@@ -33,6 +34,8 @@ namespace DualityGame.Inventory
             
             inventory.PickupItem(this);
         }
+       
+        public Vector3 PromptPosition => transform.position + _promptOffset;
 
         public string Prompt => $"Pick up {_itemType.name}";
         

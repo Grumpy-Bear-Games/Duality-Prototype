@@ -6,5 +6,6 @@ namespace DualityGame.Iteractables
     {
         void Interact(GameObject actor);
         string Prompt { get; }
+        Vector3 PromptPosition { get; }
     }
 }

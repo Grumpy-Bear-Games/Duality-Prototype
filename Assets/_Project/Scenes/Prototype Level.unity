@@ -34901,7 +34901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150168642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.08, y: 0, z: 0}
+  m_LocalPosition: {x: -2.08, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35245,10 +35245,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91cf783a5954228842dc04967b20263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prompt: Search Pile of corpses
   _itemsToSpawn:
   - Item: {fileID: 1675937649}
     SpawnTo: {fileID: 1150168643}
+  _prompt: Search Pile of corpses
+  _promptOffset: {x: 0, y: 1.5, z: 0}
   _jumpPower: 1
   _jumpDuration: 0.5
   _jumpEasing: 1
