@@ -10,5 +10,7 @@ namespace DualityGame.Inventory
 
         public Sprite InventorySprite => _inventorySprite;
         public Realm.Realm Realm => _realm;
+
+        public override string ToString() => name;
     }
 }

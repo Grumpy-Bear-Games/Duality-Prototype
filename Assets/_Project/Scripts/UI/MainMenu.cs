@@ -1,13 +1,18 @@
+using Games.GrumpyBear.LevelManagement;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace DualityGame.UI
 {
     public class MainMenu: MenuBase
     {
+        [Header("New Game")]
+        [SerializeField] private LocationManager _locationManager;
+        [SerializeField] private Location _firstLocation;
+
+        [Header("Quit")]
         [SerializeField] private MenuBase _quitDialog;
         
-        public void NewGame() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        public void NewGame() => _locationManager.Load(_firstLocation);
 
         public override void Close() => _quitDialog.Open();
 

@@ -7,6 +7,8 @@ namespace DualityGame.Quests
 {
     public class DialogInteractable : MonoBehaviour, IInteractable
     {
+        [SerializeField] private Vector3 _promptOffset;
+        
         private DialogueTreeController _controller;
         
         private void Awake() => _controller = GetComponent<DialogueTreeController>();
@@ -23,6 +25,8 @@ namespace DualityGame.Quests
                 _controller.StartDialogue();
             }
         }
+
+        public Vector3 PromptPosition => transform.position + _promptOffset;
 
         public string Prompt => $"Talk with {name}";
         
