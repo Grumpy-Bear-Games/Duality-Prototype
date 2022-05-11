@@ -1,66 +1,47 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Febucci.UI;
 using NodeCanvas.DialogueTrees;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 namespace DualityGame.Quests {
-
-	public class DialogueUI : MonoBehaviour {
-
-		[Serializable]
-		public class SubtitleDelays
-		{
-			public float finalDelay     = 1.2f;
-		}
-
+	public class DialogueUI : MonoBehaviour
+	{
 		//Options...
 		[Header("Input Options")]
-		[SerializeField] public bool _skipOnInput;
-		[SerializeField] public bool _waitForInput;
-		[SerializeField] public InputActionReference _inputAction;
+		[SerializeField] private bool _skipOnInput;
+		[SerializeField] private bool _waitForInput;
+		[SerializeField] private InputActionReference _inputAction;
 
 		//Group...
 		[Header("Subtitles")]
-		[SerializeField] public RectTransform _subtitlesGroup;
-		[SerializeField] public TextAnimatorPlayer _actorSpeech;
-		[SerializeField] public TMP_Text _actorName;
-		[SerializeField] public Image _actorPortrait;
-		[SerializeField] public RectTransform _waitInputIndicator;
-		[SerializeField] public SubtitleDelays _subtitleDelays = new SubtitleDelays();
-		[SerializeField] public List<AudioClip> _typingSounds;
+		[SerializeField] private DialogUITalk _dialogUITalk;
+		[SerializeField] private RectTransform _subtitlesGroup;
+		[SerializeField] private DialogAudioPlayer _audioPlayer;
+		[SerializeField] private DialogUIName _actorName;
+		[SerializeField] private DialogUIPortrait _actorPortrait;
+		[SerializeField] private DialogUIWaitForIndicator _waitForIndicator;
 
 		//Group...
 		[Header("Multiple Choice")]
-		[SerializeField] public RectTransform _optionsGroup;
-		[SerializeField] public Button _optionButton;
+		[SerializeField] private RectTransform _optionsGroup;
+		[SerializeField] private Button _optionButton;
 		
 		private Dictionary<Button, int> _cachedButtons;
 		private Vector2 _originalSubsPosition;
 		private bool _isWaitingChoice;
-
-		private AudioSource _localSource;
-		private bool _skip = false;
-		private AudioSource localSource => _localSource != null ? _localSource : _localSource = gameObject.AddComponent<AudioSource>();
-
-		private TMP_FontAsset _defaultFont;
-
-		private void Awake() => _defaultFont = _actorSpeech.textAnimator.tmproText.font;
-
+		private bool _fastForward = false;
+		
 		private void OnEnable() {
 			DialogueTree.OnDialogueStarted       += OnDialogueStarted;
 			DialogueTree.OnDialoguePaused        += OnDialoguePaused;
 			DialogueTree.OnDialogueFinished      += OnDialogueFinished;
 			DialogueTree.OnSubtitlesRequest      += OnSubtitlesRequest;
 			DialogueTree.OnMultipleChoiceRequest += OnMultipleChoiceRequest;
-			_actorSpeech.onCharacterVisible.AddListener(PlayTypeSound);
-			_inputAction.action.performed += Skip;
+			_inputAction.action.performed += FastForward;
 		}
 
 		private void OnDisable() {
@@ -69,19 +50,23 @@ namespace DualityGame.Quests {
 			DialogueTree.OnDialogueFinished      -= OnDialogueFinished;
 			DialogueTree.OnSubtitlesRequest      -= OnSubtitlesRequest;
 			DialogueTree.OnMultipleChoiceRequest -= OnMultipleChoiceRequest;
-			_actorSpeech.onCharacterVisible.RemoveListener(PlayTypeSound);
-			_inputAction.action.performed -= Skip;
+			_inputAction.action.performed -= FastForward;
 		}
 
-		private void Skip(InputAction.CallbackContext ctx) {
-			if (ctx.phase == InputActionPhase.Performed) _skip = true;
+		private void FastForward(InputAction.CallbackContext ctx)
+		{
+			if (ctx.phase != InputActionPhase.Performed) return;
+			_fastForward = true;
+			if (!_skipOnInput) return;
+			_dialogUITalk.FastForward();
+			_audioPlayer.FastForward();
 		}
 
 		private void Start(){
 			_subtitlesGroup.gameObject.SetActive(false);
 			_optionsGroup.gameObject.SetActive(false);
 			_optionButton.gameObject.SetActive(false);
-			_waitInputIndicator.gameObject.SetActive(false);
+			_waitForIndicator.Hide();
 			_originalSubsPosition = _subtitlesGroup.transform.position;
 		}
 
@@ -117,82 +102,31 @@ namespace DualityGame.Quests {
 
 			_subtitlesGroup.gameObject.SetActive(true);
 			
-			_actorName.text = actor.name;
-			_actorSpeech.textAnimator.tmproText.color = actor.dialogueColor;
-			
-			_actorPortrait.gameObject.SetActive( actor.portraitSprite != null );
-			_actorPortrait.sprite = actor.portraitSprite;
-
-			var extendedDialogActor = actor as ExtendedDialogActor;
-			if (extendedDialogActor != null)
-			{
-				var font = extendedDialogActor.Font ? extendedDialogActor.Font : _defaultFont;
-				_actorSpeech.textAnimator.tmproText.font = font;
-			}
-			else
-			{
-				_actorSpeech.textAnimator.tmproText.font = _defaultFont;
-			}
+			_actorName.SetActor(actor);
+			_actorPortrait.SetActor(actor);
+			_dialogUITalk.SetActor(actor);
 
 			if (audio != null){
-				var actorSource = actor.transform != null? actor.transform.GetComponent<AudioSource>() : null;
-				var playSource = actorSource != null? actorSource : localSource;
-				playSource.clip = audio;
-				playSource.Play();
-				_actorSpeech.useTypeWriter = false;
-				_actorSpeech.ShowText(text);
-				var timer = 0f;
-				_skip = false;
-				while (timer < audio.length)
-				{
-					if (_skipOnInput && _skip){
-						playSource.Stop();
-						break;
-					}
-					timer += Time.deltaTime;
-					yield return null;
-				}
+				_audioPlayer.SetActor(actor);
+				_dialogUITalk.ShowText(text);
+				yield return _audioPlayer.Play(audio);
 			} else {
-				var dialogShown = false;
-				void OnTextShowed() => dialogShown = true;
-				_actorSpeech.useTypeWriter = true;
-				_actorSpeech.onTextShowed.AddListener(OnTextShowed);
-				_actorSpeech.ShowText(text);
-
-				_skip = false;
-				while (!dialogShown) {
-					if (_skipOnInput && _skip) {
-						_actorSpeech.SkipTypewriter();
-					}
-					yield return null;
-				}
-				_actorSpeech.onTextShowed.RemoveListener(OnTextShowed);
-
-				if (!_waitForInput) yield return new WaitForSeconds(_subtitleDelays.finalDelay);
+				yield return _dialogUITalk.TypeText(text);
 			}
 
 			if (_waitForInput)
 			{
-				_skip = false;
-				_waitInputIndicator.gameObject.SetActive(true);
-				while(!_skip) {
+				_fastForward = false;
+				_waitForIndicator.Show();
+				while(!_fastForward) {
 					yield return null;
 				}
-				_waitInputIndicator.gameObject.SetActive(false);
+				_waitForIndicator.Hide();
 			}
 
 			yield return null;
 			_subtitlesGroup.gameObject.SetActive(false);
 			info.Continue();
-		}
-
-		private void PlayTypeSound(char arg0)
-		{
-			if (_typingSounds.Count <= 0) return;
-			var sound = _typingSounds[ Random.Range(0, _typingSounds.Count) ];
-			if (sound != null){
-				localSource.PlayOneShot(sound, Random.Range(0.6f, 1f));
-			}
 		}
 
 		private void OnMultipleChoiceRequest(MultipleChoiceRequestInfo info){

@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 7930310868659463729}
   - component: {fileID: 4773366947310866031}
   - component: {fileID: 2549967430446009325}
+  - component: {fileID: 2768076347069420496}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -255,6 +256,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2768076347069420496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433780468773035748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e521e22044448f39956aac3999747e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1277960139567804631
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +279,7 @@ GameObject:
   - component: {fileID: 7293750251208177628}
   - component: {fileID: 5993835502188980635}
   - component: {fileID: 5753812921650428782}
+  - component: {fileID: 8342673457490559477}
   m_Layer: 5
   m_Name: Portrait
   m_TagString: Untagged
@@ -331,6 +345,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8342673457490559477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277960139567804631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a23966ffffe422f945daed9a2948cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2125056580178256759
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 694967901683085290}
   - component: {fileID: 3363797177658027788}
+  - component: {fileID: 120822312969789273}
   m_Layer: 5
   m_Name: Dialog
   m_TagString: Untagged
@@ -386,19 +413,27 @@ MonoBehaviour:
   _waitForInput: 1
   _inputAction: {fileID: 638637785067456906, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
+  _dialogUITalk: {fileID: 6783316770803864637}
   _subtitlesGroup: {fileID: 2885082555754658190}
-  _actorSpeech: {fileID: 4264162647420347762}
-  _actorName: {fileID: 2549967430446009325}
-  _actorPortrait: {fileID: 5753812921650428782}
-  _waitInputIndicator: {fileID: 3027261155596799981}
-  _subtitleDelays:
-    finalDelay: 1.2
-  _typingSounds:
-  - {fileID: 8300000, guid: a0d9ccf1ea0e87d4794965b3fa230c65, type: 3}
-  - {fileID: 8300000, guid: 5e5452015663bd141a0af3ff478c7272, type: 3}
-  - {fileID: 8300000, guid: 5d3613a99f5e0ac43a2acdfd87d61a4e, type: 3}
+  _audioPlayer: {fileID: 120822312969789273}
+  _actorName: {fileID: 2768076347069420496}
+  _actorPortrait: {fileID: 8342673457490559477}
+  _waitForIndicator: {fileID: 6474446213147825621}
   _optionsGroup: {fileID: 332329907192838780}
   _optionButton: {fileID: 8153051793061879266}
+--- !u!114 &120822312969789273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125056580178256759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478a2e2126a1443e96915bdd2c454f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localSource: {fileID: 0}
 --- !u!1 &2426624697992098612
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +600,7 @@ GameObject:
   - component: {fileID: 5933336176860582018}
   - component: {fileID: 2769405960502735662}
   - component: {fileID: 4264162647420347762}
+  - component: {fileID: 6783316770803864637}
   m_Layer: 5
   m_Name: Speech
   m_TagString: Untagged
@@ -807,6 +843,20 @@ MonoBehaviour:
   useTypewriterWaitForDisappearances: 1
   disappearanceWaitTime: 0.015
   disappearanceSpeedMultiplier: 1
+--- !u!114 &6783316770803864637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032721757349669857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 416e5a07d3674d9d82a27a4620c6723c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _typingSfx: {fileID: 0}
+  _finalDelay: 1.2
 --- !u!1 &4040909629724244171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1616,7 @@ GameObject:
   - component: {fileID: 3027261155596799981}
   - component: {fileID: 4527961631996001323}
   - component: {fileID: 5876409632289535257}
+  - component: {fileID: 6474446213147825621}
   m_Layer: 5
   m_Name: WaitInput
   m_TagString: Untagged
@@ -1631,6 +1682,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6474446213147825621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7350054183655848253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1129aafd2e6b40bfa083d4a19640317e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7786124993757371186
 GameObject:
   m_ObjectHideFlags: 0
