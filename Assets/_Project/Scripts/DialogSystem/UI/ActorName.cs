@@ -2,10 +2,10 @@
 using TMPro;
 using UnityEngine;
 
-namespace DualityGame.Quests
+namespace DualityGame.DialogSystem.UI
 {
     [RequireComponent(typeof(TMP_Text))]
-    public class DialogUIName : MonoBehaviour
+    public class ActorName : MonoBehaviour
     {
         private TMP_Text _name;
 

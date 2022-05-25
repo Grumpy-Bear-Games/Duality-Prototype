@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace DualityGame.Quests
+namespace DualityGame.DialogSystem
 {
     public class ExtendedDialogActor: DialogueActor
     {

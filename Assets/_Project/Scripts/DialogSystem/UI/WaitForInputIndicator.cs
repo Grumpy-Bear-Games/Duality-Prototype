@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace DualityGame.Quests
+namespace DualityGame.DialogSystem.UI
 {
-    public class DialogUIWaitForIndicator : MonoBehaviour
+    public class WaitForInputIndicator : MonoBehaviour
     {
         public void Show() => gameObject.SetActive(true);
         public void Hide() => gameObject.SetActive(false);

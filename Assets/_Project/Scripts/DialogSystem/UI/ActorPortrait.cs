@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DualityGame.Quests
+namespace DualityGame.DialogSystem.UI
 {
     [RequireComponent(typeof(Image))]
-    public class DialogUIPortrait : MonoBehaviour
+    public class ActorPortrait : MonoBehaviour
     {
         private Image _image;
         private void Awake() => _image = GetComponent<Image>();

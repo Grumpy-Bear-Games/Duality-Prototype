@@ -2,17 +2,17 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace DualityGame.Quests
+namespace DualityGame.DialogSystem.UI
 {
-    [RequireComponent(typeof(DialogUITalk))]
-    public class DialogUITypingSFX : MonoBehaviour
+    [RequireComponent(typeof(Statement))]
+    public class TypingSFX : MonoBehaviour
     {
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private List<AudioClip> _typingSounds;
 
-        private DialogUITalk _dialog;
+        private Statement _dialog;
         
-        private void Awake() => _dialog = GetComponent<DialogUITalk>();
+        private void Awake() => _dialog = GetComponent<Statement>();
 
         private void OnEnable() => _dialog.OnTypeCharacter += PlayTypeSound;
 

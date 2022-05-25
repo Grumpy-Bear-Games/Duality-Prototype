@@ -413,12 +413,12 @@ MonoBehaviour:
   _waitForInput: 1
   _inputAction: {fileID: 638637785067456906, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
-  _dialogUITalk: {fileID: 6783316770803864637}
+  _statement: {fileID: 6783316770803864637}
   _subtitlesGroup: {fileID: 2885082555754658190}
   _audioPlayer: {fileID: 120822312969789273}
   _actorName: {fileID: 2768076347069420496}
   _actorPortrait: {fileID: 8342673457490559477}
-  _waitForIndicator: {fileID: 6474446213147825621}
+  _waitForInputIndicator: {fileID: 6474446213147825621}
   _optionsGroup: {fileID: 332329907192838780}
   _optionButton: {fileID: 8153051793061879266}
 --- !u!114 &120822312969789273
@@ -855,7 +855,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416e5a07d3674d9d82a27a4620c6723c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typingSfx: {fileID: 0}
   _finalDelay: 1.2
 --- !u!1 &4040909629724244171
 GameObject:

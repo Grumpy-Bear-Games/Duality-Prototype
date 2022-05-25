@@ -5,10 +5,10 @@ using NodeCanvas.DialogueTrees;
 using TMPro;
 using UnityEngine;
 
-namespace DualityGame.Quests
+namespace DualityGame.DialogSystem.UI
 {
     [RequireComponent(typeof(TextAnimatorPlayer))]
-    public class DialogUITalk : MonoBehaviour
+    public class Statement : MonoBehaviour
     {
         [SerializeField] private float _finalDelay = 1.2f;
 

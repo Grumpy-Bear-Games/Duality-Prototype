@@ -2,9 +2,9 @@
 using NodeCanvas.DialogueTrees;
 using UnityEngine;
 
-namespace DualityGame.Quests
+namespace DualityGame.DialogSystem.UI
 {
-    public class DialogAudioPlayer : MonoBehaviour
+    public class AudioPlayer : MonoBehaviour
     {
         [SerializeField] private AudioSource _localSource;
 

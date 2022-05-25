@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DualityGame.DialogSystem.UI;
 using NodeCanvas.DialogueTrees;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Statement = DualityGame.DialogSystem.UI.Statement;
 
-namespace DualityGame.Quests {
-	public class DialogueUI : MonoBehaviour
+namespace DualityGame.DialogSystem {
+	public class DialogUI : MonoBehaviour
 	{
 		//Options...
 		[Header("Input Options")]
@@ -18,12 +20,12 @@ namespace DualityGame.Quests {
 
 		//Group...
 		[Header("Subtitles")]
-		[SerializeField] private DialogUITalk _dialogUITalk;
+		[SerializeField] private Statement _statement;
 		[SerializeField] private RectTransform _subtitlesGroup;
-		[SerializeField] private DialogAudioPlayer _audioPlayer;
-		[SerializeField] private DialogUIName _actorName;
-		[SerializeField] private DialogUIPortrait _actorPortrait;
-		[SerializeField] private DialogUIWaitForIndicator _waitForIndicator;
+		[SerializeField] private AudioPlayer _audioPlayer;
+		[SerializeField] private ActorName _actorName;
+		[SerializeField] private ActorPortrait _actorPortrait;
+		[SerializeField] private WaitForInputIndicator _waitForInputIndicator;
 
 		//Group...
 		[Header("Multiple Choice")]
@@ -58,7 +60,7 @@ namespace DualityGame.Quests {
 			if (ctx.phase != InputActionPhase.Performed) return;
 			_fastForward = true;
 			if (!_skipOnInput) return;
-			_dialogUITalk.FastForward();
+			_statement.FastForward();
 			_audioPlayer.FastForward();
 		}
 
@@ -66,7 +68,7 @@ namespace DualityGame.Quests {
 			_subtitlesGroup.gameObject.SetActive(false);
 			_optionsGroup.gameObject.SetActive(false);
 			_optionButton.gameObject.SetActive(false);
-			_waitForIndicator.Hide();
+			_waitForInputIndicator.Hide();
 			_originalSubsPosition = _subtitlesGroup.transform.position;
 		}
 
@@ -104,24 +106,24 @@ namespace DualityGame.Quests {
 			
 			_actorName.SetActor(actor);
 			_actorPortrait.SetActor(actor);
-			_dialogUITalk.SetActor(actor);
+			_statement.SetActor(actor);
 
 			if (audio != null){
 				_audioPlayer.SetActor(actor);
-				_dialogUITalk.ShowText(text);
+				_statement.ShowText(text);
 				yield return _audioPlayer.Play(audio);
 			} else {
-				yield return _dialogUITalk.TypeText(text);
+				yield return _statement.TypeText(text);
 			}
 
 			if (_waitForInput)
 			{
 				_fastForward = false;
-				_waitForIndicator.Show();
+				_waitForInputIndicator.Show();
 				while(!_fastForward) {
 					yield return null;
 				}
-				_waitForIndicator.Hide();
+				_waitForInputIndicator.Hide();
 			}
 
 			yield return null;
