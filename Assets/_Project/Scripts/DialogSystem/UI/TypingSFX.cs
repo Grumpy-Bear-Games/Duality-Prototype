@@ -4,15 +4,15 @@ using Random = UnityEngine.Random;
 
 namespace DualityGame.DialogSystem.UI
 {
-    [RequireComponent(typeof(Statement))]
+    [RequireComponent(typeof(StatementText))]
     public class TypingSFX : MonoBehaviour
     {
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private List<AudioClip> _typingSounds;
 
-        private Statement _dialog;
+        private StatementText _dialog;
         
-        private void Awake() => _dialog = GetComponent<Statement>();
+        private void Awake() => _dialog = GetComponent<StatementText>();
 
         private void OnEnable() => _dialog.OnTypeCharacter += PlayTypeSound;
 

@@ -10,7 +10,7 @@ namespace DualityGame.DialogSystem.UI
         private Image _image;
         private void Awake() => _image = GetComponent<Image>();
 
-        protected internal void SetActor(IDialogueActor actor)
+        public void SetActor(IDialogueActor actor)
         {
             _image.gameObject.SetActive( actor.portraitSprite != null );
             _image.sprite = actor.portraitSprite;

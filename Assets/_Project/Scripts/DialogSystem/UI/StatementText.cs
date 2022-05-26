@@ -8,7 +8,7 @@ using UnityEngine;
 namespace DualityGame.DialogSystem.UI
 {
     [RequireComponent(typeof(TextAnimatorPlayer))]
-    public class Statement : MonoBehaviour
+    public class StatementText : MonoBehaviour
     {
         [SerializeField] private float _finalDelay = 1.2f;
 
@@ -59,7 +59,13 @@ namespace DualityGame.DialogSystem.UI
                 yield return null;
             }
             _textAnimatorPlayer.onTextShowed.RemoveListener(OnTextShowed);
-            if (!_fastForward) yield return new WaitForSeconds(_finalDelay);
+
+            var finalWait = 0f;
+            while (finalWait < _finalDelay && !_fastForward)
+            {
+                finalWait += Time.deltaTime;
+                yield return null;
+            }
         }
         
         private void OnEnable() => _textAnimatorPlayer.onCharacterVisible.AddListener(PlayTypeSound);

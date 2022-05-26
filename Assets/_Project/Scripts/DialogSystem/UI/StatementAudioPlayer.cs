@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DualityGame.DialogSystem.UI
 {
-    public class AudioPlayer : MonoBehaviour
+    public class StatementAudioPlayer : MonoBehaviour
     {
         [SerializeField] private AudioSource _localSource;
 
