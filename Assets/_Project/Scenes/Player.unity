@@ -153,7 +153,7 @@ PrefabInstance:
     - target: {fileID: 1593887528955487934, guid: 5b264c37049844a479c100bedb9914f5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1593887528955487934, guid: 5b264c37049844a479c100bedb9914f5,
         type: 3}
@@ -307,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 4989224647204594734, guid: be78de53733f5f34cb8074c92c2709ca,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4989224647204594734, guid: be78de53733f5f34cb8074c92c2709ca,
         type: 3}
@@ -361,37 +361,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be78de53733f5f34cb8074c92c2709ca, type: 3}
---- !u!1 &1619864322
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1619864323}
-  m_Layer: 0
-  m_Name: -- PLAYER --
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1619864323
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619864322}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7249564571595690162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -412,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 220527881918187277, guid: e5af839aa1627cb43af021709a7c6fd1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 220527881918187277, guid: e5af839aa1627cb43af021709a7c6fd1,
         type: 3}
@@ -467,12 +436,7 @@ PrefabInstance:
     - target: {fileID: 3607886537086281204, guid: e5af839aa1627cb43af021709a7c6fd1,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.599555
-      objectReference: {fileID: 0}
-    - target: {fileID: 7249564570049133729, guid: e5af839aa1627cb43af021709a7c6fd1,
-        type: 3}
-      propertyPath: _respawnPoint
-      value: 
+      value: 1.7777778
       objectReference: {fileID: 0}
     - target: {fileID: 7422285978626791806, guid: e5af839aa1627cb43af021709a7c6fd1,
         type: 3}
