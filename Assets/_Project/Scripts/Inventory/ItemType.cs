@@ -1,0 +1,16 @@
+﻿using UnityEngine;
+
+namespace DualityGame.Inventory
+{
+    [CreateAssetMenu(fileName = "Item Type", menuName = "Duality/Item Type", order = 0)]
+    public class ItemType : ScriptableObject
+    {
+        [SerializeField] private Sprite _inventorySprite;
+        [SerializeField] private Realm.Realm _realm;
+
+        public Sprite InventorySprite => _inventorySprite;
+        public Realm.Realm Realm => _realm;
+
+        public override string ToString() => name;
+    }
+}

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
+  m_Name: Demon FSM
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"searchTag":"Player","saveAs":{"_name":"_Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"$type":"NodeCanvas.Tasks.Actions.FindWithTag"}]},"_name":"Find
+    Player","_position":{"x":828.9905,"y":8.807958},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_onEnterList":{"executionMode":1,"actions":[{"method":{"_baseInfo":"DualityGame.Core.VisionConeAnimator|set_State|System.Void","_paramsInfo":"DualityGame.Core.VisionConeAnimator+EnemyState"},"parameter":{"_type":"DualityGame.Core.VisionConeAnimator+EnemyState","_value":{"$content":0,"$type":"DualityGame.Core.VisionConeAnimator+EnemyState"}},"overrideAgent":{"_type":"DualityGame.Core.VisionConeAnimator","_name":"_VisionConeAnimator","_targetVariableID":"fd649c74-2186-4377-87b3-eaa902e563ef"},"$type":"NodeCanvas.Tasks.Actions.SetProperty_Multiplatform"}]},"_onUpdateList":{"actions":[{"targetList":{"_name":"Waypoints","_targetVariableID":"2dbfcd0b-9289-414d-b15d-0bcdddcf7998"},"patrolMode":{"_value":1},"speed":{"_name":"Patrolling
+    Speed","_targetVariableID":"1858e381-825a-458e-ab14-0f81412158dc"},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.Patrol"},{"waitTime":{"_name":"Wait
+    at each waypoint","_targetVariableID":"dee9fbef-8ebb-48e8-9a31-ecd7692d4180"},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_onExitList":{"executionMode":1,"actions":[]},"foldEnter":true,"foldUpdate":true,"_name":"Patroling","_position":{"x":664.0,"y":220.0},"_comment":"","$type":"NodeCanvas.StateMachines.SuperActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"functionWrapper":{"p1":{"_value":1},"_targetMethod":{"_baseInfo":"DualityGame.Core.VisionConeAnimator|set_State|System.Void","_paramsInfo":"DualityGame.Core.VisionConeAnimator+EnemyState"},"$type":"NodeCanvas.Framework.Internal.ReflectedAction`1[[DualityGame.Core.VisionConeAnimator+EnemyState,
+    DualityGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"overrideAgent":{"_type":"DualityGame.Core.VisionConeAnimator","_name":"_VisionConeAnimator","_targetVariableID":"fd649c74-2186-4377-87b3-eaa902e563ef"},"$type":"NodeCanvas.Tasks.Actions.SetProperty"},{"log":{"_value":"Found
+    him!"},"verboseMode":2,"$type":"NodeCanvas.Tasks.Actions.DebugLogText"},{"target":{"_name":"_Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"speed":{"_name":"Chase
+    Speed","_targetVariableID":"95714651-2b71-44e4-a59f-abe60eca6e13"},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.MoveToGameObject"}]},"_name":"Chasing","_position":{"x":415.0,"y":513.1973},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"log":{"_value":"Where
+    did he go?!?!"},"$type":"NodeCanvas.Tasks.Actions.DebugLogText"}]},"_name":"Lost
+    Player","_position":{"x":873.0,"y":437.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_actionList":{"executionMode":1,"actions":[{"target":{"_name":"_Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"speed":{"_name":"Chase
+    Speed","_targetVariableID":"95714651-2b71-44e4-a59f-abe60eca6e13"},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.MoveToGameObject"}]},"_name":"Chasing
+    (Out-of-sight)","_position":{"x":214.0,"y":787.2139},"$type":"NodeCanvas.StateMachines.ActionState","$id":"4"},{"_onEnterList":{"executionMode":1,"actions":[{"log":{"_value":"Wait
+    for location to fully load"},"verboseMode":1,"$type":"NodeCanvas.Tasks.Actions.DebugLogText"}]},"_onUpdateList":{"executionMode":1,"actions":[]},"_onExitList":{"executionMode":1,"actions":[{"log":{"_value":"Location
+    loaded"},"verboseMode":1,"$type":"NodeCanvas.Tasks.Actions.DebugLogText"}]},"foldEnter":true,"foldExit":true,"_position":{"x":1209.122,"y":97.71877},"$type":"NodeCanvas.StateMachines.SuperActionState","$id":"5"},{"_actionListEnter":{"executionMode":1,"actions":[{"saveAs":{"_name":"_VisionConeAnimator","_targetVariableID":"fd649c74-2186-4377-87b3-eaa902e563ef"},"$type":"DualityGame.Core.GetComponentInChildren`1[[DualityGame.Core.VisionConeAnimator,
+    DualityGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}]},"_actionListExit":{"executionMode":1,"actions":[]},"_position":{"x":1093.896,"y":241.872},"$type":"NodeCanvas.StateMachines.EnterExitState"}],"connections":[{"_condition":{"variable":{"_name":"_Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CheckNull"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"variable":{"_name":"_Player"},"$type":"NodeCanvas.Tasks.Conditions.CheckNull"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"conditions":[{"targetLayers":{"_name":"PlayerLayer","_targetVariableID":"4c532c5f-3404-4e80-a146-b6b2ce51e315"},"overrideAgent":{"_type":"UnityEngine.Transform","_name":"_Player"},"$type":"NodeCanvas.Tasks.Conditions.IsWithinLayerMask"},{"target":{"_name":"_Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"maxDistance":{"_name":"Patrolling
+    View Distance","_targetVariableID":"f44b8a60-e03a-4de0-8e0e-8ab34c0d65c8"},"awarnessDistance":{"_name":"Patrolling
+    Awarness Distance","_targetVariableID":"337baa31-3100-42eb-a9c1-c3451c28f014"},"viewAngle":{"_name":"Patrolling
+    View Angle","_targetVariableID":"daf34e35-a041-4334-a2ef-1f526b4c63dc"},"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"}],"$type":"NodeCanvas.Framework.ConditionList"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"targetLayers":{"_name":"PlayerLayer","_targetVariableID":"4c532c5f-3404-4e80-a146-b6b2ce51e315"},"_invert":true,"overrideAgent":{"_type":"UnityEngine.Transform","_name":"_Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"$type":"NodeCanvas.Tasks.Conditions.IsWithinLayerMask"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"target":{"_name":"_Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"maxDistance":{"_name":"Chase
+    View Distance","_targetVariableID":"1f57e903-8d87-4f5c-a576-7ce63cade292"},"awarnessDistance":{"_name":"Chase
+    Awarness Distance","_targetVariableID":"848c9346-cb4c-4ea7-a825-2d66eb5326ec"},"viewAngle":{"_name":"Chase
+    View Angle","_targetVariableID":"20a7938b-82cf-4174-aa4d-0e883612a76e"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"checkMode":1,"conditions":[{"timeout":{"_name":"Out-Of-Sight
+    Timeout","_targetVariableID":"f924310c-d876-4f6d-8275-3dd760e229ef"},"$type":"NodeCanvas.Tasks.Conditions.Timeout"},{"targetLayers":{"_name":"PlayerLayer","_targetVariableID":"4c532c5f-3404-4e80-a146-b6b2ce51e315"},"_invert":true,"overrideAgent":{"_type":"UnityEngine.Transform","_name":"_Player"},"$type":"NodeCanvas.Tasks.Conditions.IsWithinLayerMask"}],"$type":"NodeCanvas.Framework.ConditionList"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"target":{"_name":"_Player","_targetVariableID":"cdf86257-1661-4781-82f5-4f8e6c353aa9"},"maxDistance":{"_name":"Chase
+    View Distance","_targetVariableID":"1f57e903-8d87-4f5c-a576-7ce63cade292"},"awarnessDistance":{"_name":"Chase
+    Awarness Distance","_targetVariableID":"848c9346-cb4c-4ea7-a825-2d66eb5326ec"},"viewAngle":{"_name":"Chase
+    View Angle","_targetVariableID":"20a7938b-82cf-4174-aa4d-0e883612a76e"},"$type":"NodeCanvas.Tasks.Conditions.CanSeeTarget"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"$type":"DualityGame.Core.OnLocationChanged"},"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{"PlayerLayer":{"_value":{"value":512},"_name":"PlayerLayer","_id":"4c532c5f-3404-4e80-a146-b6b2ce51e315","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.LayerMask,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Patrolling":{"_value":{},"_name":"Patrolling","_id":"bbd63b1b-015b-440e-a639-44ac6352f60d","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+    ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Wait
+    at each waypoint":{"_value":1.0,"_name":"Wait at each waypoint","_id":"dee9fbef-8ebb-48e8-9a31-ecd7692d4180","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Patrolling
+    Speed":{"_value":3.0,"_name":"Patrolling Speed","_id":"1858e381-825a-458e-ab14-0f81412158dc","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Patrolling
+    View Distance":{"_value":50.0,"_name":"Patrolling View Distance","_id":"f44b8a60-e03a-4de0-8e0e-8ab34c0d65c8","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Patrolling
+    View Angle":{"_value":90.0,"_name":"Patrolling View Angle","_id":"daf34e35-a041-4334-a2ef-1f526b4c63dc","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Patrolling
+    Awarness Distance":{"_value":2.0,"_name":"Patrolling Awarness Distance","_id":"337baa31-3100-42eb-a9c1-c3451c28f014","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Chasing":{"_value":{},"_name":"Chasing","_id":"f8fc09d8-f3e0-4adc-9bd5-7610b2e6834f","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+    ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Chase
+    Speed":{"_value":4.0,"_name":"Chase Speed","_id":"95714651-2b71-44e4-a59f-abe60eca6e13","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Chase
+    View Distance":{"_value":50.0,"_name":"Chase View Distance","_id":"1f57e903-8d87-4f5c-a576-7ce63cade292","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Chase
+    View Angle":{"_value":120.0,"_name":"Chase View Angle","_id":"20a7938b-82cf-4174-aa4d-0e883612a76e","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Chase
+    Awarness Distance":{"_value":3.0,"_name":"Chase Awarness Distance","_id":"848c9346-cb4c-4ea7-a825-2d66eb5326ec","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Out-Of-Sight
+    Timeout":{"_value":2.0,"_name":"Out-Of-Sight Timeout","_id":"f924310c-d876-4f6d-8275-3dd760e229ef","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.22
+    _category: 
+    _comments: 
+    _translation: {x: 101, y: -69}
+    _zoomFactor: 0.83522767
+  _haltSerialization: 0
