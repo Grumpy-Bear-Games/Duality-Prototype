@@ -109,7 +109,7 @@ namespace NodeCanvas.Framework
             set { _isBreakpoint = value; }
         }
 
-        ///<summary>The title name of the node shown in the window if editor is not in Icon Mode. This is a property so title name may change instance wise</summary>
+        ///<summary>The title name of the node. This is virtual so title name may change instance wise</summary>
         virtual public string name {
             get
             {
@@ -119,7 +119,7 @@ namespace NodeCanvas.Framework
 
                 if ( string.IsNullOrEmpty(_nameCache) ) {
                     var nameAtt = this.GetType().RTGetAttribute<NameAttribute>(true);
-                    _nameCache = nameAtt != null ? nameAtt.name : GetType().FriendlyName().SplitCamelCase();
+                    _nameCache = ( nameAtt != null ? nameAtt.name : GetType().FriendlyName().SplitCamelCase() );
                 }
                 return _nameCache;
             }
@@ -186,11 +186,11 @@ namespace NodeCanvas.Framework
         ///<summary>The time in seconds the node has been Status.Running after a reset (Status.Resting)</summary>
         public float elapsedTime => ( status == Status.Running ? graph.elapsedTime - timeStarted : 0 );
 
-        ///<summary>mark when status running change</summary>
+        //Mark when status running change
         private float timeStarted { get; set; }
         //Used to check recursion
         private bool isChecked { get; set; }
-        //used to flag breakpoint reached
+        //Used to flag breakpoint reached
         private bool breakPointReached { get; set; }
 
 
@@ -285,8 +285,7 @@ namespace NodeCanvas.Framework
                     if ( owner != null ) { owner.PauseBehaviour(); }
                     if ( breakEditor ) { StartCoroutine(YieldBreak(() => { if ( owner != null ) { owner.StartBehaviour(); } })); }
                     breakPointReached = true;
-                    status = Status.Running;
-                    return Status.Running;
+                    return status = Status.Running;
                 }
                 if ( breakPointReached ) {
                     breakPointReached = false;
@@ -295,8 +294,7 @@ namespace NodeCanvas.Framework
             }
 #endif
 
-            status = OnExecute(agent, blackboard);
-            return status;
+            return status = OnExecute(agent, blackboard);
         }
 
         ///<summary>Recursively reset the node and child nodes if it's not Resting already</summary>
@@ -423,6 +421,14 @@ namespace NodeCanvas.Framework
         ///<summary>Nodes can use coroutine as normal through MonoManager.</summary>
         public void StopCoroutine(Coroutine routine) {
             if ( MonoManager.current != null ) { MonoManager.current.StopCoroutine(routine); }
+        }
+
+        public void StartParallelTask(System.Action action) {
+
+        }
+
+        public void StopParallelTask(System.Action action) {
+
         }
 
 

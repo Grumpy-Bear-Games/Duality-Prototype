@@ -10,15 +10,17 @@ namespace NodeCanvas.Editor
     public static class Commands
     {
 
-        [MenuItem("Tools/ParadoxNotion/NodeCanvas/Create/New Task")]
+        ///----------------------------------------------------------------------------------------------
+
         [MenuItem("Assets/Create/ParadoxNotion/NodeCanvas/New Task")]
+        [MenuItem("Tools/ParadoxNotion/NodeCanvas/Create/New Task", false, 90)]
         public static void ShowTaskWizard() {
             TaskWizardWindow.ShowWindow();
         }
 
         ///----------------------------------------------------------------------------------------------
 
-        [MenuItem("Tools/ParadoxNotion/NodeCanvas/Create/Global Scene Blackboard")]
+        [MenuItem("Tools/ParadoxNotion/NodeCanvas/Create/Global Scene Blackboard", false, 10)]
         public static void CreateGlobalSceneBlackboard() {
             Selection.activeObject = GlobalBlackboard.Create();
         }
@@ -60,9 +62,9 @@ namespace NodeCanvas.Editor
             WelcomeWindow.ShowWindow(typeof(NodeCanvas.BehaviourTrees.BehaviourTree));
         }
 
-        [MenuItem("Tools/ParadoxNotion/NodeCanvas/Visit Website")]
+        [MenuItem("Tools/ParadoxNotion/NodeCanvas/Website...")]
         public static void VisitWebsite() {
-            Help.BrowseURL("http://nodecanvas.paradoxnotion.com");
+            Help.BrowseURL("https://nodecanvas.paradoxnotion.com");
         }
     }
 }

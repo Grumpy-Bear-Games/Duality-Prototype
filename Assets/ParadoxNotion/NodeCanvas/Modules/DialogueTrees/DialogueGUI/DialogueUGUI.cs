@@ -48,6 +48,19 @@ namespace NodeCanvas.DialogueTrees.UI.Examples
             get { return _localSource != null ? _localSource : _localSource = gameObject.AddComponent<AudioSource>(); }
         }
 
+        bool anyKeyDown {
+            get
+            {
+#if ENABLE_LEGACY_INPUT_MANAGER
+                return Input.anyKeyDown;
+#elif ENABLE_INPUT_SYSTEM
+                return UnityEngine.InputSystem.Keyboard.current.anyKey.wasPressedThisFrame || UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame;
+#else
+                return Input.anyKeyDown;
+#endif
+            }
+        }
+
         void Awake() { Subscribe(); Hide(); }
         void OnEnable() { UnSubscribe(); Subscribe(); }
         void OnDisable() { UnSubscribe(); }
@@ -130,7 +143,7 @@ namespace NodeCanvas.DialogueTrees.UI.Examples
                 actorSpeech.text = text;
                 var timer = 0f;
                 while ( timer < audio.length ) {
-                    if ( skipOnInput && Input.anyKeyDown ) {
+                    if ( skipOnInput && anyKeyDown ) {
                         playSource.Stop();
                         break;
                     }
@@ -181,7 +194,7 @@ namespace NodeCanvas.DialogueTrees.UI.Examples
 
             if ( waitForInput ) {
                 waitInputIndicator.gameObject.SetActive(true);
-                while ( !Input.anyKeyDown ) {
+                while ( !anyKeyDown ) {
                     yield return null;
                 }
                 waitInputIndicator.gameObject.SetActive(false);
@@ -202,7 +215,7 @@ namespace NodeCanvas.DialogueTrees.UI.Examples
         }
 
         IEnumerator CheckInput(System.Action Do) {
-            while ( !Input.anyKeyDown ) {
+            while ( !anyKeyDown ) {
                 yield return null;
             }
             Do();

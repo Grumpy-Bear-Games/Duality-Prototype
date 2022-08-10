@@ -7,9 +7,11 @@ namespace NodeCanvas.StateMachines
 {
 
     [Name("Enter | Exit")]
-    [Description("Execute a number of Actions when the FSM enters/starts and when it stops/exits. Note that these actions can not be latent (multiple frames).")]
+    [Description("Execute a number of Actions when the FSM enters/starts and when it exits/stops. This is not a state.")]
     [Color("ff64cb")]
-    public class EnterExitState : FSMNode
+    [ParadoxNotion.Design.Icon("MacroIn")]
+    [System.Obsolete("Use On FSM Enter and On FSM Exit nodes")]
+    public class EnterExitState : FSMNode, IUpdatable
     {
 
         [SerializeField] private ActionList _actionListEnter;
@@ -44,13 +46,19 @@ namespace NodeCanvas.StateMachines
         }
 
         public override void OnGraphStarted() {
-            actionListEnter.Execute(graphAgent, graphBlackboard);
-            actionListEnter.EndAction(null);
+            status = actionListEnter.Execute(graphAgent, graphBlackboard);
         }
 
         public override void OnGraphStoped() {
             actionListExit.Execute(graphAgent, graphBlackboard);
             actionListExit.EndAction(null);
+            actionListEnter.EndAction(null);
+        }
+
+        void IUpdatable.Update() {
+            if ( status == Status.Running ) {
+                status = actionListEnter.Execute(graphAgent, graphBlackboard);
+            }
         }
 
         ///----------------------------------------------------------------------------------------------
@@ -68,11 +76,11 @@ namespace NodeCanvas.StateMachines
         }
 
         protected override void OnNodeInspectorGUI() {
-            EditorUtils.CoolLabel("Enter Actions");
+            EditorUtils.CoolLabel("FSM Enter Actions");
             actionListEnter.ShowListGUI();
             actionListEnter.ShowNestedActionsGUI();
-            EditorUtils.Separator();
-            EditorUtils.CoolLabel("Exit Actions");
+            EditorUtils.BoldSeparator();
+            EditorUtils.CoolLabel("FSM Exit Actions");
             actionListExit.ShowListGUI();
             actionListExit.ShowNestedActionsGUI();
         }

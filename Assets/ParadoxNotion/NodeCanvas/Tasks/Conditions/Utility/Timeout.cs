@@ -19,7 +19,6 @@ namespace NodeCanvas.Tasks.Conditions
         }
 
         protected override void OnEnable() {
-            currentTime = 0;
             MonoManager.current.onLateUpdate += MoveNext;
         }
 
@@ -33,7 +32,11 @@ namespace NodeCanvas.Tasks.Conditions
         }
 
         protected override bool OnCheck() {
-            return currentTime >= timeout.value;
+            if ( currentTime >= timeout.value ) {
+                currentTime = 0;
+                return true;
+            }
+            return false;
         }
     }
 }

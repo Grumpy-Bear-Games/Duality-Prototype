@@ -7,8 +7,10 @@ namespace NodeCanvas.StateMachines
 {
 
     [Name("Parallel")]
-    [Description("Execute a number of Actions with optional conditional requirement and in parallel to any other state, as soon as the FSM is started. All actions will prematurely be stoped as soon as the FSM stops as well. This is not a state per-se and thus can have neither incomming, nor outgoing transitions.")]
+    [Description("Execute a number of Actions with optional conditional requirement and in parallel to any other state, as soon as the FSM is started. All actions will prematurely be stoped as soon as the FSM stops as well. This is not a state.")]
     [Color("ff64cb")]
+    [ParadoxNotion.Design.Icon("Repeat")]
+    [System.Obsolete("Use On FSM Update node")]
     public class ConcurrentState : FSMNode, IUpdatable
     {
 

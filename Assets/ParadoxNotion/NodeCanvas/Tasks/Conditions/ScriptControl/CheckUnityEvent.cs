@@ -105,7 +105,7 @@ namespace NodeCanvas.Tasks.Conditions
             if ( !Application.isPlaying && GUILayout.Button("Select Event") ) {
                 var menu = new UnityEditor.GenericMenu();
                 if ( agent != null ) {
-                    foreach ( var comp in agent.GetComponents(typeof(Component)).Where(c => c.hideFlags == 0) ) {
+                    foreach ( var comp in agent.GetComponents(typeof(Component)).Where(c => !c.hideFlags.HasFlag(HideFlags.HideInInspector)) ) {
                         menu = EditorUtils.GetInstanceFieldSelectionMenu(comp.GetType(), typeof(UnityEvent), SetTargetEvent, menu);
                         menu = EditorUtils.GetInstancePropertySelectionMenu(comp.GetType(), typeof(UnityEvent), SetTargetEvent, true, false, menu);
                     }

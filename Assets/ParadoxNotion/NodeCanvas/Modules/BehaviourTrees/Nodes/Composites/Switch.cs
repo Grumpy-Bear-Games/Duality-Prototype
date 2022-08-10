@@ -9,7 +9,7 @@ namespace NodeCanvas.BehaviourTrees
 {
 
     [Category("Composites")]
-    [Description("Executes one child based on the provided int or enum and return it's status.")]
+    [Description("Executes one child based on the provided int or enum case and returns its status.")]
     [ParadoxNotion.Design.Icon("IndexSwitcher")]
     [Color("b3ff7f")]
     public class Switch : BTComposite
@@ -29,6 +29,7 @@ namespace NodeCanvas.BehaviourTrees
 
         [Tooltip("If true and the 'case' change while a child is running, that child will immediately be interrupted and the new child will be executed.")]
         public bool dynamic;
+        [Tooltip("The selection mode used.")]
         public CaseSelectionMode selectionMode = CaseSelectionMode.IndexBased;
 
         [ShowIf("selectionMode", 0)]
@@ -45,10 +46,13 @@ namespace NodeCanvas.BehaviourTrees
 
         public override void OnGraphStarted() {
             if ( selectionMode == CaseSelectionMode.EnumBased ) {
-                enumCasePairing = new Dictionary<int, int>();
-                var enumValues = System.Enum.GetValues(enumCase.value.GetType());
-                for ( var i = 0; i < enumValues.Length; i++ ) {
-                    enumCasePairing[(int)enumValues.GetValue(i)] = i;
+                var enumValue = enumCase.value;
+                if ( enumValue != null ) {
+                    enumCasePairing = new Dictionary<int, int>();
+                    var enumValues = System.Enum.GetValues(enumValue.GetType());
+                    for ( var i = 0; i < enumValues.Length; i++ ) {
+                        enumCasePairing[(int)enumValues.GetValue(i)] = i;
+                    }
                 }
             }
         }

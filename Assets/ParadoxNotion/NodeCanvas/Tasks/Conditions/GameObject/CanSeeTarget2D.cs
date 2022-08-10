@@ -15,6 +15,8 @@ namespace NodeCanvas.Tasks.Conditions
         public BBParameter<GameObject> target;
         [Tooltip("Distance within which to look out for.")]
         public BBParameter<float> maxDistance = 50;
+        [Tooltip("A layer mask to use for the line of sight check.")]
+        public BBParameter<LayerMask> layerMask = (LayerMask)( -1 );
         [Tooltip("Distance within which the target can be seen (or rather sensed) regardless of view angle.")]
         public BBParameter<float> awarnessDistance = 0f;
         [SliderField(1, 180)]
@@ -36,7 +38,7 @@ namespace NodeCanvas.Tasks.Conditions
             }
 
             if ( Vector2.Distance(agent.position, t.position) <= awarnessDistance.value ) {
-                var hit = Physics2D.Linecast((Vector2)agent.position + offset, (Vector2)t.position + offset);
+                var hit = Physics2D.Linecast((Vector2)agent.position + offset, (Vector2)t.position + offset, layerMask.value);
                 if ( hit.collider != t.GetComponent<Collider2D>() ) {
                     return false;
                 }
@@ -51,7 +53,7 @@ namespace NodeCanvas.Tasks.Conditions
                 return false;
             }
 
-            var hit2 = Physics2D.Linecast((Vector2)agent.position + offset, (Vector2)t.position + offset);
+            var hit2 = Physics2D.Linecast((Vector2)agent.position + offset, (Vector2)t.position + offset, layerMask.value);
             if ( hit2.collider != t.GetComponent<Collider2D>() ) {
                 return false;
             }

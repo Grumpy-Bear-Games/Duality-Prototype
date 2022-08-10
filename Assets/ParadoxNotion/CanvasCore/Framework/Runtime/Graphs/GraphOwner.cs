@@ -35,7 +35,8 @@ namespace NodeCanvas.Framework
 
         ///----------------------------------------------------------------------------------------------
         [SerializeField] private SerializationPair[] _serializedExposedParameters;
-        internal List<ExposedParameter> exposedParameters { get; set; }
+        ///<summary>The list of exposed parameters if any</summary>
+        public List<ExposedParameter> exposedParameters { get; set; }
 
         //serialize exposed parameters
         void ISerializationCallbackReceiver.OnBeforeSerialize() {
@@ -203,6 +204,9 @@ namespace NodeCanvas.Framework
             return instance;
         }
 
+        ///<summary>Makes and returns the runtime instance based on the current graph set.</summary>
+        public Graph MakeRuntimeGraphInstance() { return graph = GetInstance(graph); }
+
         ///<summary>Start the graph assigned. It will be auto updated.</summary>
         public void StartBehaviour() { StartBehaviour(updateMode, null); }
         ///<summary>Start the graph assigned providing a callback for when it's finished if at all.</summary>
@@ -240,9 +244,7 @@ namespace NodeCanvas.Framework
 
         ///<summary>Manually update the assigned graph</summary>
         public void UpdateBehaviour() {
-            if ( graph != null ) {
-                graph.UpdateGraph();
-            }
+            if ( graph != null ) { graph.UpdateGraph(); }
         }
 
         ///<summary>The same as calling Stop, Start Behaviour</summary>
@@ -275,8 +277,8 @@ namespace NodeCanvas.Framework
             if ( param != null ) { ( param as ExposedParameter<T> ).value = value; }
         }
 
-        ///<summary>Make a new exposed parameter from a blackboard variable name and bind it</summary>
-        ExposedParameter MakeNewExposedParameter<T>(string name) {
+        ///<summary>Make and return a new exposed parameter from a blackboard variable name and bind it</summary>
+        public ExposedParameter MakeNewExposedParameter<T>(string name) {
             if ( exposedParameters == null ) { exposedParameters = new List<ExposedParameter>(); }
             var variable = graph.blackboard.GetVariable<T>(name);
             if ( variable != null && variable.isExposedPublic && !variable.isPropertyBound ) {
@@ -285,6 +287,7 @@ namespace NodeCanvas.Framework
                 exposedParameters.Add(exposedParam);
                 return exposedParam;
             }
+            ParadoxNotion.Services.Logger.LogWarning(string.Format("Exposed Graph Variable named '{0}' was not found", name));
             return null;
         }
 
@@ -349,13 +352,13 @@ namespace NodeCanvas.Framework
                         StartBehaviour();
                         InvokeStartEvent();
                     }
+                    initialized = true;
                 });
             } else {
                 graph.LoadOverwrite(loadData);
                 BindExposedParameters();
+                initialized = true;
             }
-
-            initialized = true;
         }
 
         ///<summary>Bind exposed parameters to local graph blackboard variables</summary>
@@ -363,6 +366,15 @@ namespace NodeCanvas.Framework
             if ( exposedParameters != null && graph != null ) {
                 for ( var i = 0; i < exposedParameters.Count; i++ ) {
                     exposedParameters[i].Bind(graph.blackboard);
+                }
+            }
+        }
+
+        ///<summary>UnBind exposed parameters any local graph blackboard variables</summary>
+        public void UnBindExposedParameters() {
+            if ( exposedParameters != null ) {
+                for ( var i = 0; i < exposedParameters.Count; i++ ) {
+                    exposedParameters[i].UnBind();
                 }
             }
         }
@@ -436,7 +448,7 @@ namespace NodeCanvas.Framework
         protected Graph boundGraphInstance;
 
         ///<summary>Editor. Called after assigned graph is serialized.</summary>
-        internal void OnAfterGraphSerialized(Graph serializedGraph) {
+        public void OnAfterGraphSerialized(Graph serializedGraph) {
             //If the graph is bound, we store the serialization data here.
             if ( this.graphIsBound && this.boundGraphInstance == serializedGraph ) {
 
@@ -465,7 +477,7 @@ namespace NodeCanvas.Framework
         ///<summary>Editor. Validate.</summary>
         protected void OnValidate() { Validate(); }
         ///<summary>Editor. Validate.</summary>
-        internal void Validate() {
+        public void Validate() {
 
             if ( !UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode ) {
                 //everything here is relevant to bound graphs only.
@@ -486,14 +498,12 @@ namespace NodeCanvas.Framework
                     graph.Validate();
                 }
 
-                //done in editor as well only for convenience purposes.
-                // DISABLE: was creating confusion when editing multiple graphowner instances using asset graphs and having different variable overrides
-                // BindExposedParameters();
+                // BindExposedParameters(); // DISABLE: was creating confusion when editing multiple graphowner instances using asset graphs and having different variable overrides
             }
         }
 
         ///<summary>Editor. Binds the target graph (null to delete current bound).</summary>
-        internal void SetBoundGraphReference(Graph target) {
+        public void SetBoundGraphReference(Graph target) {
 
             if ( UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode ) {
                 Debug.LogError("SetBoundGraphReference method is an Editor only method!");
@@ -528,7 +538,7 @@ namespace NodeCanvas.Framework
 
         //...
         protected void OnDrawGizmos() {
-            Gizmos.DrawIcon(transform.position, "GraphOwnerGizmo.png", true);
+
         }
 
         ///<summary>Forward Gizmos callback</summary>
@@ -553,8 +563,10 @@ namespace NodeCanvas.Framework
     abstract public class GraphOwner<T> : GraphOwner where T : Graph
     {
 
-        [SerializeField] private T _graph;
-        [SerializeField] private Object _blackboard;
+        [SerializeField, Tooltip("The graph to use.")]
+        private T _graph;
+        [SerializeField, Tooltip("The GameObject Blackboard to use.")]
+        private Object _blackboard;
 
         ///<summary>The current behaviour Graph assigned</summary>
         sealed public override Graph graph {

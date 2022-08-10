@@ -87,7 +87,7 @@ namespace NodeCanvas.Tasks.Actions
             if ( !Application.isPlaying && GUILayout.Button("Select Field") ) {
                 var menu = new UnityEditor.GenericMenu();
                 if ( agent != null ) {
-                    foreach ( var comp in agent.GetComponents(typeof(Component)).Where(c => c.hideFlags != HideFlags.HideInInspector) ) {
+                    foreach ( var comp in agent.GetComponents(typeof(Component)).Where(c => !c.hideFlags.HasFlag(HideFlags.HideInInspector)) ) {
                         menu = EditorUtils.GetInstanceFieldSelectionMenu(comp.GetType(), typeof(object), SetTargetField, menu);
                     }
                     menu.AddSeparator("/");

@@ -100,7 +100,7 @@ namespace NodeCanvas
         ///---------------------------------------UNITY EDITOR-------------------------------------------
 #if UNITY_EDITOR
 
-        [UnityEditor.MenuItem("Tools/ParadoxNotion/NodeCanvas/Create/Standalone Action List")]
+        [UnityEditor.MenuItem("Tools/ParadoxNotion/NodeCanvas/Create/Standalone Action List", false, 3)]
         static void CreateActionListPlayer() {
             UnityEditor.Selection.activeObject = Create();
         }

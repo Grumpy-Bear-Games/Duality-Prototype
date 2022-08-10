@@ -106,7 +106,7 @@ namespace NodeCanvas.Tasks.Actions
             if ( !Application.isPlaying && GUILayout.Button("Select Action Method") ) {
                 var menu = new UnityEditor.GenericMenu();
                 if ( agent != null ) {
-                    foreach ( var comp in agent.GetComponents(typeof(Component)).Where(c => c.hideFlags != HideFlags.HideInInspector) ) {
+                    foreach ( var comp in agent.GetComponents(typeof(Component)).Where(c => !c.hideFlags.HasFlag(HideFlags.HideInInspector)) ) {
                         menu = EditorUtils.GetInstanceMethodSelectionMenu(comp.GetType(), typeof(Status), typeof(object), SetMethod, 1, false, true, menu);
                     }
                     menu.AddSeparator("/");

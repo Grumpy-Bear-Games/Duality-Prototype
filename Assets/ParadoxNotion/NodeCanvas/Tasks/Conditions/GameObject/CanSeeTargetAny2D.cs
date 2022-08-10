@@ -15,6 +15,7 @@ namespace NodeCanvas.Tasks.Conditions
 
         public BBParameter<List<GameObject>> targetObjects;
         public BBParameter<float> maxDistance = 50;
+        public BBParameter<LayerMask> layerMask = (LayerMask)( -1 );
         public BBParameter<float> awarnessDistance = 0f;
         [SliderField(1, 180)]
         public BBParameter<float> viewAngle = 70f;
@@ -42,7 +43,7 @@ namespace NodeCanvas.Tasks.Conditions
                 if ( !t.gameObject.activeInHierarchy ) { continue; }
 
                 if ( Vector2.Distance(agent.position, t.position) < awarnessDistance.value ) {
-                    var hit = Physics2D.Linecast((Vector2)agent.position + offset, (Vector2)t.position + offset);
+                    var hit = Physics2D.Linecast((Vector2)agent.position + offset, (Vector2)t.position + offset, layerMask.value);
                     if ( hit.collider != t.GetComponent<Collider2D>() ) { continue; }
                     if ( store ) { temp.Add(o); }
                     r = true;
@@ -57,7 +58,7 @@ namespace NodeCanvas.Tasks.Conditions
                     continue;
                 }
 
-                var hit2 = Physics2D.Linecast((Vector2)agent.position + offset, (Vector2)t.position + offset);
+                var hit2 = Physics2D.Linecast((Vector2)agent.position + offset, (Vector2)t.position + offset, layerMask.value);
                 if ( hit2.collider != t.GetComponent<Collider2D>() ) { continue; }
 
                 if ( store ) { temp.Add(o); }

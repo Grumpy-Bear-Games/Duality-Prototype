@@ -213,11 +213,11 @@ namespace NodeCanvas.Editor
             return new GUIContent(string.Format("<color=#{0}>{1}: {2}</color>", map.hex, tagText, msg.text), map.icon);
         }
 
-        ///<summary>Fetch first logger message of target graph</summary>
-        public static Logger.Message GetFirstMessageForGraph(Graph graph) {
+        ///<summary>Fetch last logger message of target graph</summary>
+        public static Logger.Message GetLastMessageForGraph(Graph graph) {
             List<Logger.Message> list = null;
             if ( graphsMap.TryGetValue(graph, out list) ) {
-                return list.FirstOrDefault();
+                return list.LastOrDefault();
             }
             return default(Logger.Message);
         }

@@ -8,13 +8,13 @@ namespace NodeCanvas.BehaviourTrees
 
     [Name("Sequencer", 10)]
     [Category("Composites")]
-    [Description("Execute the child nodes in order and returns Success if all children return Success. As soon as a child node returns Failure, the Sequencer will stop and return Failure as well.")]
+    [Description("Executes its children in order and returns Success if all children return Success. As soon as a child returns Failure, the Sequencer will stop and return Failure as well.")]
     [ParadoxNotion.Design.Icon("Sequencer")]
     [Color("bf7fff")]
     public class Sequencer : BTComposite
     {
 
-        [Tooltip("If true, then higher priority child nodes are re-evaluated per frame and if either returns Failure, then the Sequencer will immediately stop and return Failure as well.")]
+        [Tooltip("If true, then higher priority children are re-evaluated per frame and if either returns Failure, then the Sequencer will immediately stop and return Failure as well.")]
         public bool dynamic;
         [Tooltip("If true, the children order of execution is shuffled each time the Sequencer resets.")]
         public bool random;

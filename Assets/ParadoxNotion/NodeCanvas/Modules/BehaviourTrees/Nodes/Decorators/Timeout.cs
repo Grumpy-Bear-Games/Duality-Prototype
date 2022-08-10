@@ -12,6 +12,7 @@ namespace NodeCanvas.BehaviourTrees
     public class Timeout : BTDecorator
     {
 
+        [Tooltip("The timeout period in seconds.")]
         public BBParameter<float> timeout = 1;
 
         protected override Status OnExecute(Component agent, IBlackboard blackboard) {

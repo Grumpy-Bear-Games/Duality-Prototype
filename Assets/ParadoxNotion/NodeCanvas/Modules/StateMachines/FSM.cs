@@ -11,9 +11,9 @@ namespace NodeCanvas.StateMachines
     ///<summary> Use FSMs to create state like behaviours</summary>
     [GraphInfo(
         packageName = "NodeCanvas",
-        docsURL = "http://nodecanvas.paradoxnotion.com/documentation/",
-        resourcesURL = "http://nodecanvas.paradoxnotion.com/downloads/",
-        forumsURL = "http://nodecanvas.paradoxnotion.com/forums-page/"
+        docsURL = "https://nodecanvas.paradoxnotion.com/documentation/",
+        resourcesURL = "https://nodecanvas.paradoxnotion.com/downloads/",
+        forumsURL = "https://nodecanvas.paradoxnotion.com/forums-page/"
         )]
     [CreateAssetMenu(menuName = "ParadoxNotion/NodeCanvas/FSM Asset")]
     public class FSM : Graph
@@ -29,6 +29,7 @@ namespace NodeCanvas.StateMachines
         private List<IUpdatable> updatableNodes;
         private IStateCallbackReceiver[] callbackReceivers;
         private Stack<FSMState> stateStack;
+        private bool enterStartStateFlag;
 
         public event System.Action<IState> onStateEnter;
         public event System.Action<IState> onStateUpdate;
@@ -68,14 +69,20 @@ namespace NodeCanvas.StateMachines
 
         protected override void OnGraphStarted() {
             stateStack = new Stack<FSMState>();
-            EnterState((FSMState)primeNode, TransitionCallMode.Normal);
+            enterStartStateFlag = true;
         }
 
         protected override void OnGraphUpdate() {
 
+            if ( enterStartStateFlag ) {
+                //use a flag so that other nodes can do stuff on graph started
+                enterStartStateFlag = false;
+                EnterState((FSMState)primeNode, TransitionCallMode.Normal);
+            }
+
             if ( currentState != null ) {
 
-                //Update defer updatables (basically AnyStates and ConcurentStates)
+                //Update defer IUpdatables
                 for ( var i = 0; i < updatableNodes.Count; i++ ) {
                     updatableNodes[i].Update();
                 }
@@ -84,7 +91,7 @@ namespace NodeCanvas.StateMachines
                 if ( currentState == null ) { Stop(false); return; }
 
                 //Update current state
-                currentState.Update();
+                currentState.Execute(agent, blackboard);
                 if ( onStateUpdate != null && currentState.status == Status.Running ) {
                     onStateUpdate(currentState);
                 }
@@ -210,7 +217,7 @@ namespace NodeCanvas.StateMachines
         ///---------------------------------------UNITY EDITOR-------------------------------------------
 #if UNITY_EDITOR
 
-        [UnityEditor.MenuItem("Tools/ParadoxNotion/NodeCanvas/Create/State Machine Asset", false, 0)]
+        [UnityEditor.MenuItem("Tools/ParadoxNotion/NodeCanvas/Create/State Machine Asset", false, 1)]
         static void Editor_CreateGraph() {
             var newGraph = EditorUtils.CreateAsset<FSM>();
             UnityEditor.Selection.activeObject = newGraph;

@@ -107,8 +107,9 @@ namespace ParadoxNotion.Design
 
             ///----------------------------------------------------------------------------------------------
             bool handled;
+            EditorGUI.BeginChangeCheck();
             var newValue = DirectFieldControl(content, value, t, info.unityObjectContext, info.attributes, out handled);
-            var changed = !object.Equals(newValue, value);
+            var changed = !object.Equals(newValue, value) || EditorGUI.EndChangeCheck();
             if ( changed ) { UndoUtility.RecordObjectComplete(info.unityObjectContext, content.text + "Field Change"); }
             value = newValue;
             if ( changed ) { UndoUtility.SetDirty(info.unityObjectContext); }
@@ -140,7 +141,7 @@ namespace ParadoxNotion.Design
 
             } else {
 
-                EditorGUILayout.LabelField(content, GetTempContent(string.Format("NonInspectable ({0})", t.FriendlyName())));
+                EditorGUILayout.LabelField(content, new GUIContent(string.Format("NonInspectable ({0})", t.FriendlyName())));
             }
 
             return value;

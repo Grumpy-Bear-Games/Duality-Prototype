@@ -170,11 +170,16 @@ namespace NodeCanvas.Framework
         }
 
         ///----------------------------------------------------------------------------------------------
-        internal GraphSource GetGraphSource() { return _graphSource; }
-        internal string GetSerializedJsonData() { return _serializedGraph; }
-        internal List<UnityEngine.Object> GetSerializedReferencesData() { return _objectReferences?.ToList(); }
-        internal GraphSource GetGraphSourceMetaDataCopy() { return new GraphSource().SetMetaData(graphSource); }
-        internal void SetGraphSourceMetaData(GraphSource source) { graphSource.SetMetaData(source); }
+        ///<summary>Returns the GraphSource object itself</summary>
+        public GraphSource GetGraphSource() { return _graphSource; }
+        ///<summary>Returns the serialization json</summary>
+        public string GetSerializedJsonData() { return _serializedGraph; }
+        ///<summary>Return a copy of the serialized Unity object references</summary>
+        public List<UnityEngine.Object> GetSerializedReferencesData() { return _objectReferences?.ToList(); }
+        ///<summary>Returns a new GraphSource with meta data copied from this GraphSource</summary>
+        public GraphSource GetGraphSourceMetaDataCopy() { return new GraphSource().SetMetaData(graphSource); }
+        ///<summary>Sets this GraphSource meta data from provided GraphSource</summary>
+        public void SetGraphSourceMetaData(GraphSource source) { graphSource.SetMetaData(source); }
         ///----------------------------------------------------------------------------------------------
 
         ///<summary>Serialize the local blackboard of the graph alone. The provided references list will be cleared and populated anew.</summary>
@@ -351,7 +356,16 @@ namespace NodeCanvas.Framework
 
         ///<summary>The 'Start' node. It should always be the first node in the nodes collection</summary>
         public Node primeNode {
-            get { return allNodes.Count > 0 && allNodes[0].allowAsPrime ? allNodes[0] : null; }
+            get
+            {
+                if ( allNodes.Count > 0 ) {
+                    var first = allNodes[0];
+                    if ( first.allowAsPrime ) {
+                        return first;
+                    }
+                }
+                return null;
+            }
             set
             {
                 if ( primeNode != value && allNodes.Contains(value) ) {
@@ -808,15 +822,13 @@ namespace NodeCanvas.Framework
             var graphs = new List<T>();
             foreach ( var node in allNodes.OfType<IGraphAssignable>() ) {
                 if ( node.subGraph is T ) {
-                    if ( !graphs.Contains((T)node.subGraph) ) {
-                        graphs.Add((T)node.subGraph);
-                    }
+                    graphs.Add((T)node.subGraph);
                     if ( recursive ) {
                         graphs.AddRange(node.subGraph.GetAllNestedGraphs<T>(recursive));
                     }
                 }
             }
-            return graphs;
+            return graphs.Distinct();
         }
 
         ///<summary>Get all runtime instanced Nested graphs of this graph and it's sub-graphs</summary>
@@ -834,7 +846,7 @@ namespace NodeCanvas.Framework
             return instances;
         }
 
-        ///<summary>Returns all defined BBParameter names found in graph</summary>
+        ///<summary>Returns all defined BBParameter found in graph</summary>
         public IEnumerable<BBParameter> GetDefinedParameters() {
             return allParameters.Where(p => p != null && p.isDefined);
         }

@@ -7,25 +7,26 @@ QUICK START
 4. The editor is now open. You can start creating your Behaviour Tree, or FSM!
 (For the Dialogue Tree System, add the 'DialogueTreeController' on a preferrably empty gameobject)
 
+
 -------------------------------------------------------------
 FULL DOCUMENTATION
 -------------------------------------------------------------
 For the Full Documentation please visit:
-http://nodecanvas.paradoxnotion.com/documentation/
+https://nodecanvas.paradoxnotion.com/documentation/
 
 
 -------------------------------------------------------------
 CHANGE LOG
 -------------------------------------------------------------
 You can find the complete change log online at:
-http://nodecanvas.paradoxnotion.com/change-log/
+https://nodecanvas.paradoxnotion.com/change-log/
 
 
 -------------------------------------------------------------
 RESOURCES
 -------------------------------------------------------------
 For 3rd Party Integrations, Examples, and other Resources:
-http://nodecanvas.paradoxnotion.com/downloads/
+https://nodecanvas.paradoxnotion.com/downloads/
 
 
 -------------------------------------------------------------
@@ -47,7 +48,14 @@ You can of course re-generate the file any time you wish.
 
 
 -------------------------------------------------------------
-Thanks for using NodeCanvas!
+THIRD PARTY NOTICES
+-------------------------------------------------------------
+This package uses 'Full Serializer' under the MIT license.
+See "..ParadoxNotion/CanvasCore/Common/Runtime/Serialization/Full Serializer/License (FullSerializer).txt".
+
+
+-------------------------------------------------------------
+Thank you for using NodeCanvas!
 Gavalakis Evangelos
-http://nodecanvas.paradoxnotion.com
+https://nodecanvas.paradoxnotion.com
 -------------------------------------------------------------
