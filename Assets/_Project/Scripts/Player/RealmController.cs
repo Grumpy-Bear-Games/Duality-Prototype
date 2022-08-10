@@ -47,10 +47,10 @@ namespace DualityGame.Player
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
-            LocationManager.OnLocationChanged += OnLocationChange;
+            SceneManager.OnSceneGroupChanged += OnSceneGroupChange;
         }
 
-        private void OnLocationChange(Location obj)
+        private void OnSceneGroupChange(SceneGroup obj)
         {
             _respawnPoint = GameObject.FindWithTag("Respawn");
             if (_respawnPoint == null)
@@ -61,7 +61,7 @@ namespace DualityGame.Player
             Respawn();
         }
 
-        private void OnDestroy() => LocationManager.OnLocationChanged -= OnLocationChange;
+        private void OnDestroy() => SceneManager.OnSceneGroupChanged -= OnSceneGroupChange;
 
         [UsedImplicitly]
         private void OnWarp(InputValue value)

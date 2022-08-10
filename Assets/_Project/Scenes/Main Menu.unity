@@ -5445,7 +5445,7 @@ GameObject:
   - component: {fileID: 1382818989}
   - component: {fileID: 1382818988}
   m_Layer: 0
-  m_Name: '[Location Coldstart Initializer]'
+  m_Name: '[Scene Group Coldstart Initializer]'
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5463,8 +5463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1935f7d08042d4cb46b1ff0b5db16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _locationManager: {fileID: 11400000, guid: 71eb4936a79cb3146bd850baa5cba8eb, type: 2}
-  _location: {fileID: 11400000, guid: d6f94accfeebc7342a7523c81803aa9d, type: 2}
+  _sceneGroup: {fileID: 7503107233205940735, guid: 0fb8562fe50852544b7c1ea8d28029d1,
+    type: 2}
 --- !u!4 &1382818989
 Transform:
   m_ObjectHideFlags: 0
@@ -5805,8 +5805,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firstFocused: {fileID: 679964796}
-  _locationManager: {fileID: 11400000, guid: 71eb4936a79cb3146bd850baa5cba8eb, type: 2}
-  _firstLocation: {fileID: 11400000, guid: 534da36839ced7946ae2b7cc25821ef2, type: 2}
+  _firstLocation: {fileID: -7489391942869560560, guid: 0fb8562fe50852544b7c1ea8d28029d1,
+    type: 2}
   _quitDialog: {fileID: 1699631266}
 --- !u!1 &1576077774
 GameObject:
