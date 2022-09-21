@@ -1,14 +1,11 @@
 ﻿using DualityGame.Realm;
-using Games.GrumpyBear.Core.Observables;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace DualityGame.Iteractables
 {
     public class InteractController : MonoBehaviour
     {
         [SerializeField] private float _radius = 3f;
-        [SerializeField] private UnityEvent _onUse;
         [SerializeField] private RealmObservable _realm;
         [SerializeField] private InteractableObservable _closestInteractable;
 
@@ -29,13 +26,6 @@ namespace DualityGame.Iteractables
             _closestInteractable.Set(closest);
         }
 
-        private void OnInteract()
-        {
-            if (_closestInteractable.Value != null) {
-                _closestInteractable.Value.Interact(gameObject);
-            } else {
-                _onUse.Invoke();
-            }
-        }
+        private void OnInteract() => _closestInteractable.Value?.Interact(gameObject);
     }
 }

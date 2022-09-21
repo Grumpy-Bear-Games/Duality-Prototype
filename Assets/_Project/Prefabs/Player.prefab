@@ -161,7 +161,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.600454, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5370,7 +5370,7 @@ MonoBehaviour:
   _currentRealm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
   _heaven: {fileID: 11400000, guid: 6e2678d65c1d2e046b0cb3fb66e5bb67, type: 2}
   _hell: {fileID: 11400000, guid: b4d6229eae5dd0c41b7a1171b0265464, type: 2}
-  _inventory: {fileID: 11400000, guid: b3a3004a12463514e823eaba6018cf4c, type: 2}
+  _inventory: {fileID: 11400000, guid: c0fcc5868137b7d42856a51b3b5250bf, type: 2}
   _warpVFX: {fileID: 11400000, guid: 046028bd2835c9d4f85842f6c12921da, type: 2}
   _fadeVFX: {fileID: 11400000, guid: d91a490061b0c5448a570c66048f5feb, type: 2}
 --- !u!114 &7249564570049133734
@@ -5435,21 +5435,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 2
-  _onUse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5561121506490950080}
-        m_TargetAssemblyTypeName: DualityGame.Inventory.Inventory, Assembly-CSharp
-        m_MethodName: DropItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _realm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
   _closestInteractable: {fileID: 11400000, guid: 9ad5e19dd98945f48a42c954e9cc8ab8,
     type: 2}
@@ -5466,7 +5451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _realm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
-  _inventory: {fileID: 11400000, guid: b3a3004a12463514e823eaba6018cf4c, type: 2}
+  _inventory: {fileID: 11400000, guid: c0fcc5868137b7d42856a51b3b5250bf, type: 2}
 --- !u!114 &5235687072971731518
 MonoBehaviour:
   m_ObjectHideFlags: 0
