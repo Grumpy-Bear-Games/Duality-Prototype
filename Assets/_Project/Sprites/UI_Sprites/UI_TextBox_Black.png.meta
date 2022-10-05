@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0de8e6a03ae484249985bb2d2edfc0bd
+guid: 0f86cf8a6d2310b4e949e28f569ee609
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,8 +47,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
-  spriteBorder: {x: 1199, y: 482, z: 700, w: 660}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -100,206 +100,194 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_0
+      name: UI_TextBox_Black_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 515
-        width: 1203
-        height: 700
+        y: 104
+        width: 204.33333
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afd62897164c64945b31c1b54e25446e
-      internalID: 1784792958
+      spriteID: c05ded4c2f8d27e4c89035b8cfdb607a
+      internalID: 1308489134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_1
+      name: UI_TextBox_Black_1
       rect:
         serializedVersion: 2
-        x: 1206
-        y: 502
-        width: 1132
-        height: 713
+        x: 204
+        y: 104
+        width: 204.33333
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e22bc815ba88a546a15030c66390790
-      internalID: 485069532
+      spriteID: bfe8308757ebf9b438ed6ddd2fc37213
+      internalID: -297021121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_2
+      name: UI_TextBox_Black_2
       rect:
         serializedVersion: 2
-        x: 2338
-        y: 511
-        width: 1169
-        height: 704
+        x: 408
+        y: 104
+        width: 204.33333
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8684dcab7b846414bbd1499d7a720ae4
-      internalID: 587387023
+      spriteID: 0797f238caa97f945803b8c863388297
+      internalID: 1923314531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_3
+      name: UI_TextBox_Black_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 405
-        width: 1203
-        height: 103
+        y: 52
+        width: 204.33333
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 802ecec194f3dc34b8ec4704026d159a
-      internalID: -1054668466
+      spriteID: 5e86fe7172664c1448c442089c2eb822
+      internalID: -1254736501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_4
+      name: UI_TextBox_Black_4
       rect:
         serializedVersion: 2
-        x: 1206
-        y: 408
-        width: 1132
-        height: 102
+        x: 204
+        y: 52
+        width: 204.33333
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f7a39bbdc0384a429d297a5e3c45e31
-      internalID: -482105902
+      spriteID: 6819e55a66d9409429cbbf1f8bb8c3c6
+      internalID: -1779119382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_5
+      name: UI_TextBox_Black_5
       rect:
         serializedVersion: 2
-        x: 2339
-        y: 405
-        width: 1169
-        height: 103
+        x: 408
+        y: 52
+        width: 204.33333
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ede8ac61a430dc41b2d7277f3eb1a98
-      internalID: 1921115635
+      spriteID: 63caa244e72d3874995327087236b785
+      internalID: 685479458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_6
+      name: UI_TextBox_Black_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1203
-        height: 405
+        width: 204.33333
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a10ad158e016ab24f9f7122ca4e53272
-      internalID: -12081827
+      spriteID: 7a73116f5b8b7cc45be9293890445af7
+      internalID: 1433155310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_7
+      name: UI_TextBox_Black_7
       rect:
         serializedVersion: 2
-        x: 1206
+        x: 204
         y: 0
-        width: 1132
-        height: 405
+        width: 204.33333
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8acd3d5d487b8a04b815f14f0bac08b7
-      internalID: -291052261
+      spriteID: 01d21f232e4ab494f8f83d98149bcd4d
+      internalID: 1113517440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_8
+      name: UI_TextBox_Black_8
       rect:
         serializedVersion: 2
-        x: 2338
+        x: 408
         y: 0
-        width: 1169.3334
-        height: 405
+        width: 204.33333
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87e56d70ab03b1b439e6d82932085c82
-      internalID: 1891485494
+      spriteID: 0656e36d208d5ad489a9cfcec4017512
+      internalID: -873846986
       vertices: []
       indices: 
       edges: []
@@ -307,23 +295,23 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ab156515e140a5642aa98fde64620eab
-    internalID: -1353428992
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI_BackgroundBubble_White_6: -12081827
-      UI_BackgroundBubble_White_5: 1921115635
-      UI_BackgroundBubble_White_4: -482105902
-      UI_BackgroundBubble_White_1: 485069532
-      UI_BackgroundBubble_White_3: -1054668466
-      UI_BackgroundBubble_White_8: 1891485494
-      UI_BackgroundBubble_White_0: 1784792958
-      UI_BackgroundBubble_White_7: -291052261
-      UI_BackgroundBubble_White_2: 587387023
+      UI_TextBox_Black_6: 1433155310
+      UI_TextBox_Black_3: -1254736501
+      UI_TextBox_Black_8: -873846986
+      UI_TextBox_Black_4: -1779119382
+      UI_TextBox_Black_7: 1113517440
+      UI_TextBox_Black_2: 1923314531
+      UI_TextBox_Black_1: -297021121
+      UI_TextBox_Black_0: 1308489134
+      UI_TextBox_Black_5: 685479458
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0de8e6a03ae484249985bb2d2edfc0bd
+guid: b5906b689f725664b9cbc21d0aa0cfb1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,8 +47,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
-  spriteBorder: {x: 1199, y: 482, z: 700, w: 660}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -100,206 +100,194 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_0
+      name: UI_Inventorysystem_Background_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 515
-        width: 1203
-        height: 700
+        y: 606
+        width: 627.3333
+        height: 303
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afd62897164c64945b31c1b54e25446e
-      internalID: 1784792958
+      spriteID: b2d06dea84769484b8ff7b4cf9527b75
+      internalID: 1097485423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_1
+      name: UI_Inventorysystem_Background_1
       rect:
         serializedVersion: 2
-        x: 1206
-        y: 502
-        width: 1132
-        height: 713
+        x: 627
+        y: 606
+        width: 627.3333
+        height: 303
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e22bc815ba88a546a15030c66390790
-      internalID: 485069532
+      spriteID: fa440cd9fbd0f654ab68621599323b83
+      internalID: 270414343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_2
+      name: UI_Inventorysystem_Background_2
       rect:
         serializedVersion: 2
-        x: 2338
-        y: 511
-        width: 1169
-        height: 704
+        x: 1254
+        y: 606
+        width: 627.3333
+        height: 303
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8684dcab7b846414bbd1499d7a720ae4
-      internalID: 587387023
+      spriteID: ff3806a814afabe47a1972e9cadf6ca1
+      internalID: 2012980325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_3
+      name: UI_Inventorysystem_Background_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 405
-        width: 1203
-        height: 103
+        y: 303
+        width: 627.3333
+        height: 303
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 802ecec194f3dc34b8ec4704026d159a
-      internalID: -1054668466
+      spriteID: 0400b01f7b210be4c9a04b3d1a6fb546
+      internalID: 593354378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_4
+      name: UI_Inventorysystem_Background_4
       rect:
         serializedVersion: 2
-        x: 1206
-        y: 408
-        width: 1132
-        height: 102
+        x: 627
+        y: 303
+        width: 627.3333
+        height: 303
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f7a39bbdc0384a429d297a5e3c45e31
-      internalID: -482105902
+      spriteID: 94341dcc0e660cf4dbf9b5c5dd289f51
+      internalID: -1776250335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_5
+      name: UI_Inventorysystem_Background_5
       rect:
         serializedVersion: 2
-        x: 2339
-        y: 405
-        width: 1169
-        height: 103
+        x: 1254
+        y: 303
+        width: 627.3333
+        height: 303
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ede8ac61a430dc41b2d7277f3eb1a98
-      internalID: 1921115635
+      spriteID: 9b7e6b9a162c8a14aa0eefd1997e1896
+      internalID: -1940973025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_6
+      name: UI_Inventorysystem_Background_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1203
-        height: 405
+        width: 627.3333
+        height: 303
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a10ad158e016ab24f9f7122ca4e53272
-      internalID: -12081827
+      spriteID: f5953a2a5febe33498fd29c78af0f812
+      internalID: 422107539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_7
+      name: UI_Inventorysystem_Background_7
       rect:
         serializedVersion: 2
-        x: 1206
+        x: 627
         y: 0
-        width: 1132
-        height: 405
+        width: 627.3333
+        height: 303
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8acd3d5d487b8a04b815f14f0bac08b7
-      internalID: -291052261
+      spriteID: 5017ee5df7a58754785f963346c6331b
+      internalID: 2072269897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_BackgroundBubble_White_8
+      name: UI_Inventorysystem_Background_8
       rect:
         serializedVersion: 2
-        x: 2338
+        x: 1254
         y: 0
-        width: 1169.3334
-        height: 405
+        width: 627.3333
+        height: 303
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87e56d70ab03b1b439e6d82932085c82
-      internalID: 1891485494
+      spriteID: 4ec1c3f6ef264f64694710793170a2a5
+      internalID: -1885940105
       vertices: []
       indices: 
       edges: []
@@ -307,23 +295,23 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ab156515e140a5642aa98fde64620eab
-    internalID: -1353428992
+    spriteID: 075b23307668ee84dbe38853113e69cc
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI_BackgroundBubble_White_6: -12081827
-      UI_BackgroundBubble_White_5: 1921115635
-      UI_BackgroundBubble_White_4: -482105902
-      UI_BackgroundBubble_White_1: 485069532
-      UI_BackgroundBubble_White_3: -1054668466
-      UI_BackgroundBubble_White_8: 1891485494
-      UI_BackgroundBubble_White_0: 1784792958
-      UI_BackgroundBubble_White_7: -291052261
-      UI_BackgroundBubble_White_2: 587387023
+      UI_Inventorysystem_Background_1: 270414343
+      UI_Inventorysystem_Background_8: -1885940105
+      UI_Inventorysystem_Background_5: -1940973025
+      UI_Inventorysystem_Background_4: -1776250335
+      UI_Inventorysystem_Background_7: 2072269897
+      UI_Inventorysystem_Background_3: 593354378
+      UI_Inventorysystem_Background_2: 2012980325
+      UI_Inventorysystem_Background_6: 422107539
+      UI_Inventorysystem_Background_0: 1097485423
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
