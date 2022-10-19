@@ -1,22 +1,20 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 namespace DualityGame.Inventory.UI
 {
-    [RequireComponent(typeof(Button))]
-    public class ItemSlot : MonoBehaviour
+    public class ItemSlot
     {
-        [SerializeField] private Image _image;
-        
-        public event Action OnClicked;
-        
-        private void Awake()
+        private readonly VisualElement _itemSprite;
+
+        public ItemSlot(Button slotFrame, VisualElement itemSprite, Action onClicked)
         {
-            GetComponent<Button>().onClick.AddListener(() => OnClicked?.Invoke());
+            _itemSprite = itemSprite;
+            slotFrame.RegisterCallback<ClickEvent>(e => onClicked?.Invoke());
+            SetSelected(false);
         }
-
-
+        
         public void SetSelected(bool selected)
         {
             // Something visual should happen here
@@ -25,14 +23,20 @@ namespace DualityGame.Inventory.UI
 
         public void SetItem(Item item)
         {
-            _image.sprite = item != null ? item.Type.InventorySprite : null;
-            _image.enabled = item != null;
+            if (item == null)
+            {
+                // No item
+                Clear();
+                return;
+            }
+
+            _itemSprite.style.backgroundImage = new StyleBackground(item.Type.InventorySprite);
+            _itemSprite.RemoveFromClassList("Hidden");
         }
 
         public void Clear()
         {
-            _image.sprite = null;
-            _image.enabled = false;
+            _itemSprite.AddToClassList("Hidden");
         }
     }
 }
