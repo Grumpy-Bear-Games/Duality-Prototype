@@ -1,0 +1,31 @@
+:root {
+    -unity-font-definition: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
+    font-size: 36px;
+    align-items: center;
+    justify-content: center;
+}
+
+#Prompt {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+#Key {
+    background-image: url('project://database/Assets/_Project/Sprites/Xelu_Free_Controller&Key_Prompts/Keyboard%20&%20Mouse/Light/E_Key_Light.png?fileID=21300000&guid=cbca6179f96762a4eaecf9e3f700aed5&type=3#E_Key_Light');
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+}
+
+#Label {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.51);
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: absolute;
+    left: 100%;
+    margin: 50px;
+}
