@@ -12,29 +12,19 @@ namespace NodeCanvas.DialogueTrees
         [SerializeField]
         protected string _name;
         [SerializeField]
-        protected Texture2D _portrait;
+        protected Sprite _portrait;
         [SerializeField]
         protected Color _dialogueColor = Color.white;
         [SerializeField]
         protected Vector3 _dialogueOffset;
 
-        private Sprite _portraitSprite;
 
         new public string name {
             get { return _name; }
         }
 
-        public Texture2D portrait {
+        public Sprite portrait {
             get { return _portrait; }
-        }
-
-        public Sprite portraitSprite {
-            get
-            {
-                if ( _portraitSprite == null && portrait != null )
-                    _portraitSprite = Sprite.Create(portrait, new Rect(0, 0, portrait.width, portrait.height), new Vector2(0.5f, 0.5f));
-                return _portraitSprite;
-            }
         }
 
         public Color dialogueColor {

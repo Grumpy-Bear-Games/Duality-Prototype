@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6444291834095714264}
   - component: {fileID: 6444291834095714265}
-  - component: {fileID: 6444291834095714262}
+  - component: {fileID: 6395484701230719528}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6444291834095714262
+--- !u!114 &6395484701230719528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,14 +94,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6444291834095714267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa669574ef724dbeb4e0f7a8d2b551fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d71fb7c52372e244baf2e69a9d0d116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _name: NPC
-  _portrait: {fileID: 2800000, guid: 71870f114b12deb4e8621be771a25c41, type: 3}
-  _dialogueColor: {r: 0, g: 0.90196085, b: 1, a: 1}
+  _portrait: {fileID: 21300000, guid: ac325f3bb5918b449bfb2486ef6f6044, type: 3}
+  _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   _dialogueOffset: {x: 0, y: 0, z: 0}
-  _font: {fileID: 11400000, guid: 6c4976039c756724b8b182bd7204bee2, type: 2}
 --- !u!1 &6444291834977619648
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +198,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 92efa524a0a5af24cb1f806e48250647, type: 2}
   - {fileID: 11400000, guid: c6696b31cd22cd448a4e7e97f1171d0e, type: 2}
   - {fileID: 11400000, guid: c0fcc5868137b7d42856a51b3b5250bf, type: 2}
-  - {fileID: 6444291834095714262}
+  - {fileID: 6395484701230719528}
   _boundGraphSource:
     _version: 3.25
     _category: 

@@ -12,8 +12,7 @@ namespace NodeCanvas.DialogueTrees
     {
 
         string IDialogueActor.name => name;
-        Texture2D IDialogueActor.portrait => null;
-        Sprite IDialogueActor.portraitSprite => null;
+        Sprite IDialogueActor.portrait => null;
         Color IDialogueActor.dialogueColor => Color.white;
         Vector3 IDialogueActor.dialoguePosition => Vector3.zero;
         Transform IDialogueActor.transform => transform;
