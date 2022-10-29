@@ -11,11 +11,9 @@ namespace NodeCanvas.DialogueTrees
     public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
     {
 
-        string IDialogueActor.name => name;
-        Sprite IDialogueActor.portrait => null;
-        Color IDialogueActor.dialogueColor => Color.white;
-        Vector3 IDialogueActor.dialoguePosition => Vector3.zero;
-        Transform IDialogueActor.transform => transform;
+        string IDialogueActor.Name => name;
+        Sprite IDialogueActor.Portrait => null;
+        Transform IDialogueActor.Transform => transform;
 
 
         ///<summary>Start the DialogueTree without an Instigator</summary>
@@ -42,7 +40,7 @@ namespace NodeCanvas.DialogueTrees
         ///<summary>Start the already assgined DialogueTree with provided actor as instigator and callback</summary>
         public void StartDialogue(IDialogueActor instigator, Action<bool> callback) {
             graph = GetInstance(graph);
-            graph.StartGraph(instigator is Component ? (Component)instigator : instigator.transform, blackboard, updateMode, callback);
+            graph.StartGraph(instigator is Component ? (Component)instigator : instigator.Transform, blackboard, updateMode, callback);
         }
 
         ///<summary>Pause the DialogueTree</summary>

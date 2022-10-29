@@ -21,7 +21,7 @@ namespace DualityGame.DialogSystem.UI {
 
 		
 		private bool _isWaitingChoice;
-		private bool _fastForward = false;
+		private bool _fastForward;
 
 		private VisualElement _dialogFrame;
 		private VisualElement _actorPortrait;
@@ -94,21 +94,20 @@ namespace DualityGame.DialogSystem.UI {
 
 		private void SetActor(IDialogueActor actor)
 		{
-			_actorPortrait.style.backgroundImage = actor.portrait ? new StyleBackground(actor.portrait) : new StyleBackground(StyleKeyword.Initial);
-			_actorName.text = actor.name;
+			_actorPortrait.style.backgroundImage = actor.Portrait ? new StyleBackground(actor.Portrait) : new StyleBackground(StyleKeyword.Initial);
+			_actorName.text = actor.Name;
 		}
 
 		private IEnumerator Internal_OnSubtitlesRequestInfo(SubtitlesRequestInfo info){
 
-			var text = info.statement.text;
-			var audio = info.statement.audio;
+			var text = info.statement.Text;
+			var audio = info.statement.Audio;
 			var actor = info.actor;
 
 			SetActor(actor);
 
 			_statementText.text = text;
 			if (audio != null){
-				_statementAudioPlayer.SetActor(actor);
 				yield return _statementAudioPlayer.Play(audio);
 			}
 
@@ -137,7 +136,7 @@ namespace DualityGame.DialogSystem.UI {
 			{
 				var option = _optionTemplate.Instantiate();
 				var button = option.contentContainer.Q<Button>("Option");
-				button.text = $"{idx}.   {statement.text}";
+				button.text = $"{idx}.   {statement.Text}";
 				button.RegisterCallback<ClickEvent>(_ => Finalize(info, value));
 				_options.Add(option);
 				idx++;
