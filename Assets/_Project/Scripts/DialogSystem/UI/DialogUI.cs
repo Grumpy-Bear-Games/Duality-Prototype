@@ -137,7 +137,7 @@ namespace DualityGame.DialogSystem.UI {
 				var option = _optionTemplate.Instantiate();
 				var button = option.contentContainer.Q<Button>("Option");
 				button.text = $"{idx}.   {statement.Text}";
-				button.RegisterCallback<ClickEvent>(_ => Finalize(info, value));
+				button.clicked += () => Finalize(info, value);
 				_options.Add(option);
 				idx++;
 			}

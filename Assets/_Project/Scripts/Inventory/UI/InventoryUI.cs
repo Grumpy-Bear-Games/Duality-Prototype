@@ -32,8 +32,8 @@ namespace DualityGame.Inventory.UI
             _nextPage = _uiDocument.rootVisualElement.Q<Button>("NextPage");
             _itemTypeLabel = _uiDocument.rootVisualElement.Q<Label>("ItemType");
             
-            _previousPage.RegisterCallback<ClickEvent>(e => PreviousPage());
-            _nextPage.RegisterCallback<ClickEvent>(e => NextPage());
+            _previousPage.clicked += PreviousPage;
+            _nextPage.clicked += NextPage;
 
             var index = 0;
             _uiDocument.rootVisualElement.Query<Button>(null, "ItemSlot").ForEach(
