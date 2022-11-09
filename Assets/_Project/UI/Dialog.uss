@@ -39,7 +39,7 @@
 #PortraitFrame {
     width: 340px;
     height: 330px;
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_PortraitBg_White_Dante0.png?fileID=21300000&guid=ac325f3bb5918b449bfb2486ef6f6044&type=3#UI_PortraitBg_White_Dante0');
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_PortraitBg_White.png?fileID=21300000&guid=124100be9e2adda40adc89cefb3fe7fd&type=3#UI_PortraitBg_White');
     -unity-background-scale-mode: scale-to-fit;
     flex-shrink: 0;
 }
@@ -81,7 +81,6 @@
     align-items: flex-start;
     flex-direction: row;
     margin-left: 150px;
-
     transition-property: opacity, display;
     transition-duration: 0.2s, 0s;
     transition-timing-function: ease, ease;
@@ -93,9 +92,8 @@
     opacity: 0;
 }
 
-
 #PlayerPortrait {
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_PortraitBg_White_MC1.png?fileID=21300000&guid=4f602a2184da46d458dfa3fc6c8d5286&type=3#UI_PortraitBg_White_MC1');
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_PortraitBg_White_MC_Neutral.png?fileID=21300000&guid=4f602a2184da46d458dfa3fc6c8d5286&type=3#UI_PortraitBg_White_MC_Neutral');
     width: 170px;
     height: 165px;
 }
