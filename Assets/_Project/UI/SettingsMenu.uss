@@ -1,0 +1,33 @@
+:root {
+    -unity-font-definition: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
+    font-size: 36px;
+    justify-content: center;
+    align-items: center;
+}
+
+#SettingsMenu {
+    background-color: rgba(0, 0, 0, 0.51);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: rgb(255, 255, 255);
+}
+
+#SettingsMenu .SectionHeader {
+    -unity-text-align: upper-center;
+    font-size: 46px;
+    -unity-font-style: bold;
+}
+
+.unity-base-field__label {
+    width: 200px;
+}
+
+.Hide {
+    display: none;
+}
