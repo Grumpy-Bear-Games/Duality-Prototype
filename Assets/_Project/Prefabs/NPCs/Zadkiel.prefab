@@ -54,7 +54,7 @@ MonoBehaviour:
     don''t have any dialog yet......"},"_actorName":"Zadkiel","_actorParameterID":"f6badd52-468b-4e54-a62c-dd5a2dc033cf","_position":{"x":601.0,"y":201.0},"$type":"NodeCanvas.DialogueTrees.StatementNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Zadkiel","_id":"f6badd52-468b-4e54-a62c-dd5a2dc033cf","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
-  - {fileID: 1328726461474746557}
+  - {fileID: 0}
   _boundGraphSource:
     _version: 3.22
     _category: 
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970ba91ee67eb4e4082d9794f65e3992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _promptOffset: {x: 0, y: 0, z: 0}
 --- !u!136 &1328726461148192075
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -133,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1328726461474746560}
-  - component: {fileID: 1328726461474746557}
+  - component: {fileID: 6611481444204945618}
   - component: {fileID: 1328726461474746562}
   - component: {fileID: 1328726461474746563}
   m_Layer: 6
@@ -158,7 +159,7 @@ Transform:
   m_Father: {fileID: 1328726461148192076}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1328726461474746557
+--- !u!114 &6611481444204945618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,14 +168,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1328726461474746561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa669574ef724dbeb4e0f7a8d2b551fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d71fb7c52372e244baf2e69a9d0d116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Zadkiel
-  _portrait: {fileID: 2800000, guid: 7c3fd1439113e2649b2bfb88cd030abb, type: 3}
+  _portrait: {fileID: 21300000, guid: 4f3bbb95b085f754a94b6eb1794147aa, type: 3}
   _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   _dialogueOffset: {x: 0, y: 0, z: 0}
-  _font: {fileID: 11400000, guid: 8ec79189a8547f841805b8124ac13690, type: 2}
 --- !u!212 &1328726461474746562
 SpriteRenderer:
   m_ObjectHideFlags: 0

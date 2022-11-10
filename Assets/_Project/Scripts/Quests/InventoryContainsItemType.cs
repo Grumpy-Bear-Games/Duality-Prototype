@@ -16,6 +16,6 @@ namespace DualityGame.Quests{
 
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.
-		protected override bool OnCheck() => _inventory.value.ContainsItemOfType(_itemType.value);
+		protected override bool OnCheck() => _inventory.value.CountItemsOfType(_itemType.value) > 0;
 	}
 }

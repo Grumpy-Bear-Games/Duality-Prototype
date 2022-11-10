@@ -158,7 +158,7 @@ namespace NodeCanvas.Framework
         abstract public System.Type outConnectionType { get; }
         ///<summary>Can this node be set as prime (Start)?</summary>
         abstract public bool allowAsPrime { get; }
-        // /Can this node connect to itself?
+        ///<summary>Can this node connect to itself?</summary>
         abstract public bool canSelfConnect { get; }
         ///<summary>Alignment of the comments when shown.</summary>
         abstract public Alignment2x2 commentsAlignment { get; }

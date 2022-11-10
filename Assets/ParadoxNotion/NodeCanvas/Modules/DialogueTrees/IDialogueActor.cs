@@ -8,8 +8,7 @@ namespace NodeCanvas.DialogueTrees
 	public interface IDialogueActor
     {
         string name { get; }
-        Texture2D portrait { get; }
-        Sprite portraitSprite { get; }
+        Sprite portrait { get; }
         Color dialogueColor { get; }
         Vector3 dialoguePosition { get; }
         Transform transform { get; }
@@ -27,11 +26,7 @@ namespace NodeCanvas.DialogueTrees
             get { return _name; }
         }
 
-        public Texture2D portrait {
-            get { return null; }
-        }
-
-        public Sprite portraitSprite {
+        public Sprite portrait {
             get { return null; }
         }
 

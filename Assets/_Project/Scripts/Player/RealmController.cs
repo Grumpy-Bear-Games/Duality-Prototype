@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using DualityGame.Core;
 using DualityGame.Realm;
@@ -31,8 +30,11 @@ namespace DualityGame.Player
         private IEnumerator CO_Kill()
         {
             Respawn();
-            var item = _inventory.TakeItem();
-            if (item != null) item.ReturnToInitialPosition();
+            foreach (var item in _inventory.Items)
+            {
+                item.ReturnToInitialPosition();
+            }
+            _inventory.Clear();
             yield return new WaitForSeconds(3f);
         }
 

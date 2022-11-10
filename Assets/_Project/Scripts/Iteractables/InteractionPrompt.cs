@@ -1,17 +1,35 @@
 using DualityGame.Core;
-using Games.GrumpyBear.LevelManagement;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace DualityGame.Iteractables
 {
     public class InteractionPrompt : MonoBehaviour
     {
-        [SerializeField] private TMP_Text _promptText;
-        [SerializeField] private CanvasGroup _promptUI;
         [SerializeField] private InteractableObservable _closestInteractable;
 
         private IInteractable _interactable;
+        private UIDocument _uiDocument;
+        private VisualElement _prompt;
+        private Label _promptLabel;
+
+        private void Awake()
+        {
+            _uiDocument = GetComponent<UIDocument>();
+            _prompt = _uiDocument.rootVisualElement.Q<VisualElement>("Prompt");
+            _promptLabel = _prompt.Q<Label>("Label");
+            HidePrompt();
+        }
+
+        private void HidePrompt()
+        {
+            _prompt.style.display = DisplayStyle.None;
+        }
+
+        private void ShowPrompt()
+        {
+            _prompt.style.display = DisplayStyle.Flex;
+        }
 
         private void OnEnable()
         {
@@ -25,11 +43,13 @@ namespace DualityGame.Iteractables
             PlayState.Current.Unsubscribe(EvaluatePrompt);
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             if (_interactable == null) return;
-            var promptPosition = Camera.main.WorldToScreenPoint(_interactable.PromptPosition);
-            transform.position = promptPosition;
+
+            var promptPosition = RuntimePanelUtils.CameraTransformWorldToPanel(_prompt.panel, _interactable.PromptPosition, Camera.main);
+            _prompt.style.top = promptPosition.y;
+            _prompt.style.left = promptPosition.x;
         }
 
         private void OnClosestInteractableChange(IInteractable interactable)
@@ -42,18 +62,11 @@ namespace DualityGame.Iteractables
         {
             if (_interactable != null && playState == PlayState.State.Moving && !string.IsNullOrEmpty(_interactable.Prompt))
             {
-                _promptText.text = _interactable.Prompt;
-                _promptUI.alpha = 1f;
+                _promptLabel.text = _interactable.Prompt;
+                ShowPrompt();
             } else {
-                _promptText.text = "";
-                _promptUI.alpha = 0f;
+                HidePrompt();
             }
-        }
-
-        private void Reset()
-        {
-            _promptText = GetComponentInChildren<TMP_Text>();
-            _promptUI = GetComponentInChildren<CanvasGroup>();
         }
     }
 }

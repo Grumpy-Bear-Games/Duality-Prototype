@@ -1,0 +1,134 @@
+:root {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: flex-end;
+    -unity-font-definition: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    --toogle-duration: 0.2s;
+}
+
+#DialogFrame {
+    width: 80%;
+    height: auto;
+    align-items: stretch;
+    min-height: 40%;
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_BackgroundBubble_White.png?fileID=21300000&guid=0de8e6a03ae484249985bb2d2edfc0bd&type=3#UI_BackgroundBubble_White');
+    flex-direction: column;
+    padding: 135px 100px 133px 45px;
+    margin-bottom: 47px;
+    padding-bottom: 60px;
+    transition-duration: var(--toogle-duration);
+    transition-property: opacity;
+    transition-timing-function: ease;
+}
+
+#DialogFrame.Hidden {
+    display: none;
+    transition-property: opacity, display;
+    transition-duration: var(--toogle-duration), 0s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, var(--toogle-duration);
+    opacity: 0;
+}
+
+#PortraitFrame {
+    width: 340px;
+    height: 330px;
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_PortraitBg_White.png?fileID=21300000&guid=124100be9e2adda40adc89cefb3fe7fd&type=3#UI_PortraitBg_White');
+    -unity-background-scale-mode: scale-to-fit;
+    flex-shrink: 0;
+}
+
+#ActorName {
+    -unity-font-style: bold;
+    font-size: 110%;
+    margin-top: 50px;
+    padding-bottom: 18px;
+}
+
+#StatementText {
+    white-space: normal;
+}
+
+#WaitForInput {
+    background-image: url('project://database/Assets/_Project/Sprites/Xelu_Free_Controller&Key_Prompts/Keyboard%20&%20Mouse/Light/E_Key_Light.png?fileID=21300000&guid=cbca6179f96762a4eaecf9e3f700aed5&type=3#E_Key_Light');
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: -13px;
+    bottom: -31px;
+    transition-property: opacity, scale;
+    transition-duration: 0.2s, 0.2s;
+    transition-timing-function: ease, ease-out-elastic;
+}
+
+#WaitForInput.Hidden {
+    display: none;
+    transition-property: opacity, display, scale;
+    transition-duration: 0.2s, 0s, 0.3s;
+    transition-timing-function: ease, ease, ease;
+    transition-delay: 0s, 0.2s, 0s;
+    opacity: 0;
+    scale: 0;
+}
+
+#MultipleChoice {
+    align-items: flex-start;
+    flex-direction: row;
+    margin-left: 150px;
+    transition-property: opacity, display;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
+}
+
+#MultipleChoice.Hidden {
+    display: none;
+    opacity: 0;
+}
+
+#PlayerPortrait {
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_PortraitBg_White_MC_Neutral.png?fileID=21300000&guid=4f602a2184da46d458dfa3fc6c8d5286&type=3#UI_PortraitBg_White_MC_Neutral');
+    width: 170px;
+    height: 165px;
+}
+
+#Options {
+    margin-top: 20px;
+    align-items: stretch;
+}
+
+.Option {
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    -unity-text-align: upper-left;
+}
+
+.Option:hover {
+    color: rgb(5, 5, 5);
+    -unity-font-style: bold;
+    font-size: 110%;
+}
+
+.Option:active {
+    border-width: 1px;
+    border-radius: 15px;
+    color: rgb(5, 5, 5);
+    -unity-font-style: bold;
+    font-size: 110%;
+    background-color: rgb(212, 212, 212);
+}
