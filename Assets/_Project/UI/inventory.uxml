@@ -1,0 +1,29 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/inventory.uss?fileID=7433441132597879392&amp;guid=e32dfde642562c24bb9d97444c734e45&amp;type=3#inventory" />
+    <ui:VisualElement name="InventoryFrame">
+        <ui:Label tabindex="-1" text="Inventory" name="Title" />
+        <ui:Button display-tooltip-when-elided="true" name="PreviousPage" class="PaginationButton" />
+        <ui:VisualElement name="Slots">
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+            <DualityGame.Inventory.UI.InventorySlot />
+        </ui:VisualElement>
+        <ui:Button display-tooltip-when-elided="true" name="NextPage" class="PaginationButton" />
+        <ui:VisualElement name="InfoBox">
+            <ui:Label name="ItemTypeName" text="Angelic Letter" />
+            <ui:Label name="ItemTypeDescription" text="A weird letter with a halo.&#10;&#10;Wonder who it belongs to?" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
