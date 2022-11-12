@@ -35,16 +35,17 @@ namespace DualityGame.Inventory.UI
             _previousPage.clicked += PreviousPage;
             _nextPage.clicked += NextPage;
 
-            var index = 0;
-            _frame.Query<InventorySlot>().ForEach(
-                slot =>
-                {
-                    var slotIndex = index++;
-                    slot.RegisterCallback<ClickEvent>(evt => SelectSlot(slotIndex));
-                    _slots.Add(slot);
-                }
-            );
+            _frame.Query<InventorySlot>().ForEach(_slots.Add);
             _slots[0].SetSelected(true);
+
+            _frame.Q<VisualElement>("Slots").RegisterCallback<ClickEvent>(InventorySlotClicked);
+            _frame.AddToClassList("Hidden");
+        }
+
+        private void InventorySlotClicked(ClickEvent evt)
+        {
+            if (evt.target is not InventorySlot slot) return;
+            SelectSlot(slot.parent.hierarchy.IndexOf(slot));
         }
 
         private void SelectSlot(int index)
