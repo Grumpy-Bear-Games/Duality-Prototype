@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using DualityGame.Dialog;
 using NodeCanvas.Framework;
 using ParadoxNotion;
 using ParadoxNotion.Serialization;
@@ -16,6 +17,10 @@ namespace NodeCanvas.DialogueTrees
         private string _text = string.Empty;
         [SerializeField]
         private AudioClip _audio;
+
+        [SerializeField]
+        private Mood _mood;
+        
         [SerializeField]
         private string _meta = string.Empty;
 
@@ -32,6 +37,12 @@ namespace NodeCanvas.DialogueTrees
         public string Meta {
             get => _meta;
             set => _meta = value;
+        }
+
+        public Mood Mood
+        {
+            get => _mood;
+            set => _mood = value;
         }
 
         //required
