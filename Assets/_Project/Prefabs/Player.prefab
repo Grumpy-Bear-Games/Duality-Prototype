@@ -5467,9 +5467,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: You
-  _portrait: {fileID: 21300000, guid: 4f602a2184da46d458dfa3fc6c8d5286, type: 3}
-  _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  _dialogueOffset: {x: 0, y: 0, z: 0}
+  _portraits:
+  - Mood: 0
+    Sprite: {fileID: 21300000, guid: 4f602a2184da46d458dfa3fc6c8d5286, type: 3}
 --- !u!114 &830824406813024932
 MonoBehaviour:
   m_ObjectHideFlags: 0

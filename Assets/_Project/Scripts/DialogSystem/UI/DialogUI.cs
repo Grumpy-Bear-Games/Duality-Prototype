@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Linq;
+using DualityGame.Dialog;
 using NodeCanvas.DialogueTrees;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -92,9 +93,10 @@ namespace DualityGame.DialogSystem.UI {
 
 		private void OnSubtitlesRequest(SubtitlesRequestInfo info) => StartCoroutine(Internal_OnSubtitlesRequestInfo(info));
 
-		private void SetActor(IDialogueActor actor)
+		private void SetActor(IDialogueActor actor, Mood mood)
 		{
-			_actorPortrait.style.backgroundImage = actor.Portrait ? new StyleBackground(actor.Portrait) : new StyleBackground(StyleKeyword.Initial);
+			var portrait = actor.PortraitByMood(mood);
+			_actorPortrait.style.backgroundImage = portrait ? new StyleBackground(portrait) : new StyleBackground(StyleKeyword.Initial);
 			_actorName.text = actor.Name;
 		}
 
@@ -104,7 +106,7 @@ namespace DualityGame.DialogSystem.UI {
 			var audio = info.statement.Audio;
 			var actor = info.actor;
 
-			SetActor(actor);
+			SetActor(actor, info.statement.Mood);
 
 			_statementText.text = text;
 			if (audio != null){
