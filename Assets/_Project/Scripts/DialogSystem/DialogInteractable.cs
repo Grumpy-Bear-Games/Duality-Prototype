@@ -3,7 +3,7 @@ using DualityGame.Iteractables;
 using NodeCanvas.DialogueTrees;
 using UnityEngine;
 
-namespace DualityGame.Quests
+namespace DualityGame.DialogSystem
 {
     public class DialogInteractable : MonoBehaviour, IInteractable
     {
