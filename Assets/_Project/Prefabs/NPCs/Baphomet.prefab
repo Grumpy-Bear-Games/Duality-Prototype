@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1328726461148192075}
   - component: {fileID: 1328726461148192072}
   m_Layer: 6
-  m_Name: Zadkiel
+  m_Name: Baphomet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1328726461474746560}
-  - {fileID: 9134840779604383720}
+  - {fileID: 2078643888944307054}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -65,7 +65,7 @@ MonoBehaviour:
   _lockBoundGraphPrefabOverrides: 1
   _preInitializeSubGraphs: 0
   _updateMode: 0
-  _graph: {fileID: 11400000, guid: 3c4598397a8746240b09ae80b15ea8d5, type: 2}
+  _graph: {fileID: 11400000, guid: 9f2857e77b363b3469f065ff70af9b5c, type: 2}
   _blackboard: {fileID: 1328726461148192078}
 --- !u!114 &1328726461148192078
 MonoBehaviour:
@@ -106,10 +106,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.7
+  m_Height: 2.5
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!114 &1328726461148192072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13fbeac51229727488a9b7424b9f23da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b96c5bb6fad81084387be7378a99e543, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -218,7 +218,7 @@ Animator:
   m_GameObject: {fileID: 1328726461474746561}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d2d95936dede55848a92770d92a617ca, type: 2}
+  m_Controller: {fileID: 9100000, guid: 44d1642cbe61f7c4492dfbcab98933b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -228,7 +228,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &1458372676002850225
+--- !u!1 &8910393615371340776
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,22 +236,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9134840779604383720}
-  - component: {fileID: 5783426944490065290}
+  - component: {fileID: 2078643888944307054}
+  - component: {fileID: 8806279604197071475}
   m_Layer: 6
-  m_Name: Zadkiel Actor
+  m_Name: Baphomet Actor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9134840779604383720
+--- !u!4 &2078643888944307054
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458372676002850225}
+  m_GameObject: {fileID: 8910393615371340776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -260,28 +260,28 @@ Transform:
   m_Father: {fileID: 1328726461148192076}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5783426944490065290
+--- !u!114 &8806279604197071475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458372676002850225}
+  m_GameObject: {fileID: 8910393615371340776}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d71fb7c52372e244baf2e69a9d0d116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Zadkiel
+  _name: Baphomet
   _portraits:
   - Mood: 0
-    Sprite: {fileID: 21300000, guid: 4f3bbb95b085f754a94b6eb1794147aa, type: 3}
+    Sprite: {fileID: 21300000, guid: 6980c6cfef81d5c4598627af049435bc, type: 3}
   - Mood: 1
-    Sprite: {fileID: 21300000, guid: d340fad31974d074b8a891bfbb6fb1b6, type: 3}
+    Sprite: {fileID: 21300000, guid: 4f835b0212a5bfe41813d265264416af, type: 3}
   - Mood: 2
-    Sprite: {fileID: 21300000, guid: ee3453606a2816140ad2ec1fb2e3e351, type: 3}
+    Sprite: {fileID: 21300000, guid: e16173bcc09df54478527358595f4d9e, type: 3}
   - Mood: 3
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 21300000, guid: 31d196894d4471042b121fde3b0f95fe, type: 3}
   - Mood: 4
     Sprite: {fileID: 0}
   - Mood: 5
