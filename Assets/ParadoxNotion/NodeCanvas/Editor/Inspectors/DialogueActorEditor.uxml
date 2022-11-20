@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <uie:PropertyField name="Name" label="Name" binding-path="_name" />
+    <ui:ListView focusable="true" name="Portraits" binding-path="_portraits" virtualization-method="DynamicHeight" show-border="false" show-bound-collection-size="false" header-title="Portraits" show-foldout-header="true" horizontal-scrolling="false" />
+</ui:UXML>

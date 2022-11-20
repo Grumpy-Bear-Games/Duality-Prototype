@@ -1,0 +1,15 @@
+.moodPortrait {
+    background-color: var(--unity-colors-default-background);
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;    
+}
+
+#SpritePreview {
+    padding-top: 40%;
+    width: 40%;
+    -unity-background-scale-mode: scale-to-fit;
+}
