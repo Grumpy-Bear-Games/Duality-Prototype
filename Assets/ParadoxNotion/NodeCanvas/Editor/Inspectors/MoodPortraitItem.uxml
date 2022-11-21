@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/ParadoxNotion/NodeCanvas/Editor/Inspectors/MoodPortraitItem.uss?fileID=7433441132597879392&amp;guid=a958b5147d0b9d64d92074c5e4649e3f&amp;type=3#MoodPortraitItem" />
     <ui:VisualElement class="moodPortrait">
-        <ui:Label tabindex="-1" display-tooltip-when-elided="true" binding-path="Mood" />
+        <ui:Label name="Mood" tabindex="-1" display-tooltip-when-elided="true" binding-path="Mood" />
         <ui:VisualElement name="SpritePreview" />
         <uie:PropertyField name="Portrait" binding-path="Sprite" label="" />
     </ui:VisualElement>

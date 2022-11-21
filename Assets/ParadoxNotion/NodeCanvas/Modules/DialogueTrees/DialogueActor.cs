@@ -14,10 +14,12 @@ namespace NodeCanvas.DialogueTrees
     {
         
         [Serializable]
-        public struct MoodPortrait
+        public struct MoodPortrait : IComparable<MoodPortrait>
         {
             public Mood Mood;
             public Sprite Sprite;
+
+            int IComparable<MoodPortrait>.CompareTo(MoodPortrait other) => Mood.CompareTo(other.Mood);
         }
 
         [SerializeField] protected string _name;
@@ -27,15 +29,9 @@ namespace NodeCanvas.DialogueTrees
 
         public Sprite PortraitByMood(Mood mood)
         {
-            try
-            {
-                return _portraits.First(item => item.Mood == mood).Sprite;
-            }
-            catch (InvalidOperationException)
-            {
-                Debug.LogError($"Missing mood portrait for '{mood}'", this);
-                return null;
-            }
+            var sprite = _portraits.First(item => item.Mood == mood).Sprite;
+            if (sprite == null) Debug.LogError($"Missing mood portrait for '{mood}'", this);
+            return sprite;
         }
 
         public Transform Transform => transform;
@@ -47,6 +43,17 @@ namespace NodeCanvas.DialogueTrees
 #if UNITY_EDITOR
         private void Reset() {
             _name = gameObject.name;
+        }
+
+        private void OnValidate()
+        {
+            var values = new HashSet<Mood>(_portraits.Select(p => p.Mood));
+            foreach (Mood mood in Enum.GetValues(typeof(Mood)))
+            {
+                if (values.Contains(mood)) continue;
+                _portraits.Add(new MoodPortrait { Mood = mood } );
+            }
+            _portraits.Sort();
         }
 #endif
     }

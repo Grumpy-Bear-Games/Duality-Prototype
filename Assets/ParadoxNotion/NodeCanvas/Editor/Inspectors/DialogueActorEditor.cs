@@ -29,9 +29,8 @@ namespace NodeCanvas.Editor
             portraitPropertyField.RegisterValueChangeCallback(e =>
             {
                 var sprite = e.changedProperty.objectReferenceValue as Sprite;
-                preview.style.backgroundImage = sprite != null
-                    ? new StyleBackground(sprite)
-                    : new StyleBackground(StyleKeyword.Initial);
+                preview.style.backgroundImage = new StyleBackground(sprite);
+                preview.style.display = sprite != null ? DisplayStyle.Flex : DisplayStyle.None;
             });
             return root;
         }
