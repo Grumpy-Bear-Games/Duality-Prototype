@@ -52,10 +52,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: 
-  _boundGraphObjectReferences: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"I
+    have nothing to say yet"},"_actorName":"Jikininki","_actorParameterID":"e17665d0-46c2-41da-9f7f-9b4a79d21793","_position":{"x":770.6667,"y":269.6667},"$type":"NodeCanvas.DialogueTrees.StatementNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Jikininki","_id":"e17665d0-46c2-41da-9f7f-9b4a79d21793","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 5783426944490065290}
   _boundGraphSource:
-    _version: 0
+    _version: 3.25
     _category: 
     _comments: 
     _translation: {x: 0, y: 0}
@@ -66,7 +69,7 @@ MonoBehaviour:
   _lockBoundGraphPrefabOverrides: 1
   _preInitializeSubGraphs: 0
   _updateMode: 0
-  _graph: {fileID: 11400000, guid: 52b12563c9b460e49978568c013dfd50, type: 2}
+  _graph: {fileID: 0}
   _blackboard: {fileID: 1328726461148192078}
 --- !u!114 &1328726461148192078
 MonoBehaviour:
@@ -138,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1328726461474746563}
   _currentRealm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
+  _maxDistance: 5
 --- !u!1 &1328726461474746561
 GameObject:
   m_ObjectHideFlags: 0

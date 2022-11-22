@@ -116,10 +116,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: 
-  _boundGraphObjectReferences: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"I
+    have nothing to say yet..."},"_actorName":"Harut","_actorParameterID":"416cbc59-c224-439c-912e-4cd83e8e9402","_position":{"x":981.0,"y":369.6667},"$type":"NodeCanvas.DialogueTrees.StatementNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Harut","_id":"416cbc59-c224-439c-912e-4cd83e8e9402","_actorObject":1},{"_keyName":"Marut","_id":"519c0708-f322-41a9-9b22-21ef1d9371ec","_actorObject":2}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 3983720757704816480}
+  - {fileID: 4192604210509253145}
   _boundGraphSource:
-    _version: 0
+    _version: 3.25
     _category: 
     _comments: 
     _translation: {x: 0, y: 0}
@@ -130,7 +134,7 @@ MonoBehaviour:
   _lockBoundGraphPrefabOverrides: 1
   _preInitializeSubGraphs: 0
   _updateMode: 0
-  _graph: {fileID: 11400000, guid: 5f22e5d0599b1fb49a5a40c5a05f5521, type: 2}
+  _graph: {fileID: 0}
   _blackboard: {fileID: 1328726461148192078}
 --- !u!114 &1328726461148192078
 MonoBehaviour:
