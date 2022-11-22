@@ -13,5 +13,7 @@ namespace DualityGame.Realm
 
         public int LevelLayerMask => 1 << _levelLayer;
         public int PlayerLayerMask => 1 << _playerLayer;
+
+        public int LayerMask => LevelLayerMask | PlayerLayerMask;
     }
 }

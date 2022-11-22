@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1328726461148192079}
   - component: {fileID: 1328726461148192075}
   - component: {fileID: 1328726461148192072}
+  - component: {fileID: 4963836392374485999}
   m_Layer: 6
   m_Name: Jikininki
   m_TagString: Untagged
@@ -122,6 +123,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097f47eb142d4907ade74fbc7ba16360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentRealm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
+--- !u!114 &4963836392374485999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328726461148192077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7599a1da9a8741989ebd32fe5492619e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1328726461474746563}
   _currentRealm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
 --- !u!1 &1328726461474746561
 GameObject:
