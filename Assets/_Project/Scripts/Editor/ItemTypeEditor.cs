@@ -18,8 +18,9 @@ namespace DualityGame.Editor
             root.Q<Label>("Name").text = target.name;
 
             _preview = root.Q<VisualElement>("InventorySpritePreview");
-            root.Q<ObjectField>("InventorySprite")
-                .RegisterValueChangedCallback(evt => UpdatePreview(evt.newValue as Sprite));
+
+            root.Q<PropertyField>("InventorySprite")
+                .RegisterCallback<ChangeEvent<Object>>(evt => UpdatePreview(evt.newValue as Sprite));
             if (target is ItemType itemType) UpdatePreview(itemType.InventorySprite);
             return root;
         }
