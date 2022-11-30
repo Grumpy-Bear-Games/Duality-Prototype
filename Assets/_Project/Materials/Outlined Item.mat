@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Heavenly Item
+  m_Name: Outlined Item
   m_Shader: {fileID: -6465566751694194690, guid: 888751c631791aa49b9a5d84569f7323,
     type: 3}
   m_Parent: {fileID: 0}
@@ -55,10 +55,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Outline: 1
     - _Outline_Wdith: 0.0185
     - _Outline_Width: 0.03
     - _Pulse_Speed: 4
     - _Pulse_Width: 0.01
+    - _Wobble_Amount: 0.03
+    - _Wobble_Speed: 2.5
     m_Colors:
     - _Outline_Color: {r: 2.6701567, g: 2.6701567, b: 2.6701567, a: 0.49019608}
   m_BuildTextureStacks: []
