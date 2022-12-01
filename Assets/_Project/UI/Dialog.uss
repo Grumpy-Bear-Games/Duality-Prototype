@@ -55,28 +55,6 @@
     white-space: normal;
 }
 
-#WaitForInput {
-    background-image: url('project://database/Assets/_Project/Sprites/Xelu_Free_Controller&Key_Prompts/Keyboard%20&%20Mouse/Light/E_Key_Light.png?fileID=21300000&guid=cbca6179f96762a4eaecf9e3f700aed5&type=3#E_Key_Light');
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    right: -13px;
-    bottom: -31px;
-    transition-property: opacity, scale;
-    transition-duration: 0.2s, 0.2s;
-    transition-timing-function: ease, ease-out-elastic;
-}
-
-#WaitForInput.Hidden {
-    display: none;
-    transition-property: opacity, display, scale;
-    transition-duration: 0.2s, 0s, 0.3s;
-    transition-timing-function: ease, ease, ease;
-    transition-delay: 0s, 0.2s, 0s;
-    opacity: 0;
-    scale: 0;
-}
-
 #MultipleChoice {
     align-items: flex-start;
     flex-direction: row;
@@ -85,11 +63,6 @@
     transition-duration: 0.2s, 0s;
     transition-timing-function: ease, ease;
     transition-delay: 0s, 0s;
-}
-
-#MultipleChoice.Hidden {
-    display: none;
-    opacity: 0;
 }
 
 #PlayerPortrait {
@@ -103,7 +76,7 @@
     align-items: stretch;
 }
 
-.Option {
+DialogOption Button {
     border-width: 0;
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0);
@@ -116,13 +89,13 @@
     -unity-text-align: upper-left;
 }
 
-.Option:hover {
+DialogOption Button:hover {
     scale: 1.1 1.1;
     transform-origin: left;
     -unity-font-style: bold;
 }
 
-.Option:active {
+DialogOption Button:active {
     color: rgb(5, 5, 5);
     background-color: rgb(212, 212, 212);
 }

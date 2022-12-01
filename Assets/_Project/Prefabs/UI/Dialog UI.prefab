@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2534420517034754136
 MonoBehaviour:
@@ -62,9 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501222690cc34177a1561cab1772d4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skipOnInput: 0
-  _waitForInput: 1
-  _inputAction: {fileID: 638637785067456906, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+  _selectOptionInputActionReference: {fileID: -982712790645192614, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
   _statementAudioPlayer: {fileID: 0}
   _optionTemplate: {fileID: 9197481963319205126, guid: 042017470093d1f4ab749045cb9c317a,

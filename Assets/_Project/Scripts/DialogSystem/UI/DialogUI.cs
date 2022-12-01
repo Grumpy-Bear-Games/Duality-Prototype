@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using DualityGame.Dialog;
 using NodeCanvas.DialogueTrees;
@@ -9,27 +10,18 @@ using UnityEngine.UIElements;
 namespace DualityGame.DialogSystem.UI {
 	public class DialogUI : MonoBehaviour
 	{
-		//Options...
-		[Header("Input Options")]
-		[SerializeField] private bool _skipOnInput;
-		[SerializeField] private bool _waitForInput;
-		[SerializeField] private InputActionReference _inputAction;
-
-		//Group...
+		[SerializeField] private InputActionReference _selectOptionInputActionReference;
+		
 		[Header("Statement")]
 		[SerializeField] private StatementAudioPlayer _statementAudioPlayer;
-		[SerializeField] private VisualTreeAsset _optionTemplate;
 
 		
 		private bool _isWaitingChoice;
-		private bool _fastForward;
 
 		private VisualElement _dialogFrame;
 		private VisualElement _actorPortrait;
 		private Label _statementText;
 		private Label _actorName;
-		private VisualElement _waitForInputIndicator;
-		private VisualElement _multipleChoice;
 		private VisualElement _options;
 
 		private void Awake()
@@ -39,13 +31,9 @@ namespace DualityGame.DialogSystem.UI {
 			_actorPortrait = uiDocument.rootVisualElement.Q<VisualElement>("PortraitFrame");
 			_statementText = uiDocument.rootVisualElement.Q<Label>("StatementText");
 			_actorName = uiDocument.rootVisualElement.Q<Label>("ActorName");
-			_waitForInputIndicator = uiDocument.rootVisualElement.Q<VisualElement>("WaitForInput");
-			_multipleChoice = uiDocument.rootVisualElement.Q<VisualElement>("MultipleChoice");
 			_options = uiDocument.rootVisualElement.Q<VisualElement>("Options");
 			
 			_dialogFrame.AddToClassList("Hidden");
-			_multipleChoice.AddToClassList("Hidden");
-			_waitForInputIndicator.AddToClassList("Hidden");
 		}
 
 		private void OnEnable() {
@@ -54,29 +42,36 @@ namespace DualityGame.DialogSystem.UI {
 			DialogueTree.OnDialogueFinished      += OnDialogueFinished;
 			DialogueTree.OnSubtitlesRequest      += OnSubtitlesRequest;
 			DialogueTree.OnMultipleChoiceRequest += OnMultipleChoiceRequest;
-			_inputAction.action.performed += FastForward;
+			_selectOptionInputActionReference.action.Enable();
 		}
 
 		private void OnDisable() {
+			_selectOptionInputActionReference.action.Disable();
 			DialogueTree.OnDialogueStarted       -= OnDialogueStarted;
 			DialogueTree.OnDialoguePaused        -= OnDialoguePaused;
 			DialogueTree.OnDialogueFinished      -= OnDialogueFinished;
 			DialogueTree.OnSubtitlesRequest      -= OnSubtitlesRequest;
 			DialogueTree.OnMultipleChoiceRequest -= OnMultipleChoiceRequest;
-			_inputAction.action.performed -= FastForward;
-		}
-
-		private void FastForward(InputAction.CallbackContext ctx)
-		{
-			if (ctx.phase != InputActionPhase.Performed) return;
-			_fastForward = true;
-			if (!_skipOnInput) return;
-			_statementAudioPlayer.FastForward();
 		}
 
 		private void OnDialogueStarted(DialogueTree dlg){
-			_inputAction.action.Enable();
 			_dialogFrame.RemoveFromClassList("Hidden");
+			_selectOptionInputActionReference.action.performed += SelectOptionFromKeyboard;
+		}
+
+		private void SelectOptionFromKeyboard(InputAction.CallbackContext ctx)
+		{
+			if (int.TryParse(ctx.control.name, out var value))
+			{
+				SelectOption(value);	
+			}
+		}
+
+		private void SelectOption(int value)
+		{
+			var dialogOptions = _options.Query<DialogOption>().ToList();
+			if (value > dialogOptions.Count) return;
+			dialogOptions[value - 1].SelectOption();
 		}
 
 		private void OnDialoguePaused(DialogueTree dlg){
@@ -85,8 +80,8 @@ namespace DualityGame.DialogSystem.UI {
 
 		private void OnDialogueFinished(DialogueTree dlg){
 			_dialogFrame.AddToClassList("Hidden");
+			_selectOptionInputActionReference.action.performed -= SelectOptionFromKeyboard;
 			CleanupChoiceButton();
-			_inputAction.action.Disable();
 		}
 
 		private void CleanupChoiceButton() => _options.Clear();
@@ -113,45 +108,33 @@ namespace DualityGame.DialogSystem.UI {
 				yield return _statementAudioPlayer.Play(audio);
 			}
 
-			if (_waitForInput)
+			CleanupChoiceButton();
+			CreateOption("(Continue)", ()=>
 			{
-				_fastForward = false;
-				yield return new WaitForSeconds(0.5f);
-				_waitForInputIndicator.RemoveFromClassList("Hidden");
-				while(!_fastForward) {
-					yield return null;
-				}
-				_waitForInputIndicator.AddToClassList("Hidden");
-			}
-
-			yield return null;
-			
-			info.Continue();
+				CleanupChoiceButton();
+				info.Continue();
+			});
 		}
 
 		private void OnMultipleChoiceRequest(MultipleChoiceRequestInfo info)
 		{
 			CleanupChoiceButton();
 			
-			var idx = 1;
 			foreach (var (statement, value) in info.options)
 			{
-				var option = _optionTemplate.Instantiate();
-				var button = option.contentContainer.Q<Button>("Option");
-				button.text = $"{idx}.   {statement.Text}";
-				button.clicked += () => Finalize(info, value);
-				_options.Add(option);
-				idx++;
+				CreateOption(statement.Text, () => Finalize(info, value));
 			}
-
-			//_subtitlesGroup.gameObject.SetActive(info.showLastStatement);
-			_multipleChoice.RemoveFromClassList("Hidden");
 
 			if (info.availableTime > 0){
 				StartCoroutine(CountDown(info));
 			}
 		}
 
+		private void CreateOption(string text, Action onClick)
+		{
+			_options.Add(new DialogOption($"{_options.childCount + 1}.   {text}", onClick));
+		}
+		
 		private IEnumerator CountDown(MultipleChoiceRequestInfo info){
 			_isWaitingChoice = true;
 			var timer = 0f;
@@ -170,7 +153,6 @@ namespace DualityGame.DialogSystem.UI {
 		}
 
 		private void Finalize(MultipleChoiceRequestInfo info, int index){
-			_multipleChoice.AddToClassList("Hidden");
 			_isWaitingChoice = false;
 			_options.style.opacity = new StyleFloat(StyleKeyword.Initial);
 			CleanupChoiceButton();
