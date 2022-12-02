@@ -13,5 +13,14 @@ namespace DualityGame.Inventory
             _inventory.AddItem(item);
             item.gameObject.SetActive(false);
         }
+        
+        public void DropInventory()
+        {
+            foreach (var item in _inventory.Items)
+            {
+                item.ReturnToInitialPosition();
+            }
+            _inventory.Clear();
+        }
     }
 }
