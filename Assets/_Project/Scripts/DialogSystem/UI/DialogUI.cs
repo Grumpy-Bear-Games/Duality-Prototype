@@ -10,12 +10,9 @@ using UnityEngine.UIElements;
 namespace DualityGame.DialogSystem.UI {
 	public class DialogUI : MonoBehaviour
 	{
-		[SerializeField] private InputActionReference _selectOptionInputActionReference;
-		
 		[Header("Statement")]
 		[SerializeField] private StatementAudioPlayer _statementAudioPlayer;
 
-		
 		private bool _isWaitingChoice;
 
 		private VisualElement _dialogFrame;
@@ -27,13 +24,14 @@ namespace DualityGame.DialogSystem.UI {
 		private void Awake()
 		{
 			var uiDocument = GetComponent<UIDocument>();
+			
 			_dialogFrame = uiDocument.rootVisualElement.Q<VisualElement>("DialogFrame");
 			_actorPortrait = uiDocument.rootVisualElement.Q<VisualElement>("PortraitFrame");
 			_statementText = uiDocument.rootVisualElement.Q<Label>("StatementText");
 			_actorName = uiDocument.rootVisualElement.Q<Label>("ActorName");
 			_options = uiDocument.rootVisualElement.Q<VisualElement>("Options");
-			
-			_dialogFrame.AddToClassList("Hidden");
+
+			Hide();
 		}
 
 		private void OnEnable() {
@@ -42,11 +40,9 @@ namespace DualityGame.DialogSystem.UI {
 			DialogueTree.OnDialogueFinished      += OnDialogueFinished;
 			DialogueTree.OnSubtitlesRequest      += OnSubtitlesRequest;
 			DialogueTree.OnMultipleChoiceRequest += OnMultipleChoiceRequest;
-			_selectOptionInputActionReference.action.Enable();
 		}
 
 		private void OnDisable() {
-			_selectOptionInputActionReference.action.Disable();
 			DialogueTree.OnDialogueStarted       -= OnDialogueStarted;
 			DialogueTree.OnDialoguePaused        -= OnDialoguePaused;
 			DialogueTree.OnDialogueFinished      -= OnDialogueFinished;
@@ -54,33 +50,24 @@ namespace DualityGame.DialogSystem.UI {
 			DialogueTree.OnMultipleChoiceRequest -= OnMultipleChoiceRequest;
 		}
 
-		private void OnDialogueStarted(DialogueTree dlg){
-			_dialogFrame.RemoveFromClassList("Hidden");
-			_selectOptionInputActionReference.action.performed += SelectOptionFromKeyboard;
-		}
+		private void OnDialogueStarted(DialogueTree dlg) => Show();
 
-		private void SelectOptionFromKeyboard(InputAction.CallbackContext ctx)
-		{
-			if (int.TryParse(ctx.control.name, out var value))
-			{
-				SelectOption(value);	
-			}
-		}
+		private void Hide() => _dialogFrame.AddToClassList("Hidden");
 
-		private void SelectOption(int value)
+		private void Show() => _dialogFrame.RemoveFromClassList("Hidden");
+		
+		public void SelectOption(int value)
 		{
 			var dialogOptions = _options.Query<DialogOption>().ToList();
 			if (value > dialogOptions.Count) return;
 			dialogOptions[value - 1].SelectOption();
 		}
 
-		private void OnDialoguePaused(DialogueTree dlg){
-			_dialogFrame.AddToClassList("Hidden");
-		}
+		private void OnDialoguePaused(DialogueTree dlg) => Hide();
 
-		private void OnDialogueFinished(DialogueTree dlg){
-			_dialogFrame.AddToClassList("Hidden");
-			_selectOptionInputActionReference.action.performed -= SelectOptionFromKeyboard;
+		private void OnDialogueFinished(DialogueTree dlg)
+		{
+			Hide();
 			CleanupChoiceButton();
 		}
 
