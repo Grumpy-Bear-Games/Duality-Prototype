@@ -1,33 +1,23 @@
 .Hidden {
-    display: None;
+    display: none;
 }
 
-.Frame {
+#InventoryFrame {
     height: 909px;
-    width: 100%;
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Inventorysystem_Background.png?fileID=2800000&guid=b5906b689f725664b9cbc21d0aa0cfb1&type=3#UI_Inventorysystem_Background');
-    -unity-slice-left: 627;
-    -unity-slice-right: 627;
-    -unity-slice-top: 303;
-    -unity-slice-bottom: 303;
-    -unity-background-scale-mode: stretch-to-fill;
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Inventorysystem_Background.png?fileID=21300000&guid=b5906b689f725664b9cbc21d0aa0cfb1&type=3#UI_Inventorysystem_Background');
     flex-direction: row;
     align-items: center;
-    margin-left: 0;
+    margin-left: 20px;
     padding-left: 82px;
     padding-right: 82px;
     padding-bottom: 53px;
     padding-top: 85px;
+    margin-right: 20px;
+    margin-bottom: 13px;
 }
 
-.Title {
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_TextBox_White.png?fileID=2800000&guid=407c7796acc65da47ac534a0c05bfa2c&type=3#UI_TextBox_White');
-    -unity-slice-left: 25;
-    -unity-slice-top: 25;
-    -unity-slice-right: 25;
-    -unity-slice-bottom: 25;
-    -unity-font: none;
-    -unity-font-definition: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
+#Title {
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_TextBox_White.png?fileID=21300000&guid=407c7796acc65da47ac534a0c05bfa2c&type=3#UI_TextBox_White');
     color: rgb(0, 0, 0);
     font-size: 74px;
     width: 32.7%;
@@ -42,9 +32,9 @@
     padding-bottom: 23px;
 }
 
-.Slots {
-    width: 740px;
-    height: 740px;
+#Slots {
+    width: 756px;
+    height: 756px;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -58,14 +48,10 @@
     border-right-width: 0;
     border-top-width: 0;
     border-bottom-width: 0;
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Inventorysystem_ItemBackground.png?fileID=2800000&guid=5ac96805953d71a4eb2823920fd71e43&type=3#UI_Inventorysystem_ItemBackground');
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Inventorysystem_ItemBackground.png?fileID=21300000&guid=5ac96805953d71a4eb2823920fd71e43&type=3#UI_Inventorysystem_ItemBackground');
     margin: 8px;
     padding: 0;
     background-color: rgba(255, 255, 255, 0);
-    -unity-slice-left: 25;
-    -unity-slice-top: 25;
-    -unity-slice-right: 25;
-    -unity-slice-bottom: 25;
     width: 173px;
     height: 173px;
 }
@@ -79,9 +65,31 @@
     -unity-background-scale-mode: stretch-to-fill;
 }
 
+.inventory-slot__frame {
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Inventorysystem_ItemBackground.png?fileID=21300000&guid=5ac96805953d71a4eb2823920fd71e43&type=3#UI_Inventorysystem_ItemBackground');
+    margin: 8px;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0);
+    width: 173px;
+    height: 173px;
+}
+
+.inventory-slot__item-sprite {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
 .PaginationButton {
     background-color: rgba(88, 88, 88, 0);
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Inventorysystem_Arrow.png?fileID=2800000&guid=feb832867d387c740a81bf3683951638&type=3#UI_Inventorysystem_Arrow');
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Inventorysystem_Arrow.png?fileID=21300000&guid=feb832867d387c740a81bf3683951638&type=3#UI_Inventorysystem_Arrow');
     width: 168px;
     height: 168px;
     margin: 8px 0 0;
@@ -92,11 +100,11 @@
     border-bottom-width: 0;
 }
 
-.NextPage {
+#NextPage {
     scale: -1 1;
 }
 
-.InfoBox {
+#InfoBox {
     flex-grow: 1;
     align-items: center;
     height: 100%;
@@ -107,19 +115,13 @@
     padding-bottom: 136px;
 }
 
-.InfoBox > * {
-    -unity-font-definition: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
-    -unity-font: none;
-    -unity-text-align: middle-center;
+#InfoBox > * {
     font-size: 38px;
     color: rgb(255, 255, 255);
 }
 
-.ItemTypeName {
-    -unity-slice-left: 25;
-    -unity-slice-top: 25;
-    -unity-slice-right: 25;
-    -unity-slice-bottom: 25;
+#ItemTypeName {
+    -unity-text-align: middle-center;
     background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Inventorysystem_ItemBackground.png?fileID=21300000&guid=5ac96805953d71a4eb2823920fd71e43&type=3#UI_Inventorysystem_ItemBackground');
     width: 80%;
     padding-top: 12px;
@@ -128,7 +130,7 @@
     padding-left: 12px;
 }
 
-.ItemTypeDescription {
+#ItemTypeDescription {
     width: 100%;
     -unity-slice-left: 25;
     -unity-slice-top: 25;
@@ -144,4 +146,9 @@
     padding-top: 24px;
     padding-bottom: 24px;
     -unity-paragraph-spacing: -12px;
+}
+
+:root {
+    justify-content: flex-end;
+    -unity-font-definition: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
 }

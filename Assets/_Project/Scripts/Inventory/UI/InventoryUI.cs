@@ -11,40 +11,40 @@ namespace DualityGame.Inventory.UI
         [SerializeField] private Inventory _inventory;
         [SerializeField] private InputActionReference _input;
 
-        private UIDocument _uiDocument;
-        
-        private readonly List<ItemSlot> _slots = new();
+        private readonly List<InventorySlot> _slots = new();
 
         private int _currentPageIndex = 0;
         private int _currentSlotSelected = 0;
         private Button _previousPage;
         private Button _nextPage;
         private Label _itemTypeLabel;
+        private VisualElement _frame;
         private int MaxPageIndex => (_inventory.Items.Count - 1)  / _slots.Count;
         
         private void Awake()
         {
-            _uiDocument = GetComponent<UIDocument>();
             _input.action.Enable();
             _input.action.performed += OnInventoryToggle;
-            
-            _previousPage = _uiDocument.rootVisualElement.Q<Button>("PreviousPage");
-            _nextPage = _uiDocument.rootVisualElement.Q<Button>("NextPage");
-            _itemTypeLabel = _uiDocument.rootVisualElement.Q<Label>("ItemType");
-            
-            _previousPage.RegisterCallback<ClickEvent>(e => PreviousPage());
-            _nextPage.RegisterCallback<ClickEvent>(e => NextPage());
 
-            var index = 0;
-            _uiDocument.rootVisualElement.Query<Button>(null, "ItemSlot").ForEach(
-                slot =>
-                {
-                    var sprite = slot.Q<VisualElement>(null, "ItemSprite");
-                    var itemSlot = new ItemSlot(slot, sprite, () => SelectSlot(index++));
-                    _slots.Add(itemSlot);
-                }
-            );
+            var root = GetComponent<UIDocument>().rootVisualElement;
+            _frame = root.Q<VisualElement>("InventoryFrame");
+            _previousPage = _frame.Q<Button>("PreviousPage");
+            _nextPage = _frame.Q<Button>("NextPage");
+            _itemTypeLabel = _frame.Q<Label>("ItemTypeName");
+            
+            _previousPage.clicked += PreviousPage;
+            _nextPage.clicked += NextPage;
+
+            _frame.Query<InventorySlot>().ForEach(_slots.Add);
             _slots[0].SetSelected(true);
+
+            _frame.Q<VisualElement>("Slots").RegisterCallback<ClickEvent>(InventorySlotClicked);
+        }
+
+        private void InventorySlotClicked(ClickEvent evt)
+        {
+            if (evt.target is not InventorySlot slot) return;
+            SelectSlot(slot.parent.hierarchy.IndexOf(slot));
         }
 
         private void SelectSlot(int index)
@@ -76,7 +76,7 @@ namespace DualityGame.Inventory.UI
             }
         }
 
-        private void OnInventoryToggle(InputAction.CallbackContext obj) => _uiDocument.rootVisualElement.ToggleInClassList("Hidden");
+        private void OnInventoryToggle(InputAction.CallbackContext obj) => _frame.ToggleInClassList("Hidden");
 
         private void OnDestroy()
         {
@@ -119,7 +119,7 @@ namespace DualityGame.Inventory.UI
             {
                 var itemIndex = (_currentPageIndex * _slots.Count) + slotIndex;
                 if (itemIndex >= _inventory.Items.Count) {
-                    _slots[slotIndex].Clear();
+                    _slots[slotIndex].ClearItem();
                 } else {
                     _slots[slotIndex].SetItem(_inventory.Items[itemIndex]);
                 }
