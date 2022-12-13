@@ -30,8 +30,6 @@ namespace NodeCanvas.DialogueTrees
 
         ///----------------------------------------------------------------------------------------------
 
-        [SliderField(0f, 10f)]
-        public float availableTime;
         public bool saySelection;
 
         [SerializeField, AutoSortWithChildrenConnections]
@@ -62,7 +60,7 @@ namespace NodeCanvas.DialogueTrees
                 return Status.Failure;
             }
 
-            var optionsInfo = new MultipleChoiceRequestInfo(finalActor, finalOptions, availableTime, OnOptionSelected);
+            var optionsInfo = new MultipleChoiceRequestInfo(finalActor, finalOptions, OnOptionSelected);
             optionsInfo.showLastStatement = inConnections.Count > 0 && inConnections[0].sourceNode is StatementNode;
             DialogueTree.RequestMultipleChoices(optionsInfo);
             return Status.Running;
@@ -118,9 +116,6 @@ namespace NodeCanvas.DialogueTrees
             }
 
             GUILayout.BeginHorizontal();
-            if ( availableTime > 0 ) {
-                GUILayout.Label(availableTime + "' Seconds");
-            }
             if ( saySelection ) {
                 GUILayout.Label("Say Selection");
             }

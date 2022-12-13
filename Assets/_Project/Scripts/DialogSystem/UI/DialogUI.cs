@@ -13,8 +13,6 @@ namespace DualityGame.DialogSystem.UI {
 		[Header("Statement")]
 		[SerializeField] private StatementAudioPlayer _statementAudioPlayer;
 
-		private bool _isWaitingChoice;
-
 		private VisualElement _dialogFrame;
 		private VisualElement _actorPortrait;
 		private Label _statementText;
@@ -111,36 +109,11 @@ namespace DualityGame.DialogSystem.UI {
 			{
 				CreateOption(statement.Text, () => Finalize(info, value));
 			}
-
-			if (info.availableTime > 0){
-				StartCoroutine(CountDown(info));
-			}
 		}
 
-		private void CreateOption(string text, Action onClick)
-		{
-			_options.Add(new DialogOption($"{_options.childCount + 1}.   {text}", onClick));
-		}
-		
-		private IEnumerator CountDown(MultipleChoiceRequestInfo info){
-			_isWaitingChoice = true;
-			var timer = 0f;
-			while (timer < info.availableTime){
-				if (_isWaitingChoice == false){
-					yield break;
-				}
-				timer += Time.deltaTime;
-				_options.style.opacity = Mathf.Lerp(1, 0, timer/info.availableTime);
-				yield return null;
-			}
-			
-			if (_isWaitingChoice){
-				Finalize(info, info.options.Values.Last());
-			}
-		}
+		private void CreateOption(string text, Action onClick) => _options.Add(new DialogOption($"{_options.childCount + 1}.   {text}", onClick));
 
 		private void Finalize(MultipleChoiceRequestInfo info, int index){
-			_isWaitingChoice = false;
 			_options.style.opacity = new StyleFloat(StyleKeyword.Initial);
 			CleanupChoiceButton();
 			info.SelectOption(index);
