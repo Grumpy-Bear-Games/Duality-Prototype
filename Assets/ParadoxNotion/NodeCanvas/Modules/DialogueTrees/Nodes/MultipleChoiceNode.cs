@@ -61,7 +61,6 @@ namespace NodeCanvas.DialogueTrees
             }
 
             var optionsInfo = new MultipleChoiceRequestInfo(finalActor, finalOptions, OnOptionSelected);
-            optionsInfo.showLastStatement = inConnections.Count > 0 && inConnections[0].sourceNode is StatementNode;
             DialogueTree.RequestMultipleChoices(optionsInfo);
             return Status.Running;
         }
