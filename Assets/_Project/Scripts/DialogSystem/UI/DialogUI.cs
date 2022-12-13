@@ -103,6 +103,11 @@ namespace DualityGame.DialogSystem.UI {
 
 		private void OnMultipleChoiceRequest(MultipleChoiceRequestInfo info)
 		{
+			SetActor(info.actor, info.statement.Mood);
+			_statementText.text = info.statement.Text;
+			
+			// TODO: Play audio
+			
 			CleanupChoiceButton();
 			
 			foreach (var (statement, value) in info.options)

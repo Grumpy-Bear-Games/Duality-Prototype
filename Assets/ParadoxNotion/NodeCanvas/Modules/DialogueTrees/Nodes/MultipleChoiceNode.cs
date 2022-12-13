@@ -30,6 +30,7 @@ namespace NodeCanvas.DialogueTrees
 
         ///----------------------------------------------------------------------------------------------
 
+        public Statement statement;
         public bool saySelection;
 
         [SerializeField, AutoSortWithChildrenConnections]
@@ -60,7 +61,7 @@ namespace NodeCanvas.DialogueTrees
                 return Status.Failure;
             }
 
-            var optionsInfo = new MultipleChoiceRequestInfo(finalActor, finalOptions, OnOptionSelected);
+            var optionsInfo = new MultipleChoiceRequestInfo(finalActor, statement, finalOptions, OnOptionSelected);
             DialogueTree.RequestMultipleChoices(optionsInfo);
             return Status.Running;
         }
