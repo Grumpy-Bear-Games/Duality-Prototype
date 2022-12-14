@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1328726461148192072}
   - component: {fileID: 4963836392374485999}
   - component: {fileID: 9026636188797421369}
+  - component: {fileID: 8847244605313167107}
   m_Layer: 6
   m_Name: Jikininki
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   - {fileID: 9134840779604383720}
   - {fileID: 7833724231996076859}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1328726461148192073
 MonoBehaviour:
@@ -151,7 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 1328726461474746563}
-  _currentRealm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
   _maxDistance: 5
 --- !u!114 &9026636188797421369
 MonoBehaviour:
@@ -172,6 +172,34 @@ MonoBehaviour:
       - m_Target: {fileID: 4963836392374485999}
         m_TargetAssemblyTypeName: DualityGame.NPC.Jikininki.HeadController, DualityGame
         m_MethodName: SetPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8847244605313167107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328726461148192077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93168c7869dd430997e891d0b455a7cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _observable: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
+  _onChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4963836392374485999}
+        m_TargetAssemblyTypeName: DualityGame.NPC.Jikininki.HeadController, DualityGame
+        m_MethodName: SetRealm
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

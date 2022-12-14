@@ -1,6 +1,4 @@
-﻿using System;
-using DualityGame.Realm;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DualityGame.NPC.Jikininki
 {
@@ -9,24 +7,32 @@ namespace DualityGame.NPC.Jikininki
         private static readonly int PlayerCloseProperty = Animator.StringToHash("Head High");
 
         [SerializeField] private Animator _animator;
-        [SerializeField] private RealmObservable _currentRealm;
         [SerializeField] private float _maxDistance = 5f;
         
         private GameObject _player;
+        private Realm.Realm _realm;
 
         public void SetPlayer(GameObject player)
         {
             _player = player;
-            enabled = _player != null;
+            UpdateEnabled();
         }
 
-        private void Awake() => enabled = _player != null;
+        public void SetRealm(Realm.Realm realm)
+        {
+            _realm = realm;
+            UpdateEnabled();
+        }
+
+        private void UpdateEnabled() => enabled = _realm != null && _player != null;
+
+        private void Awake() => UpdateEnabled();
         
         private void Update() => _animator.SetBool(PlayerCloseProperty, IsPlayerClose());
 
         private bool IsPlayerClose() => (
             (_player != null) &&
-            (_currentRealm.Value.LevelLayer == gameObject.layer) &&
+            (_realm.LevelLayer == gameObject.layer) &&
             (Vector3.Distance(transform.position, _player.transform.position) <= _maxDistance)
         );
         
