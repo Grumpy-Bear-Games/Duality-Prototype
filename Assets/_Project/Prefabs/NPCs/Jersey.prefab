@@ -35,6 +35,7 @@ Transform:
   m_Children:
   - {fileID: 1328726461474746560}
   - {fileID: 9134840779604383720}
+  - {fileID: 4612840807237659866}
   - {fileID: 8844913961462832624}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,10 +54,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
   _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"I
-    have nothing to say yet..."},"_actorName":"Zadkiel","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":889.0,"y":290.6667},"$type":"NodeCanvas.DialogueTrees.StatementNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Jersey","_id":"c31c580d-3a30-4e64-8251-58145291bf84","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+    have nothing to say yet..."},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":889.0,"y":290.6667},"$type":"NodeCanvas.DialogueTrees.StatementNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Jersey","_id":"c31c580d-3a30-4e64-8251-58145291bf84","_actorObject":1},{"_keyName":"Jersey
+    (Unmasked)","_actorObject":2}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 5783426944490065290}
+  - {fileID: 7662970193023493997}
   _boundGraphSource:
     _version: 3.25
     _category: 
@@ -305,6 +308,70 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 71e1de93107d8fc4f9954e9deaec2cd2, type: 3}
   - Mood: 8
     Sprite: {fileID: 21300000, guid: b33a991d1245c9245bee59bd03c4eb4c, type: 3}
+--- !u!1 &3818160431825609655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4612840807237659866}
+  - component: {fileID: 7662970193023493997}
+  m_Layer: 6
+  m_Name: Jersey Unmasked Actor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4612840807237659866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3818160431825609655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1328726461148192076}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7662970193023493997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3818160431825609655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d71fb7c52372e244baf2e69a9d0d116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Jersey
+  _portraits:
+  - Mood: 0
+    Sprite: {fileID: 21300000, guid: 8a4803ee9d11ed54385bff0b628456d3, type: 3}
+  - Mood: 1
+    Sprite: {fileID: 0}
+  - Mood: 2
+    Sprite: {fileID: 0}
+  - Mood: 3
+    Sprite: {fileID: 0}
+  - Mood: 4
+    Sprite: {fileID: 0}
+  - Mood: 5
+    Sprite: {fileID: 0}
+  - Mood: 6
+    Sprite: {fileID: 0}
+  - Mood: 7
+    Sprite: {fileID: 0}
+  - Mood: 8
+    Sprite: {fileID: 0}
 --- !u!1001 &4760302645007320798
 PrefabInstance:
   m_ObjectHideFlags: 0
