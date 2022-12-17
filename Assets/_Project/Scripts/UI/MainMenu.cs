@@ -34,6 +34,8 @@ namespace DualityGame.UI
             _frame.Q<Button>("QuitButton").clicked += () => confirmationDialog.Show();
         }
 
+        private void Start() => _frame.Q<Button>("NewGameButton").Focus();
+
         public void Hide() => _frame.AddToClassList("Hide");
 
         public void Show() => _frame.RemoveFromClassList("Hide");
