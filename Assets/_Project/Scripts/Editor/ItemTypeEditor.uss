@@ -1,0 +1,14 @@
+#ItemType {
+    background-color: var(--unity-colors-default-background);
+}
+
+#Name {
+    -unity-font-style: bold;
+    font-size: 120%;
+}
+
+#InventorySpritePreview {
+    padding-top: 40%;
+    width: 40%;
+    -unity-background-scale-mode: scale-to-fit;
+}

@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/_Project/Scripts/Editor/ItemTypeEditor.uss?fileID=7433441132597879392&amp;guid=673eab5dea2842b1920032e795a46ef2&amp;type=3#ItemTypeEditor" />
+    <ui:VisualElement name="ItemType">
+        <ui:Label name="Name" tabindex="-1" display-tooltip-when-elided="true" />
+        <ui:VisualElement name="InventorySpritePreview" />
+        <uie:PropertyField name="InventorySprite" label="Inventory Sprite" binding-path="_inventorySprite" />
+        <uie:PropertyField name="Realm" binding-path="_realm" label="Realm" />
+    </ui:VisualElement>
+</ui:UXML>

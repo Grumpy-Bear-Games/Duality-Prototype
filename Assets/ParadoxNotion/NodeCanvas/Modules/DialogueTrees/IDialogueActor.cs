@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DualityGame.Dialog;
+using UnityEngine;
 
 namespace NodeCanvas.DialogueTrees
 {
@@ -7,7 +8,7 @@ namespace NodeCanvas.DialogueTrees
 	public interface IDialogueActor
     {
         string Name { get; }
-        Sprite Portrait { get; }
+        Sprite PortraitByMood(Mood mood);
         Transform Transform { get; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using DualityGame.Dialog;
 using UnityEngine;
 
 namespace NodeCanvas.DialogueTrees
@@ -9,7 +10,7 @@ namespace NodeCanvas.DialogueTrees
     {
         public string Name { get; }
 
-        public Sprite Portrait => null;
+        public Sprite PortraitByMood(Mood mood) => null;
 
         public Transform Transform { get; }
 

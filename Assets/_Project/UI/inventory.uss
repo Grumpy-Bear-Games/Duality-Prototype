@@ -43,28 +43,6 @@
     margin-top: -8px;
 }
 
-.ItemSlot {
-    border-left-width: 0;
-    border-right-width: 0;
-    border-top-width: 0;
-    border-bottom-width: 0;
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Inventorysystem_ItemBackground.png?fileID=21300000&guid=5ac96805953d71a4eb2823920fd71e43&type=3#UI_Inventorysystem_ItemBackground');
-    margin: 8px;
-    padding: 0;
-    background-color: rgba(255, 255, 255, 0);
-    width: 173px;
-    height: 173px;
-}
-
-.ItemSprite {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    right: 10px;
-    bottom: 10px;
-    -unity-background-scale-mode: stretch-to-fill;
-}
-
 .inventory-slot__frame {
     border-left-width: 0;
     border-right-width: 0;

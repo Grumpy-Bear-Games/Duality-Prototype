@@ -40,5 +40,14 @@ namespace DualityGame.Inventory
         public string Prompt => $"Pick up {_itemType.name}";
         
         public override string ToString() => name;
+
+        #if UNITY_EDITOR
+        public void OnValidate()
+        {
+            if (_itemType == null) return;
+            var spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            spriteRenderer.sprite = _itemType.InventorySprite;
+        }
+        #endif
     }
 }

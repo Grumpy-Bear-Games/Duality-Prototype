@@ -65,7 +65,7 @@ namespace DualityGame.Player
 			JumpAndGravity();
 			Move();
 
-			if (!_groundedLastFrame && _controller.isGrounded)_onLand.Invoke(_verticalVelocity);
+			if (!_groundedLastFrame && _controller.isGrounded) _onLand.Invoke(_verticalVelocity);
 			_groundedLastFrame = _controller.isGrounded;
 		}
 

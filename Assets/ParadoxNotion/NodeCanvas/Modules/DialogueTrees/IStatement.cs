@@ -1,3 +1,4 @@
+using DualityGame.Dialog;
 using UnityEngine;
 
 namespace NodeCanvas.DialogueTrees
@@ -8,6 +9,7 @@ namespace NodeCanvas.DialogueTrees
     {
         string Text { get; }
         AudioClip Audio { get; }
+        Mood Mood { get; }
         string Meta { get; }
     }
 }

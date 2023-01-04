@@ -39,6 +39,7 @@ namespace DualityGame.Inventory.UI
             _slots[0].SetSelected(true);
 
             _frame.Q<VisualElement>("Slots").RegisterCallback<ClickEvent>(InventorySlotClicked);
+            _frame.AddToClassList("Hidden");
         }
 
         private void InventorySlotClicked(ClickEvent evt)

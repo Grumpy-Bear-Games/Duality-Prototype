@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DualityGame.Dialog;
 using UnityEngine;
 using NodeCanvas.Framework;
 using ParadoxNotion;
@@ -12,7 +13,7 @@ namespace NodeCanvas.DialogueTrees
     {
 
         string IDialogueActor.Name => name;
-        Sprite IDialogueActor.Portrait => null;
+        Sprite IDialogueActor.PortraitByMood(Mood mood) => null;
         Transform IDialogueActor.Transform => transform;
 
 

@@ -1,5 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Template name="DialogOption" src="project://database/Assets/_Project/UI/DialogOption.uxml?fileID=9197481963319205126&amp;guid=042017470093d1f4ab749045cb9c317a&amp;type=3#DialogOption" />
     <Style src="project://database/Assets/_Project/UI/Dialog.uss?fileID=7433441132597879392&amp;guid=be77d4b3870dfb3408921be491ead72a&amp;type=3#Dialog" />
     <ui:VisualElement name="DialogFrame">
         <ui:VisualElement style="flex-direction: row;">
@@ -12,17 +11,10 @@
         <ui:VisualElement name="MultipleChoice">
             <ui:VisualElement name="PlayerPortrait" />
             <ui:VisualElement name="Options">
-                <ui:Instance template="DialogOption">
-                    <AttributeOverrides element-name="Option" text="1.  You&apos;re talking nonsense, old man!" />
-                </ui:Instance>
-                <ui:Instance template="DialogOption">
-                    <AttributeOverrides element-name="Option" text="2. I totally agree!" />
-                </ui:Instance>
-                <ui:Instance template="DialogOption">
-                    <AttributeOverrides element-name="Option" text="3. Eh, right. Goodbye...." />
-                </ui:Instance>
+                <DualityGame.DialogSystem.UI.DialogOption text="1. You&apos;re talking nonsense, old man!" />
+                <DualityGame.DialogSystem.UI.DialogOption text="2. I totally agree!" />
+                <DualityGame.DialogSystem.UI.DialogOption text="3. Eh, right. Goodbye...." />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="WaitForInput" focusable="true" />
     </ui:VisualElement>
 </ui:UXML>
