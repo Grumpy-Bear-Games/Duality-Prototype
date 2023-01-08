@@ -4963,6 +4963,7 @@ GameObject:
   - component: {fileID: 6851254834509395933}
   - component: {fileID: 2791380713559520640}
   - component: {fileID: 5837366387156901079}
+  - component: {fileID: 6926805345457789462}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -5110,7 +5111,7 @@ MonoBehaviour:
     m_ActionName: UI/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: f62a4b92-ef5e-4175-8f4c-c9075429d32c
+  m_DefaultActionMap: Player Movement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &7495140746743725991
@@ -5382,6 +5383,46 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6926805345457789462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835723823903882621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa725fda20e487e888e610cf7aed769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 26d6bff51b91f764e95074a88be3bb8d, type: 2}
+  _onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6608882140075747269}
+        m_TargetAssemblyTypeName: DualityGame.Inventory.InventoryController, DualityGame
+        m_MethodName: DropInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 5456460093208376991}
+        m_TargetAssemblyTypeName: DualityGame.Player.SpawnController, DualityGame
+        m_MethodName: Respawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &6494727508874392792
 GameObject:
   m_ObjectHideFlags: 0

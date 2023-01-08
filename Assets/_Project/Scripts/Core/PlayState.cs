@@ -10,6 +10,7 @@ namespace DualityGame.Core
             Moving,
             Talking,
             Inventory,
+            Death,
         }
     }
 }

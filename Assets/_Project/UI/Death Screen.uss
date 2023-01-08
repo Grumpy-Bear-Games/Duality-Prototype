@@ -1,0 +1,24 @@
+:root {
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    transition-duration: 1s;
+    transition-property: opacity;
+    transition-timing-function: ease-out;
+    opacity: 1;
+}
+
+:root.FadeOut {
+    display: none;
+    transition-property: opacity, display;
+    transition-duration: 1s, 0s;
+    transition-timing-function: ease-in, ease;
+    transition-delay: 0s, 1s;
+    opacity: 0;
+}
+
+.DeathMessage {
+    -unity-font-definition: url('project://database/Assets/_Project/Fonts/October%20Crow%20SDF.asset?fileID=11400000&guid=727d12a9a520742468b2aeedf011280d&type=2#October Crow SDF');
+    color: rgb(255, 255, 255);
+    -unity-text-align: upper-center;
+    font-size: 142px;
+}

@@ -2,7 +2,7 @@
     "name": "Inputs",
     "maps": [
         {
-            "name": "Player",
+            "name": "Player Movement",
             "id": "f62a4b92-ef5e-4175-8f4c-c9075429d32c",
             "actions": [
                 {
@@ -54,15 +54,6 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "1649bfa0-a9f9-46d9-97f9-edf3e1f7f41e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Inventory",
-                    "type": "Button",
-                    "id": "556e5c74-90d2-40c4-a4f0-cc3f778440c0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -267,10 +258,27 @@
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
+                }
+            ]
+        },
+        {
+            "name": "Player UI",
+            "id": "88fa8fee-7f1a-4521-877e-3e0a7aa909b9",
+            "actions": [
+                {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "8d3a1dad-88c1-41c0-9602-d70d32036b91",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
                 {
                     "name": "",
-                    "id": "356af654-84bf-4525-a364-40c3f8714d19",
+                    "id": "57bbe9a9-ab9b-4d17-a6b0-8edc58b0f5fe",
                     "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
