@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 namespace DualityGame.Inventory.UI
@@ -9,7 +8,6 @@ namespace DualityGame.Inventory.UI
     public class InventoryUI : MonoBehaviour
     {
         [SerializeField] private Inventory _inventory;
-        [SerializeField] private InputActionReference _input;
 
         private readonly List<InventorySlot> _slots = new();
 
@@ -20,12 +18,10 @@ namespace DualityGame.Inventory.UI
         private Label _itemTypeLabel;
         private VisualElement _frame;
         private int MaxPageIndex => (_inventory.Items.Count - 1)  / _slots.Count;
-        
+
+        #region Life-cycle management 
         private void Awake()
         {
-            _input.action.Enable();
-            _input.action.performed += OnInventoryToggle;
-
             var root = GetComponent<UIDocument>().rootVisualElement;
             _frame = root.Q<VisualElement>("InventoryFrame");
             _previousPage = _frame.Q<Button>("PreviousPage");
@@ -39,9 +35,26 @@ namespace DualityGame.Inventory.UI
             _slots[0].SetSelected(true);
 
             _frame.Q<VisualElement>("Slots").RegisterCallback<ClickEvent>(InventorySlotClicked);
-            _frame.AddToClassList("Hidden");
+            Hide();
         }
 
+        private void OnEnable()
+        {
+            _inventory.OnChange += OnInventoryChange;
+            OnInventoryChange();
+        }
+
+        public void OnDisable()
+        {
+            _inventory.OnChange -= OnInventoryChange;
+        }
+        #endregion
+
+        public void Hide() => _frame?.AddToClassList("Hidden");
+
+        public void Show() => _frame?.RemoveFromClassList("Hidden");
+
+        #region Inventory UI
         private void InventorySlotClicked(ClickEvent evt)
         {
             if (evt.target is not InventorySlot slot) return;
@@ -77,20 +90,6 @@ namespace DualityGame.Inventory.UI
             }
         }
 
-        private void OnInventoryToggle(InputAction.CallbackContext obj) => _frame.ToggleInClassList("Hidden");
-
-        private void OnDestroy()
-        {
-            _input.action.Disable();
-            _input.action.performed -= OnInventoryToggle;
-        }
-
-        private void OnEnable()
-        {
-            _inventory.OnChange += OnInventoryChange;
-            OnInventoryChange();
-        }
-
         private void NextPage()
         {
             if (_currentPageIndex >= MaxPageIndex) return;
@@ -107,11 +106,6 @@ namespace DualityGame.Inventory.UI
             SelectSlot(0);
             RedrawInventorySlots();
             UpdatePageButtons();
-        }
-
-        public void OnDisable()
-        {
-            _inventory.OnChange -= OnInventoryChange;
         }
 
         private void RedrawInventorySlots()
@@ -141,5 +135,6 @@ namespace DualityGame.Inventory.UI
             UpdatePageButtons();
             UpdateSelectedSlotUI();
         }
+        #endregion
     }
 }

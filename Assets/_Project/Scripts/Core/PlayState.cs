@@ -9,6 +9,7 @@ namespace DualityGame.Core
         public enum State {
             Moving,
             Talking,
+            Inventory,
         }
     }
 }
