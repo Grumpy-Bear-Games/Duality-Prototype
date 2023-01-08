@@ -4957,7 +4957,7 @@ GameObject:
   - component: {fileID: 6608882140075747270}
   - component: {fileID: 6608882140075747269}
   - component: {fileID: 6787628765604967483}
-  - component: {fileID: 2098056907403977889}
+  - component: {fileID: 1253323578849531714}
   - component: {fileID: 5456460093208376991}
   - component: {fileID: 2985635879919357011}
   - component: {fileID: 6851254834509395933}
@@ -5256,7 +5256,7 @@ MonoBehaviour:
     Sprite: {fileID: 0}
   - Mood: 8
     Sprite: {fileID: 0}
---- !u!114 &2098056907403977889
+--- !u!114 &1253323578849531714
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5265,13 +5265,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5835723823903882621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfdf2755ddb446ab8a3c55a9dbf8341c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4672ac7966314722af158ae9dc814f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onChange:
-    m_PersistentCalls:
-      m_Calls: []
-  _onMoving:
+  _state: 0
+  _onEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5835723823903882609}
@@ -5286,7 +5284,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  _onTalking:
+  _onLeave:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5835723823903882609}
@@ -5328,7 +5326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 494e3a6e88f847ad9fcee3a374dd1e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fadeVFX: {fileID: 11400000, guid: d91a490061b0c5448a570c66048f5feb, type: 2}
 --- !u!114 &6851254834509395933
 MonoBehaviour:
   m_ObjectHideFlags: 0
