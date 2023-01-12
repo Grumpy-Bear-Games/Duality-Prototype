@@ -6,8 +6,8 @@ using UnityEngine.UIElements;
 
 namespace NodeCanvas.Editor
 {
-    [CustomEditor(typeof(DialogueActor))]
-    public class DialogueActorEditor: UnityEditor.Editor
+    [CustomEditor(typeof(ActorAsset))]
+    public class ActorAssetEditor: UnityEditor.Editor
     {
         [SerializeField] private VisualTreeAsset _editor;
         [SerializeField] private VisualTreeAsset _portraitItem;

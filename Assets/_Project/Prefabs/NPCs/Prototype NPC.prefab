@@ -97,26 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d71fb7c52372e244baf2e69a9d0d116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: NPC
-  _portraits:
-  - Mood: 0
-    Sprite: {fileID: 21300000, guid: b5a28db268696d64abad17a8d2ac2612, type: 3}
-  - Mood: 1
-    Sprite: {fileID: 21300000, guid: 5987cbd4ec8fad04c967e071af5a1364, type: 3}
-  - Mood: 2
-    Sprite: {fileID: 21300000, guid: 0ea059c9a79125c429df9d2ddf32f161, type: 3}
-  - Mood: 3
-    Sprite: {fileID: 0}
-  - Mood: 4
-    Sprite: {fileID: 0}
-  - Mood: 5
-    Sprite: {fileID: 0}
-  - Mood: 6
-    Sprite: {fileID: 0}
-  - Mood: 7
-    Sprite: {fileID: 0}
-  - Mood: 8
-    Sprite: {fileID: 0}
+  _actorAsset: {fileID: 11400000, guid: 7630f2d2bf39b814c898b3507f3e85a1, type: 2}
 --- !u!1 &6444291834977619648
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,8 +143,17 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6444291834977619648}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -248,7 +238,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 6444291834977619676}
     m_Modifications:
     - target: {fileID: 4084919250645490478, guid: aeb1ddf6dc21a4c43952d7a21701cf71,
@@ -312,7 +302,9 @@ PrefabInstance:
       value: Blob Shadow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeb1ddf6dc21a4c43952d7a21701cf71, type: 3}
 --- !u!4 &320735901101050801 stripped
 Transform:
