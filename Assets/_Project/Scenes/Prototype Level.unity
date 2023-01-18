@@ -36520,26 +36520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d71fb7c52372e244baf2e69a9d0d116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: NPC
-  _portraits:
-  - Mood: 0
-    Sprite: {fileID: 0}
-  - Mood: 1
-    Sprite: {fileID: 0}
-  - Mood: 2
-    Sprite: {fileID: 0}
-  - Mood: 3
-    Sprite: {fileID: 0}
-  - Mood: 4
-    Sprite: {fileID: 0}
-  - Mood: 5
-    Sprite: {fileID: 0}
-  - Mood: 6
-    Sprite: {fileID: 0}
-  - Mood: 7
-    Sprite: {fileID: 0}
-  - Mood: 8
-    Sprite: {fileID: 0}
+  _actorAsset: {fileID: 11400000, guid: 7630f2d2bf39b814c898b3507f3e85a1, type: 2}
 --- !u!1 &6877771541013080813
 GameObject:
   m_ObjectHideFlags: 0
@@ -36613,13 +36594,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: 
-  _boundGraphObjectReferences: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"Oh
+    Hello... how did you end up here? Not particularly good or evil in your life
+    huh? well bully for you, guess it''s my problem now...\n\nthis is a test second
+    paragraph"},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":436.0,"y":118.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"Damn,
+    and my millenia is already pretty booked up. "},"availableChoices":[{"statement":{"_text":"Hi,
+    old man!"}},{"statement":{"_text":"Psst! I have something for you!"}}],"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":438.0,"y":238.0},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"1"},{"statement":{"_text":"Who
+    are you calling old?!"},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":214.0,"y":748.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"I''m
+    too old for your crap!"},"_actorName":"NPC","_actorParameterID":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_position":{"x":647.0,"y":725.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{"Quest":{"_value":1,"_name":"Quest","_id":"b1dd84ed-3b35-4bed-93a0-2631ab0ed45e","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[DualityGame.Quests.Quest,
+    DualityGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Player
+    Inventory":{"_name":"Player Inventory","_id":"11ba68d8-3a74-4f00-8726-480d6cff27a0","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[DualityGame.Inventory.Inventory,
+    DualityGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Requested
+    Item Type":{"_value":2,"_name":"Requested Item Type","_id":"69dbdae9-cf48-42ae-a621-77ca5a25a2ac","_isPublic":true,"$type":"NodeCanvas.Framework.Variable`1[[DualityGame.Inventory.ItemType,
+    DualityGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"actorParameters":[{"_keyName":"NPC","_id":"fc070b25-bc8c-46a6-b6f5-bd0fa140faa4","_actorObject":3}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 92efa524a0a5af24cb1f806e48250647, type: 2}
+  - {fileID: 11400000, guid: c6696b31cd22cd448a4e7e97f1171d0e, type: 2}
+  - {fileID: 6877771540680874999}
   _boundGraphSource:
-    _version: 0
+    _version: 3.25
     _category: 
     _comments: 
-    _translation: {x: 0, y: 0}
+    _translation: {x: 141, y: -56}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 1
@@ -36627,7 +36624,7 @@ MonoBehaviour:
   _lockBoundGraphPrefabOverrides: 1
   _preInitializeSubGraphs: 0
   _updateMode: 0
-  _graph: {fileID: 11400000, guid: 26a81ebcb35494d4faba932af409c628, type: 2}
+  _graph: {fileID: 0}
   _blackboard: {fileID: 0}
 --- !u!114 &6877771541013080822
 MonoBehaviour:
