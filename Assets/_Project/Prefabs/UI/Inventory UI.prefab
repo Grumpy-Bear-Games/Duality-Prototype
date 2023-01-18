@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6334023674009506279}
   - component: {fileID: 6334023674009506278}
   - component: {fileID: 6334023674009506272}
-  - component: {fileID: 2866145007959911211}
-  - component: {fileID: 7438604285770003042}
+  - component: {fileID: 9112872247276430883}
+  - component: {fileID: 4714406515637655876}
   m_Layer: 5
   m_Name: Inventory UI
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6334023674009506278
 MonoBehaviour:
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventory: {fileID: 11400000, guid: c0fcc5868137b7d42856a51b3b5250bf, type: 2}
---- !u!114 &2866145007959911211
+--- !u!114 &9112872247276430883
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,41 +74,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 6334023674009506277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4672ac7966314722af158ae9dc814f20, type: 3}
+  m_Script: {fileID: 11500000, guid: 9589056f27a544e2b2cbc65d00b130c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: 2
+  _state: {fileID: 11400000, guid: c2e06e152fecac948bde2d5604d31d65, type: 2}
+  _enabledWhenInState:
+  - {fileID: 6334023674009506272}
+  - {fileID: 4714406515637655876}
   _onEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6334023674009506272}
-        m_TargetAssemblyTypeName: DualityGame.Inventory.UI.InventoryUI, DualityGame
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onLeave:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6334023674009506272}
-        m_TargetAssemblyTypeName: DualityGame.Inventory.UI.InventoryUI, DualityGame
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &7438604285770003042
+      m_Calls: []
+--- !u!114 &4714406515637655876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +96,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 6334023674009506277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c9cfc5c1e044e0d991e5e9b9fb1c23e, type: 3}
+  m_Script: {fileID: 11500000, guid: 03122b4d3dae4ca09a4ebe20941c08a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _input: {fileID: 2780073078216406310, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
+  _onPerform:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5, type: 2}
+        m_TargetAssemblyTypeName: DualityGame.Core.GameState, DualityGame
+        m_MethodName: SetActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

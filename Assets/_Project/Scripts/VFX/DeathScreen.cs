@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using DualityGame.Core;
 using Games.GrumpyBear.Core.Events;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 namespace DualityGame.VFX
@@ -13,6 +13,7 @@ namespace DualityGame.VFX
 
         [SerializeField] private VoidEvent _onDeathScreen;
         [SerializeField] private float _deathScreenDelay = 3f;
+        [SerializeField] private UnityEvent _onFinished;
 
         private Label _label;
         private VisualElement _root;
@@ -47,7 +48,7 @@ namespace DualityGame.VFX
                 yield return null;
             } while (_runningTransitions > 0);
             
-            PlayState.Current.Set(PlayState.State.Moving);
+            _onFinished.Invoke();
         }
 
 

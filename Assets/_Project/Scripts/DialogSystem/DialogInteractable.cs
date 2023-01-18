@@ -1,4 +1,3 @@
-using DualityGame.Core;
 using DualityGame.Iteractables;
 using NodeCanvas.DialogueTrees;
 using UnityEngine;
@@ -29,21 +28,5 @@ namespace DualityGame.DialogSystem
         public Vector3 PromptPosition => transform.position + _promptOffset;
 
         public string Prompt => $"Talk with {name}";
-        
-        private void OnEnable()
-        {
-            DialogueTree.OnDialogueStarted += SetTalking;
-            DialogueTree.OnDialogueFinished += SetMoving;
-        }
-
-        private void OnDisable()
-        {
-            DialogueTree.OnDialogueStarted -= SetTalking;
-            DialogueTree.OnDialogueFinished -= SetMoving;
-        }
-
-        private void SetMoving(DialogueTree obj) => PlayState.Current.Value = PlayState.State.Moving;
-
-        private void SetTalking(DialogueTree obj) => PlayState.Current.Value = PlayState.State.Talking;
     }
 }

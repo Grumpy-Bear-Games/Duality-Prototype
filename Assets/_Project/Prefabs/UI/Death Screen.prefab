@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4893042606209545629}
   - component: {fileID: 4893042606209545630}
   - component: {fileID: 4893042606209545628}
-  - component: {fileID: 4893042606209545627}
+  - component: {fileID: 5583540529511662743}
   m_Layer: 0
   m_Name: Death Screen
   m_TagString: Untagged
@@ -64,7 +64,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onDeathScreen: {fileID: 11400000, guid: 26d6bff51b91f764e95074a88be3bb8d, type: 2}
---- !u!114 &4893042606209545627
+  _deathScreenDelay: 3
+  _onFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5, type: 2}
+        m_TargetAssemblyTypeName: DualityGame.Core.GameState, DualityGame
+        m_MethodName: SetActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5583540529511662743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,10 +89,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4893042606209545631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4672ac7966314722af158ae9dc814f20, type: 3}
+  m_Script: {fileID: 11500000, guid: 9589056f27a544e2b2cbc65d00b130c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: 3
+  _state: {fileID: 11400000, guid: 3b160777fac518c4383f397db0318370, type: 2}
   _onEnter:
     m_PersistentCalls:
       m_Calls:
@@ -91,7 +107,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
   _onLeave:
     m_PersistentCalls:
       m_Calls: []
