@@ -6,7 +6,7 @@ namespace DualityGame.Player
 {
     public class DeathController : MonoBehaviour, IKillable
     {
-        [SerializeField] private UnityEvent _onDie;
-        public void Kill() => _onDie.Invoke();
+        [SerializeField] private UnityEvent<string> _onDie;
+        public void Kill(string causeOfDeath) => _onDie.Invoke(causeOfDeath);
     }
 }
