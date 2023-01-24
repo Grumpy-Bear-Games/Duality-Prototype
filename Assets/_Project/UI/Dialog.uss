@@ -58,17 +58,11 @@
 #MultipleChoice {
     align-items: flex-start;
     flex-direction: row;
-    margin-left: 150px;
+    margin-left: 320px;
     transition-property: opacity, display;
     transition-duration: 0.2s, 0s;
     transition-timing-function: ease, ease;
     transition-delay: 0s, 0s;
-}
-
-#PlayerPortrait {
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_PortraitBg_White_MC_Neutral.png?fileID=21300000&guid=4f602a2184da46d458dfa3fc6c8d5286&type=3#UI_PortraitBg_White_MC_Neutral');
-    width: 170px;
-    height: 165px;
 }
 
 #Options {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4893042606209545629}
   - component: {fileID: 4893042606209545630}
   - component: {fileID: 4893042606209545628}
-  - component: {fileID: 4893042606209545627}
+  - component: {fileID: 4559904769997665827}
   m_Layer: 0
   m_Name: Death Screen
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4893042606209545630
 MonoBehaviour:
@@ -64,25 +64,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onDeathScreen: {fileID: 11400000, guid: 26d6bff51b91f764e95074a88be3bb8d, type: 2}
---- !u!114 &4893042606209545627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4893042606209545631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4672ac7966314722af158ae9dc814f20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _state: 3
-  _onEnter:
+  _deathScreenDelay: 3
+  _onFinished:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4893042606209545628}
-        m_TargetAssemblyTypeName: DualityGame.VFX.DeathScreen, DualityGame
-        m_MethodName: Trigger
+      - m_Target: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5, type: 2}
+        m_TargetAssemblyTypeName: DualityGame.Core.GameState, DualityGame
+        m_MethodName: SetActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -91,7 +79,32 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
-  _onLeave:
+        m_CallState: 2
+--- !u!114 &4559904769997665827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4893042606209545631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13847a8765c4f529aaeff93f7a74e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 83ac3131d5f0b334d86f70f31c7721c1, type: 2}
+  _onTrigger:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4893042606209545628}
+        m_TargetAssemblyTypeName: DualityGame.VFX.DeathScreen, DualityGame
+        m_MethodName: Trigger
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -10,8 +10,8 @@ namespace DualityGame.Quests
         [RequiredField] public BBParameter<Quest> _quest;
         [RequiredField] public BBParameter<Quest.QuestState> _questState;
 
-        protected override string info => $"Set quest state to {_questState.value}";
-		
+        protected override string info => _quest.isNoneOrNull ? "(Please specify quest)" : $"Set quest state to {_questState.value}";
+
         //This is called once each time the task is enabled.
         //Call EndAction() to mark the action as finished, either in success or failure.
         //EndAction can be called from anywhere.
@@ -20,6 +20,5 @@ namespace DualityGame.Quests
             _quest.value.State = _questState.value;
             EndAction(true);
         }
-
     }
 }

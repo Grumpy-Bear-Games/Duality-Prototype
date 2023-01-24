@@ -1,10 +1,12 @@
 using DualityGame.Core;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace DualityGame.Player
 {
     public class DeathController : MonoBehaviour, IKillable
     {
-        public void Kill() => PlayState.Current.Set(PlayState.State.Death);
+        [SerializeField] private UnityEvent<string> _onDie;
+        public void Kill(string causeOfDeath) => _onDie.Invoke(causeOfDeath);
     }
 }

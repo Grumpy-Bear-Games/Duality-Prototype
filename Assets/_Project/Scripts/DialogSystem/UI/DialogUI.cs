@@ -4,6 +4,7 @@ using System.Linq;
 using DualityGame.Dialog;
 using NodeCanvas.DialogueTrees;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
@@ -12,6 +13,10 @@ namespace DualityGame.DialogSystem.UI {
 	{
 		[Header("Statement")]
 		[SerializeField] private StatementAudioPlayer _statementAudioPlayer;
+		
+		[Header("Events")]
+		[SerializeField] private UnityEvent _onShow;
+		[SerializeField] private UnityEvent _onHide;
 
 		private VisualElement _dialogFrame;
 		private VisualElement _actorPortrait;
@@ -50,10 +55,18 @@ namespace DualityGame.DialogSystem.UI {
 
 		private void OnDialogueStarted(DialogueTree dlg) => Show();
 
-		private void Hide() => _dialogFrame.AddToClassList("Hidden");
+		private void Hide()
+		{
+			_dialogFrame.AddToClassList("Hidden");
+			_onHide.Invoke();
+		}
 
-		private void Show() => _dialogFrame.RemoveFromClassList("Hidden");
-		
+		private void Show()
+		{
+			_dialogFrame.RemoveFromClassList("Hidden");
+			_onShow.Invoke();
+		}
+
 		public void SelectOption(int value)
 		{
 			var dialogOptions = _options.Query<DialogOption>().ToList();

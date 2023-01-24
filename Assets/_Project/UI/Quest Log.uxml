@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/Quest%20Log.uss?fileID=7433441132597879392&amp;guid=e6402e2516102be4ca58a02880f919ef&amp;type=3#Quest Log" />
+    <ui:VisualElement name="Frame" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/_Project/Sprites/UI_Sprites/Journal2.png?fileID=21300000&amp;guid=5d64539ee42bb4d428322cf0e015455e&amp;type=3#Journal2&apos;); width: 100%; height: 100%; flex-direction: row; padding-top: 85px; padding-bottom: 105px; padding-right: 102px; padding-left: 85px;">
+        <DualityGame.Quests.UI.QuestSlot name="LeftPage" style="flex-grow: 1; margin-right: 50px;" />
+        <DualityGame.Quests.UI.QuestSlot name="RightPage" style="flex-grow: 1; margin-left: 50px;" />
+    </ui:VisualElement>
+</ui:UXML>

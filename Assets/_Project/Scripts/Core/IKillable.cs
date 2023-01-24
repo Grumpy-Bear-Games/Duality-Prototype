@@ -2,6 +2,6 @@ namespace DualityGame.Core
 {
     public interface IKillable
     {
-        void Kill();
+        void Kill(string causeOfDeath);
     }
 }

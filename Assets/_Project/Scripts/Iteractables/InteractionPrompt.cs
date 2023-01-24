@@ -1,4 +1,3 @@
-using DualityGame.Core;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -21,27 +20,13 @@ namespace DualityGame.Iteractables
             HidePrompt();
         }
 
-        private void HidePrompt()
-        {
-            _prompt.style.display = DisplayStyle.None;
-        }
+        private void HidePrompt() => _prompt.style.display = DisplayStyle.None;
 
-        private void ShowPrompt()
-        {
-            _prompt.style.display = DisplayStyle.Flex;
-        }
+        private void ShowPrompt() => _prompt.style.display = DisplayStyle.Flex;
 
-        private void OnEnable()
-        {
-            _closestInteractable.Subscribe(OnClosestInteractableChange);
-            PlayState.Current.Subscribe(EvaluatePrompt);
-        }
+        private void OnEnable() => _closestInteractable.Subscribe(OnClosestInteractableChange);
 
-        private void OnDisable()
-        {
-            _closestInteractable.Unsubscribe(OnClosestInteractableChange);
-            PlayState.Current.Unsubscribe(EvaluatePrompt);
-        }
+        private void OnDisable() => _closestInteractable.Unsubscribe(OnClosestInteractableChange);
 
         private void LateUpdate()
         {
@@ -55,12 +40,12 @@ namespace DualityGame.Iteractables
         private void OnClosestInteractableChange(IInteractable interactable)
         {
             _interactable = interactable;
-            EvaluatePrompt(PlayState.Current.Value);
+            EvaluatePrompt();
         }
 
-        private void EvaluatePrompt(PlayState.State playState)
+        private void EvaluatePrompt()
         {
-            if (_interactable != null && playState == PlayState.State.Moving && !string.IsNullOrEmpty(_interactable.Prompt))
+            if (_interactable != null && !string.IsNullOrEmpty(_interactable.Prompt))
             {
                 _promptLabel.text = _interactable.Prompt;
                 ShowPrompt();

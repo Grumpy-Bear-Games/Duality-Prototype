@@ -35,24 +35,25 @@ namespace DualityGame.Inventory.UI
             _slots[0].SetSelected(true);
 
             _frame.Q<VisualElement>("Slots").RegisterCallback<ClickEvent>(InventorySlotClicked);
-            Hide();
         }
 
         private void OnEnable()
         {
             _inventory.OnChange += OnInventoryChange;
             OnInventoryChange();
+            Show();
         }
 
         public void OnDisable()
         {
+            Hide();
             _inventory.OnChange -= OnInventoryChange;
         }
         #endregion
 
-        public void Hide() => _frame?.AddToClassList("Hidden");
+        private void Hide() => _frame?.AddToClassList("Hidden");
 
-        public void Show() => _frame?.RemoveFromClassList("Hidden");
+        private void Show() => _frame?.RemoveFromClassList("Hidden");
 
         #region Inventory UI
         private void InventorySlotClicked(ClickEvent evt)

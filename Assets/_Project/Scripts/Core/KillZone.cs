@@ -1,19 +1,15 @@
-﻿using DualityGame.VFX;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DualityGame.Core
 {
     public class KillZone : MonoBehaviour
     {
-        [SerializeField] private string _causeOfDeath = "You feel into the abyss!";
-        
+        [field: SerializeField] public string CauseOfDeath { get; private set; }  = "You feel into the abyss!";
+
         private void OnTriggerEnter(Collider other)
         {
             var killable = other.GetComponent<IKillable>();
-            if (killable == null) return;
-            
-            DeathScreen.CauseOfDeath.Set(_causeOfDeath);
-            killable.Kill();
+            killable?.Kill(CauseOfDeath);
         }
     }
 }
