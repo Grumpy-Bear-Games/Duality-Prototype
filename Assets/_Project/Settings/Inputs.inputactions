@@ -942,6 +942,74 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "SaveSystem",
+            "id": "24eafead-801a-4c2d-b893-70ab379908ab",
+            "actions": [
+                {
+                    "name": "Save",
+                    "type": "Button",
+                    "id": "bde41c19-0439-4c03-8c43-fce0a3747b3b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Load",
+                    "type": "Button",
+                    "id": "7f41409c-2a3f-4e4a-a139-99c11795510d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Clear",
+                    "type": "Button",
+                    "id": "07c4dff7-56de-4071-8251-885e315bc4ec",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2dcf7823-1c9b-44ec-a648-2acd200f7fe3",
+                    "path": "<Keyboard>/f7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Save",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9cfc75f6-221d-4ae8-974e-7c2f0df576b2",
+                    "path": "<Keyboard>/f8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Load",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d280c43e-a7f7-4156-b6f5-e2cb5a04392f",
+                    "path": "<Keyboard>/f9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Clear",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
