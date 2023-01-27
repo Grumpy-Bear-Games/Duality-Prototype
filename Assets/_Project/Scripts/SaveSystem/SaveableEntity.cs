@@ -24,7 +24,7 @@ namespace DualityGame.SaveSystem
             foreach (var saveableComponent in GetComponents<ISaveableComponent>())
             {
                 var componentID = GetComponentID(saveableComponent);
-                if (!state.ContainsValue(componentID)) continue;
+                if (!state.ContainsKey(componentID)) continue;
                 saveableComponent.RestoreState(state[componentID]);
             }
         }
