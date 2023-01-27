@@ -24,7 +24,7 @@ namespace DualityGame.SaveSystem
 
         public static void CaptureState(Dictionary<string, Dictionary<string, object>> state)
         {
-            foreach (var saveableEntity in Object.FindObjectsOfType<SaveableEntity>())
+            foreach (var saveableEntity in Object.FindObjectsOfType<SaveableEntity>(true))
             {
                 state[saveableEntity.ID] = saveableEntity.CaptureState();
             }
@@ -32,7 +32,7 @@ namespace DualityGame.SaveSystem
 
         public static void RestoreState(Dictionary<string, Dictionary<string, object>> state)
         {
-            foreach (var saveableEntity in Object.FindObjectsOfType<SaveableEntity>())
+            foreach (var saveableEntity in Object.FindObjectsOfType<SaveableEntity>(true))
             {
                 if (!state.ContainsKey(saveableEntity.ID)) continue;
                 
