@@ -3,18 +3,13 @@ using UnityEngine.InputSystem;
 
 namespace DualityGame.SaveSystem
 {
-    [RequireComponent(typeof(SaveSystem))]
     public class SaveSystemHotkeys : MonoBehaviour
     {
         #region Hotkeys - Just for testing
         [SerializeField] private InputActionReference _saveKey;
         [SerializeField] private InputActionReference _loadKey;
         [SerializeField] private InputActionReference _clearKey;
-
-        private SaveSystem _saveSystem;
         
-        private void Awake() => _saveSystem = GetComponent<SaveSystem>();
-
         private void OnEnable()
         {
             _saveKey.action.performed += OnSave;
@@ -41,19 +36,19 @@ namespace DualityGame.SaveSystem
         private void OnClear(InputAction.CallbackContext obj)
         {
             Debug.Log("Clearing state");
-            _saveSystem.Clear();
+            SaveSystem.Clear();
         }
 
         private void OnLoad(InputAction.CallbackContext obj)
         {
             Debug.Log("Loading state");
-            _saveSystem.Load();
+            SaveSystem.Load();
         }
 
         private void OnSave(InputAction.CallbackContext obj)
         {
             Debug.Log("Saving state");
-            _saveSystem.Save();
+            SaveSystem.Save();
         }
 
         #endregion

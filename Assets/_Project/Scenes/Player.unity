@@ -382,7 +382,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196011975}
-  - component: {fileID: 1196011974}
   - component: {fileID: 1196011976}
   m_Layer: 0
   m_Name: SaveSystem
@@ -391,24 +390,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1196011974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196011973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52504d42c75b4b4a9d871fa99b66d5b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _saveKey: {fileID: -1262449364780487903, guid: 4419d82f33d36e848b3ed5af4c8da37e,
-    type: 3}
-  _loadKey: {fileID: -236259927305584345, guid: 4419d82f33d36e848b3ed5af4c8da37e,
-    type: 3}
-  _clearKey: {fileID: -6430644498144318348, guid: 4419d82f33d36e848b3ed5af4c8da37e,
-    type: 3}
 --- !u!4 &1196011975
 Transform:
   m_ObjectHideFlags: 0
@@ -495,7 +476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2122674233
 MonoBehaviour:
   m_ObjectHideFlags: 0
