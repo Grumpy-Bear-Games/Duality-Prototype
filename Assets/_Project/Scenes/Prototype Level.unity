@@ -34973,37 +34973,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1075809031}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1150168642
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1150168643}
-  m_Layer: 6
-  m_Name: Letter Spawn Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1150168643
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150168642}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.08, y: -0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1690534879}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1182836298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35614,8 +35583,7 @@ Transform:
   m_LocalPosition: {x: 3.11, y: 0.51, z: -12.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1150168643}
+  m_Children: []
   m_Father: {fileID: 489906813}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35631,9 +35599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91cf783a5954228842dc04967b20263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnPoint: {fileID: 1690534879}
   _itemsToSpawn:
-  - Item: {fileID: 1675937649}
-    SpawnTo: {fileID: 1150168643}
+  - {fileID: 1675937649}
   _prompt: Search Pile of corpses
   _promptOffset: {x: 0, y: 1.5, z: 0}
   _jumpPower: 1
@@ -36385,7 +36353,7 @@ PrefabInstance:
     - target: {fileID: 855071986495757553, guid: 996a1956a91b55245978c56516520bc8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.19
+      value: 1.579
       objectReference: {fileID: 0}
     - target: {fileID: 855071986495757553, guid: 996a1956a91b55245978c56516520bc8,
         type: 3}
@@ -36395,7 +36363,7 @@ PrefabInstance:
     - target: {fileID: 855071986495757553, guid: 996a1956a91b55245978c56516520bc8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.22
+      value: -11.833
       objectReference: {fileID: 0}
     - target: {fileID: 855071986495757553, guid: 996a1956a91b55245978c56516520bc8,
         type: 3}
