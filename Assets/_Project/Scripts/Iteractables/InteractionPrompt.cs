@@ -17,7 +17,6 @@ namespace DualityGame.Iteractables
             _uiDocument = GetComponent<UIDocument>();
             _prompt = _uiDocument.rootVisualElement.Q<VisualElement>("Prompt");
             _promptLabel = _prompt.Q<Label>("Label");
-            HidePrompt();
         }
 
         private void HidePrompt() => _prompt.style.display = DisplayStyle.None;
@@ -26,7 +25,11 @@ namespace DualityGame.Iteractables
 
         private void OnEnable() => _closestInteractable.Subscribe(OnClosestInteractableChange);
 
-        private void OnDisable() => _closestInteractable.Unsubscribe(OnClosestInteractableChange);
+        private void OnDisable()
+        {
+            _closestInteractable.Unsubscribe(OnClosestInteractableChange);
+            HidePrompt();
+        }
 
         private void LateUpdate()
         {
