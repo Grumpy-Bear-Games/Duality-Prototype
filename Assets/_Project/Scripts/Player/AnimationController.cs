@@ -1,9 +1,11 @@
 ﻿using System;
+using DualityGame.SaveSystem;
 using UnityEngine;
 
 namespace DualityGame.Player
 {
-    public class AnimationController : MonoBehaviour
+	[RequireComponent(typeof(SaveableEntity))]
+	public class AnimationController : MonoBehaviour, ISaveableComponent
     {
         [SerializeField] private Animator _animator;
 		[SerializeField] private PlayerInputs _input;
@@ -76,6 +78,16 @@ namespace DualityGame.Player
 			_animator = GetComponentInChildren<Animator>();
 			_input = GetComponentInParent<PlayerInputs>();
 			_controller = GetComponentInParent<CharacterController>();
+		}
+
+		object ISaveableComponent.CaptureState()
+		{
+			return (int)_direction;
+		}
+
+		void ISaveableComponent.RestoreState(object state)
+		{
+			_direction = (Direction)state;
 		}
     }
 }

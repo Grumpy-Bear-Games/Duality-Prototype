@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using DualityGame.SaveSystem;
+using UnityEngine;
 
 namespace DualityGame.Inventory
 {
-    public class Item : MonoBehaviour, Iteractables.IInteractable
+    [RequireComponent(typeof(SaveableEntity))]
+    public class Item : MonoBehaviour, Iteractables.IInteractable, ISaveableComponent
     {
         [SerializeField] private ItemType _itemType;
         [SerializeField] private Vector3 _promptOffset;
@@ -49,5 +52,32 @@ namespace DualityGame.Inventory
             spriteRenderer.sprite = _itemType.InventorySprite;
         }
         #endif
+
+
+        [Serializable]
+        private class SerializableState
+        {
+            public readonly Vector3 InitialPosition;
+            public readonly bool Active;
+
+            public SerializableState(Vector3 initialPosition, bool active)
+            {
+                InitialPosition = initialPosition;
+                Active = active;
+            }
+        }
+
+        object ISaveableComponent.CaptureState()
+        {
+            var state = new SerializableState(_initialPosition, gameObject.activeSelf);
+            return state;
+        }
+
+        void ISaveableComponent.RestoreState(object state)
+        {
+            var serializableState = (SerializableState)state;
+            _initialPosition = serializableState.InitialPosition;
+            gameObject.SetActive(serializableState.Active);
+        }
     }
 }

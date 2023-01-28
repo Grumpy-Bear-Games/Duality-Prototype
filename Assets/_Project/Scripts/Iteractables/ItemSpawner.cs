@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using DG.Tweening;
+using DualityGame.SaveSystem;
 using UnityEngine;
 
 namespace DualityGame.Iteractables
 {
-    public class ItemSpawner : MonoBehaviour, IInteractable
+    [RequireComponent(typeof(SaveableEntity))]
+    public class ItemSpawner : MonoBehaviour, IInteractable, ISaveableComponent
     {
         [Header("Items to spawn")]
         [SerializeField] private List<ItemToSpawn> _itemsToSpawn = new();
@@ -24,6 +26,8 @@ namespace DualityGame.Iteractables
 
         public void Interact(GameObject actor)
         {
+            if (_hasSpawned) return;
+            
             _hasSpawned = true;
             var seq = DOTween.Sequence();
             
@@ -48,5 +52,9 @@ namespace DualityGame.Iteractables
             public Inventory.Item Item;
             public Transform SpawnTo;
         }
+
+        object ISaveableComponent.CaptureState() => _hasSpawned;
+
+        void ISaveableComponent.RestoreState(object state) => _hasSpawned = (bool)state;
     }
 }

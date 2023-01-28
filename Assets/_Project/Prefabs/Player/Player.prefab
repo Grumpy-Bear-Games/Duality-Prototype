@@ -4965,6 +4965,7 @@ GameObject:
   - component: {fileID: 5837366387156901079}
   - component: {fileID: 6926805345457789462}
   - component: {fileID: 4084528160578873222}
+  - component: {fileID: 3005785628758143361}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -4988,7 +4989,7 @@ Transform:
   - {fileID: 6211474777565629034}
   - {fileID: 2822923813821320290}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5835723823903882615
 CharacterController:
@@ -5440,6 +5441,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3005785628758143361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835723823903882621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b9eb34de5145a88f2fccbdad29b97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: player
 --- !u!1 &6494727508874392792
 GameObject:
   m_ObjectHideFlags: 0
@@ -5452,6 +5466,7 @@ GameObject:
   - component: {fileID: 4762949925328647275}
   - component: {fileID: 5090158932732700450}
   - component: {fileID: 2325567394370647106}
+  - component: {fileID: 694985831}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -5561,6 +5576,19 @@ MonoBehaviour:
   _animator: {fileID: 5090158932732700450}
   _input: {fileID: 7495140746743725991}
   _controller: {fileID: 5835723823903882615}
+--- !u!114 &694985831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6494727508874392792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b9eb34de5145a88f2fccbdad29b97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: player_sprite
 --- !u!1001 &2278124505361454924
 PrefabInstance:
   m_ObjectHideFlags: 0

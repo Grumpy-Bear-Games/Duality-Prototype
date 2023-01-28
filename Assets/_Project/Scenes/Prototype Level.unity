@@ -35595,6 +35595,7 @@ GameObject:
   - component: {fileID: 1690534882}
   - component: {fileID: 1690534881}
   - component: {fileID: 1690534880}
+  - component: {fileID: 1690534884}
   m_Layer: 6
   m_Name: Pile of corpses
   m_TagString: Untagged
@@ -35709,6 +35710,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690534878}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1690534884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690534878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b9eb34de5145a88f2fccbdad29b97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 87b5345a-f87f-4095-9bb7-1b93be7449e2
 --- !u!1001 &1809780827
 PrefabInstance:
   m_ObjectHideFlags: 0
