@@ -37,12 +37,15 @@ namespace DualityGame.Iteractables
             {
                 var spawnTarget = itemToSpawn.transform.position;
                 itemToSpawn.transform.position = _spawnPoint.position;
+                itemToSpawn.transform.localScale = Vector3.zero;
                 itemToSpawn.gameObject.SetActive(true);
-                var tween = itemToSpawn.transform
+                seq.Insert(0f, itemToSpawn.transform
                     .DOJump(spawnTarget, _jumpPower, 1, _jumpDuration, false)
                     .SetEase(_jumpEasing)
-                    .OnComplete(itemToSpawn.UpdateInitialPosition);
-                seq.Insert(0f, tween);
+                    .OnComplete(itemToSpawn.UpdateInitialPosition));
+                seq.Insert(0f, itemToSpawn.transform
+                    .DOScale(Vector3.one, _jumpDuration)
+                    .SetEase(_jumpEasing));
             });
         }
 
