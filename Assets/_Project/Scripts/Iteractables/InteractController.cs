@@ -25,6 +25,7 @@ namespace DualityGame.Iteractables
             {
                 var interactable = collider.GetComponent<IInteractable>();
                 if (interactable == null) continue;
+                if (interactable.Prompt == null) continue;
                 var distance = Vector3.Distance(transform.position, collider.transform.position);
                 if (closest != null && distance > closestDistance) continue;
                 closest = interactable;
