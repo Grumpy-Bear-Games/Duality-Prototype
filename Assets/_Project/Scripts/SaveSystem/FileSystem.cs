@@ -22,6 +22,9 @@ namespace DualityGame.SaveSystem
         }
         
         public static void Delete(string saveFile) => File.Delete(GetPathFromSaveFile(saveFile));
+
+        public static bool Exists(string saveFile) => File.Exists(GetPathFromSaveFile(saveFile));
+        
         public static Dictionary<string, Dictionary<string, object>> LoadFile(string saveFile)
         {
             var path = GetPathFromSaveFile(saveFile);
