@@ -11,15 +11,12 @@ namespace DualityGame.Quests.Tasks
         [RequiredField] public BBParameter<Quest> _quest;
         [RequiredField] public BBParameter<QuestLog.QuestState> _questState;
 
-        protected override string info => $"Quest is {_questState.value}";
+        protected override string info => $"Quest state is {_questState.value}";
 
         //Called once per frame while the condition is active.
         //Return whether the condition is success or failure.
         protected override bool OnCheck()
         {
-            if (_quest.isNull || _questLog.isNull || _questState.isNull) return false;
-            // TODO: Warnings
-
             var entry = _questLog.value.GetEntry(_quest.value);
             return entry != null && entry.State == _questState.value;
         }

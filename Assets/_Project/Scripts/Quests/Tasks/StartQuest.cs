@@ -17,13 +17,6 @@ namespace DualityGame.Quests.Tasks
         //EndAction can be called from anywhere.
         protected override void OnExecute()
         {
-            if (_quest.isNull || _questLog.isNull)
-            {
-                // TODO: Warnings
-                EndAction(true);
-                return;
-            }
-            
             _questLog.value.Add(_quest.value);
             EndAction(true);
         }

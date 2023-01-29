@@ -12,20 +12,13 @@ namespace DualityGame.Quests.Tasks
         [RequiredField] public BBParameter<Quest> _quest;
         [RequiredField] public BBParameter<Resolution> _resolution;
 
-        protected override string info => _quest.isNoneOrNull ? "(Please specify quest)" : $"Set quest state to {_resolution.value}";
+        protected override string info => _quest.isNoneOrNull ? "(Please specify quest)" : $"Resolve quest as {_resolution.value}";
 
         //This is called once each time the task is enabled.
         //Call EndAction() to mark the action as finished, either in success or failure.
         //EndAction can be called from anywhere.
         protected override void OnExecute()
         {
-            if (_quest.isNull || _questLog.isNull || _resolution.isNull)
-            {
-                // TODO: Warnings
-                EndAction(true);
-                return;
-            }
-
             switch (_resolution.value)
             {
                 case Resolution.Succeed:

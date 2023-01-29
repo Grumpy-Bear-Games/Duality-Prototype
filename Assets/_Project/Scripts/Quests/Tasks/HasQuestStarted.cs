@@ -16,9 +16,6 @@ namespace DualityGame.Quests.Tasks
         //Return whether the condition is success or failure.
         protected override bool OnCheck()
         {
-            if (_quest.isNull || _questLog.isNull) return false;
-            // TODO: Warnings
-
             return _questLog.value.Contains(_quest.value);
         }
     }
