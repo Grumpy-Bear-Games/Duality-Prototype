@@ -17,6 +17,8 @@
             SaveableEntity.RestoreEntityStates(state);
         }
 
+        public static bool SavefileExists => FileSystem.Exists(SaveFileName);
+
         public static void Clear() => FileSystem.Delete(SaveFileName);
     }
 }

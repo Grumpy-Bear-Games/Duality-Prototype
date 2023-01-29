@@ -20,12 +20,22 @@ namespace DualityGame.UI
             var root = GetComponent<UIDocument>().rootVisualElement;
 
             _frame = root.Q<VisualElement>("MainMenu");
-            _frame.Q<Button>("NewGameButton").clicked += () => _firstLocation.Load();
+            _frame.Q<Button>("NewGameButton").clicked += () =>
+            {
+                SaveSystem.SaveSystem.Clear();
+                _firstLocation.Load();
+            };
             _frame.Q<Button>("SettingsButton").clicked += () =>
             {
                 Hide();
                 _settingsMenu.Show();
             };
+            var continueButton = _frame.Q<Button>("ContinueButton");
+            continueButton.clicked += () => _firstLocation.Load();
+            if (!SaveSystem.SaveSystem.SavefileExists)
+            {
+                continueButton.style.display = DisplayStyle.None;
+            }
 
             var confirmationDialog = root.Q<ConfirmationDialog>();
             confirmationDialog.Hide();
