@@ -41,8 +41,7 @@ namespace DualityGame.Iteractables
                 itemToSpawn.gameObject.SetActive(true);
                 seq.Insert(0f, itemToSpawn.transform
                     .DOJump(spawnTarget, _jumpPower, 1, _jumpDuration, false)
-                    .SetEase(_jumpEasing)
-                    .OnComplete(itemToSpawn.UpdateInitialPosition));
+                    .SetEase(_jumpEasing));
                 seq.Insert(0f, itemToSpawn.transform
                     .DOScale(Vector3.one, _jumpDuration)
                     .SetEase(_jumpEasing));

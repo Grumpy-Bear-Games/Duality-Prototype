@@ -12,30 +12,13 @@ namespace DualityGame.Inventory
 
         public ItemType Type => _itemType;
 
-        private Vector3 _initialPosition;
-        private int _initialLayer;
-
-        private void Awake() => UpdateInitialPosition();
-
-        public void ReturnToInitialPosition()
-        {
-            transform.position = _initialPosition;
-            gameObject.layer = _initialLayer;
-            gameObject.SetActive(true);
-        }
-
-        public void UpdateInitialPosition()
-        {
-            _initialPosition = transform.position;
-            _initialLayer = gameObject.layer;
-        }
-
         public void Interact(GameObject actor)
         {
             var inventory = actor.GetComponent<InventoryController>();
             if (inventory == null) return;
             
             inventory.PickupItem(this);
+            gameObject.SetActive(false);
         }
        
         public Vector3 PromptPosition => transform.position + _promptOffset;
@@ -57,26 +40,23 @@ namespace DualityGame.Inventory
         [Serializable]
         private class SerializableState
         {
-            public readonly Vector3 InitialPosition;
             public readonly bool Active;
 
-            public SerializableState(Vector3 initialPosition, bool active)
+            public SerializableState(bool active)
             {
-                InitialPosition = initialPosition;
                 Active = active;
             }
         }
 
         object ISaveableComponent.CaptureState()
         {
-            var state = new SerializableState(_initialPosition, gameObject.activeSelf);
+            var state = new SerializableState(gameObject.activeSelf);
             return state;
         }
 
         void ISaveableComponent.RestoreState(object state)
         {
             var serializableState = (SerializableState)state;
-            _initialPosition = serializableState.InitialPosition;
             gameObject.SetActive(serializableState.Active);
         }
     }
