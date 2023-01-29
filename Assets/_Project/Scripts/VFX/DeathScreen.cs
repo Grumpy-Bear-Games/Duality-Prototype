@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using DualityGame.UI;
 using Games.GrumpyBear.Core.Events;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,16 +16,10 @@ namespace DualityGame.VFX
 
         private Label _label;
         private VisualElement _root;
-        private int _runningTransitions;
-
+        
         private void Awake()
         {
             _root = GetComponent<UIDocument>().rootVisualElement;
-            
-            _root.RegisterCallback<TransitionRunEvent>(IncTransitionCount);
-            _root.RegisterCallback<TransitionEndEvent>(DecTransitionCount);
-            _root.RegisterCallback<TransitionCancelEvent>(DecTransitionCount);
-
             _label = _root.Q<Label>();
             Hide();
         }
@@ -35,25 +30,19 @@ namespace DualityGame.VFX
         {
             _label.text = causeOfDeath;
 
+            using var transitionMonitor = new TransitionMonitor(_root);
+
             Show();
-            do {
-                yield return null;
-            } while (_runningTransitions > 0);
+            yield return transitionMonitor.WaitUntilDone();
             
             _onDeathScreen.Invoke();
             yield return new WaitForSeconds(_deathScreenDelay);
 
             Hide();
-            do {
-                yield return null;
-            } while (_runningTransitions > 0);
+            yield return transitionMonitor.WaitUntilDone();
             
             _onFinished.Invoke();
         }
-
-
-        private void IncTransitionCount(ITransitionEvent evt) => _runningTransitions++;
-        private void DecTransitionCount(ITransitionEvent evt) => _runningTransitions--;
 
         private void Hide() => _root.AddToClassList("FadeOut");
         private void Show() => _root.RemoveFromClassList("FadeOut");
