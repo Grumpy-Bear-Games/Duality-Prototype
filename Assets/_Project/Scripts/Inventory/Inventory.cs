@@ -1,15 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DualityGame.SaveSystem;
 using UnityEngine;
 
 namespace DualityGame.Inventory
 {
     
     [CreateAssetMenu(fileName = "Inventory", menuName = "Duality/Inventory", order = 0)]
-    public class Inventory : ScriptableObject
+    public class Inventory : ScriptableObject, ISaveableComponent
     {
         private readonly List<ItemType> _items = new();
+        private ISaveableComponent saveableComponentImplementation;
 
         public IReadOnlyList<ItemType> Items => _items;
 
@@ -46,5 +48,19 @@ namespace DualityGame.Inventory
         }
 
         private void _SortItems() => _items.Sort((a, b) => string.Compare(a.name, b.name, StringComparison.Ordinal));
+
+        #region ISaveableComponent
+        object ISaveableComponent.CaptureState() => _items.Select(item => item.GUID).ToList();
+
+        void ISaveableComponent.RestoreState(object state)
+        {
+            _items.Clear();
+            foreach (var guid in (List<string>)state)
+            {
+                _items.Add(ItemType.GetByGUID(guid));
+            }
+            OnChange?.Invoke();
+        }
+        #endregion
     }
 }
