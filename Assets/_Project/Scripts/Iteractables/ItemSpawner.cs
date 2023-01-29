@@ -11,7 +11,7 @@ namespace DualityGame.Iteractables
     public class ItemSpawner : MonoBehaviour, IInteractable, ISaveableComponent
     {
         [SerializeField] private Transform _spawnPoint;
-        [SerializeField] private List<Item> _itemsToSpawn = new();
+        [SerializeField] private List<ItemPickup> _itemsToSpawn = new();
 
         [Header("Interaction prompt")]
         [SerializeField] private string _prompt;

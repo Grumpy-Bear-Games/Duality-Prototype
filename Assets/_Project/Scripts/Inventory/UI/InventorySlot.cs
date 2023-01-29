@@ -44,7 +44,7 @@ namespace DualityGame.Inventory.UI
             Debug.Log(selected ? "Selecting" : "Deselecting");
         }
         
-        public void SetItem(Item item)
+        public void SetItem(ItemType item)
         {
             if (item == null)
             {
@@ -53,7 +53,7 @@ namespace DualityGame.Inventory.UI
                 return;
             }
 
-            _itemSprite.style.backgroundImage = new StyleBackground(item.Type.InventorySprite);
+            _itemSprite.style.backgroundImage = new StyleBackground(item.InventorySprite);
             _itemSprite.RemoveFromClassList(HiddenClass);
         }
 

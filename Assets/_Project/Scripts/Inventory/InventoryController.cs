@@ -6,6 +6,6 @@ namespace DualityGame.Inventory
     {
         [SerializeField] private Inventory _inventory;
 
-        public void PickupItem(Item item) => _inventory.AddItem(item);
+        public void PickupItem(ItemType item) => _inventory.AddItem(item);
     }
 }

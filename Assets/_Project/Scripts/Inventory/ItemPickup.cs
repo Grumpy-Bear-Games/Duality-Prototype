@@ -1,23 +1,20 @@
-﻿using System;
-using DualityGame.SaveSystem;
+﻿using DualityGame.SaveSystem;
 using UnityEngine;
 
 namespace DualityGame.Inventory
 {
     [RequireComponent(typeof(SaveableEntity))]
-    public class Item : MonoBehaviour, Iteractables.IInteractable, ISaveableComponent
+    public class ItemPickup : MonoBehaviour, Iteractables.IInteractable, ISaveableComponent
     {
         [SerializeField] private ItemType _itemType;
         [SerializeField] private Vector3 _promptOffset;
-
-        public ItemType Type => _itemType;
 
         public void Interact(GameObject actor)
         {
             var inventory = actor.GetComponent<InventoryController>();
             if (inventory == null) return;
             
-            inventory.PickupItem(this);
+            inventory.PickupItem(_itemType);
             gameObject.SetActive(false);
         }
        
@@ -36,28 +33,8 @@ namespace DualityGame.Inventory
         }
         #endif
 
+        object ISaveableComponent.CaptureState() => gameObject.activeSelf;
 
-        [Serializable]
-        private class SerializableState
-        {
-            public readonly bool Active;
-
-            public SerializableState(bool active)
-            {
-                Active = active;
-            }
-        }
-
-        object ISaveableComponent.CaptureState()
-        {
-            var state = new SerializableState(gameObject.activeSelf);
-            return state;
-        }
-
-        void ISaveableComponent.RestoreState(object state)
-        {
-            var serializableState = (SerializableState)state;
-            gameObject.SetActive(serializableState.Active);
-        }
+        void ISaveableComponent.RestoreState(object state) => gameObject.SetActive((bool)state);
     }
 }

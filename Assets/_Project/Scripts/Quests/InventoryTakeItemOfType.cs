@@ -10,7 +10,6 @@ namespace DualityGame.Quests{
 	{
 		[RequiredField] public BBParameter<Inventory.Inventory> _inventory;
 		[RequiredField] public BBParameter<ItemType> _itemType;
-		[BlackboardOnly] public BBParameter<Item> _saveAs;
 
 		protected override string info => $"Take item of type {_itemType.value} from inventory";
 		
@@ -20,7 +19,6 @@ namespace DualityGame.Quests{
 		protected override void OnExecute()
 		{
 			var item = _inventory.value.RemoveItem(_itemType.value);
-			if (_saveAs.isDefined) _saveAs.value = item; 
 			EndAction(true);
 		}
 
