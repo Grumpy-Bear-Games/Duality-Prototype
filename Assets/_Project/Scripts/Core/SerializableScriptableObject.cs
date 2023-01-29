@@ -33,7 +33,9 @@ namespace DualityGame.Core
         private void OnValidate()
         {
             var path = AssetDatabase.GetAssetPath(this);
-            _guid = AssetDatabase.AssetPathToGUID(path);
+            var guid = AssetDatabase.AssetPathToGUID(path);
+            if (_guid == guid) return;
+            _guid = guid;
             AssetDatabase.SaveAssetIfDirty(this);
         }
         #endif

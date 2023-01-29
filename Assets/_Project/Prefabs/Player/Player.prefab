@@ -4966,6 +4966,7 @@ GameObject:
   - component: {fileID: 6926805345457789462}
   - component: {fileID: 4084528160578873222}
   - component: {fileID: 3005785628758143361}
+  - component: {fileID: 9053429409162587147}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -5225,7 +5226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18061428be194656af66ddf9f461fe84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _realm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
   _inventory: {fileID: 11400000, guid: c0fcc5868137b7d42856a51b3b5250bf, type: 2}
 --- !u!114 &6787628765604967483
 MonoBehaviour:
@@ -5442,6 +5442,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: player
+--- !u!114 &9053429409162587147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835723823903882621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4e0cf95b084fb4bcaf7abd9849ebc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _questLog: {fileID: 11400000, guid: 057d41e2fce3fd44481548140c593b1f, type: 2}
 --- !u!1 &6494727508874392792
 GameObject:
   m_ObjectHideFlags: 0

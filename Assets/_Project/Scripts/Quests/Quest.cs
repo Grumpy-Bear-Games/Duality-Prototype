@@ -1,10 +1,11 @@
-﻿using NodeCanvas.DialogueTrees;
+﻿using DualityGame.Core;
+using NodeCanvas.DialogueTrees;
 using UnityEngine;
 
 namespace DualityGame.Quests
 {
     [CreateAssetMenu(fileName = "Quest", menuName = "Duality/Quest", order = 0)]
-    public class Quest : ScriptableObject
+    public class Quest : SerializableScriptableObject<Quest>
     {
         #region Serialized fields
         [field: SerializeField] public string Title { get; private set; }
