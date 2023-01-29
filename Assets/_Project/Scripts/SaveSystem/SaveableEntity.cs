@@ -12,9 +12,7 @@ namespace DualityGame.SaveSystem
                  "be linked.")]        
         [SerializeField] private string _id;
 
-        public string ID => _id;
-
-        public Dictionary<string, object> CaptureState()
+        private Dictionary<string, object> CaptureState()
         {
             var state = new Dictionary<string, object>();
             foreach (var saveableComponent in GetComponents<ISaveableComponent>())
@@ -24,7 +22,7 @@ namespace DualityGame.SaveSystem
             return state;
         }
 
-        public void RestoreState(Dictionary<string, object> state)
+        private void RestoreState(Dictionary<string, object> state)
         {
             foreach (var saveableComponent in GetComponents<ISaveableComponent>())
             {
@@ -33,11 +31,29 @@ namespace DualityGame.SaveSystem
                 saveableComponent.RestoreState(state[componentID]);
             }
         }
+        
+        public static void CaptureEntityStates(Dictionary<string, Dictionary<string, object>> state)
+        {
+            foreach (var saveableEntity in FindObjectsOfType<SaveableEntity>(true))
+            {
+                state[saveableEntity._id] = saveableEntity.CaptureState();
+            }
+        }
+
+        public static void RestoreEntityStates(Dictionary<string, Dictionary<string, object>> state)
+        {
+            foreach (var saveableEntity in FindObjectsOfType<SaveableEntity>(true))
+            {
+                if (!state.ContainsKey(saveableEntity._id)) continue;
+                
+                saveableEntity.RestoreState(state[saveableEntity._id]);
+            }
+        }
 
         private static string GetComponentID(ISaveableComponent saveableComponent) =>
             saveableComponent.GetType().ToString();
         
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         private static readonly Dictionary<string, SaveableEntity> globalLookup = new();
         
         private void Update() {
@@ -73,6 +89,6 @@ namespace DualityGame.SaveSystem
             return true;
 
         }
-#endif
+        #endif
     }
 }

@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-
-namespace DualityGame.SaveSystem
+﻿namespace DualityGame.SaveSystem
 {
     public class SaveSystem
     {
@@ -10,34 +7,16 @@ namespace DualityGame.SaveSystem
         public static void Save()
         {
             var state = FileSystem.LoadFile(SaveFileName);
-            CaptureState(state);
+            SaveableEntity.CaptureEntityStates(state);
             FileSystem.SaveFile(SaveFileName, state);
         }
 
         public static void Load()
         {
             var state = FileSystem.LoadFile(SaveFileName);
-            RestoreState(state);
+            SaveableEntity.RestoreEntityStates(state);
         }
 
         public static void Clear() => FileSystem.Delete(SaveFileName);
-
-        public static void CaptureState(Dictionary<string, Dictionary<string, object>> state)
-        {
-            foreach (var saveableEntity in Object.FindObjectsOfType<SaveableEntity>(true))
-            {
-                state[saveableEntity.ID] = saveableEntity.CaptureState();
-            }
-        }
-
-        public static void RestoreState(Dictionary<string, Dictionary<string, object>> state)
-        {
-            foreach (var saveableEntity in Object.FindObjectsOfType<SaveableEntity>(true))
-            {
-                if (!state.ContainsKey(saveableEntity.ID)) continue;
-                
-                saveableEntity.RestoreState(state[saveableEntity.ID]);
-            }
-        }
     }
 }
