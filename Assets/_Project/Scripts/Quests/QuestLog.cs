@@ -26,6 +26,27 @@ namespace DualityGame.Quests
 
         public bool Contains(Quest quest) => _quests.ContainsKey(quest);
 
+        public void RevealQuest(Quest quest)
+        {
+            _quests.TryGetValue(quest, out var questEntry);
+            if (questEntry == null) return;  // TODO: Maybe an exception instead?
+            if (questEntry.Visible) return;
+            questEntry.Visible = true;
+            OnChange?.Invoke();
+        }
+
+        public void SucceedQuest(Quest quest) => SetQuestState(quest: quest, questState: QuestState.Succeeded);
+
+        public void FailQuest(Quest quest) => SetQuestState(quest: quest, questState: QuestState.Failed);
+
+        private void SetQuestState(Quest quest, QuestState questState)
+        {
+            _quests.TryGetValue(quest, out var questEntry);
+            if (questEntry == null) return;  // TODO: Maybe an exception instead?
+            questEntry.State = questState; // TODO: Check previous state
+            OnChange?.Invoke();
+        }
+        
         public QuestEntry GetEntry(Quest quest) => !_quests.ContainsKey(quest) ? null : _quests[quest];
 
         public class QuestEntry
@@ -72,7 +93,7 @@ namespace DualityGame.Quests
         #region ISaveableComponent
         
         [Serializable]
-        public class SerializableQuestEntry
+        private class SerializableQuestEntry
         {
             public readonly string QuestID;
             public readonly long Started;

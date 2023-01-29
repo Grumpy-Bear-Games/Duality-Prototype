@@ -24,10 +24,7 @@ namespace DualityGame.Quests.Tasks
                 return;
             }
             
-            var entry = _questLog.value.GetEntry(_quest.value);
-            // TODO: Null check
-            
-            entry.Visible = true;
+            _questLog.value.RevealQuest(_quest.value);
             EndAction(true);
         }
     }
