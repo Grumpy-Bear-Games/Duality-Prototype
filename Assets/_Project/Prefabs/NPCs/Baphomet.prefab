@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1328726461148192079}
   - component: {fileID: 1328726461148192075}
   - component: {fileID: 1328726461148192072}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Baphomet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1328726461474746560}
   - component: {fileID: 1328726461474746562}
   - component: {fileID: 1328726461474746563}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2078643888944307054}
   - component: {fileID: 8806279604197071475}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Baphomet Actor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,6 +353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blob Shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4084919250645490479, guid: aeb1ddf6dc21a4c43952d7a21701cf71,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
