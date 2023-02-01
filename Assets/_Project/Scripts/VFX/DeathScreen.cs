@@ -1,19 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using DualityGame.Player;
 using DualityGame.UI;
-using Games.GrumpyBear.Core.Events;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 namespace DualityGame.VFX
 {
     [RequireComponent(typeof(UIDocument))]
-    public class DeathScreen : MonoBehaviour
+    public class DeathScreen : ScreenFaderProviderBase
     {
-        [SerializeField] private VoidEvent _onDeathScreen;
-        [SerializeField] private float _deathScreenDelay = 3f;
-        [SerializeField] private UnityEvent _onFinished;
-
         private Label _label;
         private VisualElement _root;
         
@@ -21,29 +17,31 @@ namespace DualityGame.VFX
         {
             _root = GetComponent<UIDocument>().rootVisualElement;
             _label = _root.Q<Label>();
+            CauseOfDeath.OnDeath += UpdateCauseOfDeathLabel;
             Hide();
         }
 
-        public void Trigger(string causeOfDeath) => StartCoroutine(Trigger_CO(causeOfDeath));
+        private void OnDestroy() => CauseOfDeath.OnDeath -= UpdateCauseOfDeathLabel;
 
-        private IEnumerator Trigger_CO(string causeOfDeath)
+        private void UpdateCauseOfDeathLabel(CauseOfDeath causeOfDeath) => _label.text = causeOfDeath.Description;
+
+        public override IEnumerator Execute(ScreenFader.Direction direction)
         {
-            _label.text = causeOfDeath;
-
             using var transitionMonitor = new TransitionMonitor(_root);
 
-            Show();
+            switch (direction)
+            {
+                case ScreenFader.Direction.FadeIn:
+                    Hide();
+                    break;
+                case ScreenFader.Direction.FadeOut:
+                    Show();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
+            }
             yield return transitionMonitor.WaitUntilDone();
-            
-            _onDeathScreen.Invoke();
-            yield return new WaitForSeconds(_deathScreenDelay);
-
-            Hide();
-            yield return transitionMonitor.WaitUntilDone();
-            
-            _onFinished.Invoke();
         }
-
         private void Hide() => _root.AddToClassList("FadeOut");
         private void Show() => _root.RemoveFromClassList("FadeOut");
     }

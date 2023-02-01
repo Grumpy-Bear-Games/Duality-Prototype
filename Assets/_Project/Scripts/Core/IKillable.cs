@@ -1,7 +1,9 @@
+using DualityGame.Player;
+
 namespace DualityGame.Core
 {
     public interface IKillable
     {
-        void Kill(string causeOfDeath);
+        void Kill(CauseOfDeath causeOfDeath);
     }
 }
