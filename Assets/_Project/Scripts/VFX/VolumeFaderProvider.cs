@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 namespace DualityGame.VFX
 {
     [RequireComponent(typeof(Volume))]
-    public class VolumeFader : ScreenFaderProviderBase
+    public class VolumeFaderProvider : DOTweenScreenFaderProvider
     {
         private Volume _volume;
         private void Awake() => _volume = GetComponent<Volume>();
