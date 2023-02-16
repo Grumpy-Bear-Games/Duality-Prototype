@@ -49,11 +49,11 @@ namespace DualityGame.Player
 		
 		private void UpdateDirectionFromMovement()
 		{
-			if (_input._move == Vector2.zero) return;
-			if (Mathf.Approximately(_input._move.x, 0f)) {
-				_direction = (_input._move.y > Mathf.Epsilon) ? Direction.Up : Direction.Down;
+			if (_input.Move == Vector2.zero) return;
+			if (Mathf.Approximately(_input.Move.x, 0f)) {
+				_direction = (_input.Move.y > Mathf.Epsilon) ? Direction.Up : Direction.Down;
 			} else {
-				_direction = (_input._move.x < Mathf.Epsilon) ? Direction.Left : Direction.Right;
+				_direction = (_input.Move.x < Mathf.Epsilon) ? Direction.Left : Direction.Right;
 			}
 		}
 		
@@ -62,7 +62,7 @@ namespace DualityGame.Player
 			if (!_controller.isGrounded) {
 				_state = State.InAir;
 			} else {
-				_state = (_input._move == Vector2.zero) ? State.Idle : State.Run;
+				_state = (_input.Move == Vector2.zero) ? State.Idle : State.Run;
 			}
 		}
 

@@ -5128,11 +5128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e087ecce43ebbff45a1b360637807d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _move: {x: 0, y: 0}
-  _jump: 0
-  _sprint: 0
   _analogMovement: 0
-  _cursorLocked: 0
 --- !u!114 &8215064143838313124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5253,7 +5249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5, type: 2}
   _enabledWhenInState:
-  - {fileID: 5835723823903882609}
+  - {fileID: 7495140746743725991}
   - {fileID: 4084528160578873222}
   _onEnter:
     m_PersistentCalls:
@@ -5292,9 +5288,6 @@ MonoBehaviour:
   _startingGameState: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5, type: 2}
   _deathScreen: {fileID: 11400000, guid: 92f90495f9780774ba82672db6fed5fa, type: 2}
   _deathScreenDelay: 3
-  _onDie:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6851254834509395933
 MonoBehaviour:
   m_ObjectHideFlags: 0

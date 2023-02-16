@@ -5,34 +5,36 @@ namespace DualityGame.Player
 {
 	public class PlayerInputs : MonoBehaviour
 	{
-		[Header("Character Input Values")]
-		public Vector2 _move;
-
-		public bool _jump;
-		public bool _sprint;
-
 		[Header("Movement Settings")]
 		public bool _analogMovement;
 
-#if !UNITY_IOS || !UNITY_ANDROID
-		[Header("Mouse Cursor Settings")]
-		public bool _cursorLocked = true;
-#endif
+		public Vector2 Move
+		{
+			get => enabled ? _move : Vector2.zero;
+			private set => _move = value;
+		}
 
-		public void OnMove(InputValue value) => _move = value.Get<Vector2>();
+		public bool Jump
+		{
+			get => enabled && _jump;
+			private set => _jump = value;
+		}
 
-		public void OnJump(InputValue value) => _jump = value.isPressed;
+		public bool Sprint
+		{
+			get => enabled && _sprint;
+			private set => _sprint = value;
+		}
 
-		public void OnSprint(InputValue value) => _sprint = value.isPressed;
+		private Vector2 _move;
+		private bool _jump;
+		private bool _sprint;
 
-#if !UNITY_IOS || !UNITY_ANDROID
+		public void OnMove(InputValue value) => Move = value.Get<Vector2>();
 
-		private void OnApplicationFocus(bool hasFocus) => SetCursorState(_cursorLocked);
+		public void OnJump(InputValue value) => Jump = value.isPressed;
 
-		private static void SetCursorState(bool newState) => Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
-
-#endif
-
+		public void OnSprint(InputValue value) => Sprint = value.isPressed;
 	}
 	
 }
