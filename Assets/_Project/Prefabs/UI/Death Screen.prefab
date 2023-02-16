@@ -63,20 +63,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trigger: {fileID: 11400000, guid: 92f90495f9780774ba82672db6fed5fa, type: 2}
-  _onDeathScreen: {fileID: 11400000, guid: 26d6bff51b91f764e95074a88be3bb8d, type: 2}
-  _deathScreenDelay: 3
-  _onFinished:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5, type: 2}
-        m_TargetAssemblyTypeName: DualityGame.Core.GameState, DualityGame
-        m_MethodName: SetActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
