@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DG.Tweening;
-using DualityGame.Inventory;
 using DualityGame.SaveSystem;
 using UnityEngine;
 
-namespace DualityGame.Iteractables
+namespace DualityGame.Inventory
 {
     [RequireComponent(typeof(SaveableEntity))]
-    public class ItemSpawner : MonoBehaviour, IInteractable, ISaveableComponent
+    public class ItemSpawner : MonoBehaviour, ISaveableComponent
     {
         [SerializeField] private Transform _spawnPoint;
         [SerializeField] private List<ItemPickup> _itemsToSpawn = new();
-
-        [Header("Interaction prompt")]
-        [SerializeField] private string _prompt;
-        [SerializeField] private Vector3 _promptOffset;
 
         [Header("Spawn animation")]
         [SerializeField] private float _jumpPower = 1f;
@@ -26,7 +20,7 @@ namespace DualityGame.Iteractables
 
         private void Awake() => _itemsToSpawn.ForEach(itemToSpawn => itemToSpawn.gameObject.SetActive(false));
 
-        public void Interact(GameObject actor)
+        public void Spawn()
         {
             if (_hasSpawned) return;
             
@@ -48,11 +42,6 @@ namespace DualityGame.Iteractables
             });
         }
 
-        public string Prompt => _hasSpawned ? null : _prompt;
-
-        public Vector3 PromptPosition => transform.position + _promptOffset;
-
-
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.green;
@@ -72,10 +61,7 @@ namespace DualityGame.Iteractables
         #if UNITY_EDITOR
         private void OnValidate()
         {
-            if (_spawnPoint == null)
-            {
-                _spawnPoint = transform;
-            }
+            if (_spawnPoint == null) _spawnPoint = transform;
         }
         #endif
     }

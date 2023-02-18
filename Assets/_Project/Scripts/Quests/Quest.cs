@@ -15,6 +15,8 @@ namespace DualityGame.Quests
         [field: SerializeField] public QuestVisibility Visibility { get; private set; } =
             QuestVisibility.ShowAutomaticallyWhenOngoing;
         #endregion
+
+        public string TitleWithNPC => NPC != null ? $"{Title} ({NPC.Name})" : Title;
         
         #region Public enums
         public enum QuestVisibility

@@ -16,12 +16,14 @@ namespace DualityGame.Quests
         public event Action OnChange;
         
         private readonly Dictionary<Quest, QuestEntry> _quests = new();
-        
+        public IEnumerable<QuestEntry> Entries => _quests.Values.AsEnumerable();
+
         public void Add(Quest quest)
         {
             if (_quests.ContainsKey(quest)) return;
             var questStates = new QuestEntry(quest);
             _quests.Add(quest, questStates);
+            OnChange?.Invoke();
         }
 
         public bool Contains(Quest quest) => _quests.ContainsKey(quest);

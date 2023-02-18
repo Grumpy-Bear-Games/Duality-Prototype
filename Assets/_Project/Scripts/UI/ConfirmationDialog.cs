@@ -44,13 +44,13 @@ namespace DualityGame.UI
             {
                 base.Init(ve, bag, cc);
 
-                var confirmDialog = (ve as ConfirmationDialog); 
+                if (ve is not ConfirmationDialog confirmationDialog) return;
                 
-                confirmDialog.Header = headerAttr.GetValueFromBag(bag, cc);
-                confirmDialog.ConfirmButtonText = confirmButtonAttr.GetValueFromBag(bag, cc);
-                confirmDialog.CancelButtonText = cancelButtonAttr.GetValueFromBag(bag, cc);
-                confirmDialog._autoHide = autoHideAttr.GetValueFromBag(bag, cc);
-                confirmDialog._focusOnShowOnShow = focusOnShowAttr.GetValueFromBag(bag, cc);
+                confirmationDialog.Header = headerAttr.GetValueFromBag(bag, cc);
+                confirmationDialog.ConfirmButtonText = confirmButtonAttr.GetValueFromBag(bag, cc);
+                confirmationDialog.CancelButtonText = cancelButtonAttr.GetValueFromBag(bag, cc);
+                confirmationDialog._autoHide = autoHideAttr.GetValueFromBag(bag, cc);
+                confirmationDialog._focusOnShowOnShow = focusOnShowAttr.GetValueFromBag(bag, cc);
             }
         }
 
