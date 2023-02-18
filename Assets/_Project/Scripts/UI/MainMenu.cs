@@ -40,8 +40,17 @@ namespace DualityGame.UI
             var confirmationDialog = root.Q<ConfirmationDialog>();
             confirmationDialog.Hide();
             confirmationDialog.OnConfirm += ExitGame;
+            confirmationDialog.OnCancel += () =>
+            {
+                _frame.Query<Button>().ForEach(b => b.focusable = true);
+                _frame.Q<Button>("QuitButton").Focus();
+            };
 
-            _frame.Q<Button>("QuitButton").clicked += () => confirmationDialog.Show();
+            _frame.Q<Button>("QuitButton").clicked += () =>
+            {
+                _frame.Query<Button>().ForEach(b=> b.focusable = false);
+                confirmationDialog.Show();
+            };
         }
 
         private void Start() => _frame.Q<Button>("NewGameButton").Focus();
