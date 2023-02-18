@@ -26,6 +26,8 @@ namespace DualityGame.Player
         [UsedImplicitly]
         private void OnWarp(InputValue value)
         {
+            if (!enabled) return;
+            
             if (IsOtherRealmBlocked(transform.position)) {
                 Debug.Log("Something is blocking on the other side");
                 return;
