@@ -111,6 +111,9 @@ QuestIndexItem {
     margin-left: 35px;
     color: black;
 }
+QuestIndexItem.unity-collection-view__item--selected {
+    background-color: initial;
+}
 
 QuestIndexItem:hover {
     scale: 1.05 1.05;
@@ -135,6 +138,5 @@ QuestIndexItem #QuestTitle {
 }
 
 QuestIndexItem.unity-collection-view__item--selected #QuestTitle {
-    background-color: initial;
     -unity-font-style: bold;
 }
