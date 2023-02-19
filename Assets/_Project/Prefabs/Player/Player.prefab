@@ -4963,11 +4963,10 @@ GameObject:
   - component: {fileID: 6851254834509395933}
   - component: {fileID: 2791380713559520640}
   - component: {fileID: 5837366387156901079}
-  - component: {fileID: 4084528160578873222}
-  - component: {fileID: 2452008942879131603}
   - component: {fileID: 3005785628758143361}
   - component: {fileID: 9053429409162587147}
   - component: {fileID: 3533448263799252859}
+  - component: {fileID: 1839396665752035619}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -5252,8 +5251,6 @@ MonoBehaviour:
   _state: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5, type: 2}
   _enabledWhenInState:
   - {fileID: 7495140746743725991}
-  - {fileID: 4084528160578873222}
-  - {fileID: 2452008942879131603}
   - {fileID: 8215064143838313124}
   _onEnter:
     m_PersistentCalls:
@@ -5372,62 +5369,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4084528160578873222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5835723823903882621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03122b4d3dae4ca09a4ebe20941c08a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _input: {fileID: 2780073078216406310, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
-  _onPerform:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: c2e06e152fecac948bde2d5604d31d65, type: 2}
-        m_TargetAssemblyTypeName: DualityGame.Core.GameState, DualityGame
-        m_MethodName: SetActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2452008942879131603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5835723823903882621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03122b4d3dae4ca09a4ebe20941c08a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _input: {fileID: -5483202661267756392, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
-  _onPerform:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 560bd7419698b8d40b96d1d141e43e06, type: 2}
-        m_TargetAssemblyTypeName: DualityGame.Core.GameState, DualityGame
-        m_MethodName: SetActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3005785628758143361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5467,6 +5408,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _confined: 1
+--- !u!114 &1839396665752035619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835723823903882621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f5172ff36643aaa81528f9828a6498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitions:
+  - <Hotkey>k__BackingField: {fileID: 2780073078216406310, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+      type: 3}
+    <From>k__BackingField: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5,
+      type: 2}
+    <To>k__BackingField: {fileID: 11400000, guid: c2e06e152fecac948bde2d5604d31d65,
+      type: 2}
+  - <Hotkey>k__BackingField: {fileID: 2780073078216406310, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+      type: 3}
+    <From>k__BackingField: {fileID: 11400000, guid: c2e06e152fecac948bde2d5604d31d65,
+      type: 2}
+    <To>k__BackingField: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5,
+      type: 2}
+  - <Hotkey>k__BackingField: {fileID: -5483202661267756392, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+      type: 3}
+    <From>k__BackingField: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5,
+      type: 2}
+    <To>k__BackingField: {fileID: 11400000, guid: 560bd7419698b8d40b96d1d141e43e06,
+      type: 2}
+  - <Hotkey>k__BackingField: {fileID: -5483202661267756392, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+      type: 3}
+    <From>k__BackingField: {fileID: 11400000, guid: 560bd7419698b8d40b96d1d141e43e06,
+      type: 2}
+    <To>k__BackingField: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5,
+      type: 2}
+  - <Hotkey>k__BackingField: {fileID: -5483202661267756392, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+      type: 3}
+    <From>k__BackingField: {fileID: 11400000, guid: c2e06e152fecac948bde2d5604d31d65,
+      type: 2}
+    <To>k__BackingField: {fileID: 11400000, guid: 560bd7419698b8d40b96d1d141e43e06,
+      type: 2}
+  - <Hotkey>k__BackingField: {fileID: 2780073078216406310, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+      type: 3}
+    <From>k__BackingField: {fileID: 11400000, guid: 560bd7419698b8d40b96d1d141e43e06,
+      type: 2}
+    <To>k__BackingField: {fileID: 11400000, guid: c2e06e152fecac948bde2d5604d31d65,
+      type: 2}
+  - <Hotkey>k__BackingField: {fileID: -3678063623146384647, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+      type: 3}
+    <From>k__BackingField: {fileID: 11400000, guid: 560bd7419698b8d40b96d1d141e43e06,
+      type: 2}
+    <To>k__BackingField: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5,
+      type: 2}
+  - <Hotkey>k__BackingField: {fileID: -3678063623146384647, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+      type: 3}
+    <From>k__BackingField: {fileID: 11400000, guid: c2e06e152fecac948bde2d5604d31d65,
+      type: 2}
+    <To>k__BackingField: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5,
+      type: 2}
 --- !u!1 &6494727508874392792
 GameObject:
   m_ObjectHideFlags: 0
