@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statementAudioPlayer: {fileID: 0}
-  _onShow:
+  _onDialogBegin:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 6ebff866c8ab3eb45ab51fbfa790533d, type: 2}
@@ -79,7 +79,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _onHide:
+  _onDialogEnd:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5, type: 2}

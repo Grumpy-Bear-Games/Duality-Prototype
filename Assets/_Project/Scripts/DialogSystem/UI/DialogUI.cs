@@ -6,6 +6,7 @@ using NodeCanvas.DialogueTrees;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 namespace DualityGame.DialogSystem.UI {
@@ -15,9 +16,9 @@ namespace DualityGame.DialogSystem.UI {
 		[SerializeField] private StatementAudioPlayer _statementAudioPlayer;
 		
 		[Header("Events")]
-		[SerializeField] private UnityEvent _onShow;
-		[SerializeField] private UnityEvent _onHide;
-
+		[FormerlySerializedAs("_onShow")][SerializeField] private UnityEvent _onDialogBegin;
+		[FormerlySerializedAs("_onHide")] [SerializeField] private UnityEvent _onDialogEnd;
+		
 		private VisualElement _dialogFrame;
 		private VisualElement _actorPortrait;
 		private Label _statementText;
@@ -53,25 +54,10 @@ namespace DualityGame.DialogSystem.UI {
 			DialogueTree.OnMultipleChoiceRequest -= OnMultipleChoiceRequest;
 		}
 
-		private void OnDialogueStarted(DialogueTree dlg) => Show();
-
-		private void Hide()
+		private void OnDialogueStarted(DialogueTree dlg)
 		{
-			_dialogFrame.AddToClassList("Hidden");
-			_onHide.Invoke();
-		}
-
-		private void Show()
-		{
-			_dialogFrame.RemoveFromClassList("Hidden");
-			_onShow.Invoke();
-		}
-
-		public void SelectOption(int value)
-		{
-			var dialogOptions = _options.Query<DialogOption>().ToList();
-			if (value > dialogOptions.Count) return;
-			dialogOptions[value - 1].SelectOption();
+			_onDialogBegin.Invoke();
+			Show();
 		}
 
 		private void OnDialoguePaused(DialogueTree dlg) => Hide();
@@ -80,6 +66,18 @@ namespace DualityGame.DialogSystem.UI {
 		{
 			Hide();
 			CleanupChoiceButton();
+			_onDialogEnd.Invoke();
+		}
+		
+		private void Hide() => _dialogFrame.AddToClassList("Hidden");
+
+		private void Show() => _dialogFrame.RemoveFromClassList("Hidden");
+
+		public void SelectOption(int value)
+		{
+			var dialogOptions = _options.Query<DialogOption>().ToList();
+			if (value > dialogOptions.Count) return;
+			dialogOptions[value - 1].SelectOption();
 		}
 
 		private void CleanupChoiceButton() => _options.Clear();
