@@ -37,6 +37,7 @@ namespace DualityGame.Core
             if (!_initialState) return;
             Debug.Assert(_current.Value == null, $"The can only be one initial state. Current initial state is {_current.Value}", this);
             _current.Set(this);
+            _current.Value.OnEnter?.Invoke();
         }
     }
 }
