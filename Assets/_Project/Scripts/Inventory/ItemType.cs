@@ -1,4 +1,4 @@
-﻿using DualityGame.Core;
+﻿using Games.GrumpyBear.Core.SaveSystem;
 using UnityEngine;
 
 namespace DualityGame.Inventory

@@ -9,6 +9,8 @@ namespace DualityGame.SaveSystem
         [SerializeField] private InputActionReference _saveKey;
         [SerializeField] private InputActionReference _loadKey;
         [SerializeField] private InputActionReference _clearKey;
+
+        [SerializeField] private GameSession _gameSession;
         
         private void OnEnable()
         {
@@ -36,19 +38,19 @@ namespace DualityGame.SaveSystem
         private void OnClear(InputAction.CallbackContext obj)
         {
             Debug.Log("Clearing state");
-            SaveSystem.Clear();
+            CoroutineRunner.Run(_gameSession.NewGame());
         }
 
         private void OnLoad(InputAction.CallbackContext obj)
         {
             Debug.Log("Loading state");
-            SaveSystem.Load();
+            CoroutineRunner.Run(_gameSession.LoadGame());
         }
 
         private void OnSave(InputAction.CallbackContext obj)
         {
             Debug.Log("Saving state");
-            SaveSystem.Save();
+            _gameSession.SaveGame();
         }
 
         #endregion

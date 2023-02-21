@@ -425,6 +425,7 @@ MonoBehaviour:
     type: 3}
   _clearKey: {fileID: -6430644498144318348, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
+  _gameSession: {fileID: 11400000, guid: 98b9f03894a52c540bb9742fab9514c1, type: 2}
 --- !u!1 &1260656040
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +648,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4893042606209545628, guid: c7de463999b17514fb284c3a7f074bd7,
+        type: 3}
+      propertyPath: _styleSheet
+      value: 
+      objectReference: {fileID: 7433441132597879392, guid: 4e4445b8ede11594f83c7abf1323abe8,
+        type: 3}
     - target: {fileID: 4893042606209545629, guid: c7de463999b17514fb284c3a7f074bd7,
         type: 3}
       propertyPath: m_RootOrder

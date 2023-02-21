@@ -4962,7 +4962,7 @@ GameObject:
   - component: {fileID: 2985635879919357011}
   - component: {fileID: 6851254834509395933}
   - component: {fileID: 2791380713559520640}
-  - component: {fileID: 3005785628758143361}
+  - component: {fileID: 5218004473571938937}
   - component: {fileID: 9053429409162587147}
   - component: {fileID: 3533448263799252859}
   - component: {fileID: 1839396665752035619}
@@ -5291,7 +5291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd361bd5b934b2ebda712a686ef4aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lastSpawnPoint: {fileID: 11400000, guid: 84204ae819d269241bfefc0477d3f651, type: 2}
 --- !u!114 &2985635879919357011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5304,6 +5303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 494e3a6e88f847ad9fcee3a374dd1e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameSession: {fileID: 11400000, guid: 98b9f03894a52c540bb9742fab9514c1, type: 2}
   _deathGameState: {fileID: 11400000, guid: 3b160777fac518c4383f397db0318370, type: 2}
   _startingGameState: {fileID: 11400000, guid: 9f4824239be6f5e44afd2cc20f66dde5, type: 2}
   _deathScreen: {fileID: 11400000, guid: 92f90495f9780774ba82672db6fed5fa, type: 2}
@@ -5339,7 +5339,7 @@ MonoBehaviour:
   _gameObjectObservable: {fileID: 11400000, guid: a2d3db5fe2cd24e44b4063b960786dfd,
     type: 2}
   _registerOnAwake: 0
---- !u!114 &3005785628758143361
+--- !u!114 &5218004473571938937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5348,7 +5348,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5835723823903882621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b9eb34de5145a88f2fccbdad29b97d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dd19d69c87f4d4f8080a782e92d0106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _id: player
@@ -5451,7 +5451,7 @@ GameObject:
   - component: {fileID: 4762949925328647275}
   - component: {fileID: 5090158932732700450}
   - component: {fileID: 2325567394370647106}
-  - component: {fileID: 694985831}
+  - component: {fileID: 5172582999185961916}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -5561,7 +5561,7 @@ MonoBehaviour:
   _animator: {fileID: 5090158932732700450}
   _input: {fileID: 7495140746743725991}
   _controller: {fileID: 5835723823903882615}
---- !u!114 &694985831
+--- !u!114 &5172582999185961916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5570,7 +5570,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6494727508874392792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b9eb34de5145a88f2fccbdad29b97d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dd19d69c87f4d4f8080a782e92d0106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _id: player_sprite

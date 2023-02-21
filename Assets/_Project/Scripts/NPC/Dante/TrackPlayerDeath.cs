@@ -1,6 +1,6 @@
 ﻿using System;
 using DualityGame.Player;
-using DualityGame.SaveSystem;
+using Games.GrumpyBear.Core.SaveSystem;
 using NodeCanvas.Framework;
 using UnityEngine;
 
@@ -26,12 +26,12 @@ namespace DualityGame.NPC.Dante
         [Serializable]
         private class SerializableState
         {
-            public readonly string CauseOfDeathID;
+            public readonly ObjectGuid CauseOfDeathID;
             public readonly int NumberOfPlayerDeaths;
 
             public SerializableState(CauseOfDeath causeOfDeath, int numberOfPlayerDeaths)
             {
-                CauseOfDeathID = causeOfDeath != null ? causeOfDeath.GUID : null;
+                CauseOfDeathID = causeOfDeath != null ? causeOfDeath.ObjectGuid : null;
                 NumberOfPlayerDeaths = numberOfPlayerDeaths;
             }
         }
@@ -41,7 +41,7 @@ namespace DualityGame.NPC.Dante
         void ISaveableComponent.RestoreState(object state)
         {
             var serializableState = (SerializableState)state;
-            LastCauseOfDeath = serializableState.CauseOfDeathID != null ? CauseOfDeath.GetByGUID(serializableState.CauseOfDeathID) : null;
+            LastCauseOfDeath = serializableState.CauseOfDeathID != null ? CauseOfDeath.GetByGuid(serializableState.CauseOfDeathID) : null;
             NumberOfPlayerDeaths = serializableState.NumberOfPlayerDeaths;
         }
         #endregion

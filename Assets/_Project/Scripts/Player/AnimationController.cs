@@ -1,5 +1,5 @@
 ﻿using System;
-using DualityGame.SaveSystem;
+using Games.GrumpyBear.Core.SaveSystem;
 using UnityEngine;
 
 namespace DualityGame.Player

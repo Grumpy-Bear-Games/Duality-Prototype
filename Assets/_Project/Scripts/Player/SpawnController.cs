@@ -2,42 +2,51 @@ using System.Collections;
 using Cinemachine;
 using Games.GrumpyBear.Core.LevelManagement;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace DualityGame.Player
 {
     [RequireComponent(typeof(CharacterController))]
     public class SpawnController : MonoBehaviour
     {
-        [SerializeField] private ObservableSpawnPoint _lastSpawnPoint;
+        public static SpawnController Instance { get; private set; }
         
+
         private CharacterController _controller;
 
-        public void Respawn()
+        public void MoveToSpawnPoint(string spawnPointID)
         {
-            Assert.IsNotNull(_lastSpawnPoint.Value);
+            var spawnPoint = SpawnPoint.FindByID(spawnPointID);
+            
+            Debug.Assert(spawnPoint != null, "spawnPoint != null", this);
+            Debug.Assert(spawnPoint.Realm != null, "spawnPoint.Realm != null", this);
+            
             if (_controller != null) _controller.enabled = false;
-            var positionDelta = _lastSpawnPoint.Value.transform.position - transform.position; 
-            transform.position = _lastSpawnPoint.Value.transform.position;
+            
+            var positionDelta = spawnPoint.transform.position - transform.position; 
+            transform.position = spawnPoint.transform.position;
             CinemachineCore.Instance.OnTargetObjectWarped(transform, positionDelta);
-            if (_lastSpawnPoint.Value.Realm != null) _lastSpawnPoint.Value.Realm.SetActive();
+            if (spawnPoint.Realm != null) spawnPoint.Realm.SetActive();
             if (_controller != null) _controller.enabled = true;
         }
-        
-        private void Awake() => _controller = GetComponent<CharacterController>();
+
+        private void Awake()
+        {
+            _controller = GetComponent<CharacterController>();
+            if (Instance != null)
+            {
+                Debug.LogError($"SpawnController instance already exists: {Instance.name}", this);
+                Destroy(gameObject);
+            }
+
+            Instance = this;
+        }
 
         private IEnumerator Start()
         {
             yield return SceneManager.WaitForLoadingCompleted();
-            _lastSpawnPoint.Set(SpawnPoint.FindInitial());
-
-            if (_lastSpawnPoint.Value == null)
-            {
-                Debug.LogError("No initial spawn point found");
-                yield break;
-            }
-
-            Respawn();
+            MoveToSpawnPoint(null);
         }
+
+        private void OnDestroy() => Instance = null;
     }
 }

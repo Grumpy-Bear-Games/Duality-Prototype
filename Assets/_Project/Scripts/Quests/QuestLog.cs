@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DualityGame.SaveSystem;
+using Games.GrumpyBear.Core.SaveSystem;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -97,14 +97,14 @@ namespace DualityGame.Quests
         [Serializable]
         private class SerializableQuestEntry
         {
-            public readonly string QuestID;
+            public readonly ObjectGuid QuestID;
             public readonly long Started;
             public readonly int State;
             public readonly bool Visible;
             
             public SerializableQuestEntry(QuestEntry questEntry)
             {
-                QuestID = questEntry.Quest.GUID;
+                QuestID = questEntry.Quest.ObjectGuid;
                 Started = questEntry.Started;
                 State = (int)questEntry.State;
                 Visible = questEntry.Visible;
@@ -112,7 +112,7 @@ namespace DualityGame.Quests
 
             public QuestEntry ToQuestEntry() =>
                 new(
-                    quest: Quest.GetByGUID(QuestID),
+                    quest: Quest.GetByGuid(QuestID),
                     started: Started,
                     state: (QuestState)State,
                     visible: Visible

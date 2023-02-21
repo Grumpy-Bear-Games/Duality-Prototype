@@ -7,7 +7,7 @@
     opacity: 1;
 }
 
-:root.FadeOut {
+:root.FadeIn {
     display: none;
     transition-property: opacity, display;
     transition-duration: 1s, 0s;
@@ -16,7 +16,7 @@
     opacity: 0;
 }
 
-.DeathMessage {
+#DeathMessage {
     -unity-font-definition: url('project://database/Assets/_Project/Fonts/October%20Crow%20SDF.asset?fileID=11400000&guid=727d12a9a520742468b2aeedf011280d&type=2#October Crow SDF');
     color: rgb(255, 255, 255);
     -unity-text-align: upper-center;

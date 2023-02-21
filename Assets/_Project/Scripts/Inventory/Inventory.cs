@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DualityGame.SaveSystem;
+using Games.GrumpyBear.Core.SaveSystem;
 using UnityEngine;
 
 namespace DualityGame.Inventory
@@ -50,14 +50,14 @@ namespace DualityGame.Inventory
         private void _SortItems() => _items.Sort((a, b) => string.Compare(a.name, b.name, StringComparison.Ordinal));
 
         #region ISaveableComponent
-        object ISaveableComponent.CaptureState() => _items.Select(item => item.GUID).ToList();
+        object ISaveableComponent.CaptureState() => _items.Select(item => item.ObjectGuid).ToList();
 
         void ISaveableComponent.RestoreState(object state)
         {
             _items.Clear();
-            foreach (var guid in (List<string>)state)
+            foreach (var guid in (List<ObjectGuid>)state)
             {
-                _items.Add(ItemType.GetByGUID(guid));
+                _items.Add(ItemType.GetByGuid(guid));
             }
             OnChange?.Invoke();
         }
