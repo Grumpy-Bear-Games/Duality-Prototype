@@ -1,6 +1,5 @@
 using System.Collections;
 using Cinemachine;
-using DualityGame.Realm;
 using Games.GrumpyBear.LevelManagement;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -10,7 +9,6 @@ namespace DualityGame.Player
     [RequireComponent(typeof(CharacterController))]
     public class SpawnController : MonoBehaviour
     {
-        [SerializeField] private RealmObservable _currentRealm;
         [SerializeField] private ObservableSpawnPoint _lastSpawnPoint;
         
         private CharacterController _controller;
@@ -22,7 +20,7 @@ namespace DualityGame.Player
             var positionDelta = _lastSpawnPoint.Value.transform.position - transform.position; 
             transform.position = _lastSpawnPoint.Value.transform.position;
             CinemachineCore.Instance.OnTargetObjectWarped(transform, positionDelta);
-            if (_lastSpawnPoint.Value.Realm != null) _currentRealm.Set(_lastSpawnPoint.Value.Realm);
+            if (_lastSpawnPoint.Value.Realm != null) _lastSpawnPoint.Value.Realm.SetActive();
             if (_controller != null) _controller.enabled = true;
         }
         

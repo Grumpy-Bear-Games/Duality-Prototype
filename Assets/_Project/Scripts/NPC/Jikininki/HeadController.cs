@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace DualityGame.NPC.Jikininki
 {
@@ -10,29 +11,23 @@ namespace DualityGame.NPC.Jikininki
         [SerializeField] private float _maxDistance = 5f;
         
         private GameObject _player;
-        private Realm.Realm _realm;
 
         public void SetPlayer(GameObject player)
         {
             _player = player;
-            UpdateEnabled();
+            UpdateEnabled(Realm.Realm.Current);
         }
 
-        public void SetRealm(Realm.Realm realm)
-        {
-            _realm = realm;
-            UpdateEnabled();
-        }
+        private void UpdateEnabled(Realm.Realm realm) => enabled = realm != null && _player != null;
 
-        private void UpdateEnabled() => enabled = _realm != null && _player != null;
+        private void Awake() => Realm.Realm.Subscribe(UpdateEnabled);
+        private void OnDestroy() => Realm.Realm.Unsubscribe(UpdateEnabled);
 
-        private void Awake() => UpdateEnabled();
-        
         private void Update() => _animator.SetBool(PlayerCloseProperty, IsPlayerClose());
 
         private bool IsPlayerClose() => (
             (_player != null) &&
-            (_realm.LevelLayer == gameObject.layer) &&
+            (Realm.Realm.Current.LevelLayer == gameObject.layer) &&
             (Vector3.Distance(transform.position, _player.transform.position) <= _maxDistance)
         );
         

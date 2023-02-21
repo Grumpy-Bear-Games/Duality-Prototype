@@ -41,7 +41,7 @@ namespace DualityGame.Core
         {
             if (!ctx.performed) return;
             if (!_transitionLookup.TryGetValue(ctx.action, out var gameStateTransition)) return;
-            if (!gameStateTransition.TryGetValue(GameState.Current.Value, out var newGameState)) return;
+            if (!gameStateTransition.TryGetValue(GameState.Current, out var newGameState)) return;
             
             newGameState.SetActive();
         }

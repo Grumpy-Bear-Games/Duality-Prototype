@@ -6,8 +6,6 @@ namespace DualityGame.Realm
 {
     public class RealmVisible : MonoBehaviour
     {
-        [SerializeField] private RealmObservable _currentRealm;
-        
         private Renderer[] _renderers;
         private Volume[] _volumes;
         private DecalProjector[] _decalProjectors;
@@ -18,9 +16,9 @@ namespace DualityGame.Realm
             _decalProjectors = GetComponentsInChildren<DecalProjector>();
         }
 
-        private void OnEnable() => _currentRealm.Subscribe(OnChangeRealm);
+        private void OnEnable() => Realm.Subscribe(OnChangeRealm);
 
-        private void OnDisable() => _currentRealm.Unsubscribe(OnChangeRealm);
+        private void OnDisable() => Realm.Unsubscribe(OnChangeRealm);
 
         private void OnChangeRealm(Realm realm)
         {

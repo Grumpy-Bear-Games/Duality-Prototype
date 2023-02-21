@@ -4962,7 +4962,6 @@ GameObject:
   - component: {fileID: 2985635879919357011}
   - component: {fileID: 6851254834509395933}
   - component: {fileID: 2791380713559520640}
-  - component: {fileID: 5837366387156901079}
   - component: {fileID: 3005785628758143361}
   - component: {fileID: 9053429409162587147}
   - component: {fileID: 3533448263799252859}
@@ -5142,9 +5141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88031baaca0e8a04287ce4f20b32b668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentRealm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
-  _heaven: {fileID: 11400000, guid: 6e2678d65c1d2e046b0cb3fb66e5bb67, type: 2}
-  _hell: {fileID: 11400000, guid: b4d6229eae5dd0c41b7a1171b0265464, type: 2}
   _warpVFX: {fileID: 11400000, guid: 046028bd2835c9d4f85842f6c12921da, type: 2}
 --- !u!114 &8215064143838313123
 MonoBehaviour:
@@ -5294,7 +5290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd361bd5b934b2ebda712a686ef4aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentRealm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
   _lastSpawnPoint: {fileID: 11400000, guid: 84204ae819d269241bfefc0477d3f651, type: 2}
 --- !u!114 &2985635879919357011
 MonoBehaviour:
@@ -5324,7 +5319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18f4638df3c4707bbee4065045eee52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentRealm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
 --- !u!114 &2791380713559520640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5340,34 +5334,6 @@ MonoBehaviour:
   _gameObjectObservable: {fileID: 11400000, guid: a2d3db5fe2cd24e44b4063b960786dfd,
     type: 2}
   _registerOnAwake: 0
---- !u!114 &5837366387156901079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5835723823903882621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93168c7869dd430997e891d0b455a7cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _observable: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
-  _onChange:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6608882140075747270}
-        m_TargetAssemblyTypeName: DualityGame.Iteractables.InteractController, DualityGame
-        m_MethodName: SetRealm
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3005785628758143361
 MonoBehaviour:
   m_ObjectHideFlags: 0

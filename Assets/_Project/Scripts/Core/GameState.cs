@@ -10,9 +10,10 @@ namespace DualityGame.Core
     [CreateAssetMenu(menuName = "Duality/Game State", fileName = "Game state", order = 0)]
     public class GameState : ScriptableObject
     {
-        
         private static readonly Observable<GameState> _current = new();
-        public static IReadonlyObservable<GameState> Current => _current;
+        public static GameState Current => _current.Value;
+        public static void Subscribe(Action<GameState> subscriber) => _current.Subscribe(subscriber);
+        public static void Unsubscribe(Action<GameState> subscriber) => _current.Unsubscribe(subscriber);
 
         [SerializeField] private bool _initialState = false;
 
@@ -37,7 +38,7 @@ namespace DualityGame.Core
             if (!_initialState) return;
             Debug.Assert(_current.Value == null, $"The can only be one initial state. Current initial state is {_current.Value}", this);
             _current.Set(this);
-            _current.Value.OnEnter?.Invoke();
+            OnEnter?.Invoke();
         }
     }
 }

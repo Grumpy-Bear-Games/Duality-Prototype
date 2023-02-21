@@ -1,4 +1,3 @@
-using DualityGame.Realm;
 using DualityGame.VFX;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -9,25 +8,25 @@ namespace DualityGame.Player
     [RequireComponent(typeof(CharacterController))]
     public class WarpController : MonoBehaviour
     {
-        [SerializeField] private RealmObservable _currentRealm;
-        [SerializeField] private Realm.Realm _heaven;
-        [SerializeField] private Realm.Realm _hell;
-
         [Header("VFX")]
         [SerializeField] private ScreenFader _warpVFX;
         
         private CharacterController _controller;
         private readonly Collider[] _colliders = new Collider[1];
 
-        private Realm.Realm _otherRealm => _currentRealm.Value == _heaven ? _hell : _heaven;
-        
         private void Awake() => _controller = GetComponent<CharacterController>();
 
         [UsedImplicitly]
         private void OnWarp(InputValue value)
         {
             if (!enabled) return;
-            
+
+            if (Realm.Realm.Current.CanWarpTo == null)
+            {
+                Debug.Log("Can't warp from this realm");
+                return;
+            }
+
             if (IsOtherRealmBlocked(transform.position)) {
                 Debug.Log("Something is blocking on the other side");
                 return;
@@ -36,7 +35,7 @@ namespace DualityGame.Player
             StartCoroutine(_warpVFX.Wrap(SwitchToOtherRealm));
         }
 
-        private void SwitchToOtherRealm() => _currentRealm.Set(_otherRealm);
+        private static void SwitchToOtherRealm() => Realm.Realm.Current.CanWarpTo.SetActive();
 
         private bool IsOtherRealmBlocked(Vector3 position)
         {
@@ -44,7 +43,7 @@ namespace DualityGame.Player
             var point1 = position + Vector3.up * (_controller.height - radius);
             var point2 = position + Vector3.up * radius;
 
-            return Physics.OverlapCapsuleNonAlloc(point1, point2, radius, _colliders, _otherRealm.LevelLayerMask) > 0;
+            return Physics.OverlapCapsuleNonAlloc(point1, point2, radius, _colliders, Realm.Realm.Current.CanWarpTo.LevelLayerMask) > 0;
         }
     }
 }
