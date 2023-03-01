@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7894316949164092931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
+  m_Name: Environment Showcase
+  m_EditorClassIdentifier: 
+  <ObjectGuid>k__BackingField:
+    _data: eef46d417aba448f99bee7e7f28e2620fd91ba848fc07192
+  _manager: {fileID: 11400000}
+  _scenes:
+  - _scenePath: Assets/_Project/Scenes/Environment Showcase.unity
+--- !u!114 &-6360022219809799149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
+  m_Name: Quest Level 1
+  m_EditorClassIdentifier: 
+  <ObjectGuid>k__BackingField:
+    _data: eef46d417aba448f99bee7e7f28e26201344a5e87ca9bca7
+  _manager: {fileID: 11400000}
+  _scenes:
+  - _scenePath: Assets/_Project/Scenes/Player.unity
+  - _scenePath: Assets/_Project/Scenes/Quest Level 1.unity
+--- !u!114 &-3024725603259824557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
+  m_Name: AI Playground
+  m_EditorClassIdentifier: 
+  <ObjectGuid>k__BackingField:
+    _data: eef46d417aba448f99bee7e7f28e26205346abea160406d6
+  _manager: {fileID: 11400000}
+  _scenes:
+  - _scenePath: Assets/_Project/Scenes/Global.unity
+  - _scenePath: Assets/_Project/Scenes/AI Playground.unity
+--- !u!114 &-689672539294993293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
+  m_Name: Main Menu
+  m_EditorClassIdentifier: 
+  <ObjectGuid>k__BackingField:
+    _data: eef46d417aba448f99bee7e7f28e262073f4fac37aca6df6
+  _manager: {fileID: 11400000}
+  _scenes:
+  - _scenePath: Assets/_Project/Scenes/Main Menu.unity
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2472e0dae1e4303894c3c028ce3e097, type: 3}
+  m_Name: Scene Manager
+  m_EditorClassIdentifier: 
+  _globalScenes:
+  - _scenePath: Assets/_Project/Scenes/Global.unity
+  _sceneGroups:
+  - {fileID: -689672539294993293}
+  - {fileID: 4240443740491785656}
+  - {fileID: -3024725603259824557}
+  - {fileID: -6360022219809799149}
+  - {fileID: 2826066878318788179}
+  - {fileID: 567819877139781090}
+  - {fileID: -7894316949164092931}
+  - {fileID: 5455778451232703607}
+--- !u!114 &567819877139781090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
+  m_Name: Item Showcase
+  m_EditorClassIdentifier: 
+  <ObjectGuid>k__BackingField:
+    _data: eef46d417aba448f99bee7e7f28e2620e29552792b4de107
+  _manager: {fileID: 11400000}
+  _scenes:
+  - _scenePath: Assets/_Project/Scenes/Item Showcase.unity
+--- !u!114 &2826066878318788179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
+  m_Name: NPC Showcase
+  m_EditorClassIdentifier: 
+  <ObjectGuid>k__BackingField:
+    _data: eef46d417aba448f99bee7e7f28e2620533eb049da343827
+  _manager: {fileID: 11400000}
+  _scenes:
+  - _scenePath: Assets/_Project/Scenes/NPC Showcase.unity
+--- !u!114 &4240443740491785656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
+  m_Name: Prototype Level
+  m_EditorClassIdentifier: 
+  <ObjectGuid>k__BackingField:
+    _data: eef46d417aba448f99bee7e7f28e2620b8a50a7a1d15d93a
+  _manager: {fileID: 11400000}
+  _scenes:
+  - _scenePath: Assets/_Project/Scenes/Player.unity
+  - _scenePath: Assets/_Project/Scenes/Prototype Level.unity
+--- !u!114 &5455778451232703607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
+  m_Name: Martin's Playground
+  m_EditorClassIdentifier: 
+  <ObjectGuid>k__BackingField:
+    _data: eef46d417aba448f99bee7e7f28e262077c4f46e98d1b64b
+  _manager: {fileID: 11400000}
+  _scenes:
+  - _scenePath: Assets/_Project/Scenes/Martin's Playground.unity
+  - _scenePath: Assets/_Project/Scenes/Player.unity

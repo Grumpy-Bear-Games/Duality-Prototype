@@ -1,6 +1,6 @@
 using System.Collections;
 using Cinemachine;
-using Games.GrumpyBear.LevelManagement;
+using Games.GrumpyBear.Core.LevelManagement;
 using UnityEngine;
 using UnityEngine.Assertions;
 

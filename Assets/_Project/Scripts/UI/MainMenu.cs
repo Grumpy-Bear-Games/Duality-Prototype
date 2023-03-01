@@ -1,4 +1,4 @@
-using Games.GrumpyBear.LevelManagement;
+using Games.GrumpyBear.Core.LevelManagement;
 using UnityEngine;
 using UnityEngine.UIElements;
 
