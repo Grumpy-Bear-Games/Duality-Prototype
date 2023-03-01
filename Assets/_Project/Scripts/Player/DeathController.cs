@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using DualityGame.Core;
 using DualityGame.VFX;
 using UnityEngine;
@@ -15,6 +17,9 @@ namespace DualityGame.Player
         [Header("Death Screen VFX")]
         [SerializeField] private ScreenFader _deathScreen;
         [SerializeField] private float _deathScreenDelay = 3f;
+
+        [Header("Death Animations")]
+        [SerializeField] private List<DeathAnimationEntry> _deathAnimations = new();
         
         private SpawnController _spawnController;
         private void Awake() => _spawnController = GetComponent<SpawnController>();
@@ -23,13 +28,24 @@ namespace DualityGame.Player
 
         private IEnumerator DeathScreen_CO(CauseOfDeath causeOfDeath)
         {
+            var deathAnimation = _deathAnimations.Find(entry => entry.CauseOfDeath == causeOfDeath);
+            
             _deathGameState.SetActive();
+            deathAnimation?.DeathAnimation.Trigger();
             causeOfDeath.Trigger();
             yield return _deathScreen.Execute(ScreenFader.Direction.FadeOut);
+            deathAnimation?.DeathAnimation.ResetPlayer();
             _spawnController.Respawn();
             yield return new WaitForSeconds(_deathScreenDelay);
             yield return _deathScreen.Execute(ScreenFader.Direction.FadeIn);
             _startingGameState.SetActive();
+        }
+
+        [Serializable]
+        private class DeathAnimationEntry
+        {
+            [field: SerializeField] public CauseOfDeath CauseOfDeath { get; private set; }
+            [field: SerializeField] public DeathAnimationBase DeathAnimation { get; private set; }
         }
     }
 }
