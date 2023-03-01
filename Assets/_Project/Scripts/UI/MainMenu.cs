@@ -1,4 +1,5 @@
-using Games.GrumpyBear.Core.LevelManagement;
+using DualityGame.SaveSystem;
+using DualityGame.VFX;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,8 +8,8 @@ namespace DualityGame.UI
     [RequireComponent(typeof(UIDocument))]
     public class MainMenu : MonoBehaviour
     {
-        [Header("New Game")]
-        [SerializeField] private SceneGroup _firstLocation;
+        [SerializeField] private GameSession _gameSession;
+        [SerializeField] private ScreenFader _screenFader;
 
         private VisualElement _frame;
 
@@ -22,8 +23,7 @@ namespace DualityGame.UI
             _frame = root.Q<VisualElement>("MainMenu");
             _frame.Q<Button>("NewGameButton").clicked += () =>
             {
-                SaveSystem.SaveSystem.Clear();
-                _firstLocation.Load();
+                CoroutineRunner.Run(_screenFader.Wrap(_gameSession.NewGame()));
             };
             _frame.Q<Button>("SettingsButton").clicked += () =>
             {
@@ -31,8 +31,8 @@ namespace DualityGame.UI
                 _settingsMenu.Show();
             };
             var continueButton = _frame.Q<Button>("ContinueButton");
-            continueButton.clicked += () => _firstLocation.Load();
-            if (!SaveSystem.SaveSystem.SavefileExists)
+            continueButton.clicked += () => CoroutineRunner.Run(_screenFader.Wrap(_gameSession.LoadGame()));
+            if (!_gameSession.SavefileExists)
             {
                 continueButton.style.display = DisplayStyle.None;
             }

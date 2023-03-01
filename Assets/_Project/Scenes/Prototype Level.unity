@@ -34668,10 +34668,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 680978134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b9eb34de5145a88f2fccbdad29b97d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dd19d69c87f4d4f8080a782e92d0106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 87b5345a-f87f-4095-9bb7-1b93be7449e2
+  _id: 139859d2-4a04-44e0-9da9-3b4243a6a7bc
+--- !u!114 &680978138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680978134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7264d61c4b0f459fa2c513a7dfa4ff79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prompt: Search pile of corpses
+  _promptOffset: {x: 0, y: 1.5, z: 0}
+  _onlyTriggerOnce: 1
+  _onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 680978136}
+        m_TargetAssemblyTypeName: DualityGame.Inventory.ItemSpawner, DualityGame
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &861782024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35049,6 +35079,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9105734120470650260, guid: c9203327fb00e6f4e8720dde68971cb9,
+        type: 3}
+      propertyPath: _id
+      value: 6b01b73a-b5fe-4af0-82e3-f780ca492dd8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35384,6 +35419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105734120470650260, guid: e2e66c2cf46c597488ae37e067bfacf2,
+        type: 3}
+      propertyPath: _id
+      value: 2fbf464d-b996-4502-aa2c-e43f036d1704
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36161,6 +36201,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 680978136}
+    - targetCorrespondingSourceObject: {fileID: 4637266281697921278, guid: 7a7b97b38234d1e4f8a6ae50c84a97bf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 680978138}
   m_SourcePrefab: {fileID: 100100000, guid: 7a7b97b38234d1e4f8a6ae50c84a97bf, type: 3}
 --- !u!1001 &2098697040
 PrefabInstance:
@@ -36382,6 +36426,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9105734120470650260, guid: 996a1956a91b55245978c56516520bc8,
+        type: 3}
+      propertyPath: _id
+      value: 78093804-9fb9-4829-bfb6-b5caf011d398
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36395,6 +36444,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4706711574281895500, guid: 451600d0e8af0eb45ab0c742ca5e2752,
+        type: 3}
+      propertyPath: _id
+      value: b1014b6f-6974-491d-913c-011ac385a84f
+      objectReference: {fileID: 0}
     - target: {fileID: 6444291834977619648, guid: 451600d0e8af0eb45ab0c742ca5e2752,
         type: 3}
       propertyPath: m_Name

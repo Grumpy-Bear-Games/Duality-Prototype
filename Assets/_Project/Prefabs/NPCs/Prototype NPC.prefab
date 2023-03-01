@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 6444291834977619678}
   - component: {fileID: 6444291834977619674}
   - component: {fileID: 6459629378137670874}
-  - component: {fileID: 9003418595761789519}
+  - component: {fileID: 4706711574281895500}
   - component: {fileID: 6130417559829801329}
   - component: {fileID: 7959952119106313478}
   m_Layer: 6
@@ -174,7 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097f47eb142d4907ade74fbc7ba16360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentRealm: {fileID: 11400000, guid: ff226c964fd525d4d9c967c50db74431, type: 2}
 --- !u!114 &6444291834977619678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +285,7 @@ MonoBehaviour:
   - _json: '{"_name":"Player Died Since Last Conversation","_id":"b1bceae6-bd21-425a-9b61-b468b700ad71","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
---- !u!114 &9003418595761789519
+--- !u!114 &4706711574281895500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -295,7 +294,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6444291834977619648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83b9eb34de5145a88f2fccbdad29b97d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dd19d69c87f4d4f8080a782e92d0106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 

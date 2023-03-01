@@ -8,7 +8,7 @@ namespace DualityGame.Player
 {
 	[RequireComponent(typeof(CharacterController))]
 	[RequireComponent(typeof(PlayerInput))]
-	public class ThirdPersonFixedController : MonoBehaviour, ISaveableComponent
+	public class ThirdPersonFixedController : MonoBehaviour
 	{
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
@@ -155,9 +155,5 @@ namespace DualityGame.Player
 				_verticalVelocity += Gravity * Time.deltaTime;
 			}
 		}
-
-		object ISaveableComponent.CaptureState() => transform.position;
-
-		void ISaveableComponent.RestoreState(object state) => transform.position = (Vector3)state;
 	}
 }

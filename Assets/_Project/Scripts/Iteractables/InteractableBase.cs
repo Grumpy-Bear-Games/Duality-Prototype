@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using Games.GrumpyBear.Core.SaveSystem;
+using UnityEngine;
 
 namespace DualityGame.Iteractables
 {
-    public abstract class InteractableBase : MonoBehaviour, IInteractable
+    [RequireComponent(typeof(SaveableEntity))]
+    public abstract class InteractableBase : MonoBehaviour, IInteractable, ISaveableComponent
     {
         [Header("Interaction prompt")]
         [SerializeField] public string _prompt;
@@ -24,5 +26,10 @@ namespace DualityGame.Iteractables
         }
 
         protected abstract void Trigger(GameObject actor);
+
+        #region ISaveableComponent
+        object ISaveableComponent.CaptureState() => _hasTriggered;
+        void ISaveableComponent.RestoreState(object state) => _hasTriggered = (bool)state;
+        #endregion
     }
 }

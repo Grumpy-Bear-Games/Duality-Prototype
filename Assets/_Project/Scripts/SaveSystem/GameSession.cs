@@ -16,7 +16,6 @@ namespace DualityGame.SaveSystem
         private const string SaveFileName = "Game";
 
         private SceneGroup _sceneGroup;
-        private string _lastSpawnPointID;
         private Dictionary<string, Dictionary<string, object>> _entityStates = new();
 
         public IEnumerator NewGame()
@@ -33,7 +32,6 @@ namespace DualityGame.SaveSystem
             LoadFromFile();
             yield return _sceneGroup.Load_CO();
             RestoreState();
-            SpawnController.Instance.MoveToSpawnPoint(_lastSpawnPointID);
         }
 
         public void SaveGame()
@@ -41,6 +39,8 @@ namespace DualityGame.SaveSystem
             CaptureState();
             SaveToFile();
         }
+        
+        public bool SavefileExists => FileSystem.Exists(SaveFileName);
 
         public IEnumerator Respawn()
         {
@@ -51,12 +51,11 @@ namespace DualityGame.SaveSystem
         public IEnumerator MoveToSpawnPoint(SceneGroup sceneGroup, string spawnPointID)
         {
             _sceneGroup = sceneGroup;
-            _lastSpawnPointID = spawnPointID; 
             CaptureState();
             
             yield return _sceneGroup.Load_CO();
             RestoreState();
-            SpawnController.Instance.MoveToSpawnPoint(_lastSpawnPointID);
+            SpawnController.Instance.MoveToSpawnPoint(spawnPointID);
         }
         
         public void CaptureState() => SaveableEntity.CaptureEntityStates(_entityStates);
@@ -64,8 +63,7 @@ namespace DualityGame.SaveSystem
 
         private void ClearSession()
         {
-            _entityStates = new();
-            _lastSpawnPointID = null;
+            _entityStates = new Dictionary<string, Dictionary<string, object>>();
             _sceneGroup = _firstSceneGroup;
         }
 
@@ -75,23 +73,20 @@ namespace DualityGame.SaveSystem
         private class SerializableSession
         {
             public readonly ObjectGuid SceneGroupID;
-            public readonly string LastSpawnPointID;
             public readonly Dictionary<string, Dictionary<string, object>> EntityStates;
             
-            public SceneGroup SceneGroup => Games.GrumpyBear.Core.LevelManagement.SceneGroup.GetByGuid(SceneGroupID);
+            public SceneGroup SceneGroup => SceneGroup.GetByGuid(SceneGroupID);
 
-            public SerializableSession(SceneGroup sceneGroup, string lastSpawnPointID, Dictionary<string, Dictionary<string, object>> entityStates)
+            public SerializableSession(SceneGroup sceneGroup, Dictionary<string, Dictionary<string, object>> entityStates)
             {
-                // TODO: Notice this is a broken hack, just to make it work for now. We need an actual solution.
                 SceneGroupID = sceneGroup.ObjectGuid;
-                LastSpawnPointID = lastSpawnPointID;
                 EntityStates = entityStates;
             }
         }
 
         private void SaveToFile()
         {
-            var serializableSession = new SerializableSession(_sceneGroup, _lastSpawnPointID, _entityStates);
+            var serializableSession = new SerializableSession(_sceneGroup ? _sceneGroup : _firstSceneGroup, _entityStates);
             FileSystem.SaveFile(SaveFileName, serializableSession);
         }
 
@@ -105,7 +100,6 @@ namespace DualityGame.SaveSystem
             else
             {
                 _sceneGroup = serializableSession.SceneGroup;
-                _lastSpawnPointID = serializableSession.LastSpawnPointID;
                 _entityStates = serializableSession.EntityStates;
             }
         }
