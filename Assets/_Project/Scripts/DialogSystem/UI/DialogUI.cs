@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Linq;
 using DualityGame.Dialog;
 using NodeCanvas.DialogueTrees;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
@@ -27,15 +25,13 @@ namespace DualityGame.DialogSystem.UI {
 
 		private void Awake()
 		{
-			var uiDocument = GetComponent<UIDocument>();
+			var root = GetComponent<UIDocument>().rootVisualElement;
 			
-			_dialogFrame = uiDocument.rootVisualElement.Q<VisualElement>("DialogFrame");
-			_actorPortrait = uiDocument.rootVisualElement.Q<VisualElement>("PortraitFrame");
-			_statementText = uiDocument.rootVisualElement.Q<Label>("StatementText");
-			_actorName = uiDocument.rootVisualElement.Q<Label>("ActorName");
-			_options = uiDocument.rootVisualElement.Q<VisualElement>("Options");
-
-			Hide();
+			_dialogFrame = root.Q<VisualElement>("DialogFrame");
+			_actorPortrait = root.Q<VisualElement>("PortraitFrame");
+			_statementText = root.Q<Label>("StatementText");
+			_actorName = root.Q<Label>("ActorName");
+			_options = root.Q<VisualElement>("Options");
 		}
 
 		private void OnEnable() {
@@ -69,9 +65,9 @@ namespace DualityGame.DialogSystem.UI {
 			_onDialogEnd.Invoke();
 		}
 		
-		private void Hide() => _dialogFrame.AddToClassList("Hidden");
+		private void Hide() => _dialogFrame.RemoveFromClassList("Shown");
 
-		private void Show() => _dialogFrame.RemoveFromClassList("Hidden");
+		private void Show() => _dialogFrame.AddToClassList("Shown");
 
 		public void SelectOption(int value)
 		{

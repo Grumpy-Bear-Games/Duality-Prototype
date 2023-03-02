@@ -1,0 +1,22 @@
+﻿.FadeAnimation {
+    display: none;
+    transition-property: opacity, display;
+    transition-duration: var(--fade-duration), 0s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, var(--fade-duration);
+    opacity: 0;
+}
+
+.FadeAnimation.Shown {
+    display: flex;
+    opacity: 1;
+    transition-duration: var(--fade-duration);
+    transition-property: opacity;
+    transition-timing-function: ease;
+}
+
+.unity-builder-viewport__document .FadeAnimation {
+    display: flex;
+    opacity: 1;
+    transition-duration: 0ms;
+} 

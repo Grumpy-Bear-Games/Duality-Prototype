@@ -32,7 +32,7 @@ namespace DualityGame.VFX
             yield return transitionMonitor.WaitUntilDone();
         }
 
-        protected void FadeIn() => _root.AddToClassList(FadeInClass);
-        protected void FadeOut() => _root.RemoveFromClassList(FadeInClass);
+        protected virtual void FadeIn() => _root.AddToClassList(FadeInClass);
+        protected virtual void FadeOut() => _root.RemoveFromClassList(FadeInClass);
     }
 }

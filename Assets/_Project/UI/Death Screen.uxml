@@ -1,4 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/_Project/UI/Death%20Screen.uss?fileID=7433441132597879392&amp;guid=4e4445b8ede11594f83c7abf1323abe8&amp;type=3#Death Screen" />
-    <ui:Label tabindex="-1" text="You fell into the abyss!" display-tooltip-when-elided="true" name="DeathMessage" class="DeathMessage" />
+    <Style src="project://database/Assets/_Project/UI/FadeAnimation.uss?fileID=7433441132597879392&amp;guid=7aaf1c68f8004960bbecbce856a98e33&amp;type=3#FadeAnimation" />
+    <ui:VisualElement name="DeathScreen" class="FadeAnimation">
+        <ui:Label tabindex="-1" text="You fell into the abyss!" display-tooltip-when-elided="true" name="DeathMessage" class="DeathMessage" />    
+    </ui:VisualElement>    
 </ui:UXML>
