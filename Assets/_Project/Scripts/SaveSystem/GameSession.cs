@@ -39,8 +39,6 @@ namespace DualityGame.SaveSystem
             CaptureState();
             SaveToFile();
         }
-        
-        public bool SavefileExists => FileSystem.Exists(SaveFileName);
 
         public IEnumerator Respawn()
         {
@@ -67,7 +65,7 @@ namespace DualityGame.SaveSystem
             _sceneGroup = _firstSceneGroup;
         }
 
-        public bool HasSaveFile() => FileSystem.Exists(SaveFileName);
+        public bool HasSaveFile => FileSystem.Exists(SaveFileName);
 
         [Serializable]
         private class SerializableSession

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Cinemachine;
 using Games.GrumpyBear.Core.LevelManagement;
@@ -13,6 +14,7 @@ namespace DualityGame.Player
         
 
         private CharacterController _controller;
+        private bool _hasBeenInitialized;
 
         public void MoveToSpawnPoint(string spawnPointID)
         {
@@ -44,21 +46,43 @@ namespace DualityGame.Player
         private IEnumerator Start()
         {
             yield return SceneManager.WaitForLoadingCompleted();
+            if (_hasBeenInitialized) yield break;
+            _hasBeenInitialized = true;
             MoveToSpawnPoint(null);
         }
 
         private void OnDestroy() => Instance = null;
-        
-        object ISaveableComponent.CaptureState() => transform.position;
+
+        #region ISaveableComponent
+        [Serializable]
+        private readonly struct SerializedState
+        {
+            public readonly ObjectGuid RealmID;
+            public readonly Vector3 Position;
+            public readonly bool HasBeenInitialized;
+
+            public SerializedState(Vector3 position, bool hasBeenInitialized)
+            {
+                RealmID = Realm.Realm.Current.ObjectGuid;
+                Position = position;
+                HasBeenInitialized = hasBeenInitialized;
+            }
+        }
+
+        object ISaveableComponent.CaptureState() => new SerializedState(position: transform.position, hasBeenInitialized: _hasBeenInitialized);
 
         void ISaveableComponent.RestoreState(object state)
         {
-            var position = (Vector3)state;
+            if (state is not SerializedState serializedState) return;
+
+            _hasBeenInitialized = serializedState.HasBeenInitialized;
             if (_controller != null) _controller.enabled = false;
-            var positionDelta = position - transform.position; 
-            transform.position = position;
+            var positionDelta = serializedState.Position - transform.position; 
+            transform.position = serializedState.Position;
             CinemachineCore.Instance.OnTargetObjectWarped(transform, positionDelta);
+            Realm.Realm.GetByGuid(serializedState.RealmID).SetActive();
             if (_controller != null) _controller.enabled = true;
         }
+        #endregion
     }
 }
