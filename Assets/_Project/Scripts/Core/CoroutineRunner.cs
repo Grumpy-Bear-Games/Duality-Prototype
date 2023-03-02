@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace DualityGame.SaveSystem
+namespace DualityGame.Core
 {
     public class CoroutineRunner : MonoBehaviour
     {
