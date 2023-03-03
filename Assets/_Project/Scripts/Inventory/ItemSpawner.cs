@@ -13,7 +13,7 @@ namespace DualityGame.Inventory
 
         [Header("Spawn animation")]
         [SerializeField] private float _jumpPower = 1f;
-        [SerializeField] private float _jumpDuration = 1f;
+        [SerializeField] private float _jumpDuration = 0.5f;
         [SerializeField] private Ease _jumpEasing = Ease.Linear;
 
         private bool _hasSpawned;
@@ -47,6 +47,7 @@ namespace DualityGame.Inventory
             Gizmos.color = Color.green;
             foreach (var item in _itemsToSpawn)
             {
+                if (item == null) return;
                 var itemCollider = item.GetComponent<Collider>();
                 var bounds = itemCollider.bounds;
                 Gizmos.DrawWireCube(bounds.center, bounds.size);

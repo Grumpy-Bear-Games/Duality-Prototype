@@ -8,10 +8,10 @@ namespace DualityGame.Iteractables
     {
         [Header("Interaction prompt")]
         [SerializeField] public string _prompt;
-        [SerializeField] public Vector3 _promptOffset;
+        [SerializeField] public Vector3 _promptOffset = new Vector3(0, 1.5f, 0);
         
         [Header("Interaction")]
-        [SerializeField] private bool _onlyTriggerOnce;
+        [SerializeField] private bool _onlyTriggerOnce = true;
 
         public string Prompt => _hasTriggered ? null : _prompt;
         public Vector3 PromptPosition => transform.position + _promptOffset;
