@@ -6,15 +6,10 @@ namespace DualityGame.Realm
     [CreateAssetMenu(fileName = "Realm", menuName = "Duality/Realm", order = 0)]
     public class Realm : GlobalStateT<Realm>
     {
-        [SerializeField] private int _levelLayer;
-        [SerializeField] private int _playerLayer;
         [field: SerializeField] public int LevelLayer { get; private set;  }
         [field: SerializeField] public int PlayerLayer { get; private set;  }
         [field: SerializeField] public Realm CanWarpTo { get; private set;  }
 
-        public int LevelLayerMask => 1 << _levelLayer;
-        public int PlayerLayerMask => 1 << _playerLayer;
-
-        public int LayerMask => LevelLayerMask | PlayerLayerMask;
+        public int LevelLayerMask => 1 << LevelLayer;
     }
 }
