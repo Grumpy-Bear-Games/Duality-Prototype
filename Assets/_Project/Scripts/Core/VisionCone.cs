@@ -4,6 +4,7 @@ namespace DualityGame.Core
 {
     [RequireComponent(typeof(MeshFilter))]
     [RequireComponent(typeof(MeshRenderer))]
+    [ExecuteAlways]
     public class VisionCone : MonoBehaviour
     {
         [SerializeField] private MeshFilter _meshFilter;
@@ -22,9 +23,9 @@ namespace DualityGame.Core
             set
             {
                 _range = value;
-#if UNITY_EDITOR
+                #if UNITY_EDITOR
                 if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) UpdateVisionCone();
-#endif
+                #endif
             }
         }
 
@@ -35,9 +36,9 @@ namespace DualityGame.Core
             {
                 _fov = value;
                 RecalculateOriginalVertices();
-#if UNITY_EDITOR
+                #if UNITY_EDITOR
                 if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) UpdateVisionCone();
-#endif
+                #endif
             }
         }
         
@@ -58,9 +59,9 @@ namespace DualityGame.Core
             set
             {
                 _layerMask = value;
-#if UNITY_EDITOR
+                #if UNITY_EDITOR
                 if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) UpdateVisionCone();
-#endif
+                #endif
             }
         }
 
@@ -81,7 +82,7 @@ namespace DualityGame.Core
 
         private void RecalculateOriginalVertices()
         {
-            if (_normalizedVertices == null) return;
+            if (_normalizedVertices == null || _normalizedVertices.Length == 0) return;
             _normalizedVertices[0] = Vector3.zero;
             for (var i = 0; i < _precision + 1; i++)
             {
@@ -145,17 +146,6 @@ namespace DualityGame.Core
             _mesh.RecalculateBounds();
         }
 
-        private void OnValidate()
-        {
-#if UNITY_EDITOR
-            if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) return;
-#endif
-            _mesh ??= new Mesh();
-            _meshFilter.mesh = _mesh;
-            InitializeMesh();
-            UpdateVisionCone();
-        }
-        
         private void Reset()
         {
             _center = transform;
