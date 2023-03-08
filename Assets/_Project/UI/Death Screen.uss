@@ -1,19 +1,12 @@
 :root {
-    background-color: rgb(0, 0, 0);
-    justify-content: center;
-    transition-duration: 1s;
-    transition-property: opacity;
-    transition-timing-function: ease-out;
-    opacity: 1;
+    --fade-duration: 1s;
 }
 
-:root.FadeIn {
-    display: none;
-    transition-property: opacity, display;
-    transition-duration: 1s, 0s;
-    transition-timing-function: ease-in, ease;
-    transition-delay: 0s, 1s;
-    opacity: 0;
+#DeathScreen {
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 #DeathMessage {

@@ -1,3 +1,4 @@
+using DualityGame.Core;
 using DualityGame.SaveSystem;
 using DualityGame.VFX;
 using UnityEngine;
@@ -32,7 +33,7 @@ namespace DualityGame.UI
             };
             var continueButton = _frame.Q<Button>("ContinueButton");
             continueButton.clicked += () => CoroutineRunner.Run(_screenFader.Wrap(_gameSession.LoadGame()));
-            if (!_gameSession.SavefileExists)
+            if (!_gameSession.HasSaveFile)
             {
                 continueButton.style.display = DisplayStyle.None;
             }
@@ -53,7 +54,7 @@ namespace DualityGame.UI
             };
         }
 
-        private void Start() => _frame.Q<Button>("NewGameButton").Focus();
+        private void Start() => _frame.Q<Button>(_gameSession.HasSaveFile ? "ContinueButton" : "NewGameButton").Focus();
 
         public void Hide() => _frame.AddToClassList("Hide");
 

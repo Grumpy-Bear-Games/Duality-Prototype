@@ -1,4 +1,6 @@
 :root {
+    --fade-duration: 0.2s;
+    
     position: absolute;
     left: 0;
     top: 0;
@@ -9,7 +11,6 @@
     -unity-font-definition: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
     font-size: 22px;
     color: rgb(0, 0, 0);
-    --toogle-duration: 0.2s;
 }
 
 #DialogFrame {
@@ -22,24 +23,12 @@
     padding: 135px 100px 133px 45px;
     margin-bottom: 47px;
     padding-bottom: 60px;
-    transition-duration: var(--toogle-duration);
-    transition-property: opacity;
-    transition-timing-function: ease;
-}
-
-#DialogFrame.Hidden {
-    display: none;
-    transition-property: opacity, display;
-    transition-duration: var(--toogle-duration), 0s;
-    transition-timing-function: ease, ease;
-    transition-delay: 0s, var(--toogle-duration);
-    opacity: 0;
 }
 
 #PortraitFrame {
     width: 340px;
     height: 330px;
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_PortraitBg_White.png?fileID=21300000&guid=124100be9e2adda40adc89cefb3fe7fd&type=3#UI_PortraitBg_White');
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/Portraits/UI_PortraitBg_White.png?fileID=21300000&guid=124100be9e2adda40adc89cefb3fe7fd&type=3#UI_PortraitBg_White');
     -unity-background-scale-mode: scale-to-fit;
     flex-shrink: 0;
 }

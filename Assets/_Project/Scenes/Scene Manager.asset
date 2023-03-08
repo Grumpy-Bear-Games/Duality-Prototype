@@ -16,8 +16,8 @@ MonoBehaviour:
     _data: eef46d417aba448f99bee7e7f28e262042c0687198253389
   _manager: {fileID: 11400000}
   _scenes:
-  - _scenePath: Assets/_Project/Scenes/Player.unity
   - _scenePath: Assets/_Project/Scenes/Portal Demo B.unity
+  - _scenePath: Assets/_Project/Scenes/Player.unity
 --- !u!114 &-7894316949164092931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,8 +51,8 @@ MonoBehaviour:
     _data: eef46d417aba448f99bee7e7f28e26201344a5e87ca9bca7
   _manager: {fileID: 11400000}
   _scenes:
-  - _scenePath: Assets/_Project/Scenes/Player.unity
   - _scenePath: Assets/_Project/Scenes/Quest Level 1.unity
+  - _scenePath: Assets/_Project/Scenes/Player.unity
 --- !u!114 &-4106529782643009293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,8 +69,8 @@ MonoBehaviour:
     _data: eef46d417aba448f99bee7e7f28e2620f3580086ebac02c7
   _manager: {fileID: 11400000}
   _scenes:
-  - _scenePath: Assets/_Project/Scenes/Player.unity
   - _scenePath: Assets/_Project/Scenes/Portal Demo A.unity
+  - _scenePath: Assets/_Project/Scenes/Player.unity
 --- !u!114 &-3024725603259824557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,8 +87,8 @@ MonoBehaviour:
     _data: eef46d417aba448f99bee7e7f28e26205346abea160406d6
   _manager: {fileID: 11400000}
   _scenes:
-  - _scenePath: Assets/_Project/Scenes/Global.unity
   - _scenePath: Assets/_Project/Scenes/AI Playground.unity
+  - _scenePath: Assets/_Project/Scenes/Player.unity
 --- !u!114 &-689672539294993293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +122,7 @@ MonoBehaviour:
   - _scenePath: Assets/_Project/Scenes/Global.unity
   _sceneGroups:
   - {fileID: -689672539294993293}
+  - {fileID: 211755256069627557}
   - {fileID: 4240443740491785656}
   - {fileID: -3024725603259824557}
   - {fileID: -6360022219809799149}
@@ -131,6 +132,24 @@ MonoBehaviour:
   - {fileID: 5455778451232703607}
   - {fileID: -4106529782643009293}
   - {fileID: -8560457130033233854}
+--- !u!114 &211755256069627557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
+  m_Name: Purgatory
+  m_EditorClassIdentifier: 
+  <ObjectGuid>k__BackingField:
+    _data: eef46d417aba448f99bee7e7f28e2620a51e5a91484ef002
+  _manager: {fileID: 11400000}
+  _scenes:
+  - _scenePath: Assets/_Project/Scenes/Purgatory.unity
+  - _scenePath: Assets/_Project/Scenes/Player.unity
 --- !u!114 &567819877139781090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,8 +200,8 @@ MonoBehaviour:
     _data: eef46d417aba448f99bee7e7f28e2620b8a50a7a1d15d93a
   _manager: {fileID: 11400000}
   _scenes:
-  - _scenePath: Assets/_Project/Scenes/Player.unity
   - _scenePath: Assets/_Project/Scenes/Prototype Level.unity
+  - _scenePath: Assets/_Project/Scenes/Player.unity
 --- !u!114 &5455778451232703607
 MonoBehaviour:
   m_ObjectHideFlags: 0

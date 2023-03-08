@@ -66,8 +66,8 @@ namespace DualityGame.Quests.UI
             _questLog.OnChange -= OnQueryLogChange;
         }
 
-        private void Hide() => _frame?.AddToClassList("Hidden");
+        private void Hide() => _frame?.RemoveFromClassList("Shown");
 
-        private void Show() => _frame?.RemoveFromClassList("Hidden");
+        private void Show() => _frame?.AddToClassList("Shown");
     }
 }

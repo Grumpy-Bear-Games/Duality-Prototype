@@ -148,6 +148,17 @@
         "com.unity.searcher": "4.9.2"
       }
     },
+    "com.unity.splines": {
+      "version": "2.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.settings-manager": "1.0.3",
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.ugui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.test-framework": {
       "version": "1.1.33",
       "depth": 1,
@@ -203,7 +214,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "0ed5770ebd1ebe3376d0c1b0204c22152caf3249"
+      "hash": "9c1932dad7b3b26ceaaeb8c6097bd930871805e6"
     },
     "games.grumpybear.fmod.utilities": {
       "version": "https://github.com/Grumpy-Bear-Games/Unity-FMOD-Utilities.git",

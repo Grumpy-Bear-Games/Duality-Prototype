@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 90451d9a0f2f3cf42b284b703bb15550,
+  m_Name: Swaying Nature
+  m_Shader: {fileID: -6465566751694194690, guid: 666458f3e6d7cae46a1d13816cf08c44,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -24,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 9331b49af310f074a93d4fdc83246479, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -38,11 +42,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _QueueControl: 0
-    - _QueueOffset: 0
+    - _Wind_Intensity: 0.4
+    - _Wind_IntensityAmount: 0
+    - _Wind_Speed: 0.3
     m_Colors: []
   m_BuildTextureStacks: []
---- !u!114 &8176143535413617046
+--- !u!114 &4488066121115481826
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

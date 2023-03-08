@@ -51,9 +51,9 @@ namespace DualityGame.Inventory.UI
         }
         #endregion
 
-        private void Hide() => _frame?.AddToClassList("Hidden");
+        private void Hide() => _frame?.RemoveFromClassList("Shown");
 
-        private void Show() => _frame?.RemoveFromClassList("Hidden");
+        private void Show() => _frame?.AddToClassList("Shown");
 
         #region Inventory UI
         private void InventorySlotClicked(ClickEvent evt)

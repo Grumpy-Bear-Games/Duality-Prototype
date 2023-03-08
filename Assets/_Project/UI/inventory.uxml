@@ -1,6 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/_Project/UI/inventory.uss?fileID=7433441132597879392&amp;guid=e32dfde642562c24bb9d97444c734e45&amp;type=3#inventory" />
-    <ui:VisualElement name="InventoryFrame">
+    <Style src="project://database/Assets/_Project/UI/FadeAnimation.uss?fileID=7433441132597879392&amp;guid=7aaf1c68f8004960bbecbce856a98e33&amp;type=3#FadeAnimation" />
+    <ui:VisualElement name="InventoryFrame" class="FadeAnimation">
         <ui:Label tabindex="-1" text="Inventory" name="Title" />
         <ui:Button display-tooltip-when-elided="true" name="PreviousPage" class="PaginationButton" />
         <ui:VisualElement name="Slots">
