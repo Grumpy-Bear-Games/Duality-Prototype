@@ -43,6 +43,7 @@ namespace DualityGame.SaveSystem
         public IEnumerator Respawn()
         {
             yield return MoveToSpawnPoint(_firstSceneGroup, null);
+            CaptureState();
             SaveToFile();
         }
 
