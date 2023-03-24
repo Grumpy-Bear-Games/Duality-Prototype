@@ -11,7 +11,7 @@ namespace DualityGame.Quests{
 		[RequiredField] public BBParameter<Inventory.Inventory> _inventory;
 		[RequiredField] public BBParameter<ItemType> _itemType;
 
-		protected override string info => $"Inventory contains item of type {_itemType.name}";
+		protected override string info => _itemType.isNoneOrNull ? $"Has item of type" : $"Has {_itemType.value.name}";
 
 
 		//Called once per frame while the condition is active.
