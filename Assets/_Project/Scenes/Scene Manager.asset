@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8788006379408648299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
+  m_Name: Quest-Test-Fest
+  m_EditorClassIdentifier: 
+  <ObjectGuid>k__BackingField:
+    _data: eef46d417aba448f99bee7e7f28e262095177b3fc2ba0a86
+  _manager: {fileID: 11400000}
+  _scenes:
+  - _scenePath: Assets/_Project/Scenes/Quest-Test-Fest.unity
+  - _scenePath: Assets/_Project/Scenes/Player.unity
 --- !u!114 &-8560457130033233854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +142,7 @@ MonoBehaviour:
   - {fileID: -689672539294993293}
   - {fileID: 211755256069627557}
   - {fileID: 4240443740491785656}
+  - {fileID: -8788006379408648299}
   - {fileID: -3024725603259824557}
   - {fileID: -6360022219809799149}
   - {fileID: 2826066878318788179}
