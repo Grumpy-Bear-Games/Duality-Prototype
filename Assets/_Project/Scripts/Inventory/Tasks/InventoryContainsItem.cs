@@ -1,17 +1,16 @@
-using DualityGame.Inventory;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 
-namespace DualityGame.Quests{
+namespace DualityGame.Inventory.Tasks{
 
 	[Category("Duality")]
 	[Description("Check if an inventory contains a specific item")]
-	public class InventoryContainsItemType : ConditionTask {
+	public class InventoryContainsItem : ConditionTask {
 		
-		[RequiredField] public BBParameter<Inventory.Inventory> _inventory;
+		[RequiredField] public BBParameter<Inventory> _inventory;
 		[RequiredField] public BBParameter<ItemType> _itemType;
 
-		protected override string info => _itemType.isNoneOrNull ? $"Has item of type" : $"Has {_itemType.value.name}";
+		protected override string info => _itemType.isNoneOrNull ? $"player has item of type" : $"player has {_itemType.value.name}";
 
 
 		//Called once per frame while the condition is active.

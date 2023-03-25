@@ -1,14 +1,13 @@
-using DualityGame.Inventory;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 
-namespace DualityGame.Quests{
+namespace DualityGame.Inventory.Tasks{
 
 	[Category("Duality")]
 	[Description("Remove item from inventory")]
-	public class InventoryTakeItemOfType : ActionTask
+	public class RemoveItemFromInventory : ActionTask
 	{
-		[RequiredField] public BBParameter<Inventory.Inventory> _inventory;
+		[RequiredField] public BBParameter<Inventory> _inventory;
 		[RequiredField] public BBParameter<ItemType> _itemType;
 
 		protected override string info => _itemType.isNoneOrNull ? $"Remove item from inventory" : $"Remove {_itemType.value} from inventory";
