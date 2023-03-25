@@ -2,7 +2,7 @@ using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
 
-namespace DualityGame.Core {
+namespace DualityGame.Utilities.Tasks {
 
 	[Category("GameObject")]
 	public class GetComponentInChildren<T> : ActionTask<Transform> where T: Component {

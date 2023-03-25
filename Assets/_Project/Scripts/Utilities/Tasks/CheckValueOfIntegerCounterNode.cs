@@ -13,8 +13,8 @@ namespace DualityGame.Utilities.Tasks
     [Color("b3ff7f")]
     public class CheckValueOfIntegerCounterNode : DTNode
     {
-        [RequiredField] public BBParameter<int> _counter;
-        [RequiredField] public BBParameter<bool> _autoIncrease = false;
+        [BlackboardOnly][RequiredField] public BBParameter<int> _counter;
+        [RequiredField] public BBParameter<bool> _autoIncrease = true;
 
         public override int maxOutConnections => -1;
 
