@@ -34,12 +34,6 @@ namespace DualityGame.Player
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
-            if (Instance != null)
-            {
-                Debug.LogError($"SpawnController instance already exists: {Instance.name}", this);
-                Destroy(gameObject);
-            }
-
             Instance = this;
         }
 
@@ -51,7 +45,10 @@ namespace DualityGame.Player
             MoveToSpawnPoint(null);
         }
 
-        private void OnDestroy() => Instance = null;
+        private void OnDestroy()
+        {
+            if (Instance == this) Instance = null;
+        }
 
         #region ISaveableComponent
         [Serializable]

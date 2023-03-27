@@ -1,8 +1,29 @@
 ﻿//UNITY_SHADER_NO_UPGRADE
 #ifndef MYHLSLINCLUDE_INCLUDED
 #define MYHLSLINCLUDE_INCLUDED
+#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Texture.hlsl"
 
+void Dilation_float(UnityTexture2D inputTexture, float2 uv, float kernelSize, out float outputValue) {
+    const int kernelSizeCeil = ceil(kernelSize);
 
+    outputValue = 0.0f;
+    // Loop over the pixels in the dilation kernel
+    for (int i = -kernelSizeCeil; i <= kernelSizeCeil; i++) {
+        for (int j = -kernelSizeCeil; j <= kernelSizeCeil; j++) {
+            // TODO: This can be optimized with a lookup table
+            const float dist = distance(float2(i, j), float2(0, 0));
+            const float factor = 1 + (kernelSize - dist); 
+            if (factor < 0) { continue; }
+            
+            // Calculate the texture coordinates of the current kernel pixel
+            float2 kernelTexCoord = uv + (float2(float(i), float(j)) * inputTexture.texelSize.xy);
+            
+            // Read the binary value of the current kernel pixel from the input texture
+            float pixelValue = inputTexture.Sample(inputTexture.samplerstate, kernelTexCoord).a * min(factor, 1);
+            outputValue = max(outputValue, pixelValue);
+        }
+    }
+}
 
 void sdEllipse_float( float2 p, float2 ab, out float distance )
 {

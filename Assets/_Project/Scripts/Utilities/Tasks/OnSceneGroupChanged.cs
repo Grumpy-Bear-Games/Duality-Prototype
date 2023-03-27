@@ -2,7 +2,7 @@ using Games.GrumpyBear.Core.LevelManagement;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 
-namespace DualityGame.Core{
+namespace DualityGame.Utilities.Tasks{
 	[Category("Duality")]
 	[Description("When scene group changes")]
 	public class OnSceneGroupChanged : ConditionTask
