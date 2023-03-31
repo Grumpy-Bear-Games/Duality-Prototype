@@ -11,8 +11,9 @@ namespace DualityGame.Core
     {
         [SerializeField] private bool _initialState = false;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
             #if UNITY_EDITOR
             if (!EditorApplication.isPlayingOrWillChangePlaymode) return;
             #endif
