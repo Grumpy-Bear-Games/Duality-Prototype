@@ -21,6 +21,7 @@ namespace DualityGame.Inventory
         {
             _items.Add(item);
             _SortItems();
+            Notifications.Notifications.Add(item.InventorySprite, $"{item.name} added to inventory");
             OnChange?.Invoke();
         }
 
@@ -32,6 +33,7 @@ namespace DualityGame.Inventory
             {
                 var item = _items.First(item => item == itemType);
                 _items.Remove(item);
+                Notifications.Notifications.Add(item.InventorySprite, $"{item.name} removed from inventory");
                 OnChange?.Invoke();
                 return item;
             }

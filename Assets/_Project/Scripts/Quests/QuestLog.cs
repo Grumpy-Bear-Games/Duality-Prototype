@@ -23,6 +23,7 @@ namespace DualityGame.Quests
             if (_quests.ContainsKey(quest)) return;
             var questStates = new QuestEntry(quest);
             _quests.Add(quest, questStates);
+            Notifications.Notifications.Add($"You started a new quest: {quest.Title}");
             OnChange?.Invoke();
         }
 
@@ -37,7 +38,11 @@ namespace DualityGame.Quests
             OnChange?.Invoke();
         }
 
-        public void SucceedQuest(Quest quest) => SetQuestState(quest: quest, questState: QuestState.Succeeded);
+        public void SucceedQuest(Quest quest)
+        {
+            SetQuestState(quest: quest, questState: QuestState.Succeeded);
+            Notifications.Notifications.Add($"You completed a quest: {quest.Title}");
+        }
 
         public void FailQuest(Quest quest) => SetQuestState(quest: quest, questState: QuestState.Failed);
 
@@ -45,7 +50,8 @@ namespace DualityGame.Quests
         {
             _quests.TryGetValue(quest, out var questEntry);
             if (questEntry == null) return;  // TODO: Maybe an exception instead?
-            questEntry.State = questState; // TODO: Check previous state
+            if (questEntry.State == questState) return;
+            questEntry.State = questState;
             OnChange?.Invoke();
         }
         
