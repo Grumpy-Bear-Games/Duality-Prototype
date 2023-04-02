@@ -1,3 +1,4 @@
+using DualityGame.Notifications;
 using DualityGame.VFX;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -8,6 +9,9 @@ namespace DualityGame.Player
     [RequireComponent(typeof(CharacterController))]
     public class WarpController : MonoBehaviour
     {
+        [Header("Notifications")]
+        [SerializeField] private Sprite _notificationIcon;
+        
         [Header("VFX")]
         [SerializeField] private ScreenFader _warpVFX;
         
@@ -31,6 +35,7 @@ namespace DualityGame.Player
                 Debug.Log("Something is blocking on the other side");
                 return;
             }
+            Notifications.Notifications.Add(_notificationIcon, $"You warped to {Realm.Realm.Current.CanWarpTo.name}");
 
             StartCoroutine(_warpVFX.Wrap(SwitchToOtherRealm));
         }
