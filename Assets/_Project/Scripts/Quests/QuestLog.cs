@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DualityGame.Dialog;
 using Games.GrumpyBear.Core.SaveSystem;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -23,7 +24,7 @@ namespace DualityGame.Quests
             if (_quests.ContainsKey(quest)) return;
             var questStates = new QuestEntry(quest);
             _quests.Add(quest, questStates);
-            Notifications.Notifications.Add($"You started a new quest: {quest.Title}");
+            Notifications.Notifications.Add(quest.NPC.PortraitByMood(Mood.Neutral), $"You started a new quest: {quest.Title}");
             OnChange?.Invoke();
         }
 
@@ -41,10 +42,14 @@ namespace DualityGame.Quests
         public void SucceedQuest(Quest quest)
         {
             SetQuestState(quest: quest, questState: QuestState.Succeeded);
-            Notifications.Notifications.Add($"You completed a quest: {quest.Title}");
+            Notifications.Notifications.Add(quest.NPC.PortraitByMood(Mood.Happy),$"You completed a quest: {quest.Title}");
         }
 
-        public void FailQuest(Quest quest) => SetQuestState(quest: quest, questState: QuestState.Failed);
+        public void FailQuest(Quest quest)
+        {
+            SetQuestState(quest: quest, questState: QuestState.Failed);
+            Notifications.Notifications.Add(quest.NPC.PortraitByMood(Mood.Sad),$"You failed a quest: {quest.Title}");
+        }
 
         private void SetQuestState(Quest quest, QuestState questState)
         {
