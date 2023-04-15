@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Black_Tile1
-  m_Shader: {fileID: -6465566751694194690, guid: 002f0b83306f16b4bab7a4b05fb77ad6,
+  m_Shader: {fileID: -6465566751694194690, guid: 8d7c54b155d6fd44ab27edaa392e7872,
     type: 3}
   m_Parent: {fileID: 2100000, guid: ab879468b11691c4584319aef419ce55, type: 2}
   m_ModifiedSerializedProperties: 2
@@ -29,7 +29,10 @@ Material:
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Ambient_Occlusion: 0.5
+    - _Size: 2
+    - _Smoothness: 0.3
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &2074146004398985209

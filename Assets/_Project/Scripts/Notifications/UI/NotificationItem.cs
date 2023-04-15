@@ -13,13 +13,10 @@ namespace DualityGame.Notifications.UI
         {
             if (sprite != null)
             {
-                hierarchy.Add(new VisualElement
+                hierarchy.Add(new Image
                 {
-                    style =
-                    {
-                        backgroundImage = new StyleBackground(sprite)
-                    },
-                    name = "Icon"
+                    name = "Icon",
+                    sprite = sprite
                 });
             }
 

@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Linq;
+using DualityGame.UI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,7 +11,7 @@ namespace DualityGame.Notifications.UI
     {
         [SerializeField] private StyleSheet _styleSheet;
         [SerializeField] private int _maxItemsOnScreen = 5;
-        [SerializeField] private int _fadeOutAfterMs = 3000;
+        [SerializeField] private float _disappearAfterSeconds = 3f;
 
         private VisualElement _notificationsArea;
 
@@ -33,27 +35,33 @@ namespace DualityGame.Notifications.UI
             {
                 var item = Notifications.Pop();
                 var visualElement = item.CreateVisualElement();
-                visualElement.AddToClassList("pop-in");
-                visualElement.schedule.Execute(() => visualElement.RemoveFromClassList("pop-in")).ExecuteLater(10);
-                _notificationsArea.Add(visualElement);
-                if (_notificationsArea.childCount == 1) PopTopmostItem();
+                StartCoroutine(NotificationLifeCycle_CO(visualElement));
             }
         }
 
-        private void PopTopmostItem()
+        private IEnumerator NotificationLifeCycle_CO(VisualElement notification)
         {
-            if (_notificationsArea.childCount == 0) return;
-            var top = _notificationsArea.Children().First();
-            top.schedule.Execute(() =>
+            using var transitionMonitor = new TransitionMonitor(notification);
+            _notificationsArea.Add(notification);
+            
+            notification.AddToClassList("enter");
+            yield return transitionMonitor.WaitUntilDone();
+            notification.RemoveFromClassList("enter");
+            yield return transitionMonitor.WaitUntilDone();
+
+            while (_notificationsArea.Children().First() != notification)
             {
-                top.RegisterCallback<TransitionEndEvent>(_ =>
-                {
-                    _notificationsArea.Remove(top);
-                    if (_notificationsArea.childCount > 0) PopTopmostItem();
-                    FillFromQueue();
-                });
-                top.AddToClassList("fade-out");
-            }).ExecuteLater(_fadeOutAfterMs);
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(_disappearAfterSeconds);
+            
+            notification.AddToClassList("leave");
+            yield return transitionMonitor.WaitUntilDone();
+            
+            _notificationsArea.Remove(notification);
+            
+            FillFromQueue();
         }
     }
 }

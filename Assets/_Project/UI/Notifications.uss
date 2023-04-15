@@ -20,11 +20,11 @@
     transition-duration: 300ms;
 }
 
-.notification-item.pop-in {
+.notification-item.enter {
     translate: 120% 0;
 }
 
-.notification-item.fade-out {
+.notification-item.leave {
     opacity: 0;
     translate: 0 -200%;
     transition-duration: 800ms;
@@ -32,7 +32,7 @@
 
 .notification-item #Icon {
     flex-grow: 1;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     margin-right: 12px;
 }

@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7735530594890666788
 MonoBehaviour:
@@ -64,4 +64,4 @@ MonoBehaviour:
   _styleSheet: {fileID: 7433441132597879392, guid: be6a7475fc894925a3eedb7758f719b5,
     type: 3}
   _maxItemsOnScreen: 5
-  _fadeOutAfterMs: 3000
+  _disappearAfterSeconds: 3
