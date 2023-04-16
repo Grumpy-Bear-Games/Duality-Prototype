@@ -7,13 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fullscreen Effect Outline
-  m_Shader: {fileID: -6465566751694194690, guid: 8ea27225874179145bad1445fb966289,
+  m_Name: Draw Screen Space Outlines
+  m_Shader: {fileID: -6465566751694194690, guid: 3754d3032765f7a49a56ad8095381bb7,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _OVERLAY
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,13 +38,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Color_Threshold: 0.2
-    - _Depth_Threshold: 0.01
-    - _Noise_Scale: 5.3
-    - _Noise_Strength: 3.28
-    - _Normal_Threshold: 0.64
-    - _OVERLAY: 1
-    - _Outline_Width: 1.48
+    - _Noise_Scale: 4.9
+    - _Noise_Strength: 1.8
     m_Colors:
-    - _Outline_Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Outline_Color: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

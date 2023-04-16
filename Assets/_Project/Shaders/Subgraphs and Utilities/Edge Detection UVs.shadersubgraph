@@ -930,6 +930,27 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
+    "m_ObjectId": "106ebabc62974f229e120e96e01dab90",
+    "m_Id": 1,
+    "m_DisplayName": "Right",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Right",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
     "m_ObjectId": "1326d4ba91b14fcc87f20945c470d16c",
     "m_Id": 0,
     "m_DisplayName": "Out",
@@ -2498,27 +2519,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
-    "m_ObjectId": "936c647311d94c3ba76d1a3382601ef8",
-    "m_Id": 1,
-    "m_DisplayName": "Righjt",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Righjt",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0
-    },
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "939b07b310fd419c853a58df61425059",
     "m_Id": 0,
@@ -3164,7 +3164,7 @@
     },
     "m_Slots": [
         {
-            "m_Id": "936c647311d94c3ba76d1a3382601ef8"
+            "m_Id": "106ebabc62974f229e120e96e01dab90"
         },
         {
             "m_Id": "2e088ebeed934c4fa822c423f947f09a"
