@@ -24,7 +24,6 @@ namespace DualityGame.Utilities.RenderFeatures
             _screenSpaceOutlineMaterial.SetFloat(ShaderSettings.NormalThresholdProperty, shaderSettings.ViewSpaceNormalThreshold);
             _screenSpaceOutlineMaterial.SetFloat(ShaderSettings.FaceIdThresholdProperty, shaderSettings.FaceIdThreshold);
             _screenSpaceOutlineMaterial.SetFloat(ShaderSettings.DepthThresholdProperty, shaderSettings.DepthThreshold);
-            _screenSpaceOutlineMaterial.SetFloat(ShaderSettings.WidthProperty, shaderSettings.Width);
             
             _textureNameID = Shader.PropertyToID(textureName);
             _textureHandle = RTHandles.Alloc(textureName, name: textureName);
@@ -59,7 +58,6 @@ namespace DualityGame.Utilities.RenderFeatures
             public static readonly int NormalThresholdProperty = Shader.PropertyToID("_Normal_Threshold");
             public static readonly int FaceIdThresholdProperty = Shader.PropertyToID("_Object_ID_Threshold");
             public static readonly int DepthThresholdProperty = Shader.PropertyToID("_Depth_Threshold");
-            public static readonly int WidthProperty = Shader.PropertyToID("_Outline_Width");
 
             [field: SerializeField][field: Range(0.001f, 10f)]
             public float ViewSpaceNormalThreshold { get; private set; }  = 0.69f;
@@ -69,9 +67,6 @@ namespace DualityGame.Utilities.RenderFeatures
             
             [field: SerializeField][field: Range(0.0001f, 0.001f)]
             public float DepthThreshold { get; private set; } = 0.0003f;
-            
-            [field: SerializeField][field: Range(1f, 2.5f)]
-            public float Width { get; private set; } = 1.471f;
         }
     }
 }

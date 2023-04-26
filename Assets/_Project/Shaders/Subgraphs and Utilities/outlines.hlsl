@@ -16,7 +16,7 @@ static float2 sobelKernel[9] = {
 
 void DepthAndNormalSobel_float(
     UnityTexture2D viewSpaceNormals, UnityTexture2D objectIds,
-    float2 uv, float2 thickness,
+    float2 uv,
     float depthThreshold, float normalThreshold, float objectIdThreshold,
     out float outEdge
 ) {
@@ -31,7 +31,7 @@ void DepthAndNormalSobel_float(
     // We can unroll this loop to make it more efficient
     // The compiler is also smart enough to remove the i=4 iteration, which is always zero
     [unroll] for (int i = 0; i < 9; i++) {
-        float2 sampleUV = uv + sobelSamplePoints[i] * thickness;
+        float2 sampleUV = uv + sobelSamplePoints[i] * viewSpaceNormals.texelSize.xy;
         float depth = SHADERGRAPH_SAMPLE_SCENE_DEPTH(sampleUV);
         float4 normal = viewSpaceNormals.Sample(viewSpaceNormals.samplerstate, sampleUV);
         float4 objectId = objectIds.Sample(objectIds.samplerstate, sampleUV);
