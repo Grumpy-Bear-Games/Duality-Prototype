@@ -817,7 +817,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29966
+  m_Name: pb_Mesh33142
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1268,6 +1268,7 @@ GameObject:
   - component: {fileID: 871150935}
   - component: {fileID: 871150938}
   - component: {fileID: 871150937}
+  - component: {fileID: 871150939}
   m_Layer: 7
   m_Name: Hell
   m_TagString: Untagged
@@ -1334,6 +1335,23 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: ef991edd1d10d274aaf3e3572bdb60f4, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &871150939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871150934}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: e252e94a045dc9248b9b4ee9a08aa7ae, type: 2}
 --- !u!4 &955025690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7134952189839055162, guid: d7de6d8f1f3f8fb419aee108b0703da2,

@@ -11,13 +11,13 @@ namespace DualityGame.Utilities.RenderFeatures
         private const string TextureName = "_ScreenSpaceOutlines";
 
         [Header("Edge Detection")]
-        [SerializeField] private ScreenSpaceOutlinesPass.ShaderSettings _edgeDetectionShaderSettings = new();
         [SerializeField] private RenderPassEvent _renderPassEvent;
 
         [Header("Shaders")]
         [SerializeField] private Shader _viewSpaceNormalsShader;
         [SerializeField] private Shader _faceIdsShader;
         [SerializeField] private Shader _detectOutlinesShader;
+        [SerializeField] private Shader _drawOutlinesShader;
 
         private RenderToTexturePass _viewSpaceNormalsPass;
         private Material _viewSpaceNormalsMaterial;
@@ -25,7 +25,8 @@ namespace DualityGame.Utilities.RenderFeatures
         private Material _faceIdMaterial;
         
         private ScreenSpaceOutlinesPass _screenSpaceOutlinesPass;
-        private Material _screenSpaceOutlineMaterial;
+        private Material _detectOutlinesMaterial;
+        private Material _drawOutlinesMaterial;
 
         public override void SetupRenderPasses(ScriptableRenderer renderer, in RenderingData renderingData)
         {
@@ -43,15 +44,17 @@ namespace DualityGame.Utilities.RenderFeatures
             _faceIdPass = new RenderToTexturePass(RenderPassEvent.AfterRenderingOpaques,
                 FaceIdTexture, _faceIdMaterial, Color.clear);
 
-            _screenSpaceOutlineMaterial = CoreUtils.CreateEngineMaterial(_detectOutlinesShader);
-            _screenSpaceOutlinesPass = new ScreenSpaceOutlinesPass(_renderPassEvent, _screenSpaceOutlineMaterial, _edgeDetectionShaderSettings, TextureName);
+            _detectOutlinesMaterial = CoreUtils.CreateEngineMaterial(_detectOutlinesShader);
+            _drawOutlinesMaterial = CoreUtils.CreateEngineMaterial(_drawOutlinesShader);
+            _screenSpaceOutlinesPass = new ScreenSpaceOutlinesPass(_renderPassEvent, _detectOutlinesMaterial, _drawOutlinesMaterial, TextureName);
         }
 
         protected override void Dispose(bool disposing)
         {
             CoreUtils.Destroy(_viewSpaceNormalsMaterial);
             CoreUtils.Destroy(_faceIdMaterial);
-            CoreUtils.Destroy(_screenSpaceOutlineMaterial);
+            CoreUtils.Destroy(_detectOutlinesMaterial);
+            CoreUtils.Destroy(_drawOutlinesMaterial);
         }
 
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)

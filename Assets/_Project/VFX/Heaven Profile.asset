@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Bloom
   m_EditorClassIdentifier: 
   active: 1
+  skipIterations:
+    m_OverrideState: 0
+    m_Value: 1
   threshold:
     m_OverrideState: 1
     m_Value: 0.9
@@ -31,12 +34,16 @@ MonoBehaviour:
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
-  skipIterations:
+  downscale:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0
+  maxIterations:
+    m_OverrideState: 0
+    m_Value: 6
   dirtTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+    dimension: 1
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 0
@@ -54,3 +61,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   components:
   - {fileID: -2184734303965129926}
+  - {fileID: 3104774172128747406}
+--- !u!114 &3104774172128747406
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1fc916dd2f4cd6be5f284b76eceebd, type: 3}
+  m_Name: ScreenSpaceOutlinesComponent
+  m_EditorClassIdentifier: 
+  active: 1
+  _viewSpaceNormalThreshold:
+    m_OverrideState: 0
+    m_Value: 0.69
+  _faceIdThreshold:
+    m_OverrideState: 0
+    m_Value: 0.24
+  _depthThreshold:
+    m_OverrideState: 0
+    m_Value: 0.0003
+  _outlineKernelSize:
+    m_OverrideState: 1
+    m_Value: 0.3
+  _outlineColor:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+  _noiseScale:
+    m_OverrideState: 0
+    m_Value: 4.9
+  _noiseStrength:
+    m_OverrideState: 0
+    m_Value: 1.8
