@@ -1,7 +1,8 @@
 ﻿//UNITY_SHADER_NO_UPGRADE
-#ifndef MYHLSLINCLUDE_INCLUDED
-#define MYHLSLINCLUDE_INCLUDED
+#ifndef UTILITY_INCLUDED
+#define UTILITY_INCLUDED
 #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Texture.hlsl"
+#include "./distanceFieldUtils.hlsl"
 
 void Dilation_float(UnityTexture2D inputTexture, float2 uv, float kernelSize, out float outputValue) {
     const int kernelSizeCeil = ceil(kernelSize);
@@ -10,8 +11,7 @@ void Dilation_float(UnityTexture2D inputTexture, float2 uv, float kernelSize, ou
     // Loop over the pixels in the dilation kernel
     for (int i = -kernelSizeCeil; i <= kernelSizeCeil; i++) {
         for (int j = -kernelSizeCeil; j <= kernelSizeCeil; j++) {
-            // TODO: This can be optimized with a lookup table
-            const float dist = distance(float2(i, j), float2(0, 0));
+            const float dist = vectorLength(i,j);
             const float factor = 1 + (kernelSize - dist); 
             if (factor < 0) { continue; }
             
@@ -79,4 +79,4 @@ void sdEllipse_half( half2 p, half2 ab, out half distance )
     distance = (dot(p/ab,p/ab)>1.0) ? d : -d;
 }
 
-#endif //MYHLSLINCLUDE_INCLUDED
+#endif //UTILITY_INCLUDED
