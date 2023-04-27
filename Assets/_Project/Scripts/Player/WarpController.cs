@@ -1,4 +1,6 @@
+using System;
 using DualityGame.VFX;
+using Games.GrumpyBear.Core.Observables;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +10,10 @@ namespace DualityGame.Player
     [RequireComponent(typeof(CharacterController))]
     public class WarpController : MonoBehaviour
     {
+        private static readonly Observable<WarpState> _warpState = new();
+        public static IReadonlyObservable<WarpState> State => _warpState;
+        
+
         [Header("VFX")]
         [SerializeField] private ScreenFader _warpVFX;
         
@@ -16,22 +22,44 @@ namespace DualityGame.Player
 
         private void Awake() => _controller = GetComponent<CharacterController>();
 
+        private void Update() => UpdateWarpState();
+
+        private void UpdateWarpState()
+        {
+            if (Realm.Realm.Current == null || Realm.Realm.Current.CanWarpTo == null)
+            {
+                _warpState.Set(WarpState.NoRealmToWarpTo);
+                return;
+            }
+
+            if (IsOtherRealmBlocked(transform.position))
+            {
+                _warpState.Set(WarpState.Blocked);
+                return;
+            }
+
+            _warpState.Set(WarpState.CanWarp);
+        }
+
         [UsedImplicitly]
         private void OnWarp(InputValue value)
         {
             if (!enabled) return;
 
-            if (Realm.Realm.Current.CanWarpTo == null)
+            switch (_warpState.Value)
             {
-                Notifications.Notifications.Add("You can't warp from this realm");
-                return;
+                case WarpState.CanWarp:
+                    StartCoroutine(_warpVFX.Wrap(SwitchToOtherRealm));
+                    break;
+                case WarpState.NoRealmToWarpTo:
+                    Notifications.Notifications.Add("You can't warp from this realm");
+                    break;
+                case WarpState.Blocked:
+                    Notifications.Notifications.Add("You can't warp right here. Something is blocking you on the other side");
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
-
-            if (IsOtherRealmBlocked(transform.position)) {
-                Notifications.Notifications.Add("You can't warp right here. Something is blocking you on the other side");
-                return;
-            }
-            StartCoroutine(_warpVFX.Wrap(SwitchToOtherRealm));
         }
 
         private static void SwitchToOtherRealm() => Realm.Realm.Current.CanWarpTo.SetActive();
@@ -43,6 +71,13 @@ namespace DualityGame.Player
             var point2 = position + Vector3.up * radius;
 
             return Physics.OverlapCapsuleNonAlloc(point1, point2, radius, _colliders, Realm.Realm.Current.CanWarpTo.LevelLayerMask) > 0;
+        }
+
+        public enum WarpState
+        {
+            CanWarp,
+            NoRealmToWarpTo,
+            Blocked,
         }
     }
 }

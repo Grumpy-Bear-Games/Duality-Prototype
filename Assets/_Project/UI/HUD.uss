@@ -31,7 +31,7 @@
 .IconFrame .Icon {
     background-position: bottom;
     transition-property: -unity-background-image-tint-color;
-    transition-duration: 1s;
+    transition-duration: 300ms;
 }
 
 .IconFrame .Hotkey {
@@ -41,7 +41,7 @@
     width: 100px;
     height: 100px;
     transition-property: scale;
-    transition-duration: 1s;
+    transition-duration: 300ms;
     transition-timing-function: ease-out-bounce;
 }
 
@@ -51,6 +51,6 @@
 
 .IconFrame.Disabled .Hotkey {
     scale: 0 0;
-    transition-duration: 0.5s;
+    transition-duration: 300ms;
     transition-timing-function: ease-in-cubic;
 }
