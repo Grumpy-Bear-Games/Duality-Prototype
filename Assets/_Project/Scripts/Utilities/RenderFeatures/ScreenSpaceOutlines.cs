@@ -7,7 +7,7 @@ namespace DualityGame.Utilities.RenderFeatures
     public class ScreenSpaceOutlines : ScriptableRendererFeature
     {
         private const string ViewSpaceNormalsTexture = "_ViewSpaceNormals";
-        private const string FaceIdTexture = "_ObjectId";
+        private const string FaceIdTexture = "_FaceId";
         private const string TextureName = "_ScreenSpaceOutlines";
 
         [Header("Edge Detection")]
