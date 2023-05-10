@@ -142,6 +142,7 @@ MonoBehaviour:
   _sceneGroups:
   - {fileID: -689672539294993293}
   - {fileID: 211755256069627557}
+  - {fileID: 3698217119191262082}
   - {fileID: 4240443740491785656}
   - {fileID: -8788006379408648299}
   - {fileID: -3024725603259824557}
@@ -205,6 +206,24 @@ MonoBehaviour:
   _manager: {fileID: 11400000}
   _scenes:
   - _scenePath: Assets/_Project/Scenes/NPC Showcase.unity
+  - _scenePath: Assets/_Project/Scenes/Player.unity
+--- !u!114 &3698217119191262082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
+  m_Name: Main Map
+  m_EditorClassIdentifier: 
+  <ObjectGuid>k__BackingField:
+    _data: eef46d417aba448f99bee7e7f28e262082e3a93be0b45233
+  _manager: {fileID: 11400000}
+  _scenes:
+  - _scenePath: Assets/_Project/Scenes/Main Map.unity
   - _scenePath: Assets/_Project/Scenes/Player.unity
 --- !u!114 &4240443740491785656
 MonoBehaviour:
