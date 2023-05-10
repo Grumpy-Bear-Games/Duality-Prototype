@@ -1,6 +1,5 @@
 :root {
     --fade-duration: 0.2s;
-    
     position: absolute;
     left: 0;
     top: 0;
@@ -9,12 +8,12 @@
     align-items: center;
     justify-content: flex-end;
     -unity-font-definition: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
-    font-size: 22px;
+    font-size: 32px;
     color: rgb(0, 0, 0);
 }
 
 #DialogFrame {
-    width: 80%;
+    width: 90%;
     height: auto;
     align-items: stretch;
     min-height: 40%;
@@ -68,7 +67,6 @@ DialogOption Button {
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
     color: rgb(0, 0, 0);
-    font-size: 22px;
     -unity-text-align: upper-left;
 }
 
