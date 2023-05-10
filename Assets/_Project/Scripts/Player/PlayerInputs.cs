@@ -5,36 +5,36 @@ namespace DualityGame.Player
 {
 	public class PlayerInputs : MonoBehaviour
 	{
-		[Header("Movement Settings")]
-		public bool _analogMovement;
-
-		public Vector2 Move
+		[SerializeField] private InputActionReference _moveAction;
+		[SerializeField] private InputActionReference _jumpAction;
+		[SerializeField] private InputActionReference _sprintAction;
+		
+		private void Awake()
 		{
-			get => enabled ? _move : Vector2.zero;
-			private set => _move = value;
+			_moveAction.action.performed += context => Move = context.ReadValue<Vector2>();
+			_moveAction.action.canceled += _ => Move = Vector2.zero;
+			
+			_sprintAction.action.performed += _ => Sprint = true;
+			_sprintAction.action.canceled += _ => Sprint = false;
 		}
 
-		public bool Jump
+		private void OnEnable()
 		{
-			get => enabled && _jump;
-			private set => _jump = value;
+			_moveAction.action.Enable();
+			_jumpAction.action.Enable();
+			_sprintAction.action.Enable();
 		}
 
-		public bool Sprint
+		private void OnDisable()
 		{
-			get => enabled && _sprint;
-			private set => _sprint = value;
+			_moveAction.action.Disable();
+			_jumpAction.action.Disable();
+			_sprintAction.action.Disable();
 		}
 
-		private Vector2 _move;
-		private bool _jump;
-		private bool _sprint;
-
-		public void OnMove(InputValue value) => Move = value.Get<Vector2>();
-
-		public void OnJump(InputValue value) => Jump = value.isPressed;
-
-		public void OnSprint(InputValue value) => Sprint = value.isPressed;
+		public Vector2 Move { get; private set; } = Vector2.zero;
+		public bool Jump => _jumpAction.action.triggered;
+		public bool Sprint { get; private set; }
 	}
 	
 }

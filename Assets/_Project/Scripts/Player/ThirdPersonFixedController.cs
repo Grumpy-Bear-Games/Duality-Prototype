@@ -1,13 +1,10 @@
-﻿using Games.GrumpyBear.Core.SaveSystem;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
-
 
 namespace DualityGame.Player
 {
 	[RequireComponent(typeof(CharacterController))]
-	[RequireComponent(typeof(PlayerInput))]
+	[RequireComponent(typeof(PlayerInputs))]
 	public class ThirdPersonFixedController : MonoBehaviour
 	{
 		[Header("Player")]
@@ -86,14 +83,13 @@ namespace DualityGame.Player
 			var currentHorizontalSpeed = new Vector3(velocity.x, 0.0f, velocity.z).magnitude;
 
 			const float speedOffset = 0.1f;
-			var inputMagnitude = _input._analogMovement ? _input.Move.magnitude : 1f;
 
 			// accelerate or decelerate to target speed
 			if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
 			{
 				// creates curved result rather than a linear one giving a more organic speed change
 				// note T in Lerp is clamped, so we don't need to clamp our speed
-				_speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
+				_speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed, Time.deltaTime * SpeedChangeRate);
 
 				// round speed to 3 decimal places
 				_speed = Mathf.Round(_speed * 1000f) / 1000f;
