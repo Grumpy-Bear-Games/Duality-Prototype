@@ -12,15 +12,23 @@ namespace DualityGame.Player
     {
         private static readonly Observable<WarpState> _warpState = new();
         public static IReadonlyObservable<WarpState> State => _warpState;
-        
 
+
+        [SerializeField] private InputActionReference _warpAction;
         [Header("VFX")]
         [SerializeField] private ScreenFader _warpVFX;
         
         private CharacterController _controller;
         private readonly Collider[] _colliders = new Collider[1];
 
-        private void Awake() => _controller = GetComponent<CharacterController>();
+        private void Awake()
+        {
+            _controller = GetComponent<CharacterController>();
+            _warpAction.action.performed += _ => Warp();
+        }
+
+        private void OnEnable() => _warpAction.action.Enable();
+        private void OnDisable() => _warpAction.action.Disable();
 
         private void Update() => UpdateWarpState();
 
@@ -41,8 +49,7 @@ namespace DualityGame.Player
             _warpState.Set(WarpState.CanWarp);
         }
 
-        [UsedImplicitly]
-        private void OnWarp(InputValue value)
+        private void Warp()
         {
             if (!enabled) return;
 
