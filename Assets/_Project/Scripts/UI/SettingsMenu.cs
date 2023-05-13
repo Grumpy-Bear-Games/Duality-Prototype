@@ -1,4 +1,5 @@
-﻿using Games.GrumpyBear.Core.Settings;
+﻿using System;
+using Games.GrumpyBear.Core.Settings;
 using Games.GrumpyBear.Core.Settings.UIElements;
 using Games.GrumpyBear.FMOD.Utilities;
 using Games.GrumpyBear.FMOD.Utilities.UIElements;
@@ -15,14 +16,12 @@ namespace DualityGame.UI
         [SerializeField] private VCAVolumePreference _sfxVolumePreference;
         [SerializeField] private VCAVolumePreference _musicVolumePreference;
 
-        private MainMenu _mainMenu;
+        public event Action OnHide;
         
         private VisualElement _frame;
 
         private void Awake()
         {
-            _mainMenu = GetComponent<MainMenu>();
-
             var root = GetComponent<UIDocument>().rootVisualElement;
 
             _frame = root.Q<VisualElement>("SettingsMenu");
@@ -45,7 +44,7 @@ namespace DualityGame.UI
         private void BackButtonClicked()
         {
             Hide();
-            _mainMenu.Show();
+            OnHide?.Invoke();
         }
 
         public void Show() => _frame.RemoveFromClassList("Hide");

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
 namespace DualityGame.UI
@@ -112,10 +113,36 @@ namespace DualityGame.UI
             _cancelButton.AddToClassList(CancelButtonUssClassName);
             _cancelButton.clicked += OnCancelButtonClicked;
             buttons.Add(_cancelButton);
+            
+            _confirmButton.RegisterCallback<NavigationMoveEvent>(evt =>
+            {
+                switch (evt.direction)
+                {
+                    case NavigationMoveEvent.Direction.Right:
+                    case NavigationMoveEvent.Direction.Left:
+                        _cancelButton.Focus();
+                        break;
+                }
+                evt.PreventDefault();
+            });
+            
+            _cancelButton.RegisterCallback<NavigationMoveEvent>(evt =>
+            {
+                switch (evt.direction)
+                {
+                    case NavigationMoveEvent.Direction.Right:
+                    case NavigationMoveEvent.Direction.Left:
+                        _confirmButton.Focus();
+                        break;
+                }
+                evt.PreventDefault();
+            });
         }
 
         public void Show()
         {
+            FocusHelper.Push();
+            
             style.display = DisplayStyle.Flex;
             switch (_focusOnShowOnShow)
             {
@@ -140,6 +167,7 @@ namespace DualityGame.UI
                     break;
             }
             OnCancel?.Invoke();
+            FocusHelper.Pop();
         }
 
         private void OnConfirmButtonClicked()

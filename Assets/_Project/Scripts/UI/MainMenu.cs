@@ -26,8 +26,16 @@ namespace DualityGame.UI
             {
                 CoroutineRunner.Run(_screenFader.Wrap(_gameSession.NewGame()));
             };
+
+            _settingsMenu.OnHide += () =>
+            {
+                Show();
+                FocusHelper.Pop();
+            };
+
             _frame.Q<Button>("SettingsButton").clicked += () =>
             {
+                FocusHelper.Push();
                 Hide();
                 _settingsMenu.Show();
             };
@@ -41,17 +49,8 @@ namespace DualityGame.UI
             var confirmationDialog = root.Q<ConfirmationDialog>();
             confirmationDialog.Hide();
             confirmationDialog.OnConfirm += ExitGame;
-            confirmationDialog.OnCancel += () =>
-            {
-                _frame.Query<Button>().ForEach(b => b.focusable = true);
-                _frame.Q<Button>("QuitButton").Focus();
-            };
 
-            _frame.Q<Button>("QuitButton").clicked += () =>
-            {
-                _frame.Query<Button>().ForEach(b=> b.focusable = false);
-                confirmationDialog.Show();
-            };
+            _frame.Q<Button>("QuitButton").clicked += confirmationDialog.Show;
         }
 
         private void Start() => _frame.Q<Button>(_gameSession.HasSaveFile ? "ContinueButton" : "NewGameButton").Focus();
