@@ -895,6 +895,7 @@ GameObject:
   - component: {fileID: 489906814}
   - component: {fileID: 489906816}
   - component: {fileID: 489906817}
+  - component: {fileID: 489906818}
   m_Layer: 6
   m_Name: Heaven
   m_TagString: Untagged
@@ -978,6 +979,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097f47eb142d4907ade74fbc7ba16360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &489906818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489906812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d71666b4e1b93545bd01d1bffc0bdf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realm: {fileID: 11400000, guid: 6e2678d65c1d2e046b0cb3fb66e5bb67, type: 2}
+  _skyboxSettings: {fileID: 11400000, guid: 1f439bec643cc8d41a39428d41f8b27e, type: 2}
 --- !u!4 &494948995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4829019357510248425, guid: e1ff1488f6d62ac40b29c82397aea4a5,
@@ -990,7 +1005,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh69934
+  m_Name: pb_Mesh32336
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1309,50 +1324,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 18497162}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &740850227
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 740850229}
-  - component: {fileID: 740850228}
-  m_Layer: 0
-  m_Name: Skybox Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &740850228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740850227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d71666b4e1b93545bd01d1bffc0bdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &740850229
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740850227}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871150934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1336,7 @@ GameObject:
   - component: {fileID: 871150938}
   - component: {fileID: 871150937}
   - component: {fileID: 871150939}
+  - component: {fileID: 871150940}
   m_Layer: 7
   m_Name: Hell
   m_TagString: Untagged
@@ -1448,6 +1420,20 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: e252e94a045dc9248b9b4ee9a08aa7ae, type: 2}
+--- !u!114 &871150940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871150934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d71666b4e1b93545bd01d1bffc0bdf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realm: {fileID: 11400000, guid: b4d6229eae5dd0c41b7a1171b0265464, type: 2}
+  _skyboxSettings: {fileID: 11400000, guid: d2c66cb1c25e0ad41992f0e8593819c8, type: 2}
 --- !u!4 &955025690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7134952189839055162, guid: d7de6d8f1f3f8fb419aee108b0703da2,
