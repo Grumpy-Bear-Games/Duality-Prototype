@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 855071986495757553}
   - component: {fileID: 855071986495757550}
   - component: {fileID: 855071986495757549}
-  - component: {fileID: 855071986495757546}
   - component: {fileID: 9105734120470650260}
   m_Layer: 6
   m_Name: Pants
@@ -119,7 +118,7 @@ Transform:
   - {fileID: 855071985501128512}
   - {fileID: 5632469667523812202}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &855071986495757550
 BoxCollider:
@@ -156,18 +155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemType: {fileID: 11400000, guid: c3b5bed83a023a54c92812e3df55c16e, type: 2}
   _promptOffset: {x: 0, y: 1.5, z: 0}
---- !u!114 &855071986495757546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855071986495757552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097f47eb142d4907ade74fbc7ba16360, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9105734120470650260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blob Shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4084919250645490479, guid: aeb1ddf6dc21a4c43952d7a21701cf71,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

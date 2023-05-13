@@ -6,6 +6,8 @@ namespace DualityGame.Realm
 {
     public class RealmVisible : MonoBehaviour
     {
+        [SerializeField] private Realm _realm;
+        
         private Renderer[] _renderers;
         private Volume[] _volumes;
         private DecalProjector[] _decalProjectors;
@@ -23,10 +25,19 @@ namespace DualityGame.Realm
         private void OnChangeRealm(Realm realm)
         {
             if (realm == null) return;
-            var visible = realm.LevelLayer == gameObject.layer;
+            var visible = realm == _realm;
             foreach (var renderer in _renderers) renderer.enabled = visible;
             foreach (var volume in _volumes) volume.enabled = visible;
             foreach (var decalProjector in _decalProjectors) decalProjector.enabled = visible;
         }
+        
+        #if UNITY_EDITOR
+        private void Reset() => _realm = Realm.FromLayer(gameObject.layer);
+
+        public static class Fields
+        {
+            public static string Realm = nameof(_realm);
+        }
+        #endif
     }
 }

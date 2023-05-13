@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 24.800001, y: 24.800001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &855071986495757552
@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 855071986495757553}
   - component: {fileID: 855071986495757550}
   - component: {fileID: 855071986495757549}
-  - component: {fileID: 855071986495757546}
   - component: {fileID: 9105734120470650260}
   m_Layer: 6
   m_Name: Standard
@@ -156,18 +155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemType: {fileID: 11400000, guid: a16ab51e0b31ce148be0d0ae7c794271, type: 2}
   _promptOffset: {x: 0, y: 1.5, z: 0}
---- !u!114 &855071986495757546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855071986495757552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097f47eb142d4907ade74fbc7ba16360, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9105734120470650260
 MonoBehaviour:
   m_ObjectHideFlags: 0

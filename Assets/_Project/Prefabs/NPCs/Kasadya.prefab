@@ -164,7 +164,6 @@ GameObject:
   - component: {fileID: 8570655007339115322}
   - component: {fileID: 8570655007339115323}
   - component: {fileID: 8570655007339115327}
-  - component: {fileID: 8570655007339115324}
   m_Layer: 7
   m_Name: Kasadya
   m_TagString: Untagged
@@ -274,18 +273,6 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 0
   m_Center: {x: 0, y: 0.8, z: 0.3}
---- !u!114 &8570655007339115324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8570655007339115321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097f47eb142d4907ade74fbc7ba16360, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5172556318793223233
 PrefabInstance:
   m_ObjectHideFlags: 0
