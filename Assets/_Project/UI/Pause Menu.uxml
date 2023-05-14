@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="SettingsMenu" src="project://database/Assets/_Project/UI/SettingsMenu.uxml?fileID=9197481963319205126&amp;guid=bc2337f28f6096d478b569029447dee2&amp;type=3#SettingsMenu" />
+    <Style src="project://database/Assets/_Project/UI/Main%20Menu.uss?fileID=7433441132597879392&amp;guid=2707e98aaf5ca9c4a9802dd0f7179795&amp;type=3#Main Menu" />
+    <ui:VisualElement name="PauseMenu">
+        <ui:Button text="Continue" display-tooltip-when-elided="true" name="ContinueButton" />
+        <ui:Button text="Settings" display-tooltip-when-elided="true" name="SettingsButton" />
+        <ui:Button text="Exit to main menu" display-tooltip-when-elided="true" name="ExitToMainMenuButton" />
+        <ui:Button text="Quit game" display-tooltip-when-elided="true" name="QuitButton" />
+    </ui:VisualElement>
+    <ui:Instance template="SettingsMenu" name="SettingsMenu" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; visibility: visible;" />
+    <DualityGame.UI.ConfirmationDialog header="Really quit?" confirm-button="Quit" cancel-button="Back" auto-hide="Always" focus-on-show="Cancel" style="visibility: visible;" />
+</ui:UXML>
