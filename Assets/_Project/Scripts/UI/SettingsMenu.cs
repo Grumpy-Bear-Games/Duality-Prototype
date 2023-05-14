@@ -38,8 +38,6 @@ namespace DualityGame.UI
             videoSettings.Q<VideoSettingsControl>("Quality").VideoSettings = _videoSettings;
 
             root.Q<Button>("BackButton").clicked += BackButtonClicked;
-            
-            Hide();
         }
 
         private void BackButtonClicked()
@@ -50,10 +48,10 @@ namespace DualityGame.UI
 
         public void Show()
         {
-            _frame.RemoveFromClassList("Hide");
+            _frame.AddToClassList("Shown");
             _frame.Q<VisualElement>("MasterVolume").Q<Slider>().Focus();
         }
 
-        public void Hide() => _frame.AddToClassList("Hide");
+        public void Hide() => _frame.RemoveFromClassList("Shown");
     }
 }

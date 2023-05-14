@@ -16,10 +16,9 @@ namespace DualityGame.UI
         [SerializeField] private SceneGroup _mainMenuSceneGroup;
         [SerializeField] private ScreenFader _screenFader;
 
-        private VisualElement _frame;
-
-        private SettingsMenu _settingsMenu;
         private VisualElement _root;
+        private VisualElement _frame;
+        private SettingsMenu _settingsMenu;
 
         private void Awake()
         {
@@ -66,11 +65,11 @@ namespace DualityGame.UI
             });
         }
 
-        private void Hide() => _frame.AddToClassList("Hide");
+        private void Hide() => _frame.RemoveFromClassList("Shown");
 
         private void Show()
         {
-            _frame.RemoveFromClassList("Hide");
+            _frame.AddToClassList("Shown");
             _frame.Q<Button>("ContinueButton").Focus();
         }
 

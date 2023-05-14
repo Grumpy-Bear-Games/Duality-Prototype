@@ -56,9 +56,9 @@ namespace DualityGame.UI
 
         private void Start() => _frame.Q<Button>(_gameSession.HasSaveFile ? "ContinueButton" : "NewGameButton").Focus();
 
-        public void Hide() => _frame.AddToClassList("Hide");
+        private void Hide() => _frame.RemoveFromClassList("Shown");
 
-        public void Show() => _frame.RemoveFromClassList("Hide");
+        private void Show() => _frame.AddToClassList("Shown");
 
         private void ExitGame()
         {
