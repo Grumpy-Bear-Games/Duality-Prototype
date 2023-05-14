@@ -24,11 +24,13 @@ namespace DualityGame.Player
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
-            _warpAction.action.performed += _ => Warp();
+            _warpAction.action.performed += OnWarp;
         }
 
         private void OnEnable() => _warpAction.action.Enable();
         private void OnDisable() => _warpAction.action.Disable();
+
+        private void OnDestroy() => _warpAction.action.performed -= OnWarp;
 
         private void Update() => UpdateWarpState();
 
@@ -49,7 +51,7 @@ namespace DualityGame.Player
             _warpState.Set(WarpState.CanWarp);
         }
 
-        private void Warp()
+        private void OnWarp(InputAction.CallbackContext callbackContext)
         {
             if (!enabled) return;
 
