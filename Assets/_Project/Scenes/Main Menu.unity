@@ -154,6 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneGroup: {fileID: -689672539294993293, guid: 416df4eeba7a8f4499bee7e7f28e2620,
     type: 2}
+  _afterLoad:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &263962392
 Transform:
   m_ObjectHideFlags: 0
@@ -181,6 +184,7 @@ GameObject:
   - component: {fileID: 1223493159}
   - component: {fileID: 1223493158}
   - component: {fileID: 1223493157}
+  - component: {fileID: 1223493161}
   m_Layer: 0
   m_Name: Main Menu
   m_TagString: Untagged
@@ -253,3 +257,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1223493161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223493156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23d767baca1401692c5a21ee763189f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onAwake:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: b335d7dbec2185e4ab930dc8e3a2aa32, type: 2}
+        m_TargetAssemblyTypeName: Games.GrumpyBear.Core.Observables.ScriptableObjects.GlobalStateT`1[[DualityGame.Realm.Realm,
+          DualityGame
+        m_MethodName: SetActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
