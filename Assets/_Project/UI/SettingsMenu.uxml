@@ -1,14 +1,14 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/_Project/UI/SettingsMenu.uss?fileID=7433441132597879392&amp;guid=ff503f10be5119e4e883af95ae71d5c6&amp;type=3#SettingsMenu" />
-    <ui:VisualElement name="Frame" style="width: 40%;">
+    <ui:VisualElement name="Frame" class="settings-menu__frame menu__frame">
         <ui:VisualElement name="AudioSettings">
-            <ui:Label tabindex="-1" text="Audio Settings" display-tooltip-when-elided="true" class="SectionHeader" />
+            <ui:Label tabindex="-1" text="Audio Settings" display-tooltip-when-elided="true" class="settings-menu__section-header" />
             <Games.GrumpyBear.FMOD.Utilities.UIElements.VolumeSlider label="Master" name="MasterVolume" />
             <Games.GrumpyBear.FMOD.Utilities.UIElements.VolumeSlider label="SFX" name="SFXVolume"/>
             <Games.GrumpyBear.FMOD.Utilities.UIElements.VolumeSlider label="Music" name="MusicVolume"/>
         </ui:VisualElement>
         <ui:VisualElement name="VideoSettings" style="margin-top: 50px;">
-            <ui:Label tabindex="-1" text="Video Settings" display-tooltip-when-elided="true" class="SectionHeader" />
+            <ui:Label tabindex="-1" text="Video Settings" display-tooltip-when-elided="true" class="settings-menu__section-header" />
             <Games.GrumpyBear.Core.Settings.UIElements.FullscreenToggle name="Fullscreen"/>
             <Games.GrumpyBear.Core.Settings.UIElements.ResolutionDropdown name="Resolution"/>
             <Games.GrumpyBear.Core.Settings.UIElements.QualityDropdown name="Quality" />

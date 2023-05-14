@@ -2,11 +2,12 @@
     <ui:Template name="SettingsMenu" src="project://database/Assets/_Project/UI/SettingsMenu.uxml?fileID=9197481963319205126&amp;guid=bc2337f28f6096d478b569029447dee2&amp;type=3#SettingsMenu" />
     <Style src="project://database/Assets/_Project/UI/Main%20Menu.uss?fileID=7433441132597879392&amp;guid=2707e98aaf5ca9c4a9802dd0f7179795&amp;type=3#Main Menu" />
     <Style src="project://database/Assets/_Project/UI/FadeAnimation.uss?fileID=7433441132597879392&amp;guid=7aaf1c68f8004960bbecbce856a98e33&amp;type=3#FadeAnimation" />
-    <ui:VisualElement name="PauseMenu" class="FadeAnimation">
+    <ui:VisualElement name="Background" class="Fullscreen ModalBackground FadeAnimation" />
+    <ui:VisualElement name="PauseMenu" class="FadeAnimation menu__frame">
         <ui:Button text="Continue" display-tooltip-when-elided="true" name="ContinueButton" />
         <ui:Button text="Settings" display-tooltip-when-elided="true" name="SettingsButton" />
-        <ui:Button text="Exit to main menu" display-tooltip-when-elided="true" name="ExitToMainMenuButton" />
+        <ui:Button text="Main menu" display-tooltip-when-elided="true" name="ExitToMainMenuButton" />
         <ui:Button text="Quit game" display-tooltip-when-elided="true" name="QuitButton" />
     </ui:VisualElement>
-    <ui:Instance template="SettingsMenu" name="SettingsMenu" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; visibility: visible;" class="FadeAnimation"/>
+    <ui:Instance template="SettingsMenu" name="SettingsMenu" class="FadeAnimation Fullscreen" />
 </ui:UXML>

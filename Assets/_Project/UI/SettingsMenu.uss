@@ -5,37 +5,12 @@
     align-items: center;
 }
 
-#SettingsMenu {
-    background-color: rgba(0, 0, 0, 0.51);
-    border-radius: 30px;
-    padding: 30px 50px;
-    color: rgb(255, 255, 255);
+.settings-menu__frame {
+    width: 40%;
 }
 
-#SettingsMenu .SectionHeader {
+.settings-menu__section-header {
     -unity-text-align: upper-center;
     font-size: 46px;
     -unity-font-style: bold;
-}
-
-.unity-base-field__label {
-    width: 200px;
-}
-
-.unity-base-slider__dragger {
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Button_Diamond.png?fileID=21300000&guid=626315e6d91b91a46b88765b0e16ccfb&type=3#UI_Button_Diamond');
-    -unity-background-scale-mode: stretch-to-fill;
-    border-width: 0;
-    background-color: rgba(255, 255, 255, 0);
-    width: 48px;
-    height: 48px;
-    margin-top: -24px;
-}
-
-.unity-base-slider__tracker {
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Button_ThinLine.png?fileID=21300000&guid=affc4139935a04849b5ad4c7ab4903af&type=3#UI_Button_ThinLine');
-    background-color: rgba(0, 0, 0, 0);
-    border-width: 0;
-    height: 16px;
-    margin-top: -8px;
 }
