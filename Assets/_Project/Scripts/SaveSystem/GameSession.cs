@@ -12,7 +12,7 @@ namespace DualityGame.SaveSystem
     public class GameSession : ScriptableObject
     {
         [SerializeField] private SceneGroup _firstSceneGroup;
-        
+
         private const string SaveFileName = "Game";
 
         private SceneGroup _sceneGroup;
@@ -23,7 +23,7 @@ namespace DualityGame.SaveSystem
             FileSystem.Delete(SaveFileName);
             ClearSession();
             
-            yield return _sceneGroup.Load_CO();
+            yield return _firstSceneGroup.Load_CO();
             SpawnController.Instance.MoveToSpawnPoint(null);
         }
 
@@ -49,10 +49,9 @@ namespace DualityGame.SaveSystem
 
         public IEnumerator MoveToSpawnPoint(SceneGroup sceneGroup, string spawnPointID)
         {
-            _sceneGroup = sceneGroup;
             CaptureState();
             
-            yield return _sceneGroup.Load_CO();
+            yield return sceneGroup.Load_CO();
             RestoreState();
             SpawnController.Instance.MoveToSpawnPoint(spawnPointID);
         }
@@ -102,5 +101,11 @@ namespace DualityGame.SaveSystem
                 _entityStates = serializableSession.EntityStates;
             }
         }
+
+        private void OnEnable() => SceneManager.OnSceneGroupChanged += OnSceneGroupChanged;
+
+        private void OnDisable() => SceneManager.OnSceneGroupChanged -= OnSceneGroupChanged;
+
+        private void OnSceneGroupChanged(SceneGroup sceneGroup) => _sceneGroup = sceneGroup;
     }
 }
