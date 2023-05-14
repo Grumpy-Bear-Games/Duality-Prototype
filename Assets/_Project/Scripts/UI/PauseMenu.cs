@@ -77,6 +77,7 @@ namespace DualityGame.UI
         {
             ConfirmationDialog.ShowConfirm(_root, "Really Quit?", "Quit", "Back", () =>
             {
+                _gameSession.SaveGame();
                 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.ExitPlaymode();
                 #else
