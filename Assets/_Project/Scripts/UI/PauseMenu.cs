@@ -1,4 +1,3 @@
-using System;
 using DualityGame.Core;
 using DualityGame.SaveSystem;
 using DualityGame.VFX;
@@ -20,13 +19,15 @@ namespace DualityGame.UI
         private VisualElement _frame;
 
         private SettingsMenu _settingsMenu;
+        private VisualElement _root;
+
         private void Awake()
         {
             _settingsMenu = GetComponent<SettingsMenu>();
 
-            var root = GetComponent<UIDocument>().rootVisualElement;
+            _root = GetComponent<UIDocument>().rootVisualElement;
 
-            _frame = root.Q<VisualElement>("PauseMenu");
+            _frame = _root.Q<VisualElement>("PauseMenu");
 
             _settingsMenu.OnHide += () =>
             {
@@ -37,12 +38,7 @@ namespace DualityGame.UI
             _frame.Q<Button>("ContinueButton").clicked += Continue;
             _frame.Q<Button>("SettingsButton").clicked += Settings;
             _frame.Q<Button>("ExitToMainMenuButton").clicked += ExitToMainMenu;
-
-            var confirmationDialog = root.Q<ConfirmationDialog>();
-            confirmationDialog.Hide();
-            confirmationDialog.OnConfirm += ExitGame;
-
-            _frame.Q<Button>("QuitButton").clicked += confirmationDialog.Show;
+            _frame.Q<Button>("QuitButton").clicked += ExitGame;
             _frame.RegisterCallback<NavigationCancelEvent>( _ => Continue());
 
             Hide();
@@ -63,8 +59,11 @@ namespace DualityGame.UI
 
         private void ExitToMainMenu()
         {
-            _gameSession.SaveGame();
-            CoroutineRunner.Run(_screenFader.Wrap(_mainMenuSceneGroup.Load_CO()));
+            ConfirmationDialog.ShowConfirm(_root, "Return to main menu?", "OK", "Back", () =>
+            {
+                _gameSession.SaveGame();
+                CoroutineRunner.Run(_screenFader.Wrap(_mainMenuSceneGroup.Load_CO()));
+            });
         }
 
         private void Hide() => _frame.AddToClassList("Hide");
@@ -77,12 +76,14 @@ namespace DualityGame.UI
 
         private void ExitGame()
         {
-            _gameSession.SaveGame();
-            #if UNITY_EDITOR
-            UnityEditor.EditorApplication.ExitPlaymode();
-            #else
-            Application.Quit();
-            #endif
+            ConfirmationDialog.ShowConfirm(_root, "Really Quit?", "Quit", "Back", () =>
+            {
+                #if UNITY_EDITOR
+                UnityEditor.EditorApplication.ExitPlaymode();
+                #else
+                Application.Quit();
+                #endif
+            });
         }
 
         private void OnEnable() => Show();

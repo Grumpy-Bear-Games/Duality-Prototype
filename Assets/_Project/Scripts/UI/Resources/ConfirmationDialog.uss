@@ -19,14 +19,8 @@
     border-right-width: 1px;
     border-top-width: 1px;
     border-bottom-width: 1px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .confirmation-dialog__header {
@@ -34,6 +28,7 @@
 
 .confirmation-dialog__buttons {
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .confirmation-dialog__confirm-button {

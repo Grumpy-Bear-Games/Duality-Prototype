@@ -2,82 +2,17 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
+using Object = UnityEngine.Object;
 
 namespace DualityGame.UI
 {
     public class ConfirmationDialog : VisualElement
     {
-        private readonly Label _headerLabel;
         private readonly Button _confirmButton;
         private readonly Button _cancelButton;
-
-        public new class UxmlFactory : UxmlFactory<ConfirmationDialog, UxmlTraits> { }
-
-        public new class UxmlTraits : VisualElement.UxmlTraits
-        {
-            private readonly UxmlStringAttributeDescription headerAttr = new()
-            {
-                name = "header", defaultValue = "Confirm?"
-            };
-
-            private readonly UxmlStringAttributeDescription confirmButtonAttr = new()
-            {
-                name = "confirm-button", defaultValue = "Confirm"
-            };
-
-            private readonly UxmlStringAttributeDescription cancelButtonAttr = new()
-            {
-                name = "cancel-button", defaultValue = "Cancel"
-            };
-
-            private readonly UxmlEnumAttributeDescription<AutoHide> autoHideAttr = new()
-            {
-                name = "auto-hide", defaultValue = AutoHide.Never
-            };
-
-
-            private readonly UxmlEnumAttributeDescription<FocusOnShow> focusOnShowAttr = new()
-            {
-                name = "focus-on-show", defaultValue = FocusOnShow.Confirm
-            };
-
-            public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
-            {
-                base.Init(ve, bag, cc);
-
-                if (ve is not ConfirmationDialog confirmationDialog) return;
-                
-                confirmationDialog.Header = headerAttr.GetValueFromBag(bag, cc);
-                confirmationDialog.ConfirmButtonText = confirmButtonAttr.GetValueFromBag(bag, cc);
-                confirmationDialog.CancelButtonText = cancelButtonAttr.GetValueFromBag(bag, cc);
-                confirmationDialog._autoHide = autoHideAttr.GetValueFromBag(bag, cc);
-                confirmationDialog._focusOnShowOnShow = focusOnShowAttr.GetValueFromBag(bag, cc);
-            }
-        }
-
-        public string Header
-        {
-            get => _headerLabel.text;
-            set => _headerLabel.text = value;
-        }
-
-        public string ConfirmButtonText
-        {
-            get => _confirmButton.text;
-            set => _confirmButton.text = value;
-        }
-
-        public string CancelButtonText
-        {
-            get => _cancelButton.text;
-            set => _cancelButton.text = value;
-        }
-
-        private AutoHide _autoHide;
-        private FocusOnShow _focusOnShowOnShow;
+        private readonly FocusOnShow _focusOnShow;
 
         public event Action OnConfirm;
-        public event Action OnCancel;
         
         private const string StyleResource = "ConfirmationDialog";
         private const string USSClassNameBase = "confirmation-dialog";
@@ -87,7 +22,17 @@ namespace DualityGame.UI
         private const string ConfirmButtonUssClassName = USSClassNameBase + "__confirm-button";
         private const string CancelButtonUssClassName = USSClassNameBase + "__cancel-button";
 
-        public ConfirmationDialog()
+        public static void ShowConfirm(VisualElement root,
+            string header, string confirmLabel, string cancelLabel = "Back",
+            Action onConfirm = null, FocusOnShow focusOnShow = FocusOnShow.Cancel)
+        {
+            var confirm = new ConfirmationDialog(header, confirmLabel, cancelLabel, focusOnShow);
+            confirm.OnConfirm = onConfirm;
+            root.Add(confirm);
+            confirm.Show();
+        }
+
+        private ConfirmationDialog(string header, string confirmLabel, string cancelLabel, FocusOnShow focusOnShow)
         {
             styleSheets.Add(Resources.Load<StyleSheet>(StyleResource));
             AddToClassList(USSClassNameBase);
@@ -96,24 +41,24 @@ namespace DualityGame.UI
             frame.AddToClassList(FrameUssClassName);
             hierarchy.Add(frame);
             
-            frame.RegisterCallback<NavigationCancelEvent>(_ => OnCancelButtonClicked());
+            frame.RegisterCallback<NavigationCancelEvent>(_ => Close());
 
-            _headerLabel = new Label() { name = "Header" };
-            _headerLabel.AddToClassList(HeaderUssClassName);
-            frame.Add(_headerLabel);
+            var headerLabel = new Label() { name = "Header", text = header};
+            headerLabel.AddToClassList(HeaderUssClassName);
+            frame.Add(headerLabel);
 
             var buttons = new VisualElement();
             buttons.AddToClassList(ButtonsUssClassName);
             frame.Add(buttons);
             
-            _confirmButton = new Button() { name = "ConfirmButton" } ;
+            _confirmButton = new Button() { name = "ConfirmButton", text = confirmLabel} ;
             _confirmButton.AddToClassList(ConfirmButtonUssClassName);
             _confirmButton.clicked += OnConfirmButtonClicked;
             buttons.Add(_confirmButton);
             
-            _cancelButton = new Button() { name = "CancelButton" };
+            _cancelButton = new Button() { name = "CancelButton", text = cancelLabel};
             _cancelButton.AddToClassList(CancelButtonUssClassName);
-            _cancelButton.clicked += OnCancelButtonClicked;
+            _cancelButton.clicked += Close;
             buttons.Add(_cancelButton);
             
             _confirmButton.RegisterCallback<NavigationMoveEvent>(evt =>
@@ -139,14 +84,17 @@ namespace DualityGame.UI
                 }
                 evt.PreventDefault();
             });
+            
+            _focusOnShow = focusOnShow;
         }
 
-        public void Show()
+        private void Show()
         {
             FocusHelper.Push();
+            BringToFront();
             
             style.display = DisplayStyle.Flex;
-            switch (_focusOnShowOnShow)
+            switch (_focusOnShow)
             {
                 case FocusOnShow.Confirm:
                     _confirmButton.Focus();
@@ -157,42 +105,20 @@ namespace DualityGame.UI
             }
         }
 
-        public void Hide() => style.display = DisplayStyle.None;
-
-        private void OnCancelButtonClicked()
+        private void Close()
         {
-            switch (_autoHide)
-            {
-                case AutoHide.OnCancel:
-                case AutoHide.Always:
-                    Hide();
-                    break;
-            }
-            OnCancel?.Invoke();
+            parent.Remove(this);
             FocusHelper.Pop();
         }
 
         private void OnConfirmButtonClicked()
         {
-            switch (_autoHide)
-            {
-                case AutoHide.Always:
-                    Hide();
-                    break;
-            }
+            Close();
             OnConfirm?.Invoke();
-        }
-
-        public enum AutoHide
-        {
-            Never,
-            OnCancel,
-            Always
         }
 
         public enum FocusOnShow
         {
-            None,
             Confirm,
             Cancel
         }

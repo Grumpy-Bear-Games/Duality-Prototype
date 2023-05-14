@@ -12,16 +12,10 @@ namespace DualityGame.UI
         public static Focusable GetFocusedElement()
         {
             var eventSystem = EventSystem.current;
-            if (eventSystem == null)
-            {
-                return null;
-            }
+            if (eventSystem == null) return null;
  
             var selectedGameObject = eventSystem.currentSelectedGameObject;
-            if (selectedGameObject == null)
-            {
-                return null;
-            }
+            if (selectedGameObject == null) return null;
    
             var panelEventHandler = selectedGameObject.GetComponent<PanelEventHandler>();
             return panelEventHandler != null ? panelEventHandler.panel.focusController.focusedElement : null;

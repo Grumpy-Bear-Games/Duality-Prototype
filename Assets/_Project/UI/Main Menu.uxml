@@ -8,5 +8,4 @@
         <ui:Button text="Quit" display-tooltip-when-elided="true" name="QuitButton" />
     </ui:VisualElement>
     <ui:Instance template="SettingsMenu" name="SettingsMenu" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;" />
-    <DualityGame.UI.ConfirmationDialog header="Really quit?" confirm-button="Quit" cancel-button="Back" auto-hide="Always" focus-on-show="Cancel" />
 </ui:UXML>

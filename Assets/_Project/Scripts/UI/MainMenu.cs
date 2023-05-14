@@ -15,13 +15,15 @@ namespace DualityGame.UI
         private VisualElement _frame;
 
         private SettingsMenu _settingsMenu;
+        private VisualElement _root;
+
         private void Awake()
         {
             _settingsMenu = GetComponent<SettingsMenu>();
 
-            var root = GetComponent<UIDocument>().rootVisualElement;
+            _root = GetComponent<UIDocument>().rootVisualElement;
 
-            _frame = root.Q<VisualElement>("MainMenu");
+            _frame = _root.Q<VisualElement>("MainMenu");
 
             var continueButton = _frame.Q<Button>("ContinueButton");
             continueButton.clicked += () => CoroutineRunner.Run(_screenFader.Wrap(_gameSession.LoadGame()));
@@ -48,12 +50,8 @@ namespace DualityGame.UI
                 _settingsMenu.Show();
             };
 
-            var confirmationDialog = root.Q<ConfirmationDialog>();
-            confirmationDialog.Hide();
-            confirmationDialog.OnConfirm += ExitGame;
-
-            _frame.Q<Button>("QuitButton").clicked += confirmationDialog.Show;
-            _frame.RegisterCallback<NavigationCancelEvent>(_ => confirmationDialog.Show());
+            _frame.Q<Button>("QuitButton").clicked += ExitGame;
+            _frame.RegisterCallback<NavigationCancelEvent>(_ => ExitGame());
         }
 
         private void Start() => _frame.Q<Button>(_gameSession.HasSaveFile ? "ContinueButton" : "NewGameButton").Focus();
@@ -62,13 +60,16 @@ namespace DualityGame.UI
 
         public void Show() => _frame.RemoveFromClassList("Hide");
 
-        private static void ExitGame()
+        private void ExitGame()
         {
-            #if UNITY_EDITOR
-            UnityEditor.EditorApplication.ExitPlaymode();
-            #else
-            Application.Quit();
-            #endif
+            ConfirmationDialog.ShowConfirm(_root, "Really Quit?", "Quit", "Back", () =>
+            {
+                #if UNITY_EDITOR
+                UnityEditor.EditorApplication.ExitPlaymode();
+                #else
+                Application.Quit();
+                #endif
+            });
         }
     }
 }
