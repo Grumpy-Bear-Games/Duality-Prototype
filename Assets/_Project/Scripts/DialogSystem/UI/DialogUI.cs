@@ -15,7 +15,7 @@ namespace DualityGame.DialogSystem.UI {
 		
 		[Header("Events")]
 		[FormerlySerializedAs("_onShow")][SerializeField] private UnityEvent _onDialogBegin;
-		[FormerlySerializedAs("_onHide")] [SerializeField] private UnityEvent _onDialogEnd;
+		[FormerlySerializedAs("_onHide")][SerializeField] private UnityEvent _onDialogEnd;
 		
 		private VisualElement _dialogFrame;
 		private VisualElement _actorPortrait;
