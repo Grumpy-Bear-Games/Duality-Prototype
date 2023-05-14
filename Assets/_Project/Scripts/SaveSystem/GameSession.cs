@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DualityGame.Core;
 using DualityGame.Player;
 using Games.GrumpyBear.Core.LevelManagement;
 using Games.GrumpyBear.Core.SaveSystem;
@@ -12,7 +13,8 @@ namespace DualityGame.SaveSystem
     public class GameSession : ScriptableObject
     {
         [SerializeField] private SceneGroup _firstSceneGroup;
-
+        [SerializeField] private GameState _firstGameState;
+        
         private const string SaveFileName = "Game";
 
         private SceneGroup _sceneGroup;
@@ -25,6 +27,7 @@ namespace DualityGame.SaveSystem
             
             yield return _firstSceneGroup.Load_CO();
             SpawnController.Instance.MoveToSpawnPoint(null);
+            _firstGameState.SetActive();
         }
 
         public IEnumerator LoadGame()
@@ -32,6 +35,7 @@ namespace DualityGame.SaveSystem
             LoadFromFile();
             yield return _sceneGroup.Load_CO();
             RestoreState();
+            _firstGameState.SetActive();
         }
 
         public void SaveGame()
