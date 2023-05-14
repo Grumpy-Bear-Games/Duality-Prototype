@@ -25,10 +25,25 @@ namespace DualityGame.Core
             foreach (var transitionHotkey in _transitionLookup.Keys)
             {
                 transitionHotkey.performed += OnHotkeyTriggered;
+            }
+        }
+
+        private void OnEnable()
+        {
+            foreach (var transitionHotkey in _transitionLookup.Keys)
+            {
                 transitionHotkey.Enable();
             }
         }
 
+        private void OnDisable()
+        {
+            foreach (var transitionHotkey in _transitionLookup.Keys)
+            {
+                transitionHotkey.Disable();
+            }
+        }
+        
         private void OnDestroy()
         {
             foreach (var transitionHotkey in _transitionLookup.Keys)

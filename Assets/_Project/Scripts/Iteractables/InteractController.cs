@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace DualityGame.Iteractables
@@ -9,11 +10,13 @@ namespace DualityGame.Iteractables
         [SerializeField] private float _radius = 3f;
         [SerializeField] private InteractableObservable _closestInteractable;
 
-        private void Awake() => _interactAction.action.performed += _ => _closestInteractable.Value?.Interact(gameObject);
-
+        private void Awake() => _interactAction.action.performed += OnInteract;
         private void OnEnable() => _interactAction.action.Enable();
         private void OnDisable() => _interactAction.action.Disable();
+        private void OnDestroy() => _interactAction.action.performed -= OnInteract;
 
+        private void OnInteract(InputAction.CallbackContext _) => _closestInteractable.Value?.Interact(gameObject);
+        
         private void FixedUpdate()
         {
             if (Realm.Realm.Current == null) return;
