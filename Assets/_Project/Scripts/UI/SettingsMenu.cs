@@ -25,6 +25,7 @@ namespace DualityGame.UI
             var root = GetComponent<UIDocument>().rootVisualElement;
 
             _frame = root.Q<VisualElement>("SettingsMenu");
+            _frame.RegisterCallback<NavigationCancelEvent>(_ => BackButtonClicked());
 
             var audioSettings = root.Q<VisualElement>("AudioSettings");
             audioSettings.Q<VolumeSlider>("MasterVolume").VolumePreference = _masterVolumePreference;
@@ -47,7 +48,11 @@ namespace DualityGame.UI
             OnHide?.Invoke();
         }
 
-        public void Show() => _frame.RemoveFromClassList("Hide");
+        public void Show()
+        {
+            _frame.RemoveFromClassList("Hide");
+            _frame.Q<VisualElement>("MasterVolume").Q<Slider>().Focus();
+        }
 
         public void Hide() => _frame.AddToClassList("Hide");
     }

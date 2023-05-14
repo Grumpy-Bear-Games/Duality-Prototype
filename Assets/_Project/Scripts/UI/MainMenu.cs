@@ -22,6 +22,14 @@ namespace DualityGame.UI
             var root = GetComponent<UIDocument>().rootVisualElement;
 
             _frame = root.Q<VisualElement>("MainMenu");
+
+            var continueButton = _frame.Q<Button>("ContinueButton");
+            continueButton.clicked += () => CoroutineRunner.Run(_screenFader.Wrap(_gameSession.LoadGame()));
+            if (!_gameSession.HasSaveFile)
+            {
+                continueButton.style.display = DisplayStyle.None;
+            }
+            
             _frame.Q<Button>("NewGameButton").clicked += () =>
             {
                 CoroutineRunner.Run(_screenFader.Wrap(_gameSession.NewGame()));
@@ -39,18 +47,13 @@ namespace DualityGame.UI
                 Hide();
                 _settingsMenu.Show();
             };
-            var continueButton = _frame.Q<Button>("ContinueButton");
-            continueButton.clicked += () => CoroutineRunner.Run(_screenFader.Wrap(_gameSession.LoadGame()));
-            if (!_gameSession.HasSaveFile)
-            {
-                continueButton.style.display = DisplayStyle.None;
-            }
 
             var confirmationDialog = root.Q<ConfirmationDialog>();
             confirmationDialog.Hide();
             confirmationDialog.OnConfirm += ExitGame;
 
             _frame.Q<Button>("QuitButton").clicked += confirmationDialog.Show;
+            _frame.RegisterCallback<NavigationCancelEvent>(_ => confirmationDialog.Show());
         }
 
         private void Start() => _frame.Q<Button>(_gameSession.HasSaveFile ? "ContinueButton" : "NewGameButton").Focus();

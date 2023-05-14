@@ -95,6 +95,8 @@ namespace DualityGame.UI
             var frame = new VisualElement() { name = "Frame" } ;
             frame.AddToClassList(FrameUssClassName);
             hierarchy.Add(frame);
+            
+            frame.RegisterCallback<NavigationCancelEvent>(_ => OnCancelButtonClicked());
 
             _headerLabel = new Label() { name = "Header" };
             _headerLabel.AddToClassList(HeaderUssClassName);
