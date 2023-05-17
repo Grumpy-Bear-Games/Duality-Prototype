@@ -14,7 +14,6 @@ namespace DualityGame.UI
 
         public event Action OnConfirm;
         
-        private const string StyleResource = "ConfirmationDialog";
         private const string USSClassNameBase = "confirmation-dialog";
         private const string FrameUssClassName = USSClassNameBase + "__frame";
         private const string HeaderUssClassName = USSClassNameBase + "__header";
@@ -34,7 +33,6 @@ namespace DualityGame.UI
 
         private ConfirmationDialog(string header, string confirmLabel, string cancelLabel, FocusOnShow focusOnShow)
         {
-            styleSheets.Add(Resources.Load<StyleSheet>(StyleResource));
             AddToClassList(USSClassNameBase);
             
             var frame = new VisualElement() { name = "Frame" } ;

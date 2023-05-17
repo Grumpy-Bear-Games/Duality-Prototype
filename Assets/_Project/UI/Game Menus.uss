@@ -22,14 +22,16 @@
     bottom: 0;
 }
 
-.game-menu__frame {
+.game-menu__frame,
+.confirmation-dialog__frame {
     background-color: var(--game_menu-frame-background);
     padding: 30px;
     color: var(--game_menu-control-color-focus);
     border-radius: 10px;
 }
 
-.game-menu__frame .unity-button {
+.game-menu__frame .unity-button,
+.confirmation-dialog__frame .unity-button{
     border-width: 0;
     background-color: var(--game_menu-button-background);
     color: var(--game_menu-control-color-blur);
@@ -37,7 +39,8 @@
     transition-timing-function: ease;
 }
 
-.game-menu__frame .unity-button:focus {
+.game-menu__frame .unity-button:focus,
+.confirmation-dialog__frame .unity-button:focus {
     border-width: 0;
     color: var(--game_menu-control-color-focus);
     scale: 1.1 1.1;
@@ -149,4 +152,32 @@
     -unity-text-align: upper-center;
     font-size: 128%;
     -unity-font-style: bold;
+}
+
+
+.confirmation-dialog {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--game_menu-modal-background);
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation-dialog__header {
+    -unity-font-style: bold;
+    margin-bottom: 50px;
+}
+
+.confirmation-dialog__buttons {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.confirmation-dialog__confirm-button {
+}
+
+.confirmation-dialog__cancel-button {
 }
