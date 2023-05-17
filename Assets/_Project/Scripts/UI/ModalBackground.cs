@@ -12,7 +12,7 @@ namespace DualityGame.UI
         private void Awake()
         {
             var root = GetComponent<UIDocument>().rootVisualElement;
-            _background = root.Q<VisualElement>(className: "ModalBackground");
+            _background = root.Q<VisualElement>(className: "game-menu__modal-background");
         }
 
         private void OnEnable() => _background.AddToClassList("Shown");
