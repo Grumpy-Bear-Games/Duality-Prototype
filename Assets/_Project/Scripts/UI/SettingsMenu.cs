@@ -33,9 +33,9 @@ namespace DualityGame.UI
             audioSettings.Q<VolumeSlider>("MusicVolume").VolumePreference = _musicVolumePreference;
             
             var videoSettings = root.Q<VisualElement>("VideoSettings");
-            videoSettings.Q<VideoSettingsControl>("Fullscreen").VideoSettings = _videoSettings;
-            videoSettings.Q<VideoSettingsControl>("Resolution").VideoSettings = _videoSettings;
-            videoSettings.Q<VideoSettingsControl>("Quality").VideoSettings = _videoSettings;
+            videoSettings.Q<FullscreenToggle>("Fullscreen").VideoSettings = _videoSettings;
+            videoSettings.Q<ResolutionDropdown>("Resolution").VideoSettings = _videoSettings;
+            videoSettings.Q<QualityDropdown>("Quality").VideoSettings = _videoSettings;
 
             root.Q<Button>("BackButton").clicked += BackButtonClicked;
         }

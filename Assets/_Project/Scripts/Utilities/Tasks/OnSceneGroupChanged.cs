@@ -14,12 +14,12 @@ namespace DualityGame.Utilities.Tasks{
 		}
 
 		//Called whenever the condition gets enabled.
-		protected override void OnEnable() => SceneManager.OnSceneGroupChanged += SceneGroupChanged;
+		protected override void OnEnable() => SceneManager.CurrentSceneGroup.OnChange += SceneGroupChanged;
 
 		private void SceneGroupChanged(SceneGroup sceneGroup) => _sceneGroupChanged = true;
 
 		//Called whenever the condition gets disabled.
-		protected override void OnDisable() => SceneManager.OnSceneGroupChanged -= SceneGroupChanged;
+		protected override void OnDisable() => SceneManager.CurrentSceneGroup.OnChange -= SceneGroupChanged;
 
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.

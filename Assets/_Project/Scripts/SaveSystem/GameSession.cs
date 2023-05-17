@@ -106,9 +106,9 @@ namespace DualityGame.SaveSystem
             }
         }
 
-        private void OnEnable() => SceneManager.OnSceneGroupChanged += OnSceneGroupChanged;
+        private void OnEnable() => SceneManager.CurrentSceneGroup.OnChange += OnSceneGroupChanged;
 
-        private void OnDisable() => SceneManager.OnSceneGroupChanged -= OnSceneGroupChanged;
+        private void OnDisable() => SceneManager.CurrentSceneGroup.OnChange -= OnSceneGroupChanged;
 
         private void OnSceneGroupChanged(SceneGroup sceneGroup) => _sceneGroup = sceneGroup;
     }
