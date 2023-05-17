@@ -1050,6 +1050,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Utility",
+            "id": "fa0422c4-5b09-4a96-a623-ae987851d9d9",
+            "actions": [
+                {
+                    "name": "Take Screenshot",
+                    "type": "Button",
+                    "id": "27114865-5b99-400c-9184-331e76805fea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5e6e784e-1bac-492f-ac3b-c1f24e7057bf",
+                    "path": "<Keyboard>/f12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Take Screenshot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
