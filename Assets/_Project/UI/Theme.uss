@@ -6,9 +6,67 @@
     --game_menu-frame-background: rgb(22, 32, 34);
     --game_menu-button-background: rgba(0, 0, 0, 0);
     --game_menu-slider-background: rgba(0, 0, 0, 0);
+    --game_menu-slider-background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Button_ThinLine.png?fileID=21300000&guid=affc4139935a04849b5ad4c7ab4903af&type=3#UI_Button_ThinLine');
+    --game_menu-dragger-background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Button_Diamond.png?fileID=21300000&guid=626315e6d91b91a46b88765b0e16ccfb&type=3#UI_Button_Diamond');
     --game_menu-toggle-checkmark-background: rgba(0, 0, 0, 0);
     --game_menu-dropdown-background: rgba(0, 0, 0, 0);
     --game_menu-modal-background: rgba(0, 0, 0, 0.51);
-    --game_menu-font: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
-    --game_menu-default-font_size: 36px;
+    --game_menu-font: url('project://database/Assets/_Project/Fonts/NovaFlatSlim-Bold%20SDF.asset?fileID=11400000&guid=063bc47a52fd46248a888e28c7a1f372&type=2#NovaFlatSlim-Bold SDF');
+    --game_menu-default-font_size: 38px;
+}
+
+
+
+.unity-base-dropdown .unity-base-dropdown__container-outer {
+    border-radius: 10px;
+    border-width: 0;
+}
+
+.unity-base-dropdown .unity-base-dropdown__container-inner {
+    background-color: var(--game_menu-frame-background);
+    color: var(--game_menu-control-color-focus);
+}
+
+.unity-base-dropdown .unity-repeat-button {
+    height: 36px;
+    width: 36px;
+    background-color: rgba(0, 0, 0, 0);
+    -unity-background-image-tint-color: var(--game_menu-control-color-focus);
+}
+
+.unity-base-dropdown .unity-base-dropdown__checkmark {
+    height: 36px;
+    width: 36px;
+    padding-right: 4px;
+    -unity-background-image-tint-color: var(--game_menu-control-color-focus);
+}
+
+.unity-base-dropdown #unity-low-button.unity-repeat-button {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.unity-base-dropdown #unity-high-button.unity-repeat-button {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.unity-base-dropdown .unity-base-slider__tracker {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.unity-base-dropdown .unity-base-slider__dragger {
+    left: 0;
+    width: 36px;
+}
+
+.unity-base-dropdown .unity-scroller--vertical {
+    width: 36px;
+}
+
+.unity-base-dropdown .unity-base-slider--vertical {
+    margin-top: 36px;
+    margin-bottom: 36px;
+    width: 36px;
 }

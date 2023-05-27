@@ -1,6 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/_Project/UI/Theme.uss?fileID=7433441132597879392&amp;guid=0ce641ff967c4f33a8e9f88e51c8e4d3&amp;type=3#Theme" />
-    <Style src="project://database/Assets/_Project/UI/Game%20Menus.uss?fileID=7433441132597879392&amp;guid=2707e98aaf5ca9c4a9802dd0f7179795&amp;type=3#Game Menus" />
     <ui:VisualElement name="Frame" class="settings-menu__frame game-menu__frame">
         <ui:VisualElement name="AudioSettings">
             <ui:Label tabindex="-1" text="Audio Settings" display-tooltip-when-elided="true" class="settings-menu__section-header" />

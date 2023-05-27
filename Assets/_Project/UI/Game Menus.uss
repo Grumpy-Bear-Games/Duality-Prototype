@@ -2,7 +2,7 @@
     justify-content: center;
     align-items: center;
     -unity-font-definition: var(--game_menu-font);
-    font-size: var(--game_menu-default-font_size);
+    font-size: var(--game_menu-default-font_size);    
 }
 
 .Fullscreen {
@@ -11,6 +11,8 @@
     top: 0;
     right: 0;
     bottom: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 .game-menu__modal-background {
@@ -20,9 +22,28 @@
     top: 0;
     right: 0;
     bottom: 0;
+    justify-content: center;
+    align-items: center;
 }
 
-.game-menu__frame,
+.confirmation-dialog {
+    background-color: var(--game_menu-modal-background);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-menu__frame {
+    background-color: var(--game_menu-frame-background);
+    padding: 30px;
+    color: var(--game_menu-control-color-focus);
+    border-radius: 10px;
+}
+
 .confirmation-dialog__frame {
     background-color: var(--game_menu-frame-background);
     padding: 30px;
@@ -30,8 +51,7 @@
     border-radius: 10px;
 }
 
-.game-menu__frame .unity-button,
-.confirmation-dialog__frame .unity-button{
+.game-menu__frame .unity-button {
     border-width: 0;
     background-color: var(--game_menu-button-background);
     color: var(--game_menu-control-color-blur);
@@ -39,7 +59,20 @@
     transition-timing-function: ease;
 }
 
-.game-menu__frame .unity-button:focus,
+.confirmation-dialog__frame .unity-button {
+    border-width: 0;
+    background-color: var(--game_menu-button-background);
+    color: var(--game_menu-control-color-blur);
+    transition-duration: 100ms;
+    transition-timing-function: ease;
+}
+
+.game-menu__frame .unity-button:focus {
+    border-width: 0;
+    color: var(--game_menu-control-color-focus);
+    scale: 1.1 1.1;
+}
+
 .confirmation-dialog__frame .unity-button:focus {
     border-width: 0;
     color: var(--game_menu-control-color-focus);
@@ -52,27 +85,27 @@
     color: var(--game_menu-control-color-focus);
 }
 
-.unity-base-field__label {
+.game-menu__frame .unity-base-field__label {
     width: 200px;
     color: var(--game_menu-control-color-blur);
     transition-duration: 200ms;
     transition-timing-function: ease;
 }
 
-.unity-base-field {
+.game-menu__frame .unity-base-field {
     overflow: visible;
 }
 
-:focus .unity-base-field__label {
+.game-menu__frame :focus .unity-base-field__label {
     color: var(--game_menu-control-color-focus);
 }
 
-:active .unity-base-field__label {
+.game-menu__frame :active .unity-base-field__label {
     color: var(--game_menu-control-color-focus);
 }
 
-.unity-base-slider__dragger {
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Button_Diamond.png?fileID=21300000&guid=626315e6d91b91a46b88765b0e16ccfb&type=3#UI_Button_Diamond');
+.game-menu__frame .unity-base-slider__dragger {
+    background-image: var(--game_menu-dragger-background-image);
     -unity-background-scale-mode: stretch-to-fill;
     -unity-background-image-tint-color: var(--game_menu-control-color-blur);
     border-width: 0;
@@ -82,23 +115,23 @@
     margin-top: -24px;
 }
 
-:focus .unity-base-slider__dragger {
+.game-menu__frame :focus .unity-base-slider__dragger {
     -unity-background-image-tint-color: var(--game_menu-control-color-focus);
 }
 
-.unity-base-slider__tracker {
-    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Button_ThinLine.png?fileID=21300000&guid=affc4139935a04849b5ad4c7ab4903af&type=3#UI_Button_ThinLine');
+.game-menu__frame .unity-base-slider__tracker {
+    background-image: var(--game_menu-slider-background-image);
     background-color: var(--game_menu-slider-background);
     border-width: 0;
     height: 16px;
     margin-top: -8px;
 }
 
-.unity-toggle__input {
+.game-menu__frame .unity-toggle__input {
     margin-left: 20px;
 }
 
-.unity-toggle__checkmark {
+.game-menu__frame .unity-toggle__checkmark {
     width: 36px;
     height: 36px;
     -unity-background-image-tint-color: var(--game_menu-control-color-blur);
@@ -108,12 +141,12 @@
     border-width: 2px;
 }
 
-:focus .unity-toggle__checkmark {
+.game-menu__frame :focus .unity-toggle__checkmark {
     -unity-background-image-tint-color: var(--game_menu-control-color-focus);
     border-color: var(--game_menu-control-color-focus);
 }
 
-.unity-base-popup-field__input {
+.game-menu__frame .unity-base-popup-field__input {
     background-color: var(--game_menu-dropdown-background);
     border-width: 2px;
     border-radius: 5px;
@@ -121,28 +154,27 @@
     color: var(--game_menu-control-color-blur);
 }
 
-.unity-base-popup-field__arrow {
+.game-menu__frame .unity-base-popup-field__arrow {
     width: 36px;
     height: 36px;
     -unity-background-image-tint-color: var(--game_menu-control-color-blur);
 }
 
-:focus .unity-base-popup-field__input {
+.game-menu__frame :focus .unity-base-popup-field__input {
     color: var(--game_menu-control-color-focus);
 }
 
-:active .unity-base-popup-field__input {
+.game-menu__frame :active .unity-base-popup-field__input {
     color: var(--game_menu-control-color-focus);
 }
 
-:focus .unity-base-popup-field__arrow {
+.game-menu__frame :focus .unity-base-popup-field__arrow {
     -unity-background-image-tint-color: var(--game_menu-control-color-focus);
 }
 
-:active .unity-base-popup-field__arrow {
+.game-menu__frame :active .unity-base-popup-field__arrow {
     -unity-background-image-tint-color: var(--game_menu-control-color-focus);
 }
-
 
 .settings-menu__frame {
     width: 40%;
@@ -151,19 +183,6 @@
 .settings-menu__section-header {
     -unity-text-align: upper-center;
     font-size: 128%;
-    -unity-font-style: bold;
-}
-
-
-.confirmation-dialog {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--game_menu-modal-background);
-    justify-content: center;
-    align-items: center;
 }
 
 .confirmation-dialog__header {
@@ -174,10 +193,4 @@
 .confirmation-dialog__buttons {
     flex-direction: row;
     justify-content: space-between;
-}
-
-.confirmation-dialog__confirm-button {
-}
-
-.confirmation-dialog__cancel-button {
 }
