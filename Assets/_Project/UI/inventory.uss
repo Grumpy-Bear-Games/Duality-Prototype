@@ -1,5 +1,8 @@
 :root {
     --fade-duration: 0.2s;
+    justify-content: flex-end;
+    -unity-font-definition: var(--inventory-font);
+    font-size: var(--inventory-base-font_size);
 }
 
 #InventoryFrame {
@@ -19,17 +22,14 @@
 #Title {
     background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_TextBox_White.png?fileID=21300000&guid=407c7796acc65da47ac534a0c05bfa2c&type=3#UI_TextBox_White');
     color: rgb(0, 0, 0);
-    font-size: 74px;
+    font-size: 195%;
     width: 32.7%;
     height: auto;
     left: 15px;
     position: absolute;
     top: -100px;
     -unity-text-align: middle-center;
-    padding-top: 23px;
-    padding-right: 0;
-    padding-left: 0;
-    padding-bottom: 23px;
+    padding: 23px 0;
 }
 
 #Slots {
@@ -94,7 +94,6 @@
 }
 
 #InfoBox > * {
-    font-size: 38px;
     color: rgb(255, 255, 255);
 }
 
@@ -102,10 +101,7 @@
     -unity-text-align: middle-center;
     background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/UI_Inventorysystem_ItemBackground.png?fileID=21300000&guid=5ac96805953d71a4eb2823920fd71e43&type=3#UI_Inventorysystem_ItemBackground');
     width: 80%;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 12px;
-    padding-left: 12px;
+    padding: 12px;
 }
 
 #ItemTypeDescription {
@@ -119,14 +115,6 @@
     flex-grow: 1;
     white-space: normal;
     -unity-text-align: upper-left;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding: 24px;
     -unity-paragraph-spacing: -12px;
-}
-
-:root {
-    justify-content: flex-end;
-    -unity-font-definition: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
 }

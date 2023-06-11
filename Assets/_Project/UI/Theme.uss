@@ -1,6 +1,8 @@
 :root {
     --fade-duration: 200ms;
     --color-transparent: rgba(0, 0, 0, 0);
+    
+    /* Game Menus */
     --game_menu-control-color-blur: rgb(102, 102, 102);
     --game_menu-control-color-focus: rgb(255, 255, 255);
     --game_menu-frame-background: rgb(22, 32, 34);
@@ -13,6 +15,28 @@
     --game_menu-modal-background: rgba(0, 0, 0, 0.51);
     --game_menu-font: url('project://database/Assets/_Project/Fonts/NovaFlatSlim-Bold%20SDF.asset?fileID=11400000&guid=063bc47a52fd46248a888e28c7a1f372&type=2#NovaFlatSlim-Bold SDF');
     --game_menu-default-font_size: 38px;
+    
+    /* Notifications */
+    --notifications-font: url('project://database/Assets/_Project/Fonts/NovaFlatSlim-Bold%20SDF.asset?fileID=11400000&guid=063bc47a52fd46248a888e28c7a1f372&type=2#NovaFlatSlim-Bold SDF');
+    --notifications-base-font_size: 38px;
+    
+    
+    /* Interaction prompt */
+    --interaction_prompt-font: url('project://database/Assets/_Project/Fonts/NovaFlatSlim-Bold%20SDF.asset?fileID=11400000&guid=063bc47a52fd46248a888e28c7a1f372&type=2#NovaFlatSlim-Bold SDF');
+    --interaction_prompt-base-font_size: 38px;
+    
+    /* Dialog */
+    --dialog-demon-font: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
+    
+    /* Inventory */
+    --inventory-font: url('project://database/Assets/_Project/Fonts/NovaFlatSlim-Bold%20SDF.asset?fileID=11400000&guid=063bc47a52fd46248a888e28c7a1f372&type=2#NovaFlatSlim-Bold SDF');
+    --inventory-base-font_size: 38px;
+    
+    /* Quest Log */
+    
+    /* Death Screen */
+    --death-screen-font: url('project://database/Assets/_Project/Fonts/October%20Crow%20SDF.asset?fileID=11400000&guid=727d12a9a520742468b2aeedf011280d&type=2#October Crow SDF');
+    --death-screen-base-font_size: 142px;    
 }
 
 

@@ -1,17 +1,17 @@
 :root {
-    -unity-font-definition: url('project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF');
-    font-size: 36px;
+    -unity-font-definition: var(--interaction_prompt-font);
+    font-size: var(--interaction_prompt-base-font_size);
     align-items: center;
     justify-content: center;
 }
 
-#Prompt {
+.interaction-prompt {
     position: absolute;
     justify-content: center;
     align-items: center;
 }
 
-#Key {
+.interaction-prompt__key {
     background-image: url('project://database/Assets/_Project/Sprites/Xelu_Free_Controller&Key_Prompts/Keyboard%20&%20Mouse/Light/E_Key_Light.png?fileID=21300000&guid=cbca6179f96762a4eaecf9e3f700aed5&type=3#E_Key_Light');
     width: 100px;
     height: 100px;
@@ -20,7 +20,7 @@
     position: absolute;
 }
 
-#Label {
+.interaction-prompt__label {
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.51);
     padding: 5px 10px;
