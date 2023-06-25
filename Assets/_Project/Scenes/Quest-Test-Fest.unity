@@ -610,7 +610,7 @@ Transform:
   - {fileID: 1740178087}
   - {fileID: 663479646330533281}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &489906814
 MonoBehaviour:
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 7aeb653fd2c12e541b1416eddbbd08c2, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!114 &489906817
 MonoBehaviour:
@@ -720,8 +720,81 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &589048241
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.6530323
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.3674
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570655007339115321, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_Name
+      value: Kasadya
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5de877bae13313d42933196b90751e41, type: 3}
 --- !u!850595691 &637897984
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -1093,7 +1166,7 @@ Transform:
   - {fileID: 786788070}
   - {fileID: 371833919}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &871150937
 MonoBehaviour:
@@ -1137,7 +1210,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: ef991edd1d10d274aaf3e3572bdb60f4, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!1 &961173327
 GameObject:
@@ -2297,7 +2370,7 @@ PrefabInstance:
     - target: {fileID: 8133880569932334020, guid: 66d9bfe38d1e25644a28edbcd1218747,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8133880569932334020, guid: 66d9bfe38d1e25644a28edbcd1218747,
         type: 3}

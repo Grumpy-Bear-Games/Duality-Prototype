@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 855071985501128512}
   - component: {fileID: 855071985501128574}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,8 +96,8 @@ GameObject:
   - component: {fileID: 855071986495757550}
   - component: {fileID: 855071986495757549}
   - component: {fileID: 9105734120470650260}
-  m_Layer: 6
-  m_Name: Standard
+  m_Layer: 7
+  m_Name: Kasadya's Scale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b465232243cd415f8824a03599d83913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemType: {fileID: 11400000, guid: a16ab51e0b31ce148be0d0ae7c794271, type: 2}
+  _itemType: {fileID: 11400000, guid: b313beab16bb6df4dab5f542c0dbe53c, type: 2}
   _promptOffset: {x: 0, y: 1.5, z: 0}
 --- !u!114 &9105734120470650260
 MonoBehaviour:
@@ -235,6 +235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blob Shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4084919250645490479, guid: aeb1ddf6dc21a4c43952d7a21701cf71,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
