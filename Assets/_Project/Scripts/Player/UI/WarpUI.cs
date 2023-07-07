@@ -1,4 +1,5 @@
 ﻿using System;
+using DualityGame.Utilities;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -12,6 +13,7 @@ namespace DualityGame.Player.UI
         private void Awake()
         {
             var root = GetComponent<UIDocument>().rootVisualElement;
+            root.PreventLoosingFocus();
             _warpIcon = root.Q<VisualElement>("Warp");
         }
 

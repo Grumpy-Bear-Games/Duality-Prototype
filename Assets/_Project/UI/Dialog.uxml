@@ -11,9 +11,9 @@
         </ui:VisualElement>
         <ui:VisualElement name="MultipleChoice">
             <ui:VisualElement name="Options">
-                <DualityGame.DialogSystem.UI.DialogOption text="1. You&apos;re talking nonsense, old man!" />
-                <DualityGame.DialogSystem.UI.DialogOption text="2. I totally agree!" />
-                <DualityGame.DialogSystem.UI.DialogOption text="3. Eh, right. Goodbye...." />
+                <ui:Button text="You&apos;re talking nonsense, old man!" display-tooltip-when-elided="true" />
+                <ui:Button text="I totally agree!" display-tooltip-when-elided="true" />
+                <ui:Button text="Eh, right. Goodbye...." display-tooltip-when-elided="true" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

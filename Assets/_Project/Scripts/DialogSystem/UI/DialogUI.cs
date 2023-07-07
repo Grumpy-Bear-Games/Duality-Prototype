@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using DualityGame.Dialog;
+using DualityGame.Utilities;
 using NodeCanvas.DialogueTrees;
 using UnityEngine;
 using UnityEngine.Events;
@@ -32,6 +33,8 @@ namespace DualityGame.DialogSystem.UI {
 			_statementText = root.Q<Label>("StatementText");
 			_actorName = root.Q<Label>("ActorName");
 			_options = root.Q<VisualElement>("Options");
+			
+			_dialogFrame.PreventLoosingFocus();
 		}
 
 		private void OnEnable() {
@@ -69,13 +72,6 @@ namespace DualityGame.DialogSystem.UI {
 
 		private void Show() => _dialogFrame.AddToClassList("Shown");
 
-		public void SelectOption(int value)
-		{
-			var dialogOptions = _options.Query<DialogOption>().ToList();
-			if (value > dialogOptions.Count) return;
-			dialogOptions[value - 1].SelectOption();
-		}
-
 		private void CleanupChoiceButton() => _options.Clear();
 
 		private void OnSubtitlesRequest(SubtitlesRequestInfo info) => StartCoroutine(Internal_OnSubtitlesRequestInfo(info));
@@ -106,7 +102,10 @@ namespace DualityGame.DialogSystem.UI {
 				CleanupChoiceButton();
 				info.Continue();
 			});
+			FocusFirstOption();
 		}
+
+		private void FocusFirstOption() => _options[0].Focus();
 
 		private void OnMultipleChoiceRequest(MultipleChoiceRequestInfo info)
 		{
@@ -121,9 +120,18 @@ namespace DualityGame.DialogSystem.UI {
 			{
 				CreateOption(statement.Text, () => Finalize(info, value));
 			}
+			FocusFirstOption();
 		}
 
-		private void CreateOption(string text, Action onClick) => _options.Add(new DialogOption($"{_options.childCount + 1}.   {text}", onClick));
+		private void CreateOption(string text, Action onClick)
+		{
+			var button = new Button
+			{
+				text = $"{_options.childCount + 1}.   {text}"
+			};
+			button.clicked += onClick;
+			_options.Add(button);
+		}
 
 		private void Finalize(MultipleChoiceRequestInfo info, int index){
 			_options.style.opacity = new StyleFloat(StyleKeyword.Initial);

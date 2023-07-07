@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8847466056669286725}
   - component: {fileID: 2534420517034754136}
   - component: {fileID: 5379804339711762127}
-  - component: {fileID: 2104514604074215258}
   m_Layer: 0
   m_Name: Dialog UI
   m_TagString: Untagged
@@ -94,17 +93,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2104514604074215258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2955659931331116658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2266df56efd492da54be898e2f23a7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _selectOptionInputActionReference: {fileID: -982712790645192614, guid: 4419d82f33d36e848b3ed5af4c8da37e,
-    type: 3}
