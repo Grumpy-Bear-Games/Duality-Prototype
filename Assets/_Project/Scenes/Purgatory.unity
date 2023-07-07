@@ -1648,6 +1648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 502450956}
   - component: {fileID: 502450957}
+  - component: {fileID: 502450958}
   m_Layer: 10
   m_Name: Portals
   m_TagString: Untagged
@@ -1712,6 +1713,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 502450958}
+        m_TargetAssemblyTypeName: DualityGame.DialogSystem.PauseDialogTemporarily,
+          DualityGame
+        m_MethodName: Trigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &502450958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502450955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9063f84f20724ed19e795d7a4d85d6ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueTreeController: {fileID: 2130514869}
+  _waitTime: 5
 --- !u!1 &505158318
 GameObject:
   m_ObjectHideFlags: 0
@@ -19132,6 +19160,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9746467394f47b9b71cf7d04debdd96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2130514869 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1328726461148192073, guid: 83f5700f63041314ca4081d2a2c7d95b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2130514852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2147189412 stripped
