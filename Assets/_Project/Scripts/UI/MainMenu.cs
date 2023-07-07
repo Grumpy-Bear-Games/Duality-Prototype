@@ -1,5 +1,6 @@
 using DualityGame.Core;
 using DualityGame.SaveSystem;
+using DualityGame.Utilities;
 using DualityGame.VFX;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -24,6 +25,7 @@ namespace DualityGame.UI
             _root = GetComponent<UIDocument>().rootVisualElement;
 
             _frame = _root.Q<VisualElement>("MainMenu");
+            _frame.PreventLoosingFocus();
 
             var continueButton = _frame.Q<Button>("ContinueButton");
             continueButton.clicked += () => CoroutineRunner.Run(_screenFader.Wrap(_gameSession.LoadGame()));

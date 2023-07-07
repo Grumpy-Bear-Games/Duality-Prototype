@@ -1,4 +1,5 @@
 ﻿using System;
+using DualityGame.Utilities;
 using Games.GrumpyBear.Core.Settings;
 using Games.GrumpyBear.Core.Settings.UIElements;
 using Games.GrumpyBear.FMOD.Utilities;
@@ -26,6 +27,7 @@ namespace DualityGame.UI
 
             _frame = root.Q<VisualElement>("SettingsMenu");
             _frame.RegisterCallback<NavigationCancelEvent>(_ => BackButtonClicked());
+            _frame.PreventLoosingFocus();
 
             var audioSettings = root.Q<VisualElement>("AudioSettings");
             audioSettings.Q<VolumeSlider>("MasterVolume").VolumePreference = _masterVolumePreference;

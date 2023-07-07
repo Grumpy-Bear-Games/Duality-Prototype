@@ -1,4 +1,5 @@
 ﻿using System;
+using DualityGame.Utilities;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
@@ -39,11 +40,7 @@ namespace DualityGame.UI
             frame.AddToClassList(FrameUssClassName);
             hierarchy.Add(frame);
             
-            RegisterCallback<PointerDownEvent>(evt =>
-            {
-                evt.StopImmediatePropagation();
-                evt.PreventDefault();
-            });
+            this.PreventLoosingFocus();
             
             frame.RegisterCallback<NavigationCancelEvent>(_ => Close());
 
