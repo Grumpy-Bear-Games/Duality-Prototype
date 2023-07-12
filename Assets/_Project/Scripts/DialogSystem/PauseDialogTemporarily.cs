@@ -15,7 +15,7 @@ namespace DualityGame.DialogSystem
         {
             _dialogueTreeController.PauseDialogue();
             yield return new WaitForSeconds(_waitTime);
-            _dialogueTreeController.StartBehaviour();
+            _dialogueTreeController.StartDialogue(_dialogueTreeController.graph.agent as IDialogueActor);
         }
     }
 }
