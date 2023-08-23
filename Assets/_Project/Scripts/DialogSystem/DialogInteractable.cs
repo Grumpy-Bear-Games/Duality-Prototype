@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace DualityGame.DialogSystem
 {
-    public class DialogInteractable : MonoBehaviour, IInteractable
+    public class DialogInteractable : Interactable
     {
-        [SerializeField] private Vector3 _promptOffset;
-        
         private DialogueTreeController _controller;
-        
-        private void Awake() => _controller = GetComponent<DialogueTreeController>();
-        public void Interact(GameObject actor)
+
+        protected void Awake() => _controller = GetComponent<DialogueTreeController>();
+
+        public override IInteractable.InteractionType Type => IInteractable.InteractionType.Talk;
+
+        public override void Interact(GameObject actor)
         {
-            
             var instigator = actor.GetComponent<DialogueActor>();
             if (instigator != null)
             {
@@ -24,9 +24,5 @@ namespace DualityGame.DialogSystem
                 _controller.StartDialogue();
             }
         }
-
-        public Vector3 PromptPosition => transform.position + _promptOffset;
-
-        public string Prompt => $"Talk with {name}";
     }
 }
