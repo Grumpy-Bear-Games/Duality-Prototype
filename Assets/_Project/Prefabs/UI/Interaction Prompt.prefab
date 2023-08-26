@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3386624397575317772}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6745441789131070581
 MonoBehaviour:
@@ -48,8 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 73cb7edaaf30bb14d9d18e964939a853, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: abe57bbdee19f8143b1d67c545222064,
-    type: 3}
+  sourceAsset: {fileID: 0}
   m_SortingOrder: 0
 --- !u!114 &6044716707294831843
 MonoBehaviour:
@@ -65,6 +64,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closestInteractable: {fileID: 11400000, guid: 9ad5e19dd98945f48a42c954e9cc8ab8,
     type: 2}
+  _radius: 2
+  _viewRadius: 5
+  _origin: {fileID: 0}
+  _styleSheet: {fileID: 7433441132597879392, guid: 1f0f263364a1b1a49b8ed9a5e03eb78f,
+    type: 3}
 --- !u!114 &5260093223137560725
 MonoBehaviour:
   m_ObjectHideFlags: 0

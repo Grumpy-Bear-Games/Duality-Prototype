@@ -1,31 +1,31 @@
 ﻿using Games.GrumpyBear.Core.SaveSystem;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace DualityGame.Iteractables
 {
     [RequireComponent(typeof(SaveableEntity))]
-    public abstract class InteractableBase : MonoBehaviour, IInteractable, ISaveableComponent
+    public class InteractableTrigger : Interactable, ISaveableComponent
     {
-        [Header("Interaction prompt")]
-        [SerializeField] public string _prompt;
-        [SerializeField] public Vector3 _promptOffset = new Vector3(0, 1.5f, 0);
-        
+        [SerializeField] private UnityEvent<GameObject> _onInteract;
+        [SerializeField] private IInteractable.InteractionType _type = IInteractable.InteractionType.Touch;
+
         [Header("Interaction")]
         [SerializeField] private bool _onlyTriggerOnce = true;
+        
+        [SerializeField] public string _prompt;
+        public override bool Enabled => base.Enabled && !_hasTriggered;
 
-        public string Prompt => _hasTriggered ? null : _prompt;
-        public Vector3 PromptPosition => transform.position + _promptOffset;
+        public override IInteractable.InteractionType Type => _type;
 
         private bool _hasTriggered;
-
-        public void Interact(GameObject actor)
+        
+        public override void Interact(GameObject actor)
         {
             if (_hasTriggered) return;
             if (_onlyTriggerOnce) _hasTriggered = true;
-            Trigger(actor);
+            _onInteract.Invoke(actor);
         }
-
-        protected abstract void Trigger(GameObject actor);
 
         #region ISaveableComponent
         object ISaveableComponent.CaptureState() => _hasTriggered;

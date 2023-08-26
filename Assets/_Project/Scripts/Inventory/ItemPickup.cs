@@ -1,15 +1,15 @@
-﻿using Games.GrumpyBear.Core.SaveSystem;
+﻿using DualityGame.Iteractables;
+using Games.GrumpyBear.Core.SaveSystem;
 using UnityEngine;
 
 namespace DualityGame.Inventory
 {
     [RequireComponent(typeof(SaveableEntity))]
-    public class ItemPickup : MonoBehaviour, Iteractables.IInteractable, ISaveableComponent
+    public class ItemPickup : Interactable, ISaveableComponent
     {
         [SerializeField] private ItemType _itemType;
-        [SerializeField] private Vector3 _promptOffset;
 
-        public void Interact(GameObject actor)
+        public override void Interact(GameObject actor)
         {
             var inventory = actor.GetComponent<InventoryController>();
             if (inventory == null) return;
@@ -18,10 +18,10 @@ namespace DualityGame.Inventory
             gameObject.SetActive(false);
         }
        
-        public Vector3 PromptPosition => transform.position + _promptOffset;
+        public override bool Enabled => base.Enabled && gameObject.activeSelf;
 
-        public string Prompt => $"Pick up {_itemType.name}";
-        
+        public override IInteractable.InteractionType Type => IInteractable.InteractionType.Touch;
+
         public override string ToString() => name;
 
         #if UNITY_EDITOR

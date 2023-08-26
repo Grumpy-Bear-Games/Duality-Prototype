@@ -11,8 +11,8 @@
     align-items: center;
 }
 
-.interaction-prompt__key {
-    background-image: url('project://database/Assets/_Project/Sprites/Xelu_Free_Controller&Key_Prompts/Keyboard%20&%20Mouse/Light/E_Key_Light.png?fileID=21300000&guid=cbca6179f96762a4eaecf9e3f700aed5&type=3#E_Key_Light');
+.interaction-prompt__icon {
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/GameOverlay_Sprites/InteractHerePrompt_Sprites/InteractHereIcon.png?fileID=21300000&guid=777408d408b6b5643a08b55109df2d4a&type=3#InteractHereIcon');
     width: 100px;
     height: 100px;
     justify-content: center;
@@ -20,12 +20,14 @@
     position: absolute;
 }
 
-.interaction-prompt__label {
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.51);
-    padding: 5px 10px;
-    border-radius: 10px;
-    position: absolute;
-    left: 100%;
-    margin: 50px;
+.talk .interaction-prompt__icon  {
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/GameOverlay_Sprites/InteractHerePrompt_Sprites/InteractHereTalk1.png?fileID=21300000&guid=7d396ea16c9c5f8418aefa646b39ab75&type=3#InteractHereTalk1');
+}
+
+.touch .interaction-prompt__icon  {
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/GameOverlay_Sprites/InteractHerePrompt_Sprites/InteractHerePickUp1.png?fileID=21300000&guid=5ff200378936a644fb10522eb2375fc5&type=3#InteractHerePickUp1');
+}
+
+.view .interaction-prompt__icon  {
+    background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/GameOverlay_Sprites/InteractHerePrompt_Sprites/InteractHereLook1.png?fileID=21300000&guid=16f775eb3873ea04894dc02e4985f602&type=3#InteractHereLook1');
 }
