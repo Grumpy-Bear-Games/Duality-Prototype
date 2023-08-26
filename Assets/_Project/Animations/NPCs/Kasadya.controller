@@ -137,14 +137,14 @@ AnimatorController:
   m_Name: Kasadya
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: KasadyaStandingUpInt
-    m_Type: 3
+  - m_Name: HasTurban
+    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: KasadyaTurbanInt
-    m_Type: 3
+  - m_Name: IsStanding
+    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -169,7 +169,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: KasadyaStandingUp
+  m_Name: Kasadya StandingUp Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -198,8 +198,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: KasadyaTurbanInt
+  - m_ConditionMode: 1
+    m_ConditionEvent: HasTurban
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8421555853664837888}
@@ -222,7 +222,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Kasadya Turban StandingUp
+  m_Name: Kasadya Turban StandingUp Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
