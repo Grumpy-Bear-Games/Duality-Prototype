@@ -1,5 +1,6 @@
 ﻿using DualityGame.Iteractables;
 using Games.GrumpyBear.Core.SaveSystem;
+using NodeCanvas.DialogueTrees;
 using UnityEngine;
 
 namespace DualityGame.Inventory
@@ -9,6 +10,9 @@ namespace DualityGame.Inventory
     {
         [SerializeField] private ItemType _itemType;
 
+        private DialogueTreeController _dialogueTreeController;
+        private void Awake() => _dialogueTreeController = GetComponent<DialogueTreeController>();
+
         public override void Interact(GameObject actor)
         {
             var inventory = actor.GetComponent<InventoryController>();
@@ -16,6 +20,18 @@ namespace DualityGame.Inventory
             
             inventory.PickupItem(_itemType);
             gameObject.SetActive(false);
+
+            if (_dialogueTreeController == null) return;
+            var instigator = actor.GetComponent<DialogueActor>();
+            if (instigator != null)
+            {
+                _dialogueTreeController.StartDialogue(instigator);
+            }
+            else
+            {
+                _dialogueTreeController.StartDialogue();
+            }
+
         }
        
         public override bool Enabled => base.Enabled && gameObject.activeSelf;

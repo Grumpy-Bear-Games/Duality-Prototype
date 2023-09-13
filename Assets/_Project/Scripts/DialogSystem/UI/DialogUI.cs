@@ -83,8 +83,11 @@ namespace DualityGame.DialogSystem.UI {
 			_actorName.text = actor.Name;
 		}
 
-		private IEnumerator Internal_OnSubtitlesRequestInfo(SubtitlesRequestInfo info){
-
+		private IEnumerator Internal_OnSubtitlesRequestInfo(SubtitlesRequestInfo info)
+		{
+			// Skip one frame to avoid double-triggering in the Input system
+			yield return null;
+			
 			var text = info.statement.Text;
 			var audio = info.statement.Audio;
 			var actor = info.actor;
