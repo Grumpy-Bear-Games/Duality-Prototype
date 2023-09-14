@@ -14879,9 +14879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7264d61c4b0f459fa2c513a7dfa4ff79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prompt: Search box
   _promptOffset: {x: 0, y: 1.5, z: 0}
-  _onlyTriggerOnce: 1
   _onInteract:
     m_PersistentCalls:
       m_Calls:
@@ -14897,6 +14895,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _type: 1
+  _onlyTriggerOnce: 1
+  _prompt: Search box
 --- !u!114 &1107996021
 MonoBehaviour:
   m_ObjectHideFlags: 0

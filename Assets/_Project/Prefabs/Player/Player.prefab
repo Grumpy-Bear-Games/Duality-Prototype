@@ -5077,7 +5077,7 @@ Transform:
   - {fileID: 3136781150643735571}
   - {fileID: 52705373964062129}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5835723823903882615
 CharacterController:
@@ -5307,6 +5307,9 @@ MonoBehaviour:
   _deathScreenDelay: 3
   _deathAnimations:
   - <CauseOfDeath>k__BackingField: {fileID: 11400000, guid: 4f41af68935738d43ba86ed5e7e1745a,
+      type: 2}
+    <DeathAnimation>k__BackingField: {fileID: 62989568326114956}
+  - <CauseOfDeath>k__BackingField: {fileID: 11400000, guid: 8cf7f5f5f08ae4840867a5697e8cb26f,
       type: 2}
     <DeathAnimation>k__BackingField: {fileID: 62989568326114956}
 --- !u!114 &2802177149049871525
