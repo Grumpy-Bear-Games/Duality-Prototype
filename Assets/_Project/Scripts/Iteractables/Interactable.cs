@@ -22,5 +22,12 @@ namespace DualityGame.Iteractables
         public virtual bool Enabled => Realm.Realm.Current && gameObject.layer == Realm.Realm.Current.LevelLayer;
 
         public abstract IInteractable.InteractionType Type { get; }
+
+
+        public void OnDrawGizmosSelected()
+        {
+            Gizmos.DrawSphere(PromptPosition, 0.1f);
+        }
+
     }
 }

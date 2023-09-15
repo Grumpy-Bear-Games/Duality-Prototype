@@ -1,6 +1,4 @@
 :root {
-    -unity-font-definition: var(--interaction_prompt-font);
-    font-size: var(--interaction_prompt-base-font_size);
     align-items: center;
     justify-content: center;
 }
@@ -9,6 +7,18 @@
     position: absolute;
     justify-content: center;
     align-items: center;
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+    transition-property: opacity, scale, translate;
+    transition-duration: 100ms, 300ms, 100ms;
+    transition-timing-function: ease-in, ease-out-bounce, ease-in;
+}
+
+.interaction-prompt.initial {
+    translate: 0 60px;
+    opacity: 0;
+    scale: 0;
 }
 
 .interaction-prompt__icon {
@@ -22,12 +32,15 @@
 
 .talk .interaction-prompt__icon  {
     background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/GameOverlay_Sprites/InteractHerePrompt_Sprites/InteractHereTalk1.png?fileID=21300000&guid=7d396ea16c9c5f8418aefa646b39ab75&type=3#InteractHereTalk1');
+    translate: 60px 0px;
 }
 
 .touch .interaction-prompt__icon  {
     background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/GameOverlay_Sprites/InteractHerePrompt_Sprites/InteractHerePickUp1.png?fileID=21300000&guid=5ff200378936a644fb10522eb2375fc5&type=3#InteractHerePickUp1');
+    translate: 60px 0px;
 }
 
 .view .interaction-prompt__icon  {
     background-image: url('project://database/Assets/_Project/Sprites/UI_Sprites/GameOverlay_Sprites/InteractHerePrompt_Sprites/InteractHereLook1.png?fileID=21300000&guid=16f775eb3873ea04894dc02e4985f602&type=3#InteractHereLook1');
+    translate: 60px 0px;
 }

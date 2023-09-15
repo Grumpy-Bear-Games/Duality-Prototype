@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 855071985501128512}
   - component: {fileID: 855071985501128574}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,8 +96,9 @@ GameObject:
   - component: {fileID: 855071986495757550}
   - component: {fileID: 855071986495757549}
   - component: {fileID: 9105734120470650260}
-  m_Layer: 6
-  m_Name: Pants
+  - component: {fileID: 3491898002667866711}
+  m_Layer: 7
+  m_Name: Shorts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b465232243cd415f8824a03599d83913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemType: {fileID: 11400000, guid: c3b5bed83a023a54c92812e3df55c16e, type: 2}
   _promptOffset: {x: 0, y: 1.5, z: 0}
+  _itemType: {fileID: 11400000, guid: c3b5bed83a023a54c92812e3df55c16e, type: 2}
 --- !u!114 &9105734120470650260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +169,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 
+--- !u!114 &3491898002667866711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855071986495757552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedExposedParameters: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"Hmm,
+    I wonder who these shorts belong to. I should probably find their owner."},"_position":{"x":618.6667,"y":219.6667},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"_action":{"_questLog":{"_value":1},"_quest":{"_value":2},"$type":"DualityGame.Quests.Tasks.StartQuest"},"_position":{"x":687.6667,"y":314.6667},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 057d41e2fce3fd44481548140c593b1f, type: 2}
+  - {fileID: 11400000, guid: e1cda35293ffa734fbd4959dc3c21d35, type: 2}
+  _boundGraphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: 0, y: 0}
+    _zoomFactor: 1
+  _firstActivation: 0
+  _enableAction: 1
+  _disableAction: 2
+  _lockBoundGraphPrefabOverrides: 1
+  _preInitializeSubGraphs: 0
+  _updateMode: 0
+  _graph: {fileID: 0}
+  _blackboard: {fileID: 0}
 --- !u!1001 &8546144584697790532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239,7 +273,7 @@ PrefabInstance:
     - target: {fileID: 4084919250645490479, guid: aeb1ddf6dc21a4c43952d7a21701cf71,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -5077,7 +5077,7 @@ Transform:
   - {fileID: 3136781150643735571}
   - {fileID: 52705373964062129}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5835723823903882615
 CharacterController:
@@ -5102,7 +5102,7 @@ CharacterController:
   m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.25
-  m_SkinWidth: 0.02
+  m_SkinWidth: 0.03
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.84, z: 0}
 --- !u!114 &7495140746743725991
@@ -5309,6 +5309,9 @@ MonoBehaviour:
   - <CauseOfDeath>k__BackingField: {fileID: 11400000, guid: 4f41af68935738d43ba86ed5e7e1745a,
       type: 2}
     <DeathAnimation>k__BackingField: {fileID: 62989568326114956}
+  - <CauseOfDeath>k__BackingField: {fileID: 11400000, guid: 8cf7f5f5f08ae4840867a5697e8cb26f,
+      type: 2}
+    <DeathAnimation>k__BackingField: {fileID: 62989568326114956}
 --- !u!114 &2802177149049871525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5465,10 +5468,16 @@ MonoBehaviour:
     Of Death","_id":"5f169fdb-0b65-43b7-8f4a-cb5f95718938","$type":"NodeCanvas.Framework.Variable`1[[DualityGame.Player.CauseOfDeath,
     DualityGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Number
     of Deaths":{"_name":"Number of Deaths","_id":"b9c74cbe-e626-4aee-b4fb-91bd8912f487","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"AreYouNotEntertained
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Quest
+    - Are You Not Entertained":{"_value":{},"_name":"Quest - Are You Not Entertained","_id":"79ee9abc-c33c-4ec7-b119-590ac33c7d91","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+    ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"AreYouNotEntertained
     - spoken with twins":{"_name":"AreYouNotEntertained - spoken with twins","_id":"60bf3884-bc13-42ac-b255-d5a7ca2d1f7c","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"AreYouNotEntertained
     - Pit open":{"_name":"AreYouNotEntertained - Pit open","_id":"4b80e3db-44ac-4b3f-b2d6-3a5da70f383e","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Quest
+    - No Short Order":{"_value":{},"_name":"Quest - No Short Order","_id":"6a3c97e7-829a-4d86-b1ce-3b8d60ee5922","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+    ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"No
+    Short Order - Shorts Returned ":{"_name":"No Short Order - Shorts Returned ","_id":"dc413621-b57a-4b79-874a-9d4fe630d0cf","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
   _serializedVariables:
@@ -5478,10 +5487,19 @@ MonoBehaviour:
   - _json: '{"_name":"Number of Deaths","_id":"b9c74cbe-e626-4aee-b4fb-91bd8912f487","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
+  - _json: '{"_value":{},"_name":"Quest - Are You Not Entertained","_id":"79ee9abc-c33c-4ec7-b119-590ac33c7d91","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+      ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
   - _json: '{"_name":"AreYouNotEntertained - spoken with twins","_id":"60bf3884-bc13-42ac-b255-d5a7ca2d1f7c","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
   - _json: '{"_name":"AreYouNotEntertained - Pit open","_id":"4b80e3db-44ac-4b3f-b2d6-3a5da70f383e","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_value":{},"_name":"Quest - No Short Order","_id":"6a3c97e7-829a-4d86-b1ce-3b8d60ee5922","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+      ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
+  - _json: '{"_name":"No Short Order - Shorts Returned ","_id":"dc413621-b57a-4b79-874a-9d4fe630d0cf","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
   _UID: cca0c2f8-e2a1-4b70-a324-6ada0822078d

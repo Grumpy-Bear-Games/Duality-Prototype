@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace DualityGame.Iteractables.UI
@@ -81,13 +82,15 @@ namespace DualityGame.Iteractables.UI
         public InteractionPrompt()
         {
             AddToClassList(USSClassNameBase);
-            
+            AddToClassList("initial");
+            schedule.Execute(() => RemoveFromClassList("initial")).ExecuteLater(10);
+
             var icon = new VisualElement
             {
                 name = "Icon",
             };
             icon.AddToClassList(KeyUssClassName);
-            
+
             hierarchy.Add(icon);
             UpdateElement();
         }
