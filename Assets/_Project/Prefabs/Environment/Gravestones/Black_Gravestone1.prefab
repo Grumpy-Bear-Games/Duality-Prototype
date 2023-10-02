@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4637266281697921276}
   - component: {fileID: 4637266281697921279}
   - component: {fileID: 6556427415264480308}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Black_Gravestone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 7938427628082587276}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4637266281697921279
 BoxCollider:
@@ -129,6 +129,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Square Shadow Decal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310095140076414540, guid: 46717c962c02f164183ca27cb3b950fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7862568999648285085, guid: 46717c962c02f164183ca27cb3b950fc,
         type: 3}
