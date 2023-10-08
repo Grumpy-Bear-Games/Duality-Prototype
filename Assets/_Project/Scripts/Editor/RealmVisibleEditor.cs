@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using DualityGame.Realm;
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -19,6 +20,12 @@ namespace DualityGame.Editor
         {
             _realmVisible = target as RealmVisible;
             _realmProperty = serializedObject.FindProperty(RealmVisible.Fields.Realm);
+            Undo.undoRedoPerformed += UpdateTools;
+        }
+
+        private void OnDisable()
+        {
+            Undo.undoRedoPerformed -= UpdateTools;
         }
 
         public override VisualElement CreateInspectorGUI()
@@ -49,12 +56,18 @@ namespace DualityGame.Editor
                 });
                 _tools.Add(new Button(() =>
                 {
+                    Undo.SetCurrentGroupName("Fix layers");
+                    int undoGroup = Undo.GetCurrentGroup();
                     foreach (var gameObject in _realmVisible
                                  .GetComponentsInChildren<Transform>(true)
-                                 .Select(t => t.gameObject))
+                                 .Select(t => t.gameObject)
+                                 .Where(gameObject => gameObject.layer != realm.LevelLayer))
                     {
+                        Undo.RecordObject(gameObject, "");
                         gameObject.layer = realm.LevelLayer;
+                        EditorUtility.SetDirty(gameObject);
                     }
+                    Undo.CollapseUndoOperations(undoGroup);
                     UpdateTools();
                 })
                 {
