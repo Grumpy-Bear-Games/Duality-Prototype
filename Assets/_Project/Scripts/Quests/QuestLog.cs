@@ -24,7 +24,9 @@ namespace DualityGame.Quests
             if (_quests.ContainsKey(quest)) return;
             var questStates = new QuestEntry(quest);
             _quests.Add(quest, questStates);
-            Notifications.Notifications.Add(quest.NPC.PortraitByMood(Mood.Neutral), $"You started a new quest: {quest.Title}");
+            if (quest.Visibility == Quest.QuestVisibility.ShowAutomaticallyWhenOngoing) {
+                Notifications.Notifications.Add(quest.NPC.PortraitByMood(Mood.Neutral), $"You started a new quest: {quest.Title}");
+            }
             OnChange?.Invoke();
         }
 
@@ -36,6 +38,7 @@ namespace DualityGame.Quests
             if (questEntry == null) return;  // TODO: Maybe an exception instead?
             if (questEntry.Visible) return;
             questEntry.Visible = true;
+            Notifications.Notifications.Add(quest.NPC.PortraitByMood(Mood.Neutral), $"Quest Revealed: {quest.Title}");
             OnChange?.Invoke();
         }
 
