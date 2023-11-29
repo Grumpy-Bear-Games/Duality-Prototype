@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: Debug Screen Space Outlines Texture
   m_EditorClassIdentifier: 
   m_Active: 0
+  injectionPoint: 600
+  fetchColorBuffer: 1
+  requirements: 0
   passMaterial: {fileID: -876546973899608171, guid: 4560a30b8cf6b0a46826a9c462edacc3,
     type: 3}
-  injectionPoint: 600
-  requirements: 4
   passIndex: 0
+  bindDepthStencilAttachment: 0
+  m_Version: 1
 --- !u!114 &-4461757343656735650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31,11 +34,14 @@ MonoBehaviour:
   m_Name: Debug FaceID Texture
   m_EditorClassIdentifier: 
   m_Active: 0
+  injectionPoint: 600
+  fetchColorBuffer: 1
+  requirements: 2
   passMaterial: {fileID: -876546973899608171, guid: d35e34fb9ed1d1443af6afef93baaf8d,
     type: 3}
-  injectionPoint: 600
-  requirements: 6
   passIndex: 0
+  bindDepthStencilAttachment: 0
+  m_Version: 1
 --- !u!114 &-3314838633028702491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,11 +55,14 @@ MonoBehaviour:
   m_Name: Debug View Space Normals Texture
   m_EditorClassIdentifier: 
   m_Active: 0
+  injectionPoint: 600
+  fetchColorBuffer: 1
+  requirements: 0
   passMaterial: {fileID: -876546973899608171, guid: db95ebcdb98b7d54e929b335bb15d8c7,
     type: 3}
-  injectionPoint: 600
-  requirements: 4
   passIndex: 0
+  bindDepthStencilAttachment: 0
+  m_Version: 1
 --- !u!114 &-1878332245247344467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +142,8 @@ MonoBehaviour:
     cameraMotionVector: {fileID: 4800000, guid: c56b7e0d4c7cb484e959caeeedae9bbf,
       type: 3}
     objectMotionVector: {fileID: 4800000, guid: 7b3ede40266cd49a395def176e1bc486,
+      type: 3}
+    dataDrivenLensFlare: {fileID: 4800000, guid: 6cda457ac28612740adb23da5d39ea92,
       type: 3}
   m_AssetVersion: 2
   m_OpaqueLayerMask:
