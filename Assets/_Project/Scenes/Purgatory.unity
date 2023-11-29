@@ -14417,6 +14417,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 593641376}
     m_Modifications:
+    - target: {fileID: 855071985501128515, guid: 573c392a1f90d1944a295bdd8904f5ee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 855071986495757552, guid: 573c392a1f90d1944a295bdd8904f5ee,
         type: 3}
       propertyPath: m_Name
@@ -14481,6 +14486,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632469667523812203, guid: 573c392a1f90d1944a295bdd8904f5ee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9105734120470650260, guid: 573c392a1f90d1944a295bdd8904f5ee,
         type: 3}
@@ -14756,10 +14766,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1107996020}
-    - targetCorrespondingSourceObject: {fileID: 7746082819744783437, guid: 0fc9d5eed25504a4d976c241c322dc34,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1107996026}
   m_SourcePrefab: {fileID: 100100000, guid: 0fc9d5eed25504a4d976c241c322dc34, type: 3}
 --- !u!1001 &1105881049
 PrefabInstance:
@@ -14935,19 +14941,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1095400194}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1107996026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107996019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097f47eb142d4907ade74fbc7ba16360, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realm: {fileID: 11400000, guid: 549395d77f1552d46896ce28d9f379be, type: 2}
 --- !u!1001 &1110431229
 PrefabInstance:
   m_ObjectHideFlags: 0
