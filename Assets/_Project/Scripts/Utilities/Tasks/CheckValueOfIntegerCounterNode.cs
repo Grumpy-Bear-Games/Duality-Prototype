@@ -15,6 +15,7 @@ namespace DualityGame.Utilities.Tasks
     {
         [BlackboardOnly][RequiredField] public BBParameter<int> _counter;
         [RequiredField] public BBParameter<bool> _autoIncrease = true;
+        [RequiredField] public BBParameter<int> _offset = 0;
 
         public override int maxOutConnections => -1;
 
@@ -29,7 +30,7 @@ namespace DualityGame.Utilities.Tasks
 
             if (_counter.isNoneOrNull) return Error("There is no counter specified");
 
-            var value = _counter.value; 
+            var value = _counter.value + _offset.value;
             DLGTree.Continue(Mathf.Min(value, outConnections.Count - 1));
             if (_autoIncrease.value) _counter.SetValue(_counter.value + 1);
             return Status.Success;
@@ -41,7 +42,7 @@ namespace DualityGame.Utilities.Tasks
         public override string GetConnectionInfo(int i)
         {
             var counterName = _counter.isNoneOrNull ? "counter" : _counter.name;
-            return i < outConnections.Count - 1 ? $"{counterName} == {i}" : $"{counterName} >= {outConnections.Count - 1}";
+            return i < outConnections.Count - 1 ? $"{counterName} == {i - _offset.value}" : $"{counterName} >= {outConnections.Count - 1 - _offset.value}";
         }
         #endif
     }
