@@ -27,6 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328726461148192077}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -37,7 +38,6 @@ Transform:
   - {fileID: 4612840807237659866}
   - {fileID: 8844913961462832624}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1328726461148192073
 MonoBehaviour:
@@ -52,11 +52,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"I
-    have nothing to say yet..."},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":889.0,"y":290.6667},"$type":"NodeCanvas.DialogueTrees.StatementNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Jersey","_id":"c31c580d-3a30-4e64-8251-58145291bf84","_actorObject":1},{"_keyName":"Jersey
-    (Unmasked)","_actorObject":2}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"conditions":[{"_inventory":{"_value":1},"_itemType":{"_value":2},"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},null],"_position":{"x":715.3334,"y":162.0},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"0"},{"statement":{"_text":"Excuse
+    me. Are these your <b>Shorts</b>?"},"_position":{"x":275.3334,"y":489.3333},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"Nope.
+    Never seen them before in my lif...eh....dead. Nope, nope, nope."},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":270.9999,"y":575.3333},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"OK.
+    I guess I''ll need to ask someone else."},"_position":{"x":283.3334,"y":656.6667},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"statement":{"_text":"I
+    have nothing to say yet..."},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":901.0,"y":441.3333},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[{"name":"No
+    Short Order","rect":{"xMin":222.3333,"yMin":425.6667,"xMax":531.6666,"yMax":735.6667}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Jersey","_id":"c31c580d-3a30-4e64-8251-58145291bf84","_actorObject":3},{"_keyName":"Jersey
+    (Unmasked)","_id":"887b0655-cf77-4675-b790-fac663889358","_actorObject":4}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
+  - {fileID: 11400000, guid: c0fcc5868137b7d42856a51b3b5250bf, type: 2}
+  - {fileID: 11400000, guid: c3b5bed83a023a54c92812e3df55c16e, type: 2}
   - {fileID: 5783426944490065290}
   - {fileID: 7662970193023493997}
   _boundGraphSource:
@@ -150,13 +156,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328726461474746561}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461148192076}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1328726461474746562
 SpriteRenderer:
@@ -255,13 +261,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458372676002850225}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461148192076}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5783426944490065290
 MonoBehaviour:
@@ -300,13 +306,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3818160431825609655}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461148192076}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7662970193023493997
 MonoBehaviour:

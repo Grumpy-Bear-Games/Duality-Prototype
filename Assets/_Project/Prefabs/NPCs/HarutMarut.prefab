@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48018795157780087}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.752, y: 1.867, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461474746560}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7810416085036443577
 SpriteRenderer:
@@ -108,13 +108,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515403116322044590}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461148192076}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4192604210509253145
 MonoBehaviour:
@@ -153,13 +153,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633463252030906225}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.45, y: -0.055, z: 0.08}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2237125727868482474}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7226634412942952730
 SpriteRenderer:
@@ -240,6 +240,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328726461148192077}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -251,7 +252,6 @@ Transform:
   - {fileID: 2159143368635707113}
   - {fileID: 2237125727868482474}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1328726461148192073
 MonoBehaviour:
@@ -266,26 +266,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_questLog":{"_value":1},"_quest":{"_value":2},"_position":{"x":143.4391,"y":-37.81177},"$type":"DualityGame.Quests.Tasks.QuestStateNode","$id":"0"},{"statement":{"_text":"Hi
-    there, want to make some mischiefe?"},"_actorName":"Harut","_actorParameterID":"416cbc59-c224-439c-912e-4cd83e8e9402","_position":{"x":-164.8344,"y":217.0565},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"_condition":{"valueA":{"_name":"Player/AreYouNotEntertained
-    - Pit open","_targetVariableID":"4b80e3db-44ac-4b3f-b2d6-3a5da70f383e"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":179.7742,"y":141.0728},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"2"},{"statement":{"_text":"What,
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_questLog":{"_value":1},"_quest":{"_value":2},"_position":{"x":-994.7325,"y":-23.90741},"$type":"DualityGame.Quests.Tasks.QuestStateNode","$id":"0"},{"statement":{"_text":"Hi
+    there, want to make some mischiefe?"},"_actorName":"Harut","_actorParameterID":"416cbc59-c224-439c-912e-4cd83e8e9402","_position":{"x":-1273.298,"y":179.1624},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"_condition":{"valueA":{"_name":"Player/AreYouNotEntertained
+    - Pit open","_targetVariableID":"4b80e3db-44ac-4b3f-b2d6-3a5da70f383e"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":-958.3975,"y":154.9772},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"2"},{"statement":{"_text":"What,
     havent you told Kasadya the good news yet? She will be so happy she might forgive
-    us for setting her on fire"},"_position":{"x":-78.65117,"y":385.7654},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"_condition":{"valueA":{"_name":"Player/AreYouNotEntertained
-    - spoken with twins","_targetVariableID":"60bf3884-bc13-42ac-b255-d5a7ca2d1f7c"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":443.0,"y":289.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"4"},{"statement":{"_text":"Hey,
-    long shot but do you fancy fighting Kasadya in a probobly not to the death match?"},"_position":{"x":253.0,"y":484.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"5"},{"statement":{"_text":"Oh
+    us for setting her on fire"},"_position":{"x":-1216.823,"y":399.6698},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"_condition":{"valueA":{"_name":"Player/AreYouNotEntertained
+    - spoken with twins","_targetVariableID":"60bf3884-bc13-42ac-b255-d5a7ca2d1f7c"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":-695.1716,"y":302.9044},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"4"},{"statement":{"_text":"Hey,
+    long shot but do you fancy fighting Kasadya in a probobly not to the death match?"},"_position":{"x":-885.1716,"y":497.9044},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"5"},{"statement":{"_text":"Oh
     heck no! But why not open the fighitng pit, then anyone who wants to fight can
-    go there and rage, you know?","_mood":7},"_actorName":"Harut","_actorParameterID":"416cbc59-c224-439c-912e-4cd83e8e9402","_position":{"x":248.0,"y":591.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"statement":{"_text":"Oh
-    that sounds perf! How do I open it?","_mood":7},"_position":{"x":248.6177,"y":730.7498},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"7"},{"statement":{"_text":"Magic
+    go there and rage, you know?","_mood":7},"_actorName":"Harut","_actorParameterID":"416cbc59-c224-439c-912e-4cd83e8e9402","_position":{"x":-890.1716,"y":604.9044},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"statement":{"_text":"Oh
+    that sounds perf! How do I open it?","_mood":7},"_position":{"x":-889.554,"y":744.6542},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"7"},{"statement":{"_text":"Magic
     of course, we can open it for you for a price, we want one of Kasadya''s scales,
-    they have magical properties and she will never let us use any","_mood":5},"_actorName":"Marut","_actorParameterID":"519c0708-f322-41a9-9b22-21ef1d9371ec","_position":{"x":247.5195,"y":866.3181},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"_action":{"boolVariable":{"_name":"Player/AreYouNotEntertained
-    - spoken with twins","_targetVariableID":"60bf3884-bc13-42ac-b255-d5a7ca2d1f7c"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_position":{"x":160.8876,"y":1021.58},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"9"},{"_condition":{"_inventory":{"_value":3},"_itemType":{"_value":4},"_invert":true,"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},"_position":{"x":741.4332,"y":464.6615},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"10"},{"statement":{"_text":"Where
-    scale? "},"_actorName":"Harut","_actorParameterID":"416cbc59-c224-439c-912e-4cd83e8e9402","_position":{"x":622.174,"y":633.4247},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"11"},{"statement":{"_text":"We
-    were very clear..."},"_actorName":"Marut","_actorParameterID":"519c0708-f322-41a9-9b22-21ef1d9371ec","_position":{"x":600.7972,"y":768.4354},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"12"},{"statement":{"_text":"Happy
-    days. That''s a mighty fine scale. Good work"},"_actorName":"Harut","_actorParameterID":"416cbc59-c224-439c-912e-4cd83e8e9402","_position":{"x":965.3259,"y":641.3004},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"13"},{"statement":{"_text":"We
-    can get up to all kinds of magic with this... mwahahaha"},"_actorName":"Marut","_actorParameterID":"519c0708-f322-41a9-9b22-21ef1d9371ec","_position":{"x":972.0763,"y":760.5598},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"14"},{"statement":{"_text":"Oh,
-    and the pits open now. Thanks for your buisness!"},"_actorName":"Marut","_actorParameterID":"519c0708-f322-41a9-9b22-21ef1d9371ec","_position":{"x":969.8262,"y":875.3188},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"15"},{"_action":{"boolVariable":{"_name":"Player/AreYouNotEntertained
-    - Pit open","_targetVariableID":"4b80e3db-44ac-4b3f-b2d6-3a5da70f383e"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_position":{"x":907.9463,"y":993.4531},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"16"},{"statement":{"_text":"How
-    was she? Has she forgiven us yet?"},"_position":{"x":808.9836,"y":92.38394},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"17"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Harut","_id":"416cbc59-c224-439c-912e-4cd83e8e9402","_actorObject":5},{"_keyName":"Marut","_id":"519c0708-f322-41a9-9b22-21ef1d9371ec","_actorObject":6}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+    they have magical properties and she will never let us use any","_mood":5},"_actorName":"Marut","_actorParameterID":"519c0708-f322-41a9-9b22-21ef1d9371ec","_position":{"x":-890.6521,"y":880.2225},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"_action":{"boolVariable":{"_name":"Player/AreYouNotEntertained
+    - spoken with twins","_targetVariableID":"60bf3884-bc13-42ac-b255-d5a7ca2d1f7c"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_position":{"x":-977.2841,"y":1035.484},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"9"},{"_condition":{"_inventory":{"_value":3},"_itemType":{"_value":4},"_invert":true,"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},"_position":{"x":-396.7384,"y":478.5659},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"10"},{"statement":{"_text":"Where
+    scale? "},"_actorName":"Harut","_actorParameterID":"416cbc59-c224-439c-912e-4cd83e8e9402","_position":{"x":-515.9976,"y":647.329},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"11"},{"statement":{"_text":"We
+    were very clear..."},"_actorName":"Marut","_actorParameterID":"519c0708-f322-41a9-9b22-21ef1d9371ec","_position":{"x":-537.3745,"y":782.3398},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"12"},{"statement":{"_text":"Happy
+    days. That''s a mighty fine scale. Good work"},"_actorName":"Harut","_actorParameterID":"416cbc59-c224-439c-912e-4cd83e8e9402","_position":{"x":-172.8457,"y":655.2048},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"13"},{"statement":{"_text":"We
+    can get up to all kinds of magic with this... mwahahaha"},"_actorName":"Marut","_actorParameterID":"519c0708-f322-41a9-9b22-21ef1d9371ec","_position":{"x":-166.0953,"y":774.4642},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"14"},{"statement":{"_text":"Oh,
+    and the pits open now. Thanks for your buisness!"},"_actorName":"Marut","_actorParameterID":"519c0708-f322-41a9-9b22-21ef1d9371ec","_position":{"x":-168.3455,"y":889.2231},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"15"},{"_action":{"boolVariable":{"_name":"Player/AreYouNotEntertained
+    - Pit open","_targetVariableID":"4b80e3db-44ac-4b3f-b2d6-3a5da70f383e"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_position":{"x":-230.2253,"y":1007.357},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"16"},{"statement":{"_text":"How
+    was she? Has she forgiven us yet?"},"_position":{"x":-329.188,"y":106.2883},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"17"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[{"name":"Are
+    You Not Entertained","rect":{"xMin":-1576.159,"yMin":-188.7018,"xMax":408.1929,"yMax":1273.243}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Harut","_id":"416cbc59-c224-439c-912e-4cd83e8e9402","_actorObject":5},{"_keyName":"Marut","_id":"519c0708-f322-41a9-9b22-21ef1d9371ec","_actorObject":6}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 11400000, guid: 057d41e2fce3fd44481548140c593b1f, type: 2}
@@ -298,8 +299,8 @@ MonoBehaviour:
     _version: 3.25
     _category: 
     _comments: 
-    _translation: {x: 313, y: 92}
-    _zoomFactor: 0.801005
+    _translation: {x: 839, y: 376}
+    _zoomFactor: 0.25000855
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2
@@ -385,6 +386,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328726461474746561}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -400,7 +402,6 @@ Transform:
   - {fileID: 2845103134695182077}
   - {fileID: 1827337928352771982}
   m_Father: {fileID: 1328726461148192076}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1328726461474746562
 SpriteRenderer:
@@ -499,13 +500,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907349664058740503}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.089, y: 1.584, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461474746560}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6379449792507847160
 SpriteRenderer:
@@ -583,13 +584,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4095207618111005609}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.875, y: 0.906, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461474746560}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1736321533862144061
 SpriteRenderer:
@@ -666,6 +667,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4583140076188723488}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -673,7 +675,6 @@ Transform:
   m_Children:
   - {fileID: 5966200133367872646}
   m_Father: {fileID: 1328726461148192076}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4693189856513946633
 GameObject:
@@ -699,13 +700,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4693189856513946633}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461148192076}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3983720757704816480
 MonoBehaviour:
@@ -744,13 +745,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4992723855601401521}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.177, y: 1.506, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461474746560}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6636100257620533186
 SpriteRenderer:
@@ -828,13 +829,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6733314510045121331}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.719, y: 1.929, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461474746560}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &736301858155605061
 SpriteRenderer:
@@ -912,13 +913,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7083442884785430419}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.089, y: 1.584, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461474746560}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3712856261604273469
 SpriteRenderer:
@@ -996,13 +997,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7402367857302357058}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.896, y: 1.142, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461474746560}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6454389040346505990
 SpriteRenderer:
@@ -1080,13 +1081,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7855175492026891308}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.216, y: 1.108, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461474746560}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7543271831720880230
 SpriteRenderer:
@@ -1164,13 +1165,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8522703883892209820}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.033, y: 0.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328726461474746560}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8466578187786814356
 SpriteRenderer:
