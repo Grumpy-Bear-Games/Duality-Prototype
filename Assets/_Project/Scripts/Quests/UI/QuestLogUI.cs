@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -38,7 +39,7 @@ namespace DualityGame.Quests.UI
             var previousSelected = _questList.selectedItem as QuestLog.QuestEntry;
             
             _questEntries.Clear();
-            _questEntries.AddRange(_questLog.Entries);
+            _questEntries.AddRange(_questLog.Entries.Where(entry => entry.Visible));
             _questEntries.Sort((a,b) => (int)(a.Started - b.Started));
             _questList.RefreshItems();
 
