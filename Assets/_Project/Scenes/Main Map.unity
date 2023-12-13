@@ -1235,6 +1235,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_DemonBook1
       objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: dfae2d1449713b644b7d8d18776e2fc7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: dfae2d1449713b644b7d8d18776e2fc7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1620,6 +1625,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_Bonepile1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 5d4220778a90c5f48a0b78890f790cd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 5d4220778a90c5f48a0b78890f790cd9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1743,6 +1753,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_Sword3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091313124811129803, guid: b6a45a8d32062824ea8b1197c95ffcde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2011,6 +2026,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_Sword1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 5dc908f1c3dbd184db12caed5547f816,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 5dc908f1c3dbd184db12caed5547f816,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2156,6 +2176,90 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 929532915577334781, guid: dc5d346c68c25c8498cd2072a2ed0b14,
     type: 3}
   m_PrefabInstance: {fileID: 1044743714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &122288061
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1059083471}
+    m_Modifications:
+    - target: {fileID: 2809544741607117641, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_Name
+      value: Black_Statue1Pillar2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809544741607117641, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809544741607117643, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.42219
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809544741607117643, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809544741607117643, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 42.46775
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809544741607117643, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809544741607117643, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809544741607117643, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809544741607117643, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809544741607117643, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809544741607117643, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809544741607117643, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312744843180148807, guid: 1cafb83109ffaa548a040d43445fc95a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1cafb83109ffaa548a040d43445fc95a, type: 3}
+--- !u!4 &122288062 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2809544741607117643, guid: 1cafb83109ffaa548a040d43445fc95a,
+    type: 3}
+  m_PrefabInstance: {fileID: 122288061}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &123466166
 PrefabInstance:
@@ -2547,6 +2651,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_Sword3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7091313124811129803, guid: b6a45a8d32062824ea8b1197c95ffcde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2733,6 +2842,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_DemonBook1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: dfae2d1449713b644b7d8d18776e2fc7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: dfae2d1449713b644b7d8d18776e2fc7,
         type: 3}
@@ -5721,6 +5835,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_GroundHand1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 2b23826e0dc3f264988138997557029b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 2b23826e0dc3f264988138997557029b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7386,6 +7505,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_Sword5 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7091313124811129803, guid: a9d653ecfd6d1dc4387c1c79c44ea871,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8878,6 +9002,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_DemonBook1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: dfae2d1449713b644b7d8d18776e2fc7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: dfae2d1449713b644b7d8d18776e2fc7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8951,6 +9080,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_Bonepile1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 5d4220778a90c5f48a0b78890f790cd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 5d4220778a90c5f48a0b78890f790cd9,
         type: 3}
@@ -9516,6 +9650,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_Sword1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 5dc908f1c3dbd184db12caed5547f816,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 5dc908f1c3dbd184db12caed5547f816,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9595,6 +9734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_Mushroom_DevilsTooth
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 2df68d63f382db44ebbcd03df07d85b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 2df68d63f382db44ebbcd03df07d85b4,
         type: 3}
@@ -10124,6 +10268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_Sword5 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091313124811129803, guid: a9d653ecfd6d1dc4387c1c79c44ea871,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11310,6 +11459,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_Sword5 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7091313124811129803, guid: a9d653ecfd6d1dc4387c1c79c44ea871,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11695,6 +11849,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_Sword5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091313124811129803, guid: a9d653ecfd6d1dc4387c1c79c44ea871,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12890,6 +13049,8 @@ Transform:
   - {fileID: 179611568}
   - {fileID: 76168494}
   - {fileID: 931727942}
+  - {fileID: 1366966082}
+  - {fileID: 122288062}
   - {fileID: 445252071}
   m_Father: {fileID: 502833445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13280,6 +13441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_Sword3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091313124811129803, guid: b6a45a8d32062824ea8b1197c95ffcde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14256,6 +14422,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_Sword1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 5dc908f1c3dbd184db12caed5547f816,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 5dc908f1c3dbd184db12caed5547f816,
         type: 3}
@@ -16408,6 +16579,90 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1366396898}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1366966081
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1059083471}
+    m_Modifications:
+    - target: {fileID: 3547777602429244400, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921276, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.623024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921276, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921276, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.718918
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921276, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921276, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921276, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921276, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921276, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921276, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921276, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921278, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_Name
+      value: Black_Statue1Pillar1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637266281697921278, guid: c5d149501b7027542b16e1374867328f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c5d149501b7027542b16e1374867328f, type: 3}
+--- !u!4 &1366966082 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4637266281697921276, guid: c5d149501b7027542b16e1374867328f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1366966081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1369892093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16751,6 +17006,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_Bonepile1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 5d4220778a90c5f48a0b78890f790cd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 5d4220778a90c5f48a0b78890f790cd9,
         type: 3}
@@ -17668,6 +17928,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_DemonBook1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: dfae2d1449713b644b7d8d18776e2fc7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: dfae2d1449713b644b7d8d18776e2fc7,
         type: 3}
@@ -20819,6 +21084,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_Bonepile1
       objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 5d4220778a90c5f48a0b78890f790cd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 5d4220778a90c5f48a0b78890f790cd9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21311,6 +21581,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_GroundHand1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 2b23826e0dc3f264988138997557029b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 2b23826e0dc3f264988138997557029b,
         type: 3}
@@ -22470,6 +22745,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_Bonepile1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 5d4220778a90c5f48a0b78890f790cd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 5d4220778a90c5f48a0b78890f790cd9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23576,6 +23856,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_Bonepile1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 5d4220778a90c5f48a0b78890f790cd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 5d4220778a90c5f48a0b78890f790cd9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23998,6 +24283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_GroundHand1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 2b23826e0dc3f264988138997557029b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 2b23826e0dc3f264988138997557029b,
         type: 3}
@@ -25379,6 +25669,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black_Bonepile1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 5d4220778a90c5f48a0b78890f790cd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 5d4220778a90c5f48a0b78890f790cd9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25452,6 +25747,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Black_GroundHand1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883000628722227257, guid: 2b23826e0dc3f264988138997557029b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 2b23826e0dc3f264988138997557029b,
         type: 3}
