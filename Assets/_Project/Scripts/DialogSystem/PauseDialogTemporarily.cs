@@ -13,9 +13,9 @@ namespace DualityGame.DialogSystem
 
         private IEnumerator Trigger_CO()
         {
-            _dialogueTreeController.PauseDialogue();
+            _dialogueTreeController.graph.Pause();
             yield return new WaitForSeconds(_waitTime);
-            _dialogueTreeController.StartDialogue(_dialogueTreeController.graph.agent as IDialogueActor);
+            _dialogueTreeController.graph.Resume();
         }
     }
 }
