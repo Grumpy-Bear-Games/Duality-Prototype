@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 307012705}
-  m_IndirectSpecularColor: {r: 0.99999905, g: 0, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.30741817, g: 0.39518154, b: 0.6508781, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1278,7 +1278,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 483739072}
     m_Modifications:
     - target: {fileID: 4637266281697921276, guid: c8cfbff84b34a8949af973b14923dee7,
         type: 3}
@@ -1552,6 +1552,7 @@ Transform:
   - {fileID: 2126905608}
   - {fileID: 1319826372}
   - {fileID: 1635583408}
+  - {fileID: 1137437656}
   m_Father: {fileID: 1982514886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &484235973
@@ -2780,7 +2781,6 @@ GameObject:
   - component: {fileID: 647070803}
   - component: {fileID: 647070809}
   - component: {fileID: 647070808}
-  - component: {fileID: 647070806}
   - component: {fileID: 647070805}
   - component: {fileID: 647070804}
   m_Layer: 10
@@ -2832,9 +2832,9 @@ MonoBehaviour:
           m_StringArgument: Player has used a portal
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 647070806}
-        m_TargetAssemblyTypeName: DualityGame.Player.Portal, DualityGame
-        m_MethodName: Trigger
+      - m_Target: {fileID: 11400000, guid: 9434144f290061048b95361af48eb46c, type: 2}
+        m_TargetAssemblyTypeName: DualityGame.Player.PortalTarget, DualityGame
+        m_MethodName: WarpTo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2870,22 +2870,6 @@ CapsuleCollider:
   m_Height: 3.9814785
   m_Direction: 1
   m_Center: {x: 0.047273755, y: 1.9197234, z: -0.035902917}
---- !u!114 &647070806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647070802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbb6a61e4c8e4bc3a2511c5f3670ad05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _portalSettings: {fileID: 11400000, guid: 71ed19459bb859e46b06b0bb0ef7b095, type: 2}
-  _sceneGroup: {fileID: 3698217119191262082, guid: 416df4eeba7a8f4499bee7e7f28e2620,
-    type: 2}
-  _spawnPointID: Hell Plaza
 --- !u!199 &647070808
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -8504,7 +8488,6 @@ GameObject:
   - component: {fileID: 871174891}
   - component: {fileID: 871174890}
   - component: {fileID: 871174889}
-  - component: {fileID: 871174894}
   - component: {fileID: 871174893}
   - component: {fileID: 871174892}
   m_Layer: 10
@@ -13363,9 +13346,9 @@ MonoBehaviour:
           m_StringArgument: Player has used a portal
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 871174894}
-        m_TargetAssemblyTypeName: DualityGame.Player.Portal, DualityGame
-        m_MethodName: Trigger
+      - m_Target: {fileID: 11400000, guid: 8fa167511c00a5243b85bd27bdff9b0e, type: 2}
+        m_TargetAssemblyTypeName: DualityGame.Player.PortalTarget, DualityGame
+        m_MethodName: WarpTo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13401,22 +13384,6 @@ CapsuleCollider:
   m_Height: 3.9814785
   m_Direction: 1
   m_Center: {x: 0.047273755, y: 1.9197234, z: -0.035902917}
---- !u!114 &871174894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871174887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbb6a61e4c8e4bc3a2511c5f3670ad05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _portalSettings: {fileID: 11400000, guid: 71ed19459bb859e46b06b0bb0ef7b095, type: 2}
-  _sceneGroup: {fileID: 3698217119191262082, guid: 416df4eeba7a8f4499bee7e7f28e2620,
-    type: 2}
-  _spawnPointID: Heaven Plaza
 --- !u!4 &877564913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4637266281697921276, guid: 70d13db616d95e84197c746a2102e7b0,
@@ -14915,6 +14882,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3523766994997359982, guid: 484d6a697e733c54a9f8ae0f17441a5f,
     type: 3}
   m_PrefabInstance: {fileID: 1124900833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1137437656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4637266281697921276, guid: c8cfbff84b34a8949af973b14923dee7,
+    type: 3}
+  m_PrefabInstance: {fileID: 455649817}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1137966240 stripped
 Transform:
@@ -18962,4 +18935,3 @@ SceneRoots:
   - {fileID: 139391128}
   - {fileID: 1982514886}
   - {fileID: 624642334}
-  - {fileID: 455649817}
