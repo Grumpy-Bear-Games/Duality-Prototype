@@ -339,7 +339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3897764712723570285}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22682339, y: -0.00000001066631, z: 0.0000000024841158, w: 0.9739359}
+  m_LocalRotation: {x: 0.22682339, y: -0.00000003415954, z: 0.000000007955537, w: 0.97393596}
   m_LocalPosition: {x: 0, y: 22, z: -54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 4019496043242644080}
   - component: {fileID: 264279648}
   - component: {fileID: 4019496043242644081}
+  - component: {fileID: 4019496043242644082}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -464,6 +465,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
+--- !u!114 &4019496043242644082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897764712723570285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d504bbfcaa364b7486e1e9b65ca9c96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cinemachineBrainObservable: {fileID: 11400000, guid: e59a7702222fb9247af1001fda7d3468,
+    type: 2}
+  _registerOnAwake: 1
 --- !u!1001 &8920223006287285472
 PrefabInstance:
   m_ObjectHideFlags: 0
