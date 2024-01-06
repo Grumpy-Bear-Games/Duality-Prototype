@@ -15,27 +15,37 @@ namespace DualityGame.Inventory
 
         public override void Interact(GameObject actor)
         {
-            var inventory = actor.GetComponent<InventoryController>();
-            if (inventory == null) return;
-            
-            inventory.PickupItem(_itemType);
-            gameObject.SetActive(false);
+            if (_dialogueTreeController == null)
+            {
+                PickupItem(actor);
+                return;
+            }
 
-            if (_dialogueTreeController == null) return;
             var instigator = actor.GetComponent<DialogueActor>();
             if (instigator != null)
             {
-                _dialogueTreeController.StartDialogue(instigator);
+                _dialogueTreeController.StartDialogue(instigator, success =>
+                {
+                    if (success) PickupItem(actor);
+                });
             }
             else
             {
-                _dialogueTreeController.StartDialogue();
+                _dialogueTreeController.StartDialogue(success => {
+                    if (success) PickupItem(actor);
+                });
             }
+        }
 
+        private void PickupItem(GameObject actor)
+        {
+            var inventory = actor.GetComponent<InventoryController>();
+            if (inventory == null) return;
+
+            inventory.PickupItem(_itemType);
+            gameObject.SetActive(false);
         }
        
-        public override bool Enabled => base.Enabled && gameObject.activeSelf;
-
         public override IInteractable.InteractionType Type => IInteractable.InteractionType.Touch;
 
         public override string ToString() => name;
