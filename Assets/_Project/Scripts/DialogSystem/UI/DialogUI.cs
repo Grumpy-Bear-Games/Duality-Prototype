@@ -117,7 +117,7 @@ namespace DualityGame.DialogSystem.UI {
 			
 			foreach (var (statement, value) in info.options)
 			{
-				CreateOption(statement.Text, () => Finalize(info, value));
+				CreateOption(statement.Text, () => info.SelectOption(value));
 			}
 			FocusFirstOption();
 		}
@@ -130,10 +130,6 @@ namespace DualityGame.DialogSystem.UI {
 			};
 			button.clicked += onClick;
 			_options.Add(button);
-		}
-
-		private void Finalize(MultipleChoiceRequestInfo info, int index){
-			info.SelectOption(index);
 		}
 	}
 }
