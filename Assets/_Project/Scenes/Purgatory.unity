@@ -1743,8 +1743,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 502450956}
-  - component: {fileID: 502450957}
-  - component: {fileID: 502450958}
   - component: {fileID: 502450960}
   - component: {fileID: 502450959}
   - component: {fileID: 502450961}
@@ -1776,73 +1774,6 @@ Transform:
   - {fileID: 1301620141}
   m_Father: {fileID: 1982514886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &502450957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 502450955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baa725fda20e487e888e610cf7aed769, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: e7ad12b3f81d8d749ae77b34f9435f2a, type: 2}
-  _onTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 871174894}
-        m_TargetAssemblyTypeName: DualityGame.Player.Portal, DualityGame
-        m_MethodName: Activate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 647070810}
-        m_TargetAssemblyTypeName: DualityGame.Player.Portal, DualityGame
-        m_MethodName: Activate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 502450958}
-        m_TargetAssemblyTypeName: DualityGame.DialogSystem.PauseDialogTemporarily,
-          DualityGame
-        m_MethodName: Trigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &502450958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 502450955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9063f84f20724ed19e795d7a4d85d6ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dialogueTreeController: {fileID: 2130514869}
-  _waitTime: 5
 --- !u!114 &502450959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1936,8 +1867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c9a6d1f1654485a4ba13efd9a1f4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playableDirectorObservable: {fileID: 11400000, guid: a24220f74a1089340811cde28bb472ca,
-    type: 2}
+  _observable: {fileID: 11400000, guid: a24220f74a1089340811cde28bb472ca, type: 2}
   _registerOnAwake: 1
 --- !u!114 &502450963
 MonoBehaviour:
@@ -19202,6 +19132,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1982514886}
     m_Modifications:
+    - target: {fileID: 1328726461148192073, guid: 83f5700f63041314ca4081d2a2c7d95b,
+        type: 3}
+      propertyPath: _boundGraphSource._zoomFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328726461148192073, guid: 83f5700f63041314ca4081d2a2c7d95b,
+        type: 3}
+      propertyPath: _boundGraphSource._translation.x
+      value: 1440
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328726461148192073, guid: 83f5700f63041314ca4081d2a2c7d95b,
+        type: 3}
+      propertyPath: _boundGraphSource._translation.y
+      value: -22
+      objectReference: {fileID: 0}
     - target: {fileID: 1328726461148192076, guid: 83f5700f63041314ca4081d2a2c7d95b,
         type: 3}
       propertyPath: m_RootOrder
@@ -19283,18 +19228,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9746467394f47b9b71cf7d04debdd96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2130514869 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1328726461148192073, guid: 83f5700f63041314ca4081d2a2c7d95b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2130514852}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2147189412 stripped
