@@ -13,7 +13,6 @@ namespace DualityGame.Iteractables
         [Header("Interaction")]
         [SerializeField] private bool _onlyTriggerOnce = true;
         
-        [SerializeField] public string _prompt;
         public override bool Enabled => base.Enabled && !_hasTriggered;
 
         public override IInteractable.InteractionType Type => _type;
