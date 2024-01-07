@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 307012705}
-  m_IndirectSpecularColor: {r: 0.99999905, g: 0, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.30741817, g: 0.39518154, b: 0.6508781, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1278,7 +1278,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 483739072}
     m_Modifications:
     - target: {fileID: 4637266281697921276, guid: c8cfbff84b34a8949af973b14923dee7,
         type: 3}
@@ -1552,6 +1552,7 @@ Transform:
   - {fileID: 2126905608}
   - {fileID: 1319826372}
   - {fileID: 1635583408}
+  - {fileID: 1137437656}
   m_Father: {fileID: 1982514886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &484235973
@@ -1632,6 +1633,101 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b900a293729184a9022e42275b46bc, type: 3}
+--- !u!1 &487177329
+GameObject:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 487177330}
+  - component: {fileID: 487177333}
+  - component: {fileID: 487177332}
+  - component: {fileID: 487177331}
+  m_Layer: 0
+  m_Name: cm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &487177330
+Transform:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487177329}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.17558098, y: -0.0034686087, z: 0.0010679837, w: 0.9844583}
+  m_LocalPosition: {x: 0.10403086, y: -0.1946497, z: 32.233025}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1379776621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &487177331
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487177329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjectOffset: {x: 0, y: 1.2, z: 0}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_HorizontalDamping: 0.5
+  m_VerticalDamping: 0.5
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
+--- !u!114 &487177332
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487177329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BindingMode: 1
+  m_FollowOffset: {x: 0, y: 15, z: -30}
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
+  m_AngularDampingMode: 0
+  m_PitchDamping: 0
+  m_YawDamping: 0
+  m_RollDamping: 0
+  m_AngularDamping: 0
+--- !u!114 &487177333
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487177329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &493240840 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3883000628722227259, guid: 28b900a293729184a9022e42275b46bc,
@@ -1647,8 +1743,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 502450956}
-  - component: {fileID: 502450957}
-  - component: {fileID: 502450958}
+  - component: {fileID: 502450960}
+  - component: {fileID: 502450959}
+  - component: {fileID: 502450961}
+  - component: {fileID: 502450962}
+  - component: {fileID: 502450963}
   m_Layer: 10
   m_Name: Portals
   m_TagString: Untagged
@@ -1671,9 +1770,11 @@ Transform:
   m_Children:
   - {fileID: 871174891}
   - {fileID: 647070803}
+  - {fileID: 1379776621}
+  - {fileID: 1301620141}
   m_Father: {fileID: 1982514886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &502450957
+--- !u!114 &502450959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1682,51 +1783,65 @@ MonoBehaviour:
   m_GameObject: {fileID: 502450955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baa725fda20e487e888e610cf7aed769, type: 3}
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: e7ad12b3f81d8d749ae77b34f9435f2a, type: 2}
-  _onTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 871174887}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 647070802}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 502450958}
-        m_TargetAssemblyTypeName: DualityGame.DialogSystem.PauseDialogTemporarily,
-          DualityGame
-        m_MethodName: Trigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &502450958
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 76d59bbdf9c7b3444a2545925d12bbb1, type: 2}
+    - {fileID: 11400000, guid: a13f5bcb5e3df634f87c80646e83aaff, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 871174894}
+          m_TargetAssemblyTypeName: DualityGame.Player.Portal, DualityGame
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 647070810}
+          m_TargetAssemblyTypeName: DualityGame.Player.Portal, DualityGame
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!320 &502450960
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502450955}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 51d81191bb17a614fa1d2742218965b3, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -6798113295559816370, guid: 51d81191bb17a614fa1d2742218965b3, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References:
+    - 0d6bd3b30cbd3744293d61c20cbee8ee: {fileID: 1379776622}
+    - 6ff811a431c627d4ea540ef5cf74a6bc: {fileID: 1301620142}
+    - 4c7511eff556b0e4b8cb57b00d56d7dd: {fileID: 0}
+--- !u!114 &502450961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1735,11 +1850,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 502450955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9063f84f20724ed19e795d7a4d85d6ee, type: 3}
+  m_Script: {fileID: 11500000, guid: c13a75cc42fc440eb5a5969bcd797d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueTreeController: {fileID: 2130514869}
-  _waitTime: 5
+  _cinemachineBrainObservable: {fileID: 11400000, guid: e59a7702222fb9247af1001fda7d3468,
+    type: 2}
+--- !u!114 &502450962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502450955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c9a6d1f1654485a4ba13efd9a1f4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _observable: {fileID: 11400000, guid: a24220f74a1089340811cde28bb472ca, type: 2}
+  _registerOnAwake: 1
+--- !u!114 &502450963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502450955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612747996abd4f509b55083558d6bc8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &505158318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,16 +2921,16 @@ GameObject:
   - component: {fileID: 647070803}
   - component: {fileID: 647070809}
   - component: {fileID: 647070808}
-  - component: {fileID: 647070806}
   - component: {fileID: 647070805}
-  - component: {fileID: 647070804}
+  - component: {fileID: 647070810}
+  - component: {fileID: 647070811}
   m_Layer: 10
   m_Name: Portal to Hell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &647070803
 Transform:
   m_ObjectHideFlags: 0
@@ -2805,48 +2946,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 502450956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &647070804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647070802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23063d375dfdd6044ab0bfdbb9e7badf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _onEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2130514863}
-        m_TargetAssemblyTypeName: DualityGame.Utilities.BlackboardUtility, DualityGame
-        m_MethodName: SetBooleanTrue
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Player has used a portal
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 647070806}
-        m_TargetAssemblyTypeName: DualityGame.Player.Portal, DualityGame
-        m_MethodName: Trigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!136 &647070805
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2870,22 +2969,6 @@ CapsuleCollider:
   m_Height: 3.9814785
   m_Direction: 1
   m_Center: {x: 0.047273755, y: 1.9197234, z: -0.035902917}
---- !u!114 &647070806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647070802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbb6a61e4c8e4bc3a2511c5f3670ad05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _portalSettings: {fileID: 11400000, guid: 71ed19459bb859e46b06b0bb0ef7b095, type: 2}
-  _sceneGroup: {fileID: 3698217119191262082, guid: 416df4eeba7a8f4499bee7e7f28e2620,
-    type: 2}
-  _spawnPointID: Hell Plaza
 --- !u!199 &647070808
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -2978,7 +3061,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -7693,6 +7776,47 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &647070810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647070802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab48bcb8512e45a39a53161e878989d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _portalTarget: {fileID: 11400000, guid: 9434144f290061048b95361af48eb46c, type: 2}
+  _onWarp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2130514863}
+        m_TargetAssemblyTypeName: DualityGame.Utilities.BlackboardUtility, DualityGame
+        m_MethodName: SetBooleanTrue
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player has used a portal
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &647070811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647070802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd19d69c87f4d4f8080a782e92d0106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: portal-purgatory-to-hell
 --- !u!4 &660569760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4637266281697921276, guid: 2ce8cd5849b50034d90f3e9f57f2aa73,
@@ -8504,16 +8628,16 @@ GameObject:
   - component: {fileID: 871174891}
   - component: {fileID: 871174890}
   - component: {fileID: 871174889}
-  - component: {fileID: 871174894}
   - component: {fileID: 871174893}
-  - component: {fileID: 871174892}
+  - component: {fileID: 871174894}
+  - component: {fileID: 871174895}
   m_Layer: 10
   m_Name: Portal to Heaven
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &871174889
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -8606,7 +8730,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -13336,48 +13460,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 502450956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &871174892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871174887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23063d375dfdd6044ab0bfdbb9e7badf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _onEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2130514863}
-        m_TargetAssemblyTypeName: DualityGame.Utilities.BlackboardUtility, DualityGame
-        m_MethodName: SetBooleanTrue
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Player has used a portal
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 871174894}
-        m_TargetAssemblyTypeName: DualityGame.Player.Portal, DualityGame
-        m_MethodName: Trigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!136 &871174893
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13410,13 +13492,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 871174887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbb6a61e4c8e4bc3a2511c5f3670ad05, type: 3}
+  m_Script: {fileID: 11500000, guid: ab48bcb8512e45a39a53161e878989d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _portalSettings: {fileID: 11400000, guid: 71ed19459bb859e46b06b0bb0ef7b095, type: 2}
-  _sceneGroup: {fileID: 3698217119191262082, guid: 416df4eeba7a8f4499bee7e7f28e2620,
-    type: 2}
-  _spawnPointID: Heaven Plaza
+  _portalTarget: {fileID: 11400000, guid: 8fa167511c00a5243b85bd27bdff9b0e, type: 2}
+  _onWarp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2130514863}
+        m_TargetAssemblyTypeName: DualityGame.Utilities.BlackboardUtility, DualityGame
+        m_MethodName: SetBooleanTrue
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player has used a portal
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &871174895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871174887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd19d69c87f4d4f8080a782e92d0106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: portal-purgatory-to-heaven
 --- !u!4 &877564913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4637266281697921276, guid: 70d13db616d95e84197c746a2102e7b0,
@@ -14916,6 +15023,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1124900833}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1137437656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4637266281697921276, guid: c8cfbff84b34a8949af973b14923dee7,
+    type: 3}
+  m_PrefabInstance: {fileID: 455649817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1137966240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3883000628722227259, guid: 28b900a293729184a9022e42275b46bc,
@@ -15622,6 +15735,78 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1298424848}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1301620140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1301620141}
+  - component: {fileID: 1301620142}
+  m_Layer: 0
+  m_Name: Portal to Hell Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1301620141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301620140}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.21390367, y: -1e-45, z: -0, w: 0.9768548}
+  m_LocalPosition: {x: -4.998, y: 15, z: -30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2109453924}
+  m_Father: {fileID: 502450956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1301620142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301620140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: -1
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 647070803}
+  m_Follow: {fileID: 647070803}
+  m_Lens:
+    FieldOfView: 13.9
+    OrthographicSize: 10
+    NearClipPlane: 0.2
+    FarClipPlane: 500
+    Dutch: 0
+    ModeOverride: 0
+    LensShift: {x: 0, y: 0}
+    GateFit: 2
+    FocusDistance: 10
+    m_SensorSize: {x: 1, y: 1}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+  m_LegacyBlendHint: 0
+  m_ComponentOwner: {fileID: 2109453924}
 --- !u!1001 &1302288959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15984,6 +16169,78 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1019496300}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1379776620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1379776621}
+  - component: {fileID: 1379776622}
+  m_Layer: 0
+  m_Name: Portal to Heaven Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1379776621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379776620}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.21390367, y: 1e-45, z: -0, w: 0.9768548}
+  m_LocalPosition: {x: 5.94, y: 15, z: -30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 487177330}
+  m_Father: {fileID: 502450956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1379776622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379776620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: -1
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 871174891}
+  m_Follow: {fileID: 871174891}
+  m_Lens:
+    FieldOfView: 13.9
+    OrthographicSize: 10
+    NearClipPlane: 0.2
+    FarClipPlane: 500
+    Dutch: 0
+    ModeOverride: 0
+    LensShift: {x: 0, y: 0}
+    GateFit: 2
+    FocusDistance: 10
+    m_SensorSize: {x: 1, y: 1}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+  m_LegacyBlendHint: 0
+  m_ComponentOwner: {fileID: 487177330}
 --- !u!4 &1404345633 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3883000628722227259, guid: f6f4182e25f9b4441ba34a54f6d38b5a,
@@ -18578,6 +18835,101 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2104536616}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2109453923
+GameObject:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2109453924}
+  - component: {fileID: 2109453927}
+  - component: {fileID: 2109453926}
+  - component: {fileID: 2109453925}
+  m_Layer: 0
+  m_Name: cm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2109453924
+Transform:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109453923}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.17558098, y: -0.0034686087, z: 0.0010679837, w: 0.9844583}
+  m_LocalPosition: {x: 0.10403086, y: -0.1946497, z: 32.233025}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1301620141}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2109453925
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109453923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjectOffset: {x: 0, y: 1.2, z: 0}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_HorizontalDamping: 0.5
+  m_VerticalDamping: 0.5
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
+--- !u!114 &2109453926
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109453923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BindingMode: 1
+  m_FollowOffset: {x: 0, y: 15, z: -30}
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
+  m_AngularDampingMode: 0
+  m_PitchDamping: 0
+  m_YawDamping: 0
+  m_RollDamping: 0
+  m_AngularDamping: 0
+--- !u!114 &2109453927
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109453923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2123634265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18780,6 +19132,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1982514886}
     m_Modifications:
+    - target: {fileID: 1328726461148192073, guid: 83f5700f63041314ca4081d2a2c7d95b,
+        type: 3}
+      propertyPath: _boundGraphSource._zoomFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328726461148192073, guid: 83f5700f63041314ca4081d2a2c7d95b,
+        type: 3}
+      propertyPath: _boundGraphSource._translation.x
+      value: 1440
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328726461148192073, guid: 83f5700f63041314ca4081d2a2c7d95b,
+        type: 3}
+      propertyPath: _boundGraphSource._translation.y
+      value: -22
+      objectReference: {fileID: 0}
     - target: {fileID: 1328726461148192076, guid: 83f5700f63041314ca4081d2a2c7d95b,
         type: 3}
       propertyPath: m_RootOrder
@@ -18861,18 +19228,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9746467394f47b9b71cf7d04debdd96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2130514869 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1328726461148192073, guid: 83f5700f63041314ca4081d2a2c7d95b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2130514852}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2147189412 stripped
@@ -18962,4 +19317,3 @@ SceneRoots:
   - {fileID: 139391128}
   - {fileID: 1982514886}
   - {fileID: 624642334}
-  - {fileID: 455649817}

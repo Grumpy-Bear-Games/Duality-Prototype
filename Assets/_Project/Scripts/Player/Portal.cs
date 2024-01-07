@@ -1,19 +1,50 @@
-﻿using DualityGame.Core;
-using Games.GrumpyBear.Core.LevelManagement;
+﻿using Games.GrumpyBear.Core.SaveSystem;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace DualityGame.Player
 {
-    public class Portal : MonoBehaviour
+    [RequireComponent(typeof(SaveableEntity))]
+    public class Portal : MonoBehaviour, ISaveableComponent
     {
-        [SerializeField] private PortalSettings _portalSettings;
-        
-        [Header("Destination")]
-        [SerializeField] private SceneGroup _sceneGroup;
-        [SerializeField] private string _spawnPointID;
+        [SerializeField] private PortalTarget _portalTarget;
+        [SerializeField] private UnityEvent _onWarp;
+        private bool _active;
 
-        public void Trigger() => CoroutineRunner.Run(_portalSettings.PortalTo(_sceneGroup, _spawnPointID));
+        private ParticleSystem _particleSystem;
 
-        private void Reset() => _portalSettings = FindObjectOfType<PortalSettings>();
+        public void Activate()
+        {
+            _active = true;
+            _particleSystem.Play();
+        }
+
+        private void Awake() => _particleSystem = GetComponentInChildren<ParticleSystem>();
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!_active) return;
+            _onWarp?.Invoke();
+            _portalTarget.WarpTo();
+        }
+
+        #region ISaveableComponent
+        object ISaveableComponent.CaptureState() => _active;
+
+        public void RestoreState(object state)
+        {
+            _active = (bool) state;
+            Debug.Log("Portal Restore State: " + _active, this);
+            if (_active)
+            {
+                _particleSystem.Simulate(5f);
+                _particleSystem.Play();
+            }
+            else
+            {
+                _particleSystem.Stop();
+            }
+        }
+        #endregion
     }
 }

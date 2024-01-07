@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/_Project/UI/Dialog.uss?fileID=7433441132597879392&amp;guid=be77d4b3870dfb3408921be491ead72a&amp;type=3#Dialog" />
     <Style src="project://database/Assets/_Project/UI/FadeAnimation.uss?fileID=7433441132597879392&amp;guid=7aaf1c68f8004960bbecbce856a98e33&amp;type=3#FadeAnimation" />
-    <ui:VisualElement name="DialogFrame" class="FadeAnimation">
+    <ui:VisualElement name="DialogFrame" class="SlideInAnimation">
         <ui:VisualElement style="flex-direction: row;">
             <ui:VisualElement name="PortraitFrame" />
             <ui:VisualElement name="DialogText" style="flex-grow: 1;">

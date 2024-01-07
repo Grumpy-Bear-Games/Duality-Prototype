@@ -19,4 +19,23 @@
     display: flex;
     opacity: 1;
     transition-duration: 0ms;
-} 
+}
+
+.SlideInAnimation {
+    transition-property: display, translate;
+    transition-duration: var(--fade-duration);
+    transition-timing-function: ease;
+    translate: 0 200%;
+}
+
+.SlideInAnimation.Shown {
+    translate: 0 0;
+    transition-duration: var(--fade-duration);
+    transition-property: translate;
+    transition-timing-function: ease;
+}
+
+.unity-builder-viewport__document .SlideInAnimation {
+    translate: initial;
+    transition-duration: 0ms;
+}

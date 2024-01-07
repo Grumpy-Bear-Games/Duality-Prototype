@@ -36,24 +36,6 @@ MonoBehaviour:
   _scenes:
   - _scenePath: Assets/_Project/Scenes/Environment Showcase.unity
   - _scenePath: Assets/_Project/Scenes/Player.unity
---- !u!114 &-6360022219809799149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
-  m_Name: Quest Level 1
-  m_EditorClassIdentifier: 
-  <ObjectGuid>k__BackingField:
-    _data: eef46d417aba448f99bee7e7f28e26201344a5e87ca9bca7
-  _manager: {fileID: 11400000}
-  _scenes:
-  - _scenePath: Assets/_Project/Scenes/Quest Level 1.unity
-  - _scenePath: Assets/_Project/Scenes/Player.unity
 --- !u!114 &-3900150379154160438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,7 +52,7 @@ MonoBehaviour:
     _data: eef46d417aba448f99bee7e7f28e2620ca44e9dfe4e1dfc9
   _manager: {fileID: 11400000}
   _scenes:
-  - _scenePath: Assets/_Project/Scenes/ZadkielsHouse.unity
+  - _scenePath: Assets/_Project/Scenes/ZadkielsHouseGorgonShop.unity
   - _scenePath: Assets/_Project/Scenes/Player.unity
 --- !u!114 &-3024725603259824557
 MonoBehaviour:
@@ -127,11 +109,9 @@ MonoBehaviour:
   - {fileID: 3698217119191262082}
   - {fileID: -8788006379408648299}
   - {fileID: -3024725603259824557}
-  - {fileID: -6360022219809799149}
   - {fileID: 2826066878318788179}
   - {fileID: 567819877139781090}
   - {fileID: -7894316949164092931}
-  - {fileID: 5455778451232703607}
   - {fileID: -3900150379154160438}
 --- !u!114 &211755256069627557
 MonoBehaviour:
@@ -204,24 +184,6 @@ MonoBehaviour:
   _manager: {fileID: 11400000}
   _scenes:
   - _scenePath: Assets/_Project/Scenes/Main Map.unity
-  - _scenePath: Assets/_Project/Scenes/Player.unity
---- !u!114 &4240443740491785656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1770dbf7301640f9bf33238f4f29e9b5, type: 3}
-  m_Name: Prototype Level
-  m_EditorClassIdentifier: 
-  <ObjectGuid>k__BackingField:
-    _data: eef46d417aba448f99bee7e7f28e2620b8a50a7a1d15d93a
-  _manager: {fileID: 11400000}
-  _scenes:
-  - _scenePath: Assets/_Project/Scenes/Prototype Level.unity
   - _scenePath: Assets/_Project/Scenes/Player.unity
 --- !u!114 &5455778451232703607
 MonoBehaviour:

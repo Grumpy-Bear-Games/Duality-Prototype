@@ -100,11 +100,7 @@ namespace DualityGame.DialogSystem.UI {
 			}
 
 			CleanupChoiceButton();
-			CreateOption("(Continue)", ()=>
-			{
-				CleanupChoiceButton();
-				info.Continue();
-			});
+			CreateOption("(Continue)", info.Continue);
 			FocusFirstOption();
 		}
 
@@ -121,7 +117,7 @@ namespace DualityGame.DialogSystem.UI {
 			
 			foreach (var (statement, value) in info.options)
 			{
-				CreateOption(statement.Text, () => Finalize(info, value));
+				CreateOption(statement.Text, () => info.SelectOption(value));
 			}
 			FocusFirstOption();
 		}
@@ -134,12 +130,6 @@ namespace DualityGame.DialogSystem.UI {
 			};
 			button.clicked += onClick;
 			_options.Add(button);
-		}
-
-		private void Finalize(MultipleChoiceRequestInfo info, int index){
-			_options.style.opacity = new StyleFloat(StyleKeyword.Initial);
-			CleanupChoiceButton();
-			info.SelectOption(index);
 		}
 	}
 }
