@@ -23,6 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928921092696564115}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,7 +33,6 @@ Transform:
   - {fileID: 2202964267024215708}
   - {fileID: 6272379609247462165}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1535537415273116269
 PrefabInstance:
@@ -65,17 +65,17 @@ PrefabInstance:
     - target: {fileID: 855071986495757553, guid: 7598f74b5bf540f4ea613c0541db6f1d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.47839
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: 855071986495757553, guid: 7598f74b5bf540f4ea613c0541db6f1d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000012397766
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 855071986495757553, guid: 7598f74b5bf540f4ea613c0541db6f1d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.2126122
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 855071986495757553, guid: 7598f74b5bf540f4ea613c0541db6f1d,
         type: 3}
@@ -161,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 4637266281697921276, guid: 7a7b97b38234d1e4f8a6ae50c84a97bf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.270323
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4637266281697921276, guid: 7a7b97b38234d1e4f8a6ae50c84a97bf,
         type: 3}
@@ -171,7 +171,7 @@ PrefabInstance:
     - target: {fileID: 4637266281697921276, guid: 7a7b97b38234d1e4f8a6ae50c84a97bf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.257845
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4637266281697921276, guid: 7a7b97b38234d1e4f8a6ae50c84a97bf,
         type: 3}
@@ -314,7 +314,6 @@ MonoBehaviour:
         m_CallState: 2
   _type: 2
   _onlyTriggerOnce: 1
-  _prompt: Search pile of corpses
 --- !u!1001 &7983442618802332195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -331,7 +330,7 @@ PrefabInstance:
     - target: {fileID: 855071986495757552, guid: dbe3add6cc274fd49817a35bcbf75622,
         type: 3}
       propertyPath: m_Name
-      value: Hand
+      value: Hand [1]
       objectReference: {fileID: 0}
     - target: {fileID: 855071986495757552, guid: dbe3add6cc274fd49817a35bcbf75622,
         type: 3}
@@ -346,17 +345,17 @@ PrefabInstance:
     - target: {fileID: 855071986495757553, guid: dbe3add6cc274fd49817a35bcbf75622,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.12962
+      value: -2.49
       objectReference: {fileID: 0}
     - target: {fileID: 855071986495757553, guid: dbe3add6cc274fd49817a35bcbf75622,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000012397766
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 855071986495757553, guid: dbe3add6cc274fd49817a35bcbf75622,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.486765
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 855071986495757553, guid: dbe3add6cc274fd49817a35bcbf75622,
         type: 3}
