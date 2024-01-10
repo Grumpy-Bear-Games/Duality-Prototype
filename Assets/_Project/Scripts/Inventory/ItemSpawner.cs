@@ -48,7 +48,9 @@ namespace DualityGame.Inventory
             foreach (var item in _itemsToSpawn)
             {
                 if (item == null) return;
+                // TODO: Draw a wire cube based on the sprite bounds instead
                 var itemCollider = item.GetComponent<Collider>();
+                if (itemCollider == null) continue;
                 var bounds = itemCollider.bounds;
                 Gizmos.DrawWireCube(bounds.center, bounds.size);
                 Gizmos.DrawLine(transform.position, bounds.center);
