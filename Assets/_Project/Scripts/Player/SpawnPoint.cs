@@ -5,14 +5,14 @@ namespace DualityGame.Player
 {
     public class SpawnPoint : MonoBehaviour
     {
-        public const string InitialTag = "Respawn";
+        private const string InitialTag = "Respawn";
 
-        public static SpawnPoint InitialSpawnPoint { get; private set; }
+        private static SpawnPoint _initialSpawnPoint;
         private static readonly Dictionary<string, SpawnPoint> _spawnPoints = new();
 
         public static SpawnPoint FindByID(string id)
         {
-            if (string.IsNullOrEmpty(id)) return InitialSpawnPoint;
+            if (string.IsNullOrEmpty(id)) return _initialSpawnPoint;
             _spawnPoints.TryGetValue(id, out var spawnPoint);
             return spawnPoint;
         }
@@ -24,12 +24,12 @@ namespace DualityGame.Player
         private void Awake()
         {
             if (!string.IsNullOrEmpty(ID)) _spawnPoints[ID] = this;
-            if (CompareTag(InitialTag)) InitialSpawnPoint = this;
+            if (CompareTag(InitialTag)) _initialSpawnPoint = this;
         }
 
         private void OnDestroy()
         {
-            if (InitialSpawnPoint == this) InitialSpawnPoint = null;
+            if (_initialSpawnPoint == this) _initialSpawnPoint = null;
             if (!string.IsNullOrEmpty(ID) && _spawnPoints.TryGetValue(ID, out var spawnPoint) && spawnPoint == this)
                 _spawnPoints.Remove(ID);
         }
