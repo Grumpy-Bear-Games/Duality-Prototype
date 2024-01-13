@@ -7798,7 +7798,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab48bcb8512e45a39a53161e878989d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _portalTarget: {fileID: 11400000, guid: 9434144f290061048b95361af48eb46c, type: 2}
+  _portalSettings: {fileID: 11400000, guid: 71ed19459bb859e46b06b0bb0ef7b095, type: 2}
+  _spawnPointReference: {fileID: 11400000, guid: 9434144f290061048b95361af48eb46c,
+    type: 2}
   _onWarp:
     m_PersistentCalls:
       m_Calls:
@@ -8196,6 +8198,12 @@ PrefabInstance:
       propertyPath: <Realm>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: 549395d77f1552d46896ce28d9f379be,
+        type: 2}
+    - target: {fileID: 3216790354864994542, guid: 34fbcea619ade8142ab161bf376e8d00,
+        type: 3}
+      propertyPath: <SpawnPointReference>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: b63e2780268ba0d48a0516ebbbc5f054,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13599,7 +13607,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab48bcb8512e45a39a53161e878989d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _portalTarget: {fileID: 11400000, guid: 8fa167511c00a5243b85bd27bdff9b0e, type: 2}
+  _portalSettings: {fileID: 11400000, guid: 71ed19459bb859e46b06b0bb0ef7b095, type: 2}
+  _spawnPointReference: {fileID: 11400000, guid: 8fa167511c00a5243b85bd27bdff9b0e,
+    type: 2}
   _onWarp:
     m_PersistentCalls:
       m_Calls:

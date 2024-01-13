@@ -16,9 +16,9 @@ namespace DualityGame.Player
         private CharacterController _controller;
         private bool _hasBeenInitialized;
 
-        public void MoveToSpawnPoint(string spawnPointID)
+        public void MoveToSpawnPoint(SpawnPointReference spawnPointReference)
         {
-            var spawnPoint = SpawnPoint.FindByID(spawnPointID);
+            var spawnPoint = SpawnPoint.GetByReference(spawnPointReference);
             
             Debug.Assert(spawnPoint != null, "spawnPoint != null", this);
             Debug.Assert(spawnPoint.Realm != null, "spawnPoint.Realm != null", this);

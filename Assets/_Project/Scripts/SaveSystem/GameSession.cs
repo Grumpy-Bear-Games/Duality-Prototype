@@ -12,7 +12,7 @@ namespace DualityGame.SaveSystem
     [CreateAssetMenu(menuName = "Duality/Game Session", fileName = "Game Session", order = 0)]
     public class GameSession : ScriptableObject
     {
-        [SerializeField] private SceneGroup _firstSceneGroup;
+        [SerializeField] private SpawnPointReference _initialSpawnPoint;
         [SerializeField] private GameState _firstGameState;
         
         private const string SaveFileName = "Game";
@@ -25,7 +25,7 @@ namespace DualityGame.SaveSystem
             FileSystem.Delete(SaveFileName);
             ClearSession();
             
-            yield return _firstSceneGroup.Load_CO();
+            yield return _initialSpawnPoint.SceneGroup.Load_CO();
             SpawnController.Instance.MoveToSpawnPoint(null);
             _firstGameState.SetActive();
         }
@@ -46,18 +46,18 @@ namespace DualityGame.SaveSystem
 
         public IEnumerator Respawn()
         {
-            yield return MoveToSpawnPoint(_firstSceneGroup, null);
+            yield return MoveToSpawnPoint(_initialSpawnPoint);
             CaptureState();
             SaveToFile();
         }
 
-        public IEnumerator MoveToSpawnPoint(SceneGroup sceneGroup, string spawnPointID)
+        public IEnumerator MoveToSpawnPoint(SpawnPointReference spawnPointReference)
         {
             CaptureState();
             
-            yield return sceneGroup.Load_CO();
+            yield return spawnPointReference.SceneGroup.Load_CO();
             RestoreState();
-            SpawnController.Instance.MoveToSpawnPoint(spawnPointID);
+            SpawnController.Instance.MoveToSpawnPoint(spawnPointReference);
         }
         
         public void CaptureState() => SaveableEntity.CaptureEntityStates(_entityStates);
@@ -66,7 +66,7 @@ namespace DualityGame.SaveSystem
         private void ClearSession()
         {
             _entityStates = new Dictionary<string, Dictionary<string, object>>();
-            _sceneGroup = _firstSceneGroup;
+            _sceneGroup = _initialSpawnPoint.SceneGroup;
         }
 
         public bool HasSaveFile => FileSystem.Exists(SaveFileName);
@@ -88,7 +88,7 @@ namespace DualityGame.SaveSystem
 
         private void SaveToFile()
         {
-            var serializableSession = new SerializableSession(_sceneGroup ? _sceneGroup : _firstSceneGroup, _entityStates);
+            var serializableSession = new SerializableSession(_sceneGroup ? _sceneGroup : _initialSpawnPoint.SceneGroup, _entityStates);
             FileSystem.SaveFile(SaveFileName, serializableSession);
         }
 

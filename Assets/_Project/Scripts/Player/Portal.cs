@@ -7,7 +7,11 @@ namespace DualityGame.Player
     [RequireComponent(typeof(SaveableEntity))]
     public class Portal : MonoBehaviour, ISaveableComponent
     {
-        [SerializeField] private PortalTarget _portalTarget;
+        [SerializeField] private PortalSettings _portalSettings;
+
+        [SerializeField] private SpawnPointReference _spawnPointReference;
+
+
         [SerializeField] private UnityEvent _onWarp;
         private bool _active;
 
@@ -25,7 +29,7 @@ namespace DualityGame.Player
         {
             if (!_active) return;
             _onWarp?.Invoke();
-            _portalTarget.WarpTo();
+            _spawnPointReference.WarpTo(_portalSettings);
         }
 
         #region ISaveableComponent
