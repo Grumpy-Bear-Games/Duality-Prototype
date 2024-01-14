@@ -15,6 +15,7 @@ namespace DualityGame.Iteractables
             Talk,
             Touch,
             View,
+            Doorway,
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace DualityGame.Iteractables.UI
@@ -58,25 +57,11 @@ namespace DualityGame.Iteractables.UI
         
         private void UpdateElement()
         {
-            RemoveFromClassList("talk");
-            RemoveFromClassList("touch");
-            RemoveFromClassList("view");
+            foreach(var interactionType in Enum.GetValues(typeof(IInteractable.InteractionType)))
+                RemoveFromClassList(interactionType.ToString().ToLower());
 
             if (!_selected) return;
-            switch (_interactionType)
-            {
-                case IInteractable.InteractionType.Talk:
-                    AddToClassList("talk");
-                    break;
-                case IInteractable.InteractionType.Touch:
-                    AddToClassList("touch");
-                    break;
-                case IInteractable.InteractionType.View:
-                    AddToClassList("view");
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            AddToClassList(_interactionType.ToString().ToLower());
         }
 
         public InteractionPrompt()
