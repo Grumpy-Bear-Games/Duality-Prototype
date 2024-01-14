@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace DualityGame.Player
 {
@@ -17,9 +21,8 @@ namespace DualityGame.Player
             return spawnPoint;
         }
 
-
         [field: SerializeField] public SpawnPointReference SpawnPointReference { get; private set; }
-        [field: SerializeField] public Realm.Realm Realm { get; private set; }
+        public Realm.Realm Realm => SpawnPointReference != null ? SpawnPointReference.Realm : null;
 
         private void Awake()
         {

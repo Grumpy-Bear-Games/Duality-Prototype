@@ -8,21 +8,21 @@ namespace DualityGame.Player
     [CreateAssetMenu(menuName = "Duality/Spawn Point Reference")]
     public class SpawnPointReference : ScriptableObject
     {
-        [Header("Destination")]
-        [SerializeField] private SceneGroup _sceneGroup;
+        [field: Header("Destination")]
+        [field: SerializeField] public SceneGroup SceneGroup { get; private set; }
+        [field: SerializeField] public Realm.Realm Realm { get; private set; }
 
-        public SceneGroup SceneGroup => _sceneGroup;
 
-        public void WarpTo(PortalSettings portalSettings) => CoroutineRunner.Run(WarpTo_CO(portalSettings));
+        public void SpawnAt(SpawnSettings spawnSettings) => CoroutineRunner.Run(WarpTo_CO(spawnSettings));
 
-        private IEnumerator WarpTo_CO(PortalSettings portalSettings)
+        private IEnumerator WarpTo_CO(SpawnSettings spawnSettings)
         {
             var prevGameState = GameState.Current;
-            portalSettings.TransitionGameState.SetActive();
+            spawnSettings.TransitionGameState.SetActive();
 
-            var moveToSpawnPoint_CO = portalSettings.GameSession.MoveToSpawnPoint(this);
-            if (portalSettings.ScreenFader)
-                moveToSpawnPoint_CO = portalSettings.ScreenFader.Wrap(moveToSpawnPoint_CO);
+            var moveToSpawnPoint_CO = spawnSettings.GameSession.MoveToSpawnPoint(this);
+            if (spawnSettings.ScreenFader)
+                moveToSpawnPoint_CO = spawnSettings.ScreenFader.Wrap(moveToSpawnPoint_CO);
 
             yield return moveToSpawnPoint_CO;
 
