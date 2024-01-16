@@ -43748,26 +43748,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1002746823}
     m_Modifications:
-    - target: {fileID: 1328726461148192073, guid: c8caba1429714cf418718c8b239808b4,
-        type: 3}
-      propertyPath: _boundGraphSource._zoomFactor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328726461148192073, guid: c8caba1429714cf418718c8b239808b4,
-        type: 3}
-      propertyPath: _boundGraphSource._translation.x
-      value: 787
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328726461148192073, guid: c8caba1429714cf418718c8b239808b4,
-        type: 3}
-      propertyPath: _boundGraphSource._translation.y
-      value: -395
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328726461148192076, guid: c8caba1429714cf418718c8b239808b4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 1328726461148192076, guid: c8caba1429714cf418718c8b239808b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47454,15 +47434,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1002746823}
     m_Modifications:
-    - target: {fileID: 8570655006039318196, guid: 5de877bae13313d42933196b90751e41,
+    - target: {fileID: 649813707504666700, guid: 5de877bae13313d42933196b90751e41,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.6
+      propertyPath: m_LocalRotation.x
+      value: 0.18910751
       objectReference: {fileID: 0}
-    - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
+    - target: {fileID: 649813707504666700, guid: 5de877bae13313d42933196b90751e41,
         type: 3}
-      propertyPath: m_RootOrder
-      value: -1
+      propertyPath: m_LocalRotation.y
+      value: 6.3162773e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 649813707504666700, guid: 5de877bae13313d42933196b90751e41,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -1.2950366e-15
       objectReference: {fileID: 0}
     - target: {fileID: 8570655007339115320, guid: 5de877bae13313d42933196b90751e41,
         type: 3}
