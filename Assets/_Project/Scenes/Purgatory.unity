@@ -8145,11 +8145,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 663479646257447465, guid: 34fbcea619ade8142ab161bf376e8d00,
         type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 663479646257447465, guid: 34fbcea619ade8142ab161bf376e8d00,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.8
       objectReference: {fileID: 0}
@@ -8198,12 +8193,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3216790354864994542, guid: 34fbcea619ade8142ab161bf376e8d00,
-        type: 3}
-      propertyPath: <Realm>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 549395d77f1552d46896ce28d9f379be,
-        type: 2}
     - target: {fileID: 3216790354864994542, guid: 34fbcea619ade8142ab161bf376e8d00,
         type: 3}
       propertyPath: <SpawnPointReference>k__BackingField
@@ -14902,7 +14891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1108944646}
   m_Layer: 10
-  m_Name: Spawn Points
+  m_Name: Spawnpoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

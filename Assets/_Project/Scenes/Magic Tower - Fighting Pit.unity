@@ -123,128 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &47272792
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 462092825}
-    m_Modifications:
-    - target: {fileID: 1660819271242814748, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _id
-      value: af85d9d1-9746-4e45-81bf-7bdd7a942afd
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275002, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_Name
-      value: Door To Garden
-      objectReference: {fileID: 0}
-    - target: {fileID: 3109273604361910095, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_TagString
-      value: Respawn
-      objectReference: {fileID: 0}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: 9d6f41b3eb0f8e24bb38c61ba869cbdf,
-        type: 2}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SpawnAt
-      objectReference: {fileID: 0}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DualityGame.Player.SpawnPointReference, DualityGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: b3bc44b33a0367542a0bd715b122546f,
-        type: 2}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: DualityGame.Player.SpawnSettings, DualityGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 6660749574087325158, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: <SpawnPointReference>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: b8c2c665868909043b5c88bd0fd2885a,
-        type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4a04f82ec3fa7494db75e0038819e235, type: 3}
---- !u!4 &47272793 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-    type: 3}
-  m_PrefabInstance: {fileID: 47272792}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &320376428
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +267,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1271388508}
-  - {fileID: 47272793}
+  - {fileID: 3414928670106916560}
   m_Father: {fileID: 320376433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &550377237
@@ -1229,7 +1107,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2060624204
+--- !u!4 &2060624205 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3074006073853372342, guid: ba14a892b73570b418bba8b130911c67,
+    type: 3}
+  m_PrefabInstance: {fileID: 4390961044120973999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3414928670106916559
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 462092825}
+    m_Modifications:
+    - target: {fileID: 3784179953782904331, guid: 41835b7213486294293efaa37cad6a74,
+        type: 3}
+      propertyPath: m_Name
+      value: Door To Garden
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 41835b7213486294293efaa37cad6a74, type: 3}
+--- !u!4 &3414928670106916560 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3784179953782904329, guid: 41835b7213486294293efaa37cad6a74,
+    type: 3}
+  m_PrefabInstance: {fileID: 3414928670106916559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4390961044120973999
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1237,115 +1145,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1913850668}
     m_Modifications:
-    - target: {fileID: 1296695684366873745, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: <SpawnPointReference>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 533de2b4e70e8794fab1262b2dc2bc40,
-        type: 2}
-    - target: {fileID: 6529410200736765035, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _id
-      value: 99f39a41-82e4-4c85-9087-851cdf026f3d
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783437, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+    - target: {fileID: 3074006073853372340, guid: ba14a892b73570b418bba8b130911c67,
         type: 3}
       propertyPath: m_Name
       value: Door To Garden
       objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+    - target: {fileID: 3074006073853372342, guid: ba14a892b73570b418bba8b130911c67,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+    - target: {fileID: 3074006073853372342, guid: ba14a892b73570b418bba8b130911c67,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+    - target: {fileID: 3074006073853372342, guid: ba14a892b73570b418bba8b130911c67,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -5
       objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+    - target: {fileID: 3074006073853372342, guid: ba14a892b73570b418bba8b130911c67,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+    - target: {fileID: 3074006073853372342, guid: ba14a892b73570b418bba8b130911c67,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+    - target: {fileID: 3074006073853372342, guid: ba14a892b73570b418bba8b130911c67,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+    - target: {fileID: 3074006073853372342, guid: ba14a892b73570b418bba8b130911c67,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+    - target: {fileID: 3074006073853372342, guid: ba14a892b73570b418bba8b130911c67,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+    - target: {fileID: 3074006073853372342, guid: ba14a892b73570b418bba8b130911c67,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+    - target: {fileID: 3074006073853372342, guid: ba14a892b73570b418bba8b130911c67,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: 0782d1c5374e2054496e79d916ad5cd6,
-        type: 2}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SpawnAt
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DualityGame.Player.SpawnPointReference, DualityGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: b3bc44b33a0367542a0bd715b122546f,
-        type: 2}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: DualityGame.Player.SpawnSettings, DualityGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6612bbd55d641ad4d8a6ea376b31ed16, type: 3}
---- !u!4 &2060624205 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-    type: 3}
-  m_PrefabInstance: {fileID: 2060624204}
-  m_PrefabAsset: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: ba14a892b73570b418bba8b130911c67, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

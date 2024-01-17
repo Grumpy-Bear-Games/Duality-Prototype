@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.01645397, g: 0, b: 0.33333302, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -504,127 +504,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371442952}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &522098819
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 319165529}
-    m_Modifications:
-    - target: {fileID: 1296695684366873745, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: <SpawnPointReference>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 1e5b157864c060b4f97ac2c244049f36,
-        type: 2}
-    - target: {fileID: 6529410200736765035, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _id
-      value: 2d8ed56d-f70e-4224-9f85-7b53be516aea
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783437, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_Name
-      value: Door To Plaza
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.240452
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: 0a31ffa528bdbab4a83926a872ba750a,
-        type: 2}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SpawnAt
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DualityGame.Player.SpawnPointReference, DualityGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: b3bc44b33a0367542a0bd715b122546f,
-        type: 2}
-    - target: {fileID: 9059146254560745787, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: DualityGame.Player.SpawnSettings, DualityGame
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6612bbd55d641ad4d8a6ea376b31ed16, type: 3}
 --- !u!4 &522098820 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7746082819744783439, guid: 6612bbd55d641ad4d8a6ea376b31ed16,
+  m_CorrespondingSourceObject: {fileID: 5008335138527440768, guid: dd6baa29d77aa39498130e1859a06fc1,
     type: 3}
-  m_PrefabInstance: {fileID: 522098819}
+  m_PrefabInstance: {fileID: 540653727834721139}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &566175174
 GameObject:
@@ -884,128 +768,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 749433961}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &848559084
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 998395875}
-    m_Modifications:
-    - target: {fileID: 1660819271242814748, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _id
-      value: 5aeea29c-ea04-486d-97e0-511692a6d153
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805435670604275002, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_Name
-      value: Door To Plaza
-      objectReference: {fileID: 0}
-    - target: {fileID: 3109273604361910095, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: m_TagString
-      value: Respawn
-      objectReference: {fileID: 0}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: 566fef5d65c25a54da910bc78aacc6d1,
-        type: 2}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SpawnAt
-      objectReference: {fileID: 0}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DualityGame.Player.SpawnPointReference, DualityGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: b3bc44b33a0367542a0bd715b122546f,
-        type: 2}
-    - target: {fileID: 3470577861001238604, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: _onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: DualityGame.Player.SpawnSettings, DualityGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 6660749574087325158, guid: 4a04f82ec3fa7494db75e0038819e235,
-        type: 3}
-      propertyPath: <SpawnPointReference>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 8094fd5a8d7df1e49b34be884434d1fd,
-        type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4a04f82ec3fa7494db75e0038819e235, type: 3}
---- !u!4 &848559085 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2805435670604275000, guid: 4a04f82ec3fa7494db75e0038819e235,
-    type: 3}
-  m_PrefabInstance: {fileID: 848559084}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &933732594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,9 +1017,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 848559085}
   - {fileID: 1773533816}
   - {fileID: 1271307071}
+  - {fileID: 6942287079160705083}
   m_Father: {fileID: 977657754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1052252330
@@ -2782,6 +2544,74 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &540653727834721139
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 319165529}
+    m_Modifications:
+    - target: {fileID: 5008335138527440768, guid: dd6baa29d77aa39498130e1859a06fc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.240452
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008335138527440768, guid: dd6baa29d77aa39498130e1859a06fc1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008335138527440768, guid: dd6baa29d77aa39498130e1859a06fc1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008335138527440768, guid: dd6baa29d77aa39498130e1859a06fc1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008335138527440768, guid: dd6baa29d77aa39498130e1859a06fc1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008335138527440768, guid: dd6baa29d77aa39498130e1859a06fc1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008335138527440768, guid: dd6baa29d77aa39498130e1859a06fc1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008335138527440768, guid: dd6baa29d77aa39498130e1859a06fc1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008335138527440768, guid: dd6baa29d77aa39498130e1859a06fc1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008335138527440768, guid: dd6baa29d77aa39498130e1859a06fc1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008335138527440770, guid: dd6baa29d77aa39498130e1859a06fc1,
+        type: 3}
+      propertyPath: m_Name
+      value: Door To Plaza
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd6baa29d77aa39498130e1859a06fc1, type: 3}
 --- !u!1 &1148396195049845623
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,6 +2715,30 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 2
+--- !u!1001 &6942287079160705082
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 998395875}
+    m_Modifications:
+    - target: {fileID: 6063942683804534872, guid: 516ca6f68a0373946b6813978dad4928,
+        type: 3}
+      propertyPath: m_Name
+      value: Door To Plaza
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 516ca6f68a0373946b6813978dad4928, type: 3}
+--- !u!4 &6942287079160705083 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6063942683804534874, guid: 516ca6f68a0373946b6813978dad4928,
+    type: 3}
+  m_PrefabInstance: {fileID: 6942287079160705082}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7984246966964711753
 Transform:
   m_ObjectHideFlags: 0
