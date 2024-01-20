@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"conditions":[{"_questLog":{"_value":1},"_quest":{"_value":2},"_questState":{"_value":1},"$type":"DualityGame.Quests.Tasks.CheckQuestState"},{"_inventory":{"_value":3},"_itemType":{"_value":4},"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},null],"_UID":"dc3fc66e-a6dd-4fe5-90a7-a8f3c20bd725","_position":{"x":687.1109,"y":-1929.033},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"0"},{"_sourceNodeUID":"32de7bc8-8892-482b-82a8-beed4fe6d0a6","_UID":"949d8e35-0884-4412-bee8-30b0c26d1c27","_tag":"","_position":{"x":651.8814,"y":-1055.099},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"1"},{"statement":{"_text":"Hi
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"conditions":[{"_questLog":{"_value":1},"_quest":{"_value":2},"_questState":{"_value":1},"$type":"DualityGame.Quests.Tasks.CheckQuestState"},{"_inventory":{"_value":3},"_itemType":{"_value":4},"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},null],"_UID":"dc3fc66e-a6dd-4fe5-90a7-a8f3c20bd725","_position":{"x":687.1109,"y":-1929.033},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"0"},{"_sourceNodeUID":"32de7bc8-8892-482b-82a8-beed4fe6d0a6","_UID":"949d8e35-0884-4412-bee8-30b0c26d1c27","_tag":"","_position":{"x":651.8814,"y":-1054.432},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"1"},{"statement":{"_text":"Hi
     again...."},"_UID":"fdc73f5d-7583-4a06-9e45-0993cddc4b85","_position":{"x":916.8122,"y":-1674.228},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"Ohh!!!
     Is that a <b>Chocolate Bar</b> I can smell? Can I have it?","_mood":7},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"52dcb69e-ffb8-4302-99b6-0806409ce2b1","_position":{"x":847.533,"y":-1584.707},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"statement":{"_text":"Sure.
     Help yourself.","_mood":1},"_UID":"94c1c30b-e537-4ec1-b462-b0e9e78686b7","_position":{"x":892.5895,"y":-1498.111},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"_action":{"_inventory":{"_value":3},"_itemType":{"_value":4},"$type":"DualityGame.Inventory.Tasks.RemoveItemFromInventory"},"_UID":"3ee315eb-64c5-46f2-a1fb-c404f20a1e22","_position":{"x":849.4861,"y":-1412.305},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"5"},{"statement":{"_text":"Thank
@@ -429,9 +429,10 @@ MonoBehaviour:
     twins already so I can rip something apart","_mood":2},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"35078dfb-9f97-4035-a90b-76d8c9dadc2d","_position":{"x":-260.8849,"y":785.7994},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"28"},{"statement":{"_text":"See
     you in the arena!","_mood":1},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"462620be-4b26-4ed8-a98c-f57e270a115c","_position":{"x":-348.1949,"y":383.5681},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"29"},{"statement":{"_text":"(hmm,
     what should I talk to Kasadya about?)"},"availableChoices":[{"statement":{"_text":"(Ask
-    Kasadya about the shorts)"}},{"statement":{"_text":"(Ask Kasadya to move)"}}],"_UID":"32de7bc8-8892-482b-82a8-beed4fe6d0a6","_tag":"Quest
+    Kasadya to move)"},"condition":{"_questLog":{"_value":1},"_quest":{"_value":6},"_questState":{"_value":1},"_invert":true,"$type":"DualityGame.Quests.Tasks.CheckQuestState"}},{"statement":{"_text":"(Ask
+    Kasadya about the shorts)"},"condition":{"_questLog":{"_value":1},"_quest":{"_value":8},"_questState":{},"$type":"DualityGame.Quests.Tasks.CheckQuestState"}}],"_UID":"32de7bc8-8892-482b-82a8-beed4fe6d0a6","_tag":"Quest
     Branching","_position":{"x":463.1172,"y":-608.0471},"_comment":"TODO: Fine-tune
-    this branching once quest other is known","$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"30"},{"_sourceNodeUID":"d5a28b93-02a6-46ab-83a7-994406222de0","_UID":"0b7e240c-0355-4d52-b518-606246e51736","_position":{"x":52.92516,"y":-287.2533},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"31"},{"_sourceNodeUID":"2f42291e-b628-477e-880a-d8f8f9dff188","_UID":"0c634b36-167a-47dd-aa40-dbd36dc454fe","_position":{"x":636.6479,"y":-295.3861},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"32"},{"statement":{"_text":"Excuse
+    this branching once quest other is known","$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"30"},{"_sourceNodeUID":"d5a28b93-02a6-46ab-83a7-994406222de0","_UID":"0b7e240c-0355-4d52-b518-606246e51736","_position":{"x":52.92516,"y":-287.2533},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"31"},{"_sourceNodeUID":"2f42291e-b628-477e-880a-d8f8f9dff188","_UID":"0c634b36-167a-47dd-aa40-dbd36dc454fe","_position":{"x":712.59,"y":-286.948},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"32"},{"statement":{"_text":"Excuse
     me. Do you know who these <b>Shorts</b> belong to?"},"_UID":"2f42291e-b628-477e-880a-d8f8f9dff188","_tag":"No
     Short Order - Start","_position":{"x":1088.743,"y":132.8373},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"33"},{"statement":{"_text":"I
     have no idea, small dead human. They don''t smell like they belong in Hell.","_mood":3},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_position":{"x":1100.149,"y":226.8808},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"34"},{"statement":{"_text":"I
@@ -440,7 +441,7 @@ MonoBehaviour:
     - Are You Not Entertained?","rect":{"xMin":-1548.482,"yMin":87.06607,"xMax":236.4089,"yMax":1465.546}},{"name":"Quest
     - Sweet Tooth","rect":{"xMin":346.1784,"yMin":-2013.56,"xMax":1495.741,"yMax":-938.645}},{"name":"Quest
     Branching","rect":{"xMin":-60.46313,"yMin":-706.2727,"xMax":1205.094,"yMax":-91.216}},{"name":"No
-    Short Order","rect":{"xMin":963.8782,"yMin":78.26206,"xMax":1405.036,"yMax":556.9873}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Kasadya","_id":"2157c728-a4a0-4690-8647-47f0deffccb9","_actorObject":8}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+    Short Order","rect":{"xMin":963.8782,"yMin":78.26206,"xMax":1405.036,"yMax":556.9873}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Kasadya","_id":"2157c728-a4a0-4690-8647-47f0deffccb9","_actorObject":9}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 11400000, guid: 057d41e2fce3fd44481548140c593b1f, type: 2}
@@ -450,13 +451,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c9460ca0e1eef5242b3741afabf0655b, type: 2}
   - {fileID: 11400000, guid: d3a33c4bd5a365540a2039c7e052dd0f, type: 2}
   - {fileID: 11400000, guid: b313beab16bb6df4dab5f542c0dbe53c, type: 2}
+  - {fileID: 11400000, guid: e1cda35293ffa734fbd4959dc3c21d35, type: 2}
   - {fileID: 2155733169046693454}
   _boundGraphSource:
     _version: 3.25
     _category: 
     _comments: 
-    _translation: {x: -60, y: 1561}
-    _zoomFactor: 0.77482605
+    _translation: {x: 260, y: 496}
+    _zoomFactor: 0.7900754
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2

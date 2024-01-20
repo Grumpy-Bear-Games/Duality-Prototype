@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3989804833029190367}
-  - component: {fileID: 9194813188684464581}
-  - component: {fileID: 4437004507313517808}
+  - component: {fileID: 4609158330351748778}
+  - component: {fileID: 991090584639342275}
   m_Layer: 7
   m_Name: Main Map (Hell) - Door to Library
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 7679916213279745546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9194813188684464581
+--- !u!114 &4609158330351748778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,11 +43,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1560278286054191254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dd19d69c87f4d4f8080a782e92d0106, type: 3}
+  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: b238e7ce-cd65-4983-930a-795aaa1b093e
---- !u!114 &4437004507313517808
+  _serializedExposedParameters: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_condition":{"valueA":{"_name":"Player/Library
+    (Hell) is unlocked","_targetVariableID":"c0aa0ab5-afc1-4658-9211-39df5e418cdd"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":609.3334,"y":250.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"0"},{"_spawnPointReference":{"_value":1},"_spawnSettings":{"_value":2},"_position":{"x":385.6668,"y":447.6667},"$type":"DualityGame.Player.Tasks.JumpToSpawnpointNode","$id":"1"},{"statement":{"_text":"Hmm,
+    it''s locked!"},"_position":{"x":900.3334,"y":445.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 966262c81db2b8f448c0400b274edc5c, type: 2}
+  - {fileID: 11400000, guid: b3bc44b33a0367542a0bd715b122546f, type: 2}
+  _boundGraphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: 111, y: -89}
+    _zoomFactor: 1
+  _firstActivation: 0
+  _enableAction: 1
+  _disableAction: 2
+  _lockBoundGraphPrefabOverrides: 1
+  _preInitializeSubGraphs: 0
+  _updateMode: 0
+  _graph: {fileID: 0}
+  _blackboard: {fileID: 0}
+--- !u!114 &991090584639342275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,28 +77,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1560278286054191254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7264d61c4b0f459fa2c513a7dfa4ff79, type: 3}
+  m_Script: {fileID: 11500000, guid: 970ba91ee67eb4e4082d9794f65e3992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _promptOffset: {x: 0, y: 1.5, z: 0}
-  _onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 966262c81db2b8f448c0400b274edc5c, type: 2}
-        m_TargetAssemblyTypeName: DualityGame.Player.SpawnPointReference, DualityGame
-        m_MethodName: SpawnAt
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: b3bc44b33a0367542a0bd715b122546f,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: DualityGame.Player.SpawnSettings, DualityGame
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _type: 1
-  _onlyTriggerOnce: 0
+  _type: 3
 --- !u!1001 &7179208543901180963
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -53,24 +53,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"conditions":[{"_inventory":{"_value":1},"_itemType":{"_value":2},"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},null],"_position":{"x":715.3334,"y":162.0},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"0"},{"statement":{"_text":"Excuse
-    me. Are these your <b>Shorts</b>?"},"_position":{"x":275.3334,"y":489.3333},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"Nope.
-    Never seen them before in my lif...eh....dead. Nope, nope, nope."},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":270.9999,"y":575.3333},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"OK.
-    I guess I''ll need to ask someone else."},"_position":{"x":283.3334,"y":656.6667},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"statement":{"_text":"I
-    have nothing to say yet..."},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":901.0,"y":441.3333},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[{"name":"No
-    Short Order","rect":{"xMin":222.3333,"yMin":425.6667,"xMax":531.6666,"yMax":735.6667}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Jersey","_id":"c31c580d-3a30-4e64-8251-58145291bf84","_actorObject":3},{"_keyName":"Jersey
-    (Unmasked)","_id":"887b0655-cf77-4675-b790-fac663889358","_actorObject":4}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_questLog":{"_value":1},"_quest":{"_value":2},"_UID":"23539ff7-0223-4621-b6a7-7d90c8d8647c","_position":{"x":-657.1166,"y":-1364.287},"$type":"DualityGame.Quests.Tasks.QuestStateNode","$id":"0"},{"_condition":{"valueA":{"_name":"Tutorial
+    - Has been introduced","_targetVariableID":"af262186-f809-4fca-a902-f5a337ee25e5"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_UID":"207be426-4f69-4862-8d4a-2bf8da684b78","_position":{"x":-1372.197,"y":-1041.223},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"1"},{"statement":{"_text":"Hi..."},"_UID":"45814ab9-d4ee-4aaf-8d66-4f1761d23029","_position":{"x":-1418.727,"y":-844.222},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"Oh
+    hey, you... You must be new here!"},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"c383cc88-8eec-44d0-987e-cfcf05d3f315","_position":{"x":-1482.187,"y":-742.782},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"statement":{"_text":"Possibly....
+    Where is \"Here\"?"},"_UID":"9d96b9b1-d783-42c1-a335-cc9bfc27f4f4","_position":{"x":-1477.127,"y":-639.2443},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"statement":{"_text":"Ah,
+    you haven''t been introduced yet. You should really just go and speak with <b>Dante</b>.
+    He can explain everything much better."},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"826a7881-2522-4cf4-9ec1-90bd3ce8b313","_position":{"x":-1477.883,"y":-543.6981},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"5"},{"_action":{"boolVariable":{"_name":"Tutorial
+    - Has been introduced","_targetVariableID":"af262186-f809-4fca-a902-f5a337ee25e5"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_UID":"96196878-3012-45d1-8cb5-2febb6eaa260","_position":{"x":-1517.203,"y":-447.5915},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"6"},{"statement":{"_text":"You
+    should really just go and speak with <b>Dante</b>. He is the grumpy one over
+    there."},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"97cf71eb-6941-41fe-adc0-868f26ac4ba8","_position":{"x":-1186.524,"y":-834.9876},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"7"},{"conditions":[{"valueA":{"_name":"Tutorial
+    - Has asked about the Sandwich","_targetVariableID":"1e4f11bb-85a0-4c43-baad-b1ef68c37f36"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"Tutorial
+    - Has been introduced","_targetVariableID":"af262186-f809-4fca-a902-f5a337ee25e5"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},null],"_UID":"6f586995-4edf-43e2-905f-2c20bf5f55ab","_position":{"x":-604.1992,"y":-1079.783},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"8"},{"statement":{"_text":"I
+    still have some trouble finding a <b>Sandwich</b> for <b>Dante</b>..."},"_UID":"00207e3f-df4a-426b-bfaa-46e5592e89cc","_position":{"x":-955.1451,"y":-842.775},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"},{"statement":{"_text":"Oh
+    boy! Just look around. This place isn''t that big after all.","_mood":4},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"be772c8d-aae6-4f4d-ad46-530a25297d0c","_position":{"x":-961.4868,"y":-755.041},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"10"},{"statement":{"_text":"Hi
+    again. I just talked with <b>Dante</b> and he sent me looking for a <b>Sandwich</b>
+    of all things. Do you happen to know where I can find that?"},"_UID":"46bfbfdc-3db6-46cb-bf83-9d92c130de11","_position":{"x":-663.7866,"y":-837.6592},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"11"},{"statement":{"_text":"I
+    don''t know. Just look around. Or ask <b>Dante<b> for a hint.","_mood":3},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"7dea6828-92dd-4dc3-a993-d4d4c5837b7e","_position":{"x":-667.5876,"y":-752.4659},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"12"},{"_action":{"boolVariable":{"_name":"Tutorial
+    - Has asked about the Sandwich","_targetVariableID":"1e4f11bb-85a0-4c43-baad-b1ef68c37f36"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_UID":"b6694240-6af2-4d6a-bf1e-2e5f92e65360","_position":{"x":-736.3393,"y":-543.8467},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"13"},{"statement":{"_text":"Hi.
+    Do you happen to know where I can find a <b>Sandwich</b> around here? That other
+    guy just sent me looking for one."},"_UID":"7d81ea6f-0eb5-42d8-9a48-02b16d19bf50","_position":{"x":-434.7096,"y":-839.3713},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"14"},{"statement":{"_text":"Who?
+    <b>Dante</b>? Yeah, he does that. I don''t know anything about a <b>Sandwich</b>,
+    but just look around.","_mood":1},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"8a3dd37a-1522-4d7a-b711-d407c556fceb","_position":{"x":-418.4004,"y":-749.3898},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"15"},{"_action":{"boolVariable":{"_name":"Tutorial
+    - Has been introduced","_targetVariableID":"af262186-f809-4fca-a902-f5a337ee25e5"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_UID":"bffe4cbb-2741-48e7-9734-bdab9748725c","_position":{"x":-467.0418,"y":-662.3898},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"16"},{"_sourceNodeUID":"831266d0-4b1b-4b4b-b8ed-4ca6886052a8","_UID":"e5041a90-5f29-499c-82a9-c01a984a0df7","_position":{"x":-437.2104,"y":-1100.115},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"17"},{"statement":{"_text":"Excuse
+    me. Are these your <b>Shorts</b>?"},"_UID":"2499fb7b-3508-4aef-8419-bf691eb907c3","_tag":"No
+    Short Order","_position":{"x":1302.208,"y":-333.6863},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"18"},{"statement":{"_text":"Nope.
+    Never seen them before in my lif...eh....dead. Nope, nope, nope."},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"4391aa2b-23c4-427b-8a07-78b0f1775cc4","_position":{"x":1297.875,"y":-247.6863},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"19"},{"statement":{"_text":"OK.
+    I guess I''ll need to ask someone else."},"_UID":"497f8aa5-081e-434d-b4fd-d13cefb6ca5d","_position":{"x":1310.208,"y":-166.3529},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"20"},{"statement":{"_text":"..."},"availableChoices":[{"statement":{"_text":"(Ask
+    about the library)"},"condition":{"conditions":[{"valueA":{"_name":"Player/Has
+    checked the library door","_targetVariableID":"a7474c08-6d59-48f6-8a8d-82b2975d3b48"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"_questLog":{"_value":1},"_quest":{"_value":3},"_questState":{"_value":1},"_invert":true,"$type":"DualityGame.Quests.Tasks.CheckQuestState"}],"$type":"NodeCanvas.Framework.ConditionList"}},{"statement":{"_text":"(Ask
+    about the shorts)"},"condition":{"_questLog":{"_value":1},"_quest":{"_value":4},"_questState":{},"$type":"DualityGame.Quests.Tasks.CheckQuestState"}}],"_UID":"831266d0-4b1b-4b4b-b8ed-4ca6886052a8","_tag":"Dialog
+    Hub","_position":{"x":533.3924,"y":-1398.371},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"21"},{"_sourceNodeUID":"efd59188-dc07-4942-9f53-9a5ea7887899","_UID":"3b367c55-8247-4f09-a84f-712b2720c55f","_position":{"x":246.5345,"y":-1158.396},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"22"},{"_sourceNodeUID":"2499fb7b-3508-4aef-8419-bf691eb907c3","_UID":"c02e92c5-6bc4-4c5d-b590-7c0147814d29","_position":{"x":728.4423,"y":-1161.474},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"23"},{"_questLog":{"_value":1},"_quest":{"_value":3},"_UID":"efd59188-dc07-4942-9f53-9a5ea7887899","_tag":"Key
+    to Knowledge","_position":{"x":-377.2779,"y":23.44753},"$type":"DualityGame.Quests.Tasks.QuestStateNode","$id":"24"},{"statement":{"_text":"Ask
+    about library"},"_position":{"x":-802.8137,"y":193.9687},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"25"},{"_action":{"_questLog":{"_value":1},"_quest":{"_value":3},"$type":"DualityGame.Quests.Tasks.StartQuest"},"_position":{"x":-778.5002,"y":291.1094},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"26"},{"conditions":[{"valueA":{"_name":"Player/Library
+    (Heaven) is unlocked","_targetVariableID":"60c603e5-61df-4f6c-ae82-ec6098010a8c"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"Player/Library
+    (Hell) is unlocked","_targetVariableID":"c0aa0ab5-afc1-4658-9211-39df5e418cdd"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},null],"_position":{"x":-255.8241,"y":172.3394},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"27"},{"_condition":{"_inventory":{"_value":5},"_itemType":{"_value":6},"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},"_position":{"x":-680.3335,"y":502.3333},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"28"},{"statement":{"_text":"Quick!
+    Go open the library!"},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":-819.6666,"y":655.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"29"},{"statement":{"_text":"Hint
+    at where Malakbel might be"},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":-582.9998,"y":655.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"30"},{"statement":{"_text":"I''ve
+    unlocked <b>The Heavenly Library</b> for you."},"_position":{"x":-335.9999,"y":439.3333},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"31"},{"statement":{"_text":"And
+    what about <b>The Hellish Library</b>? Is that open yet?"},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":-333.3333,"y":521.3334},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"32"},{"statement":{"_text":"No,
+    not yet. I''m still working on that."},"_position":{"x":-298.6665,"y":600.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"33"},{"statement":{"_text":"You
+    must open <b>The Hellish Library</b>. Maybe you can unlock it from the inside?"},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":-334.6668,"y":681.3333},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"34"},{"statement":{"_text":"Thank
+    you!"},"_actorName":"Jersey","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":80.33337,"y":389.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"35"},{"_action":{"_questLog":{"_value":1},"_quest":{"_value":3},"_resolution":{},"$type":"DualityGame.Quests.Tasks.ResolveQuest"},"_position":{"x":41.33325,"y":485.3334},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"36"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"16"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"25"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"27"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"25"},"_targetNode":{"$ref":"26"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"27"},"_targetNode":{"$ref":"28"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"27"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"27"},"_targetNode":{"$ref":"35"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"28"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"28"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"31"},"_targetNode":{"$ref":"32"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"32"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"33"},"_targetNode":{"$ref":"34"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"36"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[{"name":"Tutorial","rect":{"xMin":-1547.203,"yMin":-1429.287,"xMax":17.78955,"yMax":-363.5914},"autoGroup":true},{"name":"...","rect":{"xMin":-849.6666,"yMin":-41.55247,"xMax":245.3332,"yMax":766.0},"autoGroup":true},{"name":"Quest
+    Hub","rect":{"xMin":216.5345,"yMin":-1463.371,"xMax":906.4423,"yMax":-1053.062},"autoGroup":true},{"name":"No
+    Short Order","rect":{"xMin":1249.208,"yMin":-397.3529,"xMax":1558.542,"yMax":-87.35291}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Jersey","_id":"c31c580d-3a30-4e64-8251-58145291bf84","_actorObject":7},{"_keyName":"Jersey
+    (Unmasked)","_id":"887b0655-cf77-4675-b790-fac663889358","_actorObject":8}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
+  - {fileID: 11400000, guid: 057d41e2fce3fd44481548140c593b1f, type: 2}
+  - {fileID: 11400000, guid: e5cde1715fd772643b14e501171b2e83, type: 2}
+  - {fileID: 11400000, guid: d678593df23919f42822b2c102b320ce, type: 2}
+  - {fileID: 11400000, guid: e1cda35293ffa734fbd4959dc3c21d35, type: 2}
   - {fileID: 11400000, guid: c0fcc5868137b7d42856a51b3b5250bf, type: 2}
-  - {fileID: 11400000, guid: c3b5bed83a023a54c92812e3df55c16e, type: 2}
+  - {fileID: 11400000, guid: b93d457d02911ae4983a73ba420e5ba4, type: 2}
   - {fileID: 5783426944490065290}
   - {fileID: 7662970193023493997}
   _boundGraphSource:
     _version: 3.25
     _category: 
     _comments: 
-    _translation: {x: 0, y: 0}
+    _translation: {x: 955, y: -26}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 1
@@ -93,9 +134,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{}}'
+  _serializedBlackboard: '{"_variables":{"Tutorial - Has been introduced":{"_name":"Tutorial
+    - Has been introduced","_id":"af262186-f809-4fca-a902-f5a337ee25e5","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Tutorial
+    - Has asked about the Sandwich":{"_name":"Tutorial - Has asked about the Sandwich","_id":"1e4f11bb-85a0-4c43-baad-b1ef68c37f36","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
-  _serializedVariables: []
+  _serializedVariables:
+  - _json: '{"_name":"Tutorial - Has been introduced","_id":"af262186-f809-4fca-a902-f5a337ee25e5","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_name":"Tutorial - Has asked about the Sandwich","_id":"1e4f11bb-85a0-4c43-baad-b1ef68c37f36","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
 --- !u!114 &1328726461148192079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _promptOffset: {x: 0, y: 1.9, z: 0}
+  _type: 0
 --- !u!136 &1328726461148192075
 CapsuleCollider:
   m_ObjectHideFlags: 0

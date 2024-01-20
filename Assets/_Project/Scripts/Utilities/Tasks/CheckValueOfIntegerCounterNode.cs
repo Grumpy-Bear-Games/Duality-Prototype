@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace DualityGame.Utilities.Tasks
 {
-
     [ParadoxNotion.Design.Icon("Condition")]
     [Name("Check counter")]
     [Category("Branch")]

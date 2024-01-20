@@ -52,7 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"conditions":[{"_questLog":{"_value":1},"_quest":{"_value":2},"_questState":{},"$type":"DualityGame.Quests.Tasks.CheckQuestState"},null],"_position":{"x":295.803,"y":-60.06775},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"0"},{"statement":{"_text":"Excuse
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"(What
+    should I talk to Malakbel about?)"},"availableChoices":[{"statement":{"_text":"(Ask
+    about the library)"}},{"statement":{"_text":"(Ask about the shorts)"},"condition":{"_questLog":{"_value":1},"_quest":{"_value":2},"_questState":{},"$type":"DualityGame.Quests.Tasks.CheckQuestState"}}],"_position":{"x":245.092,"y":25.05094},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"0"},{"statement":{"_text":"Excuse
     me? Do you happen to know who owns these <b>Shorts</b>?"},"_position":{"x":-246.5671,"y":437.1373},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"Those
     are mine! Where did you find them?","_mood":7},"availableChoices":[{"statement":{"_text":"<i>-Discrete-</i>
     Oh I can\u2019t remember"}},{"statement":{"_text":"<i>-Accusatory-</i> I found
@@ -69,23 +71,29 @@ MonoBehaviour:
     Shame, I say! Shame! Now give me back my <b>Shorts</b>!","_mood":2},"_actorName":"Malakbel","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":-101.8512,"y":1006.253},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"10"},{"_action":{"actions":[{"_inventory":{"_value":3},"_itemType":{"_value":4},"$type":"DualityGame.Inventory.Tasks.RemoveItemFromInventory"},{"_questLog":{"_value":1},"_quest":{"_value":2},"_resolution":{},"$type":"DualityGame.Quests.Tasks.ResolveQuest"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":-97.68175,"y":1099.386},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"11"},{"_action":{"_content":{"_value":"Malekbel
     marked you with the Mark of Shame"},"_sprite":{},"$type":"DualityGame.Notifications.Tasks.AddNotification"},"_tag":"TODO","_position":{"x":-175.9022,"y":1213.776},"_comment":"Set
     MarkOfShame=TRUE","$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"12"},{"statement":{"_text":"Now
-    leave me alone!","_mood":2},"_actorName":"Malakbel","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":-77.76611,"y":1303.253},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"13"},{"statement":{"_text":"I
-    have nothing to say yet..."},"_actorName":"Malakbel","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":802.1802,"y":394.154},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"14"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[{"name":"No
-    Short Order","rect":{"xMin":-456.6809,"yMin":372.1373,"xMax":205.0978,"yMax":1391.253},"autoGroup":true},{"name":"Temporary
-    bootstrapping of quest. Will be removed later","rect":{"xMin":101.6667,"yMin":-509.3333,"xMax":565.6667,"yMax":-206.3333}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Malakbel","_id":"c31c580d-3a30-4e64-8251-58145291bf84","_actorObject":5}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+    leave me alone!","_mood":2},"_actorName":"Malakbel","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":-77.76611,"y":1303.253},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"13"},{"statement":{"_text":"Are
+    you the one with the key to <b>The Heavenly Library</b>?"},"_position":{"x":564.8027,"y":509.7192},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"14"},{"statement":{"_text":"That
+    would be me, yes. Why do you ask? Do you need a book?"},"_actorName":"Malakbel","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":564.8026,"y":603.1619},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"15"},{"statement":{"_text":"Yeah,
+    something like that....."},"_position":{"x":572.1797,"y":694.1457},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"16"},{"statement":{"_text":"Well,
+    I''m kinda busy right now. You should come back later."},"_actorName":"Malakbel","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":574.7141,"y":778.1205},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"17"},{"statement":{"_text":"When?"},"_position":{"x":628.8204,"y":869.735},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"18"},{"statement":{"_text":"I
+    don''t know. As I said I''m, busy."},"_actorName":"Malakbel","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":576.0183,"y":962.8096},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"19"},{"statement":{"_text":"But
+    if you really need your book that much, I can give you this key to the library."},"_actorName":"Malakbel","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_position":{"x":570.6485,"y":1058.569},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"20"},{"_action":{"_inventory":{"_value":3},"_itemType":{"_value":5},"$type":"DualityGame.Inventory.Tasks.AddItemToInventory"},"_position":{"x":570.6486,"y":1157.013},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"21"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"16"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"20"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[{"name":"No
+    Short Order","rect":{"xMin":-456.6809,"yMin":372.1373,"xMax":205.0978,"yMax":1391.253},"autoGroup":true},{"name":"Key
+    to knowledge","rect":{"xMin":422.6519,"yMin":398.6526,"xMax":952.9661,"yMax":1358.285}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Malakbel","_id":"c31c580d-3a30-4e64-8251-58145291bf84","_actorObject":6}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 11400000, guid: 057d41e2fce3fd44481548140c593b1f, type: 2}
   - {fileID: 11400000, guid: e1cda35293ffa734fbd4959dc3c21d35, type: 2}
   - {fileID: 11400000, guid: c0fcc5868137b7d42856a51b3b5250bf, type: 2}
   - {fileID: 11400000, guid: c3b5bed83a023a54c92812e3df55c16e, type: 2}
+  - {fileID: 11400000, guid: b93d457d02911ae4983a73ba420e5ba4, type: 2}
   - {fileID: 5783426944490065290}
   _boundGraphSource:
     _version: 3.25
     _category: 
     _comments: 
-    _translation: {x: 696, y: -11}
-    _zoomFactor: 0.61434877
+    _translation: {x: 257, y: 140}
+    _zoomFactor: 0.6062936
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2
@@ -123,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _promptOffset: {x: 0, y: 2.4, z: 0}
+  _type: 0
 --- !u!136 &1328726461148192075
 CapsuleCollider:
   m_ObjectHideFlags: 0

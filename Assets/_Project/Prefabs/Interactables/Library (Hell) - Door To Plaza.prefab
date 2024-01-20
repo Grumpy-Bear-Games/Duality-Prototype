@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7850431387173265181}
   - component: {fileID: 8526914033649097685}
-  - component: {fileID: 6706096737667569465}
-  - component: {fileID: 8806020568643639913}
-  m_Layer: 6
+  - component: {fileID: 2278547302563231965}
+  - component: {fileID: 7522707375511436941}
+  m_Layer: 7
   m_Name: Library (Hell) - Door To Plaza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7850431387173265183}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &6706096737667569465
+--- !u!114 &2278547302563231965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,11 +97,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 7850431387173265183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dd19d69c87f4d4f8080a782e92d0106, type: 3}
+  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: d2b5c0b3-0a74-4257-aaa4-13b461ade3f9
---- !u!114 &8806020568643639913
+  _serializedExposedParameters: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_condition":{"valueA":{"_name":"Player/Library
+    (Hell) is unlocked","_targetVariableID":"c0aa0ab5-afc1-4658-9211-39df5e418cdd"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":265.3334,"y":125.3333},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"0"},{"_spawnPointReference":{"_value":1},"_spawnSettings":{"_value":2},"_position":{"x":267.0,"y":562.3333},"$type":"DualityGame.Player.Tasks.JumpToSpawnpointNode","$id":"1"},{"_action":{"actions":[{"_content":{"_value":"You
+    unlocked the door to <b>The Hellish Library</b>"},"_sprite":{},"$type":"DualityGame.Notifications.Tasks.AddNotification"},{"boolVariable":{"_name":"Player/Library
+    (Hell) is unlocked","_targetVariableID":"c0aa0ab5-afc1-4658-9211-39df5e418cdd"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":549.6667,"y":274.3333},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"2"},{"statement":{"_text":"Yes!
+    I could unlock the door from the inside. Now I just need to go tell <b>Jersey</b>
+    about. They are going to be so happy.","_mood":1},"_position":{"x":634.3333,"y":384.3333},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: e31e277fdf430a44c91224e9620331b0, type: 2}
+  - {fileID: 11400000, guid: b3bc44b33a0367542a0bd715b122546f, type: 2}
+  _boundGraphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: 0, y: 0}
+    _zoomFactor: 1
+  _firstActivation: 0
+  _enableAction: 1
+  _disableAction: 2
+  _lockBoundGraphPrefabOverrides: 1
+  _preInitializeSubGraphs: 0
+  _updateMode: 0
+  _graph: {fileID: 0}
+  _blackboard: {fileID: 0}
+--- !u!114 &7522707375511436941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,28 +134,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7850431387173265183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7264d61c4b0f459fa2c513a7dfa4ff79, type: 3}
+  m_Script: {fileID: 11500000, guid: 970ba91ee67eb4e4082d9794f65e3992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _promptOffset: {x: 0, y: 1.5, z: 0}
-  _onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 7e4eb6843fb1aed4bb5748b45be4cf1e, type: 2}
-        m_TargetAssemblyTypeName: DualityGame.Player.SpawnPointReference, DualityGame
-        m_MethodName: SpawnAt
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: b3bc44b33a0367542a0bd715b122546f,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: DualityGame.Player.SpawnSettings, DualityGame
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _type: 3
-  _onlyTriggerOnce: 0
 --- !u!1001 &2515931759279928861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 663479646257447464, guid: 34fbcea619ade8142ab161bf376e8d00,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 663479646257447464, guid: 34fbcea619ade8142ab161bf376e8d00,
         type: 3}
@@ -283,7 +290,7 @@ PrefabInstance:
         type: 3}
       propertyPath: <SpawnPointReference>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: d32620e17eeb65a4b9b01ed315e2390f,
+      objectReference: {fileID: 11400000, guid: 966262c81db2b8f448c0400b274edc5c,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
