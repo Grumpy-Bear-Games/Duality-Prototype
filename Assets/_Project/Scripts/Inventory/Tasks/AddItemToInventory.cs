@@ -1,5 +1,7 @@
+using System.Linq;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using UnityEngine;
 
 namespace DualityGame.Inventory.Tasks{
 
@@ -21,5 +23,6 @@ namespace DualityGame.Inventory.Tasks{
 			EndAction(true);
 		}
 
+		public override void OnCreate(ITaskSystem ownerSystem) => _inventory.value = Resources.FindObjectsOfTypeAll<Inventory>().FirstOrDefault();
 	}
 }

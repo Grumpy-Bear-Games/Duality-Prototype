@@ -1,5 +1,7 @@
-﻿using NodeCanvas.Framework;
+﻿using System.Linq;
+using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using UnityEngine;
 
 namespace DualityGame.Quests.Tasks
 {
@@ -20,5 +22,7 @@ namespace DualityGame.Quests.Tasks
             _questLog.value.RevealQuest(_quest.value);
             EndAction(true);
         }
+
+        public override void OnCreate(ITaskSystem ownerSystem) => _questLog.value = Resources.FindObjectsOfTypeAll<QuestLog>().FirstOrDefault();
     }
 }

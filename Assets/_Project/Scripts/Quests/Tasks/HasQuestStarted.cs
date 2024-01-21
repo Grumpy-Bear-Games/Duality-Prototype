@@ -1,5 +1,7 @@
-﻿using NodeCanvas.Framework;
+﻿using System.Linq;
+using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using UnityEngine;
 
 namespace DualityGame.Quests.Tasks
 {
@@ -14,9 +16,8 @@ namespace DualityGame.Quests.Tasks
 
         //Called once per frame while the condition is active.
         //Return whether the condition is success or failure.
-        protected override bool OnCheck()
-        {
-            return _questLog.value.Contains(_quest.value);
-        }
+        protected override bool OnCheck() => _questLog.value.Contains(_quest.value);
+
+        public override void OnCreate(ITaskSystem ownerSystem) => _questLog.value = Resources.FindObjectsOfTypeAll<QuestLog>().FirstOrDefault();
     }
 }

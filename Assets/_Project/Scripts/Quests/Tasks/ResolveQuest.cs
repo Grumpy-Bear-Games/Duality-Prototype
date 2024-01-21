@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using UnityEngine;
 
 namespace DualityGame.Quests.Tasks
 {
@@ -38,5 +40,7 @@ namespace DualityGame.Quests.Tasks
             Succeed,
             Fail
         }
+
+        public override void OnCreate(ITaskSystem ownerSystem) => _questLog.value = Resources.FindObjectsOfTypeAll<QuestLog>().FirstOrDefault();
     }
 }

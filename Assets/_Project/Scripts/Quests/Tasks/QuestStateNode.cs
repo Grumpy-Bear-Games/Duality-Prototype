@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using NodeCanvas.DialogueTrees;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
@@ -72,5 +73,7 @@ namespace DualityGame.Quests.Tasks
             };
         }
         #endif
+
+        public override void OnCreate(Graph assignedGraph) => _questLog.value = Resources.FindObjectsOfTypeAll<QuestLog>().FirstOrDefault();
     }
 }
