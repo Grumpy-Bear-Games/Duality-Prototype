@@ -7916,7 +7916,7 @@ PrefabInstance:
     - target: {fileID: 9105734120470650260, guid: c9203327fb00e6f4e8720dde68971cb9,
         type: 3}
       propertyPath: _id
-      value: 7d41f3c8-f423-4c51-9375-6d9ffca33f3b
+      value: Eye [1]
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18329,6 +18329,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1574967380}
     m_Modifications:
+    - target: {fileID: 1328726461148192073, guid: 16b81e5410ab6154da01add776355d08,
+        type: 3}
+      propertyPath: _boundGraphSource._translation.x
+      value: 519
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328726461148192073, guid: 16b81e5410ab6154da01add776355d08,
+        type: 3}
+      propertyPath: _boundGraphSource._translation.y
+      value: 1686
+      objectReference: {fileID: 0}
     - target: {fileID: 1328726461148192076, guid: 16b81e5410ab6154da01add776355d08,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19419,11 +19429,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _boundGraphSource._translation.y
       value: -22
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328726461148192076, guid: 83f5700f63041314ca4081d2a2c7d95b,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1328726461148192076, guid: 83f5700f63041314ca4081d2a2c7d95b,
         type: 3}

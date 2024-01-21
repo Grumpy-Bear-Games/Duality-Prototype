@@ -4,7 +4,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace DualityGame.Editor
+namespace DualityGame.Editor.Inventory
 {
     [CustomEditor(typeof(ItemType))]
     public class ItemTypeEditor: UnityEditor.Editor

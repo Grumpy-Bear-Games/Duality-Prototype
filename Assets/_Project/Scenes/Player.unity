@@ -348,6 +348,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1196011975}
   - component: {fileID: 1196011976}
+  - component: {fileID: 1196011977}
+  - component: {fileID: 1196011978}
   m_Layer: 0
   m_Name: SaveSystem
   m_TagString: Untagged
@@ -389,6 +391,31 @@ MonoBehaviour:
   _clearKey: {fileID: -6430644498144318348, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
   _gameSession: {fileID: 11400000, guid: 98b9f03894a52c540bb9742fab9514c1, type: 2}
+--- !u!114 &1196011977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196011973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f2080ad6044da490253c406aa9e29e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1196011978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196011973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd19d69c87f4d4f8080a782e92d0106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: _check_points_
 --- !u!1 &1260656040
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,11 +896,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6608882140075747271, guid: 5dd667dbb7113904c81a4771f7e0fb82,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6608882140075747271, guid: 5dd667dbb7113904c81a4771f7e0fb82,
         type: 3}

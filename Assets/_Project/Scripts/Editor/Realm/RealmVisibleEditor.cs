@@ -1,12 +1,11 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using DualityGame.Realm;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace DualityGame.Editor
+namespace DualityGame.Editor.Realm
 {
     [CustomEditor(typeof(RealmVisible))]
     public class RealmVisibleEditor : UnityEditor.Editor
@@ -31,7 +30,7 @@ namespace DualityGame.Editor
         public override VisualElement CreateInspectorGUI()
         {
             var root = new VisualElement();
-            
+
             InspectorElement.FillDefaultInspector(root, serializedObject, this);
             _tools = new VisualElement();
             root.Add(_tools);
@@ -43,7 +42,7 @@ namespace DualityGame.Editor
         private void UpdateTools()
         {
             _tools.Clear();
-            if (_realmProperty.objectReferenceValue is Realm.Realm realm)
+            if (_realmProperty.objectReferenceValue is DualityGame.Realm.Realm realm)
             {
                 var misconfiguredLayers = _realmVisible
                     .GetComponentsInChildren<Transform>(true)
@@ -84,7 +83,7 @@ namespace DualityGame.Editor
                 _tools.Add(new Button(() =>
                 {
                     serializedObject.UpdateIfRequiredOrScript();
-                    _realmProperty.objectReferenceValue = Realm.Realm.FromLayer(_realmVisible.gameObject.layer);
+                    _realmProperty.objectReferenceValue = DualityGame.Realm.Realm.FromLayer(_realmVisible.gameObject.layer);
                     serializedObject.ApplyModifiedProperties();
                     UpdateTools();
                 })

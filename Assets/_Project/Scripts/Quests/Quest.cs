@@ -17,7 +17,7 @@ namespace DualityGame.Quests
         #endregion
 
         public string TitleWithNPC => NPC != null ? $"{Title} ({NPC.Name})" : Title;
-        
+
         #region Public enums
         public enum QuestVisibility
         {

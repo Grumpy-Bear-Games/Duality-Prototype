@@ -1,10 +1,10 @@
-using DualityGame.Player;
+﻿using DualityGame.Player;
 using Games.GrumpyBear.Core.LevelManagement;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
-namespace DualityGame.Editor
+namespace DualityGame.Editor.Player
 {
     [CustomEditor(typeof(SpawnPoint))]
     public class SpawnPointEditor : UnityEditor.Editor
@@ -48,6 +48,12 @@ namespace DualityGame.Editor
 
             if (_spawnPoint.SpawnPointReference == null)
             {
+                var button = new Button
+                {
+                    text = "Create reference"
+                };
+                button.clicked += CreateReference;
+                _warnings.Add(button);
                 return;
             }
 
@@ -73,6 +79,17 @@ namespace DualityGame.Editor
                 messageType = HelpBoxMessageType.Error,
                 text = "Layer mismatch",
             });
+        }
+
+        private void CreateReference()
+        {
+            var spawnPointReference = CreateInstance<SpawnPointReference>();
+            AssetDatabase.CreateAsset(spawnPointReference, $"Assets/{target.name} Reference.asset");
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            EditorUtility.FocusProjectWindow();
+            Selection.activeObject = spawnPointReference;
         }
     }
 }

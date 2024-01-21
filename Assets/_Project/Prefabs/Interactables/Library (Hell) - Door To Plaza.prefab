@@ -101,21 +101,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_condition":{"valueA":{"_name":"Player/Library
-    (Hell) is unlocked","_targetVariableID":"c0aa0ab5-afc1-4658-9211-39df5e418cdd"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":265.3334,"y":125.3333},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"0"},{"_spawnPointReference":{"_value":1},"_spawnSettings":{"_value":2},"_position":{"x":267.0,"y":562.3333},"$type":"DualityGame.Player.Tasks.JumpToSpawnpointNode","$id":"1"},{"_action":{"actions":[{"_content":{"_value":"You
-    unlocked the door to <b>The Hellish Library</b>"},"_sprite":{},"$type":"DualityGame.Notifications.Tasks.AddNotification"},{"boolVariable":{"_name":"Player/Library
-    (Hell) is unlocked","_targetVariableID":"c0aa0ab5-afc1-4658-9211-39df5e418cdd"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":549.6667,"y":274.3333},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"2"},{"statement":{"_text":"Yes!
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_condition":{"_checkpoint":{"_value":1},"$type":"DualityGame.Quests.Tasks.HasCheckpointBeenReached"},"_position":{"x":265.3334,"y":125.3333},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"0"},{"_spawnPointReference":{"_value":2},"_spawnSettings":{"_value":3},"_position":{"x":278.3333,"y":547.6666},"$type":"DualityGame.Player.Tasks.JumpToSpawnpointNode","$id":"1"},{"_action":{"actions":[{"_checkpoint":{"_value":1},"$type":"DualityGame.Quests.Tasks.SetCheckpointReached"},{"_content":{"_value":"You
+    unlocked the door to <b>The Hellish Library</b>"},"_sprite":{},"$type":"DualityGame.Notifications.Tasks.AddNotification"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":467.6667,"y":310.3333},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"2"},{"statement":{"_text":"Yes!
     I could unlock the door from the inside. Now I just need to go tell <b>Jersey</b>
-    about. They are going to be so happy.","_mood":1},"_position":{"x":634.3333,"y":384.3333},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+    about. They are going to be so happy.","_mood":1},"_position":{"x":553.0,"y":423.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
+  - {fileID: -8453967160959482803, guid: d678593df23919f42822b2c102b320ce, type: 2}
   - {fileID: 11400000, guid: e31e277fdf430a44c91224e9620331b0, type: 2}
   - {fileID: 11400000, guid: b3bc44b33a0367542a0bd715b122546f, type: 2}
   _boundGraphSource:
     _version: 3.25
     _category: 
     _comments: 
-    _translation: {x: 0, y: 0}
+    _translation: {x: 157, y: -84}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 1

@@ -30,8 +30,9 @@ namespace DualityGame.Player.Tasks{
 				Debug.LogError("SpawnSettings is null");
 				return Status.Failure;
 			}
-			_spawnPointReference.value.SpawnAt(_spawnSettings.value);
-			//DLGTree.Stop();
+
+			graph.onFinish += _ => _spawnPointReference.value.SpawnAt(_spawnSettings.value);
+			graph.Stop();
 
 			return Status.Success;
 		}

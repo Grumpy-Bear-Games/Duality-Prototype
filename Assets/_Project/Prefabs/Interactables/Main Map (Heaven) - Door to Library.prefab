@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4813354251705140830}
   - component: {fileID: 6762552302497108669}
   - component: {fileID: 6964841749567236620}
+  - component: {fileID: 4724809316079970113}
+  - component: {fileID: 90571826816822052}
   m_Layer: 6
   m_Name: Main Map (Heaven) - Door to Library
   m_TagString: Untagged
@@ -47,21 +49,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"conditions":[{"valueA":{"_name":"Player/Library
-    (Heaven) is unlocked","_targetVariableID":"60c603e5-61df-4f6c-ae82-ec6098010a8c"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"_inventory":{"_value":1},"_itemType":{"_value":2},"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},{"valueA":{"_name":"Player/Has
-    checked the library door","_targetVariableID":"a7474c08-6d59-48f6-8a8d-82b2975d3b48"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},null],"_position":{"x":438.0001,"y":-216.6667},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"0"},{"_spawnPointReference":{"_value":3},"_spawnSettings":{"_value":4},"_position":{"x":366.9998,"y":566.1111},"$type":"DualityGame.Player.Tasks.JumpToSpawnpointNode","$id":"1"},{"_action":{"actions":[{"_inventory":{"_value":1},"_itemType":{"_value":2},"$type":"DualityGame.Inventory.Tasks.RemoveItemFromInventory"},{"boolVariable":{"_name":"Player/Library
-    (Heaven) is unlocked","_targetVariableID":"60c603e5-61df-4f6c-ae82-ec6098010a8c"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},{"_content":{"_value":"You
-    unlocked the door to <b>The Heavenly Library</b>."},"_sprite":{"_value":5},"$type":"DualityGame.Notifications.Tasks.AddNotification"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":686.3335,"y":303.6667},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"2"},{"statement":{"_text":"Yes!
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"conditions":[{"_checkpoint":{"_value":1},"$type":"DualityGame.Quests.Tasks.HasCheckpointBeenReached"},{"_inventory":{"_value":2},"_itemType":{"_value":3},"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},null],"_position":{"x":438.0001,"y":-216.6667},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"0"},{"_spawnPointReference":{"_value":4},"_spawnSettings":{"_value":5},"_position":{"x":359.5912,"y":557.8793},"$type":"DualityGame.Player.Tasks.JumpToSpawnpointNode","$id":"1"},{"_action":{"actions":[{"_inventory":{"_value":2},"_itemType":{"_value":3},"$type":"DualityGame.Inventory.Tasks.RemoveItemFromInventory"},{"_checkpoint":{"_value":1},"$type":"DualityGame.Quests.Tasks.SetCheckpointReached"},{"_content":{"_value":"You
+    unlocked the door to <b>The Heavenly Library</b>."},"_sprite":{"_value":6},"$type":"DualityGame.Notifications.Tasks.AddNotification"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":683.864,"y":89.642},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"2"},{"statement":{"_text":"Yes!
     That worked! <b>The Heavenly Library</b> is now open.  Now I should be able to
-    warp over and open <b>The Hellish Library</b> from the inside.","_mood":1},"_position":{"x":747.6666,"y":434.9999},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"_action":{"boolVariable":{"_name":"Player/Has
-    checked the library door","_targetVariableID":"a7474c08-6d59-48f6-8a8d-82b2975d3b48"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_position":{"x":1138.0,"y":192.3334},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"4"},{"statement":{"_text":"The
-    door is locked. And there''s a note on the door..."},"_position":{"x":1196.333,"y":277.1112},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"5"},{"statement":{"_text":"<i>\"<b>The
-    Heavenly Library</b> is closed.\nWill open later.   -- M\"</i>"},"_position":{"x":1173.0,"y":457.3321},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"statement":{"_text":"I
-    wonder who this \"M\" is....\nI should ask around."},"_position":{"x":1206.333,"y":544.4431},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"7"},{"_questLog":{"_value":6},"_quest":{"_value":7},"_position":{"x":1676.968,"y":12.13322},"$type":"DualityGame.Quests.Tasks.QuestStateNode","$id":"8"},{"statement":{"_text":"Nope,
-    still locked and the note is still there...."},"_position":{"x":1467.556,"y":190.3342},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"},{"statement":{"_text":"Still
-    locked. I guess Malakbel isn''t back yet. Maybe I should try find them."},"_position":{"x":1707.533,"y":192.442},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"10"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+    warp over and open <b>The Hellish Library</b> from the inside.","_mood":1},"_position":{"x":747.6666,"y":259.6643},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"_questLog":{"_value":7},"_quest":{"_value":8},"_position":{"x":1455.635,"y":80.7999},"$type":"DualityGame.Quests.Tasks.QuestStateNode","$id":"4"},{"_bookkeeping":{"_value":9},"_id":{"_value":"66d2829a-595a-4719-9fbf-c0dc20b28fcc"},"_loop":{},"_UID":"66d2829a-595a-4719-9fbf-c0dc20b28fcc","_position":{"x":1321.333,"y":239.3333},"$type":"DualityGame.Utilities.Tasks.FlavorBranchingNode","$id":"5"},{"statement":{"_text":"The
+    door is locked. And there''s a note on the door..."},"_position":{"x":1104.583,"y":413.4434},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"_action":{"_checkpoint":{"_value":10},"$type":"DualityGame.Quests.Tasks.SetCheckpointReached"},"_position":{"x":989.8453,"y":507.7229},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"7"},{"statement":{"_text":"<i>\"<b>The
+    Heavenly Library</b> is closed.\nWill open later.   -- M\"</i>"},"_position":{"x":1354.932,"y":675.4261},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"statement":{"_text":"I
+    wonder who this \"M\" is....\nI should ask around."},"_position":{"x":1390.631,"y":774.9534},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"},{"statement":{"_text":"Nope,
+    still locked and the note is still there...."},"_position":{"x":1391.556,"y":421.0008},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"10"},{"statement":{"_text":"Still
+    locked. I guess Malakbel isn''t back yet. Maybe I should try find them."},"_position":{"x":1742.866,"y":258.442},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"11"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
+  - {fileID: 9197331216328169102, guid: d678593df23919f42822b2c102b320ce, type: 2}
   - {fileID: 11400000, guid: c0fcc5868137b7d42856a51b3b5250bf, type: 2}
   - {fileID: 11400000, guid: b93d457d02911ae4983a73ba420e5ba4, type: 2}
   - {fileID: 11400000, guid: d32620e17eeb65a4b9b01ed315e2390f, type: 2}
@@ -69,12 +68,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f74acd6126c5fc447bf7752e6a46680d, type: 3}
   - {fileID: 11400000, guid: 057d41e2fce3fd44481548140c593b1f, type: 2}
   - {fileID: 11400000, guid: d678593df23919f42822b2c102b320ce, type: 2}
+  - {fileID: 90571826816822052}
+  - {fileID: 2138440742617849906, guid: d678593df23919f42822b2c102b320ce, type: 2}
   _boundGraphSource:
     _version: 3.25
     _category: 
     _comments: 
-    _translation: {x: 228, y: 105}
-    _zoomFactor: 0.7500098
+    _translation: {x: -488, y: 58}
+    _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2
@@ -97,6 +98,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _promptOffset: {x: 0, y: 1.5, z: 0}
   _type: 3
+--- !u!114 &4724809316079970113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172995924709481062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd19d69c87f4d4f8080a782e92d0106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 27966b4e-8f61-4e9a-9b09-e3941c7015a7
+--- !u!114 &90571826816822052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172995924709481062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b1971728a74412b253450f50e6290c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &394731745532361476
 PrefabInstance:
   m_ObjectHideFlags: 0
