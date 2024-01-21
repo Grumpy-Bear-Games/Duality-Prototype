@@ -56,7 +56,7 @@ namespace DualityGame.DialogSystem.UI {
 		private void OnDialogueStarted(DialogueTree dlg)
 		{
 			_onDialogBegin.Invoke();
-			Show();
+			//Show();
 		}
 
 		private void OnDialoguePaused(DialogueTree dlg) => Hide();
@@ -87,6 +87,7 @@ namespace DualityGame.DialogSystem.UI {
 		{
 			// Skip one frame to avoid double-triggering in the Input system
 			yield return null;
+			Show();
 			
 			var text = info.statement.Text;
 			var audio = info.statement.Audio;
@@ -108,6 +109,7 @@ namespace DualityGame.DialogSystem.UI {
 
 		private void OnMultipleChoiceRequest(MultipleChoiceRequestInfo info)
 		{
+			Show();
 			SetActor(info.actor, info.statement.Mood);
 			_statementText.text = info.statement.Text;
 			
