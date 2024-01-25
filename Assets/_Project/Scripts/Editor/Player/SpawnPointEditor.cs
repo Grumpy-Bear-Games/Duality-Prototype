@@ -16,6 +16,7 @@ namespace DualityGame.Editor.Player
         private void OnEnable()
         {
             _spawnPoint = target as SpawnPoint;
+            _spawnPointReferenceProperty = serializedObject.FindProperty($"<{nameof(_spawnPoint.SpawnPointReference)}>k__BackingField");
             Undo.undoRedoPerformed += UpdateWarnings;
         }
 
@@ -83,10 +84,21 @@ namespace DualityGame.Editor.Player
 
         private void CreateReference()
         {
+            var path = EditorUtility.SaveFilePanelInProject(
+                "Save Spawn Point Reference",
+                $"{target.name} Reference.asset",
+                "asset",
+                "Save Spawn Point Reference"
+            );
+            if (path.Length == 0) return;
+
             var spawnPointReference = CreateInstance<SpawnPointReference>();
-            AssetDatabase.CreateAsset(spawnPointReference, $"Assets/{target.name} Reference.asset");
+            AssetDatabase.CreateAsset(spawnPointReference, path);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
+
+            _spawnPointReferenceProperty.objectReferenceValue = spawnPointReference;
+            serializedObject.ApplyModifiedProperties();
 
             EditorUtility.FocusProjectWindow();
             Selection.activeObject = spawnPointReference;
