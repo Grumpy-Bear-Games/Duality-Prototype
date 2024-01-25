@@ -16,7 +16,7 @@ namespace DualityGame.Editor
         
         void OnPostprocessMeshHierarchy(GameObject g)
         {
-            if (!assetPath.EndsWith(".blend")) return;
+            //if (!assetPath.EndsWith(".blend")) return;
             if (!g.name.EndsWith(IgnoreSuffix)) return;
             Debug.Log($"Deleting {g.name}");
             Object.DestroyImmediate(g);
@@ -24,7 +24,7 @@ namespace DualityGame.Editor
 
         void OnPostprocessModel(GameObject gameObject)
         {
-            if (!assetPath.EndsWith(".blend")) return;
+            //if (!assetPath.EndsWith(".blend")) return;
             
             HandleCustomColliders(gameObject);
             HandleSimpleColliders(gameObject);
