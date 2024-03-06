@@ -59,7 +59,11 @@ namespace DualityGame.DialogSystem.UI {
 			//Show();
 		}
 
-		private void OnDialoguePaused(DialogueTree dlg) => Hide();
+		private void OnDialoguePaused(DialogueTree dlg)
+		{
+			Hide();
+			CleanupChoiceButton();
+		}
 
 		private void OnDialogueFinished(DialogueTree dlg)
 		{
