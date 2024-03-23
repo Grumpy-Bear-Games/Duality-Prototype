@@ -4,8 +4,6 @@ using UnityEngine;
 
 namespace DualityGame.Editor
 {
-
-    
     public class BlenderAssetPostprocessor : AssetPostprocessor
     {
         private const string IgnoreSuffix = "__IGNORE";
@@ -13,18 +11,19 @@ namespace DualityGame.Editor
         private const string CustomColliderSuffix = "__CUSTOM_COLLIDER";
         private const string BoxColliderSuffix = "__BOX_COLLIDER";
         private const string NoColliderSuffix = "__NO_COLLIDER";
-        
-        void OnPostprocessMeshHierarchy(GameObject g)
+
+        public void OnPostprocessMeshHierarchy(GameObject g)
         {
-            //if (!assetPath.EndsWith(".blend")) return;
+            if (!assetPath.EndsWith(".fbx")) return;
             if (!g.name.EndsWith(IgnoreSuffix)) return;
             Debug.Log($"Deleting {g.name}");
             Object.DestroyImmediate(g);
         }
 
-        void OnPostprocessModel(GameObject gameObject)
+        public void OnPostprocessModel(GameObject gameObject)
         {
-            //if (!assetPath.EndsWith(".blend")) return;
+            Debug.Log(assetPath);
+            if (!assetPath.EndsWith(".fbx")) return;
             
             HandleCustomColliders(gameObject);
             HandleSimpleColliders(gameObject);
