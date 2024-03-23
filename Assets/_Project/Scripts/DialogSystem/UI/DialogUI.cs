@@ -53,10 +53,12 @@ namespace DualityGame.DialogSystem.UI {
 			DialogueTree.OnMultipleChoiceRequest -= OnMultipleChoiceRequest;
 		}
 
+		private bool _dialogJustStarted;
+
 		private void OnDialogueStarted(DialogueTree dlg)
 		{
-			_onDialogBegin.Invoke();
-			//Show();
+			// Workaround to avoid bug in the DialogueTree
+			_dialogJustStarted = true;
 		}
 
 		private void OnDialoguePaused(DialogueTree dlg)
@@ -91,6 +93,14 @@ namespace DualityGame.DialogSystem.UI {
 		{
 			// Skip one frame to avoid double-triggering in the Input system
 			yield return null;
+
+			// Workaround to avoid bug in the DialogueTree
+			if (_dialogJustStarted)
+			{
+				_dialogJustStarted = false;
+				_onDialogBegin.Invoke();
+			}
+
 			Show();
 			
 			var text = info.statement.Text;
