@@ -68,23 +68,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_action":{"waitTime":{"_value":0.0001},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_UID":"8bb1db24-a35d-4b39-8268-3e89ead64340","_position":{"x":350.7277,"y":-156.8949},"_comment":"Work-around
-    for bug","$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"0"},{"_condition":{"conditions":[{"_checkpoint":{"_value":1},"$type":"DualityGame.Quests.Tasks.HasCheckpointBeenReached"},{"trigger":{"_name":"Player/Died
-    Since Last Conversation With Dante","_targetVariableID":"43bf5239-d90f-4cbb-8c2d-0f09697db98a"},"$type":"NodeCanvas.Tasks.Conditions.CheckBooleanTrigger"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":217.7716,"y":-39.33675},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"1"},{"conditions":[{"valueA":{"_name":"Player/Last
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_condition":{"conditions":[{"_checkpoint":{"_value":1},"$type":"DualityGame.Quests.Tasks.HasCheckpointBeenReached"},{"trigger":{"_name":"Player/Died
+    Since Last Conversation With Dante","_targetVariableID":"43bf5239-d90f-4cbb-8c2d-0f09697db98a"},"$type":"NodeCanvas.Tasks.Conditions.CheckBooleanTrigger"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":217.7716,"y":-39.33675},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"0"},{"conditions":[{"valueA":{"_name":"Player/Last
     Cause Of Death","_targetVariableID":"5f169fdb-0b65-43b7-8f4a-cb5f95718938"},"valueB":{"_value":2},"$type":"NodeCanvas.Tasks.Conditions.CheckVariable`1[[DualityGame.Player.CauseOfDeath,
-    DualityGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},null],"_position":{"x":364.575,"y":259.9472},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"2"},{"statement":{"_text":"Aha
+    DualityGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},null],"_position":{"x":364.575,"y":259.9472},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"1"},{"statement":{"_text":"Aha
     ha ha! I see you have met <b>Kasadya</b>.","_mood":1},"_actorName":"Dante","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"02c07c42-aeb9-44a5-a051-4fa27ab3936b","_tag":"Sweet
-    Tooth","_position":{"x":304.0404,"y":548.7382},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"statement":{"_text":"She
-    ripped me apart!!! Why???","_mood":8},"_UID":"a95be7dc-7ea1-4750-986d-08113aab0d2d","_position":{"x":304.7254,"y":647.533},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"statement":{"_text":"Ah,
+    Tooth","_position":{"x":304.0404,"y":548.7382},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"She
+    ripped me apart!!! Why???","_mood":8},"_UID":"a95be7dc-7ea1-4750-986d-08113aab0d2d","_position":{"x":304.7254,"y":647.533},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"statement":{"_text":"Ah,
     don''t worry. That''s super normal. She''s just bored, and she doesn''t like
-    mortals very much. Most mortals, at least.","_mood":1},"_actorName":"Dante","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"6ce68a2a-27e4-499f-ac2e-30c0e8b24e19","_position":{"x":308.6616,"y":753.6116},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"5"},{"statement":{"_text":"But
+    mortals very much. Most mortals, at least.","_mood":1},"_actorName":"Dante","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"6ce68a2a-27e4-499f-ac2e-30c0e8b24e19","_position":{"x":308.6616,"y":753.6116},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"statement":{"_text":"But
     <b>Kasadya</b> also have a bit of a sweet tooth, so the trick is to always have
-    something sweet on you, just in case.","_mood":1},"_actorName":"Dante","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"2ade71f3-b809-4950-8cdd-d572cc6ae699","_position":{"x":322.0594,"y":854.8234},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"_action":{"_questLog":{"_value":3},"_quest":{"_value":4},"$type":"DualityGame.Quests.Tasks.RevealQuest"},"_UID":"48143ff7-bc57-4c17-8801-03eea4aed75a","_position":{"x":364.6887,"y":947.2678},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"7"},{"statement":{"_text":"Here!
-    Take my emergency <b>Chocolate Bar</b>. That should help keep her calm.","_mood":1},"_actorName":"Dante","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"9bb91787-500d-486d-ad87-0a8f25044c59","_position":{"x":278.4349,"y":1034.902},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"_action":{"_inventory":{"_value":5},"_itemType":{"_value":6},"$type":"DualityGame.Inventory.Tasks.AddItemToInventory"},"_UID":"1efce259-685a-475a-8d73-1e473bdcd572","_position":{"x":313.6981,"y":1121.921},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"9"},{"statement":{"_text":"Thank
-    you.","_mood":1},"_position":{"x":360.7263,"y":1208.954},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"10"},{"statement":{"_text":"Really?!?!
+    something sweet on you, just in case.","_mood":1},"_actorName":"Dante","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"2ade71f3-b809-4950-8cdd-d572cc6ae699","_position":{"x":322.0594,"y":854.8234},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"5"},{"_action":{"_questLog":{"_value":3},"_quest":{"_value":4},"$type":"DualityGame.Quests.Tasks.RevealQuest"},"_UID":"48143ff7-bc57-4c17-8801-03eea4aed75a","_position":{"x":364.6887,"y":947.2678},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"6"},{"statement":{"_text":"Here!
+    Take my emergency <b>Chocolate Bar</b>. That should help keep her calm.","_mood":1},"_actorName":"Dante","_actorParameterID":"c31c580d-3a30-4e64-8251-58145291bf84","_UID":"9bb91787-500d-486d-ad87-0a8f25044c59","_position":{"x":278.4349,"y":1034.902},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"7"},{"_action":{"_inventory":{"_value":5},"_itemType":{"_value":6},"$type":"DualityGame.Inventory.Tasks.AddItemToInventory"},"_UID":"1efce259-685a-475a-8d73-1e473bdcd572","_position":{"x":313.6981,"y":1121.921},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"8"},{"statement":{"_text":"Thank
+    you.","_mood":1},"_position":{"x":360.7263,"y":1208.954},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"},{"statement":{"_text":"Really?!?!
     Again?!?!","_mood":4},"_actorName":"Dante","_actorParameterID":"066957dc-3f81-4211-b1a8-ed9577b5d74a","_position":{"x":837.8329,"y":515.0278},"_comment":"Fallback
-    response","$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"11"},{"_position":{"x":607.8952,"y":178.8405},"_comment":"Dante
-    don''t initiate conversations until after the player have left Purgatory once","$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"12"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[{"name":"Sweet
+    response","$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"10"},{"_position":{"x":607.8952,"y":178.8405},"_comment":"Dante
+    don''t initiate conversations until after the player have left Purgatory once","$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"11"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[{"name":"Sweet
     Tooth","rect":{"xMin":248.4349,"yMin":483.7382,"xMax":577.4349,"yMax":1294.954},"autoGroup":true}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Dante","_id":"066957dc-3f81-4211-b1a8-ed9577b5d74a","_actorObject":7}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
@@ -96,7 +95,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e2192b472932838498404fedbc150257, type: 2}
   - {fileID: 5783426944490065290}
   _boundGraphSource:
-    _version: 3.25
+    _version: 3.3
     _category: 
     _comments: 
     _translation: {x: 444, y: 208}
@@ -245,7 +244,7 @@ MonoBehaviour:
   - {fileID: 777757888707889936}
   - {fileID: 5783426944490065290}
   _boundGraphSource:
-    _version: 3.25
+    _version: 3.3
     _category: 
     _comments: 
     _translation: {x: 668, y: 202}
@@ -512,7 +511,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1458372676002850225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d71fb7c52372e244baf2e69a9d0d116, type: 3}
+  m_Script: {fileID: 11500000, guid: 91406e394d665ca4bac55cdfe72eb477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _actorAsset: {fileID: 11400000, guid: 7630f2d2bf39b814c898b3507f3e85a1, type: 2}

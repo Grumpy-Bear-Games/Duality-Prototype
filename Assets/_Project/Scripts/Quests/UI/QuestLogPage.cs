@@ -1,7 +1,6 @@
-﻿using DualityGame.Dialog;
-using DualityGame.UI;
-using UnityEngine;
+﻿using DualityGame.UI;
 using UnityEngine.UIElements;
+using NodeCanvas.DialogueTrees;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif

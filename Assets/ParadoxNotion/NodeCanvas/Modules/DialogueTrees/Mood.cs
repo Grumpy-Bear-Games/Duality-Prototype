@@ -1,4 +1,4 @@
-﻿namespace DualityGame.Dialog
+﻿namespace NodeCanvas.DialogueTrees
 {
     public enum Mood
     {

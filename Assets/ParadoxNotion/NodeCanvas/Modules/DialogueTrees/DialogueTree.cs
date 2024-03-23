@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using NodeCanvas.Framework;
+using ParadoxNotion;
 using UnityEngine;
 using Logger = ParadoxNotion.Services.Logger;
 
@@ -48,6 +49,7 @@ namespace NodeCanvas.DialogueTrees
             [SerializeField] private UnityEngine.Object _actorObject;
             [System.NonSerialized] private IDialogueActor _actor;
 
+
             ///<summary>Key name of the parameter</summary>
             public string name {
                 get { return _keyName; }
@@ -90,6 +92,7 @@ namespace NodeCanvas.DialogueTrees
 
         ///<summary>The dialogue actor parameters. We let Unity serialize this as well</summary>
         [SerializeField] public List<ActorParameter> actorParameters = new List<ActorParameter>();
+        private bool enterStartNodeFlag;
 
         public static event Action<DialogueTree> OnDialogueStarted;
         public static event Action<DialogueTree> OnDialoguePaused;
@@ -97,9 +100,9 @@ namespace NodeCanvas.DialogueTrees
         public static event Action<SubtitlesRequestInfo> OnSubtitlesRequest;
         public static event Action<MultipleChoiceRequestInfo> OnMultipleChoiceRequest;
 
-        ///<summary>The current DialoguTree running</summary>
+        ///<summary>The current DialogueTree running</summary>
         public static DialogueTree currentDialogue { get; private set; }
-        ///<summary>The previous DialoguTree running</summary>
+        ///<summary>The previous DialogueTree running</summary>
         public static DialogueTree previousDialogue { get; private set; }
 
         ///<summary>The current node of this DialogueTree</summary>
@@ -112,6 +115,7 @@ namespace NodeCanvas.DialogueTrees
         public override bool isTree => true;
         public override bool allowBlackboardOverrides => true;
         sealed public override bool canAcceptVariableDrops => false;
+        public sealed override PlanarDirection flowDirection => PlanarDirection.Vertical;
         ///----------------------------------------------------------------------------------------------
 
         ///<summary>A list of the defined names for the involved actor parameters</summary>
@@ -239,11 +243,16 @@ namespace NodeCanvas.DialogueTrees
                 Logger.Log("Agent used in DialogueTree does not implement IDialogueActor. A dummy actor will be used.", "Dialogue Tree", this);
             }
 
-            currentNode = currentNode != null ? currentNode : (DTNode)primeNode;
-            EnterNode(currentNode);
+            enterStartNodeFlag = true;
         }
 
         protected override void OnGraphUpdate() {
+            if ( enterStartNodeFlag ) {
+                //use a flag so that other nodes can do stuff on graph started
+                enterStartNodeFlag = false;
+                EnterNode(currentNode != null ? currentNode : (DTNode)primeNode);
+            }
+
             if ( currentNode is IUpdatable ) {
                 ( currentNode as IUpdatable ).Update();
             }
@@ -268,8 +277,7 @@ namespace NodeCanvas.DialogueTrees
         }
 
         protected override void OnGraphUnpaused() {
-            currentNode = currentNode != null ? currentNode : (DTNode)primeNode;
-            EnterNode(currentNode);
+            EnterNode(currentNode != null ? currentNode : (DTNode)primeNode);
 
             Logger.Log(string.Format("Dialogue Resumed '{0}'", this.name), "Dialogue Tree", this);
             if ( OnDialogueStarted != null ) {

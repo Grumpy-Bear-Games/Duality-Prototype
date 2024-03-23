@@ -4,6 +4,7 @@ using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
 using Logger = ParadoxNotion.Services.Logger;
+using ParadoxNotion;
 
 namespace NodeCanvas.StateMachines
 {
@@ -53,6 +54,7 @@ namespace NodeCanvas.StateMachines
         public override bool isTree => false;
         public override bool allowBlackboardOverrides => true;
         sealed public override bool canAcceptVariableDrops => false;
+        public sealed override PlanarDirection flowDirection => PlanarDirection.Auto;
 
         ///----------------------------------------------------------------------------------------------
 
@@ -92,6 +94,10 @@ namespace NodeCanvas.StateMachines
 
                 //Update current state
                 currentState.Execute(agent, blackboard);
+                
+                //this can only happen if FSM stoped just now (from the above update)
+                if ( currentState == null ) { Stop(false); return; }
+                
                 if ( onStateUpdate != null && currentState.status == Status.Running ) {
                     onStateUpdate(currentState);
                 }

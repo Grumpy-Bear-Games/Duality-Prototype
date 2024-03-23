@@ -1,5 +1,4 @@
-﻿using DualityGame.Dialog;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace NodeCanvas.DialogueTrees

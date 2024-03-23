@@ -67,6 +67,7 @@ namespace ParadoxNotion.Design
 			//Unity Objects
 			typeof(UnityEngine.Object),
             typeof(UnityEngine.MonoBehaviour),
+            typeof(UnityEngine.ScriptableObject),
             typeof(GameObject),
             typeof(Transform),
             typeof(Animator),

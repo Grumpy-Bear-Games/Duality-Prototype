@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DualityGame.Dialog;
 using Games.GrumpyBear.Core.SaveSystem;
+using NodeCanvas.DialogueTrees;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif

@@ -1,6 +1,5 @@
 ﻿#if UNITY_EDITOR
 
-using DualityGame.Dialog;
 using ParadoxNotion.Design;
 using UnityEngine;
 using NodeCanvas.DialogueTrees;
