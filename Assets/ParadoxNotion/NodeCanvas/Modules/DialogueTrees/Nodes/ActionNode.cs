@@ -34,7 +34,7 @@ namespace NodeCanvas.DialogueTrees
             }
 
             status = Status.Running;
-            StartCoroutine(UpdateAction(finalActor.Transform));
+            StartCoroutine(UpdateAction(finalActor.transform));
             return status;
         }
 

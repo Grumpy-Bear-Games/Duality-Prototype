@@ -27,7 +27,7 @@ namespace NodeCanvas.DialogueTrees
     public class MultipleChoiceRequestInfo
     {
 
-        ///<summary>The actor related.</summary>
+        ///<summary>The actor related. This is usually the actor that will also say the options</summary>
         public IDialogueActor actor;
         ///<summary>The statement. This is usually a question or choice</summary>
         public IStatement statement;

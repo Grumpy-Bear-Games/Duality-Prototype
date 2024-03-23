@@ -1,4 +1,4 @@
-﻿using NodeCanvas.DialogueTrees;
+using NodeCanvas.DialogueTrees;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;

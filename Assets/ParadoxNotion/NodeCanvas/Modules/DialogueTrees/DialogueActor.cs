@@ -10,11 +10,9 @@ namespace NodeCanvas.DialogueTrees
     {
         [SerializeField] private ActorAsset _actorAsset;
 
-        public string Name => _actorAsset.Name;
+        public new string name => _actorAsset.Name;
 
         public Sprite PortraitByMood(Mood mood) => _actorAsset.PortraitByMood(mood);
-
-        public Transform Transform => transform;
 
         //IDialogueActor.transform is implemented by inherited MonoBehaviour.transform
     }

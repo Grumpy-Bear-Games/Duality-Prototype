@@ -85,7 +85,7 @@ namespace DualityGame.DialogSystem.UI {
 		{
 			var portrait = actor.PortraitByMood(mood);
 			_actorPortrait.style.backgroundImage = portrait ? new StyleBackground(portrait) : new StyleBackground(StyleKeyword.Initial);
-			_actorName.text = actor.Name;
+			_actorName.text = actor.name;
 		}
 
 		private IEnumerator Internal_OnSubtitlesRequestInfo(SubtitlesRequestInfo info)
@@ -102,11 +102,11 @@ namespace DualityGame.DialogSystem.UI {
 
 			Show();
 			
-			var text = info.statement.Text;
-			var audio = info.statement.Audio;
+			var text = info.statement.text;
+			var audio = info.statement.audio;
 			var actor = info.actor;
 
-			SetActor(actor, info.statement.Mood);
+			SetActor(actor, info.statement.mood);
 
 			_statementText.text = text;
 			if (audio != null){
@@ -123,8 +123,8 @@ namespace DualityGame.DialogSystem.UI {
 		private void OnMultipleChoiceRequest(MultipleChoiceRequestInfo info)
 		{
 			Show();
-			SetActor(info.actor, info.statement.Mood);
-			_statementText.text = info.statement.Text;
+			SetActor(info.actor, info.statement.mood);
+			_statementText.text = info.statement.text;
 			
 			// TODO: Play audio
 			
@@ -132,7 +132,7 @@ namespace DualityGame.DialogSystem.UI {
 			
 			foreach (var (statement, value) in info.options)
 			{
-				CreateOption(statement.Text, () => info.SelectOption(value));
+				CreateOption(statement.text, () => info.SelectOption(value));
 			}
 			FocusFirstOption();
 		}
