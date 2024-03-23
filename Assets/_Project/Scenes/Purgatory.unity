@@ -7699,6 +7699,18 @@ MonoBehaviour:
           m_StringArgument: Player has used a portal
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: bb155824ecb6b3d4a86d19471a9c3528, type: 2}
+        m_TargetAssemblyTypeName: DualityGame.Quests.Checkpoint, DualityGame
+        m_MethodName: set_Reached
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player has used a portal
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &647070811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13501,6 +13513,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Player has used a portal
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: bb155824ecb6b3d4a86d19471a9c3528, type: 2}
+        m_TargetAssemblyTypeName: DualityGame.Quests.Checkpoint, DualityGame
+        m_MethodName: set_Reached
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player has used a portal
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &871174895
 MonoBehaviour:

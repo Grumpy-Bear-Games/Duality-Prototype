@@ -8,6 +8,7 @@ namespace DualityGame.Player
     {
         private const string LastCauseOfDeathBBKey = "Last Cause Of Death";
         private const string NumberOfDeathsBBKey = "Number of Deaths";
+        private const string DiedSinceLastConversationWithDante = "Died Since Last Conversation With Dante";
 
         private Blackboard _blackboard;
 
@@ -24,6 +25,7 @@ namespace DualityGame.Player
             _blackboard.SetVariableValue(LastCauseOfDeathBBKey, causeOfDeath);
             var deaths = _blackboard.GetVariableValue<int>(NumberOfDeathsBBKey);
             _blackboard.SetVariableValue(NumberOfDeathsBBKey, deaths + 1);
+            _blackboard.SetVariableValue(DiedSinceLastConversationWithDante, true);
         }
 
         private void Reset()
