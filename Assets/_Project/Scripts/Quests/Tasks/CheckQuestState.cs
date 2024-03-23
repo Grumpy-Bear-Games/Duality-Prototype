@@ -13,7 +13,13 @@ namespace DualityGame.Quests.Tasks
         [RequiredField] public BBParameter<Quest> _quest;
         [RequiredField] public BBParameter<QuestLog.QuestState> _questState;
 
-        protected override string info => $"Quest state is {_questState.value}";
+        protected override string info => (_quest.isNoneOrNull, _questState.isNoneOrNull) switch
+        {
+            (true, true) => "Quest has some state",
+            (true, false) => $"Quest is {_questState.value}",
+            (false, true) => $"Quest '{_quest.value.name}' has some state",
+            (false, false) => $"Quest '{_quest.value.name}' is {_questState.value}",
+        };
 
         //Called once per frame while the condition is active.
         //Return whether the condition is success or failure.
@@ -23,6 +29,7 @@ namespace DualityGame.Quests.Tasks
             return entry != null && entry.State == _questState.value;
         }
 
-        public override void OnCreate(ITaskSystem ownerSystem) => _questLog.value = Resources.FindObjectsOfTypeAll<QuestLog>().FirstOrDefault();
+        public override void OnCreate(ITaskSystem ownerSystem) =>
+            _questLog.value = Resources.FindObjectsOfTypeAll<QuestLog>().FirstOrDefault();
     }
 }
