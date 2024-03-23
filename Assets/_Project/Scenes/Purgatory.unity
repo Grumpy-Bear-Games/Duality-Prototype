@@ -7687,18 +7687,6 @@ MonoBehaviour:
   _onWarp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2130514863}
-        m_TargetAssemblyTypeName: DualityGame.Utilities.BlackboardUtility, DualityGame
-        m_MethodName: SetBooleanTrue
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Player has used a portal
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: bb155824ecb6b3d4a86d19471a9c3528, type: 2}
         m_TargetAssemblyTypeName: DualityGame.Quests.Checkpoint, DualityGame
         m_MethodName: set_Reached
@@ -13502,18 +13490,6 @@ MonoBehaviour:
   _onWarp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2130514863}
-        m_TargetAssemblyTypeName: DualityGame.Utilities.BlackboardUtility, DualityGame
-        m_MethodName: SetBooleanTrue
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Player has used a portal
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: bb155824ecb6b3d4a86d19471a9c3528, type: 2}
         m_TargetAssemblyTypeName: DualityGame.Quests.Checkpoint, DualityGame
         m_MethodName: set_Reached
@@ -18276,6 +18252,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1328726461148192073, guid: 16b81e5410ab6154da01add776355d08,
         type: 3}
+      propertyPath: _boundGraphSource._version
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328726461148192073, guid: 16b81e5410ab6154da01add776355d08,
+        type: 3}
       propertyPath: _boundGraphSource._translation.x
       value: 519
       objectReference: {fileID: 0}
@@ -19441,18 +19422,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2130514852}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2130514863 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7546344658776174122, guid: 83f5700f63041314ca4081d2a2c7d95b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2130514852}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9746467394f47b9b71cf7d04debdd96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2147189412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3883000628722227259, guid: 28b900a293729184a9022e42275b46bc,

@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 8570655007339115320}
   - component: {fileID: 8570655007339115325}
   - component: {fileID: 8570655007339115322}
+  - component: {fileID: 3691287833714875628}
   - component: {fileID: 8570655007339115323}
   - component: {fileID: 8570655007339115327}
   - component: {fileID: 7537433535040781067}
@@ -361,6 +362,7 @@ GameObject:
   - component: {fileID: 7077053595126273546}
   - component: {fileID: 8659183118948853302}
   - component: {fileID: 7448221782219568648}
+  - component: {fileID: 7150342033439808271}
   m_Layer: 7
   m_Name: Kasadya
   m_TagString: Untagged
@@ -410,36 +412,38 @@ MonoBehaviour:
     DIE, FILTHY MORTAL!!!","_mood":2},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"21720b52-b12d-4ac2-8f53-898f1ce0fe6c","_position":{"x":1165.45,"y":-1565.19},"_comment":"TODO:
     \nUpdate animation to standing","$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"},{"_action":{"_questLog":{"_value":1},"_quest":{"_value":2},"$type":"DualityGame.Quests.Tasks.StartQuest"},"_UID":"996541ff-0bcf-41fa-90a1-6046e4f4452f","_tag":"","_position":{"x":1227.931,"y":-1472.287},"_comment":"","$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"10"},{"_playerableDirectorObservable":{"_value":5},"_UID":"0d516a1a-f966-4610-a65c-422082428df1","_position":{"x":1168.435,"y":-1375.363},"$type":"DualityGame.Playables.Tasks.TriggerPlayableDirector","$id":"11"},{"_questLog":{"_value":1},"_quest":{"_value":6},"_UID":"d5a28b93-02a6-46ab-83a7-994406222de0","_tag":"Are
     You Not Entertained - Start","_position":{"x":-789.4609,"y":165.9371},"$type":"DualityGame.Quests.Tasks.QuestStateNode","$id":"12"},{"statement":{"_text":"Hello,
-    you''re blocking my path... can you move please? I want to get past"},"_color":{"r":0.7490196,"a":1.0},"_UID":"ffd55dda-e208-4bb5-8430-b7af6c9d6b70","_position":{"x":-1280.87,"y":397.8071},"_comment":"Dialog
+    you''re blocking my path... can you move please? I want to get past"},"_color":{"r":0.7490196,"a":1.0},"_UID":"ffd55dda-e208-4bb5-8430-b7af6c9d6b70","_position":{"x":-1416.318,"y":423.5839},"_comment":"Dialog
     needs better tie-in with Sweet Tooth","$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"13"},{"statement":{"_text":"Urgh,
-    another dead human. I''m so bored! Bring me someone to fight!","_mood":3},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"d95a8645-ac4a-4913-bee8-3c08a7bf0ee6","_position":{"x":-1283.87,"y":507.8071},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"14"},{"_action":{"_questLog":{"_value":1},"_quest":{"_value":6},"$type":"DualityGame.Quests.Tasks.StartQuest"},"_UID":"6e183bcb-f1f5-4b0a-8903-7267005a33d1","_position":{"x":-1223.87,"y":635.8071},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"15"},{"statement":{"_text":"Okey
-    dokey","_mood":1},"_UID":"19aa1353-7773-4a75-8b13-e85d71669a0b","_position":{"x":-1234.87,"y":763.8071},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"16"},{"_condition":{"_checkpoint":{"_value":7},"$type":"DualityGame.Quests.Tasks.HasCheckpointBeenReached"},"_UID":"9736746f-6bde-4b6b-896a-991a563c5850","_position":{"x":-857.6636,"y":404.4738},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"17"},{"_condition":{"_inventory":{"_value":3},"_itemType":{"_value":8},"_invert":true,"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},"_UID":"cc3f409c-9441-4618-a2e7-37db8f4d53d3","_position":{"x":-743.4833,"y":596.4179},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"18"},{"_condition":{"_checkpoint":{"_value":9},"$type":"DualityGame.Quests.Tasks.HasCheckpointBeenReached"},"_UID":"11ce5362-b7ab-46f7-9ef4-c77122a24901","_position":{"x":-810.2125,"y":823.7994},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"19"},{"statement":{"_text":"I
-    did the thing! The fighting pit is now open! Huzzah!","_mood":1},"_UID":"4d248428-82a8-4210-8673-11af93c37883","_position":{"x":-878.2151,"y":964.4642},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"20"},{"statement":{"_text":"You
-    have done well small dead human, you have pleased me","_mood":1},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"f58eae62-0774-4e49-88f8-f16ee1b5cef7","_position":{"x":-892.5909,"y":1075.795},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"21"},{"_action":{"_questLog":{"_value":1},"_quest":{"_name":"Are
-    You Not Entertained - Quest"},"_resolution":{},"$type":"DualityGame.Quests.Tasks.ResolveQuest"},"_UID":"9ad833b7-6ee5-42e1-91d5-9c87605ead3e","_position":{"x":-862.8818,"y":1196.461},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"22"},{"statement":{"_text":"Oh
-    great and powerful Kasadya, I need one of your <b>Scales</b>. For like, magic
-    and bribary and stuff","_mood":5},"_UID":"ca521fc9-a402-4ceb-9613-3ea30467d17c","_position":{"x":-604.5352,"y":965.8049},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"23"},{"statement":{"_text":"You
-    are are wierd small dead human... but ok, bribary be bribary","_mood":3},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"023af6d4-712f-4cc2-905c-f52f6cf774ee","_position":{"x":-600.5352,"y":1089.805},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"24"},{"_action":{"_inventory":{"_value":3},"_itemType":{"_value":8},"$type":"DualityGame.Inventory.Tasks.AddItemToInventory"},"_UID":"ae5151d6-8766-42c3-9d3e-e79185725c11","_position":{"x":-604.534,"y":1211.805},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"25"},{"statement":{"_text":"There
-    ya go wierdo, knock yourself out","_mood":3},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"253c3ebb-2404-4f91-b9aa-d19ff34663f1","_position":{"x":-601.5441,"y":1347.793},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"26"},{"statement":{"_text":"Why
-    are you still here? You have my <b>Scale</b> don''t you? take it to the witch
-    twins already so I can rip something apart","_mood":2},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"35078dfb-9f97-4035-a90b-76d8c9dadc2d","_position":{"x":-500.5327,"y":741.9895},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"27"},{"statement":{"_text":"Do
+    another dead human. I''m so bored! Bring me someone to fight!","_mood":3},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"d95a8645-ac4a-4913-bee8-3c08a7bf0ee6","_position":{"x":-1419.318,"y":533.5839},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"14"},{"_action":{"_questLog":{"_value":1},"_quest":{"_value":6},"$type":"DualityGame.Quests.Tasks.StartQuest"},"_UID":"6e183bcb-f1f5-4b0a-8903-7267005a33d1","_position":{"x":-1354.651,"y":660.9172},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"15"},{"statement":{"_text":"Okey
+    dokey","_mood":1},"_UID":"19aa1353-7773-4a75-8b13-e85d71669a0b","_position":{"x":-1366.318,"y":761.5839},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"16"},{"_condition":{"_checkpoint":{"_value":7},"_invert":true,"$type":"DualityGame.Quests.Tasks.HasCheckpointBeenReached"},"_UID":"9736746f-6bde-4b6b-896a-991a563c5850","_position":{"x":-864.9974,"y":433.8528},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"17"},{"statement":{"_text":"Do
     you need a hint, small dead human? Hint.. I''m still bored... go find someone
-    to fight me \n","_mood":3},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"4550b9c1-ffbf-43e9-9d60-a7f31507e019","_position":{"x":-498.219,"y":574.8812},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"28"},{"statement":{"_text":"See
-    you in the arena!","_mood":1},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"462620be-4b26-4ed8-a98c-f57e270a115c","_position":{"x":-348.1949,"y":383.5681},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"29"},{"statement":{"_text":"(hmm,
+    to fight me \n","_mood":3},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"4550b9c1-ffbf-43e9-9d60-a7f31507e019","_position":{"x":-748.2313,"y":608.2914},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"18"},{"_condition":{"_checkpoint":{"_value":8},"_invert":true,"$type":"DualityGame.Quests.Tasks.HasCheckpointBeenReached"},"_UID":"11ce5362-b7ab-46f7-9ef4-c77122a24901","_position":{"x":-518.4584,"y":606.8203},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"19"},{"_condition":{"_inventory":{"_value":3},"_itemType":{"_value":9},"_invert":true,"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},"_UID":"3973ccb2-07e6-495d-bc59-aa6276fa814a","_position":{"x":-454.9322,"y":757.2445},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"20"},{"statement":{"_text":"Oh
+    great and powerful Kasadya, I need one of your <b>Scales</b>. For like, magic
+    and bribary and stuff","_mood":5},"_UID":"ca521fc9-a402-4ceb-9613-3ea30467d17c","_position":{"x":-462.772,"y":907.4028},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"21"},{"statement":{"_text":"You
+    are are wierd small dead human... but ok, bribary be bribary","_mood":3},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"023af6d4-712f-4cc2-905c-f52f6cf774ee","_position":{"x":-459.4283,"y":994.3678},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"22"},{"_action":{"_inventory":{"_value":3},"_itemType":{"_value":9},"$type":"DualityGame.Inventory.Tasks.AddItemToInventory"},"_UID":"ae5151d6-8766-42c3-9d3e-e79185725c11","_position":{"x":-463.0989,"y":1081.514},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"23"},{"statement":{"_text":"There
+    ya go wierdo, knock yourself out","_mood":3},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"253c3ebb-2404-4f91-b9aa-d19ff34663f1","_position":{"x":-462.6109,"y":1166.651},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"24"},{"statement":{"_text":"Why
+    are you still here? You have my <b>Scale</b> don''t you? take it to the witch
+    twins already so I can rip something apart","_mood":2},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"35078dfb-9f97-4035-a90b-76d8c9dadc2d","_position":{"x":-191.4086,"y":914.3137},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"25"},{"statement":{"_text":"I
+    did the thing! The fighting pit is now open! Huzzah!","_mood":1},"_UID":"4d248428-82a8-4210-8673-11af93c37883","_position":{"x":202.6594,"y":824.7883},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"26"},{"statement":{"_text":"You
+    have done well small dead human, you have pleased me","_mood":1},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"f58eae62-0774-4e49-88f8-f16ee1b5cef7","_position":{"x":191.9181,"y":913.4632},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"27"},{"_action":{"actions":[{"_checkpoint":{"_value":10},"$type":"DualityGame.Quests.Tasks.SetCheckpointReached"},{"_questLog":{"_value":1},"_quest":{"_value":6},"_resolution":{},"$type":"DualityGame.Quests.Tasks.ResolveQuest"}],"$type":"NodeCanvas.Framework.ActionList"},"_UID":"9ad833b7-6ee5-42e1-91d5-9c87605ead3e","_position":{"x":122.6331,"y":1000.434},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"28"},{"statement":{"_text":"..."},"_position":{"x":253.9932,"y":1118.221},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"29"},{"statement":{"_text":"..."},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_position":{"x":253.923,"y":1212.898},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"30"},{"statement":{"_text":"So,
+    when will you move?"},"_position":{"x":209.955,"y":1304.944},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"31"},{"statement":{"_text":"Eventually.
+    When I am good and ready. First I need to think about what to wear...."},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_position":{"x":196.546,"y":1390.283},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"32"},{"_bookkeeping":{"_value":11},"_id":{"_value":"164454e2-84e2-4f9f-983d-71e70ce9604c"},"_loop":{},"_UID":"164454e2-84e2-4f9f-983d-71e70ce9604c","_position":{"x":48.17297,"y":348.1165},"$type":"DualityGame.Utilities.Tasks.FlavorBranchingNode","$id":"33"},{"statement":{"_text":"Could
+    you please move now?"},"_position":{"x":-125.275,"y":480.1225},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"34"},{"statement":{"_text":"Patience,
+    mortal, patience!"},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"462620be-4b26-4ed8-a98c-f57e270a115c","_position":{"x":-121.9418,"y":572.1226},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"35"},{"statement":{"_text":"(hmm,
     what should I talk to Kasadya about?)"},"availableChoices":[{"statement":{"_text":"(Ask
-    Kasadya to move)"},"condition":{"_questLog":{"_value":1},"_quest":{"_value":6},"_questState":{"_value":1},"_invert":true,"$type":"DualityGame.Quests.Tasks.CheckQuestState"}},{"statement":{"_text":"(Ask
-    Kasadya about the shorts)"},"condition":{"_questLog":{"_value":1},"_quest":{"_value":10},"_questState":{},"$type":"DualityGame.Quests.Tasks.CheckQuestState"}}],"_UID":"32de7bc8-8892-482b-82a8-beed4fe6d0a6","_tag":"Quest
+    Kasadya to move)"},"condition":{"_checkpoint":{"_value":10},"_invert":true,"$type":"DualityGame.Quests.Tasks.HasCheckpointBeenReached"}},{"statement":{"_text":"(Ask
+    Kasadya about the shorts)"},"condition":{"_questLog":{"_value":1},"_quest":{"_value":12},"_questState":{},"$type":"DualityGame.Quests.Tasks.CheckQuestState"}}],"_UID":"32de7bc8-8892-482b-82a8-beed4fe6d0a6","_tag":"Quest
     Branching","_position":{"x":463.1172,"y":-608.0471},"_comment":"TODO: Fine-tune
-    this branching once quest other is known","$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"30"},{"_sourceNodeUID":"d5a28b93-02a6-46ab-83a7-994406222de0","_UID":"0b7e240c-0355-4d52-b518-606246e51736","_position":{"x":52.92516,"y":-287.2533},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"31"},{"_sourceNodeUID":"2f42291e-b628-477e-880a-d8f8f9dff188","_UID":"0c634b36-167a-47dd-aa40-dbd36dc454fe","_position":{"x":712.59,"y":-286.948},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"32"},{"statement":{"_text":"Excuse
+    this branching once quest other is known","$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"36"},{"_sourceNodeUID":"d5a28b93-02a6-46ab-83a7-994406222de0","_UID":"0b7e240c-0355-4d52-b518-606246e51736","_position":{"x":48.57914,"y":-303.7682},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"37"},{"_sourceNodeUID":"2f42291e-b628-477e-880a-d8f8f9dff188","_UID":"0c634b36-167a-47dd-aa40-dbd36dc454fe","_position":{"x":865.5692,"y":-273.0408},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"38"},{"statement":{"_text":"Excuse
     me. Do you know who these <b>Shorts</b> belong to?"},"_UID":"2f42291e-b628-477e-880a-d8f8f9dff188","_tag":"No
-    Short Order - Start","_position":{"x":1088.743,"y":132.8373},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"33"},{"statement":{"_text":"I
-    have no idea, small dead human. They don''t smell like they belong in Hell.","_mood":3},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_position":{"x":1100.149,"y":226.8808},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"34"},{"statement":{"_text":"I
-    see. Well, thank you anyway.","_mood":1},"_position":{"x":1093.119,"y":317.952},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"35"},{"statement":{"_text":"(Maybe
-    I should try asking the angels instead)"},"_position":{"x":1097.496,"y":409.1884},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"36"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"28"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"27"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"20"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"25"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"25"},"_targetNode":{"$ref":"26"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"32"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"33"},"_targetNode":{"$ref":"34"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"34"},"_targetNode":{"$ref":"35"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"36"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[{"name":"Quest
-    - Are You Not Entertained?","rect":{"xMin":-1548.482,"yMin":87.06607,"xMax":236.4089,"yMax":1465.546}},{"name":"Quest
+    Short Order - Start","_position":{"x":1088.743,"y":132.8373},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"39"},{"statement":{"_text":"I
+    have no idea, small dead human. They don''t smell like they belong in Hell.","_mood":3},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_position":{"x":1100.149,"y":226.8808},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"40"},{"statement":{"_text":"I
+    see. Well, thank you anyway.","_mood":1},"_position":{"x":1093.119,"y":317.952},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"41"},{"statement":{"_text":"(Maybe
+    I should try asking the angels instead)"},"_position":{"x":1097.496,"y":409.1884},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"42"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"26"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"20"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"20"},"_targetNode":{"$ref":"25"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"22"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"26"},"_targetNode":{"$ref":"27"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"27"},"_targetNode":{"$ref":"28"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"28"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"29"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"31"},"_targetNode":{"$ref":"32"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"33"},"_targetNode":{"$ref":"34"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"34"},"_targetNode":{"$ref":"35"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"36"},"_targetNode":{"$ref":"37"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"36"},"_targetNode":{"$ref":"38"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"40"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"41"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"41"},"_targetNode":{"$ref":"42"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[{"name":"Quest
+    - Are You Not Entertained?","rect":{"xMin":-1449.318,"yMin":100.9371,"xMax":507.6332,"yMax":1476.283},"autoGroup":true},{"name":"Quest
     - Sweet Tooth","rect":{"xMin":346.1784,"yMin":-2013.56,"xMax":1495.741,"yMax":-938.645}},{"name":"Quest
     Branching","rect":{"xMin":-60.46313,"yMin":-706.2727,"xMax":1205.094,"yMax":-91.216}},{"name":"No
-    Short Order","rect":{"xMin":963.8782,"yMin":78.26206,"xMax":1405.036,"yMax":556.9873}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Kasadya","_id":"2157c728-a4a0-4690-8647-47f0deffccb9","_actorObject":11}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+    Short Order","rect":{"xMin":963.8782,"yMin":78.26206,"xMax":1405.036,"yMax":556.9873}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Kasadya","_id":"2157c728-a4a0-4690-8647-47f0deffccb9","_actorObject":13}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 11400000, guid: 057d41e2fce3fd44481548140c593b1f, type: 2}
@@ -449,16 +453,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c9460ca0e1eef5242b3741afabf0655b, type: 2}
   - {fileID: 11400000, guid: d3a33c4bd5a365540a2039c7e052dd0f, type: 2}
   - {fileID: 5239389758843981025, guid: d3a33c4bd5a365540a2039c7e052dd0f, type: 2}
-  - {fileID: 11400000, guid: b313beab16bb6df4dab5f542c0dbe53c, type: 2}
   - {fileID: 1347914378466607536, guid: d3a33c4bd5a365540a2039c7e052dd0f, type: 2}
+  - {fileID: 11400000, guid: b313beab16bb6df4dab5f542c0dbe53c, type: 2}
+  - {fileID: -2419679737691447977, guid: d3a33c4bd5a365540a2039c7e052dd0f, type: 2}
+  - {fileID: 3691287833714875628}
   - {fileID: 11400000, guid: e1cda35293ffa734fbd4959dc3c21d35, type: 2}
   - {fileID: 2155733169046693454}
   _boundGraphSource:
-    _version: 3.25
+    _version: 3.3
     _category: 
     _comments: 
-    _translation: {x: 994, y: 204}
-    _zoomFactor: 0.6725018
+    _translation: {x: 999, y: 146}
+    _zoomFactor: 0.5724058
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2
@@ -483,6 +489,18 @@ MonoBehaviour:
   _serializedBlackboard: '{"_variables":{}}'
   _objectReferences: []
   _serializedVariables: []
+--- !u!114 &3691287833714875628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8570655007339115321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b1971728a74412b253450f50e6290c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8570655007339115323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,6 +704,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _observable: {fileID: 11400000, guid: c9460ca0e1eef5242b3741afabf0655b, type: 2}
   _registerOnAwake: 0
+--- !u!114 &7150342033439808271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8570655007339115321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b991b662f34941ba77d0bfc9d1036a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startingSceneGroup: {fileID: 3698217119191262082, guid: 416df4eeba7a8f4499bee7e7f28e2620,
+    type: 2}
+  _checkpoints:
+  - _checkpoint: {fileID: -2419679737691447977, guid: d3a33c4bd5a365540a2039c7e052dd0f,
+      type: 2}
+    _sceneGroup: {fileID: -6669340537589309187, guid: 416df4eeba7a8f4499bee7e7f28e2620,
+      type: 2}
 --- !u!1001 &5172556318793223233
 PrefabInstance:
   m_ObjectHideFlags: 0
