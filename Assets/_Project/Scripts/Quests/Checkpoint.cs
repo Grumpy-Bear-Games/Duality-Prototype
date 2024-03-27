@@ -9,8 +9,9 @@ namespace DualityGame.Quests
     public class Checkpoint : SerializableScriptableObject<Checkpoint>
     {
         private static readonly HashSet<Checkpoint> _checkpoints = new();
-
-        //[field: SerializeField] public Quest Quest { get; private set; }
+        #if UNITY_EDITOR
+        public static event System.Action OnCheckpointUpdated;
+        #endif
 
         public bool Reached
         {
@@ -25,6 +26,9 @@ namespace DualityGame.Quests
                 {
                     _checkpoints.Remove(this);
                 }
+                #if UNITY_EDITOR
+                OnCheckpointUpdated?.Invoke();
+                #endif
             }
         }
 

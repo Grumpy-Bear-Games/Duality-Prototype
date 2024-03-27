@@ -11,11 +11,21 @@ namespace DualityGame.Editor.Quests
     {
         private Checkpoint _checkpoint;
         private Object _mainAsset;
+        private Toggle _reachedToggle;
 
         private void OnEnable()
         {
             _checkpoint = target as Checkpoint;
             _mainAsset = AssetDatabase.IsMainAsset(target) ? null : AssetDatabase.LoadMainAssetAtPath(AssetDatabase.GetAssetPath(target));
+            Checkpoint.OnCheckpointUpdated += UpdateReachedToggle;
+        }
+
+        private void OnDisable() => Checkpoint.OnCheckpointUpdated -= UpdateReachedToggle;
+
+        private void UpdateReachedToggle()
+        {
+            if (_reachedToggle == null) return;
+            _reachedToggle.value = _checkpoint.Reached;
         }
 
         public override VisualElement CreateInspectorGUI()
@@ -31,30 +41,34 @@ namespace DualityGame.Editor.Quests
             nameField.value = _checkpoint.name;
             root.Add(nameField);
 
-            var deleteButton = new Button
+            if (EditorApplication.isPlayingOrWillChangePlaymode)
             {
-                text = "Delete"
-            };
-            deleteButton.clicked += DeleteCheckpoint;
-            root.Add(deleteButton);
+                _reachedToggle = new Toggle
+                {
+                    label = "Reached",
+                    value = _checkpoint.Reached,
+                };
+                _reachedToggle.RegisterValueChangedCallback(evt => _checkpoint.Reached = evt.newValue);
+                root.Add(_reachedToggle);
+            } else if (_mainAsset != null)
+            {
+                var deleteButton = new Button
+                {
+                    text = "Delete"
+                };
+                deleteButton.clicked += DeleteNestedCheckpoint;
+                root.Add(deleteButton);
+            }
+
             return root;
         }
 
-        private void DeleteCheckpoint()
+        private void DeleteNestedCheckpoint()
         {
-            if (_mainAsset == null)
-            {
-                AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(_checkpoint));
-                DestroyImmediate(_checkpoint, true);
-                Selection.activeObject = null;
-            }
-            else
-            {
-                AssetDatabase.RemoveObjectFromAsset(_checkpoint);
-                EditorUtility.SetDirty(_mainAsset);
-                AssetDatabase.SaveAssetIfDirty(_mainAsset);
-                Selection.activeObject = _mainAsset;
-            }
+            AssetDatabase.RemoveObjectFromAsset(_checkpoint);
+            EditorUtility.SetDirty(_mainAsset);
+            AssetDatabase.SaveAssetIfDirty(_mainAsset);
+            Selection.activeObject = _mainAsset;
         }
 
         private void RenameCheckpoint(ChangeEvent<string> evt)
