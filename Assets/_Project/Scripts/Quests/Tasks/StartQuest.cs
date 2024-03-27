@@ -12,7 +12,7 @@ namespace DualityGame.Quests.Tasks
         [RequiredField] public BBParameter<QuestLog> _questLog;
         [RequiredField] public BBParameter<Quest> _quest;
 
-        protected override string info => _quest.isNoneOrNull ? "(Please specify quest)" : "Start quest";
+        protected override string info => _quest.isNoneOrNull ? "(Please specify quest)" : $"Start quest '{_quest.value.name}'";
 
         //This is called once each time the task is enabled.
         //Call EndAction() to mark the action as finished, either in success or failure.
