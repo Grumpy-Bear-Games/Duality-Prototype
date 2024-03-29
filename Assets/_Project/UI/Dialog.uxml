@@ -9,12 +9,10 @@
                 <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi magna, &#10;tincidunt in erat ut, accumsan molestie magna. Morbi a lacinia odio. Duis metus nunc, porta ac dignissim pulvinar, volutpat pharetra quam. Nam eleifend cursus ligula id pellentesque. Donec eros orci, feugiat a lobortis eu, vehicula a eros. Donec luctus eu ante vitae mollis. Quisque sit amet dapibus metus, nec pharetra massa. Vestibulum ut magna id sem posuere venenatis nec quis ante. Etiam tincidunt odio at neque interdum, eu semper nibh elementum." display-tooltip-when-elided="true" name="StatementText" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="MultipleChoice">
-            <ui:VisualElement name="Options">
-                <ui:Button text="You&apos;re talking nonsense, old man!" display-tooltip-when-elided="true" />
-                <ui:Button text="I totally agree!" display-tooltip-when-elided="true" />
-                <ui:Button text="Eh, right. Goodbye...." display-tooltip-when-elided="true" />
-            </ui:VisualElement>
+        <ui:VisualElement name="Options">
+            <ui:Button text="You&apos;re talking nonsense, old man!" display-tooltip-when-elided="true" />
+            <ui:Button text="I totally agree!" display-tooltip-when-elided="true" />
+            <ui:Button text="Eh, right. Goodbye...." display-tooltip-when-elided="true" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

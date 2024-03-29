@@ -114,7 +114,7 @@ namespace DualityGame.DialogSystem.UI {
 			}
 
 			CleanupChoiceButton();
-			CreateOption("(Continue)", info.Continue);
+			CreateOption("Continue", info.Continue);
 			FocusFirstOption();
 		}
 
@@ -122,6 +122,13 @@ namespace DualityGame.DialogSystem.UI {
 
 		private void OnMultipleChoiceRequest(MultipleChoiceRequestInfo info)
 		{
+			// Workaround to avoid bug in the DialogueTree
+			if (_dialogJustStarted)
+			{
+				_dialogJustStarted = false;
+				_onDialogBegin.Invoke();
+			}
+
 			Show();
 			SetActor(info.actor, info.statement.mood);
 			_statementText.text = info.statement.text;
@@ -132,18 +139,17 @@ namespace DualityGame.DialogSystem.UI {
 			
 			foreach (var (statement, value) in info.options)
 			{
-				CreateOption(statement.text, () => info.SelectOption(value));
+				CreateOption($"- {statement.text}", () => info.SelectOption(value));
 			}
 			FocusFirstOption();
 		}
 
 		private void CreateOption(string text, Action onClick)
 		{
-			var button = new Button
+			var button = new Button(onClick)
 			{
-				text = $"{_options.childCount + 1}.   {text}"
+				text = text,
 			};
-			button.clicked += onClick;
 			_options.Add(button);
 		}
 	}
