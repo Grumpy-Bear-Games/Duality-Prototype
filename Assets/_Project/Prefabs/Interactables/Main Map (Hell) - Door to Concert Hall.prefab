@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3085826021347201948}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.04, y: 0, z: 4.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -151,6 +151,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3216790354864994542, guid: 34fbcea619ade8142ab161bf376e8d00,
+        type: 3}
+      propertyPath: <Realm>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: b4d6229eae5dd0c41b7a1171b0265464,
+        type: 2}
     - target: {fileID: 3216790354864994542, guid: 34fbcea619ade8142ab161bf376e8d00,
         type: 3}
       propertyPath: <SpawnPointReference>k__BackingField

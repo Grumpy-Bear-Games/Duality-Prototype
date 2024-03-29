@@ -10,8 +10,6 @@ namespace DualityGame.Player
     {
         [field: Header("Destination")]
         [field: SerializeField] public SceneGroup SceneGroup { get; private set; }
-        [field: SerializeField] public Realm.Realm Realm { get; private set; }
-
 
         public void SpawnAt(SpawnSettings spawnSettings) => CoroutineRunner.Run(WarpTo_CO(spawnSettings));
 

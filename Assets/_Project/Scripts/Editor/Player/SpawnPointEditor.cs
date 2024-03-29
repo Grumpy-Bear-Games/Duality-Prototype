@@ -73,8 +73,8 @@ namespace DualityGame.Editor.Player
                 }
             }
 
-            if (_spawnPoint.SpawnPointReference.Realm == null) return;
-            if (_spawnPoint.gameObject.layer == _spawnPoint.SpawnPointReference.Realm.LevelLayer) return;
+            if (_spawnPoint.Realm == null) return;
+            if (_spawnPoint.gameObject.layer == _spawnPoint.Realm.LevelLayer) return;
             _warnings.Add(new HelpBox
             {
                 messageType = HelpBoxMessageType.Error,

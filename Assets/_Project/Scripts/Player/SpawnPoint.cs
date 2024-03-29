@@ -17,8 +17,8 @@ namespace DualityGame.Player
             return spawnPoint;
         }
 
+        [field: SerializeField] public Realm.Realm Realm { get; private set; }
         [field: SerializeField] public SpawnPointReference SpawnPointReference { get; private set; }
-        public Realm.Realm Realm => SpawnPointReference != null ? SpawnPointReference.Realm : null;
 
         private void Awake()
         {
