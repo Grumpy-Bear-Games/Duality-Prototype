@@ -1,7 +1,6 @@
 using System;
 using DualityGame.VFX;
 using Games.GrumpyBear.Core.Observables;
-using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +13,7 @@ namespace DualityGame.Player
         public static IReadonlyObservable<WarpState> State => _warpState;
 
 
+        [SerializeField] private float _verticalOffset = 0.01f;
         [SerializeField] private InputActionReference _warpAction;
         [Header("VFX")]
         [SerializeField] private ScreenFader _warpVFX;
@@ -76,8 +76,8 @@ namespace DualityGame.Player
         private bool IsOtherRealmBlocked(Vector3 position)
         {
             var radius = _controller.radius;
-            var point1 = position + Vector3.up * (_controller.height - radius);
-            var point2 = position + Vector3.up * radius;
+            var point1 = position + Vector3.up * (_controller.height - radius + _verticalOffset);
+            var point2 = position + Vector3.up * (radius + _verticalOffset);
 
             return Physics.OverlapCapsuleNonAlloc(point1, point2, radius, _colliders, Realm.Realm.Current.CanWarpTo.LevelLayerMask) > 0;
         }
