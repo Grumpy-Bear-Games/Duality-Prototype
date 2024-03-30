@@ -13,9 +13,9 @@ namespace DualityGame.Realm
         private DecalProjector[] _decalProjectors;
         private void Awake()
         {
-            _renderers = GetComponentsInChildren<Renderer>();
-            _volumes = GetComponentsInChildren<Volume>();
-            _decalProjectors = GetComponentsInChildren<DecalProjector>();
+            _renderers = GetComponentsInChildren<Renderer>(true);
+            _volumes = GetComponentsInChildren<Volume>(true);
+            _decalProjectors = GetComponentsInChildren<DecalProjector>(true);
         }
 
         private void OnEnable() => Realm.Subscribe(OnChangeRealm);
