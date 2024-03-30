@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Games.GrumpyBear.Core.SaveSystem;
+using Unity.Properties;
 using UnityEngine;
 
 namespace DualityGame.Quests
@@ -9,10 +10,8 @@ namespace DualityGame.Quests
     public class Checkpoint : SerializableScriptableObject<Checkpoint>
     {
         private static readonly HashSet<Checkpoint> _checkpoints = new();
-        #if UNITY_EDITOR
-        public static event System.Action OnCheckpointUpdated;
-        #endif
 
+        [CreateProperty]
         public bool Reached
         {
             get => _checkpoints.Contains(this);
@@ -26,9 +25,6 @@ namespace DualityGame.Quests
                 {
                     _checkpoints.Remove(this);
                 }
-                #if UNITY_EDITOR
-                OnCheckpointUpdated?.Invoke();
-                #endif
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using DualityGame.Quests;
+using Unity.Properties;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -11,21 +12,11 @@ namespace DualityGame.Editor.Quests
     {
         private Checkpoint _checkpoint;
         private Object _mainAsset;
-        private Toggle _reachedToggle;
 
         private void OnEnable()
         {
             _checkpoint = target as Checkpoint;
             _mainAsset = AssetDatabase.IsMainAsset(target) ? null : AssetDatabase.LoadMainAssetAtPath(AssetDatabase.GetAssetPath(target));
-            Checkpoint.OnCheckpointUpdated += UpdateReachedToggle;
-        }
-
-        private void OnDisable() => Checkpoint.OnCheckpointUpdated -= UpdateReachedToggle;
-
-        private void UpdateReachedToggle()
-        {
-            if (_reachedToggle == null) return;
-            _reachedToggle.value = _checkpoint.Reached;
         }
 
         public override VisualElement CreateInspectorGUI()
@@ -43,13 +34,16 @@ namespace DualityGame.Editor.Quests
 
             if (EditorApplication.isPlayingOrWillChangePlaymode)
             {
-                _reachedToggle = new Toggle
+                var reachedToggle = new Toggle
                 {
                     label = "Reached",
-                    value = _checkpoint.Reached,
+                    dataSource = _checkpoint,
                 };
-                _reachedToggle.RegisterValueChangedCallback(evt => _checkpoint.Reached = evt.newValue);
-                root.Add(_reachedToggle);
+                reachedToggle.SetBinding(nameof(Toggle.value), new DataBinding
+                {
+                    dataSourcePath = new PropertyPath(nameof(Checkpoint.Reached)),
+                });
+                root.Add(reachedToggle);
             } else if (_mainAsset != null)
             {
                 var deleteButton = new Button
