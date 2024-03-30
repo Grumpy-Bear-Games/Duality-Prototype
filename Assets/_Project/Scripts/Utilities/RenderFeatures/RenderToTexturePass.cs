@@ -49,8 +49,10 @@ namespace DualityGame.Utilities.RenderFeatures
                 var drawSettings = CreateDrawingSettings(_shaderTagIds, ref renderingData,
                     renderingData.cameraData.defaultOpaqueSortFlags);
                 drawSettings.overrideMaterial = _material;
-                context.DrawRenderers(renderingData.cullResults, ref drawSettings, ref _filteringSettings);
-
+                var rendererListParams = new RendererListParams(renderingData.cullResults, drawSettings, _filteringSettings);
+                var rendererList = context.CreateRendererList(ref rendererListParams);
+                cmd.DrawRendererList(rendererList);
+                //context.DrawRenderers(renderingData.cullResults, ref drawSettings, ref _filteringSettings);
             }
 
             context.ExecuteCommandBuffer(cmd);

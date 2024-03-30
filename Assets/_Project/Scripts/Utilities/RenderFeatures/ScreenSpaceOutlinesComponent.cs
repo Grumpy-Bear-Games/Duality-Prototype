@@ -4,7 +4,8 @@ using UnityEngine.Rendering.Universal;
 
 namespace DualityGame.Utilities.RenderFeatures
 {
-    [VolumeComponentMenuForRenderPipeline("Duality/Screen Space Outlines", typeof(UniversalRenderPipeline))]
+    [VolumeComponentMenu("Duality/Screen Space Outlines")]
+    [SupportedOnRenderPipeline(typeof(UniversalRenderPipelineAsset))]
     public class ScreenSpaceOutlinesComponent : VolumeComponent, IPostProcessComponent
     {
         [Header("Edge Detection")]

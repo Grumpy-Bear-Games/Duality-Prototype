@@ -9,7 +9,7 @@ namespace DualityGame.Utilities
             value.RegisterCallback<PointerDownEvent>(evt =>
             {
                 evt.StopImmediatePropagation();
-                evt.PreventDefault();
+                (evt.currentTarget as VisualElement)?.panel.focusController.IgnoreEvent(evt);
             });
         }
     }

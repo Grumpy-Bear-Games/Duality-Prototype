@@ -71,7 +71,8 @@ namespace DualityGame.UI
                         _cancelButton.Focus();
                         break;
                 }
-                evt.PreventDefault();
+                evt.StopImmediatePropagation();
+                (evt.currentTarget as VisualElement)?.panel.focusController.IgnoreEvent(evt);
             });
             
             _cancelButton.RegisterCallback<NavigationMoveEvent>(evt =>
@@ -83,7 +84,8 @@ namespace DualityGame.UI
                         _confirmButton.Focus();
                         break;
                 }
-                evt.PreventDefault();
+                evt.StopImmediatePropagation();
+                (evt.currentTarget as VisualElement)?.panel.focusController.IgnoreEvent(evt);
             });
             
             _focusOnShow = focusOnShow;
