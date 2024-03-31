@@ -1,7 +1,6 @@
 ﻿using DualityGame.Quests;
 using Unity.Properties;
 using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -21,8 +20,40 @@ namespace DualityGame.Editor.Quests
 
         public override VisualElement CreateInspectorGUI()
         {
+            return EditorApplication.isPlayingOrWillChangePlaymode ? RuntimeMode() : EditorMode();
+        }
+
+        private VisualElement RuntimeMode()
+        {
             var root = new VisualElement();
-            InspectorElement.FillDefaultInspector(root, serializedObject, this);
+
+            var nameField = new TextField
+            {
+                label = "Name",
+                isDelayed = true,
+                value = _checkpoint.name
+            };
+            nameField.SetEnabled(false);
+            root.Add(nameField);
+
+            var reachedToggle = new Toggle
+            {
+                label = "Reached",
+                dataSource = _checkpoint,
+            };
+            reachedToggle.SetBinding(nameof(Toggle.value), new DataBinding
+            {
+                dataSourcePath = new PropertyPath(nameof(Checkpoint.Reached)),
+            });
+            root.Add(reachedToggle);
+
+            return root;
+        }
+
+        private VisualElement EditorMode()
+        {
+            var root = new VisualElement();
+
             var nameField = new TextField
             {
                 label = "Name",
@@ -32,19 +63,7 @@ namespace DualityGame.Editor.Quests
             nameField.value = _checkpoint.name;
             root.Add(nameField);
 
-            if (EditorApplication.isPlayingOrWillChangePlaymode)
-            {
-                var reachedToggle = new Toggle
-                {
-                    label = "Reached",
-                    dataSource = _checkpoint,
-                };
-                reachedToggle.SetBinding(nameof(Toggle.value), new DataBinding
-                {
-                    dataSourcePath = new PropertyPath(nameof(Checkpoint.Reached)),
-                });
-                root.Add(reachedToggle);
-            } else if (_mainAsset != null)
+            if (_mainAsset != null)
             {
                 var deleteButton = new Button
                 {

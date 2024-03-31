@@ -11,6 +11,11 @@ namespace DualityGame.Quests
     {
         private static readonly HashSet<Checkpoint> _checkpoints = new();
 
+        #if UNITY_EDITOR
+        [CreateProperty]
+        public string Name => name;
+        #endif
+
         [CreateProperty]
         public bool Reached
         {
