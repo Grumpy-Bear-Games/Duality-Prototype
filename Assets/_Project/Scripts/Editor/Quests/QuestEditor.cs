@@ -36,10 +36,10 @@ namespace DualityGame.Editor.Quests
                 headerTitle = "Checkpoints",
                 showFoldoutHeader = true,
                 showBoundCollectionSize = false,
-                itemsSource = _checkpoints
+                itemsSource = _checkpoints,
+                showBorder = true,
+                showAlternatingRowBackgrounds = AlternatingRowBackground.ContentOnly
             };
-            checkpointsList.showBorder = true;
-            checkpointsList.showAlternatingRowBackgrounds = AlternatingRowBackground.ContentOnly;
 
             checkpointsList.makeItem += CheckpointsMakeItem;
             checkpointsList.bindItem += CheckpointsBindItem;
