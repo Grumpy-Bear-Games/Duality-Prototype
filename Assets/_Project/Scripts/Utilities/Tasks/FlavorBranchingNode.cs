@@ -2,6 +2,9 @@ using NodeCanvas.DialogueTrees;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace DualityGame.Utilities.Tasks
 {
@@ -25,7 +28,16 @@ namespace DualityGame.Utilities.Tasks
         public override void OnCreate(Graph assignedGraph)
         {
             _id.value = UID;
-            _bookkeeping.value = assignedGraph.agent.GetComponent<FlavorBranchingBookkeeping>();
+            var bookkeeping = assignedGraph.agent.GetComponent<FlavorBranchingBookkeeping>();
+            #if UNITY_EDITOR
+            if (bookkeeping == null)
+            {
+                var go = assignedGraph.agent.gameObject;
+                bookkeeping = go.AddComponent<FlavorBranchingBookkeeping>();
+                EditorUtility.SetDirty(go);
+            }
+            #endif
+            _bookkeeping.value = bookkeeping;
         }
 
         protected override Status OnExecute(Component agent, IBlackboard bb) {
