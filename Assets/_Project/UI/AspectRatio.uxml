@@ -1,4 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/_Project/UI/AspectRatio.uss?fileID=7433441132597879392&amp;guid=85b93a27655c0e54cb6a1e8101be0770&amp;type=3#AspectRatio" />
-    <DualityGame.UI.AspectRatioContainer ratio-width="1920" ratio-height="1080" spacing-mode="Margin" style="justify-content: space-around;" />
+    <DualityGame.UI.AspectRatioContainer ratio-width="1920" ratio-height="1080" spacing-mode="Margin" name="AspectRatioContainer" horizontal-align="Middle" vertical-align="Middle">
+        <ui:VisualElement style="flex-grow: 1; background-color: rgb(255, 0, 0);" />
+    </DualityGame.UI.AspectRatioContainer>
 </ui:UXML>
