@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements"
+         xmlns:uie="UnityEditor.UIElements"
+         xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements"
+         editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+         editor-extension-mode="True">
+    <Style src="InventoryRuntimeInspector.uss" />
+    <ui:VisualElement name="RuntimeInspector" style="flex-grow: 1;">
+        <ui:Label text="Items" name="Header"/>
+        <ui:ListView name="Items" binding-source-selection-mode="AutoAssign"
+                     item-template="InventoryRuntimeInspectorItem.uxml"
+                     virtualization-method="DynamicHeight"
+                     show-border="true"
+                     show-alternating-row-backgrounds="ContentOnly"
+                     show-add-remove-footer="true"
+        >
+            <Bindings>
+                <ui:DataBinding property="itemsSource" data-source-path="_items" />
+                <DualityGame.UI.ListViewCountTracker property="list-view-count-tracker"/>
+            </Bindings>
+        </ui:ListView>
+        <ui:Button text="Clean Inventory" name="ClearInventory" />
+    </ui:VisualElement>
+</ui:UXML>

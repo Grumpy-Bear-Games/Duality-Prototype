@@ -1,4 +1,5 @@
 ﻿using Games.GrumpyBear.Core.SaveSystem;
+using Unity.Properties;
 using UnityEngine;
 
 namespace DualityGame.Inventory
@@ -9,8 +10,12 @@ namespace DualityGame.Inventory
         [SerializeField] private Sprite _inventorySprite;
         [SerializeField] private Realm.Realm _realm;
 
-        public Sprite InventorySprite => _inventorySprite;
-        public Realm.Realm Realm => _realm;
+        #if UNITY_EDITOR
+        [CreateProperty] public string Name => name;
+        #endif
+
+        [CreateProperty] public Sprite InventorySprite => _inventorySprite;
+        [CreateProperty] public Realm.Realm Realm => _realm;
 
         public override string ToString() => name;
     }

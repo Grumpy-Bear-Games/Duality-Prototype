@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="InventoryRuntimeInspector.uss" />
+    <ui:VisualElement name="Item">
+        <ui:Image name="Icon">
+            <Bindings>
+                <ui:DataBinding property="sprite" data-source-path="InventorySprite" />
+            </Bindings>
+        </ui:Image>
+        <ui:Label>
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="Name" />
+            </Bindings>
+        </ui:Label>
+    </ui:VisualElement>
+</ui:UXML>

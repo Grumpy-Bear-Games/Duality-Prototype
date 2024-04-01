@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Games.GrumpyBear.Core.SaveSystem;
+using Unity.Properties;
 using UnityEngine;
 
 namespace DualityGame.Inventory
@@ -10,8 +11,8 @@ namespace DualityGame.Inventory
     [CreateAssetMenu(fileName = "Inventory", menuName = "Duality/Inventory", order = 0)]
     public class Inventory : ScriptableObject, ISaveableComponent
     {
+        [CreateProperty]
         private readonly List<ItemType> _items = new();
-        private ISaveableComponent saveableComponentImplementation;
 
         public IReadOnlyList<ItemType> Items => _items;
 
@@ -50,6 +51,13 @@ namespace DualityGame.Inventory
         }
 
         private void _SortItems() => _items.Sort((a, b) => string.Compare(a.name, b.name, StringComparison.Ordinal));
+
+        #if UNITY_EDITOR
+        public static class Fields
+        {
+            public static readonly string Items = nameof(_items);
+        }
+        #endif
 
         #region ISaveableComponent
         object ISaveableComponent.CaptureState() => _items.Select(item => item.ObjectGuid).ToList();
