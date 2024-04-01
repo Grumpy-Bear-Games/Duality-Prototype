@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements"
+         xmlns:uie="UnityEditor.UIElements"
+         xsi="http://www.w3.org/2001/XMLSchema-instance"
+         engine="UnityEngine.UIElements"
+         editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+         editor-extension-mode="True">
+    <Style src="QuestLogRuntimeInspector.uss" />
+    <ui:VisualElement name="RuntimeInspector" style="flex-grow: 1;">
+        <ui:Label text="Quests" name="Header"/>
+        <ui:MultiColumnListView name="QuestList"
+                                virtualization-method="DynamicHeight"
+                                show-border="true"
+                                show-alternating-row-backgrounds="ContentOnly"
+                                show-add-remove-footer="true">
+            <ui:Columns>
+                <ui:Column name="Name" text="Name"/>
+                <ui:Column name="Status" text="Status"/>
+                <ui:Column name="Visible" text="Visible"/>
+            </ui:Columns>
+        </ui:MultiColumnListView>
+        <ui:Button text="Clear all quests" name="ClearQuests" />
+    </ui:VisualElement>
+</ui:UXML>
