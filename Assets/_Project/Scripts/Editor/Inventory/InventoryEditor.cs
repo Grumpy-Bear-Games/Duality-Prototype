@@ -1,4 +1,5 @@
-﻿using DualityGame.Inventory;
+﻿using System.Collections.Generic;
+using DualityGame.Inventory;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -11,13 +12,20 @@ namespace DualityGame.Editor.Inventory
     {
         [SerializeField] private VisualTreeAsset _runtimeInspectorTemplate;
 
-        private ListView _itemsView;
         private DualityGame.Inventory.Inventory _inventory;
+        private readonly List<ItemType> _cachedItemTypes = new();
 
         private void OnEnable()
         {
             _inventory = target as DualityGame.Inventory.Inventory;
             Debug.Assert(_inventory != null);
+
+            _cachedItemTypes.Clear();
+            foreach (var guid in AssetDatabase.FindAssets("t:ItemType"))
+            {
+                var itemType = AssetDatabase.LoadAssetAtPath<ItemType>(AssetDatabase.GUIDToAssetPath(guid));
+                _cachedItemTypes.Add(itemType);
+            }
         }
 
         public override VisualElement CreateInspectorGUI()
@@ -55,9 +63,8 @@ namespace DualityGame.Editor.Inventory
         {
             if (baseListView is not ListView listview) return;
             var menu = new GenericDropdownMenu();
-            foreach (var guid in AssetDatabase.FindAssets("t:ItemType"))
+            foreach (var itemType in _cachedItemTypes)
             {
-                var itemType = AssetDatabase.LoadAssetAtPath<ItemType>(AssetDatabase.GUIDToAssetPath(guid));
                 var menuItem = listview.itemTemplate.CloneTree();
                 menuItem.dataSource = itemType;
                 menuItem.RegisterCallback<MouseDownEvent>(_ => _inventory.AddItem(itemType));
