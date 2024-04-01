@@ -102,14 +102,11 @@ namespace DualityGame.UI
 			_contentContainer.AddToClassList(UssContentClass);
 			hierarchy.Add(_contentContainer);
 
+			RegisterCallback<GeometryChangedEvent>(OnGeometryChange);
 			RegisterCallback<AttachToPanelEvent>(OnAttachToPanel);
 		}
 
-		private void OnAttachToPanel(AttachToPanelEvent attachToPanelEvent)
-		{
-			parent?.RegisterCallback<GeometryChangedEvent>(OnGeometryChange);
-			UpdateElements();
-		}
+		private void OnAttachToPanel(AttachToPanelEvent attachToPanelEvent) => UpdateElements();
 
 		private void OnGeometryChange(GeometryChangedEvent _) => UpdateElements();
 	
