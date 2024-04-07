@@ -10,6 +10,7 @@
         Flirty,
         Eating,
         Surprised,
-        Sad
+        Sad,
+        Nervous
     }
 }
