@@ -29,13 +29,13 @@ namespace DualityGame.Player
         private IEnumerator DeathScreen_CO(CauseOfDeath causeOfDeath)
         {
             if (GameState.Current == _deathGameState) yield break; // Already dead
-            var deathAnimation = _deathAnimations.Find(entry => entry.CauseOfDeath == causeOfDeath);
-            
+            var deathAnimationEntry = _deathAnimations.Find(entry => entry.CauseOfDeath == causeOfDeath);
+
             _deathGameState.SetActive();
-            deathAnimation?.DeathAnimation.Trigger();
+            deathAnimationEntry?.DeathAnimation.Trigger();
             causeOfDeath.Trigger();
             yield return _deathScreen.Execute(ScreenFader.Direction.FadeOut);
-            deathAnimation?.DeathAnimation.ResetPlayer();
+            deathAnimationEntry?.DeathAnimation.ResetPlayer();
             yield return _gameSession.Respawn();
             yield return new WaitForSeconds(_deathScreenDelay);
             yield return _deathScreen.Execute(ScreenFader.Direction.FadeIn);
