@@ -15,27 +15,27 @@ namespace DualityGame.Quests.UI
 
         public new class UxmlFactory : UxmlFactory<QuestLogPage, UxmlTraits> { }
 
-        private QuestLog.QuestEntry _questEntry;
+        private Quest.QuestState _questState;
 
-        public QuestLog.QuestEntry QuestEntry
+        public Quest.QuestState QuestState
         {
-            get => _questEntry;
+            get => _questState;
             set
             {
-                if (_questEntry == value) return;
-                _questEntry = value;
+                if (_questState == value) return;
+                _questState = value;
                 UpdateVisuals();
             }
         }
 
         private void UpdateVisuals()
         {
-            if (_questEntry != null)
+            if (_questState != null)
             {
                 style.display = DisplayStyle.Flex;
-                _titleLabel.text = _questEntry.Quest.TitleWithNPC;
-                _descriptionLabel.text = _questEntry.Quest.Description;
-                _questGiver.sprite = _questEntry.Quest.NPC == null ? null : _questEntry.Quest.NPC.PortraitByMood(Mood.Neutral);
+                _titleLabel.text = _questState.Quest.TitleWithNPC;
+                _descriptionLabel.text = _questState.Quest.Description;
+                _questGiver.sprite = _questState.Quest.NPC == null ? null : _questState.Quest.NPC.PortraitByMood(Mood.Neutral);
             }
             else
             {

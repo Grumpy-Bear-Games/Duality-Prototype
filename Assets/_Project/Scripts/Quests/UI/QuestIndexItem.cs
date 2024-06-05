@@ -14,29 +14,29 @@ namespace DualityGame.Quests.UI
         private readonly Label _questResolved;
         private readonly Label _questTitle;
         
-        private QuestLog.QuestEntry _questEntry;
+        private Quest.QuestState _questState;
 
-        public QuestLog.QuestEntry QuestEntry
+        public Quest.QuestState QuestState
         {
-            get => _questEntry;
+            get => _questState;
             set
             {
-                _questEntry = value;
+                _questState = value;
                 UpdateVisuals();
             }
         }
 
         private void UpdateVisuals()
         {
-            if (_questEntry == null) return; 
-            var isOngoing = _questEntry.State == QuestLog.QuestState.Ongoing;
-            var title = _questEntry.Quest.TitleWithNPC;
+            if (_questState == null) return; 
+            var isOngoing = _questState.Status == Quest.QuestStatus.Ongoing;
+            var title = _questState.Quest.TitleWithNPC;
 
-            _questResolved.text = _questEntry.State switch
+            _questResolved.text = _questState.Status switch
             {
-                QuestLog.QuestState.Ongoing => "",
-                QuestLog.QuestState.Succeeded => SuccessCheckMark,
-                QuestLog.QuestState.Failed => FailCheckMark,
+                Quest.QuestStatus.Ongoing => "",
+                Quest.QuestStatus.Succeeded => SuccessCheckMark,
+                Quest.QuestStatus.Failed => FailCheckMark,
                 _ => throw new ArgumentOutOfRangeException()
             };
             _questTitle.text = isOngoing ? title : $"<s>{title}";

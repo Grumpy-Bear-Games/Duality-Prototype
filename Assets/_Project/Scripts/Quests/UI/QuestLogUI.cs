@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,11 +13,9 @@ namespace DualityGame.Quests.UI
         private QuestLogPage _queryLogPage;
         private ListView _questList;
 
-        private int NumberOfQuests => _questEntries.Count;
         [SerializeField] private int _questIndex;
 
-        private readonly List<QuestLog.QuestEntry> _questEntries = new();
-        [SerializeField] private QuestLog _questLog;
+        private readonly List<Quest.QuestState> _questEntries = new();
 
         private void Awake()
         {
@@ -29,21 +26,21 @@ namespace DualityGame.Quests.UI
 
             _questList = _uiDocument.rootVisualElement.Q<ListView>();
             _questList.makeItem = () => new QuestIndexItem();
-            _questList.bindItem = (item, idx) => (item as QuestIndexItem).QuestEntry = _questEntries[idx];
+            _questList.bindItem = (item, idx) => (item as QuestIndexItem).QuestState = _questEntries[idx];
             _questList.itemsSource = _questEntries;
-            _questList.selectionChanged += _ => _queryLogPage.QuestEntry = _questList.selectedItem as QuestLog.QuestEntry;
+            _questList.selectionChanged += _ => _queryLogPage.QuestState = _questList.selectedItem as Quest.QuestState;
         }
 
-        private void OnQueryLogChange()
+        private void UpdateQuests()
         {
-            var previousSelected = _questList.selectedItem as QuestLog.QuestEntry;
+            var previousSelected = _questList.selectedItem as Quest.QuestState;
             
             _questEntries.Clear();
-            _questEntries.AddRange(_questLog.Entries.Where(entry => entry.Visible));
+            _questEntries.AddRange(Quest.VisibleQuests);
             _questEntries.Sort((a,b) => (int)(a.Started - b.Started));
             _questList.RefreshItems();
 
-            if (_questEntries.Count == 0) _queryLogPage.QuestEntry = null;
+            if (_questEntries.Count == 0) _queryLogPage.QuestState = null;
             
             if (previousSelected == null) {
                 _questList.SetSelection(0);
@@ -54,17 +51,22 @@ namespace DualityGame.Quests.UI
             }
         }
 
+        private void OnQuestyChange(Quest.QuestState _) => UpdateQuests();
+
         private void OnEnable()
         {
-            _questLog.OnChange += OnQueryLogChange;
-            OnQueryLogChange();
+            Quest.OnChange += OnQuestyChange;
+            Quest.AfterStateRestored += UpdateQuests;
+            UpdateQuests();
             Show();
         }
+
 
         public void OnDisable()
         {
             Hide();
-            _questLog.OnChange -= OnQueryLogChange;
+            Quest.OnChange -= OnQuestyChange;
+            Quest.AfterStateRestored -= UpdateQuests;
         }
 
         private void Hide() => _frame?.RemoveFromClassList("Shown");

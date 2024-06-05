@@ -69,6 +69,7 @@ namespace DualityGame.SaveSystem
             _entityStates = new Dictionary<string, Dictionary<string, object>>();
             _sceneGroup = _initialSpawnPoint.SceneGroup;
             Checkpoint.ClearAll();
+            Quest.ClearAll();
         }
 
         public bool HasSaveFile => FileSystem.Exists(SaveFileName);

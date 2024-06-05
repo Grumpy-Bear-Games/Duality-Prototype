@@ -1,7 +1,5 @@
-﻿using System.Linq;
-using NodeCanvas.Framework;
+﻿using NodeCanvas.Framework;
 using ParadoxNotion.Design;
-using UnityEngine;
 
 namespace DualityGame.Quests.Tasks
 {
@@ -9,15 +7,21 @@ namespace DualityGame.Quests.Tasks
     [Description("Check if quest has started yet")]
     public class HasQuestStarted : ConditionTask
     {
-        [RequiredField] public BBParameter<QuestLog> _questLog;
         [RequiredField] public BBParameter<Quest> _quest;
 
-        protected override string info => $"Quest has started";
+        protected override string info => (_quest.isNoneOrNull) switch
+        {
+            true => "(Please specify quest)",
+            false => $"{_quest.value.name} has started",
+        };
 
         //Called once per frame while the condition is active.
         //Return whether the condition is success or failure.
-        protected override bool OnCheck() => _questLog.value.Contains(_quest.value);
+        protected override bool OnCheck()
+        {
+            if (_quest.isNoneOrNull) return Error("There is no Quest specified");
 
-        public override void OnCreate(ITaskSystem ownerSystem) => _questLog.value = Resources.FindObjectsOfTypeAll<QuestLog>().FirstOrDefault();
+            return _quest.value.Status != Quest.QuestStatus.NotStarted;
+        }
     }
 }
