@@ -15,13 +15,17 @@ namespace DualityGame.NPC
         {
             SceneManager.CurrentSceneGroup.Subscribe(CheckLocation);
             Realm.Realm.Subscribe(OnRealmChange);
+            Checkpoint.AfterStateRestored += AfterCheckpointsRestored;
         }
 
         private void OnDestroy()
         {
+            Checkpoint.AfterStateRestored -= AfterCheckpointsRestored;
             Realm.Realm.Unsubscribe(OnRealmChange);
             SceneManager.CurrentSceneGroup.Unsubscribe(CheckLocation);
         }
+
+        private void AfterCheckpointsRestored() => CheckLocation(SceneManager.CurrentSceneGroup.Value);
 
         private void OnRealmChange(Realm.Realm realm) => CheckLocation(SceneManager.CurrentSceneGroup.Value);
 

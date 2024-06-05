@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DualityGame.Core;
 using DualityGame.Player;
+using DualityGame.Quests;
 using Games.GrumpyBear.Core.LevelManagement;
 using Games.GrumpyBear.Core.SaveSystem;
 using UnityEngine;
@@ -67,6 +68,7 @@ namespace DualityGame.SaveSystem
         {
             _entityStates = new Dictionary<string, Dictionary<string, object>>();
             _sceneGroup = _initialSpawnPoint.SceneGroup;
+            Checkpoint.ClearAll();
         }
 
         public bool HasSaveFile => FileSystem.Exists(SaveFileName);
