@@ -1,4 +1,5 @@
-﻿using NodeCanvas.Framework;
+﻿using DualityGame.Core;
+using NodeCanvas.Framework;
 using UnityEngine;
 
 namespace DualityGame.Player
@@ -15,12 +16,12 @@ namespace DualityGame.Player
         private void Awake()
         {
             _blackboard = GetComponent<Blackboard>();
-            CauseOfDeath.OnDeath += OnPlayerDied;
+            DeathController.OnPlayerDied += OnPlayerDied;
         }
 
-        private void OnDestroy() => CauseOfDeath.OnDeath -= OnPlayerDied;
+        private void OnDestroy() => DeathController.OnPlayerDied -= OnPlayerDied;
 
-        private void OnPlayerDied(CauseOfDeath causeOfDeath)
+        private void OnPlayerDied(CauseOfDeath causeOfDeath, WaitForCompletion _)
         {
             _blackboard.SetVariableValue(LastCauseOfDeathBBKey, causeOfDeath);
             var deaths = _blackboard.GetVariableValue<int>(NumberOfDeathsBBKey);

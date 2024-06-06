@@ -1,29 +1,66 @@
-﻿using DualityGame.Player;
+﻿using System.Collections;
+using DualityGame.Core;
+using DualityGame.Player;
+using DualityGame.UI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace DualityGame.VFX
 {
     [RequireComponent(typeof(UIDocument))]
-    public class DeathScreen : UIToolkitScreenFaderBase
+    public class DeathScreen: MonoBehaviour
     {
-        private Label _label;
+        private VisualElement _deathScreen;
+        private Label _causeOfDeathLabel;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
-            _root = _root.Q<VisualElement>("DeathScreen");
-            _label = _root.Q<Label>("DeathMessage");
-            CauseOfDeath.OnDeath += UpdateCauseOfDeathLabel;
+            var root = GetComponent<UIDocument>().rootVisualElement;
+            _deathScreen = root.Q<VisualElement>("DeathScreen");
+            _causeOfDeathLabel = root.Q<Label>("DeathMessage");
             FadeIn();
         }
 
-        private void OnDestroy() => CauseOfDeath.OnDeath -= UpdateCauseOfDeathLabel;
+        private void OnEnable()
+        {
+            DeathController.OnPlayerDied += OnPlayerDied;
+            DeathController.AfterRespawn += AfterRespawn;
+        }
 
-        private void UpdateCauseOfDeathLabel(CauseOfDeath causeOfDeath) => _label.text = causeOfDeath.Description;
+        private void OnDisable()
+        {
+            DeathController.OnPlayerDied -= OnPlayerDied;
+            DeathController.AfterRespawn -= AfterRespawn;
+        }
 
-        protected override void FadeIn() => _root.RemoveFromClassList("Shown");
+        #region OnPlayerDied
+        private void OnPlayerDied(CauseOfDeath causeOfDeath, WaitForCompletion wfc) => StartCoroutine(OnPlayerDied_CO(causeOfDeath, wfc));
 
-        protected override void FadeOut() => _root.AddToClassList("Shown");
+        private IEnumerator OnPlayerDied_CO(CauseOfDeath causeOfDeath, WaitForCompletion wfc)
+        {
+            using var trigger = wfc.CreateCompletionTrigger();
+            using var transitionMonitor = new TransitionMonitor(_deathScreen);
+            _causeOfDeathLabel.text = causeOfDeath.Description;
+            _deathScreen.style.display = DisplayStyle.Flex;
+            FadeOut();
+            yield return transitionMonitor.WaitUntilDone();
+        }
+        #endregion
+
+        #region AfterRespawn
+        private void AfterRespawn(CauseOfDeath causeOfDeath, WaitForCompletion wfc) => StartCoroutine(AfterRespawn_CO(causeOfDeath, wfc));
+
+        private IEnumerator AfterRespawn_CO(CauseOfDeath causeOfDeath, WaitForCompletion wfc)
+        {
+            using var trigger = wfc.CreateCompletionTrigger();
+            using var transitionMonitor = new TransitionMonitor(_deathScreen);
+            FadeIn();
+            yield return transitionMonitor.WaitUntilDone();
+        }
+        #endregion
+
+        private void FadeIn() => _deathScreen.RemoveFromClassList("Shown");
+
+        private void FadeOut() => _deathScreen.AddToClassList("Shown");
     }
 }
