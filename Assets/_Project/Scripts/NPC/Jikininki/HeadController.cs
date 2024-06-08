@@ -1,5 +1,4 @@
-﻿using DualityGame.Utilities;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DualityGame.NPC.Jikininki
 {
@@ -12,8 +11,8 @@ namespace DualityGame.NPC.Jikininki
         
         private Transform _playerTransform;
 
-        private void OnEnable() => ServiceLocator.Subscribe<Player.Player>(OnPlayerRegistered);
-        private void OnDisable() => ServiceLocator.Unsubscribe<Player.Player>(OnPlayerRegistered);
+        private void OnEnable() => ServiceLocator.ServiceLocator.Subscribe<Player.Player>(OnPlayerRegistered);
+        private void OnDisable() => ServiceLocator.ServiceLocator.Unsubscribe<Player.Player>(OnPlayerRegistered);
         private void OnPlayerRegistered(Player.Player player) => _playerTransform = player?.transform;
 
         private void Update() => _animator.SetBool(PlayerCloseProperty, IsPlayerClose());

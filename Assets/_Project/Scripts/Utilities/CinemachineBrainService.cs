@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using DualityGame.ServiceLocator;
 using UnityEngine;
 
 namespace DualityGame.Utilities

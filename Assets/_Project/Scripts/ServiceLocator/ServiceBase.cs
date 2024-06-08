@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using DualityGame.Utilities;
+using UnityEngine;
 
-namespace DualityGame.Utilities
+namespace DualityGame.ServiceLocator
 {
     public abstract class ServiceBase<T> : MonoBehaviour where T : ServiceBase<T>
     {

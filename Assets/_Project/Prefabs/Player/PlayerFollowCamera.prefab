@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7831468802426989098}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7831468802919259113}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7831468802426989100
 MonoBehaviour:
@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 7831468802919259112}
   - component: {fileID: 1345999954475902421}
   - component: {fileID: 2637442319945863927}
+  - component: {fileID: 5659758049789336808}
   m_Layer: 0
   m_Name: PlayerFollowCamera
   m_TagString: Untagged
@@ -123,6 +124,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7831468802919258646}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.22682339, y: 0, z: 0, w: 0.9739359}
   m_LocalPosition: {x: 0, y: 22, z: -54}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -130,7 +132,6 @@ Transform:
   m_Children:
   - {fileID: 7831468802426989101}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7831468802919259112
 MonoBehaviour:
@@ -161,7 +162,8 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    FocusDistance: 10
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -210,3 +212,15 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &5659758049789336808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7831468802919258646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0142c482e248c6a5de686e96914b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

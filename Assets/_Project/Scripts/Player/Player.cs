@@ -1,4 +1,4 @@
-﻿using DualityGame.Utilities;
+﻿using DualityGame.ServiceLocator;
 
 namespace DualityGame.Player
 {

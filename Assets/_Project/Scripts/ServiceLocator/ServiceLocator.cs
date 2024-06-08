@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DualityGame.Utilities
+namespace DualityGame.ServiceLocator
 {
     public static class ServiceLocator
     {
