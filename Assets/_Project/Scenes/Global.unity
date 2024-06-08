@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 818447291f87277418157f2adf440a4f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 4019496043242644080}
   - component: {fileID: 264279648}
   - component: {fileID: 4019496043242644081}
-  - component: {fileID: 4019496043242644082}
+  - component: {fileID: 4019496043242644083}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
---- !u!114 &4019496043242644082
+--- !u!114 &4019496043242644083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -561,11 +561,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3897764712723570285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d504bbfcaa364b7486e1e9b65ca9c96f, type: 3}
+  m_Script: {fileID: 11500000, guid: 076deecd687f44749d5efa960d2ed47d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _observable: {fileID: 11400000, guid: e59a7702222fb9247af1001fda7d3468, type: 2}
-  _registerOnAwake: 1
+  _service: {fileID: 4019496043242644080}
+  _lifetime: 0
 --- !u!1001 &8920223006287285472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -593,6 +593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Screen Fader
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528436340112328450, guid: 588bcb048619bae4d8431d9bca2db6ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5134991795831885225, guid: 588bcb048619bae4d8431d9bca2db6ab,
         type: 3}

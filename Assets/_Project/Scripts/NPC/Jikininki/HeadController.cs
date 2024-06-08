@@ -1,34 +1,27 @@
-﻿using System;
+﻿using DualityGame.Utilities;
 using UnityEngine;
 
 namespace DualityGame.NPC.Jikininki
 {
-    public class HeadController : MonoBehaviour
+    public sealed class HeadController : MonoBehaviour
     {
         private static readonly int PlayerCloseProperty = Animator.StringToHash("Head High");
 
         [SerializeField] private Animator _animator;
         [SerializeField] private float _maxDistance = 5f;
         
-        private GameObject _player;
+        private Transform _playerTransform;
 
-        public void SetPlayer(GameObject player)
-        {
-            _player = player;
-            UpdateEnabled(Realm.Realm.Current);
-        }
-
-        private void UpdateEnabled(Realm.Realm realm) => enabled = realm != null && _player != null;
-
-        private void Awake() => Realm.Realm.Subscribe(UpdateEnabled);
-        private void OnDestroy() => Realm.Realm.Unsubscribe(UpdateEnabled);
+        private void OnEnable() => ServiceLocator.Subscribe<Player.Player>(OnPlayerRegistered);
+        private void OnDisable() => ServiceLocator.Unsubscribe<Player.Player>(OnPlayerRegistered);
+        private void OnPlayerRegistered(Player.Player player) => _playerTransform = player?.transform;
 
         private void Update() => _animator.SetBool(PlayerCloseProperty, IsPlayerClose());
 
         private bool IsPlayerClose() => (
-            (_player != null) &&
-            (Realm.Realm.Current.LevelLayer == gameObject.layer) &&
-            (Vector3.Distance(transform.position, _player.transform.position) <= _maxDistance)
+            (_playerTransform is not null) &&
+            (Realm.Realm.Current?.LevelLayer == gameObject.layer) &&
+            (Vector3.Distance(transform.position, _playerTransform.position) <= _maxDistance)
         );
         
         #if UNITY_EDITOR
