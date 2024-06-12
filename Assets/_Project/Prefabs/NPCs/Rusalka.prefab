@@ -95,6 +95,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -132,7 +134,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 1
 --- !u!95 &8570655006039318199
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -146,6 +148,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -209,11 +212,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 2155733169046693454}
   _boundGraphSource:
-    _version: 3.25
+    _version: 3.3
     _category: 
     _comments: 
-    _translation: {x: 437, y: 190}
-    _zoomFactor: 0.51606447
+    _translation: {x: 794.0927, y: 427.84033}
+    _zoomFactor: 0.25008413
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2
@@ -277,7 +280,7 @@ CapsuleCollider:
   m_Center: {x: 0, y: 0.8, z: 0.3}
 --- !u!95 &4846966505558853051
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -291,6 +294,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Games.GrumpyBear.Core.SaveSystem;
 using Unity.Properties;
@@ -10,6 +11,7 @@ namespace DualityGame.Quests
     public class Checkpoint : SerializableScriptableObject<Checkpoint>
     {
         private static readonly HashSet<Checkpoint> _checkpoints = new();
+        public static event Action AfterStateRestored;
 
         #if UNITY_EDITOR
         [CreateProperty]
@@ -33,7 +35,7 @@ namespace DualityGame.Quests
             }
         }
 
-        public static object CaptureState() => _checkpoints.Select(checkout => checkout.ObjectGuid).ToList();
+        public static object CaptureState() => _checkpoints.Select(checkpoint => checkpoint.ObjectGuid).ToList();
 
         public static void RestoreState(object state)
         {
@@ -44,10 +46,18 @@ namespace DualityGame.Quests
             }
 
             _checkpoints.Clear();
-            foreach (var checkpoint in guids.Select(Checkpoint.GetByGuid).Where(checkpoint => checkpoint != null))
+            foreach (var checkpoint in guids.Select(GetByGuid).Where(checkpoint => checkpoint != null))
             {
                 _checkpoints.Add(checkpoint);
             }
+            AfterStateRestored?.Invoke();
+        }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        public static void ClearAll()
+        {
+            _checkpoints.Clear();
+            AfterStateRestored?.Invoke();
         }
     }
 }

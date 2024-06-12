@@ -1,7 +1,5 @@
-﻿using System.Linq;
-using NodeCanvas.Framework;
+﻿using NodeCanvas.Framework;
 using ParadoxNotion.Design;
-using UnityEngine;
 
 namespace DualityGame.Quests.Tasks
 {
@@ -9,27 +7,25 @@ namespace DualityGame.Quests.Tasks
     [Description("Check state of quest")]
     public class CheckQuestState : ConditionTask
     {
-        [RequiredField] public BBParameter<QuestLog> _questLog;
         [RequiredField] public BBParameter<Quest> _quest;
-        [RequiredField] public BBParameter<QuestLog.QuestState> _questState;
+        [RequiredField] public BBParameter<Quest.QuestStatus> _questStatus;
 
-        protected override string info => (_quest.isNoneOrNull, _questState.isNoneOrNull) switch
+        protected override string info => (_quest.isNoneOrNull, _questStatus.isNoneOrNull) switch
         {
             (true, true) => "Quest has some state",
-            (true, false) => $"Quest is {_questState.value}",
+            (true, false) => $"Quest is {_questStatus.value}",
             (false, true) => $"Quest '{_quest.value.name}' has some state",
-            (false, false) => $"Quest '{_quest.value.name}' is {_questState.value}",
+            (false, false) => $"Quest '{_quest.value.name}' is {_questStatus.value}",
         };
 
         //Called once per frame while the condition is active.
         //Return whether the condition is success or failure.
         protected override bool OnCheck()
         {
-            var entry = _questLog.value.GetEntry(_quest.value);
-            return entry != null && entry.State == _questState.value;
-        }
+            if (_quest.isNoneOrNull) return Error("There is no Quest specified");
+            if (_questStatus.isNoneOrNull) return Error("There is no Quest Status specified");
 
-        public override void OnCreate(ITaskSystem ownerSystem) =>
-            _questLog.value = Resources.FindObjectsOfTypeAll<QuestLog>().FirstOrDefault();
+            return _quest.value.Status == _questStatus.value;
+        }
     }
 }

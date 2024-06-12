@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1328726461148192079}
   - component: {fileID: 1328726461148192075}
   - component: {fileID: 4963836392374485999}
-  - component: {fileID: 9026636188797421369}
   - component: {fileID: 2475965731404276283}
   - component: {fileID: 3442162226286989829}
   m_Layer: 7
@@ -256,34 +255,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1328726461474746563}
   _maxDistance: 5
---- !u!114 &9026636188797421369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328726461148192077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ab4166efb054884bd9faaa8062cc1e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _observable: {fileID: 11400000, guid: a2d3db5fe2cd24e44b4063b960786dfd, type: 2}
-  _onChange:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4963836392374485999}
-        m_TargetAssemblyTypeName: DualityGame.NPC.Jikininki.HeadController, DualityGame
-        m_MethodName: SetPlayer
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2475965731404276283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +330,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -396,7 +369,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 1
 --- !u!95 &1328726461474746563
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -410,6 +383,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1

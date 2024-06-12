@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using DualityGame.Core;
 using DualityGame.SaveSystem;
-using DualityGame.VFX;
 using UnityEngine;
 
 namespace DualityGame.Player
@@ -11,6 +10,10 @@ namespace DualityGame.Player
     [RequireComponent(typeof(SpawnController))]
     public class DeathController : MonoBehaviour, IKillable
     {
+        public static event Action<CauseOfDeath, WaitForCompletion> OnPlayerDied;
+        public static event Action<CauseOfDeath, WaitForCompletion> AfterRespawn;
+
+
         [SerializeField] private GameSession _gameSession;
         
         [Header("Game states")]
@@ -18,7 +21,6 @@ namespace DualityGame.Player
         [SerializeField] private GameState _startingGameState;
 
         [Header("Death Screen VFX")]
-        [SerializeField] private ScreenFader _deathScreen;
         [SerializeField] private float _deathScreenDelay = 3f;
 
         [Header("Death Animations")]
@@ -29,16 +31,20 @@ namespace DualityGame.Player
         private IEnumerator DeathScreen_CO(CauseOfDeath causeOfDeath)
         {
             if (GameState.Current == _deathGameState) yield break; // Already dead
-            var deathAnimation = _deathAnimations.Find(entry => entry.CauseOfDeath == causeOfDeath);
-            
+            var deathAnimationEntry = _deathAnimations.Find(entry => entry.CauseOfDeath == causeOfDeath);
+            var wfc = new WaitForCompletion();
+
             _deathGameState.SetActive();
-            deathAnimation?.DeathAnimation.Trigger();
-            causeOfDeath.Trigger();
-            yield return _deathScreen.Execute(ScreenFader.Direction.FadeOut);
-            deathAnimation?.DeathAnimation.ResetPlayer();
+            deathAnimationEntry?.DeathAnimation.Trigger();
+            OnPlayerDied?.Invoke(causeOfDeath, wfc);
+            yield return wfc;
+
             yield return _gameSession.Respawn();
+            deathAnimationEntry?.DeathAnimation.ResetPlayer();
             yield return new WaitForSeconds(_deathScreenDelay);
-            yield return _deathScreen.Execute(ScreenFader.Direction.FadeIn);
+
+            AfterRespawn?.Invoke(causeOfDeath, wfc);
+            yield return wfc;
             _startingGameState.SetActive();
         }
 

@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using NodeCanvas.DialogueTrees;
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -36,3 +37,4 @@ namespace NodeCanvas.Editor
         }
     }
 }
+#endif

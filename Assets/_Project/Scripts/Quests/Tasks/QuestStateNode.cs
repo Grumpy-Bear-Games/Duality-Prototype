@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using NodeCanvas.DialogueTrees;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
@@ -15,42 +14,36 @@ namespace DualityGame.Quests.Tasks
     [Color("b3ff7f")]
     public class QuestStateNode : DTNode
     {
-        [RequiredField] public BBParameter<QuestLog> _questLog;
         [RequiredField] public BBParameter<Quest> _quest;
 
         public override int maxOutConnections => 4;
         public override bool requireActorSelection => false;
 
-        public override string name => _quest.isNoneOrNull ? $"Check state of quest" : $"Check state of quest '{_quest.value.name}'";
+        public override string name => (_quest.isNoneOrNull) switch
+        {
+            true => "(Please specify quest)",
+            false =>$"Check state of quest '{_quest.value.name}'",
+        };
 
         protected override Status OnExecute(Component agent, IBlackboard bb) {
             if ( outConnections.Count == 0 ) {
                 return Error("There are no connections on the Dialogue Condition Node");
             }
 
-            if (_questLog.isNoneOrNull) return Error("There is no Quest Log specified");
             if (_quest.isNoneOrNull) return Error("There is no Quest specified");
 
-            var questLog = _questLog.value;
-            var quest = _quest.value;
-
-
-            if (!questLog.Contains(quest))
+            switch (_quest.value.Status)
             {
-                DLGTree.Continue(0);
-                return Status.Failure;
-            }
-
-            var entry = questLog.GetEntry(quest);
-            switch (entry.State)
-            {
-                case QuestLog.QuestState.Ongoing:
+                case Quest.QuestStatus.NotStarted:
+                    DLGTree.Continue(0);
+                    return Status.Failure;
+                case Quest.QuestStatus.Ongoing:
                     DLGTree.Continue(1);
                     break;
-                case QuestLog.QuestState.Succeeded:
+                case Quest.QuestStatus.Succeeded:
                     DLGTree.Continue(2);
                     break;
-                case QuestLog.QuestState.Failed:
+                case Quest.QuestStatus.Failed:
                     DLGTree.Continue(outConnections.Count < 4 ? 2 : 3);
                     break;
                 default:
@@ -73,7 +66,5 @@ namespace DualityGame.Quests.Tasks
             };
         }
         #endif
-
-        public override void OnCreate(Graph assignedGraph) => _questLog.value = Resources.FindObjectsOfTypeAll<QuestLog>().FirstOrDefault();
     }
 }
