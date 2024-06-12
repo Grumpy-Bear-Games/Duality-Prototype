@@ -1,5 +1,4 @@
-﻿using DualityGame.Utilities;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DualityGame.ServiceLocator
 {
