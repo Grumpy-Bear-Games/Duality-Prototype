@@ -3,7 +3,27 @@ guid: 188d4a53e607be04bb8a2dbfa11e555f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House Base
+    second: {fileID: 2100000, guid: 07ceaa31f9b8bcc418e23f30f8f96232, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House Base.001
+    second: {fileID: 2100000, guid: 07ceaa31f9b8bcc418e23f30f8f96232, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House Roof
+    second: {fileID: 2100000, guid: 07ceaa31f9b8bcc418e23f30f8f96232, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House Roof.001
+    second: {fileID: 2100000, guid: 07ceaa31f9b8bcc418e23f30f8f96232, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -16,8 +36,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 

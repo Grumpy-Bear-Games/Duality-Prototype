@@ -53,9 +53,8 @@ namespace DualityGame.Inventory
         #if UNITY_EDITOR
         public void OnValidate()
         {
-            if (_itemType == null) return;
             var spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            spriteRenderer.sprite = _itemType.InventorySprite;
+            spriteRenderer.sprite = _itemType != null ? _itemType.InventorySprite : null;
         }
         #endif
 
