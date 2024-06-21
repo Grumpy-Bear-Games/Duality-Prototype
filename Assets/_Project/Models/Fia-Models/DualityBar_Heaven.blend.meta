@@ -3,7 +3,17 @@ guid: 1be2a3111b023864dad20eaac9baf0e6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BigWindow
+    second: {fileID: 2100000, guid: 50fc8244041becd4993aad478dbc0789, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HeavenBarBanner
+    second: {fileID: 2100000, guid: b86233c0d60ca7743a593f1c6982daf9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
