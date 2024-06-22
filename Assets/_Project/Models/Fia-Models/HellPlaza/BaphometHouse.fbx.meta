@@ -7,8 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Beams
+    second: {fileID: 2100000, guid: 1e94f49840b6a3243a1d58445afb478d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Front
     second: {fileID: 2100000, guid: 32412d2c797c1bf41b2e31750fb8d104, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls
+    second: {fileID: 2100000, guid: 32412d2c797c1bf41b2e31750fb8d104, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows
+    second: {fileID: 2100000, guid: 032138fa97f89cd4daa593796dcf8216, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
