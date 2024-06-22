@@ -34,6 +34,11 @@ namespace DualityGame.Player
 
         private void UpdateWarpState()
         {
+            if (WarpManager.Instance.IsWarping) {
+                _warpState.Set(WarpState.IsWarping);
+                return;
+            }
+
             if (Realm.Realm.Current == null || Realm.Realm.Current.CanWarpTo == null)
             {
                 _warpState.Set(WarpState.NoRealmToWarpTo);
@@ -64,6 +69,8 @@ namespace DualityGame.Player
                 case WarpState.Blocked:
                     Notifications.Notifications.Add("You can't warp right here. Something is blocking you on the other side");
                     break;
+                case WarpState.IsWarping:
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -81,6 +88,7 @@ namespace DualityGame.Player
         public enum WarpState
         {
             CanWarp,
+            IsWarping,
             NoRealmToWarpTo,
             Blocked,
         }
