@@ -17,10 +17,13 @@ void Dilation_float(UnityTexture2D inputTexture, float2 uv, float kernelSize, ou
             
             // Calculate the texture coordinates of the current kernel pixel
             float2 kernelTexCoord = uv + (float2(float(i), float(j)) * inputTexture.texelSize.xy);
-            
-            // Read the binary value of the current kernel pixel from the input texture
-            float4 pixelValue = inputTexture.Sample(inputTexture.samplerstate, kernelTexCoord) * min(factor, 1);
-            outputValue = max(outputValue, pixelValue);
+
+            if (all(kernelTexCoord >= 0) && all(kernelTexCoord.x <= 1))
+            {
+                // Read the binary value of the current kernel pixel from the input texture
+                float4 pixelValue = inputTexture.Sample(inputTexture.samplerstate, kernelTexCoord) * min(factor, 1);
+                outputValue = max(outputValue, pixelValue);
+            }
         }
     }
 }
@@ -79,6 +82,28 @@ void sdEllipse_half( half2 p, half2 ab, out half distance )
     
     // return signed distance
     distance = (dot(p/ab,p/ab)>1.0) ? d : -d;
+}
+
+void TextureSize_float(UnityTexture2D tex, out float2 size)
+{
+    size = float2(1,1);  //tex.texelSize.zw;
+}
+
+void TextureSize_half(UnityTexture2D tex, out half2 size)
+{
+    size = tex.texelSize.zw;
+}
+
+void SafeSample_float(UnityTexture2D inputTexture, float2 uv, out float4 value)
+{
+    if (any(uv < 0) || any(uv > 1))
+    {
+        value = 0;
+    }
+    else
+    {
+        value = inputTexture.Sample(inputTexture.samplerstate, uv);
+    }
 }
 
 #endif //UTILITY_INCLUDED

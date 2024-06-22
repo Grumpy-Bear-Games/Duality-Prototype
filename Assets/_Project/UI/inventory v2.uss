@@ -1,0 +1,113 @@
+:root {
+    -unity-font-definition: var(--inventory-font);
+    font-size: var(--inventory-base-font_size);
+}
+
+.Background {
+    flex-grow: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.InventoryContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.InventoryBackground {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/_Project/Sprites/UI_Sprites/Menus/Inventory_Sprites/UI_Inventorysystem_Background.png?fileID=2800000&guid=b5906b689f725664b9cbc21d0aa0cfb1&type=3#UI_Inventorysystem_Background");
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 5.4%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+}
+
+.NavigationButton {
+    flex-basis: 8%;
+    flex-grow: 0;
+}
+
+.DescriptionContainer {
+    flex-grow: 1;
+    flex-basis: 30%;
+    margin-top: 7%;
+    margin-bottom: 8%;
+}
+
+.DescriptionContainer > * {
+    color: rgb(255, 255, 255);
+}
+
+.SlotsContainer {
+    flex-basis: 50%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.Title {
+    -unity-text-align: middle-center;
+    background-image: url("project://database/Assets/_Project/Sprites/UI_Sprites/Menus/Inventory_Sprites/UI_Inventorysystem_ItemBackground.png?fileID=21300000&guid=5ac96805953d71a4eb2823920fd71e43&type=3#UI_Inventorysystem_ItemBackground");
+    padding: 12px;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 4%;
+}
+
+.Description {
+    -unity-slice-left: 25;
+    -unity-slice-top: 25;
+    -unity-slice-right: 25;
+    -unity-slice-bottom: 25;
+    background-image: url("project://database/Assets/_Project/Sprites/UI_Sprites/Menus/Inventory_Sprites/UI_Inventorysystem_ItemBackground.png?fileID=21300000&guid=5ac96805953d71a4eb2823920fd71e43&type=3#UI_Inventorysystem_ItemBackground");
+    flex-grow: 1;
+    white-space: normal;
+    -unity-text-align: upper-left;
+    padding: 24px;
+    -unity-paragraph-spacing: -12px;
+}
+
+.SlotsRow {
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+.Slot {
+    flex-grow: 1;
+    margin: 6px;
+    border-color: rgba(0, 0, 0, 0);
+    border-width: 8px;
+    background-color: rgb(34, 34, 34);
+    border-radius: 16px;
+    transition-property: all;
+    transition-duration: 200ms;
+}
+
+.ItemSprite {
+    flex-grow: 1;
+    scale: 0.9 0.9;
+    -unity-background-image-tint-color: rgb(136, 136, 136);
+}
+
+.Slot:hover .ItemSprite {
+    scale: 1 1;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.Slot:focus .ItemSprite {
+    scale: 1 1;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.Slot:focus {
+    border-color: rgb(86, 67, 1);
+}

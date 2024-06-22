@@ -13,9 +13,7 @@ namespace DualityGame.Realm
         private DecalProjector[] _decalProjectors;
         private void Awake()
         {
-            _renderers = GetComponentsInChildren<Renderer>(true);
             _volumes = GetComponentsInChildren<Volume>(true);
-            _decalProjectors = GetComponentsInChildren<DecalProjector>(true);
         }
 
         private void OnEnable() => Realm.Subscribe(OnChangeRealm);
@@ -26,9 +24,7 @@ namespace DualityGame.Realm
         {
             if (realm == null) return;
             var visible = realm == _realm;
-            foreach (var renderer in _renderers) renderer.enabled = visible;
             foreach (var volume in _volumes) volume.enabled = visible;
-            foreach (var decalProjector in _decalProjectors) decalProjector.enabled = visible;
         }
         
         #if UNITY_EDITOR
@@ -36,7 +32,7 @@ namespace DualityGame.Realm
 
         public static class Fields
         {
-            public static string Realm = nameof(_realm);
+            public static readonly string Realm = nameof(_realm);
         }
         #endif
     }

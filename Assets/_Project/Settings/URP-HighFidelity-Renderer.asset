@@ -173,7 +173,8 @@ MonoBehaviour:
   - {fileID: -8506340797074541151}
   - {fileID: 5483379447746074327}
   - {fileID: -9082859046752020813}
-  m_RendererFeatureMap: adc0de57c6d2eee57c94c1e6f5747b4212d7198f70a95d3c47f9316cdec65e76a175f5131d68f389d71695378ee0184cb31667edd133f381
+  - {fileID: 3546925265311663012}
+  m_RendererFeatureMap: adc0de57c6d2eee57c94c1e6f5747b4212d7198f70a95d3c47f9316cdec65e76a175f5131d68f389d71695378ee0184cb31667edd133f381a483c283bc353931
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -216,6 +217,24 @@ MonoBehaviour:
   m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 0
+--- !u!114 &3546925265311663012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00045f12942b46c698459096c89274e, type: 3}
+  m_Name: Warp Shockwave
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  passMaterial: {fileID: -876546973899608171, guid: 5c7dc2383a6cffd41909ac7cffd68008,
+    type: 3}
+  injectionPoint: 550
+  requirements: 5
+  passIndex: 0
 --- !u!114 &4349819116012033810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f88499f1984aa0955e04f5f148c790, type: 3}
   m_Name: ScreenSpaceOutlines
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   _renderPassEvent: 450
   _viewSpaceNormalsShader: {fileID: -6465566751694194690, guid: 271e54c443fd3e540afbe9d476e09373,
     type: 3}

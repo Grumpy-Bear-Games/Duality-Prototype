@@ -1,5 +1,5 @@
 using System;
-using DualityGame.VFX;
+using DualityGame.Warp;
 using Games.GrumpyBear.Core.Observables;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,9 +15,7 @@ namespace DualityGame.Player
 
         [SerializeField] private float _verticalOffset = 0.01f;
         [SerializeField] private InputActionReference _warpAction;
-        [Header("VFX")]
-        [SerializeField] private ScreenFader _warpVFX;
-        
+
         private CharacterController _controller;
         private readonly Collider[] _colliders = new Collider[1];
 
@@ -58,7 +56,7 @@ namespace DualityGame.Player
             switch (_warpState.Value)
             {
                 case WarpState.CanWarp:
-                    StartCoroutine(_warpVFX.Wrap(SwitchToOtherRealm));
+                    WarpManager.Instance.WarpTo(Realm.Realm.Current.CanWarpTo, transform.position);
                     break;
                 case WarpState.NoRealmToWarpTo:
                     Notifications.Notifications.Add("You can't warp from this realm");
@@ -70,8 +68,6 @@ namespace DualityGame.Player
                     throw new ArgumentOutOfRangeException();
             }
         }
-
-        private static void SwitchToOtherRealm() => Realm.Realm.Current.CanWarpTo.SetActive();
 
         private bool IsOtherRealmBlocked(Vector3 position)
         {

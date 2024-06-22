@@ -168,6 +168,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: White_Bench2
       objectReference: {fileID: 0}
+    - target: {fileID: 6556427415264480308, guid: e0338ad227db8d346a590a02410c3d28,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 48b511371c855fb4aa13d23e8b672812, type: 2}
     - target: {fileID: 7997283398629795384, guid: e0338ad227db8d346a590a02410c3d28,
         type: 3}
       propertyPath: m_Layer
@@ -176,7 +181,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4637266281697921278, guid: e0338ad227db8d346a590a02410c3d28,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3218048058737874931}
   m_SourcePrefab: {fileID: 100100000, guid: e0338ad227db8d346a590a02410c3d28, type: 3}
 --- !u!4 &2687650510766428489 stripped
 Transform:
@@ -184,3 +193,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7284171056185678261}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2687650510766428491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4637266281697921278, guid: e0338ad227db8d346a590a02410c3d28,
+    type: 3}
+  m_PrefabInstance: {fileID: 7284171056185678261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3218048058737874931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687650510766428491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765d4893d9a642b7bf792a62f99ace3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outline: 0
