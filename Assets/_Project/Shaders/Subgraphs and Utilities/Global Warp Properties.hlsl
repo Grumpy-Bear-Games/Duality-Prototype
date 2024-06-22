@@ -21,4 +21,15 @@ void WarpProperties_float(
     warpToRealm = _warpToRealm;
 }
 
+
+void HeavenHellSwitch_float(int realm, float4 heaven, float4 hell, out float4 value)
+{
+    switch (realm)
+    {
+        case 6: value = heaven; break;
+        case 7: value = hell; break;
+        default: value = float4(0,0,0,0); break;
+    }
+}
+
 #endif
