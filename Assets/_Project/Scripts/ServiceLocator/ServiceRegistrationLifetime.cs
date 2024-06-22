@@ -1,4 +1,4 @@
-﻿namespace DualityGame.Utilities
+﻿namespace DualityGame.ServiceLocator
 {
     public enum ServiceRegistrationLifetime
     {
