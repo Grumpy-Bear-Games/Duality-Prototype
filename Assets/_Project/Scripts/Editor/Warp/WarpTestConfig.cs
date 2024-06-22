@@ -7,7 +7,8 @@ namespace DualityGame.Editor.Warp
     [FilePath("Assets/WarpTestConfig.asset", FilePathAttribute.Location.ProjectFolder)]
     public class WarpTestConfig: ScriptableSingleton<WarpTestConfig>
     {
-        [SerializeField] private float _radius = 10f;
+        [SerializeField] private float _radius;
+        [SerializeField] private float _transition;
         [SerializeField] private DualityGame.Realm.Realm _currentRealm;
         [SerializeField] private DualityGame.Realm.Realm _warpToRealm;
         [SerializeField] private Vector3 _playerPosition;
@@ -52,6 +53,17 @@ namespace DualityGame.Editor.Warp
             set
             {
                 _playerPosition = value;
+                Save(true);
+            }
+        }
+
+        [CreateProperty]
+        public float Transition
+        {
+            get => _transition;
+            set
+            {
+                _transition = value;
                 Save(true);
             }
         }

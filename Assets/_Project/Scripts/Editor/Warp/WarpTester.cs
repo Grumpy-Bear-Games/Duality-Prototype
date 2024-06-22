@@ -39,6 +39,7 @@ namespace DualityGame.Editor.Warp
 
         private Toggle _warpEffectEnabled;
         private Slider _radiusSlider;
+        private Slider _transitionSlider;
         private ObjectField _currentRealm;
         private ObjectField _warpToRealm;
         private Vector3Field _playerPositionField;
@@ -70,6 +71,13 @@ namespace DualityGame.Editor.Warp
             _radiusSlider.SetBinding("value", binding);
             _radiusSlider.RegisterValueChangedCallback(_ => UpdateWarp());
 
+            _transitionSlider = new Slider(0f, 1f, SliderDirection.Horizontal)
+            {
+                label = "Transition",
+                dataSourcePath = new PropertyPath(nameof(WarpTestConfig.instance.Transition)),
+            };
+            _transitionSlider.SetBinding("value", binding);
+            _transitionSlider.RegisterValueChangedCallback(_ => UpdateWarp());
             _currentRealm = new ObjectField
             {
                 label = "Current realm",
@@ -98,6 +106,7 @@ namespace DualityGame.Editor.Warp
 
             rootVisualElement.Add(_warpEffectEnabled);
             rootVisualElement.Add(_radiusSlider);
+            rootVisualElement.Add(_transitionSlider);
             rootVisualElement.Add(_currentRealm);
             rootVisualElement.Add(_warpToRealm);
             rootVisualElement.Add(_playerPositionField);
@@ -111,6 +120,7 @@ namespace DualityGame.Editor.Warp
             ShaderGlobals.PlayerPosition = WarpTestConfig.instance.PlayerPosition;
             ShaderGlobals.WarpCenter = WarpTestConfig.instance.PlayerPosition;
             ShaderGlobals.WarpRadius = WarpTestConfig.instance.Radius;
+            ShaderGlobals.WarpTransition = WarpTestConfig.instance.Transition;
             ShaderGlobals.WarpEffectEnabled = _warpEffectEnabled.value;
             ShaderGlobals.CurrentRealm = WarpTestConfig.instance.CurrentRealm != null ? WarpTestConfig.instance.CurrentRealm.LevelLayer : 0;
             ShaderGlobals.WarpToRealm = WarpTestConfig.instance.WarpToRealm != null ? WarpTestConfig.instance.WarpToRealm.LevelLayer : 1;
