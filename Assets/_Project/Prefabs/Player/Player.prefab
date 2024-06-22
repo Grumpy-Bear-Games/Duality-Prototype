@@ -5069,7 +5069,6 @@ MonoBehaviour:
   _verticalOffset: 0.01
   _warpAction: {fileID: 6812116208985943310, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
-  _warpVFX: {fileID: 11400000, guid: 046028bd2835c9d4f85842f6c12921da, type: 2}
 --- !u!114 &8215064143838313123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5374,9 +5373,10 @@ MonoBehaviour:
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Died
     Since Last Conversation With Dante":{"_name":"Died Since Last Conversation With
     Dante","_id":"43bf5239-d90f-4cbb-8c2d-0f09697db98a","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Baphomet-friendship-level":{"_name":"Baphomet-friendship-level","_id":"5a5dc14e-5851-4d9b-840b-a744f1347a6a","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Gorgon-friendship-level":{"_name":"Gorgon-friendship-level","_id":"8cd0233b-ebeb-4f4e-9d96-9c2beec80a04","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"H&M-friendship-level":{"_name":"H&M-friendship-level","_id":"748bece2-02b3-429c-b1f1-b93384b276ee","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Friendship-level-Baphomet":{"_name":"Friendship-level-Baphomet","_id":"5a5dc14e-5851-4d9b-840b-a744f1347a6a","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Friendship-level-Gorgon":{"_name":"Friendship-level-Gorgon","_id":"8cd0233b-ebeb-4f4e-9d96-9c2beec80a04","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Friendship-level-H&M":{"_name":"Friendship-level-H&M","_id":"748bece2-02b3-429c-b1f1-b93384b276ee","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Friendship-level-Zad":{"_name":"Friendship-level-Zad","_id":"35d95668-704d-4d54-87bc-8b7dea927b94","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
   _serializedVariables:
@@ -5389,13 +5389,16 @@ MonoBehaviour:
   - _json: '{"_name":"Died Since Last Conversation With Dante","_id":"43bf5239-d90f-4cbb-8c2d-0f09697db98a","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_name":"Baphomet-friendship-level","_id":"5a5dc14e-5851-4d9b-840b-a744f1347a6a","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+  - _json: '{"_name":"Friendship-level-Baphomet","_id":"5a5dc14e-5851-4d9b-840b-a744f1347a6a","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_name":"Gorgon-friendship-level","_id":"8cd0233b-ebeb-4f4e-9d96-9c2beec80a04","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+  - _json: '{"_name":"Friendship-level-Gorgon","_id":"8cd0233b-ebeb-4f4e-9d96-9c2beec80a04","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_name":"H&M-friendship-level","_id":"748bece2-02b3-429c-b1f1-b93384b276ee","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+  - _json: '{"_name":"Friendship-level-H&M","_id":"748bece2-02b3-429c-b1f1-b93384b276ee","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_name":"Friendship-level-Zad","_id":"35d95668-704d-4d54-87bc-8b7dea927b94","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
   _UID: cca0c2f8-e2a1-4b70-a324-6ada0822078d
