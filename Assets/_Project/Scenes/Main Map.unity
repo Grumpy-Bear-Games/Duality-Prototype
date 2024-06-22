@@ -23,10 +23,11 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.55
+  m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: -876546973899608171, guid: e98e5bed2edbad249ac6e3077a953331,
+    type: 3}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -10206,6 +10207,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FightPit
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7ad7dda823994fd48bc0abe3e01e0684,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13898,7 +13904,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489906812}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d71666b4e1b93545bd01d1bffc0bdf9, type: 3}
   m_Name: 
@@ -24693,7 +24699,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871150934}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d71666b4e1b93545bd01d1bffc0bdf9, type: 3}
   m_Name: 
@@ -38511,6 +38517,11 @@ PrefabInstance:
       propertyPath: _id
       value: 'Eye [6]'
       objectReference: {fileID: 0}
+    - target: {fileID: 7901571227759019794, guid: 6ecefadafa2c10d46b437d32793fe68f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7901571228117195936, guid: 6ecefadafa2c10d46b437d32793fe68f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38565,6 +38576,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Eye
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195937, guid: 6ecefadafa2c10d46b437d32793fe68f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38886,6 +38902,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 369976275}
     m_Modifications:
+    - target: {fileID: 3917039084639203518, guid: ae294521de5ffc74a8783ecba6569c69,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7746082819744783437, guid: ae294521de5ffc74a8783ecba6569c69,
         type: 3}
       propertyPath: m_Name
