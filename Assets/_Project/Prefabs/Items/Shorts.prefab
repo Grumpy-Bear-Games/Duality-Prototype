@@ -98,5 +98,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 855071986495757552, guid: ee5043d168365b84aaae56766d90c119,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8120671307531857528}
   m_SourcePrefab: {fileID: 100100000, guid: ee5043d168365b84aaae56766d90c119, type: 3}
+--- !u!1 &7901571228117195937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 855071986495757552, guid: ee5043d168365b84aaae56766d90c119,
+    type: 3}
+  m_PrefabInstance: {fileID: 7383042846567743569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8120671307531857528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7901571228117195937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedExposedParameters: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"Hmm,
+    I wonder who these shorts belong to. I should probably find their owner."},"_position":{"x":618.6667,"y":219.6667},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"_action":{"_quest":{"_value":1},"$type":"DualityGame.Quests.Tasks.StartQuest"},"_position":{"x":633.0,"y":316.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: e1cda35293ffa734fbd4959dc3c21d35, type: 2}
+  _boundGraphSource:
+    _version: 3.3
+    _category: 
+    _comments: 
+    _translation: {x: 0, y: 0}
+    _zoomFactor: 1
+  _firstActivation: 0
+  _enableAction: 1
+  _disableAction: 2
+  _lockBoundGraphPrefabOverrides: 1
+  _preInitializeSubGraphs: 0
+  _updateMode: 0
+  _graph: {fileID: 0}
+  _blackboard: {fileID: 0}
