@@ -25,9 +25,9 @@ namespace DualityGame.Utilities.Tasks
 
         public override string name => "Flavor Branching";
 
-        public override void OnCreate(Graph assignedGraph)
+        public override void OnValidate(Graph assignedGraph)
         {
-            _id.value = UID;
+            if (_bookkeeping.value != null) return;
             var bookkeeping = assignedGraph.agent.GetComponent<FlavorBranchingBookkeeping>();
             #if UNITY_EDITOR
             if (bookkeeping == null)
@@ -38,6 +38,11 @@ namespace DualityGame.Utilities.Tasks
             }
             #endif
             _bookkeeping.value = bookkeeping;
+        }
+
+        public override void OnCreate(Graph assignedGraph)
+        {
+            _id.value = UID;
         }
 
         protected override Status OnExecute(Component agent, IBlackboard bb) {
