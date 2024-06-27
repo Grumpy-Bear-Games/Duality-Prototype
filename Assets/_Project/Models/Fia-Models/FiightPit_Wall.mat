@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 49b0b5c4bec49fa49b9a93da03b60cbf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 90cb5ace0855cf5499cde6c2854a67b2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -61,6 +61,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Normal_Map:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -91,6 +95,7 @@ Material:
     - _Affected_By_Warp: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _Ambient_Occlusion: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -107,6 +112,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _Normal_from_Base_Map: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
