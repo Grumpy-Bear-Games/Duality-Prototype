@@ -119,6 +119,85 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &81911079
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 319165529}
+    m_Modifications:
+    - target: {fileID: 1741704114941091269, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: _id
+      value: 4f936ea3-b700-4f74-b7ad-c4acfcdd8ea6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.3997006
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.507155
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195937, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+        type: 3}
+      propertyPath: m_Name
+      value: EggCosys
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a2f4ef6ddc178c408b03aefc7caa457, type: 3}
+--- !u!4 &81911080 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7901571228117195936, guid: 0a2f4ef6ddc178c408b03aefc7caa457,
+    type: 3}
+  m_PrefabInstance: {fileID: 81911079}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &115288681
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +387,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 81911080}
   - {fileID: 522098820}
   - {fileID: 1657938880}
   - {fileID: 1210031099}

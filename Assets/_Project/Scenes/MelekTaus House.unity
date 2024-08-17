@@ -119,6 +119,85 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &4416043
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 998395875}
+    m_Modifications:
+    - target: {fileID: 1741704114941091269, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: _id
+      value: 95b02a93-b152-48e2-980e-d88dc585a56d
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5768793
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.46994066
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195936, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195937, guid: 90136c312c071b146ade17710b10b057,
+        type: 3}
+      propertyPath: m_Name
+      value: Stamp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90136c312c071b146ade17710b10b057, type: 3}
+--- !u!4 &4416044 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7901571228117195936, guid: 90136c312c071b146ade17710b10b057,
+    type: 3}
+  m_PrefabInstance: {fileID: 4416043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &115288681
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +988,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6942287079160705083}
+  - {fileID: 1160415611}
+  - {fileID: 4416044}
   m_Father: {fileID: 977657754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1052252330
@@ -991,7 +1072,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 998395875}
     m_Modifications:
     - target: {fileID: 4637266281697921276, guid: dd7462c175e91314dac9b3035917acef,
         type: 3}
@@ -1053,6 +1134,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7462c175e91314dac9b3035917acef, type: 3}
+--- !u!4 &1160415611 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4637266281697921276, guid: dd7462c175e91314dac9b3035917acef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1160415610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1263354182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,7 +1188,7 @@ GameObject:
   - component: {fileID: 1311857883}
   - component: {fileID: 1311857886}
   m_Layer: 7
-  m_Name: Gorgon's Fabric Shop (Hell)
+  m_Name: Empty (Hell)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2279,4 +2366,3 @@ SceneRoots:
   - {fileID: 977657754}
   - {fileID: 1311857885}
   - {fileID: 566175176}
-  - {fileID: 1160415610}
