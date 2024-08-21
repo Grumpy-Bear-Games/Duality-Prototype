@@ -622,6 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
   m_AgentTypeID: 0
   m_CollectObjects: 2
   m_Size: {x: 10, y: 10, z: 10}
@@ -1166,6 +1167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
   m_AgentTypeID: -1372625422
   m_CollectObjects: 2
   m_Size: {x: 10, y: 10, z: 10}
@@ -1683,17 +1685,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 371833919}
     m_Modifications:
+    - target: {fileID: 1741704114941091269, guid: d2a849f465912fa41813878fe1a27ce6,
+        type: 3}
+      propertyPath: _id
+      value: b7e36b42-7d62-4b9a-a278-b3a6b921e1ea
+      objectReference: {fileID: 0}
     - target: {fileID: 7901571227759019794, guid: d2a849f465912fa41813878fe1a27ce6,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901571228117195937, guid: d2a849f465912fa41813878fe1a27ce6,
-        type: 3}
-      propertyPath: m_Name
-      value: Hand
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901571228117195937, guid: d2a849f465912fa41813878fe1a27ce6,
         type: 3}
       propertyPath: m_Layer
       value: 7
@@ -1748,15 +1745,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5632469667523812203, guid: dbe3add6cc274fd49817a35bcbf75622,
+    - target: {fileID: 7901571228117195937, guid: d2a849f465912fa41813878fe1a27ce6,
+        type: 3}
+      propertyPath: m_Name
+      value: Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195937, guid: d2a849f465912fa41813878fe1a27ce6,
         type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1741704114941091269, guid: d2a849f465912fa41813878fe1a27ce6,
+    - target: {fileID: 5632469667523812203, guid: dbe3add6cc274fd49817a35bcbf75622,
         type: 3}
-      propertyPath: _id
-      value: b7e36b42-7d62-4b9a-a278-b3a6b921e1ea
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1777,17 +1779,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 371833919}
     m_Modifications:
+    - target: {fileID: 1741704114941091269, guid: 87c4fed5dde93f34c8c880e3f0110232,
+        type: 3}
+      propertyPath: _id
+      value: 7e7ce531-d3ad-47f5-a9ab-a4448d396ef0
+      objectReference: {fileID: 0}
     - target: {fileID: 7901571227759019794, guid: 87c4fed5dde93f34c8c880e3f0110232,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901571228117195937, guid: 87c4fed5dde93f34c8c880e3f0110232,
-        type: 3}
-      propertyPath: m_Name
-      value: Standard
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901571228117195937, guid: 87c4fed5dde93f34c8c880e3f0110232,
         type: 3}
       propertyPath: m_Layer
       value: 7
@@ -1842,15 +1839,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5632469667523812203, guid: 7598f74b5bf540f4ea613c0541db6f1d,
+    - target: {fileID: 7901571228117195937, guid: 87c4fed5dde93f34c8c880e3f0110232,
+        type: 3}
+      propertyPath: m_Name
+      value: Standard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901571228117195937, guid: 87c4fed5dde93f34c8c880e3f0110232,
         type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1741704114941091269, guid: 87c4fed5dde93f34c8c880e3f0110232,
+    - target: {fileID: 5632469667523812203, guid: 7598f74b5bf540f4ea613c0541db6f1d,
         type: 3}
-      propertyPath: _id
-      value: 7e7ce531-d3ad-47f5-a9ab-a4448d396ef0
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

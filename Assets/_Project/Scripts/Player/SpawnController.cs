@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-using Cinemachine;
+using Unity.Cinemachine;
 using Games.GrumpyBear.Core.LevelManagement;
 using Games.GrumpyBear.Core.SaveSystem;
 using UnityEngine;
@@ -26,7 +26,7 @@ namespace DualityGame.Player
             if (_controller != null) _controller.enabled = false;
             var positionDelta = spawnPoint.transform.position - transform.position; 
             transform.position = spawnPoint.transform.position;
-            CinemachineCore.Instance.OnTargetObjectWarped(transform, positionDelta);
+            CinemachineCore.OnTargetObjectWarped(transform, positionDelta);
             if (spawnPoint.Realm != null) spawnPoint.Realm.SetActive();
             if (_controller != null) _controller.enabled = true;
         }
@@ -76,7 +76,7 @@ namespace DualityGame.Player
             if (_controller != null) _controller.enabled = false;
             var positionDelta = serializedState.Position - transform.position; 
             transform.position = serializedState.Position;
-            CinemachineCore.Instance.OnTargetObjectWarped(transform, positionDelta);
+            CinemachineCore.OnTargetObjectWarped(transform, positionDelta);
             Realm.Realm.GetByGuid(serializedState.RealmID).SetActive();
             if (_controller != null) _controller.enabled = true;
         }

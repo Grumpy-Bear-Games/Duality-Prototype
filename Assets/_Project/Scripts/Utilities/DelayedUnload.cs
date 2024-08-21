@@ -1,20 +1,20 @@
 using System.Collections;
-using Cinemachine;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace DualityGame
+namespace DualityGame.Utilities
 {
-    [RequireComponent(typeof(CinemachineVirtualCamera))]
+    [RequireComponent(typeof(CinemachineCamera))]
     public class DelayedUnload : MonoBehaviour
     {
         private Scene _myScene;
-        private CinemachineVirtualCamera _camera;
+        private CinemachineCamera _camera;
 
         private void Awake()
         {
             _myScene = gameObject.scene;
-            _camera = GetComponent<CinemachineVirtualCamera>();
+            _camera = GetComponent<CinemachineCamera>();
             DontDestroyOnLoad(gameObject);
             gameObject.name = $"[{_myScene.name}] {gameObject.name}";
             SceneManager.sceneUnloaded += OnSceneUnloaded;
@@ -30,7 +30,7 @@ namespace DualityGame
         private IEnumerator DestroyAfterBlend_CO()
         {
             if (!ServiceLocator.ServiceLocator.TryGet<CinemachineBrain>(out var brain)) Destroy(gameObject);
-            _camera.Priority = -1;
+            _camera.Priority.Value = -1;
             while (ReferenceEquals(brain.ActiveVirtualCamera, _camera) ||
                    ReferenceEquals(brain.ActiveBlend?.CamA, _camera))
             {

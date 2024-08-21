@@ -2602,6 +2602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
   m_AgentTypeID: 0
   m_CollectObjects: 2
   m_Size: {x: 10, y: 10, z: 10}
@@ -3072,6 +3073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
   m_AgentTypeID: -1372625422
   m_CollectObjects: 2
   m_Size: {x: 10, y: 10, z: 10}
@@ -3990,11 +3992,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1286481844}
     m_Modifications:
-    - target: {fileID: 2278547302563231965, guid: 01171794ddca6d246b1e7378ea97cffd,
-        type: 3}
-      propertyPath: _boundGraphSource._version
-      value: 3.3
-      objectReference: {fileID: 0}
     - target: {fileID: 7850431387173265181, guid: 01171794ddca6d246b1e7378ea97cffd,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -206,11 +206,6 @@ PrefabInstance:
       propertyPath: _id
       value: 7d149cfa-c062-423d-aaa1-9e9769afeae2
       objectReference: {fileID: 0}
-    - target: {fileID: 7901571227759019794, guid: 6ecefadafa2c10d46b437d32793fe68f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 7901571228117195936, guid: 6ecefadafa2c10d46b437d32793fe68f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -833,6 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
   m_AgentTypeID: 0
   m_CollectObjects: 2
   m_Size: {x: 10, y: 10, z: 10}
@@ -1422,6 +1418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
   m_AgentTypeID: -1372625422
   m_CollectObjects: 2
   m_Size: {x: 10, y: 10, z: 10}
