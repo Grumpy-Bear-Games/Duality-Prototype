@@ -26,6 +26,4 @@ namespace DualityGame.ServiceLocator
             if (_lifetime == ServiceRegistrationLifetime.WhenEnabled) ServiceLocator.Unregister(this as T);
         }
     }
-
-    public class Player : ServiceBase<Player> { }
 }
