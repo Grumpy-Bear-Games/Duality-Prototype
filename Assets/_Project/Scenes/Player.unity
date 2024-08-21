@@ -418,6 +418,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1769874752349023423, guid: 146f3838e296c7247b9da4535858dcf7,
+        type: 3}
+      propertyPath: Target.TrackingTarget
+      value: 
+      objectReference: {fileID: 3005785628758143344}
+    - target: {fileID: 6377868861851748927, guid: 146f3838e296c7247b9da4535858dcf7,
+        type: 3}
+      propertyPath: CameraDistance
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7831468802919258646, guid: 146f3838e296c7247b9da4535858dcf7,
         type: 3}
       propertyPath: m_Name
@@ -431,12 +441,12 @@ PrefabInstance:
     - target: {fileID: 7831468802919259113, guid: 146f3838e296c7247b9da4535858dcf7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22
+      value: 18.672915
       objectReference: {fileID: 0}
     - target: {fileID: 7831468802919259113, guid: 146f3838e296c7247b9da4535858dcf7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54
+      value: -49.88409
       objectReference: {fileID: 0}
     - target: {fileID: 7831468802919259113, guid: 146f3838e296c7247b9da4535858dcf7,
         type: 3}
