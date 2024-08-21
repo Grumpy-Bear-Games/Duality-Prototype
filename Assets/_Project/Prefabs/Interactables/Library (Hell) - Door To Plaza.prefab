@@ -53,6 +53,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -111,7 +113,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e31e277fdf430a44c91224e9620331b0, type: 2}
   - {fileID: 11400000, guid: b3bc44b33a0367542a0bd715b122546f, type: 2}
   _boundGraphSource:
-    _version: 3.25
+    _version: 3.3
     _category: 
     _comments: 
     _translation: {x: 157, y: -84}
