@@ -38,7 +38,6 @@ namespace DualityGame.Player
         public void RestoreState(object state)
         {
             _active = (bool) state;
-            Debug.Log("Portal Restore State: " + _active, this);
             if (_active)
             {
                 _particleSystem.Simulate(5f);
