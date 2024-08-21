@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6762552302497108669}
   - component: {fileID: 6964841749567236620}
   - component: {fileID: 4724809316079970113}
-  - component: {fileID: 90571826816822052}
   m_Layer: 6
   m_Name: Main Map (Heaven) - Door to Library
   m_TagString: Untagged
@@ -52,8 +51,8 @@ MonoBehaviour:
   _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"conditions":[{"_checkpoint":{"_value":1},"$type":"DualityGame.Quests.Tasks.HasCheckpointBeenReached"},{"_inventory":{"_value":2},"_itemType":{"_value":3},"$type":"DualityGame.Inventory.Tasks.InventoryContainsItem"},null],"_position":{"x":438.0001,"y":-216.6667},"$type":"NodeCanvas.DialogueTrees.MultipleConditionNode","$id":"0"},{"_spawnPointReference":{"_value":4},"_spawnSettings":{"_value":5},"_position":{"x":359.5912,"y":557.8793},"$type":"DualityGame.Player.Tasks.JumpToSpawnpointNode","$id":"1"},{"_action":{"actions":[{"_inventory":{"_value":2},"_itemType":{"_value":3},"$type":"DualityGame.Inventory.Tasks.RemoveItemFromInventory"},{"_checkpoint":{"_value":1},"$type":"DualityGame.Quests.Tasks.SetCheckpointReached"},{"_content":{"_value":"You
     unlocked the door to <b>The Heavenly Library</b>."},"_sprite":{"_value":6},"$type":"DualityGame.Notifications.Tasks.AddNotification"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":683.864,"y":89.642},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"2"},{"statement":{"_text":"Yes!
     That worked! <b>The Heavenly Library</b> is now open.  Now I should be able to
-    warp over and open <b>The Hellish Library</b> from the inside.","_mood":1},"_position":{"x":747.6666,"y":259.6643},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"_questLog":{"_value":7},"_quest":{"_value":8},"_position":{"x":1455.635,"y":80.7999},"$type":"DualityGame.Quests.Tasks.QuestStateNode","$id":"4"},{"_bookkeeping":{"_value":9},"_id":{"_value":"66d2829a-595a-4719-9fbf-c0dc20b28fcc"},"_loop":{},"_UID":"66d2829a-595a-4719-9fbf-c0dc20b28fcc","_position":{"x":1321.333,"y":239.3333},"$type":"DualityGame.Utilities.Tasks.FlavorBranchingNode","$id":"5"},{"statement":{"_text":"The
-    door is locked. And there''s a note on the door..."},"_position":{"x":1104.583,"y":413.4434},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"_action":{"_checkpoint":{"_value":10},"$type":"DualityGame.Quests.Tasks.SetCheckpointReached"},"_position":{"x":989.8453,"y":507.7229},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"7"},{"statement":{"_text":"<i>\"<b>The
+    warp over and open <b>The Hellish Library</b> from the inside.","_mood":1},"_position":{"x":747.6666,"y":259.6643},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"_quest":{"_value":7},"_position":{"x":1455.635,"y":80.7999},"$type":"DualityGame.Quests.Tasks.QuestStateNode","$id":"4"},{"_id":{"_value":"66d2829a-595a-4719-9fbf-c0dc20b28fcc"},"_loop":{},"_UID":"66d2829a-595a-4719-9fbf-c0dc20b28fcc","_position":{"x":1321.333,"y":239.3333},"$type":"DualityGame.Utilities.Tasks.FlavorBranchingNode","$id":"5"},{"statement":{"_text":"The
+    door is locked. And there''s a note on the door..."},"_position":{"x":1104.583,"y":413.4434},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"_action":{"_checkpoint":{"_value":8},"$type":"DualityGame.Quests.Tasks.SetCheckpointReached"},"_position":{"x":989.8453,"y":507.7229},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"7"},{"statement":{"_text":"<i>\"<b>The
     Heavenly Library</b> is closed.\nWill open later.   -- M\"</i>"},"_position":{"x":1354.932,"y":675.4261},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"statement":{"_text":"I
     wonder who this \"M\" is....\nI should ask around."},"_position":{"x":1390.631,"y":774.9534},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"},{"statement":{"_text":"Nope,
     still locked and the note is still there...."},"_position":{"x":1391.556,"y":421.0008},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"10"},{"statement":{"_text":"Still
@@ -66,12 +65,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d32620e17eeb65a4b9b01ed315e2390f, type: 2}
   - {fileID: 11400000, guid: b3bc44b33a0367542a0bd715b122546f, type: 2}
   - {fileID: 21300000, guid: f74acd6126c5fc447bf7752e6a46680d, type: 3}
-  - {fileID: 11400000, guid: 057d41e2fce3fd44481548140c593b1f, type: 2}
   - {fileID: 11400000, guid: d678593df23919f42822b2c102b320ce, type: 2}
-  - {fileID: 90571826816822052}
   - {fileID: 2138440742617849906, guid: d678593df23919f42822b2c102b320ce, type: 2}
   _boundGraphSource:
-    _version: 3.25
+    _version: 3.3
     _category: 
     _comments: 
     _translation: {x: -488, y: 58}
@@ -111,18 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 27966b4e-8f61-4e9a-9b09-e3941c7015a7
---- !u!114 &90571826816822052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8172995924709481062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b1971728a74412b253450f50e6290c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &394731745532361476
 PrefabInstance:
   m_ObjectHideFlags: 0

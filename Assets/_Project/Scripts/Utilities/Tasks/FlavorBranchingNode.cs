@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using NodeCanvas.DialogueTrees;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
@@ -15,7 +16,29 @@ namespace DualityGame.Utilities.Tasks
     [Color("b3ff7f")]
     public class FlavorBranchingNode : DTNode
     {
-        [RequiredField] public BBParameter<FlavorBranchingBookkeeping> _bookkeeping;
+        #region Flavor Counters
+        private static Dictionary<string, int> _flavorCounters = new();
+
+        private static int IncrementFlavorCounter(string counterName)
+        {
+            _flavorCounters.TryAdd(counterName, 0);
+            return _flavorCounters[counterName]++;
+        }
+
+        public static object CaptureState() => _flavorCounters;
+
+        public static void RestoreState(object state)
+        {
+            if (state is not Dictionary<string, int> flavorBranchingCounters)
+            {
+                Debug.LogError("State is not a Dictionary<string, int>");
+                Debug.Break();
+                return;
+            }
+            _flavorCounters = flavorBranchingCounters;
+        }
+        #endregion
+
         [RequiredField] public BBParameter<string> _id;
         [RequiredField] public BBParameter<bool> _loop = false;
 
@@ -24,21 +47,6 @@ namespace DualityGame.Utilities.Tasks
         public override bool requireActorSelection => false;
 
         public override string name => "Flavor Branching";
-
-        public override void OnValidate(Graph assignedGraph)
-        {
-            if (_bookkeeping.value != null) return;
-            var bookkeeping = assignedGraph.agent.GetComponent<FlavorBranchingBookkeeping>();
-            #if UNITY_EDITOR
-            if (bookkeeping == null)
-            {
-                var go = assignedGraph.agent.gameObject;
-                bookkeeping = go.AddComponent<FlavorBranchingBookkeeping>();
-                EditorUtility.SetDirty(go);
-            }
-            #endif
-            _bookkeeping.value = bookkeeping;
-        }
 
         public override void OnCreate(Graph assignedGraph)
         {
@@ -49,7 +57,7 @@ namespace DualityGame.Utilities.Tasks
             if ( outConnections.Count == 0 ) {
                 return Error("There are no connections on the Flavor Branching Node");
             }
-            var index = _bookkeeping.value.Step(_id.value);
+            var index = IncrementFlavorCounter(_id.value);
             if (index > outConnections.Count - 1)
                 index = _loop.value ? index % outConnections.Count : outConnections.Count - 1;
             DLGTree.Continue(index);

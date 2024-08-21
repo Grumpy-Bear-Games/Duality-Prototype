@@ -328,7 +328,6 @@ GameObject:
   - component: {fileID: 8570655007339115320}
   - component: {fileID: 8570655007339115325}
   - component: {fileID: 8570655007339115322}
-  - component: {fileID: 3691287833714875628}
   - component: {fileID: 8570655007339115323}
   - component: {fileID: 8570655007339115327}
   - component: {fileID: 7537433535040781067}
@@ -401,12 +400,12 @@ MonoBehaviour:
     did the thing! The fighting pit is now open! Huzzah!","_mood":1},"_UID":"4d248428-82a8-4210-8673-11af93c37883","_position":{"x":-74.67392,"y":783.455},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"25"},{"statement":{"_text":"You
     have done well small dead human, you have pleased me","_mood":1},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"f58eae62-0774-4e49-88f8-f16ee1b5cef7","_position":{"x":-84.74847,"y":872.1298},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"26"},{"_action":{"actions":[{"_checkpoint":{"_value":9},"$type":"DualityGame.Quests.Tasks.SetCheckpointReached"},{"_quest":{"_value":5},"_resolution":{},"$type":"DualityGame.Quests.Tasks.ResolveQuest"}],"$type":"NodeCanvas.Framework.ActionList"},"_UID":"9ad833b7-6ee5-42e1-91d5-9c87605ead3e","_position":{"x":-154.7002,"y":959.1006},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"27"},{"statement":{"_text":"..."},"_UID":"2a7410de-9dcb-4b66-a63f-eab573adfe83","_position":{"x":-23.34012,"y":1076.888},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"28"},{"statement":{"_text":"..."},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"c5a16268-dad4-4205-9f15-e5388efae814","_position":{"x":-23.41031,"y":1171.565},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"29"},{"statement":{"_text":"So,
     when will you move?"},"_UID":"553c87e1-7881-46d9-be86-0ae4c8884dc6","_position":{"x":-67.37831,"y":1263.611},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"30"},{"statement":{"_text":"Eventually.
-    When I am good and ready. First I need to think about what to wear...."},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"887b95fa-2d2b-4c47-bc3f-272734f1c8f1","_position":{"x":-80.78731,"y":1348.95},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"31"},{"_bookkeeping":{"_value":10},"_id":{"_value":"164454e2-84e2-4f9f-983d-71e70ce9604c"},"_loop":{},"_UID":"164454e2-84e2-4f9f-983d-71e70ce9604c","_position":{"x":206.173,"y":314.7832},"$type":"DualityGame.Utilities.Tasks.FlavorBranchingNode","$id":"32"},{"statement":{"_text":"Could
+    When I am good and ready. First I need to think about what to wear...."},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"887b95fa-2d2b-4c47-bc3f-272734f1c8f1","_position":{"x":-80.78731,"y":1348.95},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"31"},{"_id":{"_value":"164454e2-84e2-4f9f-983d-71e70ce9604c"},"_loop":{},"_UID":"164454e2-84e2-4f9f-983d-71e70ce9604c","_position":{"x":206.173,"y":314.7832},"$type":"DualityGame.Utilities.Tasks.FlavorBranchingNode","$id":"32"},{"statement":{"_text":"Could
     you please move now?"},"_UID":"e056d0c7-2075-4940-a528-de4a2e118299","_position":{"x":32.725,"y":446.7892},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"33"},{"statement":{"_text":"Patience,
     mortal, patience!"},"_actorName":"Kasadya","_actorParameterID":"2157c728-a4a0-4690-8647-47f0deffccb9","_UID":"462620be-4b26-4ed8-a98c-f57e270a115c","_position":{"x":36.0582,"y":538.7893},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"34"},{"statement":{"_text":"(hmm,
     what should I talk to Kasadya about?)"},"availableChoices":[{"statement":{"_text":"(Ask
     Kasadya to move)"},"condition":{"_checkpoint":{"_value":9},"_invert":true,"$type":"DualityGame.Quests.Tasks.HasCheckpointBeenReached"}},{"statement":{"_text":"(Ask
-    Kasadya about the shorts)"},"condition":{"_quest":{"_value":11},"_questStatus":{"_value":1},"$type":"DualityGame.Quests.Tasks.CheckQuestState"}}],"_UID":"32de7bc8-8892-482b-82a8-beed4fe6d0a6","_tag":"Quest
+    Kasadya about the shorts)"},"condition":{"_quest":{"_value":10},"_questStatus":{"_value":1},"$type":"DualityGame.Quests.Tasks.CheckQuestState"}}],"_UID":"32de7bc8-8892-482b-82a8-beed4fe6d0a6","_tag":"Quest
     Branching","_position":{"x":463.1172,"y":-608.0471},"_comment":"TODO: Fine-tune
     this branching once quest other is known","$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"35"},{"_sourceNodeUID":"d5a28b93-02a6-46ab-83a7-994406222de0","_UID":"0b7e240c-0355-4d52-b518-606246e51736","_position":{"x":48.57914,"y":-303.7682},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"36"},{"_sourceNodeUID":"2f42291e-b628-477e-880a-d8f8f9dff188","_UID":"0c634b36-167a-47dd-aa40-dbd36dc454fe","_position":{"x":865.5692,"y":-273.0408},"$type":"NodeCanvas.DialogueTrees.Jumper","$id":"37"},{"statement":{"_text":"Excuse
     me. Do you know who these <b>Shorts</b> belong to?"},"_UID":"2f42291e-b628-477e-880a-d8f8f9dff188","_tag":"No
@@ -417,7 +416,7 @@ MonoBehaviour:
     - Are You Not Entertained?","rect":{"xMin":-1458.651,"yMin":100.2704,"xMax":343.173,"yMax":1432.95},"autoGroup":true},{"name":"Quest
     - Sweet Tooth","rect":{"xMin":346.1784,"yMin":-2013.56,"xMax":1495.741,"yMax":-938.645}},{"name":"Quest
     Branching","rect":{"xMin":-60.46313,"yMin":-706.2727,"xMax":1205.094,"yMax":-91.216}},{"name":"No
-    Short Order","rect":{"xMin":963.8782,"yMin":78.26206,"xMax":1405.036,"yMax":556.9873}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Kasadya","_id":"2157c728-a4a0-4690-8647-47f0deffccb9","_actorObject":12}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+    Short Order","rect":{"xMin":963.8782,"yMin":78.26206,"xMax":1405.036,"yMax":556.9873}}],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Kasadya","_id":"2157c728-a4a0-4690-8647-47f0deffccb9","_actorObject":11}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 11400000, guid: 2647869dfca075b4881b59488d58c9b6, type: 2}
@@ -429,15 +428,14 @@ MonoBehaviour:
   - {fileID: 1347914378466607536, guid: d3a33c4bd5a365540a2039c7e052dd0f, type: 2}
   - {fileID: 11400000, guid: b313beab16bb6df4dab5f542c0dbe53c, type: 2}
   - {fileID: -2419679737691447977, guid: d3a33c4bd5a365540a2039c7e052dd0f, type: 2}
-  - {fileID: 3691287833714875628}
   - {fileID: 11400000, guid: e1cda35293ffa734fbd4959dc3c21d35, type: 2}
   - {fileID: 2155733169046693454}
   _boundGraphSource:
     _version: 3.3
     _category: 
     _comments: 
-    _translation: {x: 560, y: 389}
-    _zoomFactor: 0.33820564
+    _translation: {x: 961.7303, y: 178.79951}
+    _zoomFactor: 0.7567426
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2
@@ -462,18 +460,6 @@ MonoBehaviour:
   _serializedBlackboard: '{"_variables":{}}'
   _objectReferences: []
   _serializedVariables: []
---- !u!114 &3691287833714875628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8570655007339115321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b1971728a74412b253450f50e6290c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8570655007339115323
 MonoBehaviour:
   m_ObjectHideFlags: 0
