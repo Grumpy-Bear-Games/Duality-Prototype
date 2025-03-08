@@ -2,8 +2,6 @@
 using DualityGame.Utilities;
 using Games.GrumpyBear.Core.Settings;
 using Games.GrumpyBear.Core.Settings.UIElements;
-using Games.GrumpyBear.FMOD.Utilities;
-using Games.GrumpyBear.FMOD.Utilities.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -13,9 +11,6 @@ namespace DualityGame.UI
     public class SettingsMenu : MonoBehaviour
     {
         [SerializeField] private VideoSettings _videoSettings;
-        [SerializeField] private BusVolumePreference _masterVolumePreference;
-        [SerializeField] private VCAVolumePreference _sfxVolumePreference;
-        [SerializeField] private VCAVolumePreference _musicVolumePreference;
 
         public event Action OnHide;
         
@@ -29,11 +24,6 @@ namespace DualityGame.UI
             _frame.RegisterCallback<NavigationCancelEvent>(_ => BackButtonClicked());
             _frame.PreventLoosingFocus();
 
-            var audioSettings = root.Q<VisualElement>("AudioSettings");
-            audioSettings.Q<VolumeSlider>("MasterVolume").VolumePreference = _masterVolumePreference;
-            audioSettings.Q<VolumeSlider>("SFXVolume").VolumePreference = _sfxVolumePreference;
-            audioSettings.Q<VolumeSlider>("MusicVolume").VolumePreference = _musicVolumePreference;
-            
             var videoSettings = root.Q<VisualElement>("VideoSettings");
             videoSettings.Q<FullscreenToggle>("Fullscreen").VideoSettings = _videoSettings;
             videoSettings.Q<ResolutionDropdown>("Resolution").VideoSettings = _videoSettings;

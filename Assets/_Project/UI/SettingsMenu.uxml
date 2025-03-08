@@ -2,9 +2,9 @@
     <ui:VisualElement name="Frame" class="settings-menu__frame game-menu__frame">
         <ui:VisualElement name="AudioSettings">
             <ui:Label tabindex="-1" text="Audio Settings" display-tooltip-when-elided="true" class="settings-menu__section-header" />
-            <Games.GrumpyBear.FMOD.Utilities.UIElements.VolumeSlider label="Master" name="MasterVolume" />
-            <Games.GrumpyBear.FMOD.Utilities.UIElements.VolumeSlider label="SFX" name="SFXVolume" />
-            <Games.GrumpyBear.FMOD.Utilities.UIElements.VolumeSlider label="Music" name="MusicVolume" />
+            <DualityGame.Audio.UIElements.VolumeSlider label="Master" name="MasterVolume" volume-preference="project://database/Assets/_Project/Game%20Data/Settings/Master%20Volume.asset?fileID=11400000&amp;guid=17c9265aacc75f543a040eb3ad69af68&amp;type=2#Master Volume" />
+            <DualityGame.Audio.UIElements.VolumeSlider label="SFX" name="SFXVolume" volume-preference="project://database/Assets/_Project/Game%20Data/Settings/SFX%20Volume.asset?fileID=11400000&amp;guid=a641e46da4527a74fa920a337387b6ad&amp;type=2#SFX Volume" />
+            <DualityGame.Audio.UIElements.VolumeSlider label="Music" name="MusicVolume" volume-preference="project://database/Assets/_Project/Game%20Data/Settings/Music%20Volume.asset?fileID=11400000&amp;guid=8edbae5b83da2e1458c634e18b8a2e88&amp;type=2#Music Volume" />
         </ui:VisualElement>
         <ui:VisualElement name="VideoSettings" style="margin-top: 50px;">
             <ui:Label tabindex="-1" text="Video Settings" display-tooltip-when-elided="true" class="settings-menu__section-header" />
