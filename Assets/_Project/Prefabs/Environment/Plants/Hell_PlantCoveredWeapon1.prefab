@@ -42,7 +42,7 @@ PrefabInstance:
     - target: {fileID: 3883000628722227259, guid: 0039a76832518c545a48f7d8a6e24a7c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -58.78
       objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 0039a76832518c545a48f7d8a6e24a7c,
         type: 3}
@@ -52,7 +52,7 @@ PrefabInstance:
     - target: {fileID: 3883000628722227259, guid: 0039a76832518c545a48f7d8a6e24a7c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 16.07
       objectReference: {fileID: 0}
     - target: {fileID: 3883000628722227259, guid: 0039a76832518c545a48f7d8a6e24a7c,
         type: 3}
@@ -97,6 +97,18 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4682871521737025489}
+    - targetCorrespondingSourceObject: {fileID: 3883000628722227257, guid: 0039a76832518c545a48f7d8a6e24a7c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 148785507801036382}
+    - targetCorrespondingSourceObject: {fileID: 3883000628722227257, guid: 0039a76832518c545a48f7d8a6e24a7c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5230612350605221875}
+    - targetCorrespondingSourceObject: {fileID: 3883000628722227257, guid: 0039a76832518c545a48f7d8a6e24a7c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5562900733660949824}
   m_SourcePrefab: {fileID: 100100000, guid: 0039a76832518c545a48f7d8a6e24a7c, type: 3}
 --- !u!1 &6259530411359520365 stripped
 GameObject:
@@ -125,3 +137,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 2, z: 0.2}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &148785507801036382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259530411359520365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970ba91ee67eb4e4082d9794f65e3992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _promptOffset: {x: 0, y: 1.5, z: 0}
+  _type: 0
+--- !u!114 &5230612350605221875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259530411359520365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedExposedParameters: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"This
+    is a really big axe, I wonder who could even use this.","_mood":7},"_position":{"x":366.0,"y":113.0},"$type":"NodeCanvas.DialogueTrees.StatementNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences: []
+  _boundGraphSource:
+    _version: 3.3
+    _category: 
+    _comments: 
+    _translation: {x: 0, y: 0}
+    _zoomFactor: 1
+  _firstActivation: 0
+  _enableAction: 1
+  _disableAction: 2
+  _lockBoundGraphPrefabOverrides: 1
+  _preInitializeSubGraphs: 0
+  _updateMode: 0
+  _graph: {fileID: 0}
+  _blackboard: {fileID: 5562900733660949824}
+--- !u!114 &5562900733660949824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259530411359520365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentBlackboard: {fileID: 0}
+  _serializedBlackboard: '{"_variables":{}}'
+  _objectReferences: []
+  _serializedVariables: []

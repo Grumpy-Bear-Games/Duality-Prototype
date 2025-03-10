@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 4637266281697921278, guid: 97980c20f52040248beb35439d818982,
         type: 3}
       propertyPath: m_Name
-      value: Black_Gravestone1 Variant 7
+      value: Black_Gravestone9
       objectReference: {fileID: 0}
     - target: {fileID: 6556427415264480308, guid: 97980c20f52040248beb35439d818982,
         type: 3}
@@ -77,5 +77,83 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4637266281697921278, guid: 97980c20f52040248beb35439d818982,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5434070352356416277}
+    - targetCorrespondingSourceObject: {fileID: 4637266281697921278, guid: 97980c20f52040248beb35439d818982,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6324183285444370103}
+    - targetCorrespondingSourceObject: {fileID: 4637266281697921278, guid: 97980c20f52040248beb35439d818982,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7663274055395422823}
   m_SourcePrefab: {fileID: 100100000, guid: 97980c20f52040248beb35439d818982, type: 3}
+--- !u!1 &5025896646642265158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4637266281697921278, guid: 97980c20f52040248beb35439d818982,
+    type: 3}
+  m_PrefabInstance: {fileID: 424872467252651192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5434070352356416277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025896646642265158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32e4b851ebd8fa4ea0645b99be1cf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedExposedParameters: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"For
+    all those fallen in the war"},"_position":{"x":400.0,"y":162.0},"$type":"NodeCanvas.DialogueTrees.StatementNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences: []
+  _boundGraphSource:
+    _version: 3.3
+    _category: 
+    _comments: 
+    _translation: {x: 0, y: 0}
+    _zoomFactor: 1
+  _firstActivation: 0
+  _enableAction: 1
+  _disableAction: 2
+  _lockBoundGraphPrefabOverrides: 1
+  _preInitializeSubGraphs: 0
+  _updateMode: 0
+  _graph: {fileID: 0}
+  _blackboard: {fileID: 6324183285444370103}
+--- !u!114 &6324183285444370103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025896646642265158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98a6db0b653f764eac834f85857a9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentBlackboard: {fileID: 0}
+  _serializedBlackboard: '{"_variables":{}}'
+  _objectReferences: []
+  _serializedVariables: []
+--- !u!114 &7663274055395422823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025896646642265158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970ba91ee67eb4e4082d9794f65e3992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _promptOffset: {x: 0, y: 1.5, z: 0}
+  _type: 0
