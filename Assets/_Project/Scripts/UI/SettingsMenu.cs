@@ -41,7 +41,7 @@ namespace DualityGame.UI
         public void Show()
         {
             _frame.AddToClassList("Shown");
-            _frame.Q<VisualElement>("MasterVolume").Q<Slider>().Focus();
+            _frame.Q<VisualElement>("MasterVolume").Q<SliderInt>().Focus();
         }
 
         public void Hide() => _frame.RemoveFromClassList("Shown");

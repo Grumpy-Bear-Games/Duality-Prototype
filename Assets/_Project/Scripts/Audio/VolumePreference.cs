@@ -1,5 +1,4 @@
-﻿using Codice.Client.BaseCommands.Merge;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
 
 namespace DualityGame.Audio
@@ -8,39 +7,10 @@ namespace DualityGame.Audio
     public sealed class VolumePreference: ScriptableObject
     {
         public const float MinDb  = -80f;
-        public const float MaxDb  =  20f;
+        //public const float MaxDb  =  20f;
+        public const float MaxDb  =  0f;
 
-        /*
-        private static readonly float _minAmp = Mathf.Pow(10f, MinDb / 20f);  // ~0.0001
-        private static readonly float _maxAmp = Mathf.Pow(10f, MaxDb / 20f);  // 10
-        public static float Linear0To100ToDb(float linear)
-        {
-            // First, normalize the 0..100 to a 0..1 parameter
-            var t = Mathf.Clamp01(linear / 100f);
-
-            // Convert 0..1 back into amplitude
-            var amplitude = Mathf.Lerp(_minAmp, _maxAmp, t);
-
-            // Finally, convert amplitude ratio to dB
-            // dB = 20 * log10(amplitudeRatio)
-            var db = 20f * Mathf.Log10(amplitude);
-
-            return db;
-        }
-
-        public static float DbToLinear0To100(float db)
-        {
-            // Convert dB to amplitude ratio
-            // (dB = 20 * log10(amplitudeRatio)  =>  amplitudeRatio = 10^(dB/20))
-            var amplitude = Mathf.Pow(10f, db / 20f);
-
-            // Normalize amplitude to 0..1 range, then scale up to 0..100
-            var t = (amplitude - _minAmp) / (_maxAmp - _minAmp);
-            return t * 100f;
-        }
-        */
-
-        [SerializeField] private AudioMixer _audioMixer = null;
+        [SerializeField] private AudioMixer _audioMixer;
         [SerializeField] private string _exposedParameter = "";
         [SerializeField] private string _playerPrefsKey = "Settings/Audio/SFXVolume";
 

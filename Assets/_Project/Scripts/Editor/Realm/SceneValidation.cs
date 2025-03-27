@@ -13,7 +13,6 @@ namespace DualityGame.Editor.Realm
     {
         static SceneValidation()
         {
-            Debug.Log("Duality Game Editor Scene Validation");
             EditorSceneManager.sceneOpened += OnSceneOpened;
             EditorSceneManager.sceneSaving += OnSceneSaving;
         }

@@ -67,7 +67,6 @@ namespace DualityGame.Editor.VFX
 
         private void OnDisplayedChanged(bool _)
         {
-            Debug.Log($"ShaderGlobalsDebugOverlay.OnDisplayedChanged: {displayed}");
             if (displayed)
             {
                 EditorApplication.update += Update;
