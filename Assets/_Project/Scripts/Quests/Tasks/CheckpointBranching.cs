@@ -33,7 +33,7 @@ namespace DualityGame.Quests.Tasks
 
         protected override Status OnExecute(Component agent, IBlackboard bb) {
             if ( outConnections.Count == 0 ) {
-                return Error("There are no connections on the Dialogue Condition Node");
+                return Error("There are no connections on the Checkpoint Branching Node");
             }
 
             for (var i = 0; i < _checkpointEntries.Count; i++)
