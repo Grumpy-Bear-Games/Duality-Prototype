@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace DualityGame.Player
@@ -58,8 +59,6 @@ namespace DualityGame.Player
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
-			_fallTimeoutDelta = FallTimeout;
-			_lastGroundLevel = transform.position.y;
 			_groundedLastFrame = _controller.isGrounded;
 		}
 
@@ -110,6 +109,12 @@ namespace DualityGame.Player
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+		}
+
+		private void OnEnable()
+		{
+			_lastGroundLevel = transform.position.y;
+			_fallTimeoutDelta = FallTimeout;
 		}
 
 		private void JumpAndGravity()

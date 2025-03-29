@@ -5088,6 +5088,7 @@ MonoBehaviour:
   Gravity: -15
   JumpTimeout: 0.1
   FallTimeout: 0.15
+  FallDistance: 8
   _onJump:
     m_PersistentCalls:
       m_Calls: []
@@ -5235,6 +5236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd361bd5b934b2ebda712a686ef4aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _disabledDuringSpawn:
+  - {fileID: 8215064143838313123}
 --- !u!114 &2985635879919357011
 MonoBehaviour:
   m_ObjectHideFlags: 0

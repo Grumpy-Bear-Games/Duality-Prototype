@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Cinemachine;
 using Games.GrumpyBear.Core.LevelManagement;
 using Games.GrumpyBear.Core.SaveSystem;
@@ -10,6 +11,8 @@ namespace DualityGame.Player
     [RequireComponent(typeof(CharacterController))]
     public class SpawnController : MonoBehaviour, ISaveableComponent
     {
+        [SerializeField] private List<MonoBehaviour> _disabledDuringSpawn = new();
+
         public static SpawnController Instance { get; private set; }
         
 
@@ -24,11 +27,14 @@ namespace DualityGame.Player
             Debug.Assert(spawnPoint.Realm != null, "spawnPoint.Realm != null", this);
             
             if (_controller != null) _controller.enabled = false;
+            _disabledDuringSpawn.ForEach(c => c.enabled = false);
+
             var positionDelta = spawnPoint.transform.position - transform.position; 
             transform.position = spawnPoint.transform.position;
             CinemachineCore.OnTargetObjectWarped(transform, positionDelta);
             if (spawnPoint.Realm != null) spawnPoint.Realm.SetActive();
             if (_controller != null) _controller.enabled = true;
+            _disabledDuringSpawn.ForEach(c => c.enabled = true);
         }
 
         private void Awake()
