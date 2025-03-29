@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4637266281697921276}
   - component: {fileID: 4637266281697921279}
   - component: {fileID: 6556427415264480308}
+  - component: {fileID: 2478226449817648521}
   m_Layer: 6
   m_Name: White_Bench1
   m_TagString: Untagged
@@ -52,8 +53,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.3, y: 0.8, z: 0.5}
-  m_Center: {x: 0, y: 0.4, z: 0}
+  m_Size: {x: 2.3, y: 0.7, z: 0.5}
+  m_Center: {x: 0, y: 0.35, z: -0.1}
 --- !u!212 &6556427415264480308
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -108,3 +109,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &2478226449817648521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637266281697921278}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1, y: 1.1, z: 0.1}
+  m_Center: {x: 0, y: 0.75, z: 0.1}
