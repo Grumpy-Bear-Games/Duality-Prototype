@@ -392,6 +392,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2279692693473518588, guid: 0dc134467ac511e4d882799ef32bb73f,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 320
+      objectReference: {fileID: 0}
     - target: {fileID: 4637266281697921276, guid: 0dc134467ac511e4d882799ef32bb73f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4514,13 +4519,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148396195049845623}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5819944, y: -0.40159997, z: 0.5819944, w: 0.40159997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 977657754}
-  m_LocalEulerAnglesHint: {x: 110.785, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
