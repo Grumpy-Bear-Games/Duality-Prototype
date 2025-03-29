@@ -16,6 +16,8 @@ namespace DualityGame.Realm
         [field: SerializeField] public Realm CanWarpTo { get; private set;  }
 
         public int LevelLayerMask => 1 << LevelLayer;
+        public int PlayerLayerMask => 1 << PlayerLayer;
+        public int RealmMask => LevelLayerMask | PlayerLayerMask;
 
         #if UNITY_EDITOR
         public static Realm FromLayer(int layer) =>

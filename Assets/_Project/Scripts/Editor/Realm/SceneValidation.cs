@@ -17,31 +17,15 @@ namespace DualityGame.Editor.Realm
             EditorSceneManager.sceneSaving += OnSceneSaving;
         }
 
-        private static void OnSceneOpened(Scene scene, OpenSceneMode mode)
-        {
-            foreach (var rootGameObject in scene.GetRootGameObjects())
-            {
-                foreach (var realmVisible in rootGameObject.GetComponentsInChildren<RealmVisible>())
-                {
-                    var realm = GetRealm(realmVisible);
-                    if (realm is null)
-                    {
-                        Debug.LogError($"Error in scene {scene.name}: Realm not set in RealmVisible component", realmVisible);
-                        continue;
-                    }
+        private static void OnSceneOpened(Scene scene, OpenSceneMode _) => ValidateRealmGameObjects(scene);
 
-                    foreach (var gameObject in GetMisconfiguredRealmGameObjects(realmVisible))
-                    {
-                        Debug.LogWarning($"{gameObject.name} has the wrong layer", gameObject);
-                    }
-                }
-            }
-        }
+        private static void OnSceneSaving(Scene scene, string path) => ValidateRealmGameObjects(scene);
 
-        private static void OnSceneSaving(Scene scene, string path)
+        private static void ValidateRealmGameObjects(Scene scene)
         {
-            Undo.SetCurrentGroupName("Fix layers");
+            Undo.SetCurrentGroupName("Scene validation");
             var undoGroup = Undo.GetCurrentGroup();
+
             foreach (var rootGameObject in scene.GetRootGameObjects())
             {
                 foreach (var realmVisible in rootGameObject.GetComponentsInChildren<RealmVisible>())
@@ -55,15 +39,27 @@ namespace DualityGame.Editor.Realm
 
                     foreach (var gameObject in GetMisconfiguredRealmGameObjects(realmVisible))
                     {
-                        Debug.LogWarning($"Autofix: Setting {gameObject.name} layer to {realm.LevelLayer}", gameObject);
+                        Debug.LogWarning($"Autofix: Setting {gameObject.name} layer to {LayerMask.LayerToName(realm.LevelLayer)}", gameObject);
                         Undo.RecordObject(gameObject, "");
                         gameObject.layer = realm.LevelLayer;
                         EditorUtility.SetDirty(gameObject);
+                    }
+
+                    foreach (var light in realmVisible.GetComponentsInChildren<Light>(includeInactive: true))
+                    {
+                        if (light.cullingMask == realm.RealmMask) continue;
+                        Debug.LogWarning($"Autofix: Setting {light.name} culling mask to {RealmMaskString(realm)}", light);
+                        Undo.RecordObject(light, "");
+                        light.cullingMask = realm.RealmMask;
+                        EditorUtility.SetDirty(light.gameObject);
                     }
                 }
             }
             Undo.CollapseUndoOperations(undoGroup);
         }
+
+        private static string RealmMaskString(DualityGame.Realm.Realm realm) => $"[{LayerMask.LayerToName(realm.LevelLayer)}, {LayerMask.LayerToName(realm.PlayerLayer)}]";
+
 
         private static DualityGame.Realm.Realm GetRealm(RealmVisible realmVisible)
         {
