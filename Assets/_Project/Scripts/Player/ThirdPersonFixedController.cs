@@ -26,11 +26,14 @@ namespace DualityGame.Player
 		public float JumpTimeout = 0.50f;
 		[Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
 		public float FallTimeout = 0.15f;
+		[Tooltip("Fall distance that will kill the player")]
+		public float FallDistance = 8.0f;
 
 
 		[Header("Events")]
 		[SerializeField] private UnityEvent _onJump;
 		[SerializeField] private UnityEvent<float> _onLand;
+		[SerializeField] private UnityEvent _onFallDeath;
 
 		// player
 		private float _speed;
@@ -40,6 +43,8 @@ namespace DualityGame.Player
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
+
+		private float _lastGroundLevel;
 
 		private CharacterController _controller;
 		private PlayerInputs _input;
@@ -54,7 +59,7 @@ namespace DualityGame.Player
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
-
+			_lastGroundLevel = transform.position.y;
 			_groundedLastFrame = _controller.isGrounded;
 		}
 
@@ -63,6 +68,7 @@ namespace DualityGame.Player
 			JumpAndGravity();
 			Move();
 
+			if (_lastGroundLevel - transform.position.y > FallDistance) _onFallDeath.Invoke();
 			if (!_groundedLastFrame && _controller.isGrounded && _fallTimeoutDelta <= 0 ) _onLand.Invoke(_verticalVelocity);
 			_groundedLastFrame = _controller.isGrounded;
 		}
@@ -110,6 +116,9 @@ namespace DualityGame.Player
 		{
 			if (_controller.isGrounded)
 			{
+				// reset last ground level
+				_lastGroundLevel = transform.position.y;
+
 				// reset the fall timeout timer
 				_fallTimeoutDelta = FallTimeout;
 
