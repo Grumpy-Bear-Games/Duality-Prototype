@@ -15,7 +15,7 @@ namespace DualityGame.UI
             Application.focusChanged += hasFocus =>
             {
                 if (hasFocus) return;
-                _lastFocusable = root.focusController.focusedElement;
+                _lastFocusable = root.focusController?.focusedElement;
             };
 
             root.RegisterCallback<BlurEvent>(evt =>
