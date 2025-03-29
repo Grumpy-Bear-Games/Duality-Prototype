@@ -50,7 +50,7 @@ namespace DualityGame.Player
 		private void UpdateDirectionFromMovement()
 		{
 			if (_input.Move == Vector2.zero) return;
-			if (Mathf.Approximately(_input.Move.x, 0f)) {
+			if (Mathf.Abs(_input.Move.x) < Mathf.Abs(_input.Move.y)) {
 				_direction = (_input.Move.y > Mathf.Epsilon) ? Direction.Up : Direction.Down;
 			} else {
 				_direction = (_input.Move.x < Mathf.Epsilon) ? Direction.Left : Direction.Right;
