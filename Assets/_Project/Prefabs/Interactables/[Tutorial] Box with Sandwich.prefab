@@ -214,6 +214,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7746082819744783437, guid: 3f6937e1ed0a1a34c91b10cf9525a09e,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 9075359590478149296}
+    - targetCorrespondingSourceObject: {fileID: 7746082819744783437, guid: 3f6937e1ed0a1a34c91b10cf9525a09e,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 6090729231601944816}
     - targetCorrespondingSourceObject: {fileID: 7746082819744783437, guid: 3f6937e1ed0a1a34c91b10cf9525a09e,
         type: 3}
@@ -223,10 +227,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8894534227682027235}
-    - targetCorrespondingSourceObject: {fileID: 7746082819744783437, guid: 3f6937e1ed0a1a34c91b10cf9525a09e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1465193513062888610}
   m_SourcePrefab: {fileID: 100100000, guid: 3f6937e1ed0a1a34c91b10cf9525a09e, type: 3}
 --- !u!4 &6453812027944114433 stripped
 Transform:
@@ -240,6 +240,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3670177032473691470}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9075359590478149296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453812027944114435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765d4893d9a642b7bf792a62f99ace3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outline: 1
 --- !u!114 &6090729231601944816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,18 +312,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9075359590478149296}
+        m_TargetAssemblyTypeName: DualityGame.Warp.SpriteController, DualityGame
+        m_MethodName: set_Outline
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _type: 1
   _onlyTriggerOnce: 1
---- !u!114 &1465193513062888610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6453812027944114435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 765d4893d9a642b7bf792a62f99ace3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _outline: 0
