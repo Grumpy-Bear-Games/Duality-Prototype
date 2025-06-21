@@ -121,9 +121,9 @@ namespace DualityGame.Editor.Warp
             ShaderGlobals.WarpCenter = WarpTestConfig.instance.PlayerPosition;
             ShaderGlobals.WarpRadius = WarpTestConfig.instance.Radius;
             ShaderGlobals.WarpTransition = WarpTestConfig.instance.Transition;
-            ShaderGlobals.WarpEffectEnabled = _warpEffectEnabled.value;
             ShaderGlobals.CurrentRealm = WarpTestConfig.instance.CurrentRealm != null ? WarpTestConfig.instance.CurrentRealm.LevelLayer : 0;
             ShaderGlobals.WarpToRealm = WarpTestConfig.instance.WarpToRealm != null ? WarpTestConfig.instance.WarpToRealm.LevelLayer : 1;
+            ShaderGlobals.WarpEffectEnabled = _warpEffectEnabled is { value: true };
         }
     }
 }
