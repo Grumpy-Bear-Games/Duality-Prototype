@@ -8,9 +8,7 @@ namespace DualityGame.Realm
     {
         [SerializeField] private Realm _realm;
         
-        private Renderer[] _renderers;
         private Volume[] _volumes;
-        private DecalProjector[] _decalProjectors;
         private void Awake()
         {
             _volumes = GetComponentsInChildren<Volume>(true);
