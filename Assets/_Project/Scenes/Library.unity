@@ -2572,7 +2572,6 @@ GameObject:
   - component: {fileID: 977657753}
   - component: {fileID: 977657752}
   - component: {fileID: 977657751}
-  - component: {fileID: 977657755}
   m_Layer: 6
   m_Name: Library (Heaven)
   m_TagString: Untagged
@@ -2660,20 +2659,6 @@ Transform:
   - {fileID: 1449264457}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &977657755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 977657750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d71666b4e1b93545bd01d1bffc0bdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realm: {fileID: 11400000, guid: 6e2678d65c1d2e046b0cb3fb66e5bb67, type: 2}
-  _skyboxSettings: {fileID: 11400000, guid: 2880c82a09f0972419c93a13414a4c34, type: 2}
 --- !u!1001 &1031996426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3043,7 +3028,6 @@ GameObject:
   - component: {fileID: 1311857885}
   - component: {fileID: 1311857884}
   - component: {fileID: 1311857883}
-  - component: {fileID: 1311857886}
   m_Layer: 7
   m_Name: Library (Hell)
   m_TagString: Untagged
@@ -3114,20 +3098,6 @@ Transform:
   - {fileID: 1708468633}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1311857886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311857882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d71666b4e1b93545bd01d1bffc0bdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realm: {fileID: 11400000, guid: b4d6229eae5dd0c41b7a1171b0265464, type: 2}
-  _skyboxSettings: {fileID: 11400000, guid: d2c66cb1c25e0ad41992f0e8593819c8, type: 2}
 --- !u!1001 &1371570602
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -501,7 +501,6 @@ GameObject:
   - component: {fileID: 320376432}
   - component: {fileID: 320376431}
   - component: {fileID: 320376430}
-  - component: {fileID: 320376429}
   m_Layer: 6
   m_Name: Magic Tower (Heaven)
   m_TagString: Untagged
@@ -509,20 +508,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
---- !u!114 &320376429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320376428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d71666b4e1b93545bd01d1bffc0bdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realm: {fileID: 11400000, guid: 6e2678d65c1d2e046b0cb3fb66e5bb67, type: 2}
-  _skyboxSettings: {fileID: 11400000, guid: 2880c82a09f0972419c93a13414a4c34, type: 2}
 --- !u!114 &320376430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,74 +708,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1001 &361348137
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 929532915577334781, guid: 54cd82d620e1d9641a758c20c55d4076,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.89
-      objectReference: {fileID: 0}
-    - target: {fileID: 929532915577334781, guid: 54cd82d620e1d9641a758c20c55d4076,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 929532915577334781, guid: 54cd82d620e1d9641a758c20c55d4076,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 929532915577334781, guid: 54cd82d620e1d9641a758c20c55d4076,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 929532915577334781, guid: 54cd82d620e1d9641a758c20c55d4076,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 929532915577334781, guid: 54cd82d620e1d9641a758c20c55d4076,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 929532915577334781, guid: 54cd82d620e1d9641a758c20c55d4076,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 929532915577334781, guid: 54cd82d620e1d9641a758c20c55d4076,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 929532915577334781, guid: 54cd82d620e1d9641a758c20c55d4076,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 929532915577334781, guid: 54cd82d620e1d9641a758c20c55d4076,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 929532915577334783, guid: 54cd82d620e1d9641a758c20c55d4076,
-        type: 3}
-      propertyPath: m_Name
-      value: Hell_Sign4_FightPit
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 54cd82d620e1d9641a758c20c55d4076, type: 3}
 --- !u!1001 &382327712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2401,7 +2318,7 @@ PrefabInstance:
     - target: {fileID: 3551323635323580680, guid: a891fe84fc70e384ba804aab4ebfd7d9,
         type: 3}
       propertyPath: _id
-      value: c6fc2339-abf5-41a6-afbe-db4c19179b02
+      value: 97c6429d-e350-4852-b4b2-e93fdcf6799a
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3042,7 +2959,6 @@ GameObject:
   - component: {fileID: 1273319928}
   - component: {fileID: 1273319927}
   - component: {fileID: 1273319926}
-  - component: {fileID: 1273319925}
   m_Layer: 7
   m_Name: Fighting Pit (Hell)
   m_TagString: Untagged
@@ -3050,20 +2966,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
---- !u!114 &1273319925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273319924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d71666b4e1b93545bd01d1bffc0bdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realm: {fileID: 11400000, guid: b4d6229eae5dd0c41b7a1171b0265464, type: 2}
-  _skyboxSettings: {fileID: 11400000, guid: d2c66cb1c25e0ad41992f0e8593819c8, type: 2}
 --- !u!114 &1273319926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3127,6 +3029,7 @@ Transform:
   - {fileID: 329293100}
   - {fileID: 1416251021}
   - {fileID: 554847989}
+  - {fileID: 1634390848}
   - {fileID: 1061298292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3658,7 +3561,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1273319928}
     m_Modifications:
     - target: {fileID: 1328726461148192076, guid: d9c991f9d1a53ce4eb782a4d458756ef,
         type: 3}
@@ -3668,7 +3571,7 @@ PrefabInstance:
     - target: {fileID: 1328726461148192076, guid: d9c991f9d1a53ce4eb782a4d458756ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000009536743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1328726461148192076, guid: d9c991f9d1a53ce4eb782a4d458756ef,
         type: 3}
@@ -3683,17 +3586,17 @@ PrefabInstance:
     - target: {fileID: 1328726461148192076, guid: d9c991f9d1a53ce4eb782a4d458756ef,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1328726461148192076, guid: d9c991f9d1a53ce4eb782a4d458756ef,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1328726461148192076, guid: d9c991f9d1a53ce4eb782a4d458756ef,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1328726461148192076, guid: d9c991f9d1a53ce4eb782a4d458756ef,
         type: 3}
@@ -3720,6 +3623,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c991f9d1a53ce4eb782a4d458756ef, type: 3}
+--- !u!4 &1634390848 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1328726461148192076, guid: d9c991f9d1a53ce4eb782a4d458756ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1634390847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1650059841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4747,5 +4656,3 @@ SceneRoots:
   - {fileID: 320376433}
   - {fileID: 1273319928}
   - {fileID: 1989806260}
-  - {fileID: 361348137}
-  - {fileID: 1634390847}
