@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
@@ -24,9 +25,19 @@ namespace DualityGame.Editor
         {
             Debug.Log(assetPath);
             if (!assetPath.EndsWith(".fbx")) return;
-            
+
+            //NormalizeNames(gameObject);
             HandleCustomColliders(gameObject);
             HandleSimpleColliders(gameObject);
+        }
+
+        private void NormalizeNames(GameObject gameObject)
+        {
+            foreach (var meshFilter in gameObject.GetComponentsInChildren<MeshFilter>())
+            {
+                meshFilter.name = Regex.Replace(meshFilter.name, @"\.\d{3}$", "");
+                meshFilter.gameObject.name = Regex.Replace(meshFilter.gameObject.name, @"\.\d{3}$", "");
+            }
         }
 
         private void HandleSimpleColliders(GameObject gameObject)
@@ -57,17 +68,17 @@ namespace DualityGame.Editor
 
         private void HandleCustomColliders(GameObject gameObject)
         {
+            var r = new Regex(@"^(.+)" + CustomColliderSuffix + @"(\.\d{3}$)?");
             var meshFilters = gameObject.GetComponentsInChildren<MeshFilter>()
                 .ToDictionary(filter => filter.gameObject.name);
             foreach (var meshFilter in meshFilters.Values.ToList())
             {
-                var name = meshFilter.name; 
-                if (!name.EndsWith(CustomColliderSuffix)) continue;
-                
-                var prefix = name.Replace(CustomColliderSuffix, "");
-                if (!meshFilters.TryGetValue(prefix, out var parentMeshFilter))
+                var match = r.Match(meshFilter.name);
+                if (!match.Success) continue;
+                var basename = match.Groups[1].Value + match.Groups[2].Value;
+                if (!meshFilters.TryGetValue(basename, out var parentMeshFilter))
                 {
-                    Debug.LogWarning($"Can't match collider {name} to GameObject in {assetPath}");
+                    Debug.LogWarning($"Can't match collider {meshFilter.name} to GameObject in {assetPath}");
                     continue;
                 }
 
@@ -75,7 +86,7 @@ namespace DualityGame.Editor
                 var meshCollider = parentMeshFilter.gameObject.AddComponent<MeshCollider>();
                 meshCollider.sharedMesh = meshFilter.sharedMesh;
 
-                meshFilters.Remove(name);
+                meshFilters.Remove(meshFilter.name);
                 Object.DestroyImmediate(meshFilter.gameObject);
             }
         }
