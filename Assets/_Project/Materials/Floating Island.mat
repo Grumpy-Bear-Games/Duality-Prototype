@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Floating Island
-  m_Shader: {fileID: -6465566751694194690, guid: ea7b8d9a940ebae4795ab9fb33988383,
+  m_Shader: {fileID: -6465566751694194690, guid: aafc82a7e04ce32449e889574036a052,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,6 +38,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Heaven_Texture:
+        m_Texture: {fileID: 2800000, guid: 10684440c7f7fcd4183db1a21476a32b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Hell_Texture:
+        m_Texture: {fileID: 2800000, guid: 546755cd310f4604386d00a00ce38a8b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Sides:
         m_Texture: {fileID: 2800000, guid: fa219547aff4e2f41ae26caa5ab3e428, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -80,12 +88,25 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Edge_Size: 0.00443
+    - _Edge_Treshold: 0.474
+    - _Heaven_Smoothness: 0
+    - _Hell_Smoothness: 0
+    - _Instability_Amount: 0.0309
+    - _Instability_Frequency: 0.0391
+    - _Noise_Power: 2
+    - _Noise_Scale: 0.28
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Sides_Smoothness: 0.5
+    - _Split: 0.37
+    - _Split_Treshold: 0.53
     - _Top_Angle_Adjust: 0.2
     - _Top_Smoothness: 0
     m_Colors:
+    - _Edge_Color: {r: 5.46709, g: 0.42380327, b: 0, a: 1}
+    - _Heaven_Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _Hell_Tint: {r: 1, g: 1, b: 1, a: 0}
     - _Sides_Tinit: {r: 1, g: 1, b: 1, a: 0}
     - _Sides_Tint: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
     - _Top_Tint: {r: 1, g: 1, b: 1, a: 1}
