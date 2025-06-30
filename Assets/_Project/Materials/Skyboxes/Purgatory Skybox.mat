@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Purgatory Skybox
-  m_Shader: {fileID: -6465566751694194690, guid: 161ededa008979c4880a294a2d2964af,
+  m_Shader: {fileID: -6465566751694194690, guid: 982ccf05c2896524faa7a99beb685f0b,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -86,6 +86,8 @@ Material:
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _AtmosphereThickness: 1
+    - _BUILTIN_QueueControl: -1
+    - _BUILTIN_QueueOffset: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -141,3 +143,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 9
+--- !u!114 &7936643576176430902
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
