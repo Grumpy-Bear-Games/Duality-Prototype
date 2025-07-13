@@ -66,16 +66,92 @@ MonoBehaviour:
     - model: {fileID: 8926484042661615011}
       id: 0
       isStickyNote: 0
-  stickyNoteInfos: []
+  stickyNoteInfos:
+  - title: One VFX graph to rule them all
+    position:
+      serializedVersion: 2
+      x: 1419
+      y: -1578
+      width: 322
+      height: 100
+    contents: 'Notice that we can have multiple particle systems in the same graph.
+      They can share components or be completely independent as here.
+
+'
+    theme: Classic
+    textSize: Small
+  - title: Spawn rate
+    position:
+      serializedVersion: 2
+      x: 1312
+      y: -1347
+      width: 186
+      height: 100
+    contents: 'Adjust this to get fewer and more snoring particles
+
+'
+    theme: Classic
+    textSize: Small
+  - title: Local vs World space
+    position:
+      serializedVersion: 2
+      x: 1330
+      y: -530
+      width: 314
+      height: 225
+    contents: 'Note that we have switch everything to local space here denoted with
+      the "Local" in the upper right corner, and the little "L" by the Arc Cone.
+      This is true for all components in this context. This allows us to set up the
+      particle relative to the GameObject instead of the world.
+
+
+      If you suddenly
+      can''t find your particles, start by checking if you''re accidentally in World
+      space. You switch between them by simply clicking on the "Local" or "L".'
+    theme: Classic
+    textSize: Small
+  - title: Custom attributes
+    position:
+      serializedVersion: 2
+      x: 1326
+      y: -846
+      width: 235
+      height: 100
+    contents: This custom attribute is used to blend randomly between the two different
+      gradients in the rendering. It sets a random number per particle.
+    theme: Classic
+    textSize: Small
+  - title: Important
+    position:
+      serializedVersion: 2
+      x: 338
+      y: 89
+      width: 231
+      height: 112
+    contents: Note that we drive the color/alpha "manually" instead of using e.g. 
+      a "Multiply Color over Life Time" component. This is a limitation when using
+      a custom shader.
+    theme: Classic
+    textSize: Small
+  - title: Setting the Realm
+    position:
+      serializedVersion: 2
+      x: 1329
+      y: 416
+      width: 212
+      height: 100
+    contents: Note that we set the Realm here as an integer. 6 is Heaven, 7 is Hell.
+    theme: Classic
+    textSize: Small
   categories:
   - name: Flame
     collapsed: 0
   uiBounds:
     serializedVersion: 2
     x: -50
-    y: -1457
+    y: -1578
     width: 2333
-    height: 2195
+    height: 2316
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1726,7 +1802,7 @@ MonoBehaviour:
   m_Parent: {fileID: 8926484042661614613}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661614862}
@@ -3464,7 +3540,7 @@ MonoBehaviour:
   m_Parent: {fileID: 8926484042661614613}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661614962}

@@ -33,41 +33,7 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614681}
       id: 0
       isStickyNote: 0
-  stickyNoteInfos:
-  - title: Important
-    position:
-      serializedVersion: 2
-      x: 407
-      y: 278
-      width: 231
-      height: 112
-    contents: Note that we drive the color/alpha "manually" instead of using e.g. 
-      a "Multiply Color over Life Time" component. This is a limitation when using
-      a custom shader.
-    theme: Classic
-    textSize: Small
-  - title: Setting the Realm
-    position:
-      serializedVersion: 2
-      x: 1358
-      y: 436
-      width: 212
-      height: 100
-    contents: Note that we set the Realm here as an integer. 6 is Heaven, 7 is Hell.
-    theme: Classic
-    textSize: Small
-  - title: Spawn rate
-    position:
-      serializedVersion: 2
-      x: 1337
-      y: -1281
-      width: 186
-      height: 100
-    contents: 'Adjust this to get fewer and more snoring particles
-
-'
-    theme: Classic
-    textSize: Small
+  stickyNoteInfos: []
   categories: []
   uiBounds:
     serializedVersion: 2
@@ -536,7 +502,7 @@ MonoBehaviour:
   m_Parent: {fileID: 8926484042661614613}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661614807}
@@ -1115,7 +1081,7 @@ MonoBehaviour:
   m_Parent: {fileID: 8926484042661614613}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661614843}
