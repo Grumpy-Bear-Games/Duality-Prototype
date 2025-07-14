@@ -2080,10 +2080,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1345999954475902421, guid: 146f3838e296c7247b9da4535858dcf7,
+    - target: {fileID: 1769874752349023423, guid: 146f3838e296c7247b9da4535858dcf7,
         type: 3}
-      propertyPath: m_Enabled
+      propertyPath: Priority.Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769874752349023423, guid: 146f3838e296c7247b9da4535858dcf7,
+        type: 3}
+      propertyPath: Priority.m_Value
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2637442319945863927, guid: 146f3838e296c7247b9da4535858dcf7,
         type: 3}
