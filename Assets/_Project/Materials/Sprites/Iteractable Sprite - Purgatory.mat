@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 9
+  version: 10
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -21,14 +21,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Iteractable Sprite - Purgatory
-  m_Shader: {fileID: -6465566751694194690, guid: 817abda9531d490498878da29ac09a7b,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 817abda9531d490498878da29ac09a7b, type: 3}
   m_Parent: {fileID: 2100000, guid: 834dc37a7d3fa45469d35477ec8a89b7, type: 2}
   m_ModifiedSerializedProperties: 2
   m_ValidKeywords:
   - _SUPPORT_OUTLINE
   - _SUPPORT_PULSING
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0

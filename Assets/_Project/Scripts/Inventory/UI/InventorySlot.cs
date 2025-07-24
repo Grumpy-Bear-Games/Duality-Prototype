@@ -3,11 +3,10 @@ using UnityEngine.UIElements;
 
 namespace DualityGame.Inventory.UI
 {
-    public class InventorySlot : VisualElement
+    [UxmlElement]
+    public partial class InventorySlot : VisualElement
     {
         private readonly VisualElement _itemSprite;
-
-        public new class UxmlFactory : UxmlFactory<InventorySlot> { }
 
         private const string StyleResource = "InventorySlot";
         private const string USSClassNameBase = "inventory-slot";

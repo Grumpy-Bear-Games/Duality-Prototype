@@ -3,37 +3,17 @@ using UnityEngine.UIElements;
 
 namespace DualityGame.Iteractables.UI
 {
-    public class InteractionPrompt : VisualElement
+
+    [UxmlElement]
+    public partial class InteractionPrompt : VisualElement
     {
         private IInteractable.InteractionType _interactionType;
         private bool _selected;
 
-        public new class UxmlFactory : UxmlFactory<InteractionPrompt, UxmlTraits> { }
-
-        public new class UxmlTraits : VisualElement.UxmlTraits
-        {
-            private readonly UxmlEnumAttributeDescription<IInteractable.InteractionType> _type = new()
-            {
-                name = "interaction-type", defaultValue = IInteractable.InteractionType.Touch
-            };
-
-            private readonly UxmlBoolAttributeDescription _selected = new()
-            {
-                name = "selected", defaultValue = false
-            };
-
-            public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
-            {
-                base.Init(ve, bag, cc);
-                if (ve is not InteractionPrompt interactionPrompt) return;
-                interactionPrompt.InteractionType = _type.GetValueFromBag(bag, cc);
-                interactionPrompt.Selected = _selected.GetValueFromBag(bag, cc);
-            }
-        }
-
         private const string USSClassNameBase = "interaction-prompt";
         private const string KeyUssClassName = USSClassNameBase + "__icon";
 
+        [UxmlAttribute]
         public IInteractable.InteractionType InteractionType
         {
             get => _interactionType;
@@ -44,6 +24,7 @@ namespace DualityGame.Iteractables.UI
             }
         }
 
+        [UxmlAttribute]
         public bool Selected
         {
             get => _selected;

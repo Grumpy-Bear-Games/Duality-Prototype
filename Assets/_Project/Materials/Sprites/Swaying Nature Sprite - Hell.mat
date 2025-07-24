@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Swaying Nature Sprite - Hell
-  m_Shader: {fileID: -6465566751694194690, guid: 817abda9531d490498878da29ac09a7b,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 817abda9531d490498878da29ac09a7b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -27,6 +26,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _EmissionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 9331b49af310f074a93d4fdc83246479, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -49,6 +52,7 @@ Material:
     - _Affected_By_Warp: 1
     - _Bobbing_Amplitude: 0.03
     - _Bobbing_Frequency: 2.5
+    - _EmissionStrength: 0
     - _Enable_Floating: 0
     - _Enable_Wind: 1
     - _Light_Adjustment: 1.669
@@ -87,4 +91,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 9
+  version: 10

@@ -65,12 +65,9 @@ namespace DualityGame.Editor.Inventory
             var menu = new GenericDropdownMenu();
             foreach (var itemType in _cachedItemTypes)
             {
-                var menuItem = listview.itemTemplate.CloneTree();
-                menuItem.dataSource = itemType;
-                menuItem.RegisterCallback<MouseDownEvent>(_ => _inventory.AddItem(itemType));
-                menu.AddItem(itemType.Name, menuItem);
+                menu.AddItem(itemType.Name, false, _ => _inventory.AddItem(itemType), null);
             }
-            menu.DropDown(addButton.worldBound, addButton);
+            menu.DropDown(addButton.worldBound, addButton, true);
         }
     }
 }
