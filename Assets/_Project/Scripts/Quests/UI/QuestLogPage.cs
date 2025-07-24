@@ -7,35 +7,35 @@ using UnityEditor;
 
 namespace DualityGame.Quests.UI
 {
-    public class QuestLogPage: VisualElement
+    [UxmlElement]
+    public partial class QuestLogPage: VisualElement
     {
         private readonly Label _titleLabel;
         private readonly Label _descriptionLabel;
         private readonly Image _questGiver;
 
-        public new class UxmlFactory : UxmlFactory<QuestLogPage, UxmlTraits> { }
+        private Quest _quest;
 
-        private Quest.QuestState _questState;
-
-        public Quest.QuestState QuestState
+        [UxmlAttribute]
+        public Quest Quest
         {
-            get => _questState;
+            get => _quest;
             set
             {
-                if (_questState == value) return;
-                _questState = value;
+                if (_quest == value) return;
+                _quest = value;
                 UpdateVisuals();
             }
         }
 
         private void UpdateVisuals()
         {
-            if (_questState != null)
+            if (_quest != null)
             {
                 style.display = DisplayStyle.Flex;
-                _titleLabel.text = _questState.Quest.TitleWithNPC;
-                _descriptionLabel.text = _questState.Quest.Description;
-                _questGiver.sprite = _questState.Quest.NPC == null ? null : _questState.Quest.NPC.PortraitByMood(Mood.Neutral);
+                _titleLabel.text = _quest.TitleWithNPC;
+                _descriptionLabel.text = _quest.Description;
+                _questGiver.sprite = _quest.NPC == null ? null : _quest.NPC.PortraitByMood(Mood.Neutral);
             }
             else
             {

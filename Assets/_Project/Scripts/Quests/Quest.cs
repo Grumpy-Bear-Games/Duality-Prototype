@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Games.GrumpyBear.Core.SaveSystem;
 using NodeCanvas.DialogueTrees;
+using Unity.Properties;
 using UnityEngine;
 
 namespace DualityGame.Quests
@@ -11,9 +12,9 @@ namespace DualityGame.Quests
     public class Quest : SerializableScriptableObject<Quest>
     {
         private static readonly Dictionary<Quest, QuestState> _questStates = new();
-        public static IEnumerable<QuestState> VisibleQuests => _questStates.Values.Where(questState => questState.Visible);
+        public static IEnumerable<Quest> VisibleQuests => _questStates.Values.Where(questState => questState.Visible).Select(questState => questState.Quest);
 
-        public static event Action<QuestState> OnChange;
+        public static event Action<Quest> OnChange;
         public static event Action AfterStateRestored;
 
 
@@ -26,12 +27,16 @@ namespace DualityGame.Quests
             QuestVisibility.ShowAutomaticallyWhenOngoing;
         #endregion
 
+        [CreateProperty]
         public string TitleWithNPC => NPC != null ? $"{Title} ({NPC.Name})" : Title;
 
+        [CreateProperty]
         public bool IsVisible => _questStates.TryGetValue(this, out var questState) && questState.Visible;
 
+        [CreateProperty]
         public long Started => _questStates.TryGetValue(this, out var questState) ? questState.Started : 0;
 
+        [CreateProperty]
         public QuestStatus Status => _questStates.TryGetValue(this, out var questState) ? questState.Status : QuestStatus.NotStarted;
 
         public void Begin()
@@ -42,7 +47,7 @@ namespace DualityGame.Quests
             if (Visibility == QuestVisibility.ShowAutomaticallyWhenOngoing) {
                 Notifications.Notifications.Add(NPC.PortraitByMood(Mood.Neutral), $"You started a new quest: {Title}");
             }
-            OnChange?.Invoke(questState);
+            OnChange?.Invoke(this);
         }
 
         public void Reveal()
@@ -52,7 +57,7 @@ namespace DualityGame.Quests
             if (questState.Visible) return;
             questState.Visible = true;
             Notifications.Notifications.Add(NPC.PortraitByMood(Mood.Neutral), $"Quest Revealed: {Title}");
-            OnChange?.Invoke(questState);
+            OnChange?.Invoke(this);
         }
 
         public void Succeed()
@@ -78,7 +83,7 @@ namespace DualityGame.Quests
             if (questState.Status == status) return;
             questState.Visible = true;
             questState.Status = status;
-            OnChange?.Invoke(questState);
+            OnChange?.Invoke(this);
         }
 
 
@@ -98,7 +103,7 @@ namespace DualityGame.Quests
         }
         #endregion
 
-        public class QuestState
+        private class QuestState
         {
             public readonly Quest Quest;
             public readonly long Started;

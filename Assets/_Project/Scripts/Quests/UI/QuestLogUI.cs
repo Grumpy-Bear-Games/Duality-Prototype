@@ -15,7 +15,7 @@ namespace DualityGame.Quests.UI
 
         [SerializeField] private int _questIndex;
 
-        private readonly List<Quest.QuestState> _questEntries = new();
+        private readonly List<Quest> _quests = new();
 
         private void Awake()
         {
@@ -26,32 +26,33 @@ namespace DualityGame.Quests.UI
 
             _questList = _uiDocument.rootVisualElement.Q<ListView>();
             _questList.makeItem = () => new QuestIndexItem();
-            _questList.bindItem = (item, idx) => (item as QuestIndexItem).QuestState = _questEntries[idx];
-            _questList.itemsSource = _questEntries;
-            _questList.selectionChanged += _ => _queryLogPage.QuestState = _questList.selectedItem as Quest.QuestState;
+            _questList.bindItem = (item, idx) => (item as QuestIndexItem).Quest = _quests[idx];
+            _questList.itemsSource = _quests;
+            _questList.selectionChanged += _ => _queryLogPage.Quest = _questList.selectedItem as Quest;
         }
 
         private void UpdateQuests()
         {
-            var previousSelected = _questList.selectedItem as Quest.QuestState;
+            var previousSelected = _questList.selectedItem as Quest;
             
-            _questEntries.Clear();
-            _questEntries.AddRange(Quest.VisibleQuests);
-            _questEntries.Sort((a,b) => (int)(a.Started - b.Started));
+            _quests.Clear();
+            _quests.AddRange(Quest.VisibleQuests);
+            _quests.Sort((a,b) => (int)(a.Started - b.Started));
+
             _questList.RefreshItems();
 
-            if (_questEntries.Count == 0) _queryLogPage.QuestState = null;
+            if (_quests.Count == 0) _queryLogPage.Quest = null;
             
             if (previousSelected == null) {
                 _questList.SetSelection(0);
-            } else if (_questEntries.Contains(previousSelected)) {
-                _questList.SetSelection(_questEntries.IndexOf(previousSelected));
+            } else if (_quests.Contains(previousSelected)) {
+                _questList.SetSelection(_quests.IndexOf(previousSelected));
             } else {
                 _questList.SetSelection(0);
             }
         }
 
-        private void OnQuestyChange(Quest.QuestState _) => UpdateQuests();
+        private void OnQuestyChange(Quest _) => UpdateQuests();
 
         private void OnEnable()
         {
