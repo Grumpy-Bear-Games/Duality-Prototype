@@ -713,8 +713,10 @@ namespace NodeCanvas.Framework
         //Shows the breakpoint mark icon if node is set as a breakpoint
         static void DrawBreakpoint(Node node) {
             if ( node.isBreakpoint ) {
-                var rect = new Rect(node.rect.xMax - 18, node.rect.y - 18, 16, 16);
-                GUI.DrawTexture(rect, Icons.redCircle);
+                var rect = new Rect(node.rect.xMax - 16, node.rect.y - 16, 14, 14);
+                GUI.color = new Color(1f, 0.3f, 0.3f);
+                GUI.DrawTexture(rect, StyleSheet.circle);
+                GUI.color = Color.white;
             }
         }
 
@@ -958,12 +960,15 @@ namespace NodeCanvas.Framework
 
             if ( fullDrawPass || drawCanvas.Overlaps(rect) ) {
                 var canHaveMoreOutConnection = outConnections.Count < maxOutConnections || maxOutConnections == -1;
-                Rect nodeOutputBox = default(Rect);
+                Rect nodeOutputBox = default;
                 if ( graph.flowDirection == PlanarDirection.Vertical ) {
-                    nodeOutputBox = new Rect(rect.x, rect.yMax - 2, rect.width, canHaveMoreOutConnection ? 12 : 10);
+                    nodeOutputBox = new Rect(0, 0, canHaveMoreOutConnection ? rect.width : 30, 12);
+                    nodeOutputBox.center = new Vector2(rect.center.x, rect.yMax + 4);
                 }
                 if ( graph.flowDirection == PlanarDirection.Horizontal ) {
-                    nodeOutputBox = new Rect(rect.xMax, rect.yMin, canHaveMoreOutConnection ? 12 : 10, rect.height);
+                    nodeOutputBox = new Rect(0, 0, 12, canHaveMoreOutConnection ? rect.height : 30);
+                    nodeOutputBox.yMin += 2;
+                    nodeOutputBox.center = new Vector2(rect.xMax + 4, rect.center.y);
                 }
                 Styles.Draw(nodeOutputBox, StyleSheet.nodePortContainer);
 

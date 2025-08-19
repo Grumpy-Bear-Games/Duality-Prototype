@@ -1,4 +1,4 @@
-using NodeCanvas.Framework;
+﻿using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
 
@@ -10,6 +10,7 @@ namespace NodeCanvas.BehaviourTrees
     [Description("Works like a normal Selector, but when a child returns Success, that child will be moved to the end.\nAs a result, previously Failed children will always be checked first and recently Successful children last.")]
     [ParadoxNotion.Design.Icon("FlipSelector")]
     [Color("b3ff7f")]
+    [System.Obsolete]
     public class FlipSelector : BTComposite
     {
 

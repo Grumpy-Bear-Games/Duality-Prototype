@@ -1,4 +1,4 @@
-using NodeCanvas.Framework;
+﻿using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
 
@@ -6,15 +6,19 @@ using UnityEngine;
 namespace NodeCanvas.BehaviourTrees
 {
 
+    [System.Obsolete("Use Conditional Evaluator")]
     [Name("Interrupt")]
     [Category("Decorators")]
-    [Description("Executes and returns the child status. If the condition is or becomes true, the child is interrupted and returns Failure.")]
+    [Description("Executes and returns the child status if the condition is false. Returns the specified status if the condition is or becomes true.")]
     [ParadoxNotion.Design.Icon("Interruptor")]
     public class Interruptor : BTDecorator, ITaskAssignable<ConditionTask>
     {
 
         [SerializeField]
         private ConditionTask _condition;
+
+        [Tooltip("The status that will be returned if the assigned condition is or becomes true.")]
+        public FinalStatus conditionSuccessReturn = FinalStatus.Failure;
 
         public ConditionTask condition {
             get { return _condition; }
@@ -48,11 +52,11 @@ namespace NodeCanvas.BehaviourTrees
                 decoratedConnection.Reset();
             }
 
-            return Status.Failure;
+            return (Status)conditionSuccessReturn;
         }
 
         protected override void OnReset() {
-            if ( condition != null ) { condition.Disable(); }
+            condition?.Disable();
         }
     }
 }

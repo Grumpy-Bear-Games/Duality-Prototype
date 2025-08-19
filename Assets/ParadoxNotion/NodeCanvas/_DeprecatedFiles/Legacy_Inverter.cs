@@ -1,4 +1,4 @@
-using NodeCanvas.Framework;
+﻿using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
 
@@ -6,6 +6,7 @@ using UnityEngine;
 namespace NodeCanvas.BehaviourTrees
 {
 
+    [System.Obsolete("Use Succeed, Fail, Optional")]
     [Name("Invert")]
     [Category("Decorators")]
     [Description("Inverts Success to Failure and Failure to Success.")]

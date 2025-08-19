@@ -1,4 +1,4 @@
-using NodeCanvas.Framework;
+﻿using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
 
@@ -6,6 +6,7 @@ using UnityEngine;
 namespace NodeCanvas.BehaviourTrees
 {
 
+    [System.Obsolete("Use Succeed, Fail, Optional")]
     [Name("Remap")]
     [Category("Decorators")]
     [Description("Remaps the child status to another status. Used to either invert the child's return status or to always return a specific status.")]

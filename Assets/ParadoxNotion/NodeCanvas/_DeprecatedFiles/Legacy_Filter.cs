@@ -1,12 +1,12 @@
-using System.Collections;
+﻿using System.Collections;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
 
-
 namespace NodeCanvas.BehaviourTrees
 {
 
+    [System.Obsolete("Use Cooldown or Limiter")]
     [Name("Filter")]
     [Category("Decorators")]
     [Description("Filters the access of its child either a specific number of times, or every specific amount of time.")]
