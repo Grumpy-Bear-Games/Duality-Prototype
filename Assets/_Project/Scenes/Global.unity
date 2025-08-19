@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -222,12 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99b0f8c995a48e7b71c2129e48fabce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _saveKey: {fileID: -1262449364780487903, guid: 4419d82f33d36e848b3ed5af4c8da37e,
-    type: 3}
-  _loadKey: {fileID: -236259927305584345, guid: 4419d82f33d36e848b3ed5af4c8da37e,
-    type: 3}
-  _clearKey: {fileID: -6430644498144318348, guid: 4419d82f33d36e848b3ed5af4c8da37e,
-    type: 3}
+  _saveKey: {fileID: -1262449364780487903, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
+  _loadKey: {fileID: -236259927305584345, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
+  _clearKey: {fileID: -6430644498144318348, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
   _gameSession: {fileID: 11400000, guid: 98b9f03894a52c540bb9742fab9514c1, type: 2}
 --- !u!1 &618980495
 GameObject:
@@ -335,6 +332,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!1 &1196011973
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +510,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -728276970726177445, guid: 29f4ae2d2b8e7cb4d82709355a08bc16, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 16e8552399e8ec543816d1479b428376, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 16e8552399e8ec543816d1479b428376, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
