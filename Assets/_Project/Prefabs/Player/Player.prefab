@@ -4888,6 +4888,7 @@ ParticleSystemRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5012,7 +5013,6 @@ CharacterController:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5356,6 +5356,8 @@ MonoBehaviour:
     Of Death","_id":"5f169fdb-0b65-43b7-8f4a-cb5f95718938","$type":"NodeCanvas.Framework.Variable`1[[DualityGame.Player.CauseOfDeath,
     DualityGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Number
     of Deaths":{"_name":"Number of Deaths","_id":"b9c74cbe-e626-4aee-b4fb-91bd8912f487","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Deaths
+    By Kasadya":{"_name":"Deaths By Kasadya","_id":"f87c59ad-6099-4a4c-89e6-10157a3480a3","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Died
     Since Last Conversation With Dante":{"_name":"Died Since Last Conversation With
     Dante","_id":"43bf5239-d90f-4cbb-8c2d-0f09697db98a","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
@@ -5381,6 +5383,9 @@ MonoBehaviour:
       DualityGame, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references: []
   - _json: '{"_name":"Number of Deaths","_id":"b9c74cbe-e626-4aee-b4fb-91bd8912f487","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_name":"Deaths By Kasadya","_id":"f87c59ad-6099-4a4c-89e6-10157a3480a3","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
   - _json: '{"_name":"Died Since Last Conversation With Dante","_id":"43bf5239-d90f-4cbb-8c2d-0f09697db98a","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
@@ -5529,6 +5534,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10458,6 +10464,7 @@ ParticleSystemRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
