@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using DualityGame.Quests;
+﻿using DualityGame.Quests;
+using NodeCanvas.DialogueTrees;
 using UnityEditor;
 using UnityEditor.UIElements;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace DualityGame.Editor.Quests
@@ -10,99 +10,45 @@ namespace DualityGame.Editor.Quests
     [CustomEditor(typeof(Quest))]
     public class QuestEditor : UnityEditor.Editor
     {
-        private readonly List<Checkpoint> _checkpoints = new();
-
-        private void RefreshCheckpoints()
-        {
-            var path = AssetDatabase.GetAssetPath(target);
-            var checkpointsInAsset = AssetDatabase.LoadAllAssetRepresentationsAtPath(path)
-                .Select(obj => obj as Checkpoint)
-                .Where(obj => obj != null);
-
-            _checkpoints.Clear();
-            _checkpoints.AddRange(checkpointsInAsset);
-        }
+        [SerializeField] private VisualTreeAsset _editor;
 
         public override VisualElement CreateInspectorGUI()
         {
-            var root = new VisualElement();
-            InspectorElement.FillDefaultInspector(root, serializedObject, this);
+            var root = _editor.CloneTree();
 
-            RefreshCheckpoints();
-
-            var checkpointsList = new ListView
+            root.Q<PropertyField>("NPC").RegisterCallback<SerializedPropertyChangeEvent>(ev =>
             {
-                showAddRemoveFooter = true,
-                headerTitle = "Checkpoints",
-                showFoldoutHeader = true,
-                showBoundCollectionSize = false,
-                itemsSource = _checkpoints,
-                showBorder = true,
-                showAlternatingRowBackgrounds = AlternatingRowBackground.ContentOnly
-            };
+                if (ev.target is not VisualElement ve) return;
+                UpdateNPCPortrait(ve.parent.Q<Image>("NPCPortrait"), ev.changedProperty);
+            });
+            UpdateNPCPortrait(root.Q<Image>("NPCPortrait"), serializedObject.FindProperty("_npc"));
 
-            checkpointsList.makeItem += CheckpointsMakeItem;
-            checkpointsList.bindItem += CheckpointsBindItem;
-            checkpointsList.itemsAdded += AddCheckpoints;
-            checkpointsList.itemsRemoved += RemoveCheckpoints;
+            if (target is Quest quest)
+            {
+                var status = root.Q<DropdownField>("Status");
+                status.index = (int) quest.Status;
+                status.RegisterValueChangedCallback(evt =>
+                {
+                    if (evt.currentTarget is not DropdownField dropdown) return;
+                    quest.Status = (Quest.QuestStatus) dropdown.index;
+                });
 
-            root.Add(checkpointsList);
+            }
 
             return root;
         }
 
-        private void AddCheckpoints(IEnumerable<int> indicies)
+
+        private static void UpdateNPCPortrait(Image image, SerializedProperty property)
         {
-            foreach (var index in indicies)
+            if (property.objectReferenceValue == null)
             {
-                var checkpoint = CreateInstance<Checkpoint>();
-                checkpoint.name = $"<new checkpoint {index}>";
-                AssetDatabase.AddObjectToAsset(checkpoint, target);
+                image.sprite = null;
+                return;
             }
-            AssetDatabase.SaveAssetIfDirty(target);
-            RefreshCheckpoints();
-        }
 
-        private void RemoveCheckpoints(IEnumerable<int> indicies)
-        {
-            EditorUtility.SetDirty(target);
-            foreach (var index in indicies)
-            {
-                var checkpoint = _checkpoints[index];
-                AssetDatabase.RemoveObjectFromAsset(checkpoint);
-                DestroyImmediate(checkpoint);
-            }
-            AssetDatabase.SaveAssetIfDirty(target);
-        }
-
-        private void CheckpointsBindItem(VisualElement checkpointElement, int index)
-        {
-            var checkpoint = _checkpoints[index];
-            if (checkpoint == null) return;
-            checkpointElement.Q<TextField>().SetValueWithoutNotify(checkpoint.name);
-            checkpointElement.Q<TextField>().userData = checkpoint;
-        }
-
-        private VisualElement CheckpointsMakeItem()
-        {
-            var root = new VisualElement();
-            var nameField = new TextField
-            {
-                label = "Name",
-                isDelayed = true
-            };
-            nameField.RegisterValueChangedCallback(RenameCheckpoint);
-            root.Add(nameField);
-            return root;
-        }
-
-        private void RenameCheckpoint(ChangeEvent<string> evt)
-        {
-            if (evt.target is not TextField textField) return;
-            if (textField.userData is not Checkpoint checkpoint) return;
-            checkpoint.name = evt.newValue;
-            EditorUtility.SetDirty(target);
-            AssetDatabase.SaveAssetIfDirty(target);
+            if (property.objectReferenceValue is not ActorAsset npc) return;
+            image.sprite = npc.PortraitByMood(Mood.Neutral);
         }
     }
 }

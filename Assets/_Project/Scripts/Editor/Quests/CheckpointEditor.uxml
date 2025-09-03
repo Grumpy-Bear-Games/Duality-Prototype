@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns:ue="UnityEngine.UIElements" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" editor-extension-mode="True" schemaLocation="UnityEngine.UIElements file:/C:/Users/parmu/Documents/Projects/Unity%20Projects/Duality%20Prototype/UIElementsSchema/UnityEngine.UIElements.xsd">
+    <ui:VisualElement name="CheckpointEditor" data-source-type="DualityGame.Quests.Checkpoint, DualityGame" style="flex-grow: 1;">
+        <ui:TextField label="Name" readonly="true">
+            <Bindings>
+                <ui:DataBinding property="value" data-source-path="Name" binding-mode="ToTarget" />
+            </Bindings>
+        </ui:TextField>
+        <ui:GroupBox text="Quest Log Entries">
+            <ui:TextField name="QuestLogEntry" label="Before Reached" binding-path="_questLogEntry" />
+            <ui:TextField name="QuestLogEntryWhenReached" label="When Reached" binding-path="_questLogEntryWhenReached" />
+        </ui:GroupBox>
+        <ui:Toggle label="Reached">
+            <Bindings>
+                <ui:DataBinding property="value" data-source-path="Reached" binding-mode="TwoWay" />
+            </Bindings>
+        </ui:Toggle>
+    </ui:VisualElement>
+</ui:UXML>

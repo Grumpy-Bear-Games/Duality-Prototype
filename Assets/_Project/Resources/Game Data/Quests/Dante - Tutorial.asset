@@ -14,10 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ObjectGuid>k__BackingField:
     _data: 71e1cde5d75f64723b14e501171b2e8340f3ad0000000000
-  <Title>k__BackingField: There's Always A First
-  <Description>k__BackingField: Dante asked me to find some rat in a box. Weird....
-  <NPC>k__BackingField: {fileID: 11400000, guid: 7630f2d2bf39b814c898b3507f3e85a1,
-    type: 2}
-  <Realm>k__BackingField: {fileID: 11400000, guid: 549395d77f1552d46896ce28d9f379be,
-    type: 2}
-  <Visibility>k__BackingField: 0
+  _title: There's Always A First
+  _description: Dante asked me to find him a sandwich. Weird....
+  _npc: {fileID: 11400000, guid: 7630f2d2bf39b814c898b3507f3e85a1, type: 2}
+  _npcVisibility:
+    _visibility: 0
+    _checkpoints: []
+  _visibility: 0
+  _questItems:
+  - _itemType: {fileID: 11400000, guid: d5a8b7eb6a46939409bcb17fdb3036dd, type: 2}
+    _visibility: 0
+    _checkpoints: []
+  _checkpointGroups: []

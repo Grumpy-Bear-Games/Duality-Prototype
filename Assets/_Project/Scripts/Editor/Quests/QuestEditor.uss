@@ -1,0 +1,34 @@
+﻿GroupBox {
+    margin: 0;
+}
+
+#Quest > GroupBox,
+#Quest > Foldout {
+    margin: 10px 0;
+    padding: 0 0 5px 0;
+    border-width: 1px;
+    border-color: var(--unity-colors-helpbox-border	);
+    border-radius: 5px;
+}
+
+#Quest > GroupBox > .unity-group-box__label,
+#Quest > Foldout > .unity-foldout__toggle {
+    font-size: 120%;
+    background-color: var(--unity-colors-headerbar-background);
+}
+
+#CheckpointGroup {
+    margin-bottom: 10px;
+}
+
+#NPCPortrait {
+    width: 150px;
+    height: 150px;
+    align-self: flex-end;
+}
+
+#QuestItem #ItemTypeSprite {
+    width: 150px;
+    height: 150px;
+    align-self: flex-end;
+}

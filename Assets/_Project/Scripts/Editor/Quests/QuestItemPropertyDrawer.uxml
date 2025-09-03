@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/_Project/Scripts/Editor/Quests/QuestEditor.uss?fileID=7433441132597879392&amp;guid=772921682b424450b3a14260fbb484af&amp;type=3#QuestEditor" />
+    <ui:VisualElement name="QuestItem" data-source-type="DualityGame.Quests.Quest+QuestItem, DualityGame">
+        <uie:PropertyField name="ItemType" label="Item Type" binding-path="_itemType"/>
+        <ui:Image name="ItemTypeSprite" />
+
+        <uie:PropertyField name="Visibility" label="Visibility" binding-path="_visibility" />
+        <ui:GroupBox text="Checkpoints" name="Checkpoints" class="">
+            <ui:ListView binding-path="_checkpoints" show-add-remove-footer="true" virtualization-method="DynamicHeight"
+                         reorderable="true" binding-source-selection-mode="AutoAssign" show-bound-collection-size="false"
+                         reorder-mode="Animated" />
+            <ui:HelpBox name="EmptyCheckPointsWarning" message-type="Warning" text="Please add at least one checkpoint"/>
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>

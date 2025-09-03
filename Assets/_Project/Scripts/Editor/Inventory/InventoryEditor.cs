@@ -36,10 +36,7 @@ namespace DualityGame.Editor.Inventory
             };
             InspectorElement.FillDefaultInspector(root, serializedObject, this);
 
-            if (EditorApplication.isPlayingOrWillChangePlaymode)
-            {
-                root.Add(CreateRuntimeInspector());
-            }
+            root.Add(CreateRuntimeInspector());
             return root;
         }
 
@@ -67,7 +64,7 @@ namespace DualityGame.Editor.Inventory
             {
                 menu.AddItem(itemType.Name, false, _ => _inventory.AddItem(itemType), null);
             }
-            menu.DropDown(addButton.worldBound, addButton, true);
+            menu.DropDown(addButton.worldBound, addButton, true, true);
         }
     }
 }

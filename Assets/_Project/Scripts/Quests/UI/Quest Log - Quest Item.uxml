@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/Scripts/Quests/UI/Quest%20Log.uss?fileID=7433441132597879392&amp;guid=b4c0ef45e16a57c4e802852c56c33a5d&amp;type=3#Quest Log" />
+    <DualityGame.UI.AspectRatioElement name="InventorySprite" data-source-type="DualityGame.Quests.QuestView+QuestItemView, DualityGame">
+        <DualityGame.UI.AspectRatioElement name="ItemCountBox">
+            <ui:Label text="5" name="ItemCount">
+                <Bindings>
+                    <ui:DataBinding property="text" data-source-path="Amount" binding-mode="ToTarget" />
+                </Bindings>
+            </ui:Label>
+        </DualityGame.UI.AspectRatioElement>
+        <Bindings>
+            <ui:DataBinding property="style.backgroundImage" data-source-path="ItemType.InventorySprite" binding-mode="ToTargetOnce" />
+            <DualityGame.UI.ToggleClassBinding property="__ignore1__" data-source-path="HasInInventory" class="has_in_inventory"/>
+            <DualityGame.UI.ToggleClassBinding property="__ignore2__" data-source-path="HasMultipleInInventory" class="has_multiple"/>
+        </Bindings>
+    </DualityGame.UI.AspectRatioElement>
+</ui:UXML>

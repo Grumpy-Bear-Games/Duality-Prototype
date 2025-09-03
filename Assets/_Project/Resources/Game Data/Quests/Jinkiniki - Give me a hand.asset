@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ObjectGuid>k__BackingField:
     _data: dcfa5de4b6bd14ab189d12555d92479640f3ad0000000000
-  <Title>k__BackingField: Give me a hand
-  <Description>k__BackingField: Grisly but oddly satisfying
-  <NPC>k__BackingField: {fileID: 11400000, guid: ec132dd307ae0ce4cb4cc1dc869f50fe,
-    type: 2}
-  <Realm>k__BackingField: {fileID: 11400000, guid: b4d6229eae5dd0c41b7a1171b0265464,
-    type: 2}
-  <Visibility>k__BackingField: 0
+  _title: Give me a hand
+  _description: Grisly but oddly satisfying
+  _npc: {fileID: 11400000, guid: ec132dd307ae0ce4cb4cc1dc869f50fe, type: 2}
+  _npcVisibility:
+    _visibility: 0
+    _checkpoints: []
+  _visibility: 0
+  _questItems: []
+  _checkpointGroups: []

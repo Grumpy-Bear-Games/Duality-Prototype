@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/Scripts/Quests/UI/Quest%20Log.uss?fileID=7433441132597879392&amp;guid=b4c0ef45e16a57c4e802852c56c33a5d&amp;type=3#Quest Log" />
+    <DualityGame.UI.ChecklistItem data-source-type="DualityGame.Quests.QuestView, DualityGame" Title="Quest">
+        <Bindings>
+            <ui:DataBinding property="Title" data-source-path="TitleWithNPC" binding-mode="ToTarget" />
+            <ui:DataBinding property="Checked" data-source-path="HasCompleted" binding-mode="ToTarget" />
+        </Bindings>
+    </DualityGame.UI.ChecklistItem>
+</ui:UXML>

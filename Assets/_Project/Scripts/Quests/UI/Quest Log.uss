@@ -1,0 +1,274 @@
+:root {
+    --fade-duration: 0.2s;
+    justify-content: space-around;
+    align-items: stretch;
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF");
+    font-size: 23px;
+}
+
+.unity-scroller--vertical #unity-tracker {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    width: 5px;
+    align-self: auto;
+    translate: 9px 0;
+}
+
+.unity-scroller--vertical #unity-dragger-border {
+    display: none;
+}
+
+.unity-scroller--vertical #unity-dragger {
+    background-image: url("project://database/Assets/_Project/Sprites/UI_Sprites/Menus/UI_Button_Diamond.png?fileID=21300000&guid=626315e6d91b91a46b88765b0e16ccfb&type=3#UI_Button_Diamond");
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    max-height: 18px;
+    scale: 2 2;
+}
+
+.unity-scroller--vertical #unity-low-button {
+    display: none;
+}
+
+.unity-scroller--vertical #unity-high-button {
+    display: none;
+}
+
+.unity-scroller--vertical #unity-slider {
+    overflow: visible;
+}
+
+.checklist-item {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 35px;
+    color: black;
+    padding-top: 10px;
+}
+
+.checklist-item__tick {
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-image: url("project://database/Assets/_Project/Sprites/UI_Sprites/Menus/UI_Button1_Detail1.png?fileID=21300000&guid=fa64434c45343bb4798c9eec9ba0af2c&type=3#UI_Button1_Detail1");
+    margin: 0;
+    padding: 0 0 0 8px;
+    -unity-text-align: lower-left;
+    font-size: 300%;
+    padding-left: 6px;
+}
+
+.checklist-item__title {
+    flex-grow: 0;
+    padding: 0 0 0 20px;
+}
+
+.unity-collection-view__item--selected {
+    background-color: initial;
+}
+
+.unity-collection-view__item:hover {
+    background-color: initial;
+}
+
+.unity-collection-view__item .checklist-item {
+    color: rgb(66,66,66);
+}
+
+.unity-collection-view__item .checklist-item__title {
+}
+
+.unity-collection-view__item .checklist-item__tick {
+    -unity-background-image-tint-color: rgba(255,255,255,0.5);
+}
+
+.unity-collection-view__item:hover .checklist-item {
+    color: rgb(0,0,0);
+}
+
+.unity-collection-view__item:hover .checklist-item__title {
+}
+
+.unity-collection-view__item:hover .checklist-item__tick {
+    -unity-background-image-tint-color: rgba(255,255,255,1);
+}
+
+.unity-collection-view__item--selected .checklist-item {
+    scale: 1.05 1.05;
+    color: rgb(0,0,0);
+}
+
+.unity-collection-view__item--selected .checklist-item__title {
+    -unity-font-style: bold;
+}
+
+.unity-collection-view__item--selected .checklist-item__tick {
+    -unity-background-image-tint-color: rgba(255, 255, 255, 1);
+}
+
+
+#QuestLogBook {
+    flex-basis: 90%;
+}
+
+#QuestLogBook > .aspect-ratio-container__content {
+    background-image: url("project://database/Assets/_Project/Sprites/UI_Sprites/Menus/Journal_Sprites/Journal_Back.png?fileID=21300000&guid=cca9930f7ea28dd40bb4a15f9ad94b9d&type=3#Journal_Back");
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3% 4%;
+    flex-grow: 1;
+}
+
+#QuestIndexPage {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 48%;
+}
+
+#QuestIndexPage #IndexTitle {
+    font-size: 280%;
+    -unity-text-align: upper-center;
+    align-self: center;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-bottom-width: 2px;
+    padding-bottom: 0;
+}
+
+#QuestIndex .unity-list-view__empty-label {
+    font-size: 130%;
+    -unity-font-style: italic;
+    -unity-text-align: middle-center;
+    padding-top: 50px;
+}
+
+#QuestDetailsPage {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#QuestDetailsPage #HeaderRow {
+    flex-grow: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#QuestDetailsPage #QuestGiver {
+    background-image: url("project://database/Assets/_Project/Sprites/UI_Sprites/Portraits/UI_PortraitBg_Black.png?fileID=21300000&guid=a93cf7c3b4fe1b64bb5fae96182d470e&type=3#UI_PortraitBg_Black");
+}
+
+#QuestDetailsPage #HeaderRow > #QuestGiver {
+}
+
+#QuestDetailsPage .header-image {
+    flex-basis: 25%;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+#QuestDetailsPage #Title {
+    font-size: 145%;
+    -unity-text-align: upper-center;
+    margin-top: 4%;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-bottom-width: 2px;
+    flex-shrink: 1;
+    white-space: normal;
+    align-self: auto;
+}
+
+#QuestDetailsPage ScrollView {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+#QuestDetailsPage :focus {
+    border-left-color: rgb(255, 0, 0);
+    border-right-color: rgb(255, 0, 0);
+    border-top-color: rgb(255, 0, 0);
+    border-bottom-color: rgb(255, 0, 0);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#QuestDetailsPage #Description {
+    padding-bottom: 50px;
+    padding-left: 30px;
+    white-space: normal;
+}
+
+#Checkpoints .unity-collection-view__item {
+    height: 80px;
+}
+
+#QuestItems {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    flex-grow: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: auto;
+}
+
+#QuestItems .collection-view__item {
+    flex-basis: 12.49%;
+    flex-grow: 0;
+    border-left-color: rgb(255, 0, 0);
+    border-right-color: rgb(255, 0, 0);
+    border-top-color: rgb(255, 0, 0);
+    border-bottom-color: rgb(255, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    align-self: auto;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+}
+
+#InventorySprite {
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    -unity-background-image-tint-color: rgba(0, 0, 0, 0.6);
+}
+
+#InventorySprite.has_in_inventory {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+#InventorySprite #ItemCountBox {
+    flex-shrink: 0;
+    flex-basis: 40%;
+    border-width: 2px;
+    border-radius: 10%;
+    border-color: rgb(0, 0, 0);
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    translate: 0 25%;
+    display: none;
+}
+
+#InventorySprite.has_multiple #ItemCountBox {
+    display: flex;
+}
+
+#InventorySprite #ItemCount {
+    color: rgb(0, 0, 0);
+    -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/NovaFlatSlim-Bold%20SDF.asset?fileID=11400000&guid=063bc47a52fd46248a888e28c7a1f372&type=2#NovaFlatSlim-Bold SDF");
+}

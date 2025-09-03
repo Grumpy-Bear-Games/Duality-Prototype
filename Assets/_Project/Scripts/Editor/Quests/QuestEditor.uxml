@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/_Project/Scripts/Editor/Quests/QuestEditor.uss?fileID=7433441132597879392&amp;guid=772921682b424450b3a14260fbb484af&amp;type=3#QuestEditor" />
+    <ui:VisualElement name="Quest">
+        <ui:TabView>
+            <ui:Tab label="Quest Details">
+                <uie:PropertyField name="Title" label="Title" binding-path="_title" />
+                <ui:TextField name="Description" label="Description" multiline="true" binding-path="_description" class="unity-base-field__aligned" style="white-space: normal;" />
+                <uie:PropertyField name="StampRealm" label="Stamp Realm" binding-path="_stampRealm" />
+                <uie:PropertyField name="Visibility" label="Quest Visibility" binding-path="_visibility" />
+                <ui:Foldout text="NPC">
+                    <uie:PropertyField name="NPC" label="NPC" binding-path="_npc" />
+                    <ui:Image name="NPCPortrait" />
+                    <uie:PropertyField name="NPCVisibility" label="NPC Visibility" binding-path="_npcVisibility" />
+                </ui:Foldout>
+            </ui:Tab>
+            <ui:Tab label="Quest Items">
+                <ui:ListView show-add-remove-footer="true" binding-source-selection-mode="AutoAssign" reorderable="true" show-alternating-row-backgrounds="All" virtualization-method="DynamicHeight" binding-path="_questItems" show-bound-collection-size="false" reorder-mode="Animated" show-border="false" />
+            </ui:Tab>
+            <ui:Tab label="Checkpoint Groups">
+                <ui:ListView show-add-remove-footer="true" binding-source-selection-mode="AutoAssign" reorderable="true" show-alternating-row-backgrounds="All" virtualization-method="DynamicHeight" show-border="false" binding-path="_checkpointGroups" show-bound-collection-size="false" reorder-mode="Animated" />
+            </ui:Tab>
+        </ui:TabView>
+        <ui:GroupBox text="State (not saved!)">
+            <ui:DropdownField name="Status" label="Status" choices="Not Started,Ongoing,Completed" />
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>

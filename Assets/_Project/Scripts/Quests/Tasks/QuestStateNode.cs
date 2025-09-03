@@ -16,7 +16,7 @@ namespace DualityGame.Quests.Tasks
     {
         [RequiredField] public BBParameter<Quest> _quest;
 
-        public override int maxOutConnections => 4;
+        public override int maxOutConnections => 3;
         public override bool requireActorSelection => false;
 
         public override string name => (_quest.isNoneOrNull) switch
@@ -40,11 +40,8 @@ namespace DualityGame.Quests.Tasks
                 case Quest.QuestStatus.Ongoing:
                     DLGTree.Continue(1);
                     break;
-                case Quest.QuestStatus.Succeeded:
+                case Quest.QuestStatus.Completed:
                     DLGTree.Continue(2);
-                    break;
-                case Quest.QuestStatus.Failed:
-                    DLGTree.Continue(outConnections.Count < 4 ? 2 : 3);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -61,8 +58,8 @@ namespace DualityGame.Quests.Tasks
             {
                 0 => "Not started",
                 1 => "Ongoing",
-                2 => outConnections.Count < 4 ? "Completed (success or failure)" : "Succeeded",
-                _ => "Failed"
+                2 => "Complete",
+                _ => throw new ArgumentOutOfRangeException(nameof(i), i, null)
             };
         }
         #endif

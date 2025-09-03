@@ -6,18 +6,15 @@ using UnityEngine;
 namespace DualityGame.Quests.Tasks
 {
     [Category("Duality")]
-    [Description("Resolve Quest")]
+    [Description("Complete Quest")]
     public class ResolveQuest : ActionTask
     {
         [RequiredField] public BBParameter<Quest> _quest;
-        [RequiredField] public BBParameter<Resolution> _resolution;
 
-        protected override string info => (_quest.isNoneOrNull, _resolution.isNoneOrNull) switch
+        protected override string info => _quest.isNoneOrNull switch
         {
-            (true, true) => "(Please specify quest and resolution)",
-            (true, false) => "(Please specify quest)",
-            (false, true) => "(Please specify resolution)",
-            (false, false) => $"Resolve quest '{_quest.value.name}' with {_resolution.value}",
+            true => "(Please specify quest)",
+            false => $"Complete quest '{_quest.value.name}'",
         };
 
         //This is called once each time the task is enabled.
@@ -32,31 +29,8 @@ namespace DualityGame.Quests.Tasks
                 return;
             }
 
-            if (_resolution.isNoneOrNull)
-            {
-                Debug.LogError("There is no Resolution specified");
-                EndAction(false);
-                return;
-            }
-
-            switch (_resolution.value)
-            {
-                case Resolution.Succeed:
-                    _quest.value.Succeed();
-                    break;
-                case Resolution.Fail:
-                    _quest.value.Fail();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            _quest.value.Complete();
             EndAction(true);
-        }
-        
-        public enum Resolution
-        {
-            Succeed,
-            Fail
         }
     }
 }

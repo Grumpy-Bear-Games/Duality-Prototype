@@ -1,0 +1,53 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/Scripts/Quests/UI/Quest%20Log.uss?fileID=7433441132597879392&amp;guid=b4c0ef45e16a57c4e802852c56c33a5d&amp;type=3#Quest Log" />
+    <Style src="project://database/Assets/_Project/UI/FadeAnimation.uss?fileID=7433441132597879392&amp;guid=7aaf1c68f8004960bbecbce856a98e33&amp;type=3#FadeAnimation" />
+    <DualityGame.UI.AspectRatioContainer name="QuestLogBook" ratio-width="1380" ratio-height="920" class="FadeAnimation">
+        <ui:VisualElement class="aspect-ratio-container__content">
+            <ui:VisualElement name="QuestIndexPage">
+                <ui:Label tabindex="-1" text="Quests" display-tooltip-when-elided="true" name="IndexTitle" />
+                <ui:ListView virtualization-method="DynamicHeight" show-bound-collection-size="false" name="QuestIndex" allow-add="false" allow-remove="false" data-source-type="DualityGame.Quests.QuestsView, DualityGame" data-source="project://database/Assets/_Project/Game%20Data/Quests%20View.asset?fileID=11400000&amp;guid=a1bb07d52be0026469151b90502a226c&amp;type=2#Quests View" binding-source-selection-mode="AutoAssign" item-template="project://database/Assets/_Project/Scripts/Quests/UI/Quest%20Log%20-%20Quest%20Index%20Item.uxml?fileID=9197481963319205126&amp;guid=b17891cc2a434eee9e45c689994b4f5b&amp;type=3#Quest Log - Quest Index Item" style="flex-grow: 1;">
+                    <Bindings>
+                        <ui:DataBinding property="itemsSource" data-source-path="VisibleQuests" binding-mode="ToTarget" />
+                        <DualityGame.UI.SelectionToDataSourceBinding property="_ignored_" target-name="QuestDetailsPage" clear-path="true"/>
+                    </Bindings>
+                </ui:ListView>
+            </ui:VisualElement>
+            <ui:VisualElement name="QuestDetailsPage" picking-mode="Ignore" style="flex-grow: 0; flex-basis: 48%; flex-shrink: 0; display: flex;">
+                <ui:VisualElement name="HeaderRow">
+                    <DualityGame.UI.AspectRatioElement name="QuestGiver" class="header-image">
+                        <Bindings>
+                            <ui:DataBinding property="style.backgroundImage" data-source-path="NPCPortrait" binding-mode="ToTarget" source-to-ui-converters="Sprite" />
+                        </Bindings>
+                    </DualityGame.UI.AspectRatioElement>
+                    <ui:Label text="Label" name="Title" picking-mode="Ignore">
+                        <Bindings>
+                            <ui:DataBinding property="text" data-source-path="Title" binding-mode="ToTarget" />
+                        </Bindings>
+                    </ui:Label>
+                    <DualityGame.UI.AspectRatioElement name="Stamp" class="header-image">
+                        <Bindings>
+                            <ui:DataBinding property="style.backgroundImage" data-source-path="Stamp" binding-mode="ToTarget" source-to-ui-converters="Sprite" />
+                        </Bindings>
+                    </DualityGame.UI.AspectRatioElement>
+                </ui:VisualElement>
+                <ui:ScrollView name="ScrollView" vertical-scroller-visibility="AlwaysVisible" horizontal-scroller-visibility="Hidden" vertical-page-size="1" picking-mode="Ignore" horizontal-page-size="1">
+                    <ui:Label name="Description" picking-mode="Ignore">
+                        <Bindings>
+                            <ui:DataBinding property="text" data-source-path="Description" binding-mode="ToTarget" />
+                        </Bindings>
+                    </ui:Label>
+                    <DualityGame.UI.CollectionView name="QuestItems" item-template="project://database/Assets/_Project/Scripts/Quests/UI/Quest%20Log%20-%20Quest%20Item.uxml?fileID=9197481963319205126&amp;guid=a288b7f4e84c4a998c00263e9ba1c1bf&amp;type=3#Quest Log - Quest Item">
+                        <Bindings>
+                            <ui:DataBinding property="ItemsSource" data-source-path="QuestItems" binding-mode="ToTarget" />
+                        </Bindings>
+                    </DualityGame.UI.CollectionView>
+                    <DualityGame.UI.CollectionView name="Checkpoints" item-template="project://database/Assets/_Project/Scripts/Quests/UI/Quest%20Log%20-%20Checkpoint.uxml?fileID=9197481963319205126&amp;guid=80b7994ad5ad1f746afa2cbf5a15e3c1&amp;type=3#Quest Log - Checkpoint">
+                        <Bindings>
+                            <ui:DataBinding property="ItemsSource" data-source-path="VisibleCheckpoints" binding-mode="ToTarget" />
+                        </Bindings>
+                    </DualityGame.UI.CollectionView>
+                </ui:ScrollView>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </DualityGame.UI.AspectRatioContainer>
+</ui:UXML>

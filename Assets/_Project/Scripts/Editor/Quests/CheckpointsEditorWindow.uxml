@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:MultiColumnListView name="Checkpoints" allow-add="false" allow-remove="false" show-bound-collection-size="false" binding-source-selection-mode="AutoAssign">
+        <ui:Columns reorderable="false">
+            <ui:Column name="name" title="Name" sortable="false" stretchable="true" />
+            <ui:Column sortable="false" stretchable="true" name="reached" title="Reached" min-width="100px" />
+        </ui:Columns>
+    </ui:MultiColumnListView>
+</ui:UXML>

@@ -14,6 +14,7 @@ namespace DualityGame.Realm
         [field: SerializeField] public int LevelLayer { get; private set;  }
         [field: SerializeField] public int PlayerLayer { get; private set;  }
         [field: SerializeField] public Realm CanWarpTo { get; private set;  }
+        [field: SerializeField] public Sprite Stamp { get; private set;  }
 
         public int LevelLayerMask => 1 << LevelLayer;
         public int PlayerLayerMask => 1 << PlayerLayer;

@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ObjectGuid>k__BackingField:
     _data: fe6e8cbe6d9a649a1b1ac0eb99fb4a7540f3ad0000000000
-  <Title>k__BackingField: Standard Job
-  <Description>k__BackingField: The classic 'my first quest'
-  <NPC>k__BackingField: {fileID: 11400000, guid: 7417d59d373d69141a93ca883e5bdf8b,
-    type: 2}
-  <Realm>k__BackingField: {fileID: 11400000, guid: 6e2678d65c1d2e046b0cb3fb66e5bb67,
-    type: 2}
-  <Visibility>k__BackingField: 0
+  _title: Standard Job
+  _description: The classic 'my first quest'
+  _npc: {fileID: 11400000, guid: 7417d59d373d69141a93ca883e5bdf8b, type: 2}
+  _npcVisibility:
+    _visibility: 0
+    _checkpoints: []
+  _visibility: 0
+  _questItems: []
+  _checkpointGroups: []
