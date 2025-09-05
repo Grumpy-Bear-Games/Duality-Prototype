@@ -588,35 +588,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d52b3604def11c241b419b9b0b9f4753, type: 3}
---- !u!1001 &6334023672278684820
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6334023674009506277, guid: acced568f3c0c654e8b2890d8a87e4a3, type: 3}
-      propertyPath: m_Name
-      value: Inventory UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 6334023674009506279, guid: acced568f3c0c654e8b2890d8a87e4a3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6334023674009506279, guid: acced568f3c0c654e8b2890d8a87e4a3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6334023674009506279, guid: acced568f3c0c654e8b2890d8a87e4a3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: acced568f3c0c654e8b2890d8a87e4a3, type: 3}
 --- !u!4 &7463828397257021375
 Transform:
   m_ObjectHideFlags: 0
@@ -701,7 +672,6 @@ SceneRoots:
   - {fileID: 1753581363343980509}
   - {fileID: 4846757869821707227}
   - {fileID: 377127693985745892}
-  - {fileID: 6334023672278684820}
   - {fileID: 629737853}
   - {fileID: 358473241}
   - {fileID: 4552247397148686096}

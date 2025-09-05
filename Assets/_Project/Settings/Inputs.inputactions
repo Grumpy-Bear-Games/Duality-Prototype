@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "Inputs",
     "maps": [
         {
@@ -288,19 +289,10 @@
             "id": "88fa8fee-7f1a-4521-877e-3e0a7aa909b9",
             "actions": [
                 {
-                    "name": "Inventory",
-                    "type": "Button",
-                    "id": "8d3a1dad-88c1-41c0-9602-d70d32036b91",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Quest Log",
                     "type": "Button",
                     "id": "84ba3766-da84-4176-ae01-b6709c0b3d55",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -309,7 +301,7 @@
                     "name": "Pause Menu",
                     "type": "Button",
                     "id": "716e1eec-ab17-4483-82d4-9eeab87b1f25",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -323,7 +315,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "Inventory",
+                    "action": "Quest Log",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -331,28 +323,6 @@
                     "name": "",
                     "id": "894a9c72-fc74-437e-be6e-e7c0d8cde7ff",
                     "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7642ed72-6df2-461d-bebc-6ad8f85e3670",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Quest Log",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0b2ca898-98ca-43c1-8d5c-f648ff025710",
-                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
