@@ -30,7 +30,7 @@ namespace DualityGame.Notifications
 
             public GenericNotificationItem(Sprite sprite, string content)
             {
-                this._sprite = sprite;
+                _sprite = sprite;
                 _content = content;
             }
 

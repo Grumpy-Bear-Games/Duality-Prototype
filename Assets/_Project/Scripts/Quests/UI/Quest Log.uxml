@@ -1,7 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/_Project/Scripts/Quests/UI/Quest%20Log.uss?fileID=7433441132597879392&amp;guid=b4c0ef45e16a57c4e802852c56c33a5d&amp;type=3#Quest Log" />
-    <Style src="project://database/Assets/_Project/UI/FadeAnimation.uss?fileID=7433441132597879392&amp;guid=7aaf1c68f8004960bbecbce856a98e33&amp;type=3#FadeAnimation" />
-    <DualityGame.UI.AspectRatioContainer name="QuestLogBook" ratio-width="1380" ratio-height="920" class="FadeAnimation">
+    <DualityGame.UI.AspectRatioContainer name="QuestLogBook" ratio-width="1380" ratio-height="920" class="ZoomAnimation">
         <ui:VisualElement class="aspect-ratio-container__content">
             <ui:VisualElement name="QuestIndexPage">
                 <ui:Label tabindex="-1" text="Quests" display-tooltip-when-elided="true" name="IndexTitle" />

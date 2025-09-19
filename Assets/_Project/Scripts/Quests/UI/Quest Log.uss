@@ -1,9 +1,37 @@
 :root {
-    --fade-duration: 0.2s;
+    --fade-duration: 300ms;
     justify-content: space-around;
     align-items: stretch;
     -unity-font-definition: url("project://database/Assets/_Project/Fonts/Who%20Dares!%20SDF.asset?fileID=11400000&guid=76636c63d6e1cd3488532d7db176444e&type=2#Who Dares! SDF");
     font-size: 23px;
+}
+
+.ZoomAnimation {
+    visibility: hidden;
+    scale: 0;
+
+    transform-origin: center 95%;
+    transition-property: scale, visibility;
+    transition-duration: var(--fade-duration), 0s;
+    transition-delay: 0s, var(--fade-duration);
+    transition-timing-function: ease-in-back, ease;
+}
+
+.ZoomAnimation.Shown {
+    visibility: visible ;
+    scale: 1;
+
+    transition-property: visibility, scale;
+    transition-duration: 0s, var(--fade-duration);
+    transition-delay: 0s;
+    transition-timing-function: ease-out-back;
+}
+
+.unity-builder-viewport__document .ZoomAnimation {
+    visibility: initial;
+    scale: initial;
+
+    transition-duration: 0ms;
 }
 
 .unity-scroller--vertical #unity-tracker {
@@ -73,30 +101,30 @@
 }
 
 .unity-collection-view__item .checklist-item {
-    color: rgb(66,66,66);
+    color: rgb(66, 66, 66);
 }
 
 .unity-collection-view__item .checklist-item__title {
 }
 
 .unity-collection-view__item .checklist-item__tick {
-    -unity-background-image-tint-color: rgba(255,255,255,0.5);
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0.5);
 }
 
 .unity-collection-view__item:hover .checklist-item {
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
 }
 
 .unity-collection-view__item:hover .checklist-item__title {
 }
 
 .unity-collection-view__item:hover .checklist-item__tick {
-    -unity-background-image-tint-color: rgba(255,255,255,1);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
 }
 
 .unity-collection-view__item--selected .checklist-item {
     scale: 1.05 1.05;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
 }
 
 .unity-collection-view__item--selected .checklist-item__title {
@@ -104,9 +132,8 @@
 }
 
 .unity-collection-view__item--selected .checklist-item__tick {
-    -unity-background-image-tint-color: rgba(255, 255, 255, 1);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
 }
-
 
 #QuestLogBook {
     flex-basis: 90%;
