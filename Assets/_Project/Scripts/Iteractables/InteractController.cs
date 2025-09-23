@@ -16,6 +16,6 @@ namespace DualityGame.Iteractables
 
         private void Update() => ShaderGlobals.PlayerPosition = transform.position;
 
-        private void OnInteract(InputAction.CallbackContext _) => _closestInteractable.Value?.Interact(gameObject);
+        private void OnInteract(InputAction.CallbackContext _) => _closestInteractable.Value?.Interact();
     }
 }

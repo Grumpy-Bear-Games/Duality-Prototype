@@ -7,7 +7,7 @@ namespace DualityGame.Iteractables
     [RequireComponent(typeof(SaveableEntity))]
     public class InteractableTrigger : Interactable, ISaveableComponent
     {
-        [SerializeField] private UnityEvent<GameObject> _onInteract;
+        [SerializeField] private UnityEvent _onInteract;
         [SerializeField] private IInteractable.InteractionType _type = IInteractable.InteractionType.Touch;
 
         [Header("Interaction")]
@@ -19,11 +19,11 @@ namespace DualityGame.Iteractables
 
         private bool _hasTriggered;
         
-        public override void Interact(GameObject actor)
+        public override void Interact()
         {
             if (_hasTriggered) return;
             if (_onlyTriggerOnce) _hasTriggered = true;
-            _onInteract.Invoke(actor);
+            _onInteract.Invoke();
         }
 
         #region ISaveableComponent

@@ -17,7 +17,7 @@ namespace DualityGame.Iteractables
 
         public Vector3 Position => transform.position;
 
-        public abstract void Interact(GameObject actor);
+        public abstract void Interact();
         public Vector3 PromptPosition => transform.position + _promptOffset;
         public virtual bool Enabled => gameObject.activeSelf && Realm.Realm.Current && gameObject.layer == Realm.Realm.Current.LevelLayer;
 

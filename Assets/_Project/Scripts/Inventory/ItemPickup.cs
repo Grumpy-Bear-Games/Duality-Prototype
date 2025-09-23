@@ -13,36 +13,25 @@ namespace DualityGame.Inventory
         private DialogueTreeController _dialogueTreeController;
         private void Awake() => _dialogueTreeController = GetComponent<DialogueTreeController>();
 
-        public override void Interact(GameObject actor)
+        public override void Interact()
         {
+            var player = ServiceLocator.ServiceLocator.Get<Player.Player>();
+
             if (_dialogueTreeController == null)
             {
-                PickupItem(actor);
+                PickupItem(player);
                 return;
             }
 
-            var instigator = actor.GetComponent<DialogueActor>();
-            if (instigator != null)
+            _dialogueTreeController.StartDialogue(player.Actor, success =>
             {
-                _dialogueTreeController.StartDialogue(instigator, success =>
-                {
-                    if (success) PickupItem(actor);
-                });
-            }
-            else
-            {
-                _dialogueTreeController.StartDialogue(success => {
-                    if (success) PickupItem(actor);
-                });
-            }
+                if (success) PickupItem(player);
+            });
         }
 
-        private void PickupItem(GameObject actor)
+        private void PickupItem(Player.Player player)
         {
-            var inventory = actor.GetComponent<InventoryController>();
-            if (inventory == null) return;
-
-            inventory.PickupItem(_itemType);
+            player.InventoryController.PickupItem(_itemType);
             gameObject.SetActive(false);
         }
        

@@ -5,7 +5,7 @@ namespace DualityGame.Iteractables
     public interface IInteractable
     {
         Vector3 Position { get; }
-        void Interact(GameObject actor);
+        void Interact();
         Vector3 PromptPosition { get; }
         bool Enabled { get;  }
         InteractionType Type { get; }

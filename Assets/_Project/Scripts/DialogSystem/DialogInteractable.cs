@@ -14,17 +14,10 @@ namespace DualityGame.DialogSystem
 
         public override IInteractable.InteractionType Type => _type;
 
-        public override void Interact(GameObject actor)
+        public override void Interact()
         {
-            var instigator = actor.GetComponent<DialogueActor>();
-            if (instigator != null)
-            {
-                _controller.StartDialogue(instigator);
-            }
-            else
-            {
-                _controller.StartDialogue();
-            }
+            var player = ServiceLocator.ServiceLocator.Get<Player.Player>();
+            _controller.StartDialogue(player.Actor);
         }
     }
 }

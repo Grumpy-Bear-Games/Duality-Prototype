@@ -8,17 +8,10 @@ namespace DualityGame.DialogSystem
     {
         private DialogueTreeController _controller;
         protected void Awake() => _controller = GetComponent<DialogueTreeController>();
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider _)
         {
-            var instigator = other.GetComponent<DialogueActor>();
-            if (instigator != null)
-            {
-                _controller.StartDialogue(instigator);
-            }
-            else
-            {
-                _controller.StartDialogue();
-            }
+            var player = ServiceLocator.ServiceLocator.Get<Player.Player>();
+            _controller.StartDialogue(player.Actor);
         }
     }
 }
